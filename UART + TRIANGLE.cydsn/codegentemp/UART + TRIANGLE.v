@@ -1,6 +1,6 @@
 // ======================================================================
 // UART + TRIANGLE.v generated from TopDesign.cysch
-// 03/10/2022 at 14:26
+// 06/26/2022 at 16:10
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
