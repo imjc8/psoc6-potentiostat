@@ -276,7 +276,7 @@ extern "C" {
 
 /** The GATT Maximum attribute length. */
 #define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0008u)
-#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0016u)
+#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0019u)
 
 /** The number of characteristics supporting the Reliable Write property. */
 #define CY_BLE_CONFIG_GATT_RELIABLE_CHAR_COUNT      (0x0000u)
@@ -307,7 +307,7 @@ extern "C" {
     #define CY_BLE_CONFIG_L2CAP_PSM_COUNT               (1u)
 #endif  /* CY_BLE_L2CAP_ENABLE != 0u */
 
-#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x0Eu)
+#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x11u)
 
 /** Max Tx payload size. */
 #define CY_BLE_CONFIG_LL_MAX_TX_PAYLOAD_SIZE        (0x1Bu)
@@ -369,7 +369,7 @@ extern "C" {
 #define CY_BLE_CONFIG_CUSTOMC_SERVICE_COUNT         (0x00u)
 
 /** The maximum supported count of the Custom Service characteristics. */
-#define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_COUNT     (0x02u)
+#define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_COUNT     (0x03u)
 
 /** The maximum supported count of the Custom Service descriptors in one characteristic. */
 #define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x01u)
@@ -383,6 +383,8 @@ extern "C" {
 #define CY_BLE_DEVICE_INTERFACE_DEVICE_INBOUND_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
 #define CY_BLE_DEVICE_INTERFACE_DEVICE_OUTBOUND_CHAR_INDEX   (0x01u) /* Index of Device Outbound characteristic */
 #define CY_BLE_DEVICE_INTERFACE_DEVICE_OUTBOUND_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
+#define CY_BLE_DEVICE_INTERFACE_ASDF_CHAR_INDEX   (0x02u) /* Index of asdf characteristic */
+#define CY_BLE_DEVICE_INTERFACE_ASDF_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
 
 
 #define CY_BLE_DEVICE_INTERFACE_SERVICE_HANDLE   (0x0010u) /* Handle of Device Interface service */
@@ -392,6 +394,9 @@ extern "C" {
 #define CY_BLE_DEVICE_INTERFACE_DEVICE_OUTBOUND_DECL_HANDLE   (0x0014u) /* Handle of Device Outbound characteristic declaration */
 #define CY_BLE_DEVICE_INTERFACE_DEVICE_OUTBOUND_CHAR_HANDLE   (0x0015u) /* Handle of Device Outbound characteristic */
 #define CY_BLE_DEVICE_INTERFACE_DEVICE_OUTBOUND_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0016u) /* Handle of Custom Descriptor descriptor */
+#define CY_BLE_DEVICE_INTERFACE_ASDF_DECL_HANDLE   (0x0017u) /* Handle of asdf characteristic declaration */
+#define CY_BLE_DEVICE_INTERFACE_ASDF_CHAR_HANDLE   (0x0018u) /* Handle of asdf characteristic */
+#define CY_BLE_DEVICE_INTERFACE_ASDF_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0019u) /* Handle of Custom Descriptor descriptor */
 
 
 

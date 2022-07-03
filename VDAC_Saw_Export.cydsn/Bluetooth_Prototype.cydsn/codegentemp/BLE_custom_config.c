@@ -49,6 +49,16 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
                     0x0016u, /* Handle of the Custom Descriptor descriptor */ 
                 }, 
             },
+
+            /* asdf characteristic */
+            {
+                0x0018u, /* Handle of the asdf characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    0x0019u, /* Handle of the Custom Descriptor descriptor */ 
+                }, 
+            },
         }, 
     },
 };

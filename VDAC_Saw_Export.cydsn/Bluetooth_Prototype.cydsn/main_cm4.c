@@ -15,6 +15,7 @@ static uint8 data[1] = {0};
 int bluetooth_conn = 0;
 int gradient = 0;
 uint32_t currentCode = 0u;
+int set = 1;
 
 void userIsr(void);
 
@@ -35,15 +36,20 @@ void genericEventHandler(uint32_t event, void *eventParameter)
             bluetooth_conn = 1;
             break;
         }
-        case CY_BLE_EVT_GATTS_WRITE_CMD_REQ:
+        case CY_BLE_EVT_GATTS_WRITE_REQ:
         {
             cy_stc_ble_gatts_write_cmd_req_param_t *writeReqParameter = (cy_stc_ble_gatts_write_cmd_req_param_t *) eventParameter;
             
-            if(CY_BLE_DEVICE_INTERFACE_DEVICE_INBOUND_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle)
+            if(writeReqParameter->handleValPair.attrHandle == CY_BLE_DEVICE_INTERFACE_DEVICE_INBOUND_CHAR_HANDLE)
             {
                 data[0] = writeReqParameter->handleValPair.value.val[0];
                 Cy_BLE_GATTS_WriteRsp(writeReqParameter->connHandle);
             }
+            // else if(writeReqParameter->handleValPair.attrHandle == CY_BLE_DEVICE_INTERFACE_ASDF_CHAR_HANDLE)
+            // {
+            //     set = writeReqParameter->handleValPair.value.val[0];
+            //     Cy_BLE_GATTS_WriteRsp(writeReqParameter->connHandle);
+            // }
             break;
         }
     }
@@ -83,7 +89,7 @@ int main(void)
     for(;;)
     {
         /* Place your application code here. */
-        /*
+        
         cy_stc_ble_gatt_handle_value_pair_t serviceHandle;
         cy_stc_ble_gatt_value_t serviceData;
         
@@ -94,9 +100,12 @@ int main(void)
         serviceHandle.value = serviceData;
         
         Cy_BLE_GATTS_WriteAttributeValueLocal(&serviceHandle);
-        data[0]++;
+        if (set ==  1) {
+              data[0]++;
+        }
         CyDelay(1000);
-        */
+        
+        /*
         if (bluetooth_conn == 1)
         {
             squareWave();
@@ -104,7 +113,7 @@ int main(void)
         else
         {
             Cy_GPIO_Write(P9_6_PORT, P9_6_NUM, 0);
-        }
+        }*/
     }
 }
 

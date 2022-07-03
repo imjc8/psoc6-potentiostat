@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 1
 
 
    1              		.syntax unified
@@ -31,7 +31,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
   28              		.file 1 "Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_ble_hal_int.c"
    1:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /***************************************************************************//**
    2:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \file cy_ble_hal_int.c
-   3:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \version 2.70
+   3:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \version 2.60
    4:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
    5:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \brief
    6:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  This file contains the source code for the Interrupt Service Routine for the
@@ -39,7 +39,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
    8:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
    9:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** ********************************************************************************
   10:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \copyright
-  11:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+  11:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
   12:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * You may use this file only in accordance with the license, terms, conditions,
   13:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * disclaimers, and limitations in the end user license agreement accompanying
   14:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * the software package with which this file was provided.
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
   27:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
   28:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /*******************************************************************************
   29:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * Function Name: Cy_BLE_HAL_IntrNotifyIpcHandler
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 2
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 2
 
 
   30:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** ****************************************************************************//**
@@ -68,28 +68,28 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
   34:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * \return
   35:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  None
   36:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
-  37:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *******************************************************************************/
+  37:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *******************************************************************************/    
   38:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** void Cy_BLE_HAL_IntrNotifyIpcHandler(void)
-  39:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** {
+  39:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** {    
   40:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     uint32_t interruptMasked;
   41:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     IPC_INTR_STRUCT_Type *intrTypePtr = Cy_IPC_Drv_GetIntrBaseAddr(CY_BLE_INTR_NOTIFY_IPC_INTR);
   42:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****    /**
   43:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     * Check that there is really the IPC Notify interrupt,
   44:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     * because the same line can be used for the IPC Release interrupt.
   45:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     */
-  46:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  46:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     
   47:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     interruptMasked = Cy_IPC_Drv_ExtractAcquireMask(Cy_IPC_Drv_GetInterruptStatusMasked(intrTypePtr
   48:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
   49:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     if ((1uL << (CY_BLE_INTR_NOTIFY_IPC_CHAN)) == interruptMasked )
   50:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     {
   51:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         Cy_IPC_Drv_ClearInterrupt(intrTypePtr, CY_IPC_NO_NOTIFICATION, interruptMasked);
-  52:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  52:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         
   53:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         if(Cy_BLE_InterruptCallback != NULL)
   54:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         {
   55:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             /* Call the BLE interrupt feature handler */
   56:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             Cy_BLE_InterruptCallback(intrNotify.data);
   57:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         }
-  58:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  58:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      
   59:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         /* Release the IPC channel with the Release interrupt */
   60:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         (void)Cy_IPC_Drv_LockRelease(Cy_IPC_Drv_GetIpcBaseAddress(CY_BLE_INTR_NOTIFY_IPC_CHAN),
   61:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                                     (1uL << CY_BLE_INTR_NOTIFY_IPC_INTR));
@@ -100,10 +100,10 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
   66:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_HOST_CONTR_CORE)
   67:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_STACK_CONTR_CORE)
   68:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
-  69:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED)
-  70:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /* Globals */
+  69:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED)    
+  70:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /* Globals */    
   71:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** cy_stc_ble_intr_notify_t *intrNotifyPtr = NULL;
-  72:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+  72:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     
   73:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /* Private Function Prototypes  */
   74:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** static void Cy_BLE_HAL_SendInterruptNotification(void);
   75:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
@@ -111,14 +111,14 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
   77:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * Function Name: Cy_BLE_HAL_SendInterruptNotification
   78:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** ****************************************************************************//**
   79:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
-  80:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  This function sends notification (with interrupt type information) to user
-  81:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  callback for the BLE interrupts subscribed by user. The list of supported
+  80:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  This function sends notification (with interrupt type information) to user 
+  81:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  callback for the BLE interrupts subscribed by user. The list of supported 
   82:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  interrupts described in the enumeration cy_en_ble_interrupt_callback_feature_t.
   83:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  Cy_BLE_RegisterInterruptCallback() API used to register callback for receiving
   84:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *  the BLE interrupts.
   85:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
   86:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *******************************************************************************/
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 3
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 3
 
 
   87:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** static void Cy_BLE_HAL_SendInterruptNotification(void)
@@ -126,11 +126,11 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
   89:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     if((intrNotifyPtr != NULL) && (intrNotifyPtr->mask != 0u))
   90:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     {
   91:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         uint32_t interruptType = (uint32_t)CY_BLE_INTR_CALLBACK_NONE;
-  92:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
-  93:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         /* Read BLE_BLELL->EVENT_INTR */
-  94:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         if((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLESS_STACK_ISR) != 0u)
+  92:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         
+  93:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         /* Read BLE_BLELL->EVENT_INTR */      
+  94:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         if((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLESS_STACK_ISR) != 0u) 
   95:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         {
-  96:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             interruptType |= CY_BLE_INTR_CALLBACK_BLESS_STACK_ISR;
+  96:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             interruptType |= CY_BLE_INTR_CALLBACK_BLESS_STACK_ISR;    
   97:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         }
   98:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         else
   99:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         {
@@ -139,23 +139,23 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  102:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             {
  103:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 interruptType |= CY_BLE_INTR_CALLBACK_BLESS_INTR_STAT_DSM_ENTERED;
  104:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             }
- 105:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 105:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             
  106:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             if(((BLE_BLESS->INTR_STAT & BLE_BLESS_INTR_STAT_DSM_EXITED_INTR_Msk) != 0u) &&
  107:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLESS_INTR_STAT_DSM_EXITED) != 0u))
  108:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             {
  109:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 interruptType |= CY_BLE_INTR_CALLBACK_BLESS_INTR_STAT_DSM_EXITED;
  110:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             }
- 111:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 111:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****        
  112:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             if(((BLE_BLESS->INTR_STAT & BLE_BLESS_INTR_STAT_LL_INTR_Msk) != 0u))
- 113:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             {
+ 113:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             { 
  114:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 /**
  115:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                  *  Updates the firmware and hardware to exit sleep mode, when
  116:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                  *  called from the interrupt mode, after checking the state machine.
  117:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                  */
  118:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 Cy_BLE_LlIsrExitLowPowerMode();
- 119:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 119:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****            
  120:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 if(BLE_BLELL->EVENT_INTR != 0x0u)
- 121:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 {
+ 121:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 {            
  122:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     if((BLE_BLELL->EVENT_INTR & BLE_BLELL_EVENT_INTR_CONN_INTR_Msk) != 0u)
  123:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     {
  124:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->CONN_INTR & BLE_BLELL_CONN_INTR_CLOSE_CE_Msk) != 0u) &&
@@ -164,32 +164,32 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  127:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CLOSE_CE 
  128:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CLOSE_CE;
  129:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
- 130:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 130:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         
  131:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->CONN_INTR & BLE_BLELL_CONN_INTR_CE_TX_ACK_Msk) != 0u) &&
  132:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                            ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_TX_ACK) 
  133:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
  134:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_TX_ACK
  135:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_TX_ACK;
  136:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
- 137:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 137:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         
  138:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->CONN_EXT_INTR & BLE_BLELL_CONN_EXT_INTR_EARLY_INTR_Msk) != 
  139:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                            ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_CONN_EXT_INTR_EARLY) 
  140:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
  141:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_CONN_EXT_INTR_EARLY
- 142:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_CONN_EXT_INTR_EARLY;
+ 142:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_CONN_EXT_INTR_EARLY;       
  143:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 4
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 4
 
 
- 144:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 144:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         
  145:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->CONN_INTR & BLE_BLELL_CONN_INTR_CE_RX_Msk) != 0u) &&
  146:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_RX) != 
  147:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
- 148:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_RX */
+ 148:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_RX */ 
  149:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_CONN_INTR_CE_RX;
  150:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
- 151:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }
- 152:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 151:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }    
+ 152:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     
  153:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     if((BLE_BLELL->EVENT_INTR & BLE_BLELL_EVENT_INTR_SCAN_INTR_Msk) != 0u)
  154:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     {
  155:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->SCAN_INTR & BLE_BLELL_SCAN_INTR_ADV_RX_INTR_Msk) != 0u) &&
@@ -198,15 +198,15 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  158:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type Return interrupt type CY_BLE_INTR_CALLBACK_BLE
  159:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_SCAN_INTR_ADV_RX;
  160:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
- 161:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 161:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         
  162:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->SCAN_INTR & BLE_BLELL_SCAN_INTR_SCAN_RSP_RX_INTR_Msk) != 0u
  163:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                            ((intrNotifyPtr->mask & CY_BLE_INTR_CALLBACK_BLELL_SCAN_INTR_SCAN_RSP_RX
  164:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
  165:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_SCAN_INTR_SCAN_RSP_
  166:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_SCAN_INTR_SCAN_RSP_RX;
- 167:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
+ 167:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }  
  168:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }
- 169:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 169:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     
  170:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     if((BLE_BLELL->EVENT_INTR & BLE_BLELL_EVENT_INTR_ADV_INTR_Msk) != 0u)
  171:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     {
  172:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         if(((BLE_BLELL->ADV_INTR & BLE_BLELL_ADV_INTR_CONN_REQ_RX_INTR_Msk) != 0u) 
@@ -214,50 +214,50 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  174:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         {
  175:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             /* Return interrupt type CY_BLE_INTR_CALLBACK_BLELL_ADV_INTR_CONN_REQ_R
  176:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                             interruptType |= CY_BLE_INTR_CALLBACK_BLELL_ADV_INTR_CONN_REQ_RX;
- 177:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }
+ 177:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         }   
  178:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }
  179:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 }
  180:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             }
  181:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         }
- 182:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 182:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         
  183:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         /* Send interrupt type information to registered callback */
  184:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         if(interruptType != (uint32_t)CY_BLE_INTR_CALLBACK_NONE)
- 185:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         {
- 186:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             #if (CY_BLE_MODE_PROFILE)
+ 185:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         {       
+ 186:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             #if (CY_BLE_MODE_PROFILE) 
  187:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 if(Cy_BLE_InterruptCallback != NULL)
  188:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 {
  189:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     Cy_BLE_InterruptCallback((uint32_t)interruptType);
  190:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 }
  191:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             #else
  192:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 {
- 193:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     uint32_t rTimeout = 100u; /* us */
- 194:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     intrNotifyPtr->data = (uint32_t)interruptType;
- 195:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 193:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     uint32_t rTimeout = 100u; /* us */                 
+ 194:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     intrNotifyPtr->data = (uint32_t)interruptType; 
+ 195:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****   
  196:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     /* Check if IPC is released */
  197:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     while((Cy_IPC_Drv_IsLockAcquired(Cy_IPC_Drv_GetIpcBaseAddress(CY_BLE_INTR_NOTIF
  198:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                           (rTimeout !=0u))
  199:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     {
  200:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         Cy_SysLib_DelayUs(1u);
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 5
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 5
 
 
  201:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         rTimeout--;
  202:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }
- 203:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 203:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     
  204:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     /* Generates a notify event by IPC interrupt structures */
  205:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     if(rTimeout != 0u)
  206:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     {
  207:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                         (void)Cy_IPC_Drv_AcquireNotify(Cy_IPC_Drv_GetIpcBaseAddress(CY_BLE_INTR_NOT
- 208:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                                        (1uL << (uint32_t)CY_BLE_INTR_NOTIFY_IPC_INTR));
- 209:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }
- 210:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 208:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                                        (1uL << (uint32_t)CY_BLE_INTR_NOTIFY_IPC_INTR));            
+ 209:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     }                   
+ 210:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                     
  211:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****                 }
  212:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****             #endif /* (CY_BLE_MODE_PROFILE) */
  213:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****         }
  214:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     }
  215:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** }
  216:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) */
- 217:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
+ 217:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     
  218:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
  219:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** /*******************************************************************************
  220:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** * Function Name: Cy_BLE_BlessInterrupt
@@ -270,7 +270,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  227:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *
  228:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** *******************************************************************************/
  229:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** void Cy_BLE_BlessInterrupt(void)
- 230:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** {
+ 230:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** {  
   29              		.loc 1 230 0
   30              		.cfi_startproc
   31              		@ args = 0, pretend = 0, frame = 0
@@ -280,38 +280,38 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
   35              		.cfi_offset 3, -8
   36              		.cfi_offset 14, -4
   37              	.LVL0:
- 231:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_MODE_PROFILE)
+ 231:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_MODE_PROFILE)    
  232:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     bool sendNotification = false;
  233:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_MODE_PROFILE) */
- 234:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
- 235:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED)
- 236:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     /**
- 237:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * Send notification (with interrupt type) to user callback for the
- 238:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * BLE interrupts subscribed by user. Cy_BLE_RegisterInterruptCallback API
+ 234:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      
+ 235:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED)    
+ 236:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     /** 
+ 237:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * Send notification (with interrupt type) to user callback for the 
+ 238:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * BLE interrupts subscribed by user. Cy_BLE_RegisterInterruptCallback API 
  239:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * used to register callback for receiving BLE interrupts.
  240:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      */
  241:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     Cy_BLE_HAL_SendInterruptNotification();
- 242:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) */
+ 242:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) */ 
  243:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
  244:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     /* Call BLE Stack manager bless function handler */
- 245:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_MODE_PROFILE)
+ 245:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_MODE_PROFILE)    
  246:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     sendNotification = Cy_BLE_HAL_BlessInterruptHandler();
   38              		.loc 1 246 0
   39 0002 FFF7FEFF 		bl	Cy_BLE_HAL_BlessInterruptHandler
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 6
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 6
 
 
   40              	.LVL1:
  247:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #else
  248:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     (void)Cy_BLE_HAL_BlessInterruptHandler();
  249:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #endif /* (CY_BLE_MODE_PROFILE) */
- 250:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     /* Host stack takes care of clearing interrupts */
+ 250:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     /* Host stack takes care of clearing interrupts */   
  251:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** 
  252:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c **** #if (CY_BLE_MODE_PROFILE)
  253:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     /**
  254:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * Call the application application Host callback. This notification indicates
  255:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * that user should call Cy_BLE_ProcessEvents() to process
- 256:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * pending Stack events.
+ 256:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      * pending Stack events. 
  257:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****      */
  258:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_hal_int.c ****     if((Cy_BLE_HostRegisteredCallback != NULL) && sendNotification)
   41              		.loc 1 258 0
@@ -351,14 +351,14 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
   73 0006 00000000 		.4byte	.Ldebug_abbrev0
   74 000a 04       		.byte	0x4
   75 000b 01       		.uleb128 0x1
-  76 000c CB050000 		.4byte	.LASF137
+  76 000c 0B060000 		.4byte	.LASF137
   77 0010 0C       		.byte	0xc
-  78 0011 75070000 		.4byte	.LASF138
-  79 0015 B0070000 		.4byte	.LASF139
+  78 0011 C9070000 		.4byte	.LASF138
+  79 0015 39000000 		.4byte	.LASF139
   80 0019 00000000 		.4byte	.Ldebug_ranges0+0
   81 001d 00000000 		.4byte	0
   82 0021 00000000 		.4byte	.Ldebug_line0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 7
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 7
 
 
   83 0025 02       		.uleb128 0x2
@@ -368,105 +368,105 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
   87 002c 03       		.uleb128 0x3
   88 002d 04       		.byte	0x4
   89 002e 07       		.byte	0x7
-  90 002f 73030000 		.4byte	.LASF0
+  90 002f B3030000 		.4byte	.LASF0
   91 0033 03       		.uleb128 0x3
   92 0034 08       		.byte	0x8
   93 0035 05       		.byte	0x5
-  94 0036 64010000 		.4byte	.LASF1
+  94 0036 A4010000 		.4byte	.LASF1
   95 003a 03       		.uleb128 0x3
   96 003b 08       		.byte	0x8
   97 003c 04       		.byte	0x4
-  98 003d 3C080000 		.4byte	.LASF2
+  98 003d 2B080000 		.4byte	.LASF2
   99 0041 03       		.uleb128 0x3
  100 0042 01       		.byte	0x1
  101 0043 06       		.byte	0x6
- 102 0044 72010000 		.4byte	.LASF3
+ 102 0044 B2010000 		.4byte	.LASF3
  103 0048 04       		.uleb128 0x4
- 104 0049 7E000000 		.4byte	.LASF5
+ 104 0049 BE000000 		.4byte	.LASF5
  105 004d 02       		.byte	0x2
  106 004e 1D       		.byte	0x1d
  107 004f 53000000 		.4byte	0x53
  108 0053 03       		.uleb128 0x3
  109 0054 01       		.byte	0x1
  110 0055 08       		.byte	0x8
- 111 0056 35070000 		.4byte	.LASF4
+ 111 0056 75070000 		.4byte	.LASF4
  112 005a 04       		.uleb128 0x4
- 113 005b 0A030000 		.4byte	.LASF6
+ 113 005b 4A030000 		.4byte	.LASF6
  114 005f 02       		.byte	0x2
  115 0060 29       		.byte	0x29
  116 0061 65000000 		.4byte	0x65
  117 0065 03       		.uleb128 0x3
  118 0066 02       		.byte	0x2
  119 0067 05       		.byte	0x5
- 120 0068 57070000 		.4byte	.LASF7
+ 120 0068 AB070000 		.4byte	.LASF7
  121 006c 04       		.uleb128 0x4
- 122 006d 67080000 		.4byte	.LASF8
+ 122 006d 56080000 		.4byte	.LASF8
  123 0071 02       		.byte	0x2
  124 0072 2B       		.byte	0x2b
  125 0073 77000000 		.4byte	0x77
  126 0077 03       		.uleb128 0x3
  127 0078 02       		.byte	0x2
  128 0079 07       		.byte	0x7
- 129 007a E6080000 		.4byte	.LASF9
+ 129 007a D5080000 		.4byte	.LASF9
  130 007e 04       		.uleb128 0x4
- 131 007f 9E080000 		.4byte	.LASF10
+ 131 007f 8D080000 		.4byte	.LASF10
  132 0083 02       		.byte	0x2
  133 0084 3F       		.byte	0x3f
  134 0085 89000000 		.4byte	0x89
  135 0089 03       		.uleb128 0x3
  136 008a 04       		.byte	0x4
  137 008b 05       		.byte	0x5
- 138 008c 04020000 		.4byte	.LASF11
+ 138 008c 44020000 		.4byte	.LASF11
  139 0090 04       		.uleb128 0x4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 8
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 8
 
 
- 140 0091 EF020000 		.4byte	.LASF12
+ 140 0091 2F030000 		.4byte	.LASF12
  141 0095 02       		.byte	0x2
  142 0096 41       		.byte	0x41
  143 0097 9B000000 		.4byte	0x9b
  144 009b 03       		.uleb128 0x3
  145 009c 04       		.byte	0x4
  146 009d 07       		.byte	0x7
- 147 009e F6030000 		.4byte	.LASF13
+ 147 009e 36040000 		.4byte	.LASF13
  148 00a2 03       		.uleb128 0x3
  149 00a3 08       		.byte	0x8
  150 00a4 07       		.byte	0x7
- 151 00a5 CF000000 		.4byte	.LASF14
+ 151 00a5 0F010000 		.4byte	.LASF14
  152 00a9 03       		.uleb128 0x3
  153 00aa 04       		.byte	0x4
  154 00ab 07       		.byte	0x7
- 155 00ac 09050000 		.4byte	.LASF15
+ 155 00ac 49050000 		.4byte	.LASF15
  156 00b0 03       		.uleb128 0x3
  157 00b1 01       		.byte	0x1
  158 00b2 08       		.byte	0x8
- 159 00b3 48080000 		.4byte	.LASF16
+ 159 00b3 37080000 		.4byte	.LASF16
  160 00b7 05       		.uleb128 0x5
  161 00b8 04       		.byte	0x4
  162 00b9 BD000000 		.4byte	0xbd
  163 00bd 06       		.uleb128 0x6
  164 00be 04       		.uleb128 0x4
- 165 00bf C0090000 		.4byte	.LASF17
+ 165 00bf AF090000 		.4byte	.LASF17
  166 00c3 03       		.byte	0x3
  167 00c4 18       		.byte	0x18
  168 00c5 48000000 		.4byte	0x48
  169 00c9 04       		.uleb128 0x4
- 170 00ca 5C010000 		.4byte	.LASF18
+ 170 00ca 9C010000 		.4byte	.LASF18
  171 00ce 03       		.byte	0x3
  172 00cf 20       		.byte	0x20
  173 00d0 5A000000 		.4byte	0x5a
  174 00d4 04       		.uleb128 0x4
- 175 00d5 C7030000 		.4byte	.LASF19
+ 175 00d5 07040000 		.4byte	.LASF19
  176 00d9 03       		.byte	0x3
  177 00da 24       		.byte	0x24
  178 00db 6C000000 		.4byte	0x6c
  179 00df 04       		.uleb128 0x4
- 180 00e0 2D070000 		.4byte	.LASF20
+ 180 00e0 6D070000 		.4byte	.LASF20
  181 00e4 03       		.byte	0x3
  182 00e5 2C       		.byte	0x2c
  183 00e6 7E000000 		.4byte	0x7e
  184 00ea 04       		.uleb128 0x4
- 185 00eb 33080000 		.4byte	.LASF21
+ 185 00eb 22080000 		.4byte	.LASF21
  186 00ef 03       		.byte	0x3
  187 00f0 30       		.byte	0x30
  188 00f1 90000000 		.4byte	0x90
@@ -476,223 +476,223 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  192 00f8 34       		.byte	0x34
  193 00f9 06050000 		.4byte	0x506
  194 00fd 08       		.uleb128 0x8
- 195 00fe B6000000 		.4byte	.LASF22
+ 195 00fe F6000000 		.4byte	.LASF22
  196 0102 04       		.byte	0x4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 9
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 9
 
 
  197 0103 37       		.byte	0x37
  198 0104 EA000000 		.4byte	0xea
  199 0108 00       		.byte	0
  200 0109 08       		.uleb128 0x8
- 201 010a E4020000 		.4byte	.LASF23
+ 201 010a 24030000 		.4byte	.LASF23
  202 010e 04       		.byte	0x4
  203 010f 38       		.byte	0x38
  204 0110 EA000000 		.4byte	0xea
  205 0114 04       		.byte	0x4
  206 0115 08       		.uleb128 0x8
- 207 0116 48020000 		.4byte	.LASF24
+ 207 0116 88020000 		.4byte	.LASF24
  208 011a 04       		.byte	0x4
  209 011b 39       		.byte	0x39
  210 011c EA000000 		.4byte	0xea
  211 0120 08       		.byte	0x8
  212 0121 08       		.uleb128 0x8
- 213 0122 F5060000 		.4byte	.LASF25
+ 213 0122 35070000 		.4byte	.LASF25
  214 0126 04       		.byte	0x4
  215 0127 3A       		.byte	0x3a
  216 0128 EA000000 		.4byte	0xea
  217 012c 0C       		.byte	0xc
  218 012d 08       		.uleb128 0x8
- 219 012e B1010000 		.4byte	.LASF26
+ 219 012e F1010000 		.4byte	.LASF26
  220 0132 04       		.byte	0x4
  221 0133 3B       		.byte	0x3b
  222 0134 EA000000 		.4byte	0xea
  223 0138 10       		.byte	0x10
  224 0139 08       		.uleb128 0x8
- 225 013a FA010000 		.4byte	.LASF27
+ 225 013a 3A020000 		.4byte	.LASF27
  226 013e 04       		.byte	0x4
  227 013f 3C       		.byte	0x3c
  228 0140 EA000000 		.4byte	0xea
  229 0144 14       		.byte	0x14
  230 0145 08       		.uleb128 0x8
- 231 0146 13040000 		.4byte	.LASF28
+ 231 0146 53040000 		.4byte	.LASF28
  232 014a 04       		.byte	0x4
  233 014b 3D       		.byte	0x3d
  234 014c EA000000 		.4byte	0xea
  235 0150 18       		.byte	0x18
  236 0151 08       		.uleb128 0x8
- 237 0152 67000000 		.4byte	.LASF29
+ 237 0152 A7000000 		.4byte	.LASF29
  238 0156 04       		.byte	0x4
  239 0157 3E       		.byte	0x3e
  240 0158 EA000000 		.4byte	0xea
  241 015c 1C       		.byte	0x1c
  242 015d 08       		.uleb128 0x8
- 243 015e 3B0A0000 		.4byte	.LASF30
+ 243 015e 2A0A0000 		.4byte	.LASF30
  244 0162 04       		.byte	0x4
  245 0163 3F       		.byte	0x3f
  246 0164 EA000000 		.4byte	0xea
  247 0168 20       		.byte	0x20
  248 0169 08       		.uleb128 0x8
- 249 016a B3050000 		.4byte	.LASF31
+ 249 016a F3050000 		.4byte	.LASF31
  250 016e 04       		.byte	0x4
  251 016f 40       		.byte	0x40
  252 0170 EA000000 		.4byte	0xea
  253 0174 24       		.byte	0x24
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 10
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 10
 
 
  254 0175 08       		.uleb128 0x8
- 255 0176 DB040000 		.4byte	.LASF32
+ 255 0176 1B050000 		.4byte	.LASF32
  256 017a 04       		.byte	0x4
  257 017b 43       		.byte	0x43
  258 017c BE000000 		.4byte	0xbe
  259 0180 28       		.byte	0x28
  260 0181 08       		.uleb128 0x8
- 261 0182 4D000000 		.4byte	.LASF33
+ 261 0182 8D000000 		.4byte	.LASF33
  262 0186 04       		.byte	0x4
  263 0187 44       		.byte	0x44
  264 0188 BE000000 		.4byte	0xbe
  265 018c 29       		.byte	0x29
  266 018d 08       		.uleb128 0x8
- 267 018e 310A0000 		.4byte	.LASF34
+ 267 018e 200A0000 		.4byte	.LASF34
  268 0192 04       		.byte	0x4
  269 0193 45       		.byte	0x45
  270 0194 BE000000 		.4byte	0xbe
  271 0198 2A       		.byte	0x2a
  272 0199 08       		.uleb128 0x8
- 273 019a A5050000 		.4byte	.LASF35
+ 273 019a E5050000 		.4byte	.LASF35
  274 019e 04       		.byte	0x4
  275 019f 46       		.byte	0x46
  276 01a0 BE000000 		.4byte	0xbe
  277 01a4 2B       		.byte	0x2b
  278 01a5 08       		.uleb128 0x8
- 279 01a6 6B040000 		.4byte	.LASF36
+ 279 01a6 AB040000 		.4byte	.LASF36
  280 01aa 04       		.byte	0x4
  281 01ab 47       		.byte	0x47
  282 01ac BE000000 		.4byte	0xbe
  283 01b0 2C       		.byte	0x2c
  284 01b1 08       		.uleb128 0x8
- 285 01b2 B8080000 		.4byte	.LASF37
+ 285 01b2 A7080000 		.4byte	.LASF37
  286 01b6 04       		.byte	0x4
  287 01b7 48       		.byte	0x48
  288 01b8 BE000000 		.4byte	0xbe
  289 01bc 2D       		.byte	0x2d
  290 01bd 08       		.uleb128 0x8
- 291 01be BA010000 		.4byte	.LASF38
+ 291 01be FA010000 		.4byte	.LASF38
  292 01c2 04       		.byte	0x4
  293 01c3 49       		.byte	0x49
  294 01c4 BE000000 		.4byte	0xbe
  295 01c8 2E       		.byte	0x2e
  296 01c9 08       		.uleb128 0x8
- 297 01ca E8040000 		.4byte	.LASF39
+ 297 01ca 28050000 		.4byte	.LASF39
  298 01ce 04       		.byte	0x4
  299 01cf 4A       		.byte	0x4a
  300 01d0 BE000000 		.4byte	0xbe
  301 01d4 2F       		.byte	0x2f
  302 01d5 08       		.uleb128 0x8
- 303 01d6 4D080000 		.4byte	.LASF40
+ 303 01d6 3C080000 		.4byte	.LASF40
  304 01da 04       		.byte	0x4
  305 01db 4B       		.byte	0x4b
  306 01dc BE000000 		.4byte	0xbe
  307 01e0 30       		.byte	0x30
  308 01e1 08       		.uleb128 0x8
- 309 01e2 08040000 		.4byte	.LASF41
+ 309 01e2 48040000 		.4byte	.LASF41
  310 01e6 04       		.byte	0x4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 11
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 11
 
 
  311 01e7 4E       		.byte	0x4e
  312 01e8 BE000000 		.4byte	0xbe
  313 01ec 31       		.byte	0x31
  314 01ed 08       		.uleb128 0x8
- 315 01ee 70000000 		.4byte	.LASF42
+ 315 01ee B0000000 		.4byte	.LASF42
  316 01f2 04       		.byte	0x4
  317 01f3 4F       		.byte	0x4f
  318 01f4 BE000000 		.4byte	0xbe
  319 01f8 32       		.byte	0x32
  320 01f9 08       		.uleb128 0x8
- 321 01fa 67030000 		.4byte	.LASF43
+ 321 01fa A7030000 		.4byte	.LASF43
  322 01fe 04       		.byte	0x4
  323 01ff 50       		.byte	0x50
  324 0200 BE000000 		.4byte	0xbe
  325 0204 33       		.byte	0x33
  326 0205 08       		.uleb128 0x8
- 327 0206 1D050000 		.4byte	.LASF44
+ 327 0206 5D050000 		.4byte	.LASF44
  328 020a 04       		.byte	0x4
  329 020b 51       		.byte	0x51
  330 020c BE000000 		.4byte	0xbe
  331 0210 34       		.byte	0x34
  332 0211 08       		.uleb128 0x8
- 333 0212 26090000 		.4byte	.LASF45
+ 333 0212 15090000 		.4byte	.LASF45
  334 0216 04       		.byte	0x4
  335 0217 52       		.byte	0x52
  336 0218 C9000000 		.4byte	0xc9
  337 021c 36       		.byte	0x36
  338 021d 08       		.uleb128 0x8
- 339 021e 62020000 		.4byte	.LASF46
+ 339 021e A2020000 		.4byte	.LASF46
  340 0222 04       		.byte	0x4
  341 0223 53       		.byte	0x53
  342 0224 C9000000 		.4byte	0xc9
  343 0228 38       		.byte	0x38
  344 0229 08       		.uleb128 0x8
- 345 022a 75090000 		.4byte	.LASF47
+ 345 022a 64090000 		.4byte	.LASF47
  346 022e 04       		.byte	0x4
  347 022f 54       		.byte	0x54
  348 0230 C9000000 		.4byte	0xc9
  349 0234 3A       		.byte	0x3a
  350 0235 08       		.uleb128 0x8
- 351 0236 220A0000 		.4byte	.LASF48
+ 351 0236 110A0000 		.4byte	.LASF48
  352 023a 04       		.byte	0x4
  353 023b 55       		.byte	0x55
  354 023c BE000000 		.4byte	0xbe
  355 0240 3C       		.byte	0x3c
  356 0241 08       		.uleb128 0x8
- 357 0242 89020000 		.4byte	.LASF49
+ 357 0242 C9020000 		.4byte	.LASF49
  358 0246 04       		.byte	0x4
  359 0247 56       		.byte	0x56
  360 0248 BE000000 		.4byte	0xbe
  361 024c 3D       		.byte	0x3d
  362 024d 08       		.uleb128 0x8
- 363 024e 15080000 		.4byte	.LASF50
+ 363 024e 04080000 		.4byte	.LASF50
  364 0252 04       		.byte	0x4
  365 0253 57       		.byte	0x57
  366 0254 BE000000 		.4byte	0xbe
  367 0258 3E       		.byte	0x3e
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 12
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 12
 
 
  368 0259 08       		.uleb128 0x8
- 369 025a 5B000000 		.4byte	.LASF51
+ 369 025a 9B000000 		.4byte	.LASF51
  370 025e 04       		.byte	0x4
  371 025f 58       		.byte	0x58
  372 0260 BE000000 		.4byte	0xbe
  373 0264 3F       		.byte	0x3f
  374 0265 08       		.uleb128 0x8
- 375 0266 BE050000 		.4byte	.LASF52
+ 375 0266 FE050000 		.4byte	.LASF52
  376 026a 04       		.byte	0x4
  377 026b 59       		.byte	0x59
  378 026c BE000000 		.4byte	0xbe
  379 0270 40       		.byte	0x40
  380 0271 08       		.uleb128 0x8
- 381 0272 FA020000 		.4byte	.LASF53
+ 381 0272 3A030000 		.4byte	.LASF53
  382 0276 04       		.byte	0x4
  383 0277 5A       		.byte	0x5a
  384 0278 BE000000 		.4byte	0xbe
  385 027c 41       		.byte	0x41
  386 027d 08       		.uleb128 0x8
- 387 027e 87040000 		.4byte	.LASF54
+ 387 027e C7040000 		.4byte	.LASF54
  388 0282 04       		.byte	0x4
  389 0283 5B       		.byte	0x5b
  390 0284 BE000000 		.4byte	0xbe
  391 0288 42       		.byte	0x42
  392 0289 08       		.uleb128 0x8
- 393 028a 83050000 		.4byte	.LASF55
+ 393 028a C3050000 		.4byte	.LASF55
  394 028e 04       		.byte	0x4
  395 028f 5C       		.byte	0x5c
  396 0290 BE000000 		.4byte	0xbe
  397 0294 43       		.byte	0x43
  398 0295 08       		.uleb128 0x8
- 399 0296 51020000 		.4byte	.LASF56
+ 399 0296 91020000 		.4byte	.LASF56
  400 029a 04       		.byte	0x4
  401 029b 5D       		.byte	0x5d
  402 029c BE000000 		.4byte	0xbe
@@ -704,58 +704,58 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  408 02a8 EA000000 		.4byte	0xea
  409 02ac 48       		.byte	0x48
  410 02ad 08       		.uleb128 0x8
- 411 02ae 24020000 		.4byte	.LASF58
+ 411 02ae 64020000 		.4byte	.LASF58
  412 02b2 04       		.byte	0x4
  413 02b3 5F       		.byte	0x5f
  414 02b4 EA000000 		.4byte	0xea
  415 02b8 4C       		.byte	0x4c
  416 02b9 08       		.uleb128 0x8
- 417 02ba 9C0A0000 		.4byte	.LASF59
+ 417 02ba 8B0A0000 		.4byte	.LASF59
  418 02be 04       		.byte	0x4
  419 02bf 60       		.byte	0x60
  420 02c0 BE000000 		.4byte	0xbe
  421 02c4 50       		.byte	0x50
  422 02c5 08       		.uleb128 0x8
- 423 02c6 36010000 		.4byte	.LASF60
+ 423 02c6 76010000 		.4byte	.LASF60
  424 02ca 04       		.byte	0x4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 13
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 13
 
 
  425 02cb 61       		.byte	0x61
  426 02cc BE000000 		.4byte	0xbe
  427 02d0 51       		.byte	0x51
  428 02d1 08       		.uleb128 0x8
- 429 02d2 7E060000 		.4byte	.LASF61
+ 429 02d2 BE060000 		.4byte	.LASF61
  430 02d6 04       		.byte	0x4
  431 02d7 62       		.byte	0x62
  432 02d8 BE000000 		.4byte	0xbe
  433 02dc 52       		.byte	0x52
  434 02dd 08       		.uleb128 0x8
- 435 02de 590A0000 		.4byte	.LASF62
+ 435 02de 480A0000 		.4byte	.LASF62
  436 02e2 04       		.byte	0x4
  437 02e3 63       		.byte	0x63
  438 02e4 BE000000 		.4byte	0xbe
  439 02e8 53       		.byte	0x53
  440 02e9 08       		.uleb128 0x8
- 441 02ea 23080000 		.4byte	.LASF63
+ 441 02ea 12080000 		.4byte	.LASF63
  442 02ee 04       		.byte	0x4
  443 02ef 64       		.byte	0x64
  444 02f0 BE000000 		.4byte	0xbe
  445 02f4 54       		.byte	0x54
  446 02f5 08       		.uleb128 0x8
- 447 02f6 48010000 		.4byte	.LASF64
+ 447 02f6 88010000 		.4byte	.LASF64
  448 02fa 04       		.byte	0x4
  449 02fb 65       		.byte	0x65
  450 02fc BE000000 		.4byte	0xbe
  451 0300 55       		.byte	0x55
  452 0301 08       		.uleb128 0x8
- 453 0302 E2030000 		.4byte	.LASF65
+ 453 0302 22040000 		.4byte	.LASF65
  454 0306 04       		.byte	0x4
  455 0307 66       		.byte	0x66
  456 0308 BE000000 		.4byte	0xbe
  457 030c 56       		.byte	0x56
  458 030d 08       		.uleb128 0x8
- 459 030e 1C040000 		.4byte	.LASF66
+ 459 030e 5C040000 		.4byte	.LASF66
  460 0312 04       		.byte	0x4
  461 0313 67       		.byte	0x67
  462 0314 BE000000 		.4byte	0xbe
@@ -767,138 +767,138 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  468 0320 BE000000 		.4byte	0xbe
  469 0324 58       		.byte	0x58
  470 0325 08       		.uleb128 0x8
- 471 0326 43070000 		.4byte	.LASF68
+ 471 0326 83070000 		.4byte	.LASF68
  472 032a 04       		.byte	0x4
  473 032b 69       		.byte	0x69
  474 032c BE000000 		.4byte	0xbe
  475 0330 59       		.byte	0x59
  476 0331 08       		.uleb128 0x8
- 477 0332 12050000 		.4byte	.LASF69
+ 477 0332 52050000 		.4byte	.LASF69
  478 0336 04       		.byte	0x4
  479 0337 6E       		.byte	0x6e
  480 0338 D4000000 		.4byte	0xd4
  481 033c 5A       		.byte	0x5a
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 14
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 14
 
 
  482 033d 08       		.uleb128 0x8
- 483 033e F9080000 		.4byte	.LASF70
+ 483 033e E8080000 		.4byte	.LASF70
  484 0342 04       		.byte	0x4
  485 0343 6F       		.byte	0x6f
  486 0344 D4000000 		.4byte	0xd4
  487 0348 5C       		.byte	0x5c
  488 0349 08       		.uleb128 0x8
- 489 034a C0000000 		.4byte	.LASF71
+ 489 034a 00010000 		.4byte	.LASF71
  490 034e 04       		.byte	0x4
  491 034f 70       		.byte	0x70
  492 0350 BE000000 		.4byte	0xbe
  493 0354 5E       		.byte	0x5e
  494 0355 08       		.uleb128 0x8
- 495 0356 DF060000 		.4byte	.LASF72
+ 495 0356 1F070000 		.4byte	.LASF72
  496 035a 04       		.byte	0x4
  497 035b 71       		.byte	0x71
  498 035c BE000000 		.4byte	0xbe
  499 0360 5F       		.byte	0x5f
  500 0361 08       		.uleb128 0x8
- 501 0362 72050000 		.4byte	.LASF73
+ 501 0362 B2050000 		.4byte	.LASF73
  502 0366 04       		.byte	0x4
  503 0367 72       		.byte	0x72
  504 0368 BE000000 		.4byte	0xbe
  505 036c 60       		.byte	0x60
  506 036d 08       		.uleb128 0x8
- 507 036e B8060000 		.4byte	.LASF74
+ 507 036e F8060000 		.4byte	.LASF74
  508 0372 04       		.byte	0x4
  509 0373 73       		.byte	0x73
  510 0374 EA000000 		.4byte	0xea
  511 0378 64       		.byte	0x64
  512 0379 08       		.uleb128 0x8
- 513 037a E6000000 		.4byte	.LASF75
+ 513 037a 26010000 		.4byte	.LASF75
  514 037e 04       		.byte	0x4
  515 037f 76       		.byte	0x76
  516 0380 D4000000 		.4byte	0xd4
  517 0384 68       		.byte	0x68
  518 0385 08       		.uleb128 0x8
- 519 0386 D0030000 		.4byte	.LASF76
+ 519 0386 10040000 		.4byte	.LASF76
  520 038a 04       		.byte	0x4
  521 038b 77       		.byte	0x77
  522 038c D4000000 		.4byte	0xd4
  523 0390 6A       		.byte	0x6a
  524 0391 08       		.uleb128 0x8
- 525 0392 30040000 		.4byte	.LASF77
+ 525 0392 70040000 		.4byte	.LASF77
  526 0396 04       		.byte	0x4
  527 0397 78       		.byte	0x78
  528 0398 D4000000 		.4byte	0xd4
  529 039c 6C       		.byte	0x6c
  530 039d 08       		.uleb128 0x8
- 531 039e 5E040000 		.4byte	.LASF78
+ 531 039e 9E040000 		.4byte	.LASF78
  532 03a2 04       		.byte	0x4
  533 03a3 79       		.byte	0x79
  534 03a4 D4000000 		.4byte	0xd4
  535 03a8 6E       		.byte	0x6e
  536 03a9 08       		.uleb128 0x8
- 537 03aa 61070000 		.4byte	.LASF79
+ 537 03aa B5070000 		.4byte	.LASF79
  538 03ae 04       		.byte	0x4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 15
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 15
 
 
  539 03af 7B       		.byte	0x7b
  540 03b0 BE000000 		.4byte	0xbe
  541 03b4 70       		.byte	0x70
  542 03b5 08       		.uleb128 0x8
- 543 03b6 9C010000 		.4byte	.LASF80
+ 543 03b6 DC010000 		.4byte	.LASF80
  544 03ba 04       		.byte	0x4
  545 03bb 7C       		.byte	0x7c
  546 03bc BE000000 		.4byte	0xbe
  547 03c0 71       		.byte	0x71
  548 03c1 08       		.uleb128 0x8
- 549 03c2 430A0000 		.4byte	.LASF81
+ 549 03c2 320A0000 		.4byte	.LASF81
  550 03c6 04       		.byte	0x4
  551 03c7 7D       		.byte	0x7d
  552 03c8 BE000000 		.4byte	0xbe
  553 03cc 72       		.byte	0x72
  554 03cd 08       		.uleb128 0x8
- 555 03ce 4D050000 		.4byte	.LASF82
+ 555 03ce 8D050000 		.4byte	.LASF82
  556 03d2 04       		.byte	0x4
  557 03d3 7E       		.byte	0x7e
  558 03d4 BE000000 		.4byte	0xbe
  559 03d8 73       		.byte	0x73
  560 03d9 08       		.uleb128 0x8
- 561 03da 94020000 		.4byte	.LASF83
+ 561 03da D4020000 		.4byte	.LASF83
  562 03de 04       		.byte	0x4
  563 03df 80       		.byte	0x80
  564 03e0 D4000000 		.4byte	0xd4
  565 03e4 74       		.byte	0x74
  566 03e5 08       		.uleb128 0x8
- 567 03e6 8B080000 		.4byte	.LASF84
+ 567 03e6 7A080000 		.4byte	.LASF84
  568 03ea 04       		.byte	0x4
  569 03eb 81       		.byte	0x81
  570 03ec D4000000 		.4byte	0xd4
  571 03f0 76       		.byte	0x76
  572 03f1 08       		.uleb128 0x8
- 573 03f2 74020000 		.4byte	.LASF85
+ 573 03f2 B4020000 		.4byte	.LASF85
  574 03f6 04       		.byte	0x4
  575 03f7 82       		.byte	0x82
  576 03f8 D4000000 		.4byte	0xd4
  577 03fc 78       		.byte	0x78
  578 03fd 08       		.uleb128 0x8
- 579 03fe 88000000 		.4byte	.LASF86
+ 579 03fe C8000000 		.4byte	.LASF86
  580 0402 04       		.byte	0x4
  581 0403 83       		.byte	0x83
  582 0404 D4000000 		.4byte	0xd4
  583 0408 7A       		.byte	0x7a
  584 0409 08       		.uleb128 0x8
- 585 040a DD090000 		.4byte	.LASF87
+ 585 040a CC090000 		.4byte	.LASF87
  586 040e 04       		.byte	0x4
  587 040f 86       		.byte	0x86
  588 0410 BE000000 		.4byte	0xbe
  589 0414 7C       		.byte	0x7c
  590 0415 08       		.uleb128 0x8
- 591 0416 33090000 		.4byte	.LASF88
+ 591 0416 22090000 		.4byte	.LASF88
  592 041a 04       		.byte	0x4
  593 041b 87       		.byte	0x87
  594 041c BE000000 		.4byte	0xbe
  595 0420 7D       		.byte	0x7d
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 16
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 16
 
 
  596 0421 08       		.uleb128 0x8
@@ -908,153 +908,153 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  600 0428 BE000000 		.4byte	0xbe
  601 042c 7E       		.byte	0x7e
  602 042d 08       		.uleb128 0x8
- 603 042e D0020000 		.4byte	.LASF90
+ 603 042e 10030000 		.4byte	.LASF90
  604 0432 04       		.byte	0x4
  605 0433 89       		.byte	0x89
  606 0434 BE000000 		.4byte	0xbe
  607 0438 7F       		.byte	0x7f
  608 0439 08       		.uleb128 0x8
- 609 043a 53030000 		.4byte	.LASF91
+ 609 043a 93030000 		.4byte	.LASF91
  610 043e 04       		.byte	0x4
  611 043f 8A       		.byte	0x8a
  612 0440 BE000000 		.4byte	0xbe
  613 0444 80       		.byte	0x80
  614 0445 08       		.uleb128 0x8
- 615 0446 BE040000 		.4byte	.LASF92
+ 615 0446 FE040000 		.4byte	.LASF92
  616 044a 04       		.byte	0x4
  617 044b 8D       		.byte	0x8d
  618 044c EA000000 		.4byte	0xea
  619 0450 84       		.byte	0x84
  620 0451 08       		.uleb128 0x8
- 621 0452 0D020000 		.4byte	.LASF93
+ 621 0452 4D020000 		.4byte	.LASF93
  622 0456 04       		.byte	0x4
  623 0457 8E       		.byte	0x8e
  624 0458 EA000000 		.4byte	0xea
  625 045c 88       		.byte	0x88
  626 045d 08       		.uleb128 0x8
- 627 045e C8090000 		.4byte	.LASF94
+ 627 045e B7090000 		.4byte	.LASF94
  628 0462 04       		.byte	0x4
  629 0463 8F       		.byte	0x8f
  630 0464 EA000000 		.4byte	0xea
  631 0468 8C       		.byte	0x8c
  632 0469 08       		.uleb128 0x8
- 633 046a F4040000 		.4byte	.LASF95
+ 633 046a 34050000 		.4byte	.LASF95
  634 046e 04       		.byte	0x4
  635 046f 90       		.byte	0x90
  636 0470 EA000000 		.4byte	0xea
  637 0474 90       		.byte	0x90
  638 0475 08       		.uleb128 0x8
- 639 0476 14030000 		.4byte	.LASF96
+ 639 0476 54030000 		.4byte	.LASF96
  640 047a 04       		.byte	0x4
  641 047b 91       		.byte	0x91
  642 047c EA000000 		.4byte	0xea
  643 0480 94       		.byte	0x94
  644 0481 08       		.uleb128 0x8
- 645 0482 A8040000 		.4byte	.LASF97
+ 645 0482 E8040000 		.4byte	.LASF97
  646 0486 04       		.byte	0x4
  647 0487 92       		.byte	0x92
  648 0488 EA000000 		.4byte	0xea
  649 048c 98       		.byte	0x98
  650 048d 08       		.uleb128 0x8
- 651 048e 030A0000 		.4byte	.LASF98
+ 651 048e F2090000 		.4byte	.LASF98
  652 0492 04       		.byte	0x4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 17
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 17
 
 
  653 0493 93       		.byte	0x93
  654 0494 EA000000 		.4byte	0xea
  655 0498 9C       		.byte	0x9c
  656 0499 08       		.uleb128 0x8
- 657 049a 13010000 		.4byte	.LASF99
+ 657 049a 53010000 		.4byte	.LASF99
  658 049e 04       		.byte	0x4
  659 049f 94       		.byte	0x94
  660 04a0 EA000000 		.4byte	0xea
  661 04a4 A0       		.byte	0xa0
  662 04a5 08       		.uleb128 0x8
- 663 04a6 C5010000 		.4byte	.LASF100
+ 663 04a6 05020000 		.4byte	.LASF100
  664 04aa 04       		.byte	0x4
  665 04ab 95       		.byte	0x95
  666 04ac D4000000 		.4byte	0xd4
  667 04b0 A4       		.byte	0xa4
  668 04b1 08       		.uleb128 0x8
- 669 04b2 93040000 		.4byte	.LASF101
+ 669 04b2 D3040000 		.4byte	.LASF101
  670 04b6 04       		.byte	0x4
  671 04b7 96       		.byte	0x96
  672 04b8 D4000000 		.4byte	0xd4
  673 04bc A6       		.byte	0xa6
  674 04bd 08       		.uleb128 0x8
- 675 04be D3060000 		.4byte	.LASF102
+ 675 04be 13070000 		.4byte	.LASF102
  676 04c2 04       		.byte	0x4
  677 04c3 97       		.byte	0x97
  678 04c4 D4000000 		.4byte	0xd4
  679 04c8 A8       		.byte	0xa8
  680 04c9 08       		.uleb128 0x8
- 681 04ca 59080000 		.4byte	.LASF103
+ 681 04ca 48080000 		.4byte	.LASF103
  682 04ce 04       		.byte	0x4
  683 04cf 98       		.byte	0x98
  684 04d0 D4000000 		.4byte	0xd4
  685 04d4 AA       		.byte	0xaa
  686 04d5 08       		.uleb128 0x8
- 687 04d6 3F040000 		.4byte	.LASF104
+ 687 04d6 7F040000 		.4byte	.LASF104
  688 04da 04       		.byte	0x4
  689 04db 99       		.byte	0x99
  690 04dc D4000000 		.4byte	0xd4
  691 04e0 AC       		.byte	0xac
  692 04e1 08       		.uleb128 0x8
- 693 04e2 64050000 		.4byte	.LASF105
+ 693 04e2 A4050000 		.4byte	.LASF105
  694 04e6 04       		.byte	0x4
  695 04e7 9A       		.byte	0x9a
  696 04e8 D4000000 		.4byte	0xd4
  697 04ec AE       		.byte	0xae
  698 04ed 08       		.uleb128 0x8
- 699 04ee 18090000 		.4byte	.LASF106
+ 699 04ee 07090000 		.4byte	.LASF106
  700 04f2 04       		.byte	0x4
  701 04f3 9D       		.byte	0x9d
  702 04f4 D4000000 		.4byte	0xd4
  703 04f8 B0       		.byte	0xb0
  704 04f9 08       		.uleb128 0x8
- 705 04fa 39000000 		.4byte	.LASF107
+ 705 04fa 97070000 		.4byte	.LASF107
  706 04fe 04       		.byte	0x4
  707 04ff 9E       		.byte	0x9e
  708 0500 EA000000 		.4byte	0xea
  709 0504 B4       		.byte	0xb4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 18
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 18
 
 
  710 0505 00       		.byte	0
  711 0506 04       		.uleb128 0x4
- 712 0507 77040000 		.4byte	.LASF108
+ 712 0507 B7040000 		.4byte	.LASF108
  713 050b 04       		.byte	0x4
  714 050c 9F       		.byte	0x9f
  715 050d F5000000 		.4byte	0xf5
  716 0511 03       		.uleb128 0x3
  717 0512 04       		.byte	0x4
  718 0513 04       		.byte	0x4
- 719 0514 B2060000 		.4byte	.LASF109
+ 719 0514 F2060000 		.4byte	.LASF109
  720 0518 03       		.uleb128 0x3
  721 0519 08       		.byte	0x8
  722 051a 04       		.byte	0x4
- 723 051b 6D020000 		.4byte	.LASF110
+ 723 051b AD020000 		.4byte	.LASF110
  724 051f 09       		.uleb128 0x9
  725 0520 02       		.byte	0x2
  726 0521 05       		.byte	0x5
  727 0522 6401     		.2byte	0x164
  728 0524 43050000 		.4byte	0x543
  729 0528 0A       		.uleb128 0xa
- 730 0529 190A0000 		.4byte	.LASF111
+ 730 0529 080A0000 		.4byte	.LASF111
  731 052d 05       		.byte	0x5
  732 052e 6E01     		.2byte	0x16e
  733 0530 BE000000 		.4byte	0xbe
  734 0534 00       		.byte	0
  735 0535 0A       		.uleb128 0xa
- 736 0536 D5040000 		.4byte	.LASF112
+ 736 0536 15050000 		.4byte	.LASF112
  737 053a 05       		.byte	0x5
  738 053b 7201     		.2byte	0x172
  739 053d BE000000 		.4byte	0xbe
  740 0541 01       		.byte	0x1
  741 0542 00       		.byte	0
  742 0543 0B       		.uleb128 0xb
- 743 0544 9D000000 		.4byte	.LASF113
+ 743 0544 DD000000 		.4byte	.LASF113
  744 0548 05       		.byte	0x5
  745 0549 7401     		.2byte	0x174
  746 054b 1F050000 		.4byte	0x51f
@@ -1065,23 +1065,23 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  751 0556 7E       		.byte	0x7e
  752 0557 74050000 		.4byte	0x574
  753 055b 0D       		.uleb128 0xd
- 754 055c A7090000 		.4byte	.LASF114
+ 754 055c 96090000 		.4byte	.LASF114
  755 0560 00       		.byte	0
  756 0561 0D       		.uleb128 0xd
- 757 0562 2E050000 		.4byte	.LASF115
+ 757 0562 6E050000 		.4byte	.LASF115
  758 0566 01       		.byte	0x1
  759 0567 0D       		.uleb128 0xd
- 760 0568 8A090000 		.4byte	.LASF116
+ 760 0568 79090000 		.4byte	.LASF116
  761 056c 02       		.byte	0x2
  762 056d 0D       		.uleb128 0xd
- 763 056e DA010000 		.4byte	.LASF117
+ 763 056e 1A020000 		.4byte	.LASF117
  764 0572 03       		.byte	0x3
  765 0573 00       		.byte	0
  766 0574 04       		.uleb128 0x4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 19
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 19
 
 
- 767 0575 32020000 		.4byte	.LASF118
+ 767 0575 72020000 		.4byte	.LASF118
  768 0579 06       		.byte	0x6
  769 057a 83       		.byte	0x83
  770 057b 4F050000 		.4byte	0x54f
@@ -1092,58 +1092,58 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  775 0586 87       		.byte	0x87
  776 0587 BC050000 		.4byte	0x5bc
  777 058b 0D       		.uleb128 0xd
- 778 058c 44090000 		.4byte	.LASF119
+ 778 058c 33090000 		.4byte	.LASF119
  779 0590 00       		.byte	0
  780 0591 0D       		.uleb128 0xd
- 781 0592 6B0A0000 		.4byte	.LASF120
+ 781 0592 5A0A0000 		.4byte	.LASF120
  782 0596 01       		.byte	0x1
  783 0597 0D       		.uleb128 0xd
- 784 0598 80030000 		.4byte	.LASF121
+ 784 0598 C0030000 		.4byte	.LASF121
  785 059c 02       		.byte	0x2
  786 059d 0D       		.uleb128 0xd
- 787 059e 29030000 		.4byte	.LASF122
+ 787 059e 69030000 		.4byte	.LASF122
  788 05a2 03       		.byte	0x3
  789 05a3 0D       		.uleb128 0xd
- 790 05a4 A6020000 		.4byte	.LASF123
+ 790 05a4 E6020000 		.4byte	.LASF123
  791 05a8 04       		.byte	0x4
  792 05a9 0D       		.uleb128 0xd
- 793 05aa FD060000 		.4byte	.LASF124
+ 793 05aa 3D070000 		.4byte	.LASF124
  794 05ae 05       		.byte	0x5
  795 05af 0D       		.uleb128 0xd
- 796 05b0 9C030000 		.4byte	.LASF125
+ 796 05b0 DC030000 		.4byte	.LASF125
  797 05b4 06       		.byte	0x6
  798 05b5 0D       		.uleb128 0xd
- 799 05b6 8E060000 		.4byte	.LASF126
+ 799 05b6 CE060000 		.4byte	.LASF126
  800 05ba 07       		.byte	0x7
  801 05bb 00       		.byte	0
  802 05bc 04       		.uleb128 0x4
- 803 05bd 8E050000 		.4byte	.LASF127
+ 803 05bd CE050000 		.4byte	.LASF127
  804 05c1 06       		.byte	0x6
  805 05c2 90       		.byte	0x90
  806 05c3 7F050000 		.4byte	0x57f
  807 05c7 03       		.uleb128 0x3
  808 05c8 01       		.byte	0x1
  809 05c9 02       		.byte	0x2
- 810 05ca 27070000 		.4byte	.LASF128
+ 810 05ca 67070000 		.4byte	.LASF128
  811 05ce 0B       		.uleb128 0xb
- 812 05cf F6000000 		.4byte	.LASF129
+ 812 05cf 36010000 		.4byte	.LASF129
  813 05d3 07       		.byte	0x7
  814 05d4 4F02     		.2byte	0x24f
  815 05d6 B7000000 		.4byte	0xb7
  816 05da 0E       		.uleb128 0xe
- 817 05db 02090000 		.4byte	.LASF140
+ 817 05db F1080000 		.4byte	.LASF140
  818 05df 01       		.byte	0x1
  819 05e0 E5       		.byte	0xe5
  820 05e1 00000000 		.4byte	.LFB253
  821 05e5 18000000 		.4byte	.LFE253-.LFB253
  822 05e9 01       		.uleb128 0x1
  823 05ea 9C       		.byte	0x9c
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 20
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 20
 
 
  824 05eb 08060000 		.4byte	0x608
  825 05ef 0F       		.uleb128 0xf
- 826 05f0 F2090000 		.4byte	.LASF141
+ 826 05f0 E1090000 		.4byte	.LASF141
  827 05f4 01       		.byte	0x1
  828 05f5 E8       		.byte	0xe8
  829 05f6 C7050000 		.4byte	0x5c7
@@ -1153,7 +1153,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  833 0603 8B060000 		.4byte	0x68b
  834 0607 00       		.byte	0
  835 0608 11       		.uleb128 0x11
- 836 0609 C9060000 		.4byte	.LASF130
+ 836 0609 09070000 		.4byte	.LASF130
  837 060d 04       		.byte	0x4
  838 060e A7       		.byte	0xa7
  839 060f 13060000 		.4byte	0x613
@@ -1163,14 +1163,14 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  843 0619 12       		.uleb128 0x12
  844 061a 06050000 		.4byte	0x506
  845 061e 13       		.uleb128 0x13
- 846 061f 29010000 		.4byte	.LASF131
+ 846 061f 69010000 		.4byte	.LASF131
  847 0623 08       		.byte	0x8
  848 0624 F907     		.2byte	0x7f9
  849 0626 2A060000 		.4byte	0x62a
  850 062a 14       		.uleb128 0x14
  851 062b DF000000 		.4byte	0xdf
  852 062f 13       		.uleb128 0x13
- 853 0630 A8080000 		.4byte	.LASF132
+ 853 0630 97080000 		.4byte	.LASF132
  854 0634 06       		.byte	0x6
  855 0635 2202     		.2byte	0x222
  856 0637 74050000 		.4byte	0x574
@@ -1182,7 +1182,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  862 0649 00       		.byte	0
  863 064a 00       		.byte	0
  864 064b 13       		.uleb128 0x13
- 865 064c 63090000 		.4byte	.LASF133
+ 865 064c 52090000 		.4byte	.LASF133
  866 0650 06       		.byte	0x6
  867 0651 2C02     		.2byte	0x22c
  868 0653 3B060000 		.4byte	0x63b
@@ -1194,26 +1194,26 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  874 0665 00       		.byte	0
  875 0666 00       		.byte	0
  876 0667 13       		.uleb128 0x13
- 877 0668 4D040000 		.4byte	.LASF134
+ 877 0668 8D040000 		.4byte	.LASF134
  878 066c 06       		.byte	0x6
  879 066d 2D02     		.2byte	0x22d
  880 066f 57060000 		.4byte	0x657
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 21
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 21
 
 
  881 0673 13       		.uleb128 0x13
- 882 0674 72080000 		.4byte	.LASF135
+ 882 0674 61080000 		.4byte	.LASF135
  883 0678 06       		.byte	0x6
  884 0679 5202     		.2byte	0x252
  885 067b BE000000 		.4byte	0xbe
  886 067f 13       		.uleb128 0x13
- 887 0680 7E010000 		.4byte	.LASF136
+ 887 0680 BE010000 		.4byte	.LASF136
  888 0684 07       		.byte	0x7
  889 0685 6602     		.2byte	0x266
  890 0687 CE050000 		.4byte	0x5ce
  891 068b 17       		.uleb128 0x17
- 892 068c C5080000 		.4byte	.LASF142
- 893 0690 C5080000 		.4byte	.LASF142
+ 892 068c B4080000 		.4byte	.LASF142
+ 893 0690 B4080000 		.4byte	.LASF142
  894 0694 09       		.byte	0x9
  895 0695 87       		.byte	0x87
  896 0696 00       		.byte	0
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  935 0024 0B       		.uleb128 0xb
  936 0025 03       		.uleb128 0x3
  937 0026 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 22
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 22
 
 
  938 0027 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  992 005d 13       		.uleb128 0x13
  993 005e 38       		.uleb128 0x38
  994 005f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 23
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 23
 
 
  995 0060 00       		.byte	0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  1049 0096 01       		.uleb128 0x1
  1050 0097 13       		.uleb128 0x13
  1051 0098 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 24
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 24
 
 
  1052 0099 00       		.byte	0
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  1106 00d2 01       		.uleb128 0x1
  1107 00d3 31       		.uleb128 0x31
  1108 00d4 13       		.uleb128 0x13
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 25
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 25
 
 
  1109 00d5 00       		.byte	0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  1163 010b 13       		.uleb128 0x13
  1164 010c 01       		.uleb128 0x1
  1165 010d 13       		.uleb128 0x13
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 26
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 26
 
 
  1166 010e 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  1220 001c 00000000 		.4byte	0
  1221              		.section	.debug_ranges,"",%progbits
  1222              	.Ldebug_ranges0:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 27
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 27
 
 
  1223 0000 00000000 		.4byte	.LFB253
@@ -1590,778 +1590,776 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 1
  1235      6667496E 
  1235      4F666673 
  1235      657400
- 1236              	.LASF107:
- 1237 0039 6970634C 		.ascii	"ipcLockStatusOffset\000"
- 1237      6F636B53 
- 1237      74617475 
- 1237      734F6666 
- 1237      73657400 
- 1238              	.LASF33:
- 1239 004d 63727970 		.ascii	"cryptoVersion\000"
- 1239      746F5665 
- 1239      7273696F 
- 1239      6E00
- 1240              	.LASF51:
- 1241 005b 70657269 		.ascii	"periClockNr\000"
- 1241      436C6F63 
- 1241      6B4E7200 
- 1242              	.LASF29:
- 1243 0067 70617373 		.ascii	"passBase\000"
- 1243      42617365 
- 1243      00
- 1244              	.LASF42:
- 1245 0070 63707573 		.ascii	"cpussIpcIrqNr\000"
- 1245      73497063 
- 1245      4972714E 
- 1245      7200
- 1246              	.LASF5:
- 1247 007e 5F5F7569 		.ascii	"__uint8_t\000"
- 1247      6E74385F 
- 1247      7400
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 28
+ 1236              	.LASF139:
+ 1237 0039 443A5C4F 		.ascii	"D:\\OneDrive - UNSW\\Documents\\thesis\\VDAC_Saw_Ex"
+ 1237      6E654472 
+ 1237      69766520 
+ 1237      2D20554E 
+ 1237      53575C44 
+ 1238 0068 706F7274 		.ascii	"port.cydsn\\Bluetooth_Prototype.cydsn\000"
+ 1238      2E637964 
+ 1238      736E5C42 
+ 1238      6C756574 
+ 1238      6F6F7468 
+ 1239              	.LASF33:
+ 1240 008d 63727970 		.ascii	"cryptoVersion\000"
+ 1240      746F5665 
+ 1240      7273696F 
+ 1240      6E00
+ 1241              	.LASF51:
+ 1242 009b 70657269 		.ascii	"periClockNr\000"
+ 1242      436C6F63 
+ 1242      6B4E7200 
+ 1243              	.LASF29:
+ 1244 00a7 70617373 		.ascii	"passBase\000"
+ 1244      42617365 
+ 1244      00
+ 1245              	.LASF42:
+ 1246 00b0 63707573 		.ascii	"cpussIpcIrqNr\000"
+ 1246      73497063 
+ 1246      4972714E 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 28
 
 
- 1248              	.LASF86:
- 1249 0088 70657269 		.ascii	"periDiv24_5CtlOffset\000"
- 1249      44697632 
- 1249      345F3543 
- 1249      746C4F66 
- 1249      66736574 
- 1250              	.LASF113:
- 1251 009d 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
- 1251      74635F62 
- 1251      6C655F63 
- 1251      6F6E6E5F 
- 1251      68616E64 
- 1252              	.LASF22:
- 1253 00b6 63707573 		.ascii	"cpussBase\000"
- 1253      73426173 
- 1253      6500
- 1254              	.LASF71:
- 1255 00c0 64774368 		.ascii	"dwChCtlPrioPos\000"
- 1255      43746C50 
- 1255      72696F50 
- 1255      6F7300
- 1256              	.LASF14:
- 1257 00cf 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1257      206C6F6E 
- 1257      6720756E 
- 1257      7369676E 
- 1257      65642069 
- 1258              	.LASF75:
- 1259 00e6 70657269 		.ascii	"periTrCmdOffset\000"
- 1259      5472436D 
- 1259      644F6666 
- 1259      73657400 
- 1260              	.LASF129:
- 1261 00f6 63795F62 		.ascii	"cy_ble_app_notify_callback_t\000"
- 1261      6C655F61 
- 1261      70705F6E 
- 1261      6F746966 
- 1261      795F6361 
- 1262              	.LASF99:
- 1263 0113 63707573 		.ascii	"cpussSysTickCtlOffset\000"
- 1263      73537973 
- 1263      5469636B 
- 1263      43746C4F 
- 1263      66667365 
- 1264              	.LASF131:
- 1265 0129 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1265      52784275 
- 1265      66666572 
- 1265      00
- 1266              	.LASF60:
- 1267 0136 666C6173 		.ascii	"flashPipeRequired\000"
- 1267      68506970 
- 1267      65526571 
- 1267      75697265 
- 1267      6400
- 1268              	.LASF64:
- 1269 0148 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 29
+ 1246      7200
+ 1247              	.LASF5:
+ 1248 00be 5F5F7569 		.ascii	"__uint8_t\000"
+ 1248      6E74385F 
+ 1248      7400
+ 1249              	.LASF86:
+ 1250 00c8 70657269 		.ascii	"periDiv24_5CtlOffset\000"
+ 1250      44697632 
+ 1250      345F3543 
+ 1250      746C4F66 
+ 1250      66736574 
+ 1251              	.LASF113:
+ 1252 00dd 63795F73 		.ascii	"cy_stc_ble_conn_handle_t\000"
+ 1252      74635F62 
+ 1252      6C655F63 
+ 1252      6F6E6E5F 
+ 1252      68616E64 
+ 1253              	.LASF22:
+ 1254 00f6 63707573 		.ascii	"cpussBase\000"
+ 1254      73426173 
+ 1254      6500
+ 1255              	.LASF71:
+ 1256 0100 64774368 		.ascii	"dwChCtlPrioPos\000"
+ 1256      43746C50 
+ 1256      72696F50 
+ 1256      6F7300
+ 1257              	.LASF14:
+ 1258 010f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1258      206C6F6E 
+ 1258      6720756E 
+ 1258      7369676E 
+ 1258      65642069 
+ 1259              	.LASF75:
+ 1260 0126 70657269 		.ascii	"periTrCmdOffset\000"
+ 1260      5472436D 
+ 1260      644F6666 
+ 1260      73657400 
+ 1261              	.LASF129:
+ 1262 0136 63795F62 		.ascii	"cy_ble_app_notify_callback_t\000"
+ 1262      6C655F61 
+ 1262      70705F6E 
+ 1262      6F746966 
+ 1262      795F6361 
+ 1263              	.LASF99:
+ 1264 0153 63707573 		.ascii	"cpussSysTickCtlOffset\000"
+ 1264      73537973 
+ 1264      5469636B 
+ 1264      43746C4F 
+ 1264      66667365 
+ 1265              	.LASF131:
+ 1266 0169 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1266      52784275 
+ 1266      66666572 
+ 1266      00
+ 1267              	.LASF60:
+ 1268 0176 666C6173 		.ascii	"flashPipeRequired\000"
+ 1268      68506970 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 29
 
 
- 1269      6843746C 
- 1269      4D61696E 
- 1269      57733046 
- 1269      72657100 
- 1270              	.LASF18:
- 1271 015c 696E7431 		.ascii	"int16_t\000"
- 1271      365F7400 
- 1272              	.LASF1:
- 1273 0164 6C6F6E67 		.ascii	"long long int\000"
- 1273      206C6F6E 
- 1273      6720696E 
- 1273      7400
- 1274              	.LASF3:
- 1275 0172 7369676E 		.ascii	"signed char\000"
- 1275      65642063 
- 1275      68617200 
- 1276              	.LASF136:
- 1277 017e 43795F42 		.ascii	"Cy_BLE_HostRegisteredCallback\000"
- 1277      4C455F48 
- 1277      6F737452 
- 1277      65676973 
- 1277      74657265 
- 1278              	.LASF80:
- 1279 019c 70657269 		.ascii	"periDivCmdTypeSelPos\000"
- 1279      44697643 
- 1279      6D645479 
- 1279      70655365 
- 1279      6C506F73 
- 1280              	.LASF26:
- 1281 01b1 70726F74 		.ascii	"protBase\000"
- 1281      42617365 
- 1281      00
- 1282              	.LASF38:
- 1283 01ba 69706356 		.ascii	"ipcVersion\000"
- 1283      65727369 
- 1283      6F6E00
- 1284              	.LASF100:
- 1285 01c5 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
- 1285      73436D30 
- 1285      4E6D6943 
- 1285      746C4F66 
- 1285      66736574 
- 1286              	.LASF117:
- 1287 01da 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
- 1287      4C455F41 
- 1287      44565F53 
- 1287      54415445 
- 1287      5F53544F 
- 1288              	.LASF27:
- 1289 01fa 6873696F 		.ascii	"hsiomBase\000"
- 1289      6D426173 
- 1289      6500
- 1290              	.LASF11:
- 1291 0204 6C6F6E67 		.ascii	"long int\000"
- 1291      20696E74 
- 1291      00
- 1292              	.LASF93:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 30
+ 1268      65526571 
+ 1268      75697265 
+ 1268      6400
+ 1269              	.LASF64:
+ 1270 0188 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
+ 1270      6843746C 
+ 1270      4D61696E 
+ 1270      57733046 
+ 1270      72657100 
+ 1271              	.LASF18:
+ 1272 019c 696E7431 		.ascii	"int16_t\000"
+ 1272      365F7400 
+ 1273              	.LASF1:
+ 1274 01a4 6C6F6E67 		.ascii	"long long int\000"
+ 1274      206C6F6E 
+ 1274      6720696E 
+ 1274      7400
+ 1275              	.LASF3:
+ 1276 01b2 7369676E 		.ascii	"signed char\000"
+ 1276      65642063 
+ 1276      68617200 
+ 1277              	.LASF136:
+ 1278 01be 43795F42 		.ascii	"Cy_BLE_HostRegisteredCallback\000"
+ 1278      4C455F48 
+ 1278      6F737452 
+ 1278      65676973 
+ 1278      74657265 
+ 1279              	.LASF80:
+ 1280 01dc 70657269 		.ascii	"periDivCmdTypeSelPos\000"
+ 1280      44697643 
+ 1280      6D645479 
+ 1280      70655365 
+ 1280      6C506F73 
+ 1281              	.LASF26:
+ 1282 01f1 70726F74 		.ascii	"protBase\000"
+ 1282      42617365 
+ 1282      00
+ 1283              	.LASF38:
+ 1284 01fa 69706356 		.ascii	"ipcVersion\000"
+ 1284      65727369 
+ 1284      6F6E00
+ 1285              	.LASF100:
+ 1286 0205 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
+ 1286      73436D30 
+ 1286      4E6D6943 
+ 1286      746C4F66 
+ 1286      66736574 
+ 1287              	.LASF117:
+ 1288 021a 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOP_INITIATED\000"
+ 1288      4C455F41 
+ 1288      44565F53 
+ 1288      54415445 
+ 1288      5F53544F 
+ 1289              	.LASF27:
+ 1290 023a 6873696F 		.ascii	"hsiomBase\000"
+ 1290      6D426173 
+ 1290      6500
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 30
 
 
- 1293 020d 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
- 1293      73436D34 
- 1293      436C6F63 
- 1293      6B43746C 
- 1293      4F666673 
- 1294              	.LASF58:
- 1295 0224 63727970 		.ascii	"cryptoMemSize\000"
- 1295      746F4D65 
- 1295      6D53697A 
- 1295      6500
- 1296              	.LASF118:
- 1297 0232 63795F65 		.ascii	"cy_en_ble_adv_state_t\000"
- 1297      6E5F626C 
- 1297      655F6164 
- 1297      765F7374 
- 1297      6174655F 
- 1298              	.LASF24:
- 1299 0248 70657269 		.ascii	"periBase\000"
- 1299      42617365 
- 1299      00
- 1300              	.LASF56:
- 1301 0251 73797350 		.ascii	"sysPmSimoPresent\000"
- 1301      6D53696D 
- 1301      6F507265 
- 1301      73656E74 
- 1301      00
- 1302              	.LASF46:
- 1303 0262 63707573 		.ascii	"cpussFmIrq\000"
- 1303      73466D49 
- 1303      727100
- 1304              	.LASF110:
- 1305 026d 646F7562 		.ascii	"double\000"
- 1305      6C6500
- 1306              	.LASF85:
- 1307 0274 70657269 		.ascii	"periDiv16_5CtlOffset\000"
- 1307      44697631 
- 1307      365F3543 
- 1307      746C4F66 
- 1307      66736574 
- 1308              	.LASF49:
- 1309 0289 73727373 		.ascii	"srssNumPll\000"
- 1309      4E756D50 
- 1309      6C6C00
- 1310              	.LASF83:
- 1311 0294 70657269 		.ascii	"periDiv8CtlOffset\000"
- 1311      44697638 
- 1311      43746C4F 
- 1311      66667365 
- 1311      7400
- 1312              	.LASF123:
- 1313 02a6 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
- 1313      4C455F43 
- 1313      4F4E4E5F 
- 1313      53544154 
- 1313      455F434C 
- 1314              	.LASF90:
- 1315 02d0 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 31
+ 1291              	.LASF11:
+ 1292 0244 6C6F6E67 		.ascii	"long int\000"
+ 1292      20696E74 
+ 1292      00
+ 1293              	.LASF93:
+ 1294 024d 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
+ 1294      73436D34 
+ 1294      436C6F63 
+ 1294      6B43746C 
+ 1294      4F666673 
+ 1295              	.LASF58:
+ 1296 0264 63727970 		.ascii	"cryptoMemSize\000"
+ 1296      746F4D65 
+ 1296      6D53697A 
+ 1296      6500
+ 1297              	.LASF118:
+ 1298 0272 63795F65 		.ascii	"cy_en_ble_adv_state_t\000"
+ 1298      6E5F626C 
+ 1298      655F6164 
+ 1298      765F7374 
+ 1298      6174655F 
+ 1299              	.LASF24:
+ 1300 0288 70657269 		.ascii	"periBase\000"
+ 1300      42617365 
+ 1300      00
+ 1301              	.LASF56:
+ 1302 0291 73797350 		.ascii	"sysPmSimoPresent\000"
+ 1302      6D53696D 
+ 1302      6F507265 
+ 1302      73656E74 
+ 1302      00
+ 1303              	.LASF46:
+ 1304 02a2 63707573 		.ascii	"cpussFmIrq\000"
+ 1304      73466D49 
+ 1304      727100
+ 1305              	.LASF110:
+ 1306 02ad 646F7562 		.ascii	"double\000"
+ 1306      6C6500
+ 1307              	.LASF85:
+ 1308 02b4 70657269 		.ascii	"periDiv16_5CtlOffset\000"
+ 1308      44697631 
+ 1308      365F3543 
+ 1308      746C4F66 
+ 1308      66736574 
+ 1309              	.LASF49:
+ 1310 02c9 73727373 		.ascii	"srssNumPll\000"
+ 1310      4E756D50 
+ 1310      6C6C00
+ 1311              	.LASF83:
+ 1312 02d4 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 1312      44697638 
+ 1312      43746C4F 
+ 1312      66667365 
+ 1312      7400
+ 1313              	.LASF123:
+ 1314 02e6 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_INCL_DISCOVERING\000"
+ 1314      4C455F43 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 31
 
 
- 1315      50727443 
- 1315      66674F75 
- 1315      744F6666 
- 1315      73657400 
- 1316              	.LASF23:
- 1317 02e4 666C6173 		.ascii	"flashcBase\000"
- 1317      68634261 
- 1317      736500
- 1318              	.LASF12:
- 1319 02ef 5F5F7569 		.ascii	"__uint32_t\000"
- 1319      6E743332 
- 1319      5F7400
- 1320              	.LASF53:
- 1321 02fa 70617373 		.ascii	"passSarChannels\000"
- 1321      53617243 
- 1321      68616E6E 
- 1321      656C7300 
- 1322              	.LASF6:
- 1323 030a 5F5F696E 		.ascii	"__int16_t\000"
- 1323      7431365F 
- 1323      7400
- 1324              	.LASF96:
- 1325 0314 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
- 1325      73436D34 
- 1325      50777243 
- 1325      746C4F66 
- 1325      66736574 
- 1326              	.LASF122:
- 1327 0329 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_SRVC_DISCOVERING\000"
- 1327      4C455F43 
- 1327      4F4E4E5F 
- 1327      53544154 
- 1327      455F434C 
- 1328              	.LASF91:
- 1329 0353 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
- 1329      50727443 
- 1329      66675369 
- 1329      6F4F6666 
- 1329      73657400 
- 1330              	.LASF43:
- 1331 0367 63707573 		.ascii	"cpussDwChNr\000"
- 1331      73447743 
- 1331      684E7200 
- 1332              	.LASF0:
- 1333 0373 756E7369 		.ascii	"unsigned int\000"
- 1333      676E6564 
- 1333      20696E74 
- 1333      00
- 1334              	.LASF121:
- 1335 0380 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
- 1335      4C455F43 
- 1335      4F4E4E5F 
- 1335      53544154 
- 1335      455F434F 
- 1336              	.LASF125:
- 1337 039c 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DESCR_DISCOVERING\000"
- 1337      4C455F43 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 32
+ 1314      4F4E4E5F 
+ 1314      53544154 
+ 1314      455F434C 
+ 1315              	.LASF90:
+ 1316 0310 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
+ 1316      50727443 
+ 1316      66674F75 
+ 1316      744F6666 
+ 1316      73657400 
+ 1317              	.LASF23:
+ 1318 0324 666C6173 		.ascii	"flashcBase\000"
+ 1318      68634261 
+ 1318      736500
+ 1319              	.LASF12:
+ 1320 032f 5F5F7569 		.ascii	"__uint32_t\000"
+ 1320      6E743332 
+ 1320      5F7400
+ 1321              	.LASF53:
+ 1322 033a 70617373 		.ascii	"passSarChannels\000"
+ 1322      53617243 
+ 1322      68616E6E 
+ 1322      656C7300 
+ 1323              	.LASF6:
+ 1324 034a 5F5F696E 		.ascii	"__int16_t\000"
+ 1324      7431365F 
+ 1324      7400
+ 1325              	.LASF96:
+ 1326 0354 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 1326      73436D34 
+ 1326      50777243 
+ 1326      746C4F66 
+ 1326      66736574 
+ 1327              	.LASF122:
+ 1328 0369 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_SRVC_DISCOVERING\000"
+ 1328      4C455F43 
+ 1328      4F4E4E5F 
+ 1328      53544154 
+ 1328      455F434C 
+ 1329              	.LASF91:
+ 1330 0393 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
+ 1330      50727443 
+ 1330      66675369 
+ 1330      6F4F6666 
+ 1330      73657400 
+ 1331              	.LASF43:
+ 1332 03a7 63707573 		.ascii	"cpussDwChNr\000"
+ 1332      73447743 
+ 1332      684E7200 
+ 1333              	.LASF0:
+ 1334 03b3 756E7369 		.ascii	"unsigned int\000"
+ 1334      676E6564 
+ 1334      20696E74 
+ 1334      00
+ 1335              	.LASF121:
+ 1336 03c0 43595F42 		.ascii	"CY_BLE_CONN_STATE_CONNECTED\000"
+ 1336      4C455F43 
+ 1336      4F4E4E5F 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 32
 
 
- 1337      4F4E4E5F 
- 1337      53544154 
- 1337      455F434C 
- 1338              	.LASF19:
- 1339 03c7 75696E74 		.ascii	"uint16_t\000"
- 1339      31365F74 
- 1339      00
- 1340              	.LASF76:
- 1341 03d0 70657269 		.ascii	"periTrCmdGrSelMsk\000"
- 1341      5472436D 
- 1341      64477253 
- 1341      656C4D73 
- 1341      6B00
- 1342              	.LASF65:
- 1343 03e2 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
- 1343      6843746C 
- 1343      4D61696E 
- 1343      57733146 
- 1343      72657100 
- 1344              	.LASF13:
- 1345 03f6 6C6F6E67 		.ascii	"long unsigned int\000"
- 1345      20756E73 
- 1345      69676E65 
- 1345      6420696E 
- 1345      7400
- 1346              	.LASF41:
- 1347 0408 63707573 		.ascii	"cpussIpcNr\000"
- 1347      73497063 
- 1347      4E7200
- 1348              	.LASF28:
- 1349 0413 6770696F 		.ascii	"gpioBase\000"
- 1349      42617365 
- 1349      00
- 1350              	.LASF66:
- 1351 041c 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
- 1351      6843746C 
- 1351      4D61696E 
- 1351      57733246 
- 1351      72657100 
- 1352              	.LASF77:
- 1353 0430 70657269 		.ascii	"periTrGrOffset\000"
- 1353      54724772 
- 1353      4F666673 
- 1353      657400
- 1354              	.LASF104:
- 1355 043f 63707573 		.ascii	"cpussRam1Ctl0\000"
- 1355      7352616D 
- 1355      3143746C 
- 1355      3000
- 1356              	.LASF134:
- 1357 044d 63795F62 		.ascii	"cy_ble_connState\000"
- 1357      6C655F63 
- 1357      6F6E6E53 
- 1357      74617465 
- 1357      00
- 1358              	.LASF78:
- 1359 045e 70657269 		.ascii	"periTrGrSize\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 33
+ 1336      53544154 
+ 1336      455F434F 
+ 1337              	.LASF125:
+ 1338 03dc 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DESCR_DISCOVERING\000"
+ 1338      4C455F43 
+ 1338      4F4E4E5F 
+ 1338      53544154 
+ 1338      455F434C 
+ 1339              	.LASF19:
+ 1340 0407 75696E74 		.ascii	"uint16_t\000"
+ 1340      31365F74 
+ 1340      00
+ 1341              	.LASF76:
+ 1342 0410 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 1342      5472436D 
+ 1342      64477253 
+ 1342      656C4D73 
+ 1342      6B00
+ 1343              	.LASF65:
+ 1344 0422 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
+ 1344      6843746C 
+ 1344      4D61696E 
+ 1344      57733146 
+ 1344      72657100 
+ 1345              	.LASF13:
+ 1346 0436 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1346      20756E73 
+ 1346      69676E65 
+ 1346      6420696E 
+ 1346      7400
+ 1347              	.LASF41:
+ 1348 0448 63707573 		.ascii	"cpussIpcNr\000"
+ 1348      73497063 
+ 1348      4E7200
+ 1349              	.LASF28:
+ 1350 0453 6770696F 		.ascii	"gpioBase\000"
+ 1350      42617365 
+ 1350      00
+ 1351              	.LASF66:
+ 1352 045c 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 1352      6843746C 
+ 1352      4D61696E 
+ 1352      57733246 
+ 1352      72657100 
+ 1353              	.LASF77:
+ 1354 0470 70657269 		.ascii	"periTrGrOffset\000"
+ 1354      54724772 
+ 1354      4F666673 
+ 1354      657400
+ 1355              	.LASF104:
+ 1356 047f 63707573 		.ascii	"cpussRam1Ctl0\000"
+ 1356      7352616D 
+ 1356      3143746C 
+ 1356      3000
+ 1357              	.LASF134:
+ 1358 048d 63795F62 		.ascii	"cy_ble_connState\000"
+ 1358      6C655F63 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 33
 
 
- 1359      54724772 
- 1359      53697A65 
- 1359      00
- 1360              	.LASF36:
- 1361 046b 6770696F 		.ascii	"gpioVersion\000"
- 1361      56657273 
- 1361      696F6E00 
- 1362              	.LASF108:
- 1363 0477 63795F73 		.ascii	"cy_stc_device_t\000"
- 1363      74635F64 
- 1363      65766963 
- 1363      655F7400 
- 1364              	.LASF54:
- 1365 0487 65704D6F 		.ascii	"epMonitorNr\000"
- 1365      6E69746F 
- 1365      724E7200 
- 1366              	.LASF101:
- 1367 0493 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
- 1367      73436D34 
- 1367      4E6D6943 
- 1367      746C4F66 
- 1367      66736574 
- 1368              	.LASF97:
- 1369 04a8 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
- 1369      73547269 
- 1369      6D52616D 
- 1369      43746C4F 
- 1369      66667365 
- 1370              	.LASF92:
- 1371 04be 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
- 1371      73436D30 
- 1371      436C6F63 
- 1371      6B43746C 
- 1371      4F666673 
- 1372              	.LASF112:
- 1373 04d5 61747449 		.ascii	"attId\000"
- 1373      6400
- 1374              	.LASF32:
- 1375 04db 63707573 		.ascii	"cpussVersion\000"
- 1375      73566572 
- 1375      73696F6E 
- 1375      00
- 1376              	.LASF39:
- 1377 04e8 70657269 		.ascii	"periVersion\000"
- 1377      56657273 
- 1377      696F6E00 
- 1378              	.LASF95:
- 1379 04f4 63707573 		.ascii	"cpussCm0StatusOffset\000"
- 1379      73436D30 
- 1379      53746174 
- 1379      75734F66 
- 1379      66736574 
- 1380              	.LASF15:
- 1381 0509 73697A65 		.ascii	"sizetype\000"
- 1381      74797065 
- 1381      00
- 1382              	.LASF69:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 34
+ 1358      6F6E6E53 
+ 1358      74617465 
+ 1358      00
+ 1359              	.LASF78:
+ 1360 049e 70657269 		.ascii	"periTrGrSize\000"
+ 1360      54724772 
+ 1360      53697A65 
+ 1360      00
+ 1361              	.LASF36:
+ 1362 04ab 6770696F 		.ascii	"gpioVersion\000"
+ 1362      56657273 
+ 1362      696F6E00 
+ 1363              	.LASF108:
+ 1364 04b7 63795F73 		.ascii	"cy_stc_device_t\000"
+ 1364      74635F64 
+ 1364      65766963 
+ 1364      655F7400 
+ 1365              	.LASF54:
+ 1366 04c7 65704D6F 		.ascii	"epMonitorNr\000"
+ 1366      6E69746F 
+ 1366      724E7200 
+ 1367              	.LASF101:
+ 1368 04d3 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ 1368      73436D34 
+ 1368      4E6D6943 
+ 1368      746C4F66 
+ 1368      66736574 
+ 1369              	.LASF97:
+ 1370 04e8 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
+ 1370      73547269 
+ 1370      6D52616D 
+ 1370      43746C4F 
+ 1370      66667365 
+ 1371              	.LASF92:
+ 1372 04fe 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 1372      73436D30 
+ 1372      436C6F63 
+ 1372      6B43746C 
+ 1372      4F666673 
+ 1373              	.LASF112:
+ 1374 0515 61747449 		.ascii	"attId\000"
+ 1374      6400
+ 1375              	.LASF32:
+ 1376 051b 63707573 		.ascii	"cpussVersion\000"
+ 1376      73566572 
+ 1376      73696F6E 
+ 1376      00
+ 1377              	.LASF39:
+ 1378 0528 70657269 		.ascii	"periVersion\000"
+ 1378      56657273 
+ 1378      696F6E00 
+ 1379              	.LASF95:
+ 1380 0534 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 1380      73436D30 
+ 1380      53746174 
+ 1380      75734F66 
+ 1380      66736574 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 34
 
 
- 1383 0512 64774368 		.ascii	"dwChOffset\000"
- 1383      4F666673 
- 1383      657400
- 1384              	.LASF44:
- 1385 051d 63707573 		.ascii	"cpussFlashPaSize\000"
- 1385      73466C61 
- 1385      73685061 
- 1385      53697A65 
- 1385      00
- 1386              	.LASF115:
- 1387 052e 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
- 1387      4C455F41 
- 1387      44565F53 
- 1387      54415445 
- 1387      5F414456 
- 1388              	.LASF82:
- 1389 054d 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
- 1389      44697643 
- 1389      6D645061 
- 1389      54797065 
- 1389      53656C50 
- 1390              	.LASF105:
- 1391 0564 63707573 		.ascii	"cpussRam2Ctl0\000"
- 1391      7352616D 
- 1391      3243746C 
- 1391      3000
- 1392              	.LASF73:
- 1393 0572 64775374 		.ascii	"dwStatusChIdxPos\000"
- 1393      61747573 
- 1393      43684964 
- 1393      78506F73 
- 1393      00
- 1394              	.LASF55:
- 1395 0583 75646250 		.ascii	"udbPresent\000"
- 1395      72657365 
- 1395      6E7400
- 1396              	.LASF127:
- 1397 058e 63795F65 		.ascii	"cy_en_ble_conn_state_t\000"
- 1397      6E5F626C 
- 1397      655F636F 
- 1397      6E6E5F73 
- 1397      74617465 
- 1398              	.LASF35:
- 1399 05a5 666C6173 		.ascii	"flashcVersion\000"
- 1399      68635665 
- 1399      7273696F 
- 1399      6E00
- 1400              	.LASF31:
- 1401 05b3 63727970 		.ascii	"cryptoBase\000"
- 1401      746F4261 
- 1401      736500
- 1402              	.LASF52:
- 1403 05be 736D6966 		.ascii	"smifDeviceNr\000"
- 1403      44657669 
- 1403      63654E72 
- 1403      00
- 1404              	.LASF137:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 35
+ 1381              	.LASF15:
+ 1382 0549 73697A65 		.ascii	"sizetype\000"
+ 1382      74797065 
+ 1382      00
+ 1383              	.LASF69:
+ 1384 0552 64774368 		.ascii	"dwChOffset\000"
+ 1384      4F666673 
+ 1384      657400
+ 1385              	.LASF44:
+ 1386 055d 63707573 		.ascii	"cpussFlashPaSize\000"
+ 1386      73466C61 
+ 1386      73685061 
+ 1386      53697A65 
+ 1386      00
+ 1387              	.LASF115:
+ 1388 056e 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADV_INITIATED\000"
+ 1388      4C455F41 
+ 1388      44565F53 
+ 1388      54415445 
+ 1388      5F414456 
+ 1389              	.LASF82:
+ 1390 058d 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
+ 1390      44697643 
+ 1390      6D645061 
+ 1390      54797065 
+ 1390      53656C50 
+ 1391              	.LASF105:
+ 1392 05a4 63707573 		.ascii	"cpussRam2Ctl0\000"
+ 1392      7352616D 
+ 1392      3243746C 
+ 1392      3000
+ 1393              	.LASF73:
+ 1394 05b2 64775374 		.ascii	"dwStatusChIdxPos\000"
+ 1394      61747573 
+ 1394      43684964 
+ 1394      78506F73 
+ 1394      00
+ 1395              	.LASF55:
+ 1396 05c3 75646250 		.ascii	"udbPresent\000"
+ 1396      72657365 
+ 1396      6E7400
+ 1397              	.LASF127:
+ 1398 05ce 63795F65 		.ascii	"cy_en_ble_conn_state_t\000"
+ 1398      6E5F626C 
+ 1398      655F636F 
+ 1398      6E6E5F73 
+ 1398      74617465 
+ 1399              	.LASF35:
+ 1400 05e5 666C6173 		.ascii	"flashcVersion\000"
+ 1400      68635665 
+ 1400      7273696F 
+ 1400      6E00
+ 1401              	.LASF31:
+ 1402 05f3 63727970 		.ascii	"cryptoBase\000"
+ 1402      746F4261 
+ 1402      736500
+ 1403              	.LASF52:
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 35
 
 
- 1405 05cb 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1405      43313120 
- 1405      352E342E 
- 1405      31203230 
- 1405      31363036 
- 1406 05fe 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
- 1406      20726576 
- 1406      6973696F 
- 1406      6E203233 
- 1406      37373135 
- 1407 0631 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
- 1407      70202D6D 
- 1407      6670753D 
- 1407      66707634 
- 1407      2D73702D 
- 1408 0664 65637469 		.ascii	"ections -ffat-lto-objects\000"
- 1408      6F6E7320 
- 1408      2D666661 
- 1408      742D6C74 
- 1408      6F2D6F62 
- 1409              	.LASF61:
- 1410 067e 666C6173 		.ascii	"flashWriteDelay\000"
- 1410      68577269 
- 1410      74654465 
- 1410      6C617900 
- 1411              	.LASF126:
- 1412 068e 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCOVERED\000"
- 1412      4C455F43 
- 1412      4F4E4E5F 
- 1412      53544154 
- 1412      455F434C 
- 1413              	.LASF109:
- 1414 06b2 666C6F61 		.ascii	"float\000"
- 1414      7400
- 1415              	.LASF74:
- 1416 06b8 64775374 		.ascii	"dwStatusChIdxMsk\000"
- 1416      61747573 
- 1416      43684964 
- 1416      784D736B 
- 1416      00
- 1417              	.LASF130:
- 1418 06c9 63795F64 		.ascii	"cy_device\000"
- 1418      65766963 
- 1418      6500
- 1419              	.LASF102:
- 1420 06d3 63707573 		.ascii	"cpussRomCtl\000"
- 1420      73526F6D 
- 1420      43746C00 
- 1421              	.LASF72:
- 1422 06df 64774368 		.ascii	"dwChCtlPreemptablePos\000"
- 1422      43746C50 
- 1422      7265656D 
- 1422      70746162 
- 1422      6C65506F 
- 1423              	.LASF25:
- 1424 06f5 75646242 		.ascii	"udbBase\000"
- 1424      61736500 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 36
+ 1404 05fe 736D6966 		.ascii	"smifDeviceNr\000"
+ 1404      44657669 
+ 1404      63654E72 
+ 1404      00
+ 1405              	.LASF137:
+ 1406 060b 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1406      43313120 
+ 1406      352E342E 
+ 1406      31203230 
+ 1406      31363036 
+ 1407 063e 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
+ 1407      20726576 
+ 1407      6973696F 
+ 1407      6E203233 
+ 1407      37373135 
+ 1408 0671 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
+ 1408      70202D6D 
+ 1408      6670753D 
+ 1408      66707634 
+ 1408      2D73702D 
+ 1409 06a4 65637469 		.ascii	"ections -ffat-lto-objects\000"
+ 1409      6F6E7320 
+ 1409      2D666661 
+ 1409      742D6C74 
+ 1409      6F2D6F62 
+ 1410              	.LASF61:
+ 1411 06be 666C6173 		.ascii	"flashWriteDelay\000"
+ 1411      68577269 
+ 1411      74654465 
+ 1411      6C617900 
+ 1412              	.LASF126:
+ 1413 06ce 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCOVERED\000"
+ 1413      4C455F43 
+ 1413      4F4E4E5F 
+ 1413      53544154 
+ 1413      455F434C 
+ 1414              	.LASF109:
+ 1415 06f2 666C6F61 		.ascii	"float\000"
+ 1415      7400
+ 1416              	.LASF74:
+ 1417 06f8 64775374 		.ascii	"dwStatusChIdxMsk\000"
+ 1417      61747573 
+ 1417      43684964 
+ 1417      784D736B 
+ 1417      00
+ 1418              	.LASF130:
+ 1419 0709 63795F64 		.ascii	"cy_device\000"
+ 1419      65766963 
+ 1419      6500
+ 1420              	.LASF102:
+ 1421 0713 63707573 		.ascii	"cpussRomCtl\000"
+ 1421      73526F6D 
+ 1421      43746C00 
+ 1422              	.LASF72:
+ 1423 071f 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 1423      43746C50 
+ 1423      7265656D 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 36
 
 
- 1425              	.LASF124:
- 1426 06fd 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
- 1426      4C455F43 
- 1426      4F4E4E5F 
- 1426      53544154 
- 1426      455F434C 
- 1427              	.LASF128:
- 1428 0727 5F426F6F 		.ascii	"_Bool\000"
- 1428      6C00
- 1429              	.LASF20:
- 1430 072d 696E7433 		.ascii	"int32_t\000"
- 1430      325F7400 
- 1431              	.LASF4:
- 1432 0735 756E7369 		.ascii	"unsigned char\000"
- 1432      676E6564 
- 1432      20636861 
- 1432      7200
- 1433              	.LASF68:
- 1434 0743 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
- 1434      6843746C 
- 1434      4D61696E 
- 1434      57733446 
- 1434      72657100 
- 1435              	.LASF7:
- 1436 0757 73686F72 		.ascii	"short int\000"
- 1436      7420696E 
- 1436      7400
- 1437              	.LASF79:
- 1438 0761 70657269 		.ascii	"periDivCmdDivSelMsk\000"
- 1438      44697643 
- 1438      6D644469 
- 1438      7653656C 
- 1438      4D736B00 
- 1439              	.LASF138:
- 1440 0775 47656E65 		.ascii	"Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_b"
- 1440      72617465 
- 1440      645F536F 
- 1440      75726365 
- 1440      5C50536F 
- 1441 07a3 6C655F68 		.ascii	"le_hal_int.c\000"
- 1441      616C5F69 
- 1441      6E742E63 
- 1441      00
- 1442              	.LASF139:
- 1443 07b0 443A5C4F 		.ascii	"D:\\OneDrive\\OneDrive - UNSW\\2022_T1\\Thesis A\\d"
- 1443      6E654472 
- 1443      6976655C 
- 1443      4F6E6544 
- 1443      72697665 
- 1444 07de 61726179 		.ascii	"arayus\\VDAC_Saw_Export.cydsn\\Bluetooth_Prototype."
- 1444      75735C56 
- 1444      4441435F 
- 1444      5361775F 
- 1444      4578706F 
- 1445 080f 63796473 		.ascii	"cydsn\000"
- 1445      6E00
- 1446              	.LASF50:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 37
+ 1423      70746162 
+ 1423      6C65506F 
+ 1424              	.LASF25:
+ 1425 0735 75646242 		.ascii	"udbBase\000"
+ 1425      61736500 
+ 1426              	.LASF124:
+ 1427 073d 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_CHAR_DISCOVERING\000"
+ 1427      4C455F43 
+ 1427      4F4E4E5F 
+ 1427      53544154 
+ 1427      455F434C 
+ 1428              	.LASF128:
+ 1429 0767 5F426F6F 		.ascii	"_Bool\000"
+ 1429      6C00
+ 1430              	.LASF20:
+ 1431 076d 696E7433 		.ascii	"int32_t\000"
+ 1431      325F7400 
+ 1432              	.LASF4:
+ 1433 0775 756E7369 		.ascii	"unsigned char\000"
+ 1433      676E6564 
+ 1433      20636861 
+ 1433      7200
+ 1434              	.LASF68:
+ 1435 0783 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 1435      6843746C 
+ 1435      4D61696E 
+ 1435      57733446 
+ 1435      72657100 
+ 1436              	.LASF107:
+ 1437 0797 6970634C 		.ascii	"ipcLockStatusOffset\000"
+ 1437      6F636B53 
+ 1437      74617475 
+ 1437      734F6666 
+ 1437      73657400 
+ 1438              	.LASF7:
+ 1439 07ab 73686F72 		.ascii	"short int\000"
+ 1439      7420696E 
+ 1439      7400
+ 1440              	.LASF79:
+ 1441 07b5 70657269 		.ascii	"periDivCmdDivSelMsk\000"
+ 1441      44697643 
+ 1441      6D644469 
+ 1441      7653656C 
+ 1441      4D736B00 
+ 1442              	.LASF138:
+ 1443 07c9 47656E65 		.ascii	"Generated_Source\\PSoC6\\pdl\\middleware\\ble\\cy_b"
+ 1443      72617465 
+ 1443      645F536F 
+ 1443      75726365 
+ 1443      5C50536F 
+ 1444 07f7 6C655F68 		.ascii	"le_hal_int.c\000"
+ 1444      616C5F69 
+ 1444      6E742E63 
+ 1444      00
+ 1445              	.LASF50:
+ 1446 0804 73727373 		.ascii	"srssNumHfroot\000"
+ 1446      4E756D48 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 37
 
 
- 1447 0815 73727373 		.ascii	"srssNumHfroot\000"
- 1447      4E756D48 
- 1447      66726F6F 
- 1447      7400
- 1448              	.LASF63:
- 1449 0823 666C6173 		.ascii	"flashEraseDelay\000"
- 1449      68457261 
- 1449      73654465 
- 1449      6C617900 
- 1450              	.LASF21:
- 1451 0833 75696E74 		.ascii	"uint32_t\000"
- 1451      33325F74 
- 1451      00
- 1452              	.LASF2:
- 1453 083c 6C6F6E67 		.ascii	"long double\000"
- 1453      20646F75 
- 1453      626C6500 
- 1454              	.LASF16:
- 1455 0848 63686172 		.ascii	"char\000"
- 1455      00
- 1456              	.LASF40:
- 1457 084d 70726F74 		.ascii	"protVersion\000"
- 1457      56657273 
- 1457      696F6E00 
- 1458              	.LASF103:
- 1459 0859 63707573 		.ascii	"cpussRam0Ctl0\000"
- 1459      7352616D 
- 1459      3043746C 
- 1459      3000
- 1460              	.LASF8:
- 1461 0867 5F5F7569 		.ascii	"__uint16_t\000"
- 1461      6E743136 
- 1461      5F7400
- 1462              	.LASF135:
- 1463 0872 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
- 1463      6C655F70 
- 1463      656E6469 
- 1463      6E67466C 
- 1463      61736857 
- 1464              	.LASF84:
- 1465 088b 70657269 		.ascii	"periDiv16CtlOffset\000"
- 1465      44697631 
- 1465      3643746C 
- 1465      4F666673 
- 1465      657400
- 1466              	.LASF10:
- 1467 089e 5F5F696E 		.ascii	"__int32_t\000"
- 1467      7433325F 
- 1467      7400
- 1468              	.LASF132:
- 1469 08a8 63795F62 		.ascii	"cy_ble_advState\000"
- 1469      6C655F61 
- 1469      64765374 
- 1469      61746500 
- 1470              	.LASF37:
- 1471 08b8 6873696F 		.ascii	"hsiomVersion\000"
- 1471      6D566572 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 38
+ 1446      66726F6F 
+ 1446      7400
+ 1447              	.LASF63:
+ 1448 0812 666C6173 		.ascii	"flashEraseDelay\000"
+ 1448      68457261 
+ 1448      73654465 
+ 1448      6C617900 
+ 1449              	.LASF21:
+ 1450 0822 75696E74 		.ascii	"uint32_t\000"
+ 1450      33325F74 
+ 1450      00
+ 1451              	.LASF2:
+ 1452 082b 6C6F6E67 		.ascii	"long double\000"
+ 1452      20646F75 
+ 1452      626C6500 
+ 1453              	.LASF16:
+ 1454 0837 63686172 		.ascii	"char\000"
+ 1454      00
+ 1455              	.LASF40:
+ 1456 083c 70726F74 		.ascii	"protVersion\000"
+ 1456      56657273 
+ 1456      696F6E00 
+ 1457              	.LASF103:
+ 1458 0848 63707573 		.ascii	"cpussRam0Ctl0\000"
+ 1458      7352616D 
+ 1458      3043746C 
+ 1458      3000
+ 1459              	.LASF8:
+ 1460 0856 5F5F7569 		.ascii	"__uint16_t\000"
+ 1460      6E743136 
+ 1460      5F7400
+ 1461              	.LASF135:
+ 1462 0861 63795F62 		.ascii	"cy_ble_pendingFlashWrite\000"
+ 1462      6C655F70 
+ 1462      656E6469 
+ 1462      6E67466C 
+ 1462      61736857 
+ 1463              	.LASF84:
+ 1464 087a 70657269 		.ascii	"periDiv16CtlOffset\000"
+ 1464      44697631 
+ 1464      3643746C 
+ 1464      4F666673 
+ 1464      657400
+ 1465              	.LASF10:
+ 1466 088d 5F5F696E 		.ascii	"__int32_t\000"
+ 1466      7433325F 
+ 1466      7400
+ 1467              	.LASF132:
+ 1468 0897 63795F62 		.ascii	"cy_ble_advState\000"
+ 1468      6C655F61 
+ 1468      64765374 
+ 1468      61746500 
+ 1469              	.LASF37:
+ 1470 08a7 6873696F 		.ascii	"hsiomVersion\000"
+ 1470      6D566572 
+ 1470      73696F6E 
+ 1470      00
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 38
 
 
- 1471      73696F6E 
- 1471      00
- 1472              	.LASF142:
- 1473 08c5 43795F42 		.ascii	"Cy_BLE_HAL_BlessInterruptHandler\000"
- 1473      4C455F48 
- 1473      414C5F42 
- 1473      6C657373 
- 1473      496E7465 
- 1474              	.LASF9:
- 1475 08e6 73686F72 		.ascii	"short unsigned int\000"
- 1475      7420756E 
- 1475      7369676E 
- 1475      65642069 
- 1475      6E7400
- 1476              	.LASF70:
- 1477 08f9 64774368 		.ascii	"dwChSize\000"
- 1477      53697A65 
- 1477      00
- 1478              	.LASF140:
- 1479 0902 43795F42 		.ascii	"Cy_BLE_BlessInterrupt\000"
- 1479      4C455F42 
- 1479      6C657373 
- 1479      496E7465 
- 1479      72727570 
- 1480              	.LASF106:
- 1481 0918 69706353 		.ascii	"ipcStructSize\000"
- 1481      74727563 
- 1481      7453697A 
- 1481      6500
- 1482              	.LASF45:
- 1483 0926 63707573 		.ascii	"cpussIpc0Irq\000"
- 1483      73497063 
- 1483      30497271 
- 1483      00
- 1484              	.LASF88:
- 1485 0933 6770696F 		.ascii	"gpioPrtCfgOffset\000"
- 1485      50727443 
- 1485      66674F66 
- 1485      66736574 
- 1485      00
- 1486              	.LASF119:
- 1487 0944 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
- 1487      4C455F43 
- 1487      4F4E4E5F 
- 1487      53544154 
- 1487      455F4449 
- 1488              	.LASF133:
- 1489 0963 63795F62 		.ascii	"cy_ble_connHandle\000"
- 1489      6C655F63 
- 1489      6F6E6E48 
- 1489      616E646C 
- 1489      6500
- 1490              	.LASF47:
- 1491 0975 63707573 		.ascii	"cpussNotConnectedIrq\000"
- 1491      734E6F74 
- 1491      436F6E6E 
- 1491      65637465 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 39
+ 1471              	.LASF142:
+ 1472 08b4 43795F42 		.ascii	"Cy_BLE_HAL_BlessInterruptHandler\000"
+ 1472      4C455F48 
+ 1472      414C5F42 
+ 1472      6C657373 
+ 1472      496E7465 
+ 1473              	.LASF9:
+ 1474 08d5 73686F72 		.ascii	"short unsigned int\000"
+ 1474      7420756E 
+ 1474      7369676E 
+ 1474      65642069 
+ 1474      6E7400
+ 1475              	.LASF70:
+ 1476 08e8 64774368 		.ascii	"dwChSize\000"
+ 1476      53697A65 
+ 1476      00
+ 1477              	.LASF140:
+ 1478 08f1 43795F42 		.ascii	"Cy_BLE_BlessInterrupt\000"
+ 1478      4C455F42 
+ 1478      6C657373 
+ 1478      496E7465 
+ 1478      72727570 
+ 1479              	.LASF106:
+ 1480 0907 69706353 		.ascii	"ipcStructSize\000"
+ 1480      74727563 
+ 1480      7453697A 
+ 1480      6500
+ 1481              	.LASF45:
+ 1482 0915 63707573 		.ascii	"cpussIpc0Irq\000"
+ 1482      73497063 
+ 1482      30497271 
+ 1482      00
+ 1483              	.LASF88:
+ 1484 0922 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 1484      50727443 
+ 1484      66674F66 
+ 1484      66736574 
+ 1484      00
+ 1485              	.LASF119:
+ 1486 0933 43595F42 		.ascii	"CY_BLE_CONN_STATE_DISCONNECTED\000"
+ 1486      4C455F43 
+ 1486      4F4E4E5F 
+ 1486      53544154 
+ 1486      455F4449 
+ 1487              	.LASF133:
+ 1488 0952 63795F62 		.ascii	"cy_ble_connHandle\000"
+ 1488      6C655F63 
+ 1488      6F6E6E48 
+ 1488      616E646C 
+ 1488      6500
+ 1489              	.LASF47:
+ 1490 0964 63707573 		.ascii	"cpussNotConnectedIrq\000"
+ 1490      734E6F74 
+ 1490      436F6E6E 
+ 1490      65637465 
+ 1490      64497271 
+ 1491              	.LASF116:
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 39
 
 
- 1491      64497271 
- 1492              	.LASF116:
- 1493 098a 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
- 1493      4C455F41 
- 1493      44565F53 
- 1493      54415445 
- 1493      5F414456 
- 1494              	.LASF114:
- 1495 09a7 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOPPED\000"
- 1495      4C455F41 
- 1495      44565F53 
- 1495      54415445 
- 1495      5F53544F 
- 1496              	.LASF17:
- 1497 09c0 75696E74 		.ascii	"uint8_t\000"
- 1497      385F7400 
- 1498              	.LASF94:
- 1499 09c8 63707573 		.ascii	"cpussCm4StatusOffset\000"
- 1499      73436D34 
- 1499      53746174 
- 1499      75734F66 
- 1499      66736574 
- 1500              	.LASF87:
- 1501 09dd 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
- 1501      50727449 
- 1501      6E747243 
- 1501      66674F66 
- 1501      66736574 
- 1502              	.LASF141:
- 1503 09f2 73656E64 		.ascii	"sendNotification\000"
- 1503      4E6F7469 
- 1503      66696361 
- 1503      74696F6E 
- 1503      00
- 1504              	.LASF98:
- 1505 0a03 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
- 1505      73547269 
- 1505      6D526F6D 
- 1505      43746C4F 
- 1505      66667365 
- 1506              	.LASF111:
- 1507 0a19 62644861 		.ascii	"bdHandle\000"
- 1507      6E646C65 
- 1507      00
- 1508              	.LASF48:
- 1509 0a22 73727373 		.ascii	"srssNumClkpath\000"
- 1509      4E756D43 
- 1509      6C6B7061 
- 1509      746800
- 1510              	.LASF34:
- 1511 0a31 64775665 		.ascii	"dwVersion\000"
- 1511      7273696F 
- 1511      6E00
- 1512              	.LASF30:
- 1513 0a3b 69706342 		.ascii	"ipcBase\000"
- 1513      61736500 
- 1514              	.LASF81:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccOxW41F.s 			page 40
+ 1492 0979 43595F42 		.ascii	"CY_BLE_ADV_STATE_ADVERTISING\000"
+ 1492      4C455F41 
+ 1492      44565F53 
+ 1492      54415445 
+ 1492      5F414456 
+ 1493              	.LASF114:
+ 1494 0996 43595F42 		.ascii	"CY_BLE_ADV_STATE_STOPPED\000"
+ 1494      4C455F41 
+ 1494      44565F53 
+ 1494      54415445 
+ 1494      5F53544F 
+ 1495              	.LASF17:
+ 1496 09af 75696E74 		.ascii	"uint8_t\000"
+ 1496      385F7400 
+ 1497              	.LASF94:
+ 1498 09b7 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 1498      73436D34 
+ 1498      53746174 
+ 1498      75734F66 
+ 1498      66736574 
+ 1499              	.LASF87:
+ 1500 09cc 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 1500      50727449 
+ 1500      6E747243 
+ 1500      66674F66 
+ 1500      66736574 
+ 1501              	.LASF141:
+ 1502 09e1 73656E64 		.ascii	"sendNotification\000"
+ 1502      4E6F7469 
+ 1502      66696361 
+ 1502      74696F6E 
+ 1502      00
+ 1503              	.LASF98:
+ 1504 09f2 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ 1504      73547269 
+ 1504      6D526F6D 
+ 1504      43746C4F 
+ 1504      66667365 
+ 1505              	.LASF111:
+ 1506 0a08 62644861 		.ascii	"bdHandle\000"
+ 1506      6E646C65 
+ 1506      00
+ 1507              	.LASF48:
+ 1508 0a11 73727373 		.ascii	"srssNumClkpath\000"
+ 1508      4E756D43 
+ 1508      6C6B7061 
+ 1508      746800
+ 1509              	.LASF34:
+ 1510 0a20 64775665 		.ascii	"dwVersion\000"
+ 1510      7273696F 
+ 1510      6E00
+ 1511              	.LASF30:
+ 1512 0a2a 69706342 		.ascii	"ipcBase\000"
+ 1512      61736500 
+ 1513              	.LASF81:
+ 1514 0a32 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
+ 1514      44697643 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccPMtcwx.s 			page 40
 
 
- 1515 0a43 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
- 1515      44697643 
- 1515      6D645061 
- 1515      44697653 
- 1515      656C506F 
- 1516              	.LASF62:
- 1517 0a59 666C6173 		.ascii	"flashProgramDelay\000"
- 1517      6850726F 
- 1517      6772616D 
- 1517      44656C61 
- 1517      7900
- 1518              	.LASF120:
- 1519 0a6b 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCONNECTED_DISCOVERED\000"
- 1519      4C455F43 
- 1519      4F4E4E5F 
- 1519      53544154 
- 1519      455F434C 
- 1520              	.LASF59:
- 1521 0a9c 666C6173 		.ascii	"flashRwwRequired\000"
- 1521      68527777 
- 1521      52657175 
- 1521      69726564 
- 1521      00
- 1522              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1514      6D645061 
+ 1514      44697653 
+ 1514      656C506F 
+ 1515              	.LASF62:
+ 1516 0a48 666C6173 		.ascii	"flashProgramDelay\000"
+ 1516      6850726F 
+ 1516      6772616D 
+ 1516      44656C61 
+ 1516      7900
+ 1517              	.LASF120:
+ 1518 0a5a 43595F42 		.ascii	"CY_BLE_CONN_STATE_CLIENT_DISCONNECTED_DISCOVERED\000"
+ 1518      4C455F43 
+ 1518      4F4E4E5F 
+ 1518      53544154 
+ 1518      455F434C 
+ 1519              	.LASF59:
+ 1520 0a8b 666C6173 		.ascii	"flashRwwRequired\000"
+ 1520      68527777 
+ 1520      52657175 
+ 1520      69726564 
+ 1520      00
+ 1521              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

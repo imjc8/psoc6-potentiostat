@@ -210,7 +210,7 @@ static const cy_stc_ble_gaps_t cy_ble_gaps =
     0x0009u,    /* Handle of the Central Address Resolution characteristic */
     0x000Bu,    /* Handle of the Resolvable Private Address Only characteristic */
 };
-static uint8_t cy_ble_attValues[0x3Bu] = {
+static uint8_t cy_ble_attValues[0x4Du] = {
     /* Device Name */
     (uint8_t)'J', (uint8_t)'C', (uint8_t)'_', (uint8_t)'P', (uint8_t)'S', (uint8_t)'O', (uint8_t)'C', 
 
@@ -241,6 +241,12 @@ static uint8_t cy_ble_attValues[0x3Bu] = {
     /* Custom Descriptor */
     0x00u, 0x43u, 0xAEu, 0x2Fu, 0x69u, 0x53u, 0x1Au, 0xBDu, 0x96u, 0x2Au, 0x43u, 0x10u, 0x6Eu, 0xAAu, 0x6Fu, 0x78u, 0x95u, 
 
+    /* asdf */
+    0x00u, 
+
+    /* Custom Descriptor */
+    0x00u, 0x81u, 0x18u, 0x12u, 0x1Au, 0xE3u, 0xD7u, 0x05u, 0xA0u, 0x64u, 0x41u, 0xCFu, 0x21u, 0xE1u, 0x07u, 0xA6u, 0x71u, 
+
 };
 #if(CY_BLE_GATT_DB_CCCD_COUNT != 0u)
 static uint8_t cy_ble_attValuesCCCD[CY_BLE_GATT_DB_CCCD_COUNT];
@@ -253,9 +259,11 @@ static const uint8_t cy_ble_attUuid128[][16u] = {
     { 0x30u, 0x75u, 0xA8u, 0x29u, 0x8Du, 0x54u, 0x4Eu, 0x8Eu, 0x8Du, 0x4Eu, 0x78u, 0x1Cu, 0x3Cu, 0x81u, 0x1Bu, 0xD6u },
     /* Device Outbound */
     { 0xB8u, 0xFBu, 0x27u, 0x7Au, 0x2Eu, 0xF8u, 0x6Du, 0x92u, 0xDCu, 0x41u, 0xAAu, 0xA6u, 0xFDu, 0x42u, 0xC8u, 0x4Du },
+    /* asdf */
+    { 0xCDu, 0xE2u, 0x33u, 0xEDu, 0x56u, 0x8Fu, 0x27u, 0xB9u, 0x6Fu, 0x4Au, 0xF7u, 0xFDu, 0x50u, 0xA1u, 0x13u, 0x19u },
 };
 
-static cy_stc_ble_gatts_att_gen_val_len_t cy_ble_attValuesLen[0x0Eu] = {
+static cy_stc_ble_gatts_att_gen_val_len_t cy_ble_attValuesLen[0x11u] = {
     { 0x0007u, (void *)&cy_ble_attValues[0] }, /* Device Name */
     { 0x0002u, (void *)&cy_ble_attValues[7] }, /* Appearance */
     { 0x0008u, (void *)&cy_ble_attValues[9] }, /* Peripheral Preferred Connection Parameters */
@@ -270,9 +278,12 @@ static cy_stc_ble_gatts_att_gen_val_len_t cy_ble_attValuesLen[0x0Eu] = {
     { 0x0010u, (void *)&cy_ble_attUuid128[2] }, /* Device Outbound UUID */
     { 0x0001u, (void *)&cy_ble_attValues[41] }, /* Device Outbound */
     { 0x0001u, (void *)&cy_ble_attValues[42] }, /* Custom Descriptor */
+    { 0x0010u, (void *)&cy_ble_attUuid128[3] }, /* asdf UUID */
+    { 0x0001u, (void *)&cy_ble_attValues[59] }, /* asdf */
+    { 0x0001u, (void *)&cy_ble_attValues[60] }, /* Custom Descriptor */
 };
 
-static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x16u] = {
+static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x19u] = {
     { 0x0001u, 0x2800u /* Primary service                     */, 0x00000001u /*       */, 0x000Bu, {{0x1800u, NULL}}                           },
     { 0x0002u, 0x2803u /* Characteristic                      */, 0x00020001u /* rd    */, 0x0003u, {{0x2A00u, NULL}}                           },
     { 0x0003u, 0x2A00u /* Device Name                         */, 0x01020001u /* rd    */, 0x0003u, {{0x0007u, (void *)&cy_ble_attValuesLen[0]}} },
@@ -288,13 +299,16 @@ static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x16u] = {
     { 0x000Du, 0x2803u /* Characteristic                      */, 0x00200001u /* ind   */, 0x000Fu, {{0x2A05u, NULL}}                           },
     { 0x000Eu, 0x2A05u /* Service Changed                     */, 0x01200000u /* ind   */, 0x000Fu, {{0x0004u, (void *)&cy_ble_attValuesLen[5]}} },
     { 0x000Fu, 0x2902u /* Client Characteristic Configuration */, 0x030A0101u /* rd,wr */, 0x000Fu, {{0x0002u, (void *)&cy_ble_attValuesLen[6]}} },
-    { 0x0010u, 0x2800u /* Primary service                     */, 0x08000001u /*       */, 0x0016u, {{0x0010u, (void *)&cy_ble_attValuesLen[7]}} },
+    { 0x0010u, 0x2800u /* Primary service                     */, 0x08000001u /*       */, 0x0019u, {{0x0010u, (void *)&cy_ble_attValuesLen[7]}} },
     { 0x0011u, 0x2803u /* Characteristic                      */, 0x00080001u /* wr    */, 0x0013u, {{0x0010u, (void *)&cy_ble_attValuesLen[8]}} },
     { 0x0012u, 0x813Cu /* Device Inbound                      */, 0x09080100u /* wr    */, 0x0013u, {{0x0001u, (void *)&cy_ble_attValuesLen[9]}} },
     { 0x0013u, 0x0DABu /* Custom Descriptor                   */, 0x09000001u /*       */, 0x0013u, {{0x0001u, (void *)&cy_ble_attValuesLen[10]}} },
     { 0x0014u, 0x2803u /* Characteristic                      */, 0x00020001u /* rd    */, 0x0016u, {{0x0010u, (void *)&cy_ble_attValuesLen[11]}} },
     { 0x0015u, 0x42FDu /* Device Outbound                     */, 0x09020001u /* rd    */, 0x0016u, {{0x0001u, (void *)&cy_ble_attValuesLen[12]}} },
     { 0x0016u, 0x6FAAu /* Custom Descriptor                   */, 0x09000001u /*       */, 0x0016u, {{0x0001u, (void *)&cy_ble_attValuesLen[13]}} },
+    { 0x0017u, 0x2803u /* Characteristic                      */, 0x00080001u /* wr    */, 0x0019u, {{0x0010u, (void *)&cy_ble_attValuesLen[14]}} },
+    { 0x0018u, 0xA150u /* asdf                                */, 0x09080100u /* wr    */, 0x0019u, {{0x0001u, (void *)&cy_ble_attValuesLen[15]}} },
+    { 0x0019u, 0x07E1u /* Custom Descriptor                   */, 0x09000001u /*       */, 0x0019u, {{0x0001u, (void *)&cy_ble_attValuesLen[16]}} },
 };
 
 #endif /* (CY_BLE_GATT_ROLE_SERVER) */
@@ -326,7 +340,7 @@ static const cy_stc_ble_params_t cy_ble_params =
     
         .siliconDeviceAddressEnabled        = 0x01u,
     
-        .gattDbIndexCount                   = 0x0016u,
+        .gattDbIndexCount                   = 0x0019u,
 };
 
 cy_stc_ble_gap_bd_addr_t cy_ble_deviceAddress = {{0x00u, 0x00u, 0x00u, 0x50u, 0xA0u, 0x00u}, 0x00u };
