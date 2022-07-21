@@ -45,8 +45,6 @@
 
 uint32_t dac_val = 0u;
 
-
-
 int maxVoltConverted = 0;
 int minVoltConverted = 0;
 int initVoltConverted = 0;
@@ -96,7 +94,7 @@ int main(void)
     // voltage
     float min_volt = 0.0;
     float max_volt = 3.0;
-    float init_volt = 1.0;
+    float init_volt = 0.5;
     // scan rate (v/sec)
     float scan_rate = 1;
     
@@ -116,8 +114,9 @@ int main(void)
     // set initial dac direction
     int direction = 1;
     
-    //dac_direction = (direction == 1) ? 1 : 0;
+    dac_direction = (direction == 1) ? 1 : 0;
     
+    /*
     if (direction == 1)
     {
         dac_direction = 1;
@@ -126,7 +125,7 @@ int main(void)
     {
         dac_direction = 0;
     }
-    
+    */
     float volt_diff = max_volt - min_volt;
     
     // DAC clock frequency is 50KHz
@@ -188,21 +187,22 @@ void userIsr(void)
             if (div == div_duration) {
                 if (dac_direction == 1){
                     dac_val++;
-                    if (dac_val == maxVoltConverted){
-                        dac_direction = 0;
-                    }
-                    else if(dac_val == initVoltConverted){
+                    if(dac_val == initVoltConverted){
                         cycle_dac++;
+                        if (dac_val == minVoltConverted)
+                        {
+                            dac_direction = 0;
+                        }
                     }
                 }
                 else if (dac_direction == 0){
                     dac_val--;
-                    if (dac_val == minVoltConverted)
-                    {
-                        dac_direction = 1;
-                    }
-                    else if(dac_val == initVoltConverted){
+                    if(dac_val == initVoltConverted){
                         cycle_dac++;
+                        if (dac_val == minVoltConverted)
+                        {
+                            dac_direction = 1;
+                        }
                     }
                 }
                 div = 0;
