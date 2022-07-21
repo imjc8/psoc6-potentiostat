@@ -43,13 +43,24 @@
 #include "ctdac/cy_ctdac.h"
 #include <math.h>
 
-uint32_t currentCode = 0u;
-int flag = 1;
+uint32_t dac_val = 0u;
+
+
+
+int maxVoltConverted = 0;
+int minVoltConverted = 0;
+int initVoltConverted = 0;
+
+// scan rate calcs
 int div = 0;
 int div_duration = 0;
 
-int maxVoltConverted = 0 ;
-int minVoltConverted = 0;
+// cycles 
+int cycle_count = 0;
+int cycle_dac = 0;
+
+// initial scan direction
+int dac_direction = 0;
 
 void userIsr(void);
 
@@ -81,57 +92,48 @@ int main(void)
     /* Enable the interrupt. */
     NVIC_EnableIRQ(SysInt_1_cfg.intrSrc);
     
-    // min volt
+    // waveform parameters
+    // voltage
     float min_volt = 0.0;
-    minVoltConverted = (min_volt/3.3)*4095;
-    //max volt
-    float max_volt = 3.3;
-    maxVoltConverted = (max_volt/3.3)*4095;
+    float max_volt = 3.0;
+    float init_volt = 1.0;
     // scan rate (v/sec)
-    float scan_rate = 1;
+    float scan_rate = 0.5;
+    
+    // number of cycles
+    cycle_count = 10;
+    
+    //float min_volt = 1
+    //float max_volt = 2.3
+    
+    minVoltConverted = (min_volt/3.3)*4095;
+    maxVoltConverted = (max_volt/3.3)*4095;
+    initVoltConverted = (init_volt/3.3)*4095;
+
+    dac_val = initVoltConverted;   
     
     // direction  1 -> go up 0 -> down
+    // set initial dac direction
     int direction = 0;
     if (direction == 1)
     {
-        currentCode = minVoltConverted;   
-        flag = 1;
+        dac_direction = 1;
     }
     else
     {
-        currentCode = maxVoltConverted;
-        flag = 0;
+        dac_direction = 0;
     }
     
     float volt_diff = max_volt - min_volt;
     
     // DAC clock frequency is 50KHz
-    div_duration = (int)((float)(50000.0 * volt_diff/((maxVoltConverted -minVoltConverted) * scan_rate)))-1;
+    div_duration = (int)((float)(50000.0 * volt_diff/((maxVoltConverted - minVoltConverted) * scan_rate)))-1;
     
     /* Start the component. */
     VDAC_1_Start();
     
     for(;;)
     {   
-        /*
-        if (flag == 1 && currentCode < dac_max)
-        {
-            currentCode++;
-            CyDelayUs(sleep);
-            if (currentCode == dac_max)
-            {
-                flag = 0;
-            }
-        }
-        else if (flag == 0)
-        {
-            currentCode--;
-            CyDelayUs(sleep);
-            if (currentCode == dac_min)
-            {
-                flag = 1;
-            }
-        }*/
     }
 }
 
@@ -162,38 +164,38 @@ void userIsr(void)
         VDAC_1_ClearInterrupt();
         
         /* Set the next value that the DAC will output. */
-        VDAC_1_SetValueBuffered(currentCode);
+        VDAC_1_SetValueBuffered(dac_val);
         
         
         /*
         // Increment the DAC code from 0 to the maximum code value to generate a sawtooth waveform. 
-        if (currentCode >= CY_CTDAC_UNSIGNED_MAX_CODE_VALUE)
+        if (dac_val >= CY_CTDAC_UNSIGNED_MAX_CODE_VALUE)
         {
-            currentCode = 0u;
+            dac_val = 0u;
         }
         else
         {
-            currentCode++;
+            dac_val++;
         }
         */
         
         
         // generate saw tooth
         if (div == div_duration) {
-            if (flag == 1)
+            if (dac_direction == 1)
             {
-                currentCode++;
-                if (currentCode == maxVoltConverted)
+                dac_val++;
+                if (dac_val == maxVoltConverted)
                 {
-                    flag = 0;
+                    dac_direction = 0;
                 }
             }
-            else if (flag == 0)
+            else if (dac_direction == 0)
             {
-                currentCode--;
-                if (currentCode == minVoltConverted)
+                dac_val--;
+                if (dac_val == minVoltConverted)
                 {
-                    flag = 1;
+                    dac_direction = 1;
                 }
             }
             div = 0;
