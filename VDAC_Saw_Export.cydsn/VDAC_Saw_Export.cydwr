@@ -14,6 +14,8 @@
       <Data key="818dab76-364e-4157-b9b0-82180f3dccb3" value="SysInt_1" />
     </Group>
     <Group key="Pin">
+      <Data key="649fb4b2-67bf-4dda-96bc-c48644b00b55/65f3af6c-759b-4ccb-8c66-5c95ba1f5f4f" value="UART_1_tx" />
+      <Data key="649fb4b2-67bf-4dda-96bc-c48644b00b55/b7e8018e-1ef7-49c0-b5a5-61641a03e31c" value="UART_1_rx" />
       <Data key="0113321b-4a37-46f6-8407-2f8646c68756" value="VDAC_Out_P9_6" />
     </Group>
   </Group>
@@ -590,9 +592,10 @@
   <Group key="Pin2">
     <Group key="0113321b-4a37-46f6-8407-2f8646c68756">
       <Group key="0">
-        <Data key="Port Format" value="9,6" />
+        <Data key="Port Format" value="9,3" />
       </Group>
     </Group>
+    <Group key="Unlocked Pins" />
   </Group>
   <Group key="PlaceDir">
     <Data key="count" value="0" />

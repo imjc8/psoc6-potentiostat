@@ -1,5 +1,5 @@
 -- Project:   VDAC_Saw_Export
--- Generated: 04/14/2022 18:57:43
+-- Generated: 07/19/2022 20:24:52
 -- PSoC Creator  4.4
 
 ENTITY VDAC_Saw_Export IS
@@ -57,6 +57,7 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
     SIGNAL \\\UART_1:rx(0)\\__PA\ : bit;
     SIGNAL \\\UART_1:tx(0)\\__PA\ : bit;
     SIGNAL \UART_1:tx_wire\ : bit;
+    SIGNAL \VDAC_1:Net_36\ : bit;
     SIGNAL __ONE__ : bit;
     ATTRIBUTE POWER OF __ONE__ : SIGNAL IS true;
     SIGNAL __ZERO__ : bit;
@@ -72,10 +73,12 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
     ATTRIBUTE lib_model OF CY_CPUSS_SWJ_SWDIO_TMS(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF CY_CPUSS_SWJ_SWDIO_TMS(0) : LABEL IS "P6[6]";
     ATTRIBUTE lib_model OF VDAC_Out_P9_6(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF VDAC_Out_P9_6(0) : LABEL IS "P9[6]";
+    ATTRIBUTE Location OF VDAC_Out_P9_6(0) : LABEL IS "P9[3]";
     ATTRIBUTE lib_model OF \UART_1:tx(0)\ : LABEL IS "iocell4";
     ATTRIBUTE lib_model OF \UART_1:rx(0)\ : LABEL IS "iocell5";
     ATTRIBUTE Location OF \VDAC_1:CTDAC\ : LABEL IS "F(CTDAC,0)";
+    ATTRIBUTE Location OF \VDAC_1:VOUTBUF\ : LABEL IS "F(OA,0)";
+    ATTRIBUTE Location OF \VDAC_1:SAMPLEHOLD\ : LABEL IS "F(SAMPLEHOLD,0)";
     COMPONENT CLK_GEN
         PORT (
             gen_clk_in_0 : IN std_ulogic;
@@ -412,6 +415,10 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
             out_clock_en : IN std_ulogic;
             out_reset : IN std_ulogic);
     END COMPONENT;
+    COMPONENT OA
+        PORT (
+            ctb_dsi_comp : OUT std_ulogic);
+    END COMPONENT;
     COMPONENT PASSBLOCK
         PORT (
             clock_pump_peri : IN std_ulogic;
@@ -463,6 +470,8 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
             dsi_sar_data_oe_1 : IN std_ulogic;
             dsi_sar_data_oe_2 : IN std_ulogic;
             dsi_sar_data_oe_3 : IN std_ulogic);
+    END COMPONENT;
+    COMPONENT SAMPLEHOLD
     END COMPONENT;
     COMPONENT SCB
         PORT (
@@ -804,6 +813,19 @@ BEGIN
             clock => Net_54_ff47,
             dsi_ctdac_strobe => open,
             tr_ctdac_empty => Net_66);
+
+    \VDAC_1:VOUTBUF\:OA
+        GENERIC MAP(
+            cy_registers => "",
+            deepsleep_available => 0,
+            has_resistor => 0,
+            needs_dsab => 0)
+        PORT MAP(
+            ctb_dsi_comp => \VDAC_1:Net_36\);
+
+    \VDAC_1:SAMPLEHOLD\:SAMPLEHOLD
+        GENERIC MAP(
+            cy_registers => "");
 
     \UART_1:SCB_IRQ\:interrupt
         GENERIC MAP(

@@ -241,6 +241,10 @@ static void ClockInit(void)
 static void AnalogSetDefault(void);
 static void AnalogSetDefault(void)
 {
+	CY_SET_REG32(CYREG_CTBM0_CTB_CTRL, 0x80000000u);
+	CY_SET_REG32(CYREG_CTBM0_OA0_SW, 0x00244000u);
+	CY_SET_REG32(CYREG_CTBM0_OA1_SW, 0x00240000u);
+	CY_SET_REG32(CYREG_CTBM0_CTD_SW, 0x00003200u);
 	CY_SET_REG32(CYREG_PASS_AREF_AREF_CTRL, 0x80110001u);
 }
 
@@ -324,7 +328,7 @@ void Cy_SystemInit(void)
 	{
 	    const cy_stc_gpio_prt_config_t port9_cfg =
 	    {
-	        .out        = 0x00000040u,
+	        .out        = 0x00000008u,
 	        .intrMask   = 0x00000000u,
 	        .intrCfg    = 0x00000000u,
 	        .cfg        = 0x00000000u,

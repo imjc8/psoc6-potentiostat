@@ -34,6 +34,11 @@
 /* VDAC_1 */
 #define VDAC_1_CTDAC__HW CTDAC0
 #define VDAC_1_CTDAC__IDX 0
+#define VDAC_1_SAMPLEHOLD__HW CTBM0
+#define VDAC_1_SAMPLEHOLD__IDX 0
+#define VDAC_1_VOUTBUF__HW CTBM0
+#define VDAC_1_VOUTBUF__IDX 0
+#define VDAC_1_VOUTBUF__OA_IDX 0u
 
 /* Clock_1 */
 #define Clock_1__DIV_IDX 8

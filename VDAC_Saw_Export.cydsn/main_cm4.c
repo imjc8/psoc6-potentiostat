@@ -80,11 +80,9 @@ int main(void)
 
     /* Enable the interrupt. */
     NVIC_EnableIRQ(SysInt_1_cfg.intrSrc);
-
-
     
     // min volt
-    float min_volt = 1;
+    float min_volt = 0.0;
     minVoltConverted = (min_volt/3.3)*4095;
     //max volt
     float max_volt = 3.3;
