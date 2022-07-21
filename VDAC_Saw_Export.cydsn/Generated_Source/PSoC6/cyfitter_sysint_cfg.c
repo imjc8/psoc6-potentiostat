@@ -26,6 +26,12 @@
         .intrPriority = UART_1_SCB_IRQ__INTC_CORTEXM4_PRIORITY
     };
 
+    /* ADC_1_IRQ */
+    const cy_stc_sysint_t ADC_1_IRQ_cfg = {
+        .intrSrc = (IRQn_Type)ADC_1_IRQ__INTC_NUMBER,
+        .intrPriority = ADC_1_IRQ__INTC_CORTEXM4_PRIORITY
+    };
+
     /* SysInt_1 */
     const cy_stc_sysint_t SysInt_1_cfg = {
         .intrSrc = (IRQn_Type)SysInt_1__INTC_NUMBER,

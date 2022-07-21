@@ -26,6 +26,7 @@
 #include "cy_lvd.h"
 #include "cy_profile.h"
 #include "cy_prot.h"
+#include "cy_sar.h"
 #include "cy_scb_common.h"
 #include "cy_scb_i2c.h"
 #include "cy_scb_ezi2c.h"
@@ -107,7 +108,9 @@
 #include "Clock_1.h"
 #include "VDAC_1.h"
 #include "UART_1.h"
+#include "ADC_1.h"
 #include "UART_1_SCBCLK.h"
+#include "ADC_1_intSarClock.h"
 
 /*[]*/
 

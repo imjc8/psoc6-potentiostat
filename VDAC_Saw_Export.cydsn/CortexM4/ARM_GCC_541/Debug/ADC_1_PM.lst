@@ -1,0 +1,3194 @@
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.fpu fpv4-sp-d16
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 6
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.thumb
+  15              		.syntax unified
+  16              		.file	"ADC_1_PM.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.data
+  21              		.align	2
+  22              		.type	ADC_1_DeepSleepCallbackParams, %object
+  23              		.size	ADC_1_DeepSleepCallbackParams, 8
+  24              	ADC_1_DeepSleepCallbackParams:
+  25 0000 00001D41 		.word	1092419584
+  26 0004 00000000 		.space	4
+  27              		.global	ADC_1_DeepSleepCallbackStruct
+  28              		.align	2
+  29              		.type	ADC_1_DeepSleepCallbackStruct, %object
+  30              		.size	ADC_1_DeepSleepCallbackStruct, 24
+  31              	ADC_1_DeepSleepCallbackStruct:
+  32 0008 00000000 		.word	Cy_SAR_DeepSleepCallback
+  33 000c 01       		.byte	1
+  34 000d 00000000 		.space	7
+  34      000000
+  35 0014 00000000 		.word	ADC_1_DeepSleepCallbackParams
+  36 0018 00000000 		.space	8
+  36      00000000 
+  37              		.text
+  38              	.Letext0:
+  39              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  40              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
+  41              		.file 3 "Generated_Source\\PSoC6\\pdl\\devices/psoc6/include/ip/cyip_sar.h"
+  42              		.file 4 "Generated_Source\\PSoC6\\pdl\\devices/psoc6/include/psoc6_01_config.h"
+  43              		.file 5 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
+  44              		.file 6 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/syspm/cy_syspm.h"
+  45              		.file 7 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/sar/cy_sar.h"
+  46              		.file 8 "Generated_Source\\PSoC6\\ADC_1.h"
+  47              		.file 9 "Generated_Source\\PSoC6\\pdl\\cmsis/include/core_cm4.h"
+  48              		.file 10 "Generated_Source\\PSoC6\\ADC_1_PM.c"
+  49              		.section	.debug_info,"",%progbits
+  50              	.Ldebug_info0:
+  51 0000 390C0000 		.4byte	0xc39
+  52 0004 0400     		.2byte	0x4
+  53 0006 00000000 		.4byte	.Ldebug_abbrev0
+  54 000a 04       		.byte	0x4
+  55 000b 01       		.uleb128 0x1
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 2
+
+
+  56 000c 00010000 		.4byte	.LASF225
+  57 0010 0C       		.byte	0xc
+  58 0011 C2050000 		.4byte	.LASF226
+  59 0015 A80C0000 		.4byte	.LASF227
+  60 0019 00000000 		.4byte	.Ldebug_line0
+  61 001d 02       		.uleb128 0x2
+  62 001e 02       		.byte	0x2
+  63 001f 05       		.byte	0x5
+  64 0020 DD090000 		.4byte	.LASF0
+  65 0024 02       		.uleb128 0x2
+  66 0025 01       		.byte	0x1
+  67 0026 06       		.byte	0x6
+  68 0027 93020000 		.4byte	.LASF1
+  69 002b 03       		.uleb128 0x3
+  70 002c D5000000 		.4byte	.LASF3
+  71 0030 01       		.byte	0x1
+  72 0031 1D       		.byte	0x1d
+  73 0032 36000000 		.4byte	0x36
+  74 0036 02       		.uleb128 0x2
+  75 0037 01       		.byte	0x1
+  76 0038 08       		.byte	0x8
+  77 0039 AA090000 		.4byte	.LASF2
+  78 003d 03       		.uleb128 0x3
+  79 003e A2040000 		.4byte	.LASF4
+  80 0042 01       		.byte	0x1
+  81 0043 29       		.byte	0x29
+  82 0044 1D000000 		.4byte	0x1d
+  83 0048 03       		.uleb128 0x3
+  84 0049 1E0B0000 		.4byte	.LASF5
+  85 004d 01       		.byte	0x1
+  86 004e 2B       		.byte	0x2b
+  87 004f 53000000 		.4byte	0x53
+  88 0053 02       		.uleb128 0x2
+  89 0054 02       		.byte	0x2
+  90 0055 07       		.byte	0x7
+  91 0056 08040000 		.4byte	.LASF6
+  92 005a 03       		.uleb128 0x3
+  93 005b C7060000 		.4byte	.LASF7
+  94 005f 01       		.byte	0x1
+  95 0060 3F       		.byte	0x3f
+  96 0061 65000000 		.4byte	0x65
+  97 0065 02       		.uleb128 0x2
+  98 0066 04       		.byte	0x4
+  99 0067 05       		.byte	0x5
+ 100 0068 46030000 		.4byte	.LASF8
+ 101 006c 03       		.uleb128 0x3
+ 102 006d 5B040000 		.4byte	.LASF9
+ 103 0071 01       		.byte	0x1
+ 104 0072 41       		.byte	0x41
+ 105 0073 77000000 		.4byte	0x77
+ 106 0077 02       		.uleb128 0x2
+ 107 0078 04       		.byte	0x4
+ 108 0079 07       		.byte	0x7
+ 109 007a 4E050000 		.4byte	.LASF10
+ 110 007e 02       		.uleb128 0x2
+ 111 007f 08       		.byte	0x8
+ 112 0080 05       		.byte	0x5
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 3
+
+
+ 113 0081 85020000 		.4byte	.LASF11
+ 114 0085 02       		.uleb128 0x2
+ 115 0086 08       		.byte	0x8
+ 116 0087 07       		.byte	0x7
+ 117 0088 F3010000 		.4byte	.LASF12
+ 118 008c 04       		.uleb128 0x4
+ 119 008d 04       		.byte	0x4
+ 120 008e 05       		.byte	0x5
+ 121 008f 696E7400 		.ascii	"int\000"
+ 122 0093 02       		.uleb128 0x2
+ 123 0094 04       		.byte	0x4
+ 124 0095 07       		.byte	0x7
+ 125 0096 12050000 		.4byte	.LASF13
+ 126 009a 03       		.uleb128 0x3
+ 127 009b 3C0B0000 		.4byte	.LASF14
+ 128 009f 02       		.byte	0x2
+ 129 00a0 18       		.byte	0x18
+ 130 00a1 2B000000 		.4byte	0x2b
+ 131 00a5 03       		.uleb128 0x3
+ 132 00a6 69020000 		.4byte	.LASF15
+ 133 00aa 02       		.byte	0x2
+ 134 00ab 20       		.byte	0x20
+ 135 00ac 3D000000 		.4byte	0x3d
+ 136 00b0 03       		.uleb128 0x3
+ 137 00b1 1F050000 		.4byte	.LASF16
+ 138 00b5 02       		.byte	0x2
+ 139 00b6 24       		.byte	0x24
+ 140 00b7 48000000 		.4byte	0x48
+ 141 00bb 03       		.uleb128 0x3
+ 142 00bc A2090000 		.4byte	.LASF17
+ 143 00c0 02       		.byte	0x2
+ 144 00c1 2C       		.byte	0x2c
+ 145 00c2 5A000000 		.4byte	0x5a
+ 146 00c6 03       		.uleb128 0x3
+ 147 00c7 A50A0000 		.4byte	.LASF18
+ 148 00cb 02       		.byte	0x2
+ 149 00cc 30       		.byte	0x30
+ 150 00cd 6C000000 		.4byte	0x6c
+ 151 00d1 02       		.uleb128 0x2
+ 152 00d2 04       		.byte	0x4
+ 153 00d3 07       		.byte	0x7
+ 154 00d4 A5070000 		.4byte	.LASF19
+ 155 00d8 05       		.uleb128 0x5
+ 156 00d9 C6000000 		.4byte	0xc6
+ 157 00dd 06       		.uleb128 0x6
+ 158 00de D8000000 		.4byte	0xd8
+ 159 00e2 07       		.uleb128 0x7
+ 160 00e3 DD000000 		.4byte	0xdd
+ 161 00e7 F2000000 		.4byte	0xf2
+ 162 00eb 08       		.uleb128 0x8
+ 163 00ec D1000000 		.4byte	0xd1
+ 164 00f0 01       		.byte	0x1
+ 165 00f1 00       		.byte	0
+ 166 00f2 07       		.uleb128 0x7
+ 167 00f3 D8000000 		.4byte	0xd8
+ 168 00f7 02010000 		.4byte	0x102
+ 169 00fb 08       		.uleb128 0x8
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 4
+
+
+ 170 00fc D1000000 		.4byte	0xd1
+ 171 0100 0F       		.byte	0xf
+ 172 0101 00       		.byte	0
+ 173 0102 07       		.uleb128 0x7
+ 174 0103 DD000000 		.4byte	0xdd
+ 175 0107 12010000 		.4byte	0x112
+ 176 010b 08       		.uleb128 0x8
+ 177 010c D1000000 		.4byte	0xd1
+ 178 0110 0F       		.byte	0xf
+ 179 0111 00       		.byte	0
+ 180 0112 07       		.uleb128 0x7
+ 181 0113 DD000000 		.4byte	0xdd
+ 182 0117 22010000 		.4byte	0x122
+ 183 011b 08       		.uleb128 0x8
+ 184 011c D1000000 		.4byte	0xd1
+ 185 0120 02       		.byte	0x2
+ 186 0121 00       		.byte	0
+ 187 0122 07       		.uleb128 0x7
+ 188 0123 DD000000 		.4byte	0xdd
+ 189 0127 32010000 		.4byte	0x132
+ 190 012b 08       		.uleb128 0x8
+ 191 012c D1000000 		.4byte	0xd1
+ 192 0130 0E       		.byte	0xe
+ 193 0131 00       		.byte	0
+ 194 0132 09       		.uleb128 0x9
+ 195 0133 080F     		.2byte	0xf08
+ 196 0135 03       		.byte	0x3
+ 197 0136 21       		.byte	0x21
+ 198 0137 BA030000 		.4byte	0x3ba
+ 199 013b 0A       		.uleb128 0xa
+ 200 013c E00B0000 		.4byte	.LASF20
+ 201 0140 03       		.byte	0x3
+ 202 0141 22       		.byte	0x22
+ 203 0142 D8000000 		.4byte	0xd8
+ 204 0146 00       		.byte	0
+ 205 0147 0A       		.uleb128 0xa
+ 206 0148 2B080000 		.4byte	.LASF21
+ 207 014c 03       		.byte	0x3
+ 208 014d 23       		.byte	0x23
+ 209 014e D8000000 		.4byte	0xd8
+ 210 0152 04       		.byte	0x4
+ 211 0153 0A       		.uleb128 0xa
+ 212 0154 030A0000 		.4byte	.LASF22
+ 213 0158 03       		.byte	0x3
+ 214 0159 24       		.byte	0x24
+ 215 015a BF030000 		.4byte	0x3bf
+ 216 015e 08       		.byte	0x8
+ 217 015f 0A       		.uleb128 0xa
+ 218 0160 94040000 		.4byte	.LASF23
+ 219 0164 03       		.byte	0x3
+ 220 0165 25       		.byte	0x25
+ 221 0166 D8000000 		.4byte	0xd8
+ 222 016a 10       		.byte	0x10
+ 223 016b 0A       		.uleb128 0xa
+ 224 016c 77080000 		.4byte	.LASF24
+ 225 0170 03       		.byte	0x3
+ 226 0171 26       		.byte	0x26
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 5
+
+
+ 227 0172 D8000000 		.4byte	0xd8
+ 228 0176 14       		.byte	0x14
+ 229 0177 0A       		.uleb128 0xa
+ 230 0178 37080000 		.4byte	.LASF25
+ 231 017c 03       		.byte	0x3
+ 232 017d 27       		.byte	0x27
+ 233 017e D8000000 		.4byte	0xd8
+ 234 0182 18       		.byte	0x18
+ 235 0183 0A       		.uleb128 0xa
+ 236 0184 CF010000 		.4byte	.LASF26
+ 237 0188 03       		.byte	0x3
+ 238 0189 28       		.byte	0x28
+ 239 018a D8000000 		.4byte	0xd8
+ 240 018e 1C       		.byte	0x1c
+ 241 018f 0A       		.uleb128 0xa
+ 242 0190 6F080000 		.4byte	.LASF27
+ 243 0194 03       		.byte	0x3
+ 244 0195 29       		.byte	0x29
+ 245 0196 D8000000 		.4byte	0xd8
+ 246 019a 20       		.byte	0x20
+ 247 019b 0A       		.uleb128 0xa
+ 248 019c 19070000 		.4byte	.LASF28
+ 249 01a0 03       		.byte	0x3
+ 250 01a1 2A       		.byte	0x2a
+ 251 01a2 D8000000 		.4byte	0xd8
+ 252 01a6 24       		.byte	0x24
+ 253 01a7 0A       		.uleb128 0xa
+ 254 01a8 18090000 		.4byte	.LASF29
+ 255 01ac 03       		.byte	0x3
+ 256 01ad 2B       		.byte	0x2b
+ 257 01ae D9030000 		.4byte	0x3d9
+ 258 01b2 28       		.byte	0x28
+ 259 01b3 0A       		.uleb128 0xa
+ 260 01b4 BA040000 		.4byte	.LASF30
+ 261 01b8 03       		.byte	0x3
+ 262 01b9 2C       		.byte	0x2c
+ 263 01ba DE030000 		.4byte	0x3de
+ 264 01be 80       		.byte	0x80
+ 265 01bf 0A       		.uleb128 0xa
+ 266 01c0 610A0000 		.4byte	.LASF31
+ 267 01c4 03       		.byte	0x3
+ 268 01c5 2D       		.byte	0x2d
+ 269 01c6 E8030000 		.4byte	0x3e8
+ 270 01ca C0       		.byte	0xc0
+ 271 01cb 0B       		.uleb128 0xb
+ 272 01cc B60B0000 		.4byte	.LASF32
+ 273 01d0 03       		.byte	0x3
+ 274 01d1 2E       		.byte	0x2e
+ 275 01d2 F2030000 		.4byte	0x3f2
+ 276 01d6 0001     		.2byte	0x100
+ 277 01d8 0B       		.uleb128 0xb
+ 278 01d9 2C090000 		.4byte	.LASF33
+ 279 01dd 03       		.byte	0x3
+ 280 01de 2F       		.byte	0x2f
+ 281 01df FC030000 		.4byte	0x3fc
+ 282 01e3 4001     		.2byte	0x140
+ 283 01e5 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 6
+
+
+ 284 01e6 C1070000 		.4byte	.LASF34
+ 285 01ea 03       		.byte	0x3
+ 286 01eb 30       		.byte	0x30
+ 287 01ec 06040000 		.4byte	0x406
+ 288 01f0 8001     		.2byte	0x180
+ 289 01f2 0B       		.uleb128 0xb
+ 290 01f3 790A0000 		.4byte	.LASF35
+ 291 01f7 03       		.byte	0x3
+ 292 01f8 31       		.byte	0x31
+ 293 01f9 10040000 		.4byte	0x410
+ 294 01fd C001     		.2byte	0x1c0
+ 295 01ff 0B       		.uleb128 0xb
+ 296 0200 4D060000 		.4byte	.LASF36
+ 297 0204 03       		.byte	0x3
+ 298 0205 32       		.byte	0x32
+ 299 0206 DD000000 		.4byte	0xdd
+ 300 020a 0002     		.2byte	0x200
+ 301 020c 0B       		.uleb128 0xb
+ 302 020d 6E0C0000 		.4byte	.LASF37
+ 303 0211 03       		.byte	0x3
+ 304 0212 33       		.byte	0x33
+ 305 0213 DD000000 		.4byte	0xdd
+ 306 0217 0402     		.2byte	0x204
+ 307 0219 0B       		.uleb128 0xb
+ 308 021a 7E050000 		.4byte	.LASF38
+ 309 021e 03       		.byte	0x3
+ 310 021f 34       		.byte	0x34
+ 311 0220 DD000000 		.4byte	0xdd
+ 312 0224 0802     		.2byte	0x208
+ 313 0226 0B       		.uleb128 0xb
+ 314 0227 2C0A0000 		.4byte	.LASF39
+ 315 022b 03       		.byte	0x3
+ 316 022c 35       		.byte	0x35
+ 317 022d DD000000 		.4byte	0xdd
+ 318 0231 0C02     		.2byte	0x20c
+ 319 0233 0B       		.uleb128 0xb
+ 320 0234 6F0B0000 		.4byte	.LASF40
+ 321 0238 03       		.byte	0x3
+ 322 0239 36       		.byte	0x36
+ 323 023a D8000000 		.4byte	0xd8
+ 324 023e 1002     		.2byte	0x210
+ 325 0240 0B       		.uleb128 0xb
+ 326 0241 5D070000 		.4byte	.LASF41
+ 327 0245 03       		.byte	0x3
+ 328 0246 37       		.byte	0x37
+ 329 0247 D8000000 		.4byte	0xd8
+ 330 024b 1402     		.2byte	0x214
+ 331 024d 0B       		.uleb128 0xb
+ 332 024e AF050000 		.4byte	.LASF42
+ 333 0252 03       		.byte	0x3
+ 334 0253 38       		.byte	0x38
+ 335 0254 D8000000 		.4byte	0xd8
+ 336 0258 1802     		.2byte	0x218
+ 337 025a 0B       		.uleb128 0xb
+ 338 025b F5080000 		.4byte	.LASF43
+ 339 025f 03       		.byte	0x3
+ 340 0260 39       		.byte	0x39
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 7
+
+
+ 341 0261 DD000000 		.4byte	0xdd
+ 342 0265 1C02     		.2byte	0x21c
+ 343 0267 0B       		.uleb128 0xb
+ 344 0268 AC040000 		.4byte	.LASF44
+ 345 026c 03       		.byte	0x3
+ 346 026d 3A       		.byte	0x3a
+ 347 026e D8000000 		.4byte	0xd8
+ 348 0272 2002     		.2byte	0x220
+ 349 0274 0B       		.uleb128 0xb
+ 350 0275 C7080000 		.4byte	.LASF45
+ 351 0279 03       		.byte	0x3
+ 352 027a 3B       		.byte	0x3b
+ 353 027b D8000000 		.4byte	0xd8
+ 354 027f 2402     		.2byte	0x224
+ 355 0281 0B       		.uleb128 0xb
+ 356 0282 510B0000 		.4byte	.LASF46
+ 357 0286 03       		.byte	0x3
+ 358 0287 3C       		.byte	0x3c
+ 359 0288 D8000000 		.4byte	0xd8
+ 360 028c 2802     		.2byte	0x228
+ 361 028e 0B       		.uleb128 0xb
+ 362 028f E80D0000 		.4byte	.LASF47
+ 363 0293 03       		.byte	0x3
+ 364 0294 3D       		.byte	0x3d
+ 365 0295 DD000000 		.4byte	0xdd
+ 366 0299 2C02     		.2byte	0x22c
+ 367 029b 0B       		.uleb128 0xb
+ 368 029c 42060000 		.4byte	.LASF48
+ 369 02a0 03       		.byte	0x3
+ 370 02a1 3E       		.byte	0x3e
+ 371 02a2 D8000000 		.4byte	0xd8
+ 372 02a6 3002     		.2byte	0x230
+ 373 02a8 0B       		.uleb128 0xb
+ 374 02a9 800D0000 		.4byte	.LASF49
+ 375 02ad 03       		.byte	0x3
+ 376 02ae 3F       		.byte	0x3f
+ 377 02af D8000000 		.4byte	0xd8
+ 378 02b3 3402     		.2byte	0x234
+ 379 02b5 0B       		.uleb128 0xb
+ 380 02b6 59020000 		.4byte	.LASF50
+ 381 02ba 03       		.byte	0x3
+ 382 02bb 40       		.byte	0x40
+ 383 02bc D8000000 		.4byte	0xd8
+ 384 02c0 3802     		.2byte	0x238
+ 385 02c2 0B       		.uleb128 0xb
+ 386 02c3 C00D0000 		.4byte	.LASF51
+ 387 02c7 03       		.byte	0x3
+ 388 02c8 41       		.byte	0x41
+ 389 02c9 DD000000 		.4byte	0xdd
+ 390 02cd 3C02     		.2byte	0x23c
+ 391 02cf 0B       		.uleb128 0xb
+ 392 02d0 61030000 		.4byte	.LASF52
+ 393 02d4 03       		.byte	0x3
+ 394 02d5 42       		.byte	0x42
+ 395 02d6 DD000000 		.4byte	0xdd
+ 396 02da 4002     		.2byte	0x240
+ 397 02dc 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 8
+
+
+ 398 02dd 42090000 		.4byte	.LASF53
+ 399 02e1 03       		.byte	0x3
+ 400 02e2 43       		.byte	0x43
+ 401 02e3 1A040000 		.4byte	0x41a
+ 402 02e7 4402     		.2byte	0x244
+ 403 02e9 0B       		.uleb128 0xb
+ 404 02ea 000B0000 		.4byte	.LASF54
+ 405 02ee 03       		.byte	0x3
+ 406 02ef 44       		.byte	0x44
+ 407 02f0 D8000000 		.4byte	0xd8
+ 408 02f4 8002     		.2byte	0x280
+ 409 02f6 0B       		.uleb128 0xb
+ 410 02f7 4C090000 		.4byte	.LASF55
+ 411 02fb 03       		.byte	0x3
+ 412 02fc 45       		.byte	0x45
+ 413 02fd 24040000 		.4byte	0x424
+ 414 0301 8402     		.2byte	0x284
+ 415 0303 0B       		.uleb128 0xb
+ 416 0304 7A030000 		.4byte	.LASF56
+ 417 0308 03       		.byte	0x3
+ 418 0309 46       		.byte	0x46
+ 419 030a DD000000 		.4byte	0xdd
+ 420 030e 9002     		.2byte	0x290
+ 421 0310 0B       		.uleb128 0xb
+ 422 0311 56090000 		.4byte	.LASF57
+ 423 0315 03       		.byte	0x3
+ 424 0316 47       		.byte	0x47
+ 425 0317 2E040000 		.4byte	0x42e
+ 426 031b 9402     		.2byte	0x294
+ 427 031d 0B       		.uleb128 0xb
+ 428 031e 8D0B0000 		.4byte	.LASF58
+ 429 0322 03       		.byte	0x3
+ 430 0323 48       		.byte	0x48
+ 431 0324 DD000000 		.4byte	0xdd
+ 432 0328 A002     		.2byte	0x2a0
+ 433 032a 0B       		.uleb128 0xb
+ 434 032b 85080000 		.4byte	.LASF59
+ 435 032f 03       		.byte	0x3
+ 436 0330 49       		.byte	0x49
+ 437 0331 DD000000 		.4byte	0xdd
+ 438 0335 A402     		.2byte	0x2a4
+ 439 0337 0B       		.uleb128 0xb
+ 440 0338 60090000 		.4byte	.LASF60
+ 441 033c 03       		.byte	0x3
+ 442 033d 4A       		.byte	0x4a
+ 443 033e 38040000 		.4byte	0x438
+ 444 0342 A802     		.2byte	0x2a8
+ 445 0344 0B       		.uleb128 0xb
+ 446 0345 BB000000 		.4byte	.LASF61
+ 447 0349 03       		.byte	0x3
+ 448 034a 4B       		.byte	0x4b
+ 449 034b D8000000 		.4byte	0xd8
+ 450 034f 0003     		.2byte	0x300
+ 451 0351 0B       		.uleb128 0xb
+ 452 0352 DE030000 		.4byte	.LASF62
+ 453 0356 03       		.byte	0x3
+ 454 0357 4C       		.byte	0x4c
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 9
+
+
+ 455 0358 D8000000 		.4byte	0xd8
+ 456 035c 0403     		.2byte	0x304
+ 457 035e 0B       		.uleb128 0xb
+ 458 035f 6A090000 		.4byte	.LASF63
+ 459 0363 03       		.byte	0x3
+ 460 0364 4D       		.byte	0x4d
+ 461 0365 52040000 		.4byte	0x452
+ 462 0369 0803     		.2byte	0x308
+ 463 036b 0B       		.uleb128 0xb
+ 464 036c 9C050000 		.4byte	.LASF64
+ 465 0370 03       		.byte	0x3
+ 466 0371 4E       		.byte	0x4e
+ 467 0372 D8000000 		.4byte	0xd8
+ 468 0376 4003     		.2byte	0x340
+ 469 0378 0B       		.uleb128 0xb
+ 470 0379 CD0B0000 		.4byte	.LASF65
+ 471 037d 03       		.byte	0x3
+ 472 037e 4F       		.byte	0x4f
+ 473 037f D8000000 		.4byte	0xd8
+ 474 0383 4403     		.2byte	0x344
+ 475 0385 0B       		.uleb128 0xb
+ 476 0386 4F030000 		.4byte	.LASF66
+ 477 038a 03       		.byte	0x3
+ 478 038b 50       		.byte	0x50
+ 479 038c DD000000 		.4byte	0xdd
+ 480 0390 4803     		.2byte	0x348
+ 481 0392 0B       		.uleb128 0xb
+ 482 0393 0B030000 		.4byte	.LASF67
+ 483 0397 03       		.byte	0x3
+ 484 0398 51       		.byte	0x51
+ 485 0399 6D040000 		.4byte	0x46d
+ 486 039d 4C03     		.2byte	0x34c
+ 487 039f 0B       		.uleb128 0xb
+ 488 03a0 45020000 		.4byte	.LASF68
+ 489 03a4 03       		.byte	0x3
+ 490 03a5 52       		.byte	0x52
+ 491 03a6 D8000000 		.4byte	0xd8
+ 492 03aa 000F     		.2byte	0xf00
+ 493 03ac 0B       		.uleb128 0xb
+ 494 03ad 4F020000 		.4byte	.LASF69
+ 495 03b1 03       		.byte	0x3
+ 496 03b2 53       		.byte	0x53
+ 497 03b3 D8000000 		.4byte	0xd8
+ 498 03b7 040F     		.2byte	0xf04
+ 499 03b9 00       		.byte	0
+ 500 03ba 05       		.uleb128 0x5
+ 501 03bb E2000000 		.4byte	0xe2
+ 502 03bf 06       		.uleb128 0x6
+ 503 03c0 BA030000 		.4byte	0x3ba
+ 504 03c4 07       		.uleb128 0x7
+ 505 03c5 DD000000 		.4byte	0xdd
+ 506 03c9 D4030000 		.4byte	0x3d4
+ 507 03cd 08       		.uleb128 0x8
+ 508 03ce D1000000 		.4byte	0xd1
+ 509 03d2 15       		.byte	0x15
+ 510 03d3 00       		.byte	0
+ 511 03d4 05       		.uleb128 0x5
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 10
+
+
+ 512 03d5 C4030000 		.4byte	0x3c4
+ 513 03d9 06       		.uleb128 0x6
+ 514 03da D4030000 		.4byte	0x3d4
+ 515 03de 05       		.uleb128 0x5
+ 516 03df F2000000 		.4byte	0xf2
+ 517 03e3 05       		.uleb128 0x5
+ 518 03e4 02010000 		.4byte	0x102
+ 519 03e8 06       		.uleb128 0x6
+ 520 03e9 E3030000 		.4byte	0x3e3
+ 521 03ed 05       		.uleb128 0x5
+ 522 03ee 02010000 		.4byte	0x102
+ 523 03f2 06       		.uleb128 0x6
+ 524 03f3 ED030000 		.4byte	0x3ed
+ 525 03f7 05       		.uleb128 0x5
+ 526 03f8 02010000 		.4byte	0x102
+ 527 03fc 06       		.uleb128 0x6
+ 528 03fd F7030000 		.4byte	0x3f7
+ 529 0401 05       		.uleb128 0x5
+ 530 0402 02010000 		.4byte	0x102
+ 531 0406 06       		.uleb128 0x6
+ 532 0407 01040000 		.4byte	0x401
+ 533 040b 05       		.uleb128 0x5
+ 534 040c 02010000 		.4byte	0x102
+ 535 0410 06       		.uleb128 0x6
+ 536 0411 0B040000 		.4byte	0x40b
+ 537 0415 05       		.uleb128 0x5
+ 538 0416 22010000 		.4byte	0x122
+ 539 041a 06       		.uleb128 0x6
+ 540 041b 15040000 		.4byte	0x415
+ 541 041f 05       		.uleb128 0x5
+ 542 0420 12010000 		.4byte	0x112
+ 543 0424 06       		.uleb128 0x6
+ 544 0425 1F040000 		.4byte	0x41f
+ 545 0429 05       		.uleb128 0x5
+ 546 042a 12010000 		.4byte	0x112
+ 547 042e 06       		.uleb128 0x6
+ 548 042f 29040000 		.4byte	0x429
+ 549 0433 05       		.uleb128 0x5
+ 550 0434 C4030000 		.4byte	0x3c4
+ 551 0438 06       		.uleb128 0x6
+ 552 0439 33040000 		.4byte	0x433
+ 553 043d 07       		.uleb128 0x7
+ 554 043e DD000000 		.4byte	0xdd
+ 555 0442 4D040000 		.4byte	0x44d
+ 556 0446 08       		.uleb128 0x8
+ 557 0447 D1000000 		.4byte	0xd1
+ 558 044b 0D       		.byte	0xd
+ 559 044c 00       		.byte	0
+ 560 044d 05       		.uleb128 0x5
+ 561 044e 3D040000 		.4byte	0x43d
+ 562 0452 06       		.uleb128 0x6
+ 563 0453 4D040000 		.4byte	0x44d
+ 564 0457 07       		.uleb128 0x7
+ 565 0458 DD000000 		.4byte	0xdd
+ 566 045c 68040000 		.4byte	0x468
+ 567 0460 0C       		.uleb128 0xc
+ 568 0461 D1000000 		.4byte	0xd1
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 11
+
+
+ 569 0465 EC02     		.2byte	0x2ec
+ 570 0467 00       		.byte	0
+ 571 0468 05       		.uleb128 0x5
+ 572 0469 57040000 		.4byte	0x457
+ 573 046d 06       		.uleb128 0x6
+ 574 046e 68040000 		.4byte	0x468
+ 575 0472 03       		.uleb128 0x3
+ 576 0473 0C0A0000 		.4byte	.LASF70
+ 577 0477 03       		.byte	0x3
+ 578 0478 54       		.byte	0x54
+ 579 0479 32010000 		.4byte	0x132
+ 580 047d 0D       		.uleb128 0xd
+ 581 047e FA090000 		.4byte	.LASF71
+ 582 0482 04       		.byte	0x4
+ 583 0483 5206     		.2byte	0x652
+ 584 0485 72040000 		.4byte	0x472
+ 585 0489 02       		.uleb128 0x2
+ 586 048a 08       		.byte	0x8
+ 587 048b 04       		.byte	0x4
+ 588 048c E30A0000 		.4byte	.LASF72
+ 589 0490 0E       		.uleb128 0xe
+ 590 0491 B8       		.byte	0xb8
+ 591 0492 05       		.byte	0x5
+ 592 0493 34       		.byte	0x34
+ 593 0494 A1080000 		.4byte	0x8a1
+ 594 0498 0A       		.uleb128 0xa
+ 595 0499 DA010000 		.4byte	.LASF73
+ 596 049d 05       		.byte	0x5
+ 597 049e 37       		.byte	0x37
+ 598 049f C6000000 		.4byte	0xc6
+ 599 04a3 00       		.byte	0
+ 600 04a4 0A       		.uleb128 0xa
+ 601 04a5 B0000000 		.4byte	.LASF74
+ 602 04a9 05       		.byte	0x5
+ 603 04aa 38       		.byte	0x38
+ 604 04ab C6000000 		.4byte	0xc6
+ 605 04af 04       		.byte	0x4
+ 606 04b0 0A       		.uleb128 0xa
+ 607 04b1 85030000 		.4byte	.LASF75
+ 608 04b5 05       		.byte	0x5
+ 609 04b6 39       		.byte	0x39
+ 610 04b7 C6000000 		.4byte	0xc6
+ 611 04bb 08       		.byte	0x8
+ 612 04bc 0A       		.uleb128 0xa
+ 613 04bd 7B090000 		.4byte	.LASF76
+ 614 04c1 05       		.byte	0x5
+ 615 04c2 3A       		.byte	0x3a
+ 616 04c3 C6000000 		.4byte	0xc6
+ 617 04c7 0C       		.byte	0xc
+ 618 04c8 0A       		.uleb128 0xa
+ 619 04c9 E2020000 		.4byte	.LASF77
+ 620 04cd 05       		.byte	0x5
+ 621 04ce 3B       		.byte	0x3b
+ 622 04cf C6000000 		.4byte	0xc6
+ 623 04d3 10       		.byte	0x10
+ 624 04d4 0A       		.uleb128 0xa
+ 625 04d5 16030000 		.4byte	.LASF78
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 12
+
+
+ 626 04d9 05       		.byte	0x5
+ 627 04da 3C       		.byte	0x3c
+ 628 04db C6000000 		.4byte	0xc6
+ 629 04df 14       		.byte	0x14
+ 630 04e0 0A       		.uleb128 0xa
+ 631 04e1 B9050000 		.4byte	.LASF79
+ 632 04e5 05       		.byte	0x5
+ 633 04e6 3D       		.byte	0x3d
+ 634 04e7 C6000000 		.4byte	0xc6
+ 635 04eb 18       		.byte	0x18
+ 636 04ec 0A       		.uleb128 0xa
+ 637 04ed A7000000 		.4byte	.LASF80
+ 638 04f1 05       		.byte	0x5
+ 639 04f2 3E       		.byte	0x3e
+ 640 04f3 C6000000 		.4byte	0xc6
+ 641 04f7 1C       		.byte	0x1c
+ 642 04f8 0A       		.uleb128 0xa
+ 643 04f9 B80D0000 		.4byte	.LASF81
+ 644 04fd 05       		.byte	0x5
+ 645 04fe 3F       		.byte	0x3f
+ 646 04ff C6000000 		.4byte	0xc6
+ 647 0503 20       		.byte	0x20
+ 648 0504 0A       		.uleb128 0xa
+ 649 0505 9C080000 		.4byte	.LASF82
+ 650 0509 05       		.byte	0x5
+ 651 050a 40       		.byte	0x40
+ 652 050b C6000000 		.4byte	0xc6
+ 653 050f 24       		.byte	0x24
+ 654 0510 0A       		.uleb128 0xa
+ 655 0511 66070000 		.4byte	.LASF83
+ 656 0515 05       		.byte	0x5
+ 657 0516 43       		.byte	0x43
+ 658 0517 9A000000 		.4byte	0x9a
+ 659 051b 28       		.byte	0x28
+ 660 051c 0A       		.uleb128 0xa
+ 661 051d 8D000000 		.4byte	.LASF84
+ 662 0521 05       		.byte	0x5
+ 663 0522 44       		.byte	0x44
+ 664 0523 9A000000 		.4byte	0x9a
+ 665 0527 29       		.byte	0x29
+ 666 0528 0A       		.uleb128 0xa
+ 667 0529 AE0D0000 		.4byte	.LASF85
+ 668 052d 05       		.byte	0x5
+ 669 052e 45       		.byte	0x45
+ 670 052f 9A000000 		.4byte	0x9a
+ 671 0533 2A       		.byte	0x2a
+ 672 0534 0A       		.uleb128 0xa
+ 673 0535 8E080000 		.4byte	.LASF86
+ 674 0539 05       		.byte	0x5
+ 675 053a 46       		.byte	0x46
+ 676 053b 9A000000 		.4byte	0x9a
+ 677 053f 2B       		.byte	0x2b
+ 678 0540 0A       		.uleb128 0xa
+ 679 0541 75060000 		.4byte	.LASF87
+ 680 0545 05       		.byte	0x5
+ 681 0546 47       		.byte	0x47
+ 682 0547 9A000000 		.4byte	0x9a
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 13
+
+
+ 683 054b 2C       		.byte	0x2c
+ 684 054c 0A       		.uleb128 0xa
+ 685 054d 440B0000 		.4byte	.LASF88
+ 686 0551 05       		.byte	0x5
+ 687 0552 48       		.byte	0x48
+ 688 0553 9A000000 		.4byte	0x9a
+ 689 0557 2D       		.byte	0x2d
+ 690 0558 0A       		.uleb128 0xa
+ 691 0559 EB020000 		.4byte	.LASF89
+ 692 055d 05       		.byte	0x5
+ 693 055e 49       		.byte	0x49
+ 694 055f 9A000000 		.4byte	0x9a
+ 695 0563 2E       		.byte	0x2e
+ 696 0564 0A       		.uleb128 0xa
+ 697 0565 78070000 		.4byte	.LASF90
+ 698 0569 05       		.byte	0x5
+ 699 056a 4A       		.byte	0x4a
+ 700 056b 9A000000 		.4byte	0x9a
+ 701 056f 2F       		.byte	0x2f
+ 702 0570 0A       		.uleb128 0xa
+ 703 0571 F40A0000 		.4byte	.LASF91
+ 704 0575 05       		.byte	0x5
+ 705 0576 4B       		.byte	0x4b
+ 706 0577 9A000000 		.4byte	0x9a
+ 707 057b 30       		.byte	0x30
+ 708 057c 0A       		.uleb128 0xa
+ 709 057d 91050000 		.4byte	.LASF92
+ 710 0581 05       		.byte	0x5
+ 711 0582 4E       		.byte	0x4e
+ 712 0583 9A000000 		.4byte	0x9a
+ 713 0587 31       		.byte	0x31
+ 714 0588 0A       		.uleb128 0xa
+ 715 0589 C7000000 		.4byte	.LASF93
+ 716 058d 05       		.byte	0x5
+ 717 058e 4F       		.byte	0x4f
+ 718 058f 9A000000 		.4byte	0x9a
+ 719 0593 32       		.byte	0x32
+ 720 0594 0A       		.uleb128 0xa
+ 721 0595 EF040000 		.4byte	.LASF94
+ 722 0599 05       		.byte	0x5
+ 723 059a 50       		.byte	0x50
+ 724 059b 9A000000 		.4byte	0x9a
+ 725 059f 33       		.byte	0x33
+ 726 05a0 0A       		.uleb128 0xa
+ 727 05a1 CD070000 		.4byte	.LASF95
+ 728 05a5 05       		.byte	0x5
+ 729 05a6 51       		.byte	0x51
+ 730 05a7 9A000000 		.4byte	0x9a
+ 731 05ab 34       		.byte	0x34
+ 732 05ac 0A       		.uleb128 0xa
+ 733 05ad C00B0000 		.4byte	.LASF96
+ 734 05b1 05       		.byte	0x5
+ 735 05b2 52       		.byte	0x52
+ 736 05b3 A5000000 		.4byte	0xa5
+ 737 05b7 36       		.byte	0x36
+ 738 05b8 0A       		.uleb128 0xa
+ 739 05b9 B7030000 		.4byte	.LASF97
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 14
+
+
+ 740 05bd 05       		.byte	0x5
+ 741 05be 53       		.byte	0x53
+ 742 05bf A5000000 		.4byte	0xa5
+ 743 05c3 38       		.byte	0x38
+ 744 05c4 0A       		.uleb128 0xa
+ 745 05c5 290C0000 		.4byte	.LASF98
+ 746 05c9 05       		.byte	0x5
+ 747 05ca 54       		.byte	0x54
+ 748 05cb A5000000 		.4byte	0xa5
+ 749 05cf 3A       		.byte	0x3a
+ 750 05d0 0A       		.uleb128 0xa
+ 751 05d1 8F0D0000 		.4byte	.LASF99
+ 752 05d5 05       		.byte	0x5
+ 753 05d6 55       		.byte	0x55
+ 754 05d7 9A000000 		.4byte	0x9a
+ 755 05db 3C       		.byte	0x3c
+ 756 05dc 0A       		.uleb128 0xa
+ 757 05dd F0030000 		.4byte	.LASF100
+ 758 05e1 05       		.byte	0x5
+ 759 05e2 56       		.byte	0x56
+ 760 05e3 9A000000 		.4byte	0x9a
+ 761 05e7 3D       		.byte	0x3d
+ 762 05e8 0A       		.uleb128 0xa
+ 763 05e9 6B0A0000 		.4byte	.LASF101
+ 764 05ed 05       		.byte	0x5
+ 765 05ee 57       		.byte	0x57
+ 766 05ef 9A000000 		.4byte	0x9a
+ 767 05f3 3E       		.byte	0x3e
+ 768 05f4 0A       		.uleb128 0xa
+ 769 05f5 9B000000 		.4byte	.LASF102
+ 770 05f9 05       		.byte	0x5
+ 771 05fa 58       		.byte	0x58
+ 772 05fb 9A000000 		.4byte	0x9a
+ 773 05ff 3F       		.byte	0x3f
+ 774 0600 0A       		.uleb128 0xa
+ 775 0601 A7080000 		.4byte	.LASF103
+ 776 0605 05       		.byte	0x5
+ 777 0606 59       		.byte	0x59
+ 778 0607 9A000000 		.4byte	0x9a
+ 779 060b 40       		.byte	0x40
+ 780 060c 0A       		.uleb128 0xa
+ 781 060d 66040000 		.4byte	.LASF104
+ 782 0611 05       		.byte	0x5
+ 783 0612 5A       		.byte	0x5a
+ 784 0613 9A000000 		.4byte	0x9a
+ 785 0617 41       		.byte	0x41
+ 786 0618 0A       		.uleb128 0xa
+ 787 0619 D1060000 		.4byte	.LASF105
+ 788 061d 05       		.byte	0x5
+ 789 061e 5B       		.byte	0x5b
+ 790 061f 9A000000 		.4byte	0x9a
+ 791 0623 42       		.byte	0x42
+ 792 0624 0A       		.uleb128 0xa
+ 793 0625 640B0000 		.4byte	.LASF106
+ 794 0629 05       		.byte	0x5
+ 795 062a 5C       		.byte	0x5c
+ 796 062b 9A000000 		.4byte	0x9a
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 15
+
+
+ 797 062f 43       		.byte	0x43
+ 798 0630 0A       		.uleb128 0xa
+ 799 0631 8E030000 		.4byte	.LASF107
+ 800 0635 05       		.byte	0x5
+ 801 0636 5D       		.byte	0x5d
+ 802 0637 9A000000 		.4byte	0x9a
+ 803 063b 44       		.byte	0x44
+ 804 063c 0A       		.uleb128 0xa
+ 805 063d 00000000 		.4byte	.LASF108
+ 806 0641 05       		.byte	0x5
+ 807 0642 5E       		.byte	0x5e
+ 808 0643 C6000000 		.4byte	0xc6
+ 809 0647 48       		.byte	0x48
+ 810 0648 0A       		.uleb128 0xa
+ 811 0649 6C030000 		.4byte	.LASF109
+ 812 064d 05       		.byte	0x5
+ 813 064e 5F       		.byte	0x5f
+ 814 064f C6000000 		.4byte	0xc6
+ 815 0653 4C       		.byte	0x4c
+ 816 0654 0A       		.uleb128 0xa
+ 817 0655 0F0E0000 		.4byte	.LASF110
+ 818 0659 05       		.byte	0x5
+ 819 065a 60       		.byte	0x60
+ 820 065b 9A000000 		.4byte	0x9a
+ 821 065f 50       		.byte	0x50
+ 822 0660 0A       		.uleb128 0xa
+ 823 0661 960C0000 		.4byte	.LASF111
+ 824 0665 05       		.byte	0x5
+ 825 0666 61       		.byte	0x61
+ 826 0667 9A000000 		.4byte	0x9a
+ 827 066b 51       		.byte	0x51
+ 828 066c 0A       		.uleb128 0xa
+ 829 066d 530C0000 		.4byte	.LASF112
+ 830 0671 05       		.byte	0x5
+ 831 0672 62       		.byte	0x62
+ 832 0673 9A000000 		.4byte	0x9a
+ 833 0677 52       		.byte	0x52
+ 834 0678 0A       		.uleb128 0xa
+ 835 0679 FD0D0000 		.4byte	.LASF113
+ 836 067d 05       		.byte	0x5
+ 837 067e 63       		.byte	0x63
+ 838 067f 9A000000 		.4byte	0x9a
+ 839 0683 53       		.byte	0x53
+ 840 0684 0A       		.uleb128 0xa
+ 841 0685 830A0000 		.4byte	.LASF114
+ 842 0689 05       		.byte	0x5
+ 843 068a 64       		.byte	0x64
+ 844 068b 9A000000 		.4byte	0x9a
+ 845 068f 54       		.byte	0x54
+ 846 0690 0A       		.uleb128 0xa
+ 847 0691 F30B0000 		.4byte	.LASF115
+ 848 0695 05       		.byte	0x5
+ 849 0696 65       		.byte	0x65
+ 850 0697 9A000000 		.4byte	0x9a
+ 851 069b 55       		.byte	0x55
+ 852 069c 0A       		.uleb128 0xa
+ 853 069d 790B0000 		.4byte	.LASF116
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 16
+
+
+ 854 06a1 05       		.byte	0x5
+ 855 06a2 66       		.byte	0x66
+ 856 06a3 9A000000 		.4byte	0x9a
+ 857 06a7 56       		.byte	0x56
+ 858 06a8 0A       		.uleb128 0xa
+ 859 06a9 E4050000 		.4byte	.LASF117
+ 860 06ad 05       		.byte	0x5
+ 861 06ae 67       		.byte	0x67
+ 862 06af 9A000000 		.4byte	0x9a
+ 863 06b3 57       		.byte	0x57
+ 864 06b4 0A       		.uleb128 0xa
+ 865 06b5 3F000000 		.4byte	.LASF118
+ 866 06b9 05       		.byte	0x5
+ 867 06ba 68       		.byte	0x68
+ 868 06bb 9A000000 		.4byte	0x9a
+ 869 06bf 58       		.byte	0x58
+ 870 06c0 0A       		.uleb128 0xa
+ 871 06c1 C9090000 		.4byte	.LASF119
+ 872 06c5 05       		.byte	0x5
+ 873 06c6 69       		.byte	0x69
+ 874 06c7 9A000000 		.4byte	0x9a
+ 875 06cb 59       		.byte	0x59
+ 876 06cc 0A       		.uleb128 0xa
+ 877 06cd AE070000 		.4byte	.LASF120
+ 878 06d1 05       		.byte	0x5
+ 879 06d2 6E       		.byte	0x6e
+ 880 06d3 B0000000 		.4byte	0xb0
+ 881 06d7 5A       		.byte	0x5a
+ 882 06d8 0A       		.uleb128 0xa
+ 883 06d9 9F0B0000 		.4byte	.LASF121
+ 884 06dd 05       		.byte	0x5
+ 885 06de 6F       		.byte	0x6f
+ 886 06df B0000000 		.4byte	0xb0
+ 887 06e3 5C       		.byte	0x5c
+ 888 06e4 0A       		.uleb128 0xa
+ 889 06e5 E4010000 		.4byte	.LASF122
+ 890 06e9 05       		.byte	0x5
+ 891 06ea 70       		.byte	0x70
+ 892 06eb 9A000000 		.4byte	0x9a
+ 893 06ef 5E       		.byte	0x5e
+ 894 06f0 0A       		.uleb128 0xa
+ 895 06f1 45040000 		.4byte	.LASF123
+ 896 06f5 05       		.byte	0x5
+ 897 06f6 71       		.byte	0x71
+ 898 06f7 9A000000 		.4byte	0x9a
+ 899 06fb 5F       		.byte	0x5f
+ 900 06fc 0A       		.uleb128 0xa
+ 901 06fd 43080000 		.4byte	.LASF124
+ 902 0701 05       		.byte	0x5
+ 903 0702 72       		.byte	0x72
+ 904 0703 9A000000 		.4byte	0x9a
+ 905 0707 60       		.byte	0x60
+ 906 0708 0A       		.uleb128 0xa
+ 907 0709 07090000 		.4byte	.LASF125
+ 908 070d 05       		.byte	0x5
+ 909 070e 73       		.byte	0x73
+ 910 070f C6000000 		.4byte	0xc6
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 17
+
+
+ 911 0713 64       		.byte	0x64
+ 912 0714 0A       		.uleb128 0xa
+ 913 0715 0A020000 		.4byte	.LASF126
+ 914 0719 05       		.byte	0x5
+ 915 071a 76       		.byte	0x76
+ 916 071b B0000000 		.4byte	0xb0
+ 917 071f 68       		.byte	0x68
+ 918 0720 0A       		.uleb128 0xa
+ 919 0721 28050000 		.4byte	.LASF127
+ 920 0725 05       		.byte	0x5
+ 921 0726 77       		.byte	0x77
+ 922 0727 B0000000 		.4byte	0xb0
+ 923 072b 6A       		.byte	0x6a
+ 924 072c 0A       		.uleb128 0xa
+ 925 072d 09060000 		.4byte	.LASF128
+ 926 0731 05       		.byte	0x5
+ 927 0732 78       		.byte	0x78
+ 928 0733 B0000000 		.4byte	0xb0
+ 929 0737 6C       		.byte	0x6c
+ 930 0738 0A       		.uleb128 0xa
+ 931 0739 68060000 		.4byte	.LASF129
+ 932 073d 05       		.byte	0x5
+ 933 073e 79       		.byte	0x79
+ 934 073f B0000000 		.4byte	0xb0
+ 935 0743 6E       		.byte	0x6e
+ 936 0744 0A       		.uleb128 0xa
+ 937 0745 180A0000 		.4byte	.LASF130
+ 938 0749 05       		.byte	0x5
+ 939 074a 7B       		.byte	0x7b
+ 940 074b 9A000000 		.4byte	0x9a
+ 941 074f 70       		.byte	0x70
+ 942 0750 0A       		.uleb128 0xa
+ 943 0751 9F020000 		.4byte	.LASF131
+ 944 0755 05       		.byte	0x5
+ 945 0756 7C       		.byte	0x7c
+ 946 0757 9A000000 		.4byte	0x9a
+ 947 075b 71       		.byte	0x71
+ 948 075c 0A       		.uleb128 0xa
+ 949 075d D20D0000 		.4byte	.LASF132
+ 950 0761 05       		.byte	0x5
+ 951 0762 7D       		.byte	0x7d
+ 952 0763 9A000000 		.4byte	0x9a
+ 953 0767 72       		.byte	0x72
+ 954 0768 0A       		.uleb128 0xa
+ 955 0769 EB070000 		.4byte	.LASF133
+ 956 076d 05       		.byte	0x5
+ 957 076e 7E       		.byte	0x7e
+ 958 076f 9A000000 		.4byte	0x9a
+ 959 0773 73       		.byte	0x73
+ 960 0774 0A       		.uleb128 0xa
+ 961 0775 930A0000 		.4byte	.LASF134
+ 962 0779 05       		.byte	0x5
+ 963 077a 80       		.byte	0x80
+ 964 077b B0000000 		.4byte	0xb0
+ 965 077f 74       		.byte	0x74
+ 966 0780 0A       		.uleb128 0xa
+ 967 0781 290B0000 		.4byte	.LASF135
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 18
+
+
+ 968 0785 05       		.byte	0x5
+ 969 0786 81       		.byte	0x81
+ 970 0787 B0000000 		.4byte	0xb0
+ 971 078b 76       		.byte	0x76
+ 972 078c 0A       		.uleb128 0xa
+ 973 078d C9030000 		.4byte	.LASF136
+ 974 0791 05       		.byte	0x5
+ 975 0792 82       		.byte	0x82
+ 976 0793 B0000000 		.4byte	0xb0
+ 977 0797 78       		.byte	0x78
+ 978 0798 0A       		.uleb128 0xa
+ 979 0799 EB000000 		.4byte	.LASF137
+ 980 079d 05       		.byte	0x5
+ 981 079e 83       		.byte	0x83
+ 982 079f B0000000 		.4byte	0xb0
+ 983 07a3 7A       		.byte	0x7a
+ 984 07a4 0A       		.uleb128 0xa
+ 985 07a5 F70C0000 		.4byte	.LASF138
+ 986 07a9 05       		.byte	0x5
+ 987 07aa 86       		.byte	0x86
+ 988 07ab 9A000000 		.4byte	0x9a
+ 989 07af 7C       		.byte	0x7c
+ 990 07b0 0A       		.uleb128 0xa
+ 991 07b1 500A0000 		.4byte	.LASF139
+ 992 07b5 05       		.byte	0x5
+ 993 07b6 87       		.byte	0x87
+ 994 07b7 9A000000 		.4byte	0x9a
+ 995 07bb 7D       		.byte	0x7d
+ 996 07bc 0A       		.uleb128 0xa
+ 997 07bd 53000000 		.4byte	.LASF140
+ 998 07c1 05       		.byte	0x5
+ 999 07c2 88       		.byte	0x88
+ 1000 07c3 9A000000 		.4byte	0x9a
+ 1001 07c7 7E       		.byte	0x7e
+ 1002 07c8 0A       		.uleb128 0xa
+ 1003 07c9 31040000 		.4byte	.LASF141
+ 1004 07cd 05       		.byte	0x5
+ 1005 07ce 89       		.byte	0x89
+ 1006 07cf 9A000000 		.4byte	0x9a
+ 1007 07d3 7F       		.byte	0x7f
+ 1008 07d4 0A       		.uleb128 0xa
+ 1009 07d5 DB040000 		.4byte	.LASF142
+ 1010 07d9 05       		.byte	0x5
+ 1011 07da 8A       		.byte	0x8a
+ 1012 07db 9A000000 		.4byte	0x9a
+ 1013 07df 80       		.byte	0x80
+ 1014 07e0 0A       		.uleb128 0xa
+ 1015 07e1 02070000 		.4byte	.LASF143
+ 1016 07e5 05       		.byte	0x5
+ 1017 07e6 8D       		.byte	0x8d
+ 1018 07e7 C6000000 		.4byte	0xc6
+ 1019 07eb 84       		.byte	0x84
+ 1020 07ec 0A       		.uleb128 0xa
+ 1021 07ed B3010000 		.4byte	.LASF144
+ 1022 07f1 05       		.byte	0x5
+ 1023 07f2 8E       		.byte	0x8e
+ 1024 07f3 C6000000 		.4byte	0xc6
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 19
+
+
+ 1025 07f7 88       		.byte	0x88
+ 1026 07f8 0A       		.uleb128 0xa
+ 1027 07f9 E20C0000 		.4byte	.LASF145
+ 1028 07fd 05       		.byte	0x5
+ 1029 07fe 8F       		.byte	0x8f
+ 1030 07ff C6000000 		.4byte	0xc6
+ 1031 0803 8C       		.byte	0x8c
+ 1032 0804 0A       		.uleb128 0xa
+ 1033 0805 84070000 		.4byte	.LASF146
+ 1034 0809 05       		.byte	0x5
+ 1035 080a 90       		.byte	0x90
+ 1036 080b C6000000 		.4byte	0xc6
+ 1037 080f 90       		.byte	0x90
+ 1038 0810 0A       		.uleb128 0xa
+ 1039 0811 C6040000 		.4byte	.LASF147
+ 1040 0815 05       		.byte	0x5
+ 1041 0816 91       		.byte	0x91
+ 1042 0817 C6000000 		.4byte	0xc6
+ 1043 081b 94       		.byte	0x94
+ 1044 081c 0A       		.uleb128 0xa
+ 1045 081d EC060000 		.4byte	.LASF148
+ 1046 0821 05       		.byte	0x5
+ 1047 0822 92       		.byte	0x92
+ 1048 0823 C6000000 		.4byte	0xc6
+ 1049 0827 98       		.byte	0x98
+ 1050 0828 0A       		.uleb128 0xa
+ 1051 0829 6A0D0000 		.4byte	.LASF149
+ 1052 082d 05       		.byte	0x5
+ 1053 082e 93       		.byte	0x93
+ 1054 082f C6000000 		.4byte	0xc6
+ 1055 0833 9C       		.byte	0x9c
+ 1056 0834 0A       		.uleb128 0xa
+ 1057 0835 1A020000 		.4byte	.LASF150
+ 1058 0839 05       		.byte	0x5
+ 1059 083a 94       		.byte	0x94
+ 1060 083b C6000000 		.4byte	0xc6
+ 1061 083f A0       		.byte	0xa0
+ 1062 0840 0A       		.uleb128 0xa
+ 1063 0841 F6020000 		.4byte	.LASF151
+ 1064 0845 05       		.byte	0x5
+ 1065 0846 95       		.byte	0x95
+ 1066 0847 B0000000 		.4byte	0xb0
+ 1067 084b A4       		.byte	0xa4
+ 1068 084c 0A       		.uleb128 0xa
+ 1069 084d C20A0000 		.4byte	.LASF152
+ 1070 0851 05       		.byte	0x5
+ 1071 0852 96       		.byte	0x96
+ 1072 0853 B0000000 		.4byte	0xb0
+ 1073 0857 A6       		.byte	0xa6
+ 1074 0858 0A       		.uleb128 0xa
+ 1075 0859 36090000 		.4byte	.LASF153
+ 1076 085d 05       		.byte	0x5
+ 1077 085e 97       		.byte	0x97
+ 1078 085f B0000000 		.4byte	0xb0
+ 1079 0863 A8       		.byte	0xa8
+ 1080 0864 0A       		.uleb128 0xa
+ 1081 0865 100B0000 		.4byte	.LASF154
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 20
+
+
+ 1082 0869 05       		.byte	0x5
+ 1083 086a 98       		.byte	0x98
+ 1084 086b B0000000 		.4byte	0xb0
+ 1085 086f AA       		.byte	0xaa
+ 1086 0870 0A       		.uleb128 0xa
+ 1087 0871 18060000 		.4byte	.LASF155
+ 1088 0875 05       		.byte	0x5
+ 1089 0876 99       		.byte	0x99
+ 1090 0877 B0000000 		.4byte	0xb0
+ 1091 087b AC       		.byte	0xac
+ 1092 087c 0A       		.uleb128 0xa
+ 1093 087d 0F080000 		.4byte	.LASF156
+ 1094 0881 05       		.byte	0x5
+ 1095 0882 9A       		.byte	0x9a
+ 1096 0883 B0000000 		.4byte	0xb0
+ 1097 0887 AE       		.byte	0xae
+ 1098 0888 0A       		.uleb128 0xa
+ 1099 0889 A80B0000 		.4byte	.LASF157
+ 1100 088d 05       		.byte	0x5
+ 1101 088e 9D       		.byte	0x9d
+ 1102 088f B0000000 		.4byte	0xb0
+ 1103 0893 B0       		.byte	0xb0
+ 1104 0894 0A       		.uleb128 0xa
+ 1105 0895 66000000 		.4byte	.LASF158
+ 1106 0899 05       		.byte	0x5
+ 1107 089a 9E       		.byte	0x9e
+ 1108 089b C6000000 		.4byte	0xc6
+ 1109 089f B4       		.byte	0xb4
+ 1110 08a0 00       		.byte	0
+ 1111 08a1 03       		.uleb128 0x3
+ 1112 08a2 8D060000 		.4byte	.LASF159
+ 1113 08a6 05       		.byte	0x5
+ 1114 08a7 9F       		.byte	0x9f
+ 1115 08a8 90040000 		.4byte	0x490
+ 1116 08ac 02       		.uleb128 0x2
+ 1117 08ad 01       		.byte	0x1
+ 1118 08ae 08       		.byte	0x8
+ 1119 08af EF0A0000 		.4byte	.LASF160
+ 1120 08b3 02       		.uleb128 0x2
+ 1121 08b4 04       		.byte	0x4
+ 1122 08b5 04       		.byte	0x4
+ 1123 08b6 01090000 		.4byte	.LASF161
+ 1124 08ba 02       		.uleb128 0x2
+ 1125 08bb 08       		.byte	0x8
+ 1126 08bc 04       		.byte	0x4
+ 1127 08bd C2030000 		.4byte	.LASF162
+ 1128 08c1 0F       		.uleb128 0xf
+ 1129 08c2 04       		.byte	0x4
+ 1130 08c3 93000000 		.4byte	0x93
+ 1131 08c7 06       		.byte	0x6
+ 1132 08c8 1405     		.2byte	0x514
+ 1133 08ca 02090000 		.4byte	0x902
+ 1134 08ce 10       		.uleb128 0x10
+ 1135 08cf 0C0D0000 		.4byte	.LASF163
+ 1136 08d3 00       		.byte	0
+ 1137 08d4 11       		.uleb128 0x11
+ 1138 08d5 7A000000 		.4byte	.LASF164
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 21
+
+
+ 1139 08d9 01004200 		.4byte	0x420001
+ 1140 08dd 11       		.uleb128 0x11
+ 1141 08de 2E000000 		.4byte	.LASF165
+ 1142 08e2 02004200 		.4byte	0x420002
+ 1143 08e6 11       		.uleb128 0x11
+ 1144 08e7 FB040000 		.4byte	.LASF166
+ 1145 08eb 03004200 		.4byte	0x420003
+ 1146 08ef 11       		.uleb128 0x11
+ 1147 08f0 82040000 		.4byte	.LASF167
+ 1148 08f4 04004200 		.4byte	0x420004
+ 1149 08f8 11       		.uleb128 0x11
+ 1150 08f9 E50B0000 		.4byte	.LASF168
+ 1151 08fd FF004200 		.4byte	0x4200ff
+ 1152 0901 00       		.byte	0
+ 1153 0902 0D       		.uleb128 0xd
+ 1154 0903 3E0C0000 		.4byte	.LASF169
+ 1155 0907 06       		.byte	0x6
+ 1156 0908 1C05     		.2byte	0x51c
+ 1157 090a C1080000 		.4byte	0x8c1
+ 1158 090e 0F       		.uleb128 0xf
+ 1159 090f 01       		.byte	0x1
+ 1160 0910 36000000 		.4byte	0x36
+ 1161 0914 06       		.byte	0x6
+ 1162 0915 B205     		.2byte	0x5b2
+ 1163 0917 3A090000 		.4byte	0x93a
+ 1164 091b 10       		.uleb128 0x10
+ 1165 091c 410A0000 		.4byte	.LASF170
+ 1166 0920 00       		.byte	0
+ 1167 0921 10       		.uleb128 0x10
+ 1168 0922 B4060000 		.4byte	.LASF171
+ 1169 0926 01       		.byte	0x1
+ 1170 0927 10       		.uleb128 0x10
+ 1171 0928 B4080000 		.4byte	.LASF172
+ 1172 092c 02       		.byte	0x2
+ 1173 092d 10       		.uleb128 0x10
+ 1174 092e 99070000 		.4byte	.LASF173
+ 1175 0932 03       		.byte	0x3
+ 1176 0933 10       		.uleb128 0x10
+ 1177 0934 02080000 		.4byte	.LASF174
+ 1178 0938 04       		.byte	0x4
+ 1179 0939 00       		.byte	0
+ 1180 093a 0D       		.uleb128 0xd
+ 1181 093b 12000000 		.4byte	.LASF175
+ 1182 093f 06       		.byte	0x6
+ 1183 0940 B805     		.2byte	0x5b8
+ 1184 0942 0E090000 		.4byte	0x90e
+ 1185 0946 0F       		.uleb128 0xf
+ 1186 0947 01       		.byte	0x1
+ 1187 0948 36000000 		.4byte	0x36
+ 1188 094c 06       		.byte	0x6
+ 1189 094d BC05     		.2byte	0x5bc
+ 1190 094f 6C090000 		.4byte	0x96c
+ 1191 0953 10       		.uleb128 0x10
+ 1192 0954 370D0000 		.4byte	.LASF176
+ 1193 0958 01       		.byte	0x1
+ 1194 0959 10       		.uleb128 0x10
+ 1195 095a 3A050000 		.4byte	.LASF177
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 22
+
+
+ 1196 095e 02       		.byte	0x2
+ 1197 095f 10       		.uleb128 0x10
+ 1198 0960 54080000 		.4byte	.LASF178
+ 1199 0964 04       		.byte	0x4
+ 1200 0965 10       		.uleb128 0x10
+ 1201 0966 24070000 		.4byte	.LASF179
+ 1202 096a 08       		.byte	0x8
+ 1203 096b 00       		.byte	0
+ 1204 096c 0D       		.uleb128 0xd
+ 1205 096d D9080000 		.4byte	.LASF180
+ 1206 0971 06       		.byte	0x6
+ 1207 0972 CB05     		.2byte	0x5cb
+ 1208 0974 46090000 		.4byte	0x946
+ 1209 0978 12       		.uleb128 0x12
+ 1210 0979 08       		.byte	0x8
+ 1211 097a 06       		.byte	0x6
+ 1212 097b E705     		.2byte	0x5e7
+ 1213 097d 9C090000 		.4byte	0x99c
+ 1214 0981 13       		.uleb128 0x13
+ 1215 0982 73070000 		.4byte	.LASF181
+ 1216 0986 06       		.byte	0x6
+ 1217 0987 E905     		.2byte	0x5e9
+ 1218 0989 9C090000 		.4byte	0x99c
+ 1219 098d 00       		.byte	0
+ 1220 098e 13       		.uleb128 0x13
+ 1221 098f 01060000 		.4byte	.LASF182
+ 1222 0993 06       		.byte	0x6
+ 1223 0994 EC05     		.2byte	0x5ec
+ 1224 0996 9C090000 		.4byte	0x99c
+ 1225 099a 04       		.byte	0x4
+ 1226 099b 00       		.byte	0
+ 1227 099c 14       		.uleb128 0x14
+ 1228 099d 04       		.byte	0x4
+ 1229 099e 0D       		.uleb128 0xd
+ 1230 099f 3E070000 		.4byte	.LASF183
+ 1231 09a3 06       		.byte	0x6
+ 1232 09a4 EF05     		.2byte	0x5ef
+ 1233 09a6 78090000 		.4byte	0x978
+ 1234 09aa 0D       		.uleb128 0xd
+ 1235 09ab B8090000 		.4byte	.LASF184
+ 1236 09af 06       		.byte	0x6
+ 1237 09b0 F205     		.2byte	0x5f2
+ 1238 09b2 B6090000 		.4byte	0x9b6
+ 1239 09b6 15       		.uleb128 0x15
+ 1240 09b7 04       		.byte	0x4
+ 1241 09b8 BC090000 		.4byte	0x9bc
+ 1242 09bc 16       		.uleb128 0x16
+ 1243 09bd 02090000 		.4byte	0x902
+ 1244 09c1 D0090000 		.4byte	0x9d0
+ 1245 09c5 17       		.uleb128 0x17
+ 1246 09c6 D0090000 		.4byte	0x9d0
+ 1247 09ca 17       		.uleb128 0x17
+ 1248 09cb 6C090000 		.4byte	0x96c
+ 1249 09cf 00       		.byte	0
+ 1250 09d0 15       		.uleb128 0x15
+ 1251 09d1 04       		.byte	0x4
+ 1252 09d2 9E090000 		.4byte	0x99e
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 23
+
+
+ 1253 09d6 18       		.uleb128 0x18
+ 1254 09d7 1B040000 		.4byte	.LASF228
+ 1255 09db 18       		.byte	0x18
+ 1256 09dc 06       		.byte	0x6
+ 1257 09dd F505     		.2byte	0x5f5
+ 1258 09df 320A0000 		.4byte	0xa32
+ 1259 09e3 13       		.uleb128 0x13
+ 1260 09e4 5F060000 		.4byte	.LASF185
+ 1261 09e8 06       		.byte	0x6
+ 1262 09e9 F705     		.2byte	0x5f7
+ 1263 09eb AA090000 		.4byte	0x9aa
+ 1264 09ef 00       		.byte	0
+ 1265 09f0 13       		.uleb128 0x13
+ 1266 09f1 CA010000 		.4byte	.LASF186
+ 1267 09f5 06       		.byte	0x6
+ 1268 09f6 F805     		.2byte	0x5f8
+ 1269 09f8 3A090000 		.4byte	0x93a
+ 1270 09fc 04       		.byte	0x4
+ 1271 09fd 13       		.uleb128 0x13
+ 1272 09fe F8050000 		.4byte	.LASF187
+ 1273 0a02 06       		.byte	0x6
+ 1274 0a03 F905     		.2byte	0x5f9
+ 1275 0a05 C6000000 		.4byte	0xc6
+ 1276 0a09 08       		.byte	0x8
+ 1277 0a0a 13       		.uleb128 0x13
+ 1278 0a0b DD060000 		.4byte	.LASF188
+ 1279 0a0f 06       		.byte	0x6
+ 1280 0a10 0106     		.2byte	0x601
+ 1281 0a12 D0090000 		.4byte	0x9d0
+ 1282 0a16 0C       		.byte	0xc
+ 1283 0a17 13       		.uleb128 0x13
+ 1284 0a18 3D020000 		.4byte	.LASF189
+ 1285 0a1c 06       		.byte	0x6
+ 1286 0a1d 0406     		.2byte	0x604
+ 1287 0a1f 320A0000 		.4byte	0xa32
+ 1288 0a23 10       		.byte	0x10
+ 1289 0a24 13       		.uleb128 0x13
+ 1290 0a25 B9070000 		.4byte	.LASF190
+ 1291 0a29 06       		.byte	0x6
+ 1292 0a2a 0A06     		.2byte	0x60a
+ 1293 0a2c 320A0000 		.4byte	0xa32
+ 1294 0a30 14       		.byte	0x14
+ 1295 0a31 00       		.byte	0
+ 1296 0a32 15       		.uleb128 0x15
+ 1297 0a33 04       		.byte	0x4
+ 1298 0a34 D6090000 		.4byte	0x9d6
+ 1299 0a38 0D       		.uleb128 0xd
+ 1300 0a39 070C0000 		.4byte	.LASF191
+ 1301 0a3d 06       		.byte	0x6
+ 1302 0a3e 0F06     		.2byte	0x60f
+ 1303 0a40 D6090000 		.4byte	0x9d6
+ 1304 0a44 0F       		.uleb128 0xf
+ 1305 0a45 01       		.byte	0x1
+ 1306 0a46 36000000 		.4byte	0x36
+ 1307 0a4a 07       		.byte	0x7
+ 1308 0a4b 1304     		.2byte	0x413
+ 1309 0a4d 6A0A0000 		.4byte	0xa6a
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 24
+
+
+ 1310 0a51 10       		.uleb128 0x10
+ 1311 0a52 2E030000 		.4byte	.LASF192
+ 1312 0a56 00       		.byte	0
+ 1313 0a57 10       		.uleb128 0x10
+ 1314 0a58 83090000 		.4byte	.LASF193
+ 1315 0a5c 01       		.byte	0x1
+ 1316 0a5d 10       		.uleb128 0x10
+ 1317 0a5e 9F030000 		.4byte	.LASF194
+ 1318 0a62 02       		.byte	0x2
+ 1319 0a63 10       		.uleb128 0x10
+ 1320 0a64 1D0D0000 		.4byte	.LASF195
+ 1321 0a68 03       		.byte	0x3
+ 1322 0a69 00       		.byte	0
+ 1323 0a6a 0D       		.uleb128 0xd
+ 1324 0a6b B4020000 		.4byte	.LASF196
+ 1325 0a6f 07       		.byte	0x7
+ 1326 0a70 1804     		.2byte	0x418
+ 1327 0a72 440A0000 		.4byte	0xa44
+ 1328 0a76 12       		.uleb128 0x12
+ 1329 0a77 78       		.byte	0x78
+ 1330 0a78 07       		.byte	0x7
+ 1331 0a79 0205     		.2byte	0x502
+ 1332 0a7b 430B0000 		.4byte	0xb43
+ 1333 0a7f 13       		.uleb128 0x13
+ 1334 0a80 740B0000 		.4byte	.LASF197
+ 1335 0a84 07       		.byte	0x7
+ 1336 0a85 0405     		.2byte	0x504
+ 1337 0a87 C6000000 		.4byte	0xc6
+ 1338 0a8b 00       		.byte	0
+ 1339 0a8c 13       		.uleb128 0x13
+ 1340 0a8d 630C0000 		.4byte	.LASF198
+ 1341 0a91 07       		.byte	0x7
+ 1342 0a92 0505     		.2byte	0x505
+ 1343 0a94 C6000000 		.4byte	0xc6
+ 1344 0a98 04       		.byte	0x4
+ 1345 0a99 13       		.uleb128 0x13
+ 1346 0a9a FB030000 		.4byte	.LASF199
+ 1347 0a9e 07       		.byte	0x7
+ 1348 0a9f 0605     		.2byte	0x506
+ 1349 0aa1 C6000000 		.4byte	0xc6
+ 1350 0aa5 08       		.byte	0x8
+ 1351 0aa6 13       		.uleb128 0x13
+ 1352 0aa7 DE070000 		.4byte	.LASF200
+ 1353 0aab 07       		.byte	0x7
+ 1354 0aac 0705     		.2byte	0x507
+ 1355 0aae C6000000 		.4byte	0xc6
+ 1356 0ab2 0C       		.byte	0xc
+ 1357 0ab3 13       		.uleb128 0x13
+ 1358 0ab4 37060000 		.4byte	.LASF201
+ 1359 0ab8 07       		.byte	0x7
+ 1360 0ab9 0805     		.2byte	0x508
+ 1361 0abb C6000000 		.4byte	0xc6
+ 1362 0abf 10       		.byte	0x10
+ 1363 0ac0 13       		.uleb128 0x13
+ 1364 0ac1 1F0C0000 		.4byte	.LASF202
+ 1365 0ac5 07       		.byte	0x7
+ 1366 0ac6 0905     		.2byte	0x509
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 25
+
+
+ 1367 0ac8 6A0A0000 		.4byte	0xa6a
+ 1368 0acc 14       		.byte	0x14
+ 1369 0acd 13       		.uleb128 0x13
+ 1370 0ace 74090000 		.4byte	.LASF203
+ 1371 0ad2 07       		.byte	0x7
+ 1372 0ad3 0A05     		.2byte	0x50a
+ 1373 0ad5 C6000000 		.4byte	0xc6
+ 1374 0ad9 18       		.byte	0x18
+ 1375 0ada 13       		.uleb128 0x13
+ 1376 0adb 9D060000 		.4byte	.LASF204
+ 1377 0adf 07       		.byte	0x7
+ 1378 0ae0 0B05     		.2byte	0x50b
+ 1379 0ae2 430B0000 		.4byte	0xb43
+ 1380 0ae6 1C       		.byte	0x1c
+ 1381 0ae7 13       		.uleb128 0x13
+ 1382 0ae8 F1090000 		.4byte	.LASF205
+ 1383 0aec 07       		.byte	0x7
+ 1384 0aed 0C05     		.2byte	0x50c
+ 1385 0aef C6000000 		.4byte	0xc6
+ 1386 0af3 5C       		.byte	0x5c
+ 1387 0af4 13       		.uleb128 0x13
+ 1388 0af5 DF000000 		.4byte	.LASF206
+ 1389 0af9 07       		.byte	0x7
+ 1390 0afa 0D05     		.2byte	0x50d
+ 1391 0afc C6000000 		.4byte	0xc6
+ 1392 0b00 60       		.byte	0x60
+ 1393 0b01 13       		.uleb128 0x13
+ 1394 0b02 20030000 		.4byte	.LASF207
+ 1395 0b06 07       		.byte	0x7
+ 1396 0b07 0E05     		.2byte	0x50e
+ 1397 0b09 C6000000 		.4byte	0xc6
+ 1398 0b0d 64       		.byte	0x64
+ 1399 0b0e 13       		.uleb128 0x13
+ 1400 0b0f E7090000 		.4byte	.LASF208
+ 1401 0b13 07       		.byte	0x7
+ 1402 0b14 0F05     		.2byte	0x50f
+ 1403 0b16 C6000000 		.4byte	0xc6
+ 1404 0b1a 68       		.byte	0x68
+ 1405 0b1b 13       		.uleb128 0x13
+ 1406 0b1c 9E0D0000 		.4byte	.LASF209
+ 1407 0b20 07       		.byte	0x7
+ 1408 0b21 1005     		.2byte	0x510
+ 1409 0b23 C6000000 		.4byte	0xc6
+ 1410 0b27 6C       		.byte	0x6c
+ 1411 0b28 13       		.uleb128 0x13
+ 1412 0b29 1D080000 		.4byte	.LASF210
+ 1413 0b2d 07       		.byte	0x7
+ 1414 0b2e 1105     		.2byte	0x511
+ 1415 0b30 530B0000 		.4byte	0xb53
+ 1416 0b34 70       		.byte	0x70
+ 1417 0b35 13       		.uleb128 0x13
+ 1418 0b36 D70A0000 		.4byte	.LASF211
+ 1419 0b3a 07       		.byte	0x7
+ 1420 0b3b 1205     		.2byte	0x512
+ 1421 0b3d C6000000 		.4byte	0xc6
+ 1422 0b41 74       		.byte	0x74
+ 1423 0b42 00       		.byte	0
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 26
+
+
+ 1424 0b43 07       		.uleb128 0x7
+ 1425 0b44 C6000000 		.4byte	0xc6
+ 1426 0b48 530B0000 		.4byte	0xb53
+ 1427 0b4c 08       		.uleb128 0x8
+ 1428 0b4d D1000000 		.4byte	0xd1
+ 1429 0b51 0F       		.byte	0xf
+ 1430 0b52 00       		.byte	0
+ 1431 0b53 02       		.uleb128 0x2
+ 1432 0b54 01       		.byte	0x1
+ 1433 0b55 02       		.byte	0x2
+ 1434 0b56 9C090000 		.4byte	.LASF212
+ 1435 0b5a 0D       		.uleb128 0xd
+ 1436 0b5b 71020000 		.4byte	.LASF213
+ 1437 0b5f 07       		.byte	0x7
+ 1438 0b60 1305     		.2byte	0x513
+ 1439 0b62 760A0000 		.4byte	0xa76
+ 1440 0b66 0E       		.uleb128 0xe
+ 1441 0b67 14       		.byte	0x14
+ 1442 0b68 08       		.byte	0x8
+ 1443 0b69 3B       		.byte	0x3b
+ 1444 0b6a AB0B0000 		.4byte	0xbab
+ 1445 0b6e 0A       		.uleb128 0xa
+ 1446 0b6f A8060000 		.4byte	.LASF214
+ 1447 0b73 08       		.byte	0x8
+ 1448 0b74 3D       		.byte	0x3d
+ 1449 0b75 C6000000 		.4byte	0xc6
+ 1450 0b79 00       		.byte	0
+ 1451 0b7a 0A       		.uleb128 0xa
+ 1452 0b7b 81060000 		.4byte	.LASF215
+ 1453 0b7f 08       		.byte	0x8
+ 1454 0b80 3E       		.byte	0x3e
+ 1455 0b81 C6000000 		.4byte	0xc6
+ 1456 0b85 04       		.byte	0x4
+ 1457 0b86 0A       		.uleb128 0xa
+ 1458 0b87 76040000 		.4byte	.LASF216
+ 1459 0b8b 08       		.byte	0x8
+ 1460 0b8c 3F       		.byte	0x3f
+ 1461 0b8d AB0B0000 		.4byte	0xbab
+ 1462 0b91 08       		.byte	0x8
+ 1463 0b92 0A       		.uleb128 0xa
+ 1464 0b93 940B0000 		.4byte	.LASF217
+ 1465 0b97 08       		.byte	0x8
+ 1466 0b98 40       		.byte	0x40
+ 1467 0b99 C6000000 		.4byte	0xc6
+ 1468 0b9d 0C       		.byte	0xc
+ 1469 0b9e 0A       		.uleb128 0xa
+ 1470 0b9f D7020000 		.4byte	.LASF218
+ 1471 0ba3 08       		.byte	0x8
+ 1472 0ba4 45       		.byte	0x45
+ 1473 0ba5 C6000000 		.4byte	0xc6
+ 1474 0ba9 10       		.byte	0x10
+ 1475 0baa 00       		.byte	0
+ 1476 0bab 15       		.uleb128 0x15
+ 1477 0bac 04       		.byte	0x4
+ 1478 0bad B10B0000 		.4byte	0xbb1
+ 1479 0bb1 06       		.uleb128 0x6
+ 1480 0bb2 5A0B0000 		.4byte	0xb5a
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 27
+
+
+ 1481 0bb6 03       		.uleb128 0x3
+ 1482 0bb7 820C0000 		.4byte	.LASF219
+ 1483 0bbb 08       		.byte	0x8
+ 1484 0bbc 48       		.byte	0x48
+ 1485 0bbd 660B0000 		.4byte	0xb66
+ 1486 0bc1 19       		.uleb128 0x19
+ 1487 0bc2 60050000 		.4byte	.LASF229
+ 1488 0bc6 0A       		.byte	0xa
+ 1489 0bc7 29       		.byte	0x29
+ 1490 0bc8 9E090000 		.4byte	0x99e
+ 1491 0bcc 05       		.uleb128 0x5
+ 1492 0bcd 03       		.byte	0x3
+ 1493 0bce 00000000 		.4byte	ADC_1_DeepSleepCallbackParams
+ 1494 0bd2 1A       		.uleb128 0x1a
+ 1495 0bd3 30020000 		.4byte	.LASF220
+ 1496 0bd7 09       		.byte	0x9
+ 1497 0bd8 F907     		.2byte	0x7f9
+ 1498 0bda DE0B0000 		.4byte	0xbde
+ 1499 0bde 05       		.uleb128 0x5
+ 1500 0bdf BB000000 		.4byte	0xbb
+ 1501 0be3 1B       		.uleb128 0x1b
+ 1502 0be4 22090000 		.4byte	.LASF221
+ 1503 0be8 05       		.byte	0x5
+ 1504 0be9 A7       		.byte	0xa7
+ 1505 0bea EE0B0000 		.4byte	0xbee
+ 1506 0bee 15       		.uleb128 0x15
+ 1507 0bef 04       		.byte	0x4
+ 1508 0bf0 F40B0000 		.4byte	0xbf4
+ 1509 0bf4 06       		.uleb128 0x6
+ 1510 0bf5 A1080000 		.4byte	0x8a1
+ 1511 0bf9 1A       		.uleb128 0x1a
+ 1512 0bfa AE0A0000 		.4byte	.LASF222
+ 1513 0bfe 08       		.byte	0x8
+ 1514 0bff 6001     		.2byte	0x160
+ 1515 0c01 C6000000 		.4byte	0xc6
+ 1516 0c05 07       		.uleb128 0x7
+ 1517 0c06 150C0000 		.4byte	0xc15
+ 1518 0c0a 150C0000 		.4byte	0xc15
+ 1519 0c0e 08       		.uleb128 0x8
+ 1520 0c0f D1000000 		.4byte	0xd1
+ 1521 0c13 00       		.byte	0
+ 1522 0c14 00       		.byte	0
+ 1523 0c15 06       		.uleb128 0x6
+ 1524 0c16 B60B0000 		.4byte	0xbb6
+ 1525 0c1a 1A       		.uleb128 0x1a
+ 1526 0c1b 26060000 		.4byte	.LASF223
+ 1527 0c1f 08       		.byte	0x8
+ 1528 0c20 6401     		.2byte	0x164
+ 1529 0c22 260C0000 		.4byte	0xc26
+ 1530 0c26 06       		.uleb128 0x6
+ 1531 0c27 050C0000 		.4byte	0xc05
+ 1532 0c2b 1C       		.uleb128 0x1c
+ 1533 0c2c 4C0D0000 		.4byte	.LASF224
+ 1534 0c30 0A       		.byte	0xa
+ 1535 0c31 2D       		.byte	0x2d
+ 1536 0c32 380A0000 		.4byte	0xa38
+ 1537 0c36 05       		.uleb128 0x5
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 28
+
+
+ 1538 0c37 03       		.byte	0x3
+ 1539 0c38 00000000 		.4byte	ADC_1_DeepSleepCallbackStruct
+ 1540 0c3c 00       		.byte	0
+ 1541              		.section	.debug_abbrev,"",%progbits
+ 1542              	.Ldebug_abbrev0:
+ 1543 0000 01       		.uleb128 0x1
+ 1544 0001 11       		.uleb128 0x11
+ 1545 0002 01       		.byte	0x1
+ 1546 0003 25       		.uleb128 0x25
+ 1547 0004 0E       		.uleb128 0xe
+ 1548 0005 13       		.uleb128 0x13
+ 1549 0006 0B       		.uleb128 0xb
+ 1550 0007 03       		.uleb128 0x3
+ 1551 0008 0E       		.uleb128 0xe
+ 1552 0009 1B       		.uleb128 0x1b
+ 1553 000a 0E       		.uleb128 0xe
+ 1554 000b 10       		.uleb128 0x10
+ 1555 000c 17       		.uleb128 0x17
+ 1556 000d 00       		.byte	0
+ 1557 000e 00       		.byte	0
+ 1558 000f 02       		.uleb128 0x2
+ 1559 0010 24       		.uleb128 0x24
+ 1560 0011 00       		.byte	0
+ 1561 0012 0B       		.uleb128 0xb
+ 1562 0013 0B       		.uleb128 0xb
+ 1563 0014 3E       		.uleb128 0x3e
+ 1564 0015 0B       		.uleb128 0xb
+ 1565 0016 03       		.uleb128 0x3
+ 1566 0017 0E       		.uleb128 0xe
+ 1567 0018 00       		.byte	0
+ 1568 0019 00       		.byte	0
+ 1569 001a 03       		.uleb128 0x3
+ 1570 001b 16       		.uleb128 0x16
+ 1571 001c 00       		.byte	0
+ 1572 001d 03       		.uleb128 0x3
+ 1573 001e 0E       		.uleb128 0xe
+ 1574 001f 3A       		.uleb128 0x3a
+ 1575 0020 0B       		.uleb128 0xb
+ 1576 0021 3B       		.uleb128 0x3b
+ 1577 0022 0B       		.uleb128 0xb
+ 1578 0023 49       		.uleb128 0x49
+ 1579 0024 13       		.uleb128 0x13
+ 1580 0025 00       		.byte	0
+ 1581 0026 00       		.byte	0
+ 1582 0027 04       		.uleb128 0x4
+ 1583 0028 24       		.uleb128 0x24
+ 1584 0029 00       		.byte	0
+ 1585 002a 0B       		.uleb128 0xb
+ 1586 002b 0B       		.uleb128 0xb
+ 1587 002c 3E       		.uleb128 0x3e
+ 1588 002d 0B       		.uleb128 0xb
+ 1589 002e 03       		.uleb128 0x3
+ 1590 002f 08       		.uleb128 0x8
+ 1591 0030 00       		.byte	0
+ 1592 0031 00       		.byte	0
+ 1593 0032 05       		.uleb128 0x5
+ 1594 0033 35       		.uleb128 0x35
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 29
+
+
+ 1595 0034 00       		.byte	0
+ 1596 0035 49       		.uleb128 0x49
+ 1597 0036 13       		.uleb128 0x13
+ 1598 0037 00       		.byte	0
+ 1599 0038 00       		.byte	0
+ 1600 0039 06       		.uleb128 0x6
+ 1601 003a 26       		.uleb128 0x26
+ 1602 003b 00       		.byte	0
+ 1603 003c 49       		.uleb128 0x49
+ 1604 003d 13       		.uleb128 0x13
+ 1605 003e 00       		.byte	0
+ 1606 003f 00       		.byte	0
+ 1607 0040 07       		.uleb128 0x7
+ 1608 0041 01       		.uleb128 0x1
+ 1609 0042 01       		.byte	0x1
+ 1610 0043 49       		.uleb128 0x49
+ 1611 0044 13       		.uleb128 0x13
+ 1612 0045 01       		.uleb128 0x1
+ 1613 0046 13       		.uleb128 0x13
+ 1614 0047 00       		.byte	0
+ 1615 0048 00       		.byte	0
+ 1616 0049 08       		.uleb128 0x8
+ 1617 004a 21       		.uleb128 0x21
+ 1618 004b 00       		.byte	0
+ 1619 004c 49       		.uleb128 0x49
+ 1620 004d 13       		.uleb128 0x13
+ 1621 004e 2F       		.uleb128 0x2f
+ 1622 004f 0B       		.uleb128 0xb
+ 1623 0050 00       		.byte	0
+ 1624 0051 00       		.byte	0
+ 1625 0052 09       		.uleb128 0x9
+ 1626 0053 13       		.uleb128 0x13
+ 1627 0054 01       		.byte	0x1
+ 1628 0055 0B       		.uleb128 0xb
+ 1629 0056 05       		.uleb128 0x5
+ 1630 0057 3A       		.uleb128 0x3a
+ 1631 0058 0B       		.uleb128 0xb
+ 1632 0059 3B       		.uleb128 0x3b
+ 1633 005a 0B       		.uleb128 0xb
+ 1634 005b 01       		.uleb128 0x1
+ 1635 005c 13       		.uleb128 0x13
+ 1636 005d 00       		.byte	0
+ 1637 005e 00       		.byte	0
+ 1638 005f 0A       		.uleb128 0xa
+ 1639 0060 0D       		.uleb128 0xd
+ 1640 0061 00       		.byte	0
+ 1641 0062 03       		.uleb128 0x3
+ 1642 0063 0E       		.uleb128 0xe
+ 1643 0064 3A       		.uleb128 0x3a
+ 1644 0065 0B       		.uleb128 0xb
+ 1645 0066 3B       		.uleb128 0x3b
+ 1646 0067 0B       		.uleb128 0xb
+ 1647 0068 49       		.uleb128 0x49
+ 1648 0069 13       		.uleb128 0x13
+ 1649 006a 38       		.uleb128 0x38
+ 1650 006b 0B       		.uleb128 0xb
+ 1651 006c 00       		.byte	0
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 30
+
+
+ 1652 006d 00       		.byte	0
+ 1653 006e 0B       		.uleb128 0xb
+ 1654 006f 0D       		.uleb128 0xd
+ 1655 0070 00       		.byte	0
+ 1656 0071 03       		.uleb128 0x3
+ 1657 0072 0E       		.uleb128 0xe
+ 1658 0073 3A       		.uleb128 0x3a
+ 1659 0074 0B       		.uleb128 0xb
+ 1660 0075 3B       		.uleb128 0x3b
+ 1661 0076 0B       		.uleb128 0xb
+ 1662 0077 49       		.uleb128 0x49
+ 1663 0078 13       		.uleb128 0x13
+ 1664 0079 38       		.uleb128 0x38
+ 1665 007a 05       		.uleb128 0x5
+ 1666 007b 00       		.byte	0
+ 1667 007c 00       		.byte	0
+ 1668 007d 0C       		.uleb128 0xc
+ 1669 007e 21       		.uleb128 0x21
+ 1670 007f 00       		.byte	0
+ 1671 0080 49       		.uleb128 0x49
+ 1672 0081 13       		.uleb128 0x13
+ 1673 0082 2F       		.uleb128 0x2f
+ 1674 0083 05       		.uleb128 0x5
+ 1675 0084 00       		.byte	0
+ 1676 0085 00       		.byte	0
+ 1677 0086 0D       		.uleb128 0xd
+ 1678 0087 16       		.uleb128 0x16
+ 1679 0088 00       		.byte	0
+ 1680 0089 03       		.uleb128 0x3
+ 1681 008a 0E       		.uleb128 0xe
+ 1682 008b 3A       		.uleb128 0x3a
+ 1683 008c 0B       		.uleb128 0xb
+ 1684 008d 3B       		.uleb128 0x3b
+ 1685 008e 05       		.uleb128 0x5
+ 1686 008f 49       		.uleb128 0x49
+ 1687 0090 13       		.uleb128 0x13
+ 1688 0091 00       		.byte	0
+ 1689 0092 00       		.byte	0
+ 1690 0093 0E       		.uleb128 0xe
+ 1691 0094 13       		.uleb128 0x13
+ 1692 0095 01       		.byte	0x1
+ 1693 0096 0B       		.uleb128 0xb
+ 1694 0097 0B       		.uleb128 0xb
+ 1695 0098 3A       		.uleb128 0x3a
+ 1696 0099 0B       		.uleb128 0xb
+ 1697 009a 3B       		.uleb128 0x3b
+ 1698 009b 0B       		.uleb128 0xb
+ 1699 009c 01       		.uleb128 0x1
+ 1700 009d 13       		.uleb128 0x13
+ 1701 009e 00       		.byte	0
+ 1702 009f 00       		.byte	0
+ 1703 00a0 0F       		.uleb128 0xf
+ 1704 00a1 04       		.uleb128 0x4
+ 1705 00a2 01       		.byte	0x1
+ 1706 00a3 0B       		.uleb128 0xb
+ 1707 00a4 0B       		.uleb128 0xb
+ 1708 00a5 49       		.uleb128 0x49
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 31
+
+
+ 1709 00a6 13       		.uleb128 0x13
+ 1710 00a7 3A       		.uleb128 0x3a
+ 1711 00a8 0B       		.uleb128 0xb
+ 1712 00a9 3B       		.uleb128 0x3b
+ 1713 00aa 05       		.uleb128 0x5
+ 1714 00ab 01       		.uleb128 0x1
+ 1715 00ac 13       		.uleb128 0x13
+ 1716 00ad 00       		.byte	0
+ 1717 00ae 00       		.byte	0
+ 1718 00af 10       		.uleb128 0x10
+ 1719 00b0 28       		.uleb128 0x28
+ 1720 00b1 00       		.byte	0
+ 1721 00b2 03       		.uleb128 0x3
+ 1722 00b3 0E       		.uleb128 0xe
+ 1723 00b4 1C       		.uleb128 0x1c
+ 1724 00b5 0B       		.uleb128 0xb
+ 1725 00b6 00       		.byte	0
+ 1726 00b7 00       		.byte	0
+ 1727 00b8 11       		.uleb128 0x11
+ 1728 00b9 28       		.uleb128 0x28
+ 1729 00ba 00       		.byte	0
+ 1730 00bb 03       		.uleb128 0x3
+ 1731 00bc 0E       		.uleb128 0xe
+ 1732 00bd 1C       		.uleb128 0x1c
+ 1733 00be 06       		.uleb128 0x6
+ 1734 00bf 00       		.byte	0
+ 1735 00c0 00       		.byte	0
+ 1736 00c1 12       		.uleb128 0x12
+ 1737 00c2 13       		.uleb128 0x13
+ 1738 00c3 01       		.byte	0x1
+ 1739 00c4 0B       		.uleb128 0xb
+ 1740 00c5 0B       		.uleb128 0xb
+ 1741 00c6 3A       		.uleb128 0x3a
+ 1742 00c7 0B       		.uleb128 0xb
+ 1743 00c8 3B       		.uleb128 0x3b
+ 1744 00c9 05       		.uleb128 0x5
+ 1745 00ca 01       		.uleb128 0x1
+ 1746 00cb 13       		.uleb128 0x13
+ 1747 00cc 00       		.byte	0
+ 1748 00cd 00       		.byte	0
+ 1749 00ce 13       		.uleb128 0x13
+ 1750 00cf 0D       		.uleb128 0xd
+ 1751 00d0 00       		.byte	0
+ 1752 00d1 03       		.uleb128 0x3
+ 1753 00d2 0E       		.uleb128 0xe
+ 1754 00d3 3A       		.uleb128 0x3a
+ 1755 00d4 0B       		.uleb128 0xb
+ 1756 00d5 3B       		.uleb128 0x3b
+ 1757 00d6 05       		.uleb128 0x5
+ 1758 00d7 49       		.uleb128 0x49
+ 1759 00d8 13       		.uleb128 0x13
+ 1760 00d9 38       		.uleb128 0x38
+ 1761 00da 0B       		.uleb128 0xb
+ 1762 00db 00       		.byte	0
+ 1763 00dc 00       		.byte	0
+ 1764 00dd 14       		.uleb128 0x14
+ 1765 00de 0F       		.uleb128 0xf
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 32
+
+
+ 1766 00df 00       		.byte	0
+ 1767 00e0 0B       		.uleb128 0xb
+ 1768 00e1 0B       		.uleb128 0xb
+ 1769 00e2 00       		.byte	0
+ 1770 00e3 00       		.byte	0
+ 1771 00e4 15       		.uleb128 0x15
+ 1772 00e5 0F       		.uleb128 0xf
+ 1773 00e6 00       		.byte	0
+ 1774 00e7 0B       		.uleb128 0xb
+ 1775 00e8 0B       		.uleb128 0xb
+ 1776 00e9 49       		.uleb128 0x49
+ 1777 00ea 13       		.uleb128 0x13
+ 1778 00eb 00       		.byte	0
+ 1779 00ec 00       		.byte	0
+ 1780 00ed 16       		.uleb128 0x16
+ 1781 00ee 15       		.uleb128 0x15
+ 1782 00ef 01       		.byte	0x1
+ 1783 00f0 27       		.uleb128 0x27
+ 1784 00f1 19       		.uleb128 0x19
+ 1785 00f2 49       		.uleb128 0x49
+ 1786 00f3 13       		.uleb128 0x13
+ 1787 00f4 01       		.uleb128 0x1
+ 1788 00f5 13       		.uleb128 0x13
+ 1789 00f6 00       		.byte	0
+ 1790 00f7 00       		.byte	0
+ 1791 00f8 17       		.uleb128 0x17
+ 1792 00f9 05       		.uleb128 0x5
+ 1793 00fa 00       		.byte	0
+ 1794 00fb 49       		.uleb128 0x49
+ 1795 00fc 13       		.uleb128 0x13
+ 1796 00fd 00       		.byte	0
+ 1797 00fe 00       		.byte	0
+ 1798 00ff 18       		.uleb128 0x18
+ 1799 0100 13       		.uleb128 0x13
+ 1800 0101 01       		.byte	0x1
+ 1801 0102 03       		.uleb128 0x3
+ 1802 0103 0E       		.uleb128 0xe
+ 1803 0104 0B       		.uleb128 0xb
+ 1804 0105 0B       		.uleb128 0xb
+ 1805 0106 3A       		.uleb128 0x3a
+ 1806 0107 0B       		.uleb128 0xb
+ 1807 0108 3B       		.uleb128 0x3b
+ 1808 0109 05       		.uleb128 0x5
+ 1809 010a 01       		.uleb128 0x1
+ 1810 010b 13       		.uleb128 0x13
+ 1811 010c 00       		.byte	0
+ 1812 010d 00       		.byte	0
+ 1813 010e 19       		.uleb128 0x19
+ 1814 010f 34       		.uleb128 0x34
+ 1815 0110 00       		.byte	0
+ 1816 0111 03       		.uleb128 0x3
+ 1817 0112 0E       		.uleb128 0xe
+ 1818 0113 3A       		.uleb128 0x3a
+ 1819 0114 0B       		.uleb128 0xb
+ 1820 0115 3B       		.uleb128 0x3b
+ 1821 0116 0B       		.uleb128 0xb
+ 1822 0117 49       		.uleb128 0x49
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 33
+
+
+ 1823 0118 13       		.uleb128 0x13
+ 1824 0119 02       		.uleb128 0x2
+ 1825 011a 18       		.uleb128 0x18
+ 1826 011b 00       		.byte	0
+ 1827 011c 00       		.byte	0
+ 1828 011d 1A       		.uleb128 0x1a
+ 1829 011e 34       		.uleb128 0x34
+ 1830 011f 00       		.byte	0
+ 1831 0120 03       		.uleb128 0x3
+ 1832 0121 0E       		.uleb128 0xe
+ 1833 0122 3A       		.uleb128 0x3a
+ 1834 0123 0B       		.uleb128 0xb
+ 1835 0124 3B       		.uleb128 0x3b
+ 1836 0125 05       		.uleb128 0x5
+ 1837 0126 49       		.uleb128 0x49
+ 1838 0127 13       		.uleb128 0x13
+ 1839 0128 3F       		.uleb128 0x3f
+ 1840 0129 19       		.uleb128 0x19
+ 1841 012a 3C       		.uleb128 0x3c
+ 1842 012b 19       		.uleb128 0x19
+ 1843 012c 00       		.byte	0
+ 1844 012d 00       		.byte	0
+ 1845 012e 1B       		.uleb128 0x1b
+ 1846 012f 34       		.uleb128 0x34
+ 1847 0130 00       		.byte	0
+ 1848 0131 03       		.uleb128 0x3
+ 1849 0132 0E       		.uleb128 0xe
+ 1850 0133 3A       		.uleb128 0x3a
+ 1851 0134 0B       		.uleb128 0xb
+ 1852 0135 3B       		.uleb128 0x3b
+ 1853 0136 0B       		.uleb128 0xb
+ 1854 0137 49       		.uleb128 0x49
+ 1855 0138 13       		.uleb128 0x13
+ 1856 0139 3F       		.uleb128 0x3f
+ 1857 013a 19       		.uleb128 0x19
+ 1858 013b 3C       		.uleb128 0x3c
+ 1859 013c 19       		.uleb128 0x19
+ 1860 013d 00       		.byte	0
+ 1861 013e 00       		.byte	0
+ 1862 013f 1C       		.uleb128 0x1c
+ 1863 0140 34       		.uleb128 0x34
+ 1864 0141 00       		.byte	0
+ 1865 0142 03       		.uleb128 0x3
+ 1866 0143 0E       		.uleb128 0xe
+ 1867 0144 3A       		.uleb128 0x3a
+ 1868 0145 0B       		.uleb128 0xb
+ 1869 0146 3B       		.uleb128 0x3b
+ 1870 0147 0B       		.uleb128 0xb
+ 1871 0148 49       		.uleb128 0x49
+ 1872 0149 13       		.uleb128 0x13
+ 1873 014a 3F       		.uleb128 0x3f
+ 1874 014b 19       		.uleb128 0x19
+ 1875 014c 02       		.uleb128 0x2
+ 1876 014d 18       		.uleb128 0x18
+ 1877 014e 00       		.byte	0
+ 1878 014f 00       		.byte	0
+ 1879 0150 00       		.byte	0
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 34
+
+
+ 1880              		.section	.debug_aranges,"",%progbits
+ 1881 0000 14000000 		.4byte	0x14
+ 1882 0004 0200     		.2byte	0x2
+ 1883 0006 00000000 		.4byte	.Ldebug_info0
+ 1884 000a 04       		.byte	0x4
+ 1885 000b 00       		.byte	0
+ 1886 000c 0000     		.2byte	0
+ 1887 000e 0000     		.2byte	0
+ 1888 0010 00000000 		.4byte	0
+ 1889 0014 00000000 		.4byte	0
+ 1890              		.section	.debug_line,"",%progbits
+ 1891              	.Ldebug_line0:
+ 1892 0000 C9020000 		.section	.debug_str,"MS",%progbits,1
+ 1892      0200C302 
+ 1892      00000201 
+ 1892      FB0E0D00 
+ 1892      01010101 
+ 1893              	.LASF108:
+ 1894 0000 70726F74 		.ascii	"protBusMasterMask\000"
+ 1894      4275734D 
+ 1894      61737465 
+ 1894      724D6173 
+ 1894      6B00
+ 1895              	.LASF175:
+ 1896 0012 63795F65 		.ascii	"cy_en_syspm_callback_type_t\000"
+ 1896      6E5F7379 
+ 1896      73706D5F 
+ 1896      63616C6C 
+ 1896      6261636B 
+ 1897              	.LASF165:
+ 1898 002e 43595F53 		.ascii	"CY_SYSPM_TIMEOUT\000"
+ 1898      5953504D 
+ 1898      5F54494D 
+ 1898      454F5554 
+ 1898      00
+ 1899              	.LASF118:
+ 1900 003f 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
+ 1900      6843746C 
+ 1900      4D61696E 
+ 1900      57733346 
+ 1900      72657100 
+ 1901              	.LASF140:
+ 1902 0053 6770696F 		.ascii	"gpioPrtCfgInOffset\000"
+ 1902      50727443 
+ 1902      6667496E 
+ 1902      4F666673 
+ 1902      657400
+ 1903              	.LASF158:
+ 1904 0066 6970634C 		.ascii	"ipcLockStatusOffset\000"
+ 1904      6F636B53 
+ 1904      74617475 
+ 1904      734F6666 
+ 1904      73657400 
+ 1905              	.LASF164:
+ 1906 007a 43595F53 		.ascii	"CY_SYSPM_BAD_PARAM\000"
+ 1906      5953504D 
+ 1906      5F424144 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 35
+
+
+ 1906      5F504152 
+ 1906      414D00
+ 1907              	.LASF84:
+ 1908 008d 63727970 		.ascii	"cryptoVersion\000"
+ 1908      746F5665 
+ 1908      7273696F 
+ 1908      6E00
+ 1909              	.LASF102:
+ 1910 009b 70657269 		.ascii	"periClockNr\000"
+ 1910      436C6F63 
+ 1910      6B4E7200 
+ 1911              	.LASF80:
+ 1912 00a7 70617373 		.ascii	"passBase\000"
+ 1912      42617365 
+ 1912      00
+ 1913              	.LASF74:
+ 1914 00b0 666C6173 		.ascii	"flashcBase\000"
+ 1914      68634261 
+ 1914      736500
+ 1915              	.LASF61:
+ 1916 00bb 4D55585F 		.ascii	"MUX_SWITCH0\000"
+ 1916      53574954 
+ 1916      43483000 
+ 1917              	.LASF93:
+ 1918 00c7 63707573 		.ascii	"cpussIpcIrqNr\000"
+ 1918      73497063 
+ 1918      4972714E 
+ 1918      7200
+ 1919              	.LASF3:
+ 1920 00d5 5F5F7569 		.ascii	"__uint8_t\000"
+ 1920      6E74385F 
+ 1920      7400
+ 1921              	.LASF206:
+ 1922 00df 73617449 		.ascii	"satIntrMask\000"
+ 1922      6E74724D 
+ 1922      61736B00 
+ 1923              	.LASF137:
+ 1924 00eb 70657269 		.ascii	"periDiv24_5CtlOffset\000"
+ 1924      44697632 
+ 1924      345F3543 
+ 1924      746C4F66 
+ 1924      66736574 
+ 1925              	.LASF225:
+ 1926 0100 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1926      43313120 
+ 1926      352E342E 
+ 1926      31203230 
+ 1926      31363036 
+ 1927 0133 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
+ 1927      20726576 
+ 1927      6973696F 
+ 1927      6E203233 
+ 1927      37373135 
+ 1928 0166 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -O0 -ffunction-s"
+ 1928      70202D6D 
+ 1928      6670753D 
+ 1928      66707634 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 36
+
+
+ 1928      2D73702D 
+ 1929 0199 65637469 		.ascii	"ections -ffat-lto-objects\000"
+ 1929      6F6E7320 
+ 1929      2D666661 
+ 1929      742D6C74 
+ 1929      6F2D6F62 
+ 1930              	.LASF144:
+ 1931 01b3 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
+ 1931      73436D34 
+ 1931      436C6F63 
+ 1931      6B43746C 
+ 1931      4F666673 
+ 1932              	.LASF186:
+ 1933 01ca 74797065 		.ascii	"type\000"
+ 1933      00
+ 1934              	.LASF26:
+ 1935 01cf 52414E47 		.ascii	"RANGE_COND\000"
+ 1935      455F434F 
+ 1935      4E4400
+ 1936              	.LASF73:
+ 1937 01da 63707573 		.ascii	"cpussBase\000"
+ 1937      73426173 
+ 1937      6500
+ 1938              	.LASF122:
+ 1939 01e4 64774368 		.ascii	"dwChCtlPrioPos\000"
+ 1939      43746C50 
+ 1939      72696F50 
+ 1939      6F7300
+ 1940              	.LASF12:
+ 1941 01f3 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1941      206C6F6E 
+ 1941      6720756E 
+ 1941      7369676E 
+ 1941      65642069 
+ 1942              	.LASF126:
+ 1943 020a 70657269 		.ascii	"periTrCmdOffset\000"
+ 1943      5472436D 
+ 1943      644F6666 
+ 1943      73657400 
+ 1944              	.LASF150:
+ 1945 021a 63707573 		.ascii	"cpussSysTickCtlOffset\000"
+ 1945      73537973 
+ 1945      5469636B 
+ 1945      43746C4F 
+ 1945      66667365 
+ 1946              	.LASF220:
+ 1947 0230 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1947      52784275 
+ 1947      66666572 
+ 1947      00
+ 1948              	.LASF189:
+ 1949 023d 70726576 		.ascii	"prevItm\000"
+ 1949      49746D00 
+ 1950              	.LASF68:
+ 1951 0245 414E415F 		.ascii	"ANA_TRIM0\000"
+ 1951      5452494D 
+ 1951      3000
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 37
+
+
+ 1952              	.LASF69:
+ 1953 024f 414E415F 		.ascii	"ANA_TRIM1\000"
+ 1953      5452494D 
+ 1953      3100
+ 1954              	.LASF50:
+ 1955 0259 52414E47 		.ascii	"RANGE_INTR_MASK\000"
+ 1955      455F494E 
+ 1955      54525F4D 
+ 1955      41534B00 
+ 1956              	.LASF15:
+ 1957 0269 696E7431 		.ascii	"int16_t\000"
+ 1957      365F7400 
+ 1958              	.LASF213:
+ 1959 0271 63795F73 		.ascii	"cy_stc_sar_config_t\000"
+ 1959      74635F73 
+ 1959      61725F63 
+ 1959      6F6E6669 
+ 1959      675F7400 
+ 1960              	.LASF11:
+ 1961 0285 6C6F6E67 		.ascii	"long long int\000"
+ 1961      206C6F6E 
+ 1961      6720696E 
+ 1961      7400
+ 1962              	.LASF1:
+ 1963 0293 7369676E 		.ascii	"signed char\000"
+ 1963      65642063 
+ 1963      68617200 
+ 1964              	.LASF131:
+ 1965 029f 70657269 		.ascii	"periDivCmdTypeSelPos\000"
+ 1965      44697643 
+ 1965      6D645479 
+ 1965      70655365 
+ 1965      6C506F73 
+ 1966              	.LASF196:
+ 1967 02b4 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
+ 1967      6E5F7361 
+ 1967      725F7261 
+ 1967      6E67655F 
+ 1967      64657465 
+ 1968              	.LASF218:
+ 1969 02d7 636C6B44 		.ascii	"clkDivider\000"
+ 1969      69766964 
+ 1969      657200
+ 1970              	.LASF77:
+ 1971 02e2 70726F74 		.ascii	"protBase\000"
+ 1971      42617365 
+ 1971      00
+ 1972              	.LASF89:
+ 1973 02eb 69706356 		.ascii	"ipcVersion\000"
+ 1973      65727369 
+ 1973      6F6E00
+ 1974              	.LASF151:
+ 1975 02f6 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
+ 1975      73436D30 
+ 1975      4E6D6943 
+ 1975      746C4F66 
+ 1975      66736574 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 38
+
+
+ 1976              	.LASF67:
+ 1977 030b 52455345 		.ascii	"RESERVED10\000"
+ 1977      52564544 
+ 1977      313000
+ 1978              	.LASF78:
+ 1979 0316 6873696F 		.ascii	"hsiomBase\000"
+ 1979      6D426173 
+ 1979      6500
+ 1980              	.LASF207:
+ 1981 0320 72616E67 		.ascii	"rangeIntrMask\000"
+ 1981      65496E74 
+ 1981      724D6173 
+ 1981      6B00
+ 1982              	.LASF192:
+ 1983 032e 43595F53 		.ascii	"CY_SAR_RANGE_COND_BELOW\000"
+ 1983      41525F52 
+ 1983      414E4745 
+ 1983      5F434F4E 
+ 1983      445F4245 
+ 1984              	.LASF8:
+ 1985 0346 6C6F6E67 		.ascii	"long int\000"
+ 1985      20696E74 
+ 1985      00
+ 1986              	.LASF66:
+ 1987 034f 4D55585F 		.ascii	"MUX_SWITCH_STATUS\000"
+ 1987      53574954 
+ 1987      43485F53 
+ 1987      54415455 
+ 1987      5300
+ 1988              	.LASF52:
+ 1989 0361 494E5452 		.ascii	"INTR_CAUSE\000"
+ 1989      5F434155 
+ 1989      534500
+ 1990              	.LASF109:
+ 1991 036c 63727970 		.ascii	"cryptoMemSize\000"
+ 1991      746F4D65 
+ 1991      6D53697A 
+ 1991      6500
+ 1992              	.LASF56:
+ 1993 037a 494E4A5F 		.ascii	"INJ_RESULT\000"
+ 1993      52455355 
+ 1993      4C5400
+ 1994              	.LASF75:
+ 1995 0385 70657269 		.ascii	"periBase\000"
+ 1995      42617365 
+ 1995      00
+ 1996              	.LASF107:
+ 1997 038e 73797350 		.ascii	"sysPmSimoPresent\000"
+ 1997      6D53696D 
+ 1997      6F507265 
+ 1997      73656E74 
+ 1997      00
+ 1998              	.LASF194:
+ 1999 039f 43595F53 		.ascii	"CY_SAR_RANGE_COND_ABOVE\000"
+ 1999      41525F52 
+ 1999      414E4745 
+ 1999      5F434F4E 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 39
+
+
+ 1999      445F4142 
+ 2000              	.LASF97:
+ 2001 03b7 63707573 		.ascii	"cpussFmIrq\000"
+ 2001      73466D49 
+ 2001      727100
+ 2002              	.LASF162:
+ 2003 03c2 646F7562 		.ascii	"double\000"
+ 2003      6C6500
+ 2004              	.LASF136:
+ 2005 03c9 70657269 		.ascii	"periDiv16_5CtlOffset\000"
+ 2005      44697631 
+ 2005      365F3543 
+ 2005      746C4F66 
+ 2005      66736574 
+ 2006              	.LASF62:
+ 2007 03de 4D55585F 		.ascii	"MUX_SWITCH_CLEAR0\000"
+ 2007      53574954 
+ 2007      43485F43 
+ 2007      4C454152 
+ 2007      3000
+ 2008              	.LASF100:
+ 2009 03f0 73727373 		.ascii	"srssNumPll\000"
+ 2009      4E756D50 
+ 2009      6C6C00
+ 2010              	.LASF199:
+ 2011 03fb 73616D70 		.ascii	"sampleTime01\000"
+ 2011      6C655469 
+ 2011      6D653031 
+ 2011      00
+ 2012              	.LASF6:
+ 2013 0408 73686F72 		.ascii	"short unsigned int\000"
+ 2013      7420756E 
+ 2013      7369676E 
+ 2013      65642069 
+ 2013      6E7400
+ 2014              	.LASF228:
+ 2015 041b 63795F73 		.ascii	"cy_stc_syspm_callback\000"
+ 2015      74635F73 
+ 2015      7973706D 
+ 2015      5F63616C 
+ 2015      6C626163 
+ 2016              	.LASF141:
+ 2017 0431 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
+ 2017      50727443 
+ 2017      66674F75 
+ 2017      744F6666 
+ 2017      73657400 
+ 2018              	.LASF123:
+ 2019 0445 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 2019      43746C50 
+ 2019      7265656D 
+ 2019      70746162 
+ 2019      6C65506F 
+ 2020              	.LASF9:
+ 2021 045b 5F5F7569 		.ascii	"__uint32_t\000"
+ 2021      6E743332 
+ 2021      5F7400
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 40
+
+
+ 2022              	.LASF104:
+ 2023 0466 70617373 		.ascii	"passSarChannels\000"
+ 2023      53617243 
+ 2023      68616E6E 
+ 2023      656C7300 
+ 2024              	.LASF216:
+ 2025 0476 6877436F 		.ascii	"hwConfigStc\000"
+ 2025      6E666967 
+ 2025      53746300 
+ 2026              	.LASF167:
+ 2027 0482 43595F53 		.ascii	"CY_SYSPM_CANCELED\000"
+ 2027      5953504D 
+ 2027      5F43414E 
+ 2027      43454C45 
+ 2027      4400
+ 2028              	.LASF23:
+ 2029 0494 53414D50 		.ascii	"SAMPLE_TIME01\000"
+ 2029      4C455F54 
+ 2029      494D4530 
+ 2029      3100
+ 2030              	.LASF4:
+ 2031 04a2 5F5F696E 		.ascii	"__int16_t\000"
+ 2031      7431365F 
+ 2031      7400
+ 2032              	.LASF44:
+ 2033 04ac 53415455 		.ascii	"SATURATE_INTR\000"
+ 2033      52415445 
+ 2033      5F494E54 
+ 2033      5200
+ 2034              	.LASF30:
+ 2035 04ba 4348414E 		.ascii	"CHAN_CONFIG\000"
+ 2035      5F434F4E 
+ 2035      46494700 
+ 2036              	.LASF147:
+ 2037 04c6 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 2037      73436D34 
+ 2037      50777243 
+ 2037      746C4F66 
+ 2037      66736574 
+ 2038              	.LASF142:
+ 2039 04db 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
+ 2039      50727443 
+ 2039      66675369 
+ 2039      6F4F6666 
+ 2039      73657400 
+ 2040              	.LASF94:
+ 2041 04ef 63707573 		.ascii	"cpussDwChNr\000"
+ 2041      73447743 
+ 2041      684E7200 
+ 2042              	.LASF166:
+ 2043 04fb 43595F53 		.ascii	"CY_SYSPM_INVALID_STATE\000"
+ 2043      5953504D 
+ 2043      5F494E56 
+ 2043      414C4944 
+ 2043      5F535441 
+ 2044              	.LASF13:
+ 2045 0512 756E7369 		.ascii	"unsigned int\000"
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 41
+
+
+ 2045      676E6564 
+ 2045      20696E74 
+ 2045      00
+ 2046              	.LASF16:
+ 2047 051f 75696E74 		.ascii	"uint16_t\000"
+ 2047      31365F74 
+ 2047      00
+ 2048              	.LASF127:
+ 2049 0528 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 2049      5472436D 
+ 2049      64477253 
+ 2049      656C4D73 
+ 2049      6B00
+ 2050              	.LASF177:
+ 2051 053a 43595F53 		.ascii	"CY_SYSPM_CHECK_FAIL\000"
+ 2051      5953504D 
+ 2051      5F434845 
+ 2051      434B5F46 
+ 2051      41494C00 
+ 2052              	.LASF10:
+ 2053 054e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2053      20756E73 
+ 2053      69676E65 
+ 2053      6420696E 
+ 2053      7400
+ 2054              	.LASF229:
+ 2055 0560 4144435F 		.ascii	"ADC_1_DeepSleepCallbackParams\000"
+ 2055      315F4465 
+ 2055      6570536C 
+ 2055      65657043 
+ 2055      616C6C62 
+ 2056              	.LASF38:
+ 2057 057e 4348414E 		.ascii	"CHAN_WORK_NEWVALUE\000"
+ 2057      5F574F52 
+ 2057      4B5F4E45 
+ 2057      5756414C 
+ 2057      554500
+ 2058              	.LASF92:
+ 2059 0591 63707573 		.ascii	"cpussIpcNr\000"
+ 2059      73497063 
+ 2059      4E7200
+ 2060              	.LASF64:
+ 2061 059c 4D55585F 		.ascii	"MUX_SWITCH_DS_CTRL\000"
+ 2061      53574954 
+ 2061      43485F44 
+ 2061      535F4354 
+ 2061      524C00
+ 2062              	.LASF42:
+ 2063 05af 494E5452 		.ascii	"INTR_MASK\000"
+ 2063      5F4D4153 
+ 2063      4B00
+ 2064              	.LASF79:
+ 2065 05b9 6770696F 		.ascii	"gpioBase\000"
+ 2065      42617365 
+ 2065      00
+ 2066              	.LASF226:
+ 2067 05c2 47656E65 		.ascii	"Generated_Source\\PSoC6\\ADC_1_PM.c\000"
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 42
+
+
+ 2067      72617465 
+ 2067      645F536F 
+ 2067      75726365 
+ 2067      5C50536F 
+ 2068              	.LASF117:
+ 2069 05e4 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 2069      6843746C 
+ 2069      4D61696E 
+ 2069      57733246 
+ 2069      72657100 
+ 2070              	.LASF187:
+ 2071 05f8 736B6970 		.ascii	"skipMode\000"
+ 2071      4D6F6465 
+ 2071      00
+ 2072              	.LASF182:
+ 2073 0601 636F6E74 		.ascii	"context\000"
+ 2073      65787400 
+ 2074              	.LASF128:
+ 2075 0609 70657269 		.ascii	"periTrGrOffset\000"
+ 2075      54724772 
+ 2075      4F666673 
+ 2075      657400
+ 2076              	.LASF155:
+ 2077 0618 63707573 		.ascii	"cpussRam1Ctl0\000"
+ 2077      7352616D 
+ 2077      3143746C 
+ 2077      3000
+ 2078              	.LASF223:
+ 2079 0626 4144435F 		.ascii	"ADC_1_allConfigs\000"
+ 2079      315F616C 
+ 2079      6C436F6E 
+ 2079      66696773 
+ 2079      00
+ 2080              	.LASF201:
+ 2081 0637 72616E67 		.ascii	"rangeThres\000"
+ 2081      65546872 
+ 2081      657300
+ 2082              	.LASF48:
+ 2083 0642 52414E47 		.ascii	"RANGE_INTR\000"
+ 2083      455F494E 
+ 2083      545200
+ 2084              	.LASF36:
+ 2085 064d 4348414E 		.ascii	"CHAN_WORK_UPDATED\000"
+ 2085      5F574F52 
+ 2085      4B5F5550 
+ 2085      44415445 
+ 2085      4400
+ 2086              	.LASF185:
+ 2087 065f 63616C6C 		.ascii	"callback\000"
+ 2087      6261636B 
+ 2087      00
+ 2088              	.LASF129:
+ 2089 0668 70657269 		.ascii	"periTrGrSize\000"
+ 2089      54724772 
+ 2089      53697A65 
+ 2089      00
+ 2090              	.LASF87:
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 43
+
+
+ 2091 0675 6770696F 		.ascii	"gpioVersion\000"
+ 2091      56657273 
+ 2091      696F6E00 
+ 2092              	.LASF215:
+ 2093 0681 6E756D43 		.ascii	"numChannels\000"
+ 2093      68616E6E 
+ 2093      656C7300 
+ 2094              	.LASF159:
+ 2095 068d 63795F73 		.ascii	"cy_stc_device_t\000"
+ 2095      74635F64 
+ 2095      65766963 
+ 2095      655F7400 
+ 2096              	.LASF204:
+ 2097 069d 6368616E 		.ascii	"chanConfig\000"
+ 2097      436F6E66 
+ 2097      696700
+ 2098              	.LASF214:
+ 2099 06a8 6368616E 		.ascii	"channelBase\000"
+ 2099      6E656C42 
+ 2099      61736500 
+ 2100              	.LASF171:
+ 2101 06b4 43595F53 		.ascii	"CY_SYSPM_DEEPSLEEP\000"
+ 2101      5953504D 
+ 2101      5F444545 
+ 2101      50534C45 
+ 2101      455000
+ 2102              	.LASF7:
+ 2103 06c7 5F5F696E 		.ascii	"__int32_t\000"
+ 2103      7433325F 
+ 2103      7400
+ 2104              	.LASF105:
+ 2105 06d1 65704D6F 		.ascii	"epMonitorNr\000"
+ 2105      6E69746F 
+ 2105      724E7200 
+ 2106              	.LASF188:
+ 2107 06dd 63616C6C 		.ascii	"callbackParams\000"
+ 2107      6261636B 
+ 2107      50617261 
+ 2107      6D7300
+ 2108              	.LASF148:
+ 2109 06ec 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
+ 2109      73547269 
+ 2109      6D52616D 
+ 2109      43746C4F 
+ 2109      66667365 
+ 2110              	.LASF143:
+ 2111 0702 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 2111      73436D30 
+ 2111      436C6F63 
+ 2111      6B43746C 
+ 2111      4F666673 
+ 2112              	.LASF28:
+ 2113 0719 53544152 		.ascii	"START_CTRL\000"
+ 2113      545F4354 
+ 2113      524C00
+ 2114              	.LASF179:
+ 2115 0724 43595F53 		.ascii	"CY_SYSPM_AFTER_TRANSITION\000"
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 44
+
+
+ 2115      5953504D 
+ 2115      5F414654 
+ 2115      45525F54 
+ 2115      52414E53 
+ 2116              	.LASF183:
+ 2117 073e 63795F73 		.ascii	"cy_stc_syspm_callback_params_t\000"
+ 2117      74635F73 
+ 2117      7973706D 
+ 2117      5F63616C 
+ 2117      6C626163 
+ 2118              	.LASF41:
+ 2119 075d 494E5452 		.ascii	"INTR_SET\000"
+ 2119      5F534554 
+ 2119      00
+ 2120              	.LASF83:
+ 2121 0766 63707573 		.ascii	"cpussVersion\000"
+ 2121      73566572 
+ 2121      73696F6E 
+ 2121      00
+ 2122              	.LASF181:
+ 2123 0773 62617365 		.ascii	"base\000"
+ 2123      00
+ 2124              	.LASF90:
+ 2125 0778 70657269 		.ascii	"periVersion\000"
+ 2125      56657273 
+ 2125      696F6E00 
+ 2126              	.LASF146:
+ 2127 0784 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 2127      73436D30 
+ 2127      53746174 
+ 2127      75734F66 
+ 2127      66736574 
+ 2128              	.LASF173:
+ 2129 0799 43595F53 		.ascii	"CY_SYSPM_LP\000"
+ 2129      5953504D 
+ 2129      5F4C5000 
+ 2130              	.LASF19:
+ 2131 07a5 73697A65 		.ascii	"sizetype\000"
+ 2131      74797065 
+ 2131      00
+ 2132              	.LASF120:
+ 2133 07ae 64774368 		.ascii	"dwChOffset\000"
+ 2133      4F666673 
+ 2133      657400
+ 2134              	.LASF190:
+ 2135 07b9 6E657874 		.ascii	"nextItm\000"
+ 2135      49746D00 
+ 2136              	.LASF34:
+ 2137 07c1 4348414E 		.ascii	"CHAN_RESULT\000"
+ 2137      5F524553 
+ 2137      554C5400 
+ 2138              	.LASF95:
+ 2139 07cd 63707573 		.ascii	"cpussFlashPaSize\000"
+ 2139      73466C61 
+ 2139      73685061 
+ 2139      53697A65 
+ 2139      00
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 45
+
+
+ 2140              	.LASF200:
+ 2141 07de 73616D70 		.ascii	"sampleTime23\000"
+ 2141      6C655469 
+ 2141      6D653233 
+ 2141      00
+ 2142              	.LASF133:
+ 2143 07eb 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
+ 2143      44697643 
+ 2143      6D645061 
+ 2143      54797065 
+ 2143      53656C50 
+ 2144              	.LASF174:
+ 2145 0802 43595F53 		.ascii	"CY_SYSPM_ULP\000"
+ 2145      5953504D 
+ 2145      5F554C50 
+ 2145      00
+ 2146              	.LASF156:
+ 2147 080f 63707573 		.ascii	"cpussRam2Ctl0\000"
+ 2147      7352616D 
+ 2147      3243746C 
+ 2147      3000
+ 2148              	.LASF210:
+ 2149 081d 636F6E66 		.ascii	"configRouting\000"
+ 2149      6967526F 
+ 2149      7574696E 
+ 2149      6700
+ 2150              	.LASF21:
+ 2151 082b 53414D50 		.ascii	"SAMPLE_CTRL\000"
+ 2151      4C455F43 
+ 2151      54524C00 
+ 2152              	.LASF25:
+ 2153 0837 52414E47 		.ascii	"RANGE_THRES\000"
+ 2153      455F5448 
+ 2153      52455300 
+ 2154              	.LASF124:
+ 2155 0843 64775374 		.ascii	"dwStatusChIdxPos\000"
+ 2155      61747573 
+ 2155      43684964 
+ 2155      78506F73 
+ 2155      00
+ 2156              	.LASF178:
+ 2157 0854 43595F53 		.ascii	"CY_SYSPM_BEFORE_TRANSITION\000"
+ 2157      5953504D 
+ 2157      5F424546 
+ 2157      4F52455F 
+ 2157      5452414E 
+ 2158              	.LASF27:
+ 2159 086f 4348414E 		.ascii	"CHAN_EN\000"
+ 2159      5F454E00 
+ 2160              	.LASF24:
+ 2161 0877 53414D50 		.ascii	"SAMPLE_TIME23\000"
+ 2161      4C455F54 
+ 2161      494D4532 
+ 2161      3300
+ 2162              	.LASF59:
+ 2163 0885 4156475F 		.ascii	"AVG_STAT\000"
+ 2163      53544154 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 46
+
+
+ 2163      00
+ 2164              	.LASF86:
+ 2165 088e 666C6173 		.ascii	"flashcVersion\000"
+ 2165      68635665 
+ 2165      7273696F 
+ 2165      6E00
+ 2166              	.LASF82:
+ 2167 089c 63727970 		.ascii	"cryptoBase\000"
+ 2167      746F4261 
+ 2167      736500
+ 2168              	.LASF103:
+ 2169 08a7 736D6966 		.ascii	"smifDeviceNr\000"
+ 2169      44657669 
+ 2169      63654E72 
+ 2169      00
+ 2170              	.LASF172:
+ 2171 08b4 43595F53 		.ascii	"CY_SYSPM_HIBERNATE\000"
+ 2171      5953504D 
+ 2171      5F484942 
+ 2171      45524E41 
+ 2171      544500
+ 2172              	.LASF45:
+ 2173 08c7 53415455 		.ascii	"SATURATE_INTR_SET\000"
+ 2173      52415445 
+ 2173      5F494E54 
+ 2173      525F5345 
+ 2173      5400
+ 2174              	.LASF180:
+ 2175 08d9 63795F65 		.ascii	"cy_en_syspm_callback_mode_t\000"
+ 2175      6E5F7379 
+ 2175      73706D5F 
+ 2175      63616C6C 
+ 2175      6261636B 
+ 2176              	.LASF43:
+ 2177 08f5 494E5452 		.ascii	"INTR_MASKED\000"
+ 2177      5F4D4153 
+ 2177      4B454400 
+ 2178              	.LASF161:
+ 2179 0901 666C6F61 		.ascii	"float\000"
+ 2179      7400
+ 2180              	.LASF125:
+ 2181 0907 64775374 		.ascii	"dwStatusChIdxMsk\000"
+ 2181      61747573 
+ 2181      43684964 
+ 2181      784D736B 
+ 2181      00
+ 2182              	.LASF29:
+ 2183 0918 52455345 		.ascii	"RESERVED1\000"
+ 2183      52564544 
+ 2183      3100
+ 2184              	.LASF221:
+ 2185 0922 63795F64 		.ascii	"cy_device\000"
+ 2185      65766963 
+ 2185      6500
+ 2186              	.LASF33:
+ 2187 092c 52455345 		.ascii	"RESERVED3\000"
+ 2187      52564544 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 47
+
+
+ 2187      3300
+ 2188              	.LASF153:
+ 2189 0936 63707573 		.ascii	"cpussRomCtl\000"
+ 2189      73526F6D 
+ 2189      43746C00 
+ 2190              	.LASF53:
+ 2191 0942 52455345 		.ascii	"RESERVED5\000"
+ 2191      52564544 
+ 2191      3500
+ 2192              	.LASF55:
+ 2193 094c 52455345 		.ascii	"RESERVED6\000"
+ 2193      52564544 
+ 2193      3600
+ 2194              	.LASF57:
+ 2195 0956 52455345 		.ascii	"RESERVED7\000"
+ 2195      52564544 
+ 2195      3700
+ 2196              	.LASF60:
+ 2197 0960 52455345 		.ascii	"RESERVED8\000"
+ 2197      52564544 
+ 2197      3800
+ 2198              	.LASF63:
+ 2199 096a 52455345 		.ascii	"RESERVED9\000"
+ 2199      52564544 
+ 2199      3900
+ 2200              	.LASF203:
+ 2201 0974 6368616E 		.ascii	"chanEn\000"
+ 2201      456E00
+ 2202              	.LASF76:
+ 2203 097b 75646242 		.ascii	"udbBase\000"
+ 2203      61736500 
+ 2204              	.LASF193:
+ 2205 0983 43595F53 		.ascii	"CY_SAR_RANGE_COND_INSIDE\000"
+ 2205      41525F52 
+ 2205      414E4745 
+ 2205      5F434F4E 
+ 2205      445F494E 
+ 2206              	.LASF212:
+ 2207 099c 5F426F6F 		.ascii	"_Bool\000"
+ 2207      6C00
+ 2208              	.LASF17:
+ 2209 09a2 696E7433 		.ascii	"int32_t\000"
+ 2209      325F7400 
+ 2210              	.LASF2:
+ 2211 09aa 756E7369 		.ascii	"unsigned char\000"
+ 2211      676E6564 
+ 2211      20636861 
+ 2211      7200
+ 2212              	.LASF184:
+ 2213 09b8 43795F53 		.ascii	"Cy_SysPmCallback\000"
+ 2213      7973506D 
+ 2213      43616C6C 
+ 2213      6261636B 
+ 2213      00
+ 2214              	.LASF119:
+ 2215 09c9 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 2215      6843746C 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 48
+
+
+ 2215      4D61696E 
+ 2215      57733446 
+ 2215      72657100 
+ 2216              	.LASF0:
+ 2217 09dd 73686F72 		.ascii	"short int\000"
+ 2217      7420696E 
+ 2217      7400
+ 2218              	.LASF208:
+ 2219 09e7 6D757853 		.ascii	"muxSwitch\000"
+ 2219      77697463 
+ 2219      6800
+ 2220              	.LASF205:
+ 2221 09f1 696E7472 		.ascii	"intrMask\000"
+ 2221      4D61736B 
+ 2221      00
+ 2222              	.LASF71:
+ 2223 09fa 5341525F 		.ascii	"SAR_Type\000"
+ 2223      54797065 
+ 2223      00
+ 2224              	.LASF22:
+ 2225 0a03 52455345 		.ascii	"RESERVED\000"
+ 2225      52564544 
+ 2225      00
+ 2226              	.LASF70:
+ 2227 0a0c 5341525F 		.ascii	"SAR_V1_Type\000"
+ 2227      56315F54 
+ 2227      79706500 
+ 2228              	.LASF130:
+ 2229 0a18 70657269 		.ascii	"periDivCmdDivSelMsk\000"
+ 2229      44697643 
+ 2229      6D644469 
+ 2229      7653656C 
+ 2229      4D736B00 
+ 2230              	.LASF39:
+ 2231 0a2c 4348414E 		.ascii	"CHAN_RESULT_NEWVALUE\000"
+ 2231      5F524553 
+ 2231      554C545F 
+ 2231      4E455756 
+ 2231      414C5545 
+ 2232              	.LASF170:
+ 2233 0a41 43595F53 		.ascii	"CY_SYSPM_SLEEP\000"
+ 2233      5953504D 
+ 2233      5F534C45 
+ 2233      455000
+ 2234              	.LASF139:
+ 2235 0a50 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 2235      50727443 
+ 2235      66674F66 
+ 2235      66736574 
+ 2235      00
+ 2236              	.LASF31:
+ 2237 0a61 52455345 		.ascii	"RESERVED2\000"
+ 2237      52564544 
+ 2237      3200
+ 2238              	.LASF101:
+ 2239 0a6b 73727373 		.ascii	"srssNumHfroot\000"
+ 2239      4E756D48 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 49
+
+
+ 2239      66726F6F 
+ 2239      7400
+ 2240              	.LASF35:
+ 2241 0a79 52455345 		.ascii	"RESERVED4\000"
+ 2241      52564544 
+ 2241      3400
+ 2242              	.LASF114:
+ 2243 0a83 666C6173 		.ascii	"flashEraseDelay\000"
+ 2243      68457261 
+ 2243      73654465 
+ 2243      6C617900 
+ 2244              	.LASF134:
+ 2245 0a93 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 2245      44697638 
+ 2245      43746C4F 
+ 2245      66667365 
+ 2245      7400
+ 2246              	.LASF18:
+ 2247 0aa5 75696E74 		.ascii	"uint32_t\000"
+ 2247      33325F74 
+ 2247      00
+ 2248              	.LASF222:
+ 2249 0aae 4144435F 		.ascii	"ADC_1_currentConfig\000"
+ 2249      315F6375 
+ 2249      7272656E 
+ 2249      74436F6E 
+ 2249      66696700 
+ 2250              	.LASF152:
+ 2251 0ac2 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ 2251      73436D34 
+ 2251      4E6D6943 
+ 2251      746C4F66 
+ 2251      66736574 
+ 2252              	.LASF211:
+ 2253 0ad7 76726566 		.ascii	"vrefMvValue\000"
+ 2253      4D765661 
+ 2253      6C756500 
+ 2254              	.LASF72:
+ 2255 0ae3 6C6F6E67 		.ascii	"long double\000"
+ 2255      20646F75 
+ 2255      626C6500 
+ 2256              	.LASF160:
+ 2257 0aef 63686172 		.ascii	"char\000"
+ 2257      00
+ 2258              	.LASF91:
+ 2259 0af4 70726F74 		.ascii	"protVersion\000"
+ 2259      56657273 
+ 2259      696F6E00 
+ 2260              	.LASF54:
+ 2261 0b00 494E4A5F 		.ascii	"INJ_CHAN_CONFIG\000"
+ 2261      4348414E 
+ 2261      5F434F4E 
+ 2261      46494700 
+ 2262              	.LASF154:
+ 2263 0b10 63707573 		.ascii	"cpussRam0Ctl0\000"
+ 2263      7352616D 
+ 2263      3043746C 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 50
+
+
+ 2263      3000
+ 2264              	.LASF5:
+ 2265 0b1e 5F5F7569 		.ascii	"__uint16_t\000"
+ 2265      6E743136 
+ 2265      5F7400
+ 2266              	.LASF135:
+ 2267 0b29 70657269 		.ascii	"periDiv16CtlOffset\000"
+ 2267      44697631 
+ 2267      3643746C 
+ 2267      4F666673 
+ 2267      657400
+ 2268              	.LASF14:
+ 2269 0b3c 75696E74 		.ascii	"uint8_t\000"
+ 2269      385F7400 
+ 2270              	.LASF88:
+ 2271 0b44 6873696F 		.ascii	"hsiomVersion\000"
+ 2271      6D566572 
+ 2271      73696F6E 
+ 2271      00
+ 2272              	.LASF46:
+ 2273 0b51 53415455 		.ascii	"SATURATE_INTR_MASK\000"
+ 2273      52415445 
+ 2273      5F494E54 
+ 2273      525F4D41 
+ 2273      534B00
+ 2274              	.LASF106:
+ 2275 0b64 75646250 		.ascii	"udbPresent\000"
+ 2275      72657365 
+ 2275      6E7400
+ 2276              	.LASF40:
+ 2277 0b6f 494E5452 		.ascii	"INTR\000"
+ 2277      00
+ 2278              	.LASF197:
+ 2279 0b74 6374726C 		.ascii	"ctrl\000"
+ 2279      00
+ 2280              	.LASF116:
+ 2281 0b79 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
+ 2281      6843746C 
+ 2281      4D61696E 
+ 2281      57733146 
+ 2281      72657100 
+ 2282              	.LASF58:
+ 2283 0b8d 53544154 		.ascii	"STATUS\000"
+ 2283      555300
+ 2284              	.LASF217:
+ 2285 0b94 6D697363 		.ascii	"miscConfig\000"
+ 2285      436F6E66 
+ 2285      696700
+ 2286              	.LASF121:
+ 2287 0b9f 64774368 		.ascii	"dwChSize\000"
+ 2287      53697A65 
+ 2287      00
+ 2288              	.LASF157:
+ 2289 0ba8 69706353 		.ascii	"ipcStructSize\000"
+ 2289      74727563 
+ 2289      7453697A 
+ 2289      6500
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 51
+
+
+ 2290              	.LASF32:
+ 2291 0bb6 4348414E 		.ascii	"CHAN_WORK\000"
+ 2291      5F574F52 
+ 2291      4B00
+ 2292              	.LASF96:
+ 2293 0bc0 63707573 		.ascii	"cpussIpc0Irq\000"
+ 2293      73497063 
+ 2293      30497271 
+ 2293      00
+ 2294              	.LASF65:
+ 2295 0bcd 4D55585F 		.ascii	"MUX_SWITCH_SQ_CTRL\000"
+ 2295      53574954 
+ 2295      43485F53 
+ 2295      515F4354 
+ 2295      524C00
+ 2296              	.LASF20:
+ 2297 0be0 4354524C 		.ascii	"CTRL\000"
+ 2297      00
+ 2298              	.LASF168:
+ 2299 0be5 43595F53 		.ascii	"CY_SYSPM_FAIL\000"
+ 2299      5953504D 
+ 2299      5F464149 
+ 2299      4C00
+ 2300              	.LASF115:
+ 2301 0bf3 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
+ 2301      6843746C 
+ 2301      4D61696E 
+ 2301      57733046 
+ 2301      72657100 
+ 2302              	.LASF191:
+ 2303 0c07 63795F73 		.ascii	"cy_stc_syspm_callback_t\000"
+ 2303      74635F73 
+ 2303      7973706D 
+ 2303      5F63616C 
+ 2303      6C626163 
+ 2304              	.LASF202:
+ 2305 0c1f 72616E67 		.ascii	"rangeCond\000"
+ 2305      65436F6E 
+ 2305      6400
+ 2306              	.LASF98:
+ 2307 0c29 63707573 		.ascii	"cpussNotConnectedIrq\000"
+ 2307      734E6F74 
+ 2307      436F6E6E 
+ 2307      65637465 
+ 2307      64497271 
+ 2308              	.LASF169:
+ 2309 0c3e 63795F65 		.ascii	"cy_en_syspm_status_t\000"
+ 2309      6E5F7379 
+ 2309      73706D5F 
+ 2309      73746174 
+ 2309      75735F74 
+ 2310              	.LASF112:
+ 2311 0c53 666C6173 		.ascii	"flashWriteDelay\000"
+ 2311      68577269 
+ 2311      74654465 
+ 2311      6C617900 
+ 2312              	.LASF198:
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 52
+
+
+ 2313 0c63 73616D70 		.ascii	"sampleCtrl\000"
+ 2313      6C654374 
+ 2313      726C00
+ 2314              	.LASF37:
+ 2315 0c6e 4348414E 		.ascii	"CHAN_RESULT_UPDATED\000"
+ 2315      5F524553 
+ 2315      554C545F 
+ 2315      55504441 
+ 2315      54454400 
+ 2316              	.LASF219:
+ 2317 0c82 4144435F 		.ascii	"ADC_1_CONFIG_STRUCT\000"
+ 2317      315F434F 
+ 2317      4E464947 
+ 2317      5F535452 
+ 2317      55435400 
+ 2318              	.LASF111:
+ 2319 0c96 666C6173 		.ascii	"flashPipeRequired\000"
+ 2319      68506970 
+ 2319      65526571 
+ 2319      75697265 
+ 2319      6400
+ 2320              	.LASF227:
+ 2321 0ca8 443A5C4F 		.ascii	"D:\\OneDrive - UNSW\\Documents\\thesis\\VDAC_Saw_Ex"
+ 2321      6E654472 
+ 2321      69766520 
+ 2321      2D20554E 
+ 2321      53575C44 
+ 2322 0cd7 706F7274 		.ascii	"port.cydsn\000"
+ 2322      2E637964 
+ 2322      736E00
+ 2323              	.LASF145:
+ 2324 0ce2 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 2324      73436D34 
+ 2324      53746174 
+ 2324      75734F66 
+ 2324      66736574 
+ 2325              	.LASF138:
+ 2326 0cf7 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 2326      50727449 
+ 2326      6E747243 
+ 2326      66674F66 
+ 2326      66736574 
+ 2327              	.LASF163:
+ 2328 0d0c 43595F53 		.ascii	"CY_SYSPM_SUCCESS\000"
+ 2328      5953504D 
+ 2328      5F535543 
+ 2328      43455353 
+ 2328      00
+ 2329              	.LASF195:
+ 2330 0d1d 43595F53 		.ascii	"CY_SAR_RANGE_COND_OUTSIDE\000"
+ 2330      41525F52 
+ 2330      414E4745 
+ 2330      5F434F4E 
+ 2330      445F4F55 
+ 2331              	.LASF176:
+ 2332 0d37 43595F53 		.ascii	"CY_SYSPM_CHECK_READY\000"
+ 2332      5953504D 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 53
+
+
+ 2332      5F434845 
+ 2332      434B5F52 
+ 2332      45414459 
+ 2333              	.LASF224:
+ 2334 0d4c 4144435F 		.ascii	"ADC_1_DeepSleepCallbackStruct\000"
+ 2334      315F4465 
+ 2334      6570536C 
+ 2334      65657043 
+ 2334      616C6C62 
+ 2335              	.LASF149:
+ 2336 0d6a 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ 2336      73547269 
+ 2336      6D526F6D 
+ 2336      43746C4F 
+ 2336      66667365 
+ 2337              	.LASF49:
+ 2338 0d80 52414E47 		.ascii	"RANGE_INTR_SET\000"
+ 2338      455F494E 
+ 2338      54525F53 
+ 2338      455400
+ 2339              	.LASF99:
+ 2340 0d8f 73727373 		.ascii	"srssNumClkpath\000"
+ 2340      4E756D43 
+ 2340      6C6B7061 
+ 2340      746800
+ 2341              	.LASF209:
+ 2342 0d9e 6D757853 		.ascii	"muxSwitchSqCtrl\000"
+ 2342      77697463 
+ 2342      68537143 
+ 2342      74726C00 
+ 2343              	.LASF85:
+ 2344 0dae 64775665 		.ascii	"dwVersion\000"
+ 2344      7273696F 
+ 2344      6E00
+ 2345              	.LASF81:
+ 2346 0db8 69706342 		.ascii	"ipcBase\000"
+ 2346      61736500 
+ 2347              	.LASF51:
+ 2348 0dc0 52414E47 		.ascii	"RANGE_INTR_MASKED\000"
+ 2348      455F494E 
+ 2348      54525F4D 
+ 2348      41534B45 
+ 2348      4400
+ 2349              	.LASF132:
+ 2350 0dd2 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
+ 2350      44697643 
+ 2350      6D645061 
+ 2350      44697653 
+ 2350      656C506F 
+ 2351              	.LASF47:
+ 2352 0de8 53415455 		.ascii	"SATURATE_INTR_MASKED\000"
+ 2352      52415445 
+ 2352      5F494E54 
+ 2352      525F4D41 
+ 2352      534B4544 
+ 2353              	.LASF113:
+ 2354 0dfd 666C6173 		.ascii	"flashProgramDelay\000"
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccsuGiDa.s 			page 54
+
+
+ 2354      6850726F 
+ 2354      6772616D 
+ 2354      44656C61 
+ 2354      7900
+ 2355              	.LASF110:
+ 2356 0e0f 666C6173 		.ascii	"flashRwwRequired\000"
+ 2356      68527777 
+ 2356      52657175 
+ 2356      69726564 
+ 2356      00
+ 2357              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

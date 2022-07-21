@@ -217,6 +217,9 @@ static void ClockInit(void)
 	Cy_SysClk_PeriphAssignDivider(PCLK_PASS_CLOCK_CTDAC, CY_SYSCLK_DIV_16_BIT, 0u);
 	Cy_SysClk_PeriphSetDivider(CY_SYSCLK_DIV_16_BIT, 0u, 999u);
 	Cy_SysClk_PeriphEnableDivider(CY_SYSCLK_DIV_16_BIT, 0u);
+	Cy_SysClk_PeriphAssignDivider(PCLK_PASS_CLOCK_SAR, CY_SYSCLK_DIV_8_BIT, 1u);
+	Cy_SysClk_PeriphSetDivider(CY_SYSCLK_DIV_8_BIT, 1u, 49u);
+	Cy_SysClk_PeriphEnableDivider(CY_SYSCLK_DIV_8_BIT, 1u);
 }
 
 
@@ -245,6 +248,8 @@ static void AnalogSetDefault(void)
 	CY_SET_REG32(CYREG_CTBM0_OA0_SW, 0x00244000u);
 	CY_SET_REG32(CYREG_CTBM0_OA1_SW, 0x00240000u);
 	CY_SET_REG32(CYREG_CTBM0_CTD_SW, 0x00003200u);
+	CY_SET_REG32(CYREG_SAR_CTRL, 0x80000000u);
+	CY_SET_REG32(CYREG_SAR_MUX_SWITCH0, 0x00040000u);
 	CY_SET_REG32(CYREG_PASS_AREF_AREF_CTRL, 0x80110001u);
 }
 
@@ -328,7 +333,7 @@ void Cy_SystemInit(void)
 	{
 	    const cy_stc_gpio_prt_config_t port9_cfg =
 	    {
-	        .out        = 0x00000008u,
+	        .out        = 0x00000048u,
 	        .intrMask   = 0x00000000u,
 	        .intrCfg    = 0x00000000u,
 	        .cfg        = 0x00000000u,
@@ -336,7 +341,7 @@ void Cy_SystemInit(void)
 	        .cfgOut     = 0x00000000u,
 	        .cfgSIO     = 0x00000000u,
 	        .sel0Active = 0x00000000u,
-	        .sel1Active = 0x00000000u,
+	        .sel1Active = 0x00040000u,
 	    };
 	    (void)Cy_GPIO_Port_Init(GPIO_PRT9, &port9_cfg);
 	}

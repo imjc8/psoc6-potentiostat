@@ -114,7 +114,10 @@ int main(void)
     
     // direction  1 -> go up 0 -> down
     // set initial dac direction
-    int direction = 0;
+    int direction = 1;
+    
+    //dac_direction = (direction == 1) ? 1 : 0;
+    
     if (direction == 1)
     {
         dac_direction = 1;

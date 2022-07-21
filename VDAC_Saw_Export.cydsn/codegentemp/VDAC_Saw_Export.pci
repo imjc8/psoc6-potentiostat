@@ -1,5 +1,5 @@
 # VDAC_Saw_Export
-# 2022-07-19 10:24:52Z
+# 2022-07-21 07:24:41Z
 
 dont_use_location SMIF -1 -1 0
 # IO_2@[IOP=(9)][IoId=(2)] is reserved: AnalogTrackJump
@@ -10,7 +10,9 @@ dont_use_location usbcell -1 -1 0
 set_location "ClockGenBlock" CLK_GEN -1 -1 0
 set_io "CY_CPUSS_SWJ_SWCLK_TCLK(0)" iocell 6 7
 set_io "CY_CPUSS_SWJ_SWDIO_TMS(0)" iocell 6 6
-set_io "VDAC_Out_P9_6(0)" iocell 9 3
+set_io "VDAC_Out(0)" iocell 9 3
+set_io "ADC_IN(0)" iocell 9 6
 set_location "\VDAC_1:CTDAC\" CTDAC -1 -1 0
 set_location "\VDAC_1:VOUTBUF\" OA -1 -1 0
 set_location "\VDAC_1:SAMPLEHOLD\" SAMPLEHOLD -1 -1 0
+set_location "\ADC_1:SAR\" SARADC -1 -1 0

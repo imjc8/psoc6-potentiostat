@@ -20,6 +20,14 @@
 #include "cyfitter_gpio.h"
 #include "cyfitter_sysint.h"
 
+/* ADC_1 */
+#define ADC_1_intSarClock__DIV_IDX 1
+#define ADC_1_intSarClock__DIV_NUM 1
+#define ADC_1_intSarClock__DIV_TYPE CY_SYSCLK_DIV_8_BIT
+#define ADC_1_SAR__HW SAR
+#define ADC_1_SAR__IDX 0
+#define ADC_1_SAR__TR_SAR_IN TRIG6_OUT_PASS_TR_SAR_IN
+
 /* UART_1 */
 #define UART_1_SCB__HW SCB5
 #define UART_1_SCB__IDX 5

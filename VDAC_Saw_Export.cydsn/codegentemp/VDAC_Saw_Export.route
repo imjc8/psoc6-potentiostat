@@ -25,6 +25,17 @@ net Net_54_ff47
 	switch ":Clockcontainer:ff_permute.Clock[0]ff_div_55==>:CTDACcontainer:CTDAC[0].clock"
 	term   ":CTDACcontainer:CTDAC[0].clock"
 end Net_54_ff47
+net \ADC_1:Net_423\
+	term   ":SARADCcontainer:SARADC[0].interrupt"
+	switch ":SARADCcontainer:SARADC[0].interrupt==>:intc_0:interrupt138.interrupt"
+	term   ":intc_0:interrupt138.interrupt"
+end \ADC_1:Net_423\
+net \ADC_1:Net_428_ff49\
+	term   ":Clockcontainer:Clock[0].ff_div_49"
+	switch ":Clockcontainer:Clock[0].ff_div_49==>:Clockcontainer:ff_permute.ff_div_49"
+	switch ":Clockcontainer:ff_permute.Clock[0]ff_div_57==>:SARADCcontainer:SARADC[0].clock"
+	term   ":SARADCcontainer:SARADC[0].clock"
+end \ADC_1:Net_428_ff49\
 net \UART_1:Net_1172\
 	term   ":ioport5:pin0.fb"
 	switch ":ioport5:pin0.fb==>:ioport5:smartio_mux_out0.direct_in"
