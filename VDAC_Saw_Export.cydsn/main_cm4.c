@@ -98,10 +98,10 @@ int main(void)
     float max_volt = 3.0;
     float init_volt = 1.0;
     // scan rate (v/sec)
-    float scan_rate = 0.5;
+    float scan_rate = 1;
     
     // number of cycles
-    cycle_count = 10;
+    cycle_count = 2;
     
     //float min_volt = 1
     //float max_volt = 2.3
@@ -110,7 +110,7 @@ int main(void)
     maxVoltConverted = (max_volt/3.3)*4095;
     initVoltConverted = (init_volt/3.3)*4095;
 
-    dac_val = initVoltConverted;   
+    //dac_val = initVoltConverted;   
     
     // direction  1 -> go up 0 -> down
     // set initial dac direction
@@ -131,6 +131,7 @@ int main(void)
     
     /* Start the component. */
     VDAC_1_Start();
+    dac_val = initVoltConverted;   
     
     for(;;)
     {   
@@ -179,29 +180,38 @@ void userIsr(void)
         }
         */
         
-        
         // generate saw tooth
-        if (div == div_duration) {
-            if (dac_direction == 1)
-            {
-                dac_val++;
-                if (dac_val == maxVoltConverted)
-                {
-                    dac_direction = 0;
+        if ((cycle_dac/2) < (cycle_count)){
+            if (div == div_duration) {
+                if (dac_direction == 1){
+                    dac_val++;
+                    if (dac_val == maxVoltConverted){
+                        dac_direction = 0;
+                    }
+                    else if(dac_val == initVoltConverted){
+                        cycle_dac++;
+                    }
                 }
-            }
-            else if (dac_direction == 0)
-            {
-                dac_val--;
-                if (dac_val == minVoltConverted)
-                {
-                    dac_direction = 1;
+                else if (dac_direction == 0){
+                    dac_val--;
+                    if (dac_val == minVoltConverted)
+                    {
+                        dac_direction = 1;
+                    }
+                    else if(dac_val == initVoltConverted){
+                        cycle_dac++;
+                    }
                 }
-            }
-            div = 0;
-        } else {
-            div++;
-        };
+                div = 0;
+            } 
+            else {
+                div++;
+            };
+        }
+        else {
+            //VDAC_1_Stop();
+            dac_val = 0.0;
+        }
     }
 }
 
