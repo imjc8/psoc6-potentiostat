@@ -45,9 +45,9 @@
 
 uint32_t dac_val = 0u;
 
-int maxVoltConverted = 0;
-int minVoltConverted = 0;
-int initVoltConverted = 0;
+uint32_t maxVoltConverted = 0;
+uint32_t minVoltConverted = 0;
+uint32_t initVoltConverted = 0;
 
 // scan rate calcs
 int div = 0;
@@ -93,20 +93,20 @@ int main(void)
     // waveform parameters
     // voltage
     float min_volt = 0.0;
-    float max_volt = 3.0;
-    float init_volt = 0.5;
+    float max_volt = 3.3;
+    float init_volt = 0.0;
     // scan rate (v/sec)
     float scan_rate = 1;
     
     // number of cycles
-    cycle_count = 2;
+    cycle_count = 1;
     
     //float min_volt = 1
     //float max_volt = 2.3
     
-    minVoltConverted = (min_volt/3.3)*4095;
-    maxVoltConverted = (max_volt/3.3)*4095;
-    initVoltConverted = (init_volt/3.3)*4095;
+    minVoltConverted = round((min_volt/3.3)*4095);
+    maxVoltConverted = round((max_volt/3.3)*4095);
+    initVoltConverted = round((init_volt/3.3)*4095);
 
     //dac_val = initVoltConverted;   
     
@@ -169,19 +169,6 @@ void userIsr(void)
         /* Set the next value that the DAC will output. */
         VDAC_1_SetValueBuffered(dac_val);
         
-        
-        /*
-        // Increment the DAC code from 0 to the maximum code value to generate a sawtooth waveform. 
-        if (dac_val >= CY_CTDAC_UNSIGNED_MAX_CODE_VALUE)
-        {
-            dac_val = 0u;
-        }
-        else
-        {
-            dac_val++;
-        }
-        */
-        
         // generate saw tooth
         if ((cycle_dac/2) < (cycle_count)){
             if (div == div_duration) {
@@ -189,20 +176,26 @@ void userIsr(void)
                     dac_val++;
                     if(dac_val == initVoltConverted){
                         cycle_dac++;
-                        if (dac_val == minVoltConverted)
-                        {
+                        if (dac_val == maxVoltConverted){
                             dac_direction = 0;
                         }
+                    }
+                    else if (dac_val >= maxVoltConverted)
+                    {
+                        dac_direction = 0;
                     }
                 }
                 else if (dac_direction == 0){
                     dac_val--;
                     if(dac_val == initVoltConverted){
                         cycle_dac++;
-                        if (dac_val == minVoltConverted)
-                        {
+                        if (dac_val == minVoltConverted){
                             dac_direction = 1;
                         }
+                    }
+                    else if (dac_val <= minVoltConverted)
+                    {
+                        dac_direction = 1;
                     }
                 }
                 div = 0;
@@ -215,6 +208,8 @@ void userIsr(void)
             //VDAC_1_Stop();
             dac_val = 0.0;
         }
+        
+
     }
 }
 
