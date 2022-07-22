@@ -94,12 +94,12 @@ int main(void)
     // voltage
     float min_volt = 0.0;
     float max_volt = 3.3;
-    float init_volt = 3.3;
+    float init_volt = 1;
     // scan rate (v/sec)
-    float scan_rate = 1;
+    float scan_rate = 1.5;
     
     // number of cycles
-    cycle_count = 1;
+    cycle_count = 3;
     
     //float min_volt = 1
     //float max_volt = 2.3
@@ -167,17 +167,25 @@ void userIsr(void)
         VDAC_1_ClearInterrupt();
         
         /* Set the next value that the DAC will output. */
-        VDAC_1_SetValueBuffered(dac_val);
+        //VDAC_1_SetValueBuffered(dac_val);
         
-        // generate saw tooth
+        // generate triangle wave
         if ((cycle_dac/2) < (cycle_count)){
+            // basically skip times which don't line up with scan rate
             if (div == div_duration) {
+                VDAC_1_SetValueBuffered(dac_val);
+                // up
                 if (dac_direction == 1){
+                    // increment
                     dac_val++;
+                    // 1 cycle complete
                     if(dac_val == initVoltConverted){
                         cycle_dac++;
+                        // check if it hits peak
                         if (dac_val == maxVoltConverted){
+                            // switch direction
                             dac_direction = 0;
+                            // increment again since there is one less point
                             cycle_dac++;
                         }
                     }
@@ -207,8 +215,8 @@ void userIsr(void)
             };
         }
         else {
-            //VDAC_1_Stop();
-            dac_val = 0.0;
+            VDAC_1_Stop();
+            //dac_val = 0.0;
         }
         
 
