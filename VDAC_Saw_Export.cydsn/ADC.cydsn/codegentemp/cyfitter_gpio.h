@@ -22,21 +22,21 @@
 #define Pin_1_0_DRIVEMODE CY_GPIO_DM_ANALOG
 #define Pin_1_0_INBUF_ENABLED 0u
 #define Pin_1_0_INIT_DRIVESTATE 1u
-#define Pin_1_0_INIT_MUXSEL 4u
+#define Pin_1_0_INIT_MUXSEL 0u
 #define Pin_1_0_INPUT_SYNC 2u
 #define Pin_1_0_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Pin_1_0_NUM 6u
-#define Pin_1_0_PORT GPIO_PRT5
+#define Pin_1_0_NUM 2u
+#define Pin_1_0_PORT GPIO_PRT10
 #define Pin_1_0_SLEWRATE CY_GPIO_SLEW_FAST
 #define Pin_1_0_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
 #define Pin_1_DRIVEMODE CY_GPIO_DM_ANALOG
 #define Pin_1_INBUF_ENABLED 0u
 #define Pin_1_INIT_DRIVESTATE 1u
-#define Pin_1_INIT_MUXSEL 4u
+#define Pin_1_INIT_MUXSEL 0u
 #define Pin_1_INPUT_SYNC 2u
 #define Pin_1_INTERRUPT_MODE CY_GPIO_INTR_DISABLE
-#define Pin_1_NUM 6u
-#define Pin_1_PORT GPIO_PRT5
+#define Pin_1_NUM 2u
+#define Pin_1_PORT GPIO_PRT10
 #define Pin_1_SLEWRATE CY_GPIO_SLEW_FAST
 #define Pin_1_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
 

@@ -2,7 +2,7 @@
 --	Conversion of VDAC_Saw_Export.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Fri Jul 22 11:15:33 2022
+--	Fri Jul 22 20:04:40 2022
 --
 
 USE cypress.cypress.all;
@@ -368,6 +368,7 @@ TERMINAL \ADC_1:vinMinus_62\ : bit;
 TERMINAL \ADC_1:Net_315\ : bit;
 TERMINAL \ADC_1:vinMinus_63\ : bit;
 TERMINAL \ADC_1:Net_316\ : bit;
+TERMINAL \ADC_1:Net_1405\ : bit;
 TERMINAL \ADC_1:Net_331\ : bit;
 TERMINAL \ADC_1:vinNeg_1\ : bit;
 TERMINAL \ADC_1:Net_345\ : bit;
@@ -408,7 +409,7 @@ Clock_1:cy_clock_v1_0
 		id=>"52a4343a-0dfc-48de-bb58-9d7bb1aeb936",
 		source_clock_id=>"2FB4EC85-8328-4C5A-9ED9-8B63060178EB",
 		divisor=>0,
-		period=>"20000000000",
+		period=>"100000000000",
 		is_direct=>'0',
 		is_digital=>'0')
 	PORT MAP(clock_out=>Net_54,
@@ -1573,7 +1574,7 @@ SysInt_1:cy_mxs40_isr_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')
 	PORT MAP(signal1=>\ADC_1:vinNeg_0\,
-		signal2=>\ADC_1:Net_331\);
+		signal2=>\ADC_1:Net_1405\);
 \ADC_1:cy_analog_noconnect_65\:cy_analog_noconnect_v1_0
 	PORT MAP(noconnect=>\ADC_1:Net_331\);
 \ADC_1:vinNegMux_1_connect\:cy_connect_v1_0
@@ -1597,6 +1598,12 @@ SysInt_1:cy_mxs40_isr_v1_0
 		signal2=>\ADC_1:Net_349\);
 \ADC_1:cy_analog_noconnect_68\:cy_analog_noconnect_v1_0
 	PORT MAP(noconnect=>\ADC_1:Net_349\);
+\ADC_1:vssa_kelvin_1\:cy_vref_v1_0
+	GENERIC MAP(guid=>"27E55207-D708-4E0A-9CA9-208BEFB90B23",
+		name=>"CY_INTERNAL_VSSA_KELVIN",
+		autoenable=>'1',
+		ignoresleep=>'0')
+	PORT MAP(vout=>\ADC_1:Net_1405\);
 \ADC_1:vrefMux_0_connect\:cy_connect_v1_0
 	GENERIC MAP(sig_width=>1,
 		is_net_join=>'0')

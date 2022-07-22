@@ -2,7 +2,7 @@
 --	Conversion of ADC.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun Jun 26 15:47:49 2022
+--	Fri Jul 22 19:56:22 2022
 --
 
 USE cypress.cypress.all;
@@ -433,7 +433,7 @@ zero <=  ('0') ;
 		signal2=>Net_65);
 \ADC_1:SAR\:cy_mxs40_sar_v1_0
 	GENERIC MAP(cy_registers=>"",
-		edge_trigger=>'0')
+		edge_trigger=>'1')
 	PORT MAP(vplus=>\ADC_1:muxoutPlus\,
 		vminus=>\ADC_1:muxoutMinus\,
 		vref=>\ADC_1:vref\,

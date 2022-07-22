@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
   39              	.LBB5:
   40              		.file 2 "Generated_Source\\PSoC6\\pdl\\cmsis/include/cmsis_gcc.h"
    1:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** /**************************************************************************//**
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 2
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 2
 
 
    2:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****  * @file     cmsis_gcc.h
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
   56:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __USED                                 __attribute__((used))
   57:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
   58:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __WEAK
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 3
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 3
 
 
   59:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __WEAK                                 __attribute__((weak))
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  113:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #ifndef   __RESTRICT
  114:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h ****   #define __RESTRICT                             __restrict
  115:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** #endif
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 4
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 4
 
 
  116:Generated_Source\PSoC6\pdl\cmsis/include/cmsis_gcc.h **** 
@@ -217,9 +217,9 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
   53              		.loc 1 21 0
   54 0008 FFF7FEFF 		bl	ADC_1_Start
   55              	.LVL1:
-  22:main_cm4.c    ****     Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
+  22:main_cm4.c    ****     Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
   56              		.loc 1 22 0
-  57 000c 0121     		movs	r1, #1
+  57 000c 0021     		movs	r1, #0
   58 000e 0E48     		ldr	r0, .L4
   59 0010 FFF7FEFF 		bl	Cy_SAR_StartConvert
   60              	.LVL2:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
   30:main_cm4.c    ****     //
   31:main_cm4.c    **** 
   32:main_cm4.c    ****     for(;;)
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 5
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 5
 
 
   33:main_cm4.c    ****     {
@@ -259,7 +259,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
   77 002a FFF7FEFF 		bl	Cy_SAR_CountsTo_Volts
   78              	.LVL6:
   37:main_cm4.c    ****         /* Place your application code here. */
-  38:main_cm4.c    ****         printf("Volt is: %f\n", v1);
+  38:main_cm4.c    ****         printf("Volt is: %f \r\n", v1);
   79              		.loc 1 38 0 discriminator 1
   80 002e FFF7FEFF 		bl	__aeabi_f2d
   81              	.LVL7:
@@ -290,15 +290,15 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  104      6F00
  105 0006 0000     		.space	2
  106              	.LC1:
- 107 0008 566F6C74 		.ascii	"Volt is: %f\012\000"
+ 107 0008 566F6C74 		.ascii	"Volt is: %f \015\012\000"
  107      2069733A 
- 107      2025660A 
- 107      00
+ 107      20256620 
+ 107      0D0A00
  108              		.text
  109              	.Letext0:
  110              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
  111              		.file 4 "c:\\program files (x86)\\cypress\\psoc creator\\4.4\\psoc creator\\import\\gnu\\arm\\5.4.
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 6
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 6
 
 
  112              		.file 5 "Generated_Source\\PSoC6\\pdl\\devices/psoc6/include/ip/cyip_sar.h"
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  166 005d 07       		.byte	0x7
  167 005e C5030000 		.4byte	.LASF6
  168 0062 03       		.uleb128 0x3
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 7
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 7
 
 
  169 0063 32060000 		.4byte	.LASF7
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  223 00cf 670A0000 		.4byte	.LASF18
  224 00d3 04       		.byte	0x4
  225 00d4 30       		.byte	0x30
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 8
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 8
 
 
  226 00d5 74000000 		.4byte	0x74
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  280 014e 00       		.byte	0
  281 014f 0A       		.uleb128 0xa
  282 0150 3B070000 		.4byte	.LASF21
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 9
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 9
 
 
  283 0154 05       		.byte	0x5
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  337 01c0 05       		.byte	0x5
  338 01c1 2C       		.byte	0x2c
  339 01c2 E6030000 		.4byte	0x3e6
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 10
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 10
 
 
  340 01c6 80       		.byte	0x80
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  394 0239 0C02     		.2byte	0x20c
  395 023b 0B       		.uleb128 0xb
  396 023c 380B0000 		.4byte	.LASF40
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 11
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 11
 
 
  397 0240 05       		.byte	0x5
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  451 02b5 05       		.byte	0x5
  452 02b6 3F       		.byte	0x3f
  453 02b7 E0000000 		.4byte	0xe0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 12
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 12
 
 
  454 02bb 3402     		.2byte	0x234
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  508 0330 A002     		.2byte	0x2a0
  509 0332 0B       		.uleb128 0xb
  510 0333 19000000 		.4byte	.LASF59
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 13
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 13
 
 
  511 0337 05       		.byte	0x5
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  565 03ac 05       		.byte	0x5
  566 03ad 52       		.byte	0x52
  567 03ae E0000000 		.4byte	0xe0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 14
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 14
 
 
  568 03b2 000F     		.2byte	0xf00
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  622 0432 1A010000 		.4byte	0x11a
  623 0436 06       		.uleb128 0x6
  624 0437 31040000 		.4byte	0x431
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 15
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 15
 
 
  625 043b 05       		.uleb128 0x5
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  679 04b2 38       		.byte	0x38
  680 04b3 CE000000 		.4byte	0xce
  681 04b7 04       		.byte	0x4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 16
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 16
 
 
  682 04b8 0A       		.uleb128 0xa
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  736 0524 0A       		.uleb128 0xa
  737 0525 85000000 		.4byte	.LASF84
  738 0529 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 17
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 17
 
 
  739 052a 44       		.byte	0x44
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  793 0596 4F       		.byte	0x4f
  794 0597 A2000000 		.4byte	0xa2
  795 059b 32       		.byte	0x32
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 18
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 18
 
 
  796 059c 0A       		.uleb128 0xa
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  850 0608 0A       		.uleb128 0xa
  851 0609 A7070000 		.4byte	.LASF103
  852 060d 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 19
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 19
 
 
  853 060e 59       		.byte	0x59
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  907 067a 62       		.byte	0x62
  908 067b A2000000 		.4byte	0xa2
  909 067f 52       		.byte	0x52
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 20
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 20
 
 
  910 0680 0A       		.uleb128 0xa
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  964 06ec 0A       		.uleb128 0xa
  965 06ed 24010000 		.4byte	.LASF122
  966 06f1 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 21
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 21
 
 
  967 06f2 70       		.byte	0x70
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1021 075e 7C       		.byte	0x7c
  1022 075f A2000000 		.4byte	0xa2
  1023 0763 71       		.byte	0x71
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 22
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 22
 
 
  1024 0764 0A       		.uleb128 0xa
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1078 07d0 0A       		.uleb128 0xa
  1079 07d1 D8030000 		.4byte	.LASF141
  1080 07d5 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 23
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 23
 
 
  1081 07d6 89       		.byte	0x89
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1135 0842 94       		.byte	0x94
  1136 0843 CE000000 		.4byte	0xce
  1137 0847 A0       		.byte	0xa0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 24
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 24
 
 
  1138 0848 0A       		.uleb128 0xa
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1192 08b4 02       		.uleb128 0x2
  1193 08b5 01       		.byte	0x1
  1194 08b6 08       		.byte	0x8
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 25
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 25
 
 
  1195 08b7 AD0A0000 		.4byte	.LASF160
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1249 0920 08       		.byte	0x8
  1250 0921 0205     		.2byte	0x502
  1251 0923 EB090000 		.4byte	0x9eb
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 26
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 26
 
 
  1252 0927 13       		.uleb128 0x13
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1306 099c 13       		.uleb128 0x13
  1307 099d D7000000 		.4byte	.LASF180
  1308 09a1 08       		.byte	0x8
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 27
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 27
 
 
  1309 09a2 0D05     		.2byte	0x50d
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1363 0a18 0D       		.uleb128 0xd
  1364 0a19 F2040000 		.4byte	.LASF187
  1365 0a1d 09       		.byte	0x9
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 28
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 28
 
 
  1366 0a1e D901     		.2byte	0x1d9
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1420 0a94 CE000000 		.4byte	0xce
  1421 0a98 1C       		.byte	0x1c
  1422 0a99 13       		.uleb128 0x13
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 29
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 29
 
 
  1423 0a9a 41040000 		.4byte	.LASF196
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1477 0b0d 0A       		.byte	0xa
  1478 0b0e 3E       		.byte	0x3e
  1479 0b0f CE000000 		.4byte	0xce
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 30
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 30
 
 
  1480 0b13 04       		.byte	0x4
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1534 0b84 1C       		.byte	0x1c
  1535 0b85 AD000000 		.4byte	0xad
  1536 0b89 13000000 		.4byte	.LLST1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 31
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 31
 
 
  1537 0b8d 1C       		.uleb128 0x1c
@@ -1827,7 +1827,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1560 0bc5 01       		.uleb128 0x1
  1561 0bc6 51       		.byte	0x51
  1562 0bc7 01       		.uleb128 0x1
- 1563 0bc8 31       		.byte	0x31
+ 1563 0bc8 30       		.byte	0x30
  1564 0bc9 00       		.byte	0
  1565 0bca 1E       		.uleb128 0x1e
  1566 0bcb 1A000000 		.4byte	.LVL3
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1591 0bf9 00       		.byte	0
  1592 0bfa 1E       		.uleb128 0x1e
  1593 0bfb 2E000000 		.4byte	.LVL6
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 32
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 32
 
 
  1594 0bff DD0C0000 		.4byte	0xcdd
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1648 0c64 A8010000 		.4byte	.LASF212
  1649 0c68 0A       		.byte	0xa
  1650 0c69 6001     		.2byte	0x160
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 33
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 33
 
 
  1651 0c6b CE000000 		.4byte	0xce
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1705 0cea 00000000 		.4byte	.LASF220
  1706 0cee 00000000 		.4byte	.LASF220
  1707 0cf2 0D       		.byte	0xd
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 34
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 34
 
 
  1708 0cf3 BB       		.byte	0xbb
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1762 002d 00       		.byte	0
  1763 002e 0B       		.uleb128 0xb
  1764 002f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 35
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 35
 
 
  1765 0030 3E       		.uleb128 0x3e
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1819 0066 03       		.uleb128 0x3
  1820 0067 0E       		.uleb128 0xe
  1821 0068 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 36
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 36
 
 
  1822 0069 0B       		.uleb128 0xb
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1876 009f 0B       		.uleb128 0xb
  1877 00a0 01       		.uleb128 0x1
  1878 00a1 13       		.uleb128 0x13
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 37
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 37
 
 
  1879 00a2 00       		.byte	0
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1933 00d8 05       		.uleb128 0x5
  1934 00d9 49       		.uleb128 0x49
  1935 00da 13       		.uleb128 0x13
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 38
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 38
 
 
  1936 00db 38       		.uleb128 0x38
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  1990 0111 19       		.uleb128 0x19
  1991 0112 20       		.uleb128 0x20
  1992 0113 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 39
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 39
 
 
  1993 0114 00       		.byte	0
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2047 014c 0B       		.uleb128 0xb
  2048 014d 49       		.uleb128 0x49
  2049 014e 13       		.uleb128 0x13
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 40
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 40
 
 
  2050 014f 02       		.uleb128 0x2
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2104 018e 13       		.uleb128 0x13
  2105 018f 00       		.byte	0
  2106 0190 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 41
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 41
 
 
  2107 0191 21       		.uleb128 0x21
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2161 01c7 3F       		.uleb128 0x3f
  2162 01c8 19       		.uleb128 0x19
  2163 01c9 3C       		.uleb128 0x3c
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 42
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 42
 
 
  2164 01ca 19       		.uleb128 0x19
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2218 000e 0000     		.2byte	0
  2219 0010 00000000 		.4byte	.LFB529
  2220 0014 54000000 		.4byte	.LFE529-.LFB529
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 43
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 43
 
 
  2221 0018 00000000 		.4byte	0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2248              	.LASF158:
  2249 0071 6970634C 		.ascii	"ipcLockStatusOffset\000"
  2249      6F636B53 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 44
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 44
 
 
  2249      74617475 
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2273 011a 63707573 		.ascii	"cpussBase\000"
  2273      73426173 
  2273      6500
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 45
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 45
 
 
  2274              	.LASF122:
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2295 01d8 414E415F 		.ascii	"ANA_TRIM1\000"
  2295      5452494D 
  2295      3100
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 46
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 46
 
 
  2296              	.LASF50:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2319 0290 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
  2319      73436D30 
  2319      4E6D6943 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 47
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 47
 
 
  2319      746C4F66 
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2342              	.LASF75:
  2343 033d 70657269 		.ascii	"periBase\000"
  2343      42617365 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 48
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 48
 
 
  2343      00
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2365      744F6666 
  2365      73657400 
  2366              	.LASF123:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 49
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 49
 
 
  2367 03ec 64774368 		.ascii	"dwChCtlPreemptablePos\000"
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2389      6F4F6666 
  2389      73657400 
  2390              	.LASF94:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 50
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 50
 
 
  2391 0497 63707573 		.ascii	"cpussDwChNr\000"
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2411      5F4D4153 
  2411      4B00
  2412              	.LASF79:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 51
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 51
 
 
  2413 054c 6770696F 		.ascii	"gpioBase\000"
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2435      54724772 
  2435      53697A65 
  2435      00
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 52
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 52
 
 
  2436              	.LASF87:
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2461 068e 494E5452 		.ascii	"INTR_SET\000"
  2461      5F534554 
  2461      00
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 53
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 53
 
 
  2462              	.LASF83:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2485      6967526F 
  2485      7574696E 
  2485      6700
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 54
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 54
 
 
  2486              	.LASF21:
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2509      5400
  2510              	.LASF222:
  2511 07d3 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 55
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 55
 
 
  2511      43313120 
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2532      52564544 
  2532      3600
  2533              	.LASF57:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 56
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 56
 
 
  2534 08e7 52455345 		.ascii	"RESERVED7\000"
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2558              	.LASF0:
  2559 09a8 73686F72 		.ascii	"short int\000"
  2559      7420696E 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 57
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 57
 
 
  2559      7400
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2583 0a45 666C6173 		.ascii	"flashEraseDelay\000"
  2583      68457261 
  2583      73654465 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 58
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 58
 
 
  2583      6C617900 
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2607      385F7400 
  2608              	.LASF217:
  2609 0af2 43795F53 		.ascii	"Cy_SAR_StartConvert\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 59
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 59
 
 
  2609      41525F53 
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2632              	.LASF65:
  2633 0b89 4D55585F 		.ascii	"MUX_SWITCH_SQ_CTRL\000"
  2633      53574954 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 60
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 60
 
 
  2633      43485F53 
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2656              	.LASF172:
  2657 0c44 73616D70 		.ascii	"sampleCtrl\000"
  2657      6C654374 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 61
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 61
 
 
  2657      726C00
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 1
  2677 0d04 74785374 		.ascii	"txStatus\000"
  2677      61747573 
  2677      00
-ARM GAS  C:\Users\JC\AppData\Local\Temp\ccfOpK2s.s 			page 62
+ARM GAS  C:\Users\JC\AppData\Local\Temp\cc0VPH8T.s 			page 62
 
 
  2678              	.LASF183:

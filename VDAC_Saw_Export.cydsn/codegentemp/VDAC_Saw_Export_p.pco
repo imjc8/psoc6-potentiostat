@@ -20,5 +20,5 @@ set_location "ClockBlock" Clock -1 -1 0
 set_io "CY_CPUSS_SWJ_SWDIO_TMS(0)" iocell 6 6
 set_location "\VDAC_1:CTDAC\" CTDAC -1 -1 0
 set_io "VDAC_Out(0)" iocell 9 3
-set_io "ADC_IN(0)" iocell 9 6
+set_io "ADC_IN(0)" iocell 10 2
 set_location "CPUSS" CPUSS -1 -1 0

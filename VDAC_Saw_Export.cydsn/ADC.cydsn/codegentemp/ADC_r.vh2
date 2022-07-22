@@ -1,5 +1,5 @@
 -- Project:   ADC
--- Generated: 06/26/2022 15:47:56
+-- Generated: 07/22/2022 19:56:29
 -- PSoC Creator  4.4
 
 ENTITY ADC IS
@@ -97,7 +97,7 @@ ARCHITECTURE __DEFAULT__ OF ADC IS
     ATTRIBUTE lib_model OF \UART_1:rx(0)\ : LABEL IS "iocell4";
     ATTRIBUTE Location OF \UART_1:rx(0)\ : LABEL IS "P5[0]";
     ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell5";
-    ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P5[6]";
+    ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P10[2]";
     ATTRIBUTE Location OF \ADC_1:IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(138)]";
     ATTRIBUTE Location OF \ADC_1:SAR\ : LABEL IS "F(SARADC,0)";
     ATTRIBUTE Location OF \UART_1:SCB_IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(46)]";
@@ -799,7 +799,7 @@ BEGIN
     \ADC_1:SAR\:SARADC
         GENERIC MAP(
             cy_registers => "",
-            edge_trigger => 0)
+            edge_trigger => 1)
         PORT MAP(
             dsi_sar_sample_done => Net_54,
             dsi_sar_chan_id_valid => Net_56,

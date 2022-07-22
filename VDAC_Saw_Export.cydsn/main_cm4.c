@@ -42,6 +42,7 @@
 #include "project.h"
 #include "ctdac/cy_ctdac.h"
 #include <math.h>
+#include "stdio.h"
 
 uint32_t dac_val = 0u;
 
@@ -59,6 +60,10 @@ int cycle_dac = 0;
 
 // initial scan direction
 int dac_direction = 0;
+
+// adc
+int16_t adc_count;
+float32_t adc_volt;
 
 void userIsr(void);
 
@@ -99,7 +104,7 @@ int main(void)
     float scan_rate = 1.5;
     
     // number of cycles
-    cycle_count = 3;
+    cycle_count = 100;
     
     //float min_volt = 1
     //float max_volt = 2.3
@@ -129,14 +134,27 @@ int main(void)
     float volt_diff = max_volt - min_volt;
     
     // DAC clock frequency is 50KHz
-    div_duration = (int)((float)(50000.0 * volt_diff/((maxVoltConverted - minVoltConverted) * scan_rate)))-1;
+    div_duration = (int)((float)(10000.0 * volt_diff/((maxVoltConverted - minVoltConverted) * scan_rate)))-1;
     
     /* Start the component. */
     VDAC_1_Start();
-    dac_val = initVoltConverted;   
+    UART_1_Start();
+    setvbuf(stdin, NULL, _IONBF, 0);
+    Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
     
+    dac_val = initVoltConverted;   
+    printf("hello world\r\n");
+    
+    int i = 0;
     for(;;)
     {   
+//        adc_count = Cy_SAR_GetResult16(SAR, 0);
+//        adc_volt = Cy_SAR_CountsTo_Volts(SAR, 0, adc_count);
+//        printf("Dac: %d ADC: %f ADC count: %d \r\n", dac_val, adc_volt, adc_count);
+        for (i = 0; i< 10; i++){
+            printf("counter is %d \r\n", i);
+        }
+       
     }
 }
 
@@ -174,6 +192,8 @@ void userIsr(void)
             // basically skip times which don't line up with scan rate
             if (div == div_duration) {
                 VDAC_1_SetValueBuffered(dac_val);
+
+                // when i want to send to bluetooth and get current
                 // up
                 if (dac_direction == 1){
                     // increment
