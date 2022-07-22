@@ -94,7 +94,7 @@ int main(void)
     // voltage
     float min_volt = 0.0;
     float max_volt = 3.3;
-    float init_volt = 0.0;
+    float init_volt = 3.3;
     // scan rate (v/sec)
     float scan_rate = 1;
     
@@ -112,7 +112,7 @@ int main(void)
     
     // direction  1 -> go up 0 -> down
     // set initial dac direction
-    int direction = 1;
+    int direction = 0;
     
     dac_direction = (direction == 1) ? 1 : 0;
     
@@ -178,6 +178,7 @@ void userIsr(void)
                         cycle_dac++;
                         if (dac_val == maxVoltConverted){
                             dac_direction = 0;
+                            cycle_dac++;
                         }
                     }
                     else if (dac_val >= maxVoltConverted)
@@ -191,6 +192,7 @@ void userIsr(void)
                         cycle_dac++;
                         if (dac_val == minVoltConverted){
                             dac_direction = 1;
+                            cycle_dac++;
                         }
                     }
                     else if (dac_val <= minVoltConverted)
