@@ -36,6 +36,11 @@ net \ADC_1:Net_428_ff49\
 	switch ":Clockcontainer:ff_permute.Clock[0]ff_div_57==>:SARADCcontainer:SARADC[0].clock"
 	term   ":SARADCcontainer:SARADC[0].clock"
 end \ADC_1:Net_428_ff49\
+net \BLE_1:Net_1\
+	term   ":BLEcontainer:BLE[0].interrupt"
+	switch ":BLEcontainer:BLE[0].interrupt==>:intc_0:interrupt24.interrupt"
+	term   ":intc_0:interrupt24.interrupt"
+end \BLE_1:Net_1\
 net \UART_1:Net_1172\
 	term   ":ioport5:pin0.fb"
 	switch ":ioport5:pin0.fb==>:ioport5:smartio_mux_out0.direct_in"

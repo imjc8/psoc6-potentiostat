@@ -6,10 +6,13 @@
   <Data key="DataVersionKey" value="2" />
   <Group key="DWRInstGuidMapping">
     <Group key="Clock">
+      <Data key="08aaecf5-1a2f-46ef-aa87-ee80d36b39ee/b68e5b9d-7828-482d-a282-930f990e3b3e" value="UART_1_SCBCLK" />
       <Data key="1292ae7b-4359-4285-8ad8-eb19564887cc/f7143d07-534d-4542-813a-8bb23ceb1ae9" value="ADC_1_intSarClock" />
     </Group>
     <Group key="Pin">
-      <Data key="3bebfee8-790b-4297-b73a-27818bdce71c" value="Pin_1" />
+      <Data key="3bebfee8-790b-4297-b73a-27818bdce71c" value="ADC_IN" />
+      <Data key="08aaecf5-1a2f-46ef-aa87-ee80d36b39ee/65f3af6c-759b-4ccb-8c66-5c95ba1f5f4f" value="UART_1_tx" />
+      <Data key="08aaecf5-1a2f-46ef-aa87-ee80d36b39ee/b7e8018e-1ef7-49c0-b5a5-61641a03e31c" value="UART_1_rx" />
     </Group>
   </Group>
   <Group key="M0S8Clock">
@@ -39,6 +42,29 @@
       </Group>
     </Group>
     <Group key="LocalClks">
+      <Group key="08aaecf5-1a2f-46ef-aa87-ee80d36b39ee/b68e5b9d-7828-482d-a282-930f990e3b3e">
+        <Data key="check_tolerance" value="True" />
+        <Data key="derive_type" value="AUTO" />
+        <Data key="desired_freq" value="1.3824" />
+        <Data key="desired_unit" value="6" />
+        <Data key="divider" value="36" />
+        <Data key="enabled" value="True" />
+        <Data key="fract_divider_denominator" value="0" />
+        <Data key="fract_divider_numerator" value="0" />
+        <Data key="minus_tolerance" value="5" />
+        <Data key="name" value="UART_1_SCBCLK" />
+        <Data key="netlist_name" value="\UART_1:SCBCLK\" />
+        <Data key="ph_align_clock_id" value="" />
+        <Data key="ph_align_clock_name" value="" />
+        <Data key="plus_tolerance" value="5" />
+        <Data key="scope" value="LOCAL" />
+        <Data key="sourceClk_minus_acuracy_name" value="2.4" />
+        <Data key="sourceClk_plus_acuracy_name" value="2.4" />
+        <Data key="src_clk_id" value="2FB4EC85-8328-4C5A-9ED9-8B63060178EB" />
+        <Data key="src_clk_name" value="Clk_Peri" />
+        <Data key="start_on_reset" value="True" />
+        <Data key="uses_fract_divider" value="False" />
+      </Group>
       <Group key="1292ae7b-4359-4285-8ad8-eb19564887cc/f7143d07-534d-4542-813a-8bb23ceb1ae9">
         <Data key="check_tolerance" value="False" />
         <Data key="derive_type" value="NAMED_FREQ" />
@@ -624,7 +650,7 @@
   <Group key="Pin2">
     <Group key="3bebfee8-790b-4297-b73a-27818bdce71c">
       <Group key="0">
-        <Data key="Port Format" value="5,4" />
+        <Data key="Port Format" value="10,2" />
       </Group>
     </Group>
   </Group>

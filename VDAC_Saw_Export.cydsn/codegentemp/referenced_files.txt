@@ -33,6 +33,7 @@
     <Define>CYBLE_416045_02</Define>
   </Defines>
   <folder folderName=".">
+    <file fileName="cy_ble_config.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\config\cy_ble_config.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="True" />
     <file fileName="stdio_user.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\utilities\retarget_io\user\stdio_user.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="True" />
     <file fileName="stdio_user.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\utilities\retarget_io\user\stdio_user.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="True" />
     <file fileName="startup_psoc6_01_cm0plus.S" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\devices\psoc6\startup\gcc\startup_psoc6_01_cm0plus.S" buildType="SOURCE_C;CortexM0p;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd;" copyLocal="True" isTemplate="True" />
@@ -174,8 +175,108 @@
       </folder>
       <folder folderName="middleware">
         <folder folderName="ble">
+          <file fileName="cy_ble.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hal_int.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hal_int.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hal_pvt.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hal_pvt.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hal_pvt.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hal_pvt.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_defines.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_defines.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_gap.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_gap.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_gap.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_gap.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_gatt.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_gatt.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_gatt.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_gatt.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_event_handler.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_event_handler.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_event_handler.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_event_handler.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_host_main.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_host_main.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_gatt_server.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_gatt_server.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_gap_peripheral.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_gap_peripheral.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_gatt_client.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_gatt_client.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_l2cap.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_l2cap.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_pvt.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_pvt.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_gatt_db.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_gatt_db.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_gap_central.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_gap_central.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_gap.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_gap.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_gatt.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_gatt.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_stack_host_error.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_stack_host_error.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ancs.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ancs.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ancs.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ancs.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ans.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ans.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ans.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ans.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_aios.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_aios.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_aios.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_aios.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_bas.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_bas.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_bas.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_bas.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_bcs.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_bcs.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_bcs.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_bcs.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_bls.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_bls.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_bls.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_bls.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_bms.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_bms.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_bms.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_bms.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_bts.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_bts.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_bts.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_bts.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_cgms.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_cgms.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_cgms.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_cgms.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_cps.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_cps.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_cps.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_cps.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_cscs.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_cscs.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_cscs.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_cscs.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_cts.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_cts.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_cts.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_cts.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_custom.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_custom.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_custom.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_custom.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_dis.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_dis.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_dis.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_dis.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ess.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ess.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ess.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ess.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_gls.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_gls.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_gls.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_gls.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hids.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hids.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hids.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hids.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hps.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hps.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hps.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hps.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hrs.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hrs.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hrs.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hrs.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hts.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hts.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_hts.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_hts.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ias.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ias.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ias.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ias.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ips.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ips.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ips.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ips.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_lls.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_lls.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_lls.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_lls.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_lns.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_lns.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_lns.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_lns.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ndcs.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ndcs.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_ndcs.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_ndcs.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_plxs.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_plxs.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_plxs.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_plxs.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_pass.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_pass.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_pass.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_pass.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_rscs.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_rscs.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_rscs.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_rscs.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_rtus.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_rtus.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_rtus.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_rtus.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_scps.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_scps.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_scps.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_scps.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_tps.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_tps.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_tps.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_tps.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_uds.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_uds.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_uds.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_uds.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_wpts.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_wpts.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_wpts.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_wpts.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_wss.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_wss.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
+          <file fileName="cy_ble_wss.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_wss.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
           <file fileName="cy_ble_clk.c" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_clk.c" buildType="SOURCE_C;;;;" copyLocal="True" isTemplate="False" />
           <file fileName="cy_ble_clk.h" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\cy_ble_clk.h" buildType="HEADER;;;;" copyLocal="True" isTemplate="False" />
+          <folder folderName="lib">
+            <file fileName="cy_ble_stack_gcc_host_soft_cm4.a" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\lib\cy_ble_stack_gcc_host_soft_cm4.a" buildType="LIBRARY;CortexM4;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd,e9305a93-d091-4da5-bdc7-2813049dcdbf;" copyLocal="True" isTemplate="False" />
+            <file fileName="cy_ble_stack_gcc_controller_soft_cm4.a" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\lib\cy_ble_stack_gcc_controller_soft_cm4.a" buildType="LIBRARY;CortexM4;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd,e9305a93-d091-4da5-bdc7-2813049dcdbf;" copyLocal="True" isTemplate="False" />
+            <file fileName="cy_ble_stack_gcc_manager_soft_cm4.a" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\lib\cy_ble_stack_gcc_manager_soft_cm4.a" buildType="LIBRARY;CortexM4;;b98f980c-3bd1-4fc7-a887-c56a20a46fdd,e9305a93-d091-4da5-bdc7-2813049dcdbf;" copyLocal="True" isTemplate="False" />
+            <file fileName="cy_ble_stack_mdk_host_soft_cm4.a" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\lib\cy_ble_stack_mdk_host_soft_cm4.a" buildType="LIBRARY;CortexM4;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;" copyLocal="True" isTemplate="False" />
+            <file fileName="cy_ble_stack_mdk_controller_soft_cm4.a" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\lib\cy_ble_stack_mdk_controller_soft_cm4.a" buildType="LIBRARY;CortexM4;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;" copyLocal="True" isTemplate="False" />
+            <file fileName="cy_ble_stack_mdk_manager_soft_cm4.a" physicalFilePath="C:\Program Files (x86)\Cypress\PDL\3.1.3\middleware\ble\lib\cy_ble_stack_mdk_manager_soft_cm4.a" buildType="LIBRARY;CortexM4;;fdb8e1ae-f83a-46cf-9446-1d703716f38a;" copyLocal="True" isTemplate="False" />
+          </folder>
         </folder>
       </folder>
       <folder folderName="utilities">

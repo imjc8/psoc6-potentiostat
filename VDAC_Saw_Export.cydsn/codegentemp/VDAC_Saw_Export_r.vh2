@@ -1,5 +1,5 @@
 -- Project:   VDAC_Saw_Export
--- Generated: 07/25/2022 14:16:42
+-- Generated: 07/25/2022 18:38:20
 -- PSoC Creator  4.4
 
 ENTITY VDAC_Saw_Export IS
@@ -24,6 +24,8 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
     SIGNAL CPUSS_swj_swdio_tms : bit;
     SIGNAL CY_CPUSS_SWJ_SWCLK_TCLK(0)__PA : bit;
     SIGNAL CY_CPUSS_SWJ_SWDIO_TMS(0)__PA : bit;
+    SIGNAL CY_SRSS_WCO_IN(0)__PA : bit;
+    SIGNAL CY_SRSS_WCO_OUT(0)__PA : bit;
     SIGNAL ClockBlock_AltHF : bit;
     SIGNAL ClockBlock_ECO : bit;
     SIGNAL ClockBlock_ExtClk : bit;
@@ -43,6 +45,9 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
     SIGNAL ClockBlock_SlowClk : bit;
     SIGNAL ClockBlock_WCO : bit;
     SIGNAL DAC_INT_OUT : bit;
+    SIGNAL Net_128 : bit;
+    SIGNAL Net_129 : bit;
+    SIGNAL Net_130 : bit;
     SIGNAL Net_54_ff47 : bit;
     ATTRIBUTE global_signal OF Net_54_ff47 : SIGNAL IS true;
     SIGNAL Net_66 : bit;
@@ -72,6 +77,7 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
     SIGNAL \ADC_1:Net_423\ : bit;
     SIGNAL \ADC_1:Net_428_ff49\ : bit;
     ATTRIBUTE global_signal OF \ADC_1:Net_428_ff49\ : SIGNAL IS true;
+    SIGNAL \BLE_1:Net_1\ : bit;
     SIGNAL \UART_1:Net_1172\ : bit;
     SIGNAL \UART_1:Net_161\ : bit;
     SIGNAL \UART_1:Net_847_ff0\ : bit;
@@ -98,13 +104,18 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
     ATTRIBUTE Location OF CY_CPUSS_SWJ_SWCLK_TCLK(0) : LABEL IS "P6[7]";
     ATTRIBUTE lib_model OF CY_CPUSS_SWJ_SWDIO_TMS(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF CY_CPUSS_SWJ_SWDIO_TMS(0) : LABEL IS "P6[6]";
-    ATTRIBUTE lib_model OF VDAC_Out(0) : LABEL IS "iocell3";
+    ATTRIBUTE Location OF SRSS : LABEL IS "F(SRSS,0)";
+    ATTRIBUTE lib_model OF CY_SRSS_WCO_IN(0) : LABEL IS "iocell3";
+    ATTRIBUTE Location OF CY_SRSS_WCO_IN(0) : LABEL IS "P0[0]";
+    ATTRIBUTE lib_model OF CY_SRSS_WCO_OUT(0) : LABEL IS "iocell4";
+    ATTRIBUTE Location OF CY_SRSS_WCO_OUT(0) : LABEL IS "P0[1]";
+    ATTRIBUTE lib_model OF VDAC_Out(0) : LABEL IS "iocell5";
     ATTRIBUTE Location OF VDAC_Out(0) : LABEL IS "P9[3]";
-    ATTRIBUTE lib_model OF \UART_1:tx(0)\ : LABEL IS "iocell4";
+    ATTRIBUTE lib_model OF \UART_1:tx(0)\ : LABEL IS "iocell6";
     ATTRIBUTE Location OF \UART_1:tx(0)\ : LABEL IS "P5[1]";
-    ATTRIBUTE lib_model OF \UART_1:rx(0)\ : LABEL IS "iocell5";
+    ATTRIBUTE lib_model OF \UART_1:rx(0)\ : LABEL IS "iocell7";
     ATTRIBUTE Location OF \UART_1:rx(0)\ : LABEL IS "P5[0]";
-    ATTRIBUTE lib_model OF ADC_IN(0) : LABEL IS "iocell6";
+    ATTRIBUTE lib_model OF ADC_IN(0) : LABEL IS "iocell8";
     ATTRIBUTE Location OF ADC_IN(0) : LABEL IS "P10[2]";
     ATTRIBUTE Location OF SysInt_1 : LABEL IS "[IntrContainer=(0)][IntrId=(146)]";
     ATTRIBUTE Location OF \VDAC_1:CTDAC\ : LABEL IS "F(CTDAC,0)";
@@ -114,7 +125,16 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
     ATTRIBUTE Location OF \UART_1:SCB\ : LABEL IS "F(SCB,5)";
     ATTRIBUTE Location OF \ADC_1:IRQ\ : LABEL IS "[IntrContainer=(0)][IntrId=(138)]";
     ATTRIBUTE Location OF \ADC_1:SAR\ : LABEL IS "F(SARADC,0)";
+    ATTRIBUTE Location OF \BLE_1:cy_mxs40_ble\ : LABEL IS "F(BLE,0)";
+    ATTRIBUTE Location OF \BLE_1:bless_isr\ : LABEL IS "[IntrContainer=(0)][IntrId=(24)]";
     ATTRIBUTE Location OF PASS_BLOCK : LABEL IS "F(PASSBLOCK,0)";
+    COMPONENT BLE
+        PORT (
+            ext_pa_lna_chip_en_out : OUT std_ulogic;
+            ext_lna_rx_ctl_out : OUT std_ulogic;
+            ext_pa_tx_ctl_out : OUT std_ulogic;
+            interrupt : OUT std_ulogic);
+    END COMPONENT;
     COMPONENT CLK_GEN
         PORT (
             gen_clk_in_0 : IN std_ulogic;
@@ -562,6 +582,22 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
             tr_rx_req : OUT std_ulogic;
             tr_i2c_scl_filtered : OUT std_ulogic);
     END COMPONENT;
+    COMPONENT SRSS
+        PORT (
+            clock_timer : IN std_ulogic;
+            interrupt_mcwdt_0 : OUT std_ulogic;
+            interrupt_mcwdt_1 : OUT std_ulogic;
+            interrupt_backup : OUT std_ulogic;
+            interrupt : OUT std_ulogic;
+            ext_clk : IN std_ulogic;
+            clk_ext : OUT std_ulogic;
+            swd_data : IN std_ulogic;
+            swd_clk : IN std_ulogic;
+            xres_n : IN std_ulogic;
+            pmic_wakeup_in : IN std_ulogic;
+            pmic_wakeup_out : OUT std_ulogic;
+            hibernate_wakeup : IN std_ulogic);
+    END COMPONENT;
 BEGIN
 
     ClockGenBlock:CLK_GEN;
@@ -695,6 +731,112 @@ BEGIN
         PORT MAP(
             pa_out => CY_CPUSS_SWJ_SWDIO_TMS(0)__PA,
             fb => CPUSS_swj_swdio_tms,
+            in_clock => open,
+            in_clock_en => open,
+            in_reset => open,
+            out_clock => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    SRSS:SRSS;
+
+    CY_SRSS_WCO_IN:logicalport
+        GENERIC MAP(
+            cy_registers => "",
+            drive_mode => "000",
+            drive_strength => "0",
+            hotswap_needed => "0",
+            i2c_mode => "0",
+            ibuf_enabled => "0",
+            id => "5262da02-7cc5-5860-85a9-3b13ac7954ca",
+            init_dr_st => "0",
+            input_sync => "0",
+            intr_mode => "00",
+            io_voltage => "",
+            max_frequency => "100",
+            oe_conn => "0",
+            oe_sync => "0",
+            output_conn => "0",
+            output_current_cap => "8",
+            output_sync => "0",
+            pin_aliases => "",
+            pin_mode => "B",
+            sio_grp_cnt => 0,
+            slew_rate => "0",
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0);
+
+    CY_SRSS_WCO_IN(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "CY_SRSS_WCO_IN",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000000")
+        PORT MAP(
+            pa_out => CY_SRSS_WCO_IN(0)__PA,
+            in_clock => open,
+            in_clock_en => open,
+            in_reset => open,
+            out_clock => open,
+            out_clock_en => open,
+            out_reset => open);
+
+    CY_SRSS_WCO_OUT:logicalport
+        GENERIC MAP(
+            cy_registers => "",
+            drive_mode => "000",
+            drive_strength => "0",
+            hotswap_needed => "0",
+            i2c_mode => "0",
+            ibuf_enabled => "0",
+            id => "3efa897a-9b08-528e-9239-32fdb7df48cc",
+            init_dr_st => "0",
+            input_sync => "0",
+            intr_mode => "00",
+            io_voltage => "",
+            max_frequency => "100",
+            oe_conn => "0",
+            oe_sync => "0",
+            output_conn => "0",
+            output_current_cap => "8",
+            output_sync => "0",
+            pin_aliases => "",
+            pin_mode => "B",
+            sio_grp_cnt => 0,
+            slew_rate => "0",
+            use_annotation => "0",
+            vtrip => "00",
+            width => 1,
+            in_clk_inv => 0,
+            in_clken_inv => 0,
+            in_clken_mode => 1,
+            in_rst_inv => 0,
+            out_clk_inv => 0,
+            out_clken_inv => 0,
+            out_clken_mode => 1,
+            out_rst_inv => 0);
+
+    CY_SRSS_WCO_OUT(0):iocell
+        GENERIC MAP(
+            in_sync_mode => 0,
+            out_sync_mode => 0,
+            oe_sync_mode => 0,
+            logicalport => "CY_SRSS_WCO_OUT",
+            logicalport_pin_id => 0,
+            io_capabilities => "0000000000000000000000000000000000000000000000000000000000000000")
+        PORT MAP(
+            pa_out => CY_SRSS_WCO_OUT(0)__PA,
             in_clock => open,
             in_clock_en => open,
             in_reset => open,
@@ -1025,6 +1167,25 @@ BEGIN
             tr_sar_in => open,
             clock => \ADC_1:Net_428_ff49\,
             interrupt => \ADC_1:Net_423\);
+
+    \BLE_1:cy_mxs40_ble\:BLE
+        GENERIC MAP(
+            cy_registers => "",
+            low_power => 1)
+        PORT MAP(
+            ext_pa_lna_chip_en_out => Net_130,
+            ext_lna_rx_ctl_out => Net_129,
+            ext_pa_tx_ctl_out => Net_128,
+            interrupt => \BLE_1:Net_1\);
+
+    \BLE_1:bless_isr\:interrupt
+        GENERIC MAP(
+            cy_registers => "",
+            deepsleep_required => 1,
+            int_type => "10")
+        PORT MAP(
+            interrupt => \BLE_1:Net_1\,
+            clock => ClockBlock_PeriClk);
 
     PASS_BLOCK:PASSBLOCK
         PORT MAP(

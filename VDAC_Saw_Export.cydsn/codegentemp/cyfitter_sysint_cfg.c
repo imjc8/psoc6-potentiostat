@@ -20,6 +20,12 @@
 /* ARM CM4 */
 #if (((__CORTEX_M == 4) && (CY_CORE_ID == 0)))
 
+    /* BLE_1_bless_isr */
+    const cy_stc_sysint_t BLE_1_bless_isr_cfg = {
+        .intrSrc = (IRQn_Type)BLE_1_bless_isr__INTC_NUMBER,
+        .intrPriority = BLE_1_bless_isr__INTC_CORTEXM4_PRIORITY
+    };
+
     /* UART_1_SCB_IRQ */
     const cy_stc_sysint_t UART_1_SCB_IRQ_cfg = {
         .intrSrc = (IRQn_Type)UART_1_SCB_IRQ__INTC_NUMBER,

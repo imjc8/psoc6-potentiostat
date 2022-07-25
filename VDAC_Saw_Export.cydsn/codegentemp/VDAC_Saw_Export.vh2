@@ -2,7 +2,7 @@
 --	Conversion of VDAC_Saw_Export.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Mon Jul 25 14:16:35 2022
+--	Mon Jul 25 18:38:12 2022
 --
 
 USE cypress.cypress.all;
@@ -398,6 +398,10 @@ TERMINAL Net_102 : bit;
 SIGNAL tmpFB_0__ADC_IN_net_0 : bit;
 SIGNAL tmpIO_0__ADC_IN_net_0 : bit;
 TERMINAL tmpSIOVREF__ADC_IN_net_0 : bit;
+SIGNAL Net_130 : bit;
+SIGNAL Net_129 : bit;
+SIGNAL Net_128 : bit;
+SIGNAL \BLE_1:Net_1\ : bit;
 BEGIN
 
 one <=  ('1') ;
@@ -1712,5 +1716,17 @@ ADC_IN:cy_mxs40_gpio_v1_0
 		io=>(tmpIO_0__ADC_IN_net_0),
 		annotation=>(open),
 		siovref=>(tmpSIOVREF__ADC_IN_net_0));
+\BLE_1:cy_mxs40_ble\:cy_mxs40_ble_v1_0
+	GENERIC MAP(cy_registers=>"",
+		low_power=>'1')
+	PORT MAP(ext_pa_lna_chip_en_out=>Net_130,
+		ext_lna_rx_ctl_out=>Net_129,
+		ext_pa_tx_ctl_out=>Net_128,
+		interrupt=>\BLE_1:Net_1\);
+\BLE_1:bless_isr\:cy_mxs40_isr_v1_0
+	GENERIC MAP(cy_registers=>"",
+		deepsleep_required=>'1',
+		int_type=>"10")
+	PORT MAP(int_signal=>\BLE_1:Net_1\);
 
 END R_T_L;

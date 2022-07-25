@@ -69,7 +69,17 @@ float32_t adc_volt;
 float v1;
 float voltCount;
 
+// flags
+bool flag_print = false;
+
+// timing_counter
+int counter = 0;
+
+// array
+int data[40960];
+
 void userIsr(void);
+
 
 /*******************************************************************************
 * Function Name: main
@@ -105,13 +115,15 @@ int main(void)
     float max_volt = 3.3;
     float init_volt = 0.0;
     // scan rate (v/sec)
-    float scan_rate = 1.5;
+    float scan_rate = 0.5;
     
     // number of cycles
     cycle_count = 5;
     
     //float min_volt = 1
     //float max_volt = 2.3
+    
+
     
     minVoltConverted = round((min_volt/3.3)*4095);
     maxVoltConverted = round((max_volt/3.3)*4095);
@@ -165,6 +177,12 @@ int main(void)
 //        for (i = 0; i< 10; i++){
 //            printf("counter is %d \r\n", i);
 //        }
+        
+        if (flag_print){
+            //printf("DAC OUTPUT: %d ADC is: %f \r\n", dac_val, v1);
+            flag_print = false;
+            //CyDelay(100);
+        }
 
        
     }
@@ -203,14 +221,16 @@ void userIsr(void)
         if ((cycle_dac/2) < (cycle_count)){
             // basically skip times which don't line up with scan rate
             if (div == div_duration) {
+                counter++;
                 VDAC_1_SetValueBuffered(dac_val);
                 // sample adc
                 Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
                 voltCount = Cy_SAR_GetResult16(SAR, 0);
                 v1 = Cy_SAR_CountsTo_Volts(SAR, 0, voltCount);
+                flag_print = true;
                 /* Place your application code here. */
-                printf("DAC OUTPUT: %d ADC is: %f \r\n", dac_val, v1);
-                CyDelay(100);
+                //printf("DAC OUTPUT: %d ADC is: %f \r\n", dac_val, v1);
+                // broadcast bluetooth
 
                 // when i want to send to bluetooth and get current
                 // up
@@ -257,6 +277,7 @@ void userIsr(void)
             VDAC_1_Stop();
             ADC_1_Stop();
             //dac_val = 0.0;
+            printf("counter: %d \r\n", counter);
         }
         
 

@@ -42,4 +42,12 @@
 #define UART_1_SCB_IRQ_INTC_CORTEXM4_PRIORITY 7u
 #define UART_1_SCB_IRQ_INTC_NUMBER 46u
 
+/* BLE_1_bless_isr */
+#define BLE_1_bless_isr__INTC_CORTEXM4_ASSIGNED 1
+#define BLE_1_bless_isr__INTC_CORTEXM4_PRIORITY 7u
+#define BLE_1_bless_isr__INTC_NUMBER 24u
+#define BLE_1_bless_isr_INTC_CORTEXM4_ASSIGNED 1
+#define BLE_1_bless_isr_INTC_CORTEXM4_PRIORITY 7u
+#define BLE_1_bless_isr_INTC_NUMBER 24u
+
 #endif /* INCLUDED_CYFITTER_SYSINT_H */
