@@ -19,19 +19,19 @@ int main(void)
     
     UART_1_Start();
     ADC_1_Start();
-    Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
-
+     
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
     
     // voltage
     float v1;
-    int16_t voltCount;
+    float voltCount;
     printf("hello\n");
     //
 
     for(;;)
     {
         // Read ADC values
+        Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
         voltCount = Cy_SAR_GetResult16(SAR, 0);
         v1 = Cy_SAR_CountsTo_Volts(SAR, 0, voltCount);
         /* Place your application code here. */

@@ -65,6 +65,10 @@ int dac_direction = 0;
 int16_t adc_count;
 float32_t adc_volt;
 
+// voltge for adc
+float v1;
+float voltCount;
+
 void userIsr(void);
 
 /*******************************************************************************
@@ -99,12 +103,12 @@ int main(void)
     // voltage
     float min_volt = 0.0;
     float max_volt = 3.3;
-    float init_volt = 1;
+    float init_volt = 0.0;
     // scan rate (v/sec)
     float scan_rate = 1.5;
     
     // number of cycles
-    cycle_count = 100;
+    cycle_count = 5;
     
     //float min_volt = 1
     //float max_volt = 2.3
@@ -117,8 +121,14 @@ int main(void)
     
     // direction  1 -> go up 0 -> down
     // set initial dac direction
-    int direction = 0;
-    
+    bool direction;
+    if(init_volt==min_volt){
+        direction = 1;
+    }else if(init_volt==max_volt){
+        direction = 0;
+    } else{
+        direction = 1;   
+    }
     dac_direction = (direction == 1) ? 1 : 0;
     
     /*
@@ -140,7 +150,8 @@ int main(void)
     VDAC_1_Start();
     UART_1_Start();
     setvbuf(stdin, NULL, _IONBF, 0);
-    Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
+    ADC_1_Start();
+    //Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
     
     dac_val = initVoltConverted;   
     printf("hello world\r\n");
@@ -151,9 +162,10 @@ int main(void)
 //        adc_count = Cy_SAR_GetResult16(SAR, 0);
 //        adc_volt = Cy_SAR_CountsTo_Volts(SAR, 0, adc_count);
 //        printf("Dac: %d ADC: %f ADC count: %d \r\n", dac_val, adc_volt, adc_count);
-        for (i = 0; i< 10; i++){
-            printf("counter is %d \r\n", i);
-        }
+//        for (i = 0; i< 10; i++){
+//            printf("counter is %d \r\n", i);
+//        }
+
        
     }
 }
@@ -192,6 +204,13 @@ void userIsr(void)
             // basically skip times which don't line up with scan rate
             if (div == div_duration) {
                 VDAC_1_SetValueBuffered(dac_val);
+                // sample adc
+                Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
+                voltCount = Cy_SAR_GetResult16(SAR, 0);
+                v1 = Cy_SAR_CountsTo_Volts(SAR, 0, voltCount);
+                /* Place your application code here. */
+                printf("DAC OUTPUT: %d ADC is: %f \r\n", dac_val, v1);
+                CyDelay(100);
 
                 // when i want to send to bluetooth and get current
                 // up
@@ -236,6 +255,7 @@ void userIsr(void)
         }
         else {
             VDAC_1_Stop();
+            ADC_1_Stop();
             //dac_val = 0.0;
         }
         

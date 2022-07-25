@@ -147,12 +147,12 @@ The parameters that are set in the customizer are redefined as constants here.
 #define ADC_1_CFG0_CHANNEL_EN              (0x1u)
 
 /* Sample Control Register */
-#define ADC_1_CFG0_SINGLE_ENDED_FORMAT     (0uL)
+#define ADC_1_CFG0_SINGLE_ENDED_FORMAT     (1uL)
 #define ADC_1_CFG0_DIFFERENTIAL_FORMAT     (1uL)
 #define ADC_1_CFG0_SAMPLES_AVERAGED        (6uL)
 #define ADC_1_CFG0_RANGE_INTR_MASK         (0x0u)
 #define ADC_1_CFG0_SATURATE_INTR_MASK      (0x0u)
-#define ADC_1_CFG0_VNEG_INPUT_SEL          (7)
+#define ADC_1_CFG0_VNEG_INPUT_SEL          (0)
 #define ADC_1_CFG0_SINGLE_PRESENT          (1)
 #define ADC_1_CFG0_VREF_MV_VALUE           (3300)
 #define ADC_1_CFG0_APERTURE_TIME0          (4uL)

@@ -1,5 +1,5 @@
 -- Project:   VDAC_Saw_Export
--- Generated: 07/22/2022 20:04:47
+-- Generated: 07/25/2022 14:16:42
 -- PSoC Creator  4.4
 
 ENTITY VDAC_Saw_Export IS
@@ -994,7 +994,7 @@ BEGIN
     \ADC_1:SAR\:SARADC
         GENERIC MAP(
             cy_registers => "",
-            edge_trigger => 0)
+            edge_trigger => 1)
         PORT MAP(
             dsi_sar_sample_done => Net_95,
             dsi_sar_chan_id_valid => Net_97,
