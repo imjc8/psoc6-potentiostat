@@ -1,5 +1,5 @@
 -- Project:   Bluetooth_and_ADC
--- Generated: 07/03/2022 17:09:02
+-- Generated: 07/26/2022 14:44:15
 -- PSoC Creator  4.4
 
 ENTITY Bluetooth_and_ADC IS
@@ -19,6 +19,7 @@ ENTITY Bluetooth_and_ADC IS
 END Bluetooth_and_ADC;
 
 ARCHITECTURE __DEFAULT__ OF Bluetooth_and_ADC IS
+    SIGNAL ADC_IN(0)__PA : bit;
     SIGNAL CPUSS_swj_swclk_tclk : bit;
     SIGNAL CPUSS_swj_swdio_tms : bit;
     SIGNAL CY_CPUSS_SWJ_SWCLK_TCLK(0)__PA : bit;
@@ -68,7 +69,6 @@ ARCHITECTURE __DEFAULT__ OF Bluetooth_and_ADC IS
     SIGNAL Net_37 : bit;
     SIGNAL Net_56 : bit;
     SIGNAL Net_57 : bit;
-    SIGNAL Pin_1(0)__PA : bit;
     SIGNAL \ADC_1:Net_423\ : bit;
     SIGNAL \ADC_1:Net_428_ff49\ : bit;
     ATTRIBUTE global_signal OF \ADC_1:Net_428_ff49\ : SIGNAL IS true;
@@ -103,8 +103,8 @@ ARCHITECTURE __DEFAULT__ OF Bluetooth_and_ADC IS
     ATTRIBUTE Location OF CY_SRSS_WCO_IN(0) : LABEL IS "P0[0]";
     ATTRIBUTE lib_model OF CY_SRSS_WCO_OUT(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF CY_SRSS_WCO_OUT(0) : LABEL IS "P0[1]";
-    ATTRIBUTE lib_model OF Pin_1(0) : LABEL IS "iocell5";
-    ATTRIBUTE Location OF Pin_1(0) : LABEL IS "P5[4]";
+    ATTRIBUTE lib_model OF ADC_IN(0) : LABEL IS "iocell5";
+    ATTRIBUTE Location OF ADC_IN(0) : LABEL IS "P10[2]";
     ATTRIBUTE lib_model OF \UART_1:tx(0)\ : LABEL IS "iocell6";
     ATTRIBUTE Location OF \UART_1:tx(0)\ : LABEL IS "P5[1]";
     ATTRIBUTE lib_model OF \UART_1:rx(0)\ : LABEL IS "iocell7";
@@ -765,7 +765,7 @@ BEGIN
             out_clock_en => open,
             out_reset => open);
 
-    Pin_1:logicalport
+    ADC_IN:logicalport
         GENERIC MAP(
             cy_registers => "",
             drive_mode => "000",
@@ -800,16 +800,16 @@ BEGIN
             out_clken_mode => 1,
             out_rst_inv => 0);
 
-    Pin_1(0):iocell
+    ADC_IN(0):iocell
         GENERIC MAP(
             in_sync_mode => 0,
             out_sync_mode => 0,
             oe_sync_mode => 0,
-            logicalport => "Pin_1",
+            logicalport => "ADC_IN",
             logicalport_pin_id => 0,
             io_capabilities => "0000000000000000000000000000000000000000000000000000000000000010")
         PORT MAP(
-            pa_out => Pin_1(0)__PA,
+            pa_out => ADC_IN(0)__PA,
             oe => open,
             in_clock => open,
             in_clock_en => open,
@@ -960,7 +960,7 @@ BEGIN
     \ADC_1:SAR\:SARADC
         GENERIC MAP(
             cy_registers => "",
-            edge_trigger => 0)
+            edge_trigger => 1)
         PORT MAP(
             dsi_sar_sample_done => Net_33,
             dsi_sar_chan_id_valid => Net_35,

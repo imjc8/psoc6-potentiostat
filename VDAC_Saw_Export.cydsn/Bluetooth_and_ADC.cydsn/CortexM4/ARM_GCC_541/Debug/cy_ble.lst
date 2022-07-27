@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
   27:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** 
   28:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** /***************************************
   29:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** * Global Variables
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 2
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 2
 
 
   30:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** ***************************************/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
   84:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** };
   85:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** #endif /*(CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_MODE_PROFILE) */
   86:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 3
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 3
 
 
   87:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  141:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****     else
  142:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****     {
  143:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****         /* Register a pointer to the config structure */
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 4
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 4
 
 
  144:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****         cy_ble_configPtr = config;
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  198:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *
  199:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *  Calling this function results in generation of a #CY_BLE_EVT_STACK_ON event
  200:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *  on successful initialization of the BLE Stack.
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 5
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 5
 
 
  201:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  255:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *      <td>On successful operation.</td>
  256:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *    </tr>
  257:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *    <tr>
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 6
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 6
 
 
  258:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *      <td>CY_BLE_ERROR_REPEATED_ATTEMPTS</td>
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  312:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** 
  313:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****         #if (CY_BLE_MODE_PROFILE)
  314:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****             /* Configure queue */
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 7
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 7
 
 
  315:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****             .l2capConfig.l2capBufferPerConn  = CY_BLE_L2CAP_Q_DEPTH_PER_CONN,
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  369:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****     #if (CY_BLE_PHY_UPDATE_FEATURE_ENABLED)
  370:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****         Cy_BLE_EnablePhyUpdateFeature();        /* Enable PHY Update code in the stack */
  371:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****     #endif /* CY_BLE_PHY_UPDATE_FEATURE_ENABLED */
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 8
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 8
 
 
  372:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** 
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  426:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** 
  427:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** /******************************************************************************
  428:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** * Function Name: Cy_BLE_Disable
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 9
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 9
 
 
  429:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** ***************************************************************************//**
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  483:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****     return(apiResult);
  484:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** }
  485:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 10
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 10
 
 
  486:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  540:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *    
  541:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *  These BLESS real-time states can be used to synchronize
  542:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *  an application with the BLESS or prevent radio interference with other 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 11
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 11
 
 
  543:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *  peripherals, etc.
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  597:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****                     .intrSrc      = (IRQn_Type)CY_IPC_INTR_NUM_TO_VECT((int32_t)CY_BLE_INTR_NOTIFY_
  598:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****                 };
  599:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****             
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 12
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 12
 
 
  600:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****                 /* Initialize the interrupt controller for CM4 and IPC Interrupt */
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  654:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *
  655:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *******************************************************************************/
  656:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** cy_en_ble_api_result_t Cy_BLE_UnRegisterInterruptCallback(void)
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 13
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 13
 
 
  657:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** {
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  711:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** cy_en_ble_api_result_t Cy_BLE_RegisterAppHostCallback(cy_ble_app_notify_callback_t CallBack)
  712:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** {
  713:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 14
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 14
 
 
  714:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****     
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  768:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** *
  769:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** * \return
  770:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** * * CY_SYSPM_SUCCESS  - Entered and exited from DeepSleep
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 15
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 15
 
 
  771:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** * * CY_SYSPM_FAIL     - DeepSleep not entered.
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  802:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****         #endif  /*(CY_BLE_MODE_PROFILE) */
  803:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****             
  804:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****             if(Cy_IPC_Sema_Status(CY_BLE_SEMA) == CY_IPC_SEMA_STATUS_LOCKED)
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 16
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 16
 
 
   52              		.loc 1 804 0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
   76 0036 1860     		str	r0, [r3]
  835:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****         #endif /* !CY_BLE_STACK_MODE_HOST_IPC */
  836:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 17
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 17
 
 
  837:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****                 /* Check the Status of BLESS */
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  866:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****                         retVal = CY_SYSPM_FAIL;
  102              		.loc 1 866 0
  103 0056 194C     		ldr	r4, .L19+12
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 18
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 18
 
 
  104 0058 12E0     		b	.L5
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  139 007a 104C     		ldr	r4, .L19+12
  140 007c 00E0     		b	.L5
  141              	.L16:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 19
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 19
 
 
  142 007e 0F4C     		ldr	r4, .L19+12
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  178              	.L10:
  807:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****             }
  179              		.loc 1 807 0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 20
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 20
 
 
  180 00a4 054C     		ldr	r4, .L19+12
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  226              		.cfi_endproc
  227              	.LFE256:
  228              		.size	Cy_BLE_UnregisterHostPMCallbacks, .-Cy_BLE_UnregisterHostPMCallbacks
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 21
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 21
 
 
  229              		.section	.text.Cy_BLE_Init,"ax",%progbits
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  272 0020 FFF7FEFF 		bl	Cy_BLE_ServiceInit
  273              	.LVL28:
  183:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****         (void)memset(cy_ble_peerBonding, (int8_t)CY_BLE_GAP_BONDING_NONE, sizeof(cy_ble_peerBonding
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 22
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 22
 
 
  274              		.loc 1 183 0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  324 0002 9AB0     		sub	sp, sp, #104
  325              		.cfi_def_cfa_offset 120
  326              	.LVL31:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 23
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 23
 
 
  275:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****     {
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  376              		.loc 1 337 0
  377 007a 2548     		ldr	r0, .L39+12
  378 007c FFF7FEFF 		bl	Cy_SysPm_RegisterCallback
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 24
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 24
 
 
  379              	.LVL33:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  425 00c6 0346     		mov	r3, r0
  426 00c8 B0B9     		cbnz	r0, .L37
  392:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c **** 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 25
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 25
 
 
  427              		.loc 1 392 0
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
   42:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** 
   43:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** /** 
   44:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****  * Maximum number of BLE connections
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 26
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 26
 
 
   45:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****  * This parameter displays how many BLE connections (both Central and 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
   99:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****  * \addtogroup group_ble_common_api_gap_definitions
  100:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****  * @{
  101:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****  */
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 27
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 27
 
 
  102:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  156:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     cy_ble_gatt_db_attr_handle_t appearanceCharHandle;
  157:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** 
  158:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     /** Handle of the GAPS Peripheral Preferred Connection Parameters Characteristic */
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 28
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 28
 
 
  159:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     cy_ble_gatt_db_attr_handle_t prefConnParamCharHandle;
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  213:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     /** Incomplete List of 128-bit Service Class UUIDs */
  214:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     CY_BLE_GAP_ADV_INCOMPL_128_UUID,
  215:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 29
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 29
 
 
  216:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     /** Complete List of 128-bit Service Class UUIDs */
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  270:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     /** LE Bluetooth Device Address */
  271:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     CY_BLE_GAP_ADV_LE_BT_DEVICE_ADDR,
  272:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 30
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 30
 
 
  273:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     /** LE Role */
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  327:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     uint16_t fastScanInterval;
  328:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** 
  329:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     /** Defines the scan window when operating in Fast connection */
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 31
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 31
 
 
  330:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****     uint16_t fastScanWindow;
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  384:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** #define CY_BLE_AD_TYPE_CMPL16UUID                  (0x03u)
  385:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** #define CY_BLE_AD_TYPE_MORE32UUID                  (0x04u)
  386:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** #define CY_BLE_AD_TYPE_CMPL32UUID                  (0x05u)
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 32
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 32
 
 
  387:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** #define CY_BLE_AD_TYPE_MORE128UUID                 (0x06u)
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  441:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****  */
  442:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****  
  443:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** /* GAP Advertisement Flags */
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 33
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 33
 
 
  444:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** #define CY_BLE_GAP_ADV_FLAG_LE_LIMITED_DISC_MODE        (0x01u)     /**< LE Limited Discoverable Mo
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  498:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** 
  499:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** /**
  500:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****  * \addtogroup group_ble_common_api_gap_peripheral_functions
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 34
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 34
 
 
  501:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h ****  * @{
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  555:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** #if ((CY_BLE_GAP_ROLE_PERIPHERAL || CY_BLE_GAP_ROLE_CENTRAL))
  556:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** extern cy_stc_ble_conn_handle_t cy_ble_connHandle[CY_BLE_CONN_COUNT];
  557:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** extern cy_en_ble_conn_state_t cy_ble_connState[CY_BLE_CONN_COUNT];
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 35
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 35
 
 
  558:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** 
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  612:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** * Function Name: Cy_BLE_GetConnHandleIdx
  613:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** ***************************************************************************//**
  614:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** *
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 36
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 36
 
 
  615:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** *  This function searches the array of connection handles (cy_ble_connHandle[])
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  669:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** *  The BLE Middleware is in the state #CY_BLE_STATE_STOPPED 
  670:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** *  when the #CY_BLE_EVT_STACK_SHUTDOWN_COMPLETE event is received (after the 
  671:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** *  Cy_BLE_Disable() is called).
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 37
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 37
 
 
  672:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** *  
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  726:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** *  event is received. When Cy_BLE_GAPP_StopAdvertisement() is called, the
  727:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** *  state is set to #CY_BLE_ADV_STATE_STOP_INITIATED. It automatically changes
  728:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** *  to #CY_BLE_ADV_STATE_STOPPED when the #CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 38
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 38
 
 
  729:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble_gap.h **** *  event is received.
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  408:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****                 {
  455              		.loc 1 408 0
  456 00e6 ADF80430 		strh	r3, [sp, #4]	@ movhi
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 39
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 39
 
 
  457 00ea 0823     		movs	r3, #8
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  507              		.cfi_def_cfa_offset 8
  508              		.cfi_offset 3, -8
  509              		.cfi_offset 14, -4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 40
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 40
 
 
  473:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****     
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  558 0000 18B1     		cbz	r0, .L48
  717:Generated_Source\PSoC6\pdl\middleware\ble/cy_ble.c ****     }
  559              		.loc 1 717 0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 41
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 41
 
 
  560 0002 034A     		ldr	r2, .L49
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  609              		.global	cy_ble_stackMemoryRam
  610              		.section	.rodata
  611              		.align	2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 42
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 42
 
 
  612              		.set	.LANCHOR2,. + 0
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  661 000c 00000000 		.space	4
  662              		.type	bleDeepSleepCallbackParams, %object
  663              		.size	bleDeepSleepCallbackParams, 8
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 43
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 43
 
 
  664              	bleDeepSleepCallbackParams:
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  717 003b 08       		.byte	0x8
  718 003c 04       		.byte	0x4
  719 003d BC070000 		.4byte	.LASF2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 44
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 44
 
 
  720 0041 04       		.uleb128 0x4
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  774 00ad 03       		.uleb128 0x3
  775 00ae 08       		.byte	0x8
  776 00af 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 45
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 45
 
 
  777 00b0 6C4D0000 		.4byte	.LASF15
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  831 0125 02       		.byte	0x2
  832 0126 00       		.byte	0
  833 0127 0A       		.uleb128 0xa
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 46
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 46
 
 
  834 0128 0D010000 		.4byte	0x10d
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  888 01a6 00       		.byte	0
  889 01a7 0A       		.uleb128 0xa
  890 01a8 12010000 		.4byte	0x112
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 47
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 47
 
 
  891 01ac B7010000 		.4byte	0x1b7
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  945 022b 7F03     		.2byte	0x37f
  946 022d 00       		.byte	0
  947 022e 0D       		.uleb128 0xd
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 48
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 48
 
 
  948 022f B8       		.byte	0xb8
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1002 029b 05       		.byte	0x5
  1003 029c 3F       		.byte	0x3f
  1004 029d 02010000 		.4byte	0x102
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 49
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 49
 
 
  1005 02a1 20       		.byte	0x20
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1059 030d 2F       		.byte	0x2f
  1060 030e 0E       		.uleb128 0xe
  1061 030f BC450000 		.4byte	.LASF42
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 50
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 50
 
 
  1062 0313 05       		.byte	0x5
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1116 037f 05       		.byte	0x5
  1117 0380 56       		.byte	0x56
  1118 0381 D6000000 		.4byte	0xd6
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 51
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 51
 
 
  1119 0385 3D       		.byte	0x3d
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1173 03f1 4C       		.byte	0x4c
  1174 03f2 0E       		.uleb128 0xe
  1175 03f3 1B300000 		.4byte	.LASF61
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 52
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 52
 
 
  1176 03f7 05       		.byte	0x5
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1230 0463 05       		.byte	0x5
  1231 0464 69       		.byte	0x69
  1232 0465 D6000000 		.4byte	0xd6
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 53
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 53
 
 
  1233 0469 59       		.byte	0x59
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1287 04d5 6C       		.byte	0x6c
  1288 04d6 0E       		.uleb128 0xe
  1289 04d7 DB4E0000 		.4byte	.LASF80
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 54
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 54
 
 
  1290 04db 05       		.byte	0x5
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1344 0547 05       		.byte	0x5
  1345 0548 86       		.byte	0x86
  1346 0549 D6000000 		.4byte	0xd6
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 55
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 55
 
 
  1347 054d 7C       		.byte	0x7c
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1401 05b9 94       		.byte	0x94
  1402 05ba 0E       		.uleb128 0xe
  1403 05bb 820B0000 		.4byte	.LASF99
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 56
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 56
 
 
  1404 05bf 05       		.byte	0x5
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1458 062b 05       		.byte	0x5
  1459 062c 9D       		.byte	0x9d
  1460 062d EC000000 		.4byte	0xec
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 57
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 57
 
 
  1461 0631 B0       		.byte	0xb0
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1515 069d 01       		.byte	0x1
  1516 069e 11       		.uleb128 0x11
  1517 069f 370F0000 		.4byte	.LASF123
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 58
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 58
 
 
  1518 06a3 02       		.byte	0x2
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1572 070f 14       		.byte	0x14
  1573 0710 11       		.uleb128 0x11
  1574 0711 7D2C0000 		.4byte	.LASF142
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 59
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 59
 
 
  1575 0715 15       		.byte	0x15
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1629 0781 27       		.byte	0x27
  1630 0782 11       		.uleb128 0x11
  1631 0783 4B3E0000 		.4byte	.LASF161
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 60
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 60
 
 
  1632 0787 28       		.byte	0x28
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1686 07f3 3A       		.byte	0x3a
  1687 07f4 11       		.uleb128 0x11
  1688 07f5 5D110000 		.4byte	.LASF180
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 61
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 61
 
 
  1689 07f9 3B       		.byte	0x3b
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1743 0865 4D       		.byte	0x4d
  1744 0866 11       		.uleb128 0x11
  1745 0867 D14D0000 		.4byte	.LASF199
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 62
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 62
 
 
  1746 086b 4E       		.byte	0x4e
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1800 08d7 60       		.byte	0x60
  1801 08d8 11       		.uleb128 0x11
  1802 08d9 2C220000 		.4byte	.LASF218
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 63
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 63
 
 
  1803 08dd 61       		.byte	0x61
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1857 0949 73       		.byte	0x73
  1858 094a 11       		.uleb128 0x11
  1859 094b 78140000 		.4byte	.LASF237
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 64
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 64
 
 
  1860 094f 74       		.byte	0x74
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1914 09bb 86       		.byte	0x86
  1915 09bc 11       		.uleb128 0x11
  1916 09bd 723B0000 		.4byte	.LASF256
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 65
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 65
 
 
  1917 09c1 87       		.byte	0x87
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  1971 0a2b E40A0000 		.4byte	0xae4
  1972 0a2f 0E       		.uleb128 0xe
  1973 0a30 A44A0000 		.4byte	.LASF270
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 66
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 66
 
 
  1974 0a34 07       		.byte	0x7
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2028 0aa0 07       		.byte	0x7
  2029 0aa1 2F       		.byte	0x2f
  2030 0aa2 0D010000 		.4byte	0x10d
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 67
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 67
 
 
  2031 0aa6 2C       		.byte	0x2c
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2085 0b18 35       		.byte	0x35
  2086 0b19 260A0000 		.4byte	0xa26
  2087 0b1d 12       		.uleb128 0x12
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 68
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 68
 
 
  2088 0b1e 0002     		.2byte	0x200
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2142 0b8b 07       		.byte	0x7
  2143 0b8c 43       		.byte	0x43
  2144 0b8d 0D010000 		.4byte	0x10d
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 69
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 69
 
 
  2145 0b91 24       		.byte	0x24
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2199 0bfd 50       		.byte	0x50
  2200 0bfe 13       		.uleb128 0x13
  2201 0bff B50A0000 		.4byte	.LASF296
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 70
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 70
 
 
  2202 0c03 07       		.byte	0x7
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2256 0c76 58       		.byte	0x58
  2257 0c77 0D010000 		.4byte	0x10d
  2258 0c7b 10       		.byte	0x10
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 71
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 71
 
 
  2259 0c7c 0E       		.uleb128 0xe
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2313 0ce8 0E       		.uleb128 0xe
  2314 0ce9 CC220000 		.4byte	.LASF309
  2315 0ced 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 72
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 72
 
 
  2316 0cee 62       		.byte	0x62
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2370 0d5a 6B       		.byte	0x6b
  2371 0d5b 0D010000 		.4byte	0x10d
  2372 0d5f 5C       		.byte	0x5c
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 73
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 73
 
 
  2373 0d60 0E       		.uleb128 0xe
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2427 0dcc 0E       		.uleb128 0xe
  2428 0dcd AF500000 		.4byte	.LASF328
  2429 0dd1 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 74
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 74
 
 
  2430 0dd2 75       		.byte	0x75
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2484 0e3e 7E       		.byte	0x7e
  2485 0e3f 0D010000 		.4byte	0x10d
  2486 0e43 A8       		.byte	0xa8
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 75
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 75
 
 
  2487 0e44 0E       		.uleb128 0xe
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2541 0eb0 0E       		.uleb128 0xe
  2542 0eb1 77010000 		.4byte	.LASF347
  2543 0eb5 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 76
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 76
 
 
  2544 0eb6 88       		.byte	0x88
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2598 0f22 93       		.byte	0x93
  2599 0f23 0D010000 		.4byte	0x10d
  2600 0f27 0001     		.2byte	0x100
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 77
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 77
 
 
  2601 0f29 13       		.uleb128 0x13
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2655 0f9e 13       		.uleb128 0x13
  2656 0f9f 00000000 		.4byte	.LASF366
  2657 0fa3 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 78
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 78
 
 
  2658 0fa4 9D       		.byte	0x9d
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2712 1019 A6       		.byte	0xa6
  2713 101a 0D010000 		.4byte	0x10d
  2714 101e 6401     		.2byte	0x164
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 79
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 79
 
 
  2715 1020 13       		.uleb128 0x13
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2769 1095 13       		.uleb128 0x13
  2770 1096 BD420000 		.4byte	.LASF385
  2771 109a 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 80
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 80
 
 
  2772 109b B0       		.byte	0xb0
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2826 1110 B9       		.byte	0xb9
  2827 1111 12010000 		.4byte	0x112
  2828 1115 CC01     		.2byte	0x1cc
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 81
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 81
 
 
  2829 1117 13       		.uleb128 0x13
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2883 118c 13       		.uleb128 0x13
  2884 118d F4430000 		.4byte	.LASF404
  2885 1191 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 82
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 82
 
 
  2886 1192 C3       		.byte	0xc3
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2940 1207 CC       		.byte	0xcc
  2941 1208 12010000 		.4byte	0x112
  2942 120c 1802     		.2byte	0x218
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 83
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 83
 
 
  2943 120e 13       		.uleb128 0x13
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  2997 1283 13       		.uleb128 0x13
  2998 1284 70480000 		.4byte	.LASF423
  2999 1288 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 84
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 84
 
 
  3000 1289 D8       		.byte	0xd8
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3054 12fe E2       		.byte	0xe2
  3055 12ff 731A0000 		.4byte	0x1a73
  3056 1303 6C02     		.2byte	0x26c
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 85
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 85
 
 
  3057 1305 13       		.uleb128 0x13
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3111 137a 13       		.uleb128 0x13
  3112 137b 63190000 		.4byte	.LASF442
  3113 137f 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 86
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 86
 
 
  3114 1380 EC       		.byte	0xec
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3168 13f5 F5       		.byte	0xf5
  3169 13f6 0D010000 		.4byte	0x10d
  3170 13fa 040A     		.2byte	0xa04
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 87
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 87
 
 
  3171 13fc 13       		.uleb128 0x13
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3225 1471 13       		.uleb128 0x13
  3226 1472 801F0000 		.4byte	.LASF461
  3227 1476 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 88
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 88
 
 
  3228 1477 FF       		.byte	0xff
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3282 14f4 0801     		.2byte	0x108
  3283 14f6 0D010000 		.4byte	0x10d
  3284 14fa 040F     		.2byte	0xf04
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 89
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 89
 
 
  3285 14fc 15       		.uleb128 0x15
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3339 157a 15       		.uleb128 0x15
  3340 157b A3030000 		.4byte	.LASF480
  3341 157f 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 90
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 90
 
 
  3342 1580 1401     		.2byte	0x114
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3396 160e 1D01     		.2byte	0x11d
  3397 1610 0D010000 		.4byte	0x10d
  3398 1614 00400100 		.4byte	0x14000
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 91
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 91
 
 
  3399 1618 16       		.uleb128 0x16
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3453 16a8 16       		.uleb128 0x16
  3454 16a9 A6130000 		.4byte	.LASF499
  3455 16ad 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 92
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 92
 
 
  3456 16ae 2701     		.2byte	0x127
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3510 173e 3001     		.2byte	0x130
  3511 1740 12010000 		.4byte	0x112
  3512 1744 84400100 		.4byte	0x14084
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 93
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 93
 
 
  3513 1748 16       		.uleb128 0x16
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3567 17d8 16       		.uleb128 0x16
  3568 17d9 32560000 		.4byte	.LASF518
  3569 17dd 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 94
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 94
 
 
  3570 17de 3A01     		.2byte	0x13a
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3624 186e 4301     		.2byte	0x143
  3625 1870 0D010000 		.4byte	0x10d
  3626 1874 38420100 		.4byte	0x14238
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 95
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 95
 
 
  3627 1878 16       		.uleb128 0x16
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3681 1908 16       		.uleb128 0x16
  3682 1909 7F370000 		.4byte	.LASF537
  3683 190d 07       		.byte	0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 96
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 96
 
 
  3684 190e 5001     		.2byte	0x150
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3738 199e 5901     		.2byte	0x159
  3739 19a0 0D010000 		.4byte	0x10d
  3740 19a4 80490100 		.4byte	0x14980
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 97
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 97
 
 
  3741 19a8 16       		.uleb128 0x16
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3795 1a31 09       		.uleb128 0x9
  3796 1a32 2C1A0000 		.4byte	0x1a2c
  3797 1a36 08       		.uleb128 0x8
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 98
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 98
 
 
  3798 1a37 17010000 		.4byte	0x117
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3852 1abc 09       		.uleb128 0x9
  3853 1abd B71A0000 		.4byte	0x1ab7
  3854 1ac1 08       		.uleb128 0x8
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 99
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 99
 
 
  3855 1ac2 27010000 		.4byte	0x127
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3909 1b48 B4000000 		.4byte	0xb4
  3910 1b4c 9E05     		.2byte	0x59e
  3911 1b4e 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 100
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 100
 
 
  3912 1b4f 08       		.uleb128 0x8
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  3966 1bd3 09       		.uleb128 0x9
  3967 1bd4 CE1B0000 		.4byte	0x1bce
  3968 1bd8 08       		.uleb128 0x8
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 101
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 101
 
 
  3969 1bd9 160A0000 		.4byte	0xa16
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4023 1c56 0D010000 		.4byte	0x10d
  4024 1c5a 68       		.byte	0x68
  4025 1c5b 19       		.uleb128 0x19
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 102
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 102
 
 
  4026 1c5c C3410000 		.4byte	.LASF274
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4080 1cd1 0B210000 		.4byte	.LASF562
  4081 1cd5 07       		.byte	0x7
  4082 1cd6 7501     		.2byte	0x175
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 103
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 103
 
 
  4083 1cd8 0D010000 		.4byte	0x10d
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4137 1d4d 4B1F0000 		.4byte	0x1f4b
  4138 1d51 C8       		.byte	0xc8
  4139 1d52 19       		.uleb128 0x19
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 104
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 104
 
 
  4140 1d53 271A0000 		.4byte	.LASF570
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4194 1dc8 41350000 		.4byte	.LASF579
  4195 1dcc 07       		.byte	0x7
  4196 1dcd 8901     		.2byte	0x189
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 105
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 105
 
 
  4197 1dcf 12010000 		.4byte	0x112
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4251 1e4b 0D010000 		.4byte	0x10d
  4252 1e4f 2801     		.2byte	0x128
  4253 1e51 15       		.uleb128 0x15
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 106
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 106
 
 
  4254 1e52 051F0000 		.4byte	.LASF588
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4308 1ed0 7D3E0000 		.4byte	.LASF595
  4309 1ed4 07       		.byte	0x7
  4310 1ed5 9C01     		.2byte	0x19c
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 107
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 107
 
 
  4311 1ed7 0D010000 		.4byte	0x10d
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4365 1f56 501F0000 		.4byte	0x1f50
  4366 1f5a 08       		.uleb128 0x8
  4367 1f5b 57010000 		.4byte	0x157
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 108
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 108
 
 
  4368 1f5f 08       		.uleb128 0x8
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4422 1fdf 09200000 		.4byte	0x2009
  4423 1fe3 0002     		.2byte	0x200
  4424 1fe5 15       		.uleb128 0x15
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 109
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 109
 
 
  4425 1fe6 45000000 		.4byte	.LASF601
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4479 205d 09       		.byte	0x9
  4480 205e 3301     		.2byte	0x133
  4481 2060 34200000 		.4byte	0x2034
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 110
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 110
 
 
  4482 2064 1D       		.uleb128 0x1d
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4536 20e3 01       		.byte	0x1
  4537 20e4 11       		.uleb128 0x11
  4538 20e5 37230000 		.4byte	.LASF621
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 111
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 111
 
 
  4539 20e9 02       		.byte	0x2
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4593 2158 00       		.byte	0
  4594 2159 17       		.uleb128 0x17
  4595 215a 70570000 		.4byte	.LASF632
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 112
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 112
 
 
  4596 215e 0A       		.byte	0xa
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4650 21d7 0A       		.byte	0xa
  4651 21d8 0406     		.2byte	0x604
  4652 21da ED210000 		.4byte	0x21ed
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 113
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 113
 
 
  4653 21de 10       		.byte	0x10
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4707 2256 0320     		.2byte	0x2003
  4708 2258 22       		.uleb128 0x22
  4709 2259 1C040000 		.4byte	.LASF652
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 114
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 114
 
 
  4710 225d 0420     		.2byte	0x2004
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4764 22db 1620     		.2byte	0x2016
  4765 22dd 22       		.uleb128 0x22
  4766 22de 152A0000 		.4byte	.LASF671
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 115
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 115
 
 
  4767 22e2 1720     		.2byte	0x2017
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4821 2360 1530     		.2byte	0x3015
  4822 2362 22       		.uleb128 0x22
  4823 2363 08120000 		.4byte	.LASF690
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 116
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 116
 
 
  4824 2367 1630     		.2byte	0x3016
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4878 23e5 0E40     		.2byte	0x400e
  4879 23e7 22       		.uleb128 0x22
  4880 23e8 26140000 		.4byte	.LASF709
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 117
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 117
 
 
  4881 23ec 0F40     		.2byte	0x400f
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4935 246a 0650     		.2byte	0x5006
  4936 246c 22       		.uleb128 0x22
  4937 246d A91C0000 		.4byte	.LASF728
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 118
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 118
 
 
  4938 2471 0750     		.2byte	0x5007
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  4992 24ef 0060     		.2byte	0x6000
  4993 24f1 22       		.uleb128 0x22
  4994 24f2 F21A0000 		.4byte	.LASF747
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 119
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 119
 
 
  4995 24f6 0160     		.2byte	0x6001
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5049 2575 02001600 		.4byte	0x160002
  5050 2579 1E       		.uleb128 0x1e
  5051 257a 761C0000 		.4byte	.LASF763
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 120
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 120
 
 
  5052 257e 03001600 		.4byte	0x160003
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5106 2620 15001600 		.4byte	0x160015
  5107 2624 1E       		.uleb128 0x1e
  5108 2625 40400000 		.4byte	.LASF782
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 121
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 121
 
 
  5109 2629 16001600 		.4byte	0x160016
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5163 26ae 6705     		.2byte	0x567
  5164 26b0 D6000000 		.4byte	0xd6
  5165 26b4 06       		.byte	0x6
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 122
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 122
 
 
  5166 26b5 00       		.byte	0
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5220 2726 9F0F0000 		.4byte	.LASF798
  5221 272a 0B       		.byte	0xb
  5222 272b 9405     		.2byte	0x594
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 123
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 123
 
 
  5223 272d D6000000 		.4byte	0xd6
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5277 279c 17       		.uleb128 0x17
  5278 279d 294A0000 		.4byte	.LASF805
  5279 27a1 0B       		.byte	0xb
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 124
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 124
 
 
  5280 27a2 B005     		.2byte	0x5b0
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5334 2818 0B       		.byte	0xb
  5335 2819 F205     		.2byte	0x5f2
  5336 281b A8270000 		.4byte	0x27a8
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 125
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 125
 
 
  5337 281f 1C       		.uleb128 0x1c
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5391 2891 24370000 		.4byte	.LASF820
  5392 2895 0B       		.byte	0xb
  5393 2896 2206     		.2byte	0x622
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 126
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 126
 
 
  5394 2898 D6000000 		.4byte	0xd6
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5448 290a 19       		.uleb128 0x19
  5449 290b 530F0000 		.4byte	.LASF828
  5450 290f 0B       		.byte	0xb
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 127
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 127
 
 
  5451 2910 4E06     		.2byte	0x64e
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5505 2984 18       		.byte	0x18
  5506 2985 00       		.byte	0
  5507 2986 17       		.uleb128 0x17
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 128
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 128
 
 
  5508 2987 883D0000 		.4byte	.LASF835
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5562 29f8 D0290000 		.4byte	0x29d0
  5563 29fc 1D       		.uleb128 0x1d
  5564 29fd 01       		.byte	0x1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 129
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 129
 
 
  5565 29fe 5E000000 		.4byte	0x5e
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5619 2a6f 00       		.byte	0
  5620 2a70 19       		.uleb128 0x19
  5621 2a71 4B010000 		.4byte	.LASF858
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 130
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 130
 
 
  5622 2a75 0C       		.byte	0xc
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5676 2ae4 11       		.uleb128 0x11
  5677 2ae5 470D0000 		.4byte	.LASF869
  5678 2ae9 02       		.byte	0x2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 131
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 131
 
 
  5679 2aea 11       		.uleb128 0x11
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5733 2b58 06       		.byte	0x6
  5734 2b59 0E       		.byte	0xe
  5735 2b5a EA01     		.2byte	0x1ea
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 132
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 132
 
 
  5736 2b5c AF2B0000 		.4byte	0x2baf
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5790 2bcf 0E       		.uleb128 0xe
  5791 2bd0 BE4C0000 		.4byte	.LASF893
  5792 2bd4 0F       		.byte	0xf
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 133
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 133
 
 
  5793 2bd5 7E       		.byte	0x7e
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5847 2c41 11       		.uleb128 0x11
  5848 2c42 FA3E0000 		.4byte	.LASF902
  5849 2c46 01       		.byte	0x1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 134
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 134
 
 
  5850 2c47 11       		.uleb128 0x11
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5904 2cb0 B6260000 		.4byte	0x26b6
  5905 2cb4 07       		.byte	0x7
  5906 2cb5 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 135
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 135
 
 
  5907 2cb6 64070000 		.4byte	.LASF912
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  5961 2d22 10       		.byte	0x10
  5962 2d23 AC       		.byte	0xac
  5963 2d24 FA2C0000 		.4byte	0x2cfa
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 136
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 136
 
 
  5964 2d28 00       		.byte	0
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6018 2d8e 0A2D0000 		.4byte	0x2d0a
  6019 2d92 06       		.uleb128 0x6
  6020 2d93 04       		.byte	0x4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 137
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 137
 
 
  6021 2d94 362D0000 		.4byte	0x2d36
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6075 2e03 02       		.byte	0x2
  6076 2e04 87       		.byte	0x87
  6077 2e05 3A2E0000 		.4byte	0x2e3a
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 138
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 138
 
 
  6078 2e09 11       		.uleb128 0x11
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6132 2e72 8C3A0000 		.4byte	.LASF946
  6133 2e76 02       		.byte	0x2
  6134 2e77 9F       		.byte	0x9f
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 139
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 139
 
 
  6135 2e78 8A2A0000 		.4byte	0x2a8a
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6189 2eea 08       		.byte	0x8
  6190 2eeb 19       		.uleb128 0x19
  6191 2eec 043C0000 		.4byte	.LASF955
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 140
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 140
 
 
  6192 2ef0 02       		.byte	0x2
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6246 2f62 5601     		.2byte	0x156
  6247 2f64 EC000000 		.4byte	0xec
  6248 2f68 0A       		.byte	0xa
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 141
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 141
 
 
  6249 2f69 19       		.uleb128 0x19
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6303 2fd8 04       		.uleb128 0x4
  6304 2fd9 57230000 		.4byte	.LASF972
  6305 2fdd 11       		.byte	0x11
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 142
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 142
 
 
  6306 2fde E0       		.byte	0xe0
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6360 3047 19       		.uleb128 0x19
  6361 3048 A42B0000 		.4byte	.LASF979
  6362 304c 11       		.byte	0x11
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 143
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 143
 
 
  6363 304d 0101     		.2byte	0x101
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6417 30c0 EC000000 		.4byte	0xec
  6418 30c4 06       		.byte	0x6
  6419 30c5 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 144
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 144
 
 
  6420 30c6 06       		.uleb128 0x6
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6474 3136 03       		.uleb128 0x3
  6475 3137 01       		.byte	0x1
  6476 3138 02       		.byte	0x2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 145
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 145
 
 
  6477 3139 8E200000 		.4byte	.LASF993
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6531 31b3 08       		.byte	0x8
  6532 31b4 13       		.byte	0x13
  6533 31b5 EE01     		.2byte	0x1ee
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 146
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 146
 
 
  6534 31b7 0A320000 		.4byte	0x320a
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6588 322c 19       		.uleb128 0x19
  6589 322d 5E4D0000 		.4byte	.LASF1007
  6590 3231 13       		.byte	0x13
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 147
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 147
 
 
  6591 3232 0C02     		.2byte	0x20c
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6645 32a7 2702     		.2byte	0x227
  6646 32a9 22330000 		.4byte	0x3322
  6647 32ad 28       		.byte	0x28
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 148
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 148
 
 
  6648 32ae 19       		.uleb128 0x19
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6702 331e AF2B0000 		.4byte	0x2baf
  6703 3322 06       		.uleb128 0x6
  6704 3323 04       		.byte	0x4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 149
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 149
 
 
  6705 3324 28330000 		.4byte	0x3328
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6759 33ad 1E       		.uleb128 0x1e
  6760 33ae 66540000 		.4byte	.LASF1030
  6761 33b2 00018800 		.4byte	0x880100
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 150
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 150
 
 
  6762 33b6 00       		.byte	0
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6816 3439 DB000000 		.4byte	.LLST3
  6817 343d 2A       		.uleb128 0x2a
  6818 343e E22D0000 		.4byte	.LASF1035
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 151
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 151
 
 
  6819 3442 01       		.byte	0x1
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6873 34bf 8E000000 		.4byte	.LVL18
  6874 34c3 A2380000 		.4byte	0x38a2
  6875 34c7 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 152
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 152
 
 
  6876 34c8 2D       		.uleb128 0x2d
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6930 3540 CE570000 		.4byte	.LASF1040
  6931 3544 01       		.byte	0x1
  6932 3545 87       		.byte	0x87
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 153
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 153
 
 
  6933 3546 64260000 		.4byte	0x2664
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  6987 35c7 1E000000 		.4byte	.LBE8-.LBB8
  6988 35cb F0350000 		.4byte	0x35f0
  6989 35cf 2B       		.uleb128 0x2b
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 154
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 154
 
 
  6990 35d0 1B440000 		.4byte	.LASF1044
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7044 3630 2D       		.uleb128 0x2d
  7045 3631 8A000000 		.4byte	.LVL35
  7046 3635 09390000 		.4byte	0x3909
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 155
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 155
 
 
  7047 3639 45360000 		.4byte	0x3645
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7101 36aa 9C       		.byte	0x9c
  7102 36ab BE360000 		.4byte	0x36be
  7103 36af 38       		.uleb128 0x38
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 156
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 156
 
 
  7104 36b0 ED3E0000 		.4byte	.LASF1048
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7158 372d 3B       		.uleb128 0x3b
  7159 372e 3A160000 		.4byte	.LASF1053
  7160 3732 05       		.byte	0x5
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 157
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 157
 
 
  7161 3733 A7       		.byte	0xa7
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7215 37b1 B71D0000 		.4byte	.LASF1060
  7216 37b5 02       		.byte	0x2
  7217 37b6 5202     		.2byte	0x252
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 158
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 158
 
 
  7218 37b8 D6000000 		.4byte	0xd6
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7272 3832 3D380000 		.4byte	0x383d
  7273 3836 0B       		.uleb128 0xb
  7274 3837 B4000000 		.4byte	0xb4
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 159
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 159
 
 
  7275 383b 00       		.byte	0
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7329 38b9 3F       		.uleb128 0x3f
  7330 38ba 28450000 		.4byte	.LASF1076
  7331 38be 28450000 		.4byte	.LASF1076
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 160
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 160
 
 
  7332 38c2 18       		.byte	0x18
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7386 0006 0B       		.uleb128 0xb
  7387 0007 03       		.uleb128 0x3
  7388 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 161
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 161
 
 
  7389 0009 1B       		.uleb128 0x1b
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7443 003f 00       		.byte	0
  7444 0040 0B       		.uleb128 0xb
  7445 0041 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 162
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 162
 
 
  7446 0042 49       		.uleb128 0x49
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7500 0078 01       		.byte	0x1
  7501 0079 0B       		.uleb128 0xb
  7502 007a 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 163
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 163
 
 
  7503 007b 3A       		.uleb128 0x3a
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7557 00b1 00       		.byte	0
  7558 00b2 00       		.byte	0
  7559 00b3 12       		.uleb128 0x12
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 164
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 164
 
 
  7560 00b4 13       		.uleb128 0x13
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7614 00ea 00       		.byte	0
  7615 00eb 16       		.uleb128 0x16
  7616 00ec 0D       		.uleb128 0xd
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 165
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 165
 
 
  7617 00ed 00       		.byte	0
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7671 0123 1A       		.uleb128 0x1a
  7672 0124 13       		.uleb128 0x13
  7673 0125 01       		.byte	0x1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 166
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 166
 
 
  7674 0126 0B       		.uleb128 0xb
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7728 015c 28       		.uleb128 0x28
  7729 015d 00       		.byte	0
  7730 015e 03       		.uleb128 0x3
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 167
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 167
 
 
  7731 015f 0E       		.uleb128 0xe
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7785 0195 00       		.byte	0
  7786 0196 00       		.byte	0
  7787 0197 24       		.uleb128 0x24
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 168
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 168
 
 
  7788 0198 17       		.uleb128 0x17
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7842 01ce 00       		.byte	0
  7843 01cf 28       		.uleb128 0x28
  7844 01d0 2E       		.uleb128 0x2e
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 169
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 169
 
 
  7845 01d1 01       		.byte	0x1
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7899 0208 00       		.byte	0
  7900 0209 2B       		.uleb128 0x2b
  7901 020a 34       		.uleb128 0x34
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 170
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 170
 
 
  7902 020b 00       		.byte	0
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  7956 0248 2E       		.uleb128 0x2e
  7957 0249 01       		.byte	0x1
  7958 024a 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 171
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 171
 
 
  7959 024b 19       		.uleb128 0x19
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8013 0285 13       		.uleb128 0x13
  8014 0286 00       		.byte	0
  8015 0287 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 172
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 172
 
 
  8016 0288 33       		.uleb128 0x33
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8070 02be 00       		.byte	0
  8071 02bf 00       		.byte	0
  8072 02c0 37       		.uleb128 0x37
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 173
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 173
 
 
  8073 02c1 2E       		.uleb128 0x2e
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8127 02f8 12       		.uleb128 0x12
  8128 02f9 06       		.uleb128 0x6
  8129 02fa 40       		.uleb128 0x40
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 174
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 174
 
 
  8130 02fb 18       		.uleb128 0x18
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8184 0332 3D       		.uleb128 0x3d
  8185 0333 34       		.uleb128 0x34
  8186 0334 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 175
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 175
 
 
  8187 0335 03       		.uleb128 0x3
@@ -10498,7 +10498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8241 036b 19       		.uleb128 0x19
  8242 036c 6E       		.uleb128 0x6e
  8243 036d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 176
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 176
 
 
  8244 036e 03       		.uleb128 0x3
@@ -10558,7 +10558,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8298 006b 9F       		.byte	0x9f
  8299 006c 90000000 		.4byte	.LVL19
  8300 0070 97000000 		.4byte	.LVL21-1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 177
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 177
 
 
  8301 0074 0100     		.2byte	0x1
@@ -10618,7 +10618,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8355 00fb 50       		.byte	0x50
  8356 00fc 00000000 		.4byte	0
  8357 0100 00000000 		.4byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 178
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 178
 
 
  8358              	.LLST4:
@@ -10678,7 +10678,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8412 018a A4000000 		.4byte	.LVL36
  8413 018e 0100     		.2byte	0x1
  8414 0190 50       		.byte	0x50
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 179
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 179
 
 
  8415 0191 C6000000 		.4byte	.LVL37
@@ -10738,7 +10738,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8469 0000 54000000 		.4byte	0x54
  8470 0004 0200     		.2byte	0x2
  8471 0006 00000000 		.4byte	.Ldebug_info0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 180
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 180
 
 
  8472 000a 04       		.byte	0x4
@@ -10798,7 +10798,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8518      50444154 
  8519              	.LASF810:
  8520 001e 6C646F56 		.ascii	"ldoVoltageTable\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 181
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 181
 
 
  8520      6F6C7461 
@@ -10858,7 +10858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8540      45545F50 
  8540      4545525F 
  8541              	.LASF14:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 182
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 182
 
 
  8542 0101 6C6F6E67 		.ascii	"long unsigned int\000"
@@ -10918,7 +10918,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8564      313400
  8565              	.LASF355:
  8566 01a3 52455345 		.ascii	"RESERVED15\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 183
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 183
 
 
  8566      52564544 
@@ -10978,7 +10978,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8588 026a 52455345 		.ascii	"RESERVED20\000"
  8588      52564544 
  8588      323000
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 184
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 184
 
 
  8589              	.LASF384:
@@ -11038,7 +11038,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8614 0332 6D656D73 		.ascii	"memset\000"
  8614      657400
  8615              	.LASF159:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 185
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 185
 
 
  8616 0339 63707573 		.ascii	"cpuss_interrupts_ipc_13_IRQn\000"
@@ -11098,7 +11098,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8640      4944454E 
  8640      5F57494E 
  8640      4F464600 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 186
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 186
 
 
  8641              	.LASF614:
@@ -11158,7 +11158,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8666      343900
  8667              	.LASF900:
  8668 04b0 63795F73 		.ascii	"cy_stc_ble_gapc_disc_info_t\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 187
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 187
 
 
  8668      74635F62 
@@ -11218,7 +11218,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8692      5200
  8693              	.LASF989:
  8694 055a 73657276 		.ascii	"serviceChangedHandle\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 188
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 188
 
 
  8694      69636543 
@@ -11278,7 +11278,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8713              	.LASF391:
  8714 0653 4445565F 		.ascii	"DEV_PUB_ADDR_L\000"
  8714      5055425F 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 189
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 189
 
 
  8714      41444452 
@@ -11338,7 +11338,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8736      5953504D 
  8736      5F464149 
  8736      4C00
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 190
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 190
 
 
  8737              	.LASF978:
@@ -11398,7 +11398,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8757              	.LASF705:
  8758 07e7 43595F42 		.ascii	"CY_BLE_EVT_GAPC_SCAN_START_STOP\000"
  8758      4C455F45 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 191
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 191
 
 
  8758      56545F47 
@@ -11458,7 +11458,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8776      4D736B00 
  8777              	.LASF895:
  8778 08e9 7363616E 		.ascii	"scanWindow\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 192
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 192
 
 
  8778      57696E64 
@@ -11518,7 +11518,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8797              	.LASF395:
  8798 09d5 4F464653 		.ascii	"OFFSET_TO_FIRST_INSTANT\000"
  8798      45545F54 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 193
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 193
 
 
  8798      4F5F4649 
@@ -11578,7 +11578,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8820 0abb 434F4E4E 		.ascii	"CONN_4_DATA_LIST_SENT\000"
  8820      5F345F44 
  8820      4154415F 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 194
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 194
 
 
  8820      4C495354 
@@ -11638,7 +11638,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8838      5F647730 
  8839              	.LASF922:
  8840 0bcb 61647650 		.ascii	"advParam\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 195
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 195
 
 
  8840      6172616D 
@@ -11698,7 +11698,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8862 0c87 74637077 		.ascii	"tcpwm_0_interrupts_3_IRQn\000"
  8862      6D5F305F 
  8862      696E7465 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 196
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 196
 
 
  8862      72727570 
@@ -11758,7 +11758,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8880      49545F48 
  8880      00
  8881              	.LASF418:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 197
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 197
 
 
  8882 0d85 50454552 		.ascii	"PEER_ADDR_INIT_L\000"
@@ -11818,7 +11818,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8901              	.LASF402:
  8902 0e7e 434F4E4E 		.ascii	"CONN_PARAM2\000"
  8902      5F504152 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 198
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 198
 
 
  8902      414D3200 
@@ -11878,7 +11878,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8922      4C455F45 
  8922      56545F44 
  8922      4154415F 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 199
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 199
 
 
  8922      4C454E47 
@@ -11938,7 +11938,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8942      6C655F70 
  8942      65657242 
  8942      6F6E6469 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 200
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 200
 
 
  8942      6E6700
@@ -11998,7 +11998,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8962      75707473 
  8962      5F647730 
  8963              	.LASF901:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 201
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 201
 
 
  8964 1179 43595F42 		.ascii	"CY_BLE_GAPP_CONNECTABLE_UNDIRECTED_ADV\000"
@@ -12058,7 +12058,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  8982      74735F30 
  8983              	.LASF875:
  8984 1285 43595F42 		.ascii	"CY_BLE_GAP_AUTH_ERROR_UNSPECIFIED_REASON\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 202
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 202
 
 
  8984      4C455F47 
@@ -12118,7 +12118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9004      4E4E454C 
  9004      535F4831 
  9004      00
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 203
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 203
 
 
  9005              	.LASF246:
@@ -12178,7 +12178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9023              	.LASF709:
  9024 1426 43595F42 		.ascii	"CY_BLE_EVT_GAP_OOB_GENERATED_NOTIFICATION\000"
  9024      4C455F45 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 204
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 204
 
 
  9024      56545F47 
@@ -12238,7 +12238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9042      696E00
  9043              	.LASF723:
  9044 151b 43595F42 		.ascii	"CY_BLE_EVT_GATT_DISCONNECT_IND\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 205
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 205
 
 
  9044      4C455F45 
@@ -12298,7 +12298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9064 15f3 43595F42 		.ascii	"CY_BLE_EVT_PENDING_FLASH_WRITE\000"
  9064      4C455F45 
  9064      56545F50 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 206
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 206
 
 
  9064      454E4449 
@@ -12358,7 +12358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9084 16ea 4556454E 		.ascii	"EVENT_INTR\000"
  9084      545F494E 
  9084      545200
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 207
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 207
 
 
  9085              	.LASF483:
@@ -12418,7 +12418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9104      54455200 
  9105              	.LASF398:
  9106 17ce 494E4954 		.ascii	"INIT_CONFIG\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 208
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 208
 
 
  9106      5F434F4E 
@@ -12478,7 +12478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9126      52524F52 
  9126      5F464C41 
  9126      53485F57 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 209
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 209
 
 
  9127              	.LASF243:
@@ -12538,7 +12538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9146      443300
  9147              	.LASF442:
  9148 1963 434F4E4E 		.ascii	"CONN_REQ_WORD4\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 210
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 210
 
 
  9148      5F524551 
@@ -12598,7 +12598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9168      00
  9169              	.LASF348:
  9170 1a34 504F435F 		.ascii	"POC_REG__TIM_CONTROL\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 211
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 211
 
 
  9170      5245475F 
@@ -12658,7 +12658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9190 1b19 63707573 		.ascii	"cpussIpcNr\000"
  9190      73497063 
  9190      4E7200
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 212
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 212
 
 
  9191              	.LASF433:
@@ -12718,7 +12718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9211              	.LASF283:
  9212 1be7 4350555F 		.ascii	"CPU_READ_REG\000"
  9212      52454144 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 213
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 213
 
 
  9212      5F524547 
@@ -12778,7 +12778,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9232      74657272 
  9232      75707473 
  9232      5F647730 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 214
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 214
 
 
  9233              	.LASF26:
@@ -12838,7 +12838,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9254      6C655F70 
  9254      656E6469 
  9254      6E67466C 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 215
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 215
 
 
  9254      61736857 
@@ -12898,7 +12898,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9276      534D4954 
  9276      5F57494E 
  9276      444F575F 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 216
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 216
 
 
  9276      4F464653 
@@ -12958,7 +12958,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9296      4F4E4E5F 
  9297              	.LASF461:
  9298 1f80 4C455F50 		.ascii	"LE_PING_TIMER_WRAP_COUNT\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 217
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 217
 
 
  9298      494E475F 
@@ -13018,7 +13018,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9318 205e 45465553 		.ascii	"EFUSE_TIM_CTRL1\000"
  9318      455F5449 
  9318      4D5F4354 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 218
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 218
 
 
  9318      524C3100 
@@ -13078,7 +13078,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9339              	.LASF360:
  9340 213c 5044555F 		.ascii	"PDU_ACCESS_ADDR_L_REGISTER\000"
  9340      41434345 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 219
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 219
 
 
  9340      53535F41 
@@ -13138,7 +13138,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9361              	.LASF186:
  9362 220f 63707573 		.ascii	"cpuss_interrupts_dw0_15_IRQn\000"
  9362      735F696E 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 220
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 220
 
 
  9362      74657272 
@@ -13198,7 +13198,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9382      45564943 
  9383              	.LASF62:
  9384 22fe 666C6173 		.ascii	"flashPipeRequired\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 221
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 221
 
 
  9384      68506970 
@@ -13258,7 +13258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9404 23c8 55535F43 		.ascii	"US_CAPT_PREV\000"
  9404      4150545F 
  9404      50524556 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 222
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 222
 
 
  9404      00
@@ -13318,7 +13318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9426 248c 574C5F43 		.ascii	"WL_CONNECTION_STATUS\000"
  9426      4F4E4E45 
  9426      4354494F 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 223
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 223
 
 
  9426      4E5F5354 
@@ -13378,7 +13378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9448 2543 55736167 		.ascii	"UsageFault_IRQn\000"
  9448      65466175 
  9448      6C745F49 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 224
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 224
 
 
  9448      52516E00 
@@ -13438,7 +13438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9466      6261636B 
  9467              	.LASF986:
  9468 2623 67617474 		.ascii	"gattDbTotalEntries\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 225
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 225
 
 
  9468      4462546F 
@@ -13498,7 +13498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9486      6C655F67 
  9486      6170635F 
  9486      7363616E 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 226
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 226
 
 
  9487              	.LASF780:
@@ -13558,7 +13558,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9505      746500
  9506              	.LASF1075:
  9507 2835 43795F49 		.ascii	"Cy_IPC_Sema_Status\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 227
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 227
 
 
  9507      50435F53 
@@ -13618,7 +13618,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9529      6D705F69 
  9529      6E746572 
  9529      72757074 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 228
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 228
 
 
  9529      5F495251 
@@ -13678,7 +13678,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9551 29be 52534C56 		.ascii	"RSLV_LIST_PEER_RPA_BASE_ADDR\000"
  9551      5F4C4953 
  9551      545F5045 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 229
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 229
 
 
  9551      45525F52 
@@ -13738,7 +13738,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9575      52564544 
  9575      3900
  9576              	.LASF7:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 230
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 230
 
 
  9577 2a94 5F5F696E 		.ascii	"__int16_t\000"
@@ -13798,7 +13798,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9597      56315F54 
  9597      79706500 
  9598              	.LASF115:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 231
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 231
 
 
  9599 2b7b 42757346 		.ascii	"BusFault_IRQn\000"
@@ -13858,7 +13858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9621      41545453 
  9621      5F455845 
  9622              	.LASF293:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 232
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 232
 
 
  9623 2c47 52585F46 		.ascii	"RX_FIFO_STATUS\000"
@@ -13918,7 +13918,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9641      44617461 
  9641      42756666 
  9642              	.LASF890:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 233
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 233
 
 
  9643 2d33 70616972 		.ascii	"pairingProperties\000"
@@ -13978,7 +13978,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9663      20636861 
  9663      7200
  9664              	.LASF607:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 234
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 234
 
 
  9665 2e22 696E7472 		.ascii	"intrSrc\000"
@@ -14038,7 +14038,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9685              	.LASF846:
  9686 2efd 63795F65 		.ascii	"cy_en_ble_lp_mode_t\000"
  9686      6E5F626C 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 235
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 235
 
 
  9686      655F6C70 
@@ -14098,7 +14098,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9710      54494D45 
  9710      525F4144 
  9710      445200
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 236
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 236
 
 
  9711              	.LASF889:
@@ -14158,7 +14158,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9730      4952516E 
  9731              	.LASF494:
  9732 3086 434F4E4E 		.ascii	"CONN_NI_STATUS\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 237
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 237
 
 
  9732      5F4E495F 
@@ -14218,7 +14218,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9753              	.LASF714:
  9754 314a 43595F42 		.ascii	"CY_BLE_EVT_GAP_KEYS_GEN_COMPLETE\000"
  9754      4C455F45 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 238
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 238
 
 
  9754      56545F47 
@@ -14278,7 +14278,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9772      56545F47 
  9772      41545443 
  9772      5F524541 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 239
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 239
 
 
  9773              	.LASF635:
@@ -14338,7 +14338,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9793              	.LASF800:
  9794 3325 7265736F 		.ascii	"resolvingListSize\000"
  9794      6C76696E 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 240
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 240
 
 
  9794      674C6973 
@@ -14398,7 +14398,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9814 340d 64697363 		.ascii	"discProcedure\000"
  9814      50726F63 
  9814      65647572 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 241
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 241
 
 
  9814      6500
@@ -14458,7 +14458,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9835              	.LASF956:
  9836 34ed 736C6F77 		.ascii	"slowAdvTimeOut\000"
  9836      41647654 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 242
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 242
 
 
  9836      696D654F 
@@ -14518,7 +14518,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9856      56545F53 
  9856      45545F43 
  9856      455F4C45 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 243
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 243
 
 
  9857              	.LASF430:
@@ -14578,7 +14578,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9878      74657272 
  9878      75707473 
  9878      5F647731 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 244
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 244
 
 
  9879              	.LASF689:
@@ -14638,7 +14638,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9898      74735F31 
  9899              	.LASF829:
  9900 37a3 626C6553 		.ascii	"bleStackFlashPointer\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 245
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 245
 
 
  9900      7461636B 
@@ -14698,7 +14698,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9920 3870 43595F42 		.ascii	"CY_BLE_GAP_AUTH_ERROR_INSUFFICIENT_ENCRYPTION_KEY_S"
  9920      4C455F47 
  9920      41505F41 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 246
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 246
 
 
  9920      5554485F 
@@ -14758,7 +14758,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9941 396a 43595F42 		.ascii	"CY_BLE_EVT_SET_HOST_CHANNEL_COMPLETE\000"
  9941      4C455F45 
  9941      56545F53 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 247
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 247
 
 
  9941      45545F48 
@@ -14818,7 +14818,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9961      74657272 
  9961      7570745F 
  9961      63727970 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 248
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 248
 
 
  9962              	.LASF766:
@@ -14878,7 +14878,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  9982              	.LASF620:
  9983 3b4a 43595F53 		.ascii	"CY_SYSPM_DEEPSLEEP\000"
  9983      5953504D 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 249
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 249
 
 
  9983      5F444545 
@@ -14938,7 +14938,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10002              	.LASF963:
  10003 3c17 736C6F77 		.ascii	"slowScanWindow\000"
  10003      5363616E 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 250
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 250
 
 
  10003      57696E64 
@@ -14998,7 +14998,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10023      625F4578 
  10023      69744372 
  10023      69746963 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 251
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 251
 
 
  10024              	.LASF232:
@@ -15058,7 +15058,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10043      56545F47 
  10043      45545F54 
  10043      585F5057 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 252
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 252
 
 
  10044              	.LASF8:
@@ -15118,7 +15118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10069 3ee0 52585F46 		.ascii	"RX_FIFO_CTRL\000"
  10069      49464F5F 
  10069      4354524C 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 253
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 253
 
 
  10069      00
@@ -15178,7 +15178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10089      5F4E495F 
  10089      56414C00 
  10090              	.LASF866:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 254
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 254
 
 
  10091 3fd9 63795F65 		.ascii	"cy_en_ble_gap_iocap_t\000"
@@ -15238,7 +15238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10111      4C455F43 
  10111      4F4E4E5F 
  10111      53544154 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 255
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 255
 
 
  10111      455F434C 
@@ -15298,7 +15298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10131      5F4D4153 
  10131      4B00
  10132              	.LASF98:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 256
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 256
 
 
  10133 41cd 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
@@ -15358,7 +15358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10153 4297 43595F42 		.ascii	"CY_BLE_EVT_SET_CONN_PRIORITY_COMPLETE\000"
  10153      4C455F45 
  10153      56545F53 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 257
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 257
 
 
  10153      45545F43 
@@ -15418,7 +15418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10175      65637469 
  10175      6F6E536C 
  10175      6176654C 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 258
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 258
 
 
  10176              	.LASF626:
@@ -15478,7 +15478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10197      5F48414E 
  10198              	.LASF297:
  10199 4457 424C455F 		.ascii	"BLE_RCB_V1_Type\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 259
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 259
 
 
  10199      5243425F 
@@ -15538,7 +15538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10219      414C5F49 
  10219      7345636F 
  10219      43707543 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 260
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 260
 
 
  10220              	.LASF20:
@@ -15598,7 +15598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10241      4F4E4E5F 
  10241      53544154 
  10241      455F434F 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 261
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 261
 
 
  10242              	.LASF788:
@@ -15658,7 +15658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10263 4707 4952516E 		.ascii	"IRQn_Type\000"
  10263      5F547970 
  10263      6500
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 262
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 262
 
 
  10264              	.LASF663:
@@ -15718,7 +15718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10284              	.LASF785:
  10285 4824 43595F42 		.ascii	"CY_BLE_ERROR_CHAR_IS_NOT_DISCOVERED\000"
  10285      4C455F45 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 263
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 263
 
 
  10285      52524F52 
@@ -15778,7 +15778,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10303      6D654F75 
  10304              	.LASF847:
  10305 490c 43595F42 		.ascii	"CY_BLE_BLESS_STATE_ACTIVE\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 264
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 264
 
 
  10305      4C455F42 
@@ -15838,7 +15838,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10323      00
  10324              	.LASF863:
  10325 4a0a 43595F42 		.ascii	"CY_BLE_GAP_IOCAP_KEYBOARD_ONLY\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 265
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 265
 
 
  10325      4C455F47 
@@ -15898,7 +15898,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10347      5F345F43 
  10347      455F4441 
  10347      54415F4C 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 266
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 266
 
 
  10347      4953545F 
@@ -15958,7 +15958,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10367      73436D30 
  10367      53746174 
  10367      75734F66 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 267
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 267
 
 
  10367      66736574 
@@ -16018,7 +16018,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10389 4ca3 43595F42 		.ascii	"CY_BLE_EVT_GAP_AUTH_FAILED\000"
  10389      4C455F45 
  10389      56545F47 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 268
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 268
 
 
  10389      41505F41 
@@ -16078,7 +16078,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10410              	.LASF272:
  10411 4d83 494E5452 		.ascii	"INTR\000"
  10411      00
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 269
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 269
 
 
  10412              	.LASF304:
@@ -16138,7 +16138,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10430      53544552 
  10430      00
  10431              	.LASF152:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 270
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 270
 
 
  10432 4e90 63707573 		.ascii	"cpuss_interrupts_ipc_6_IRQn\000"
@@ -16198,7 +16198,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10450      4F574552 
  10450      5F4C564C 
  10451              	.LASF222:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 271
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 271
 
 
  10452 4f91 74637077 		.ascii	"tcpwm_1_interrupts_3_IRQn\000"
@@ -16258,7 +16258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10471              	.LASF867:
  10472 505d 43595F42 		.ascii	"CY_BLE_GAP_AUTH_ERROR_NONE\000"
  10472      4C455F47 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 272
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 272
 
 
  10472      41505F41 
@@ -16318,7 +16318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10494 5120 63686172 		.ascii	"char\000"
  10494      00
  10495              	.LASF1023:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 273
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 273
 
 
  10496 5125 43595F49 		.ascii	"CY_IPC_SEMA_ERROR_LOCKED\000"
@@ -16378,7 +16378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10514      6C00
  10515              	.LASF374:
  10516 51f9 57494E44 		.ascii	"WINDOW_WIDEN_INTVL\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 274
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 274
 
 
  10516      4F575F57 
@@ -16438,7 +16438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10534      5F464149 
  10535              	.LASF1000:
  10536 52e6 7478506F 		.ascii	"txPowerLevelConn\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 275
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 275
 
 
  10536      7765724C 
@@ -16498,7 +16498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10556      4C455F45 
  10556      56545F47 
  10556      41545453 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 276
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 276
 
 
  10556      5F505245 
@@ -16558,7 +16558,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10578      5554485F 
  10578      4552524F 
  10579              	.LASF372:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 277
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 277
 
 
  10580 54cd 44415441 		.ascii	"DATA_MEM_DESCRIPTOR\000"
@@ -16618,7 +16618,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10598      4C455F45 
  10598      56545F54 
  10598      494D454F 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 278
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 278
 
 
  10598      555400
@@ -16678,7 +16678,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10619      352E342E 
  10619      31203230 
  10619      31363036 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 279
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 279
 
 
  10620 56b5 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
@@ -16738,7 +16738,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10638      61724861 
  10638      6E646C65 
  10639              	.LASF1040:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 280
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 280
 
 
  10640 57ce 61706952 		.ascii	"apiResult\000"
@@ -16798,7 +16798,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10660      72697479 
  10660      50616972 
  10660      696E674D 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 281
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 281
 
 
  10660      6574686F 
@@ -16858,7 +16858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10680      45545F43 
  10680      4C4B5F43 
  10681              	.LASF359:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 282
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 282
 
 
  10682 596a 43455F4C 		.ascii	"CE_LENGTH\000"
@@ -16918,7 +16918,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 1
  10701              	.LASF1041:
  10702 5a4e 43795F42 		.ascii	"Cy_BLE_Enable\000"
  10702      4C455F45 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cciOawDO.s 			page 283
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccAlg6gL.s 			page 283
 
 
  10702      6E61626C 

@@ -2,7 +2,7 @@
 --	Conversion of Bluetooth_and_ADC.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Sun Jul 03 17:08:56 2022
+--	Tue Jul 26 14:44:03 2022
 --
 
 USE cypress.cypress.all;
@@ -343,9 +343,9 @@ TERMINAL Net_41 : bit;
 TERMINAL Net_40 : bit;
 SIGNAL one : bit;
 SIGNAL zero : bit;
-SIGNAL tmpFB_0__Pin_1_net_0 : bit;
-SIGNAL tmpIO_0__Pin_1_net_0 : bit;
-TERMINAL tmpSIOVREF__Pin_1_net_0 : bit;
+SIGNAL tmpFB_0__ADC_IN_net_0 : bit;
+SIGNAL tmpIO_0__ADC_IN_net_0 : bit;
+TERMINAL tmpSIOVREF__ADC_IN_net_0 : bit;
 SIGNAL \UART_1:Net_847\ : bit;
 SIGNAL \UART_1:clock_wire\ : bit;
 SIGNAL \UART_1:Net_22\ : bit;
@@ -449,7 +449,7 @@ zero <=  ('0') ;
 		signal2=>Net_44);
 \ADC_1:SAR\:cy_mxs40_sar_v1_0
 	GENERIC MAP(cy_registers=>"",
-		edge_trigger=>'0')
+		edge_trigger=>'1')
 	PORT MAP(vplus=>\ADC_1:muxoutPlus\,
 		vminus=>\ADC_1:muxoutMinus\,
 		vref=>\ADC_1:vref\,
@@ -1465,7 +1465,7 @@ zero <=  ('0') ;
 		is_net_join=>'0')
 	PORT MAP(signal1=>Net_41,
 		signal2=>Net_40);
-Pin_1:cy_mxs40_gpio_v1_0
+ADC_IN:cy_mxs40_gpio_v1_0
 	GENERIC MAP(cy_registers=>"",
 		width=>1,
 		sio_grp_cnt=>0,
@@ -1492,11 +1492,11 @@ Pin_1:cy_mxs40_gpio_v1_0
 		hotswap_needed=>"0")
 	PORT MAP(oe=>(one),
 		y=>(zero),
-		fb=>(tmpFB_0__Pin_1_net_0),
+		fb=>(tmpFB_0__ADC_IN_net_0),
 		analog=>Net_44,
-		io=>(tmpIO_0__Pin_1_net_0),
+		io=>(tmpIO_0__ADC_IN_net_0),
 		annotation=>(open),
-		siovref=>(tmpSIOVREF__Pin_1_net_0));
+		siovref=>(tmpSIOVREF__ADC_IN_net_0));
 \UART_1:SCBCLK\:cy_clock_v1_0
 	GENERIC MAP(cy_registers=>"",
 		id=>"08aaecf5-1a2f-46ef-aa87-ee80d36b39ee/b68e5b9d-7828-482d-a282-930f990e3b3e",
