@@ -15,6 +15,13 @@
 int dataNotify = 0;
 int bleConnected = 0;
 uint8_t hand;
+int flagNotify = 0;
+
+struct data 
+{
+    float DAC_volt;
+    float ADC_volt;
+};
 
 
 void genericEventHandler(uint32_t event, void *eventParameter)
@@ -79,17 +86,17 @@ int main(void)
        
         
         /* Place your application code here. */
-        cy_stc_ble_gatt_handle_value_pair_t* serviceHandle;
+        cy_stc_ble_gatt_handle_value_pair_t serviceHandle;
         cy_stc_ble_gatt_value_t serviceData;
         
         serviceData.val = (uint8*) &dataNotify;
         serviceData.len = 2;
         
-        serviceHandle->attrHandle = CY_BLE_DATA_SERVICE_DATA_CHAR_HANDLE;
-        serviceHandle->value = serviceData;
+        serviceHandle.attrHandle = CY_BLE_DATA_SERVICE_DATA_CHAR_HANDLE;
+        serviceHandle.value = serviceData;
         
-        cy_stc_ble_conn_handle_t connHandle;
-        connHandle.bdHandle=hand;
+        //cy_stc_ble_conn_handle_t connHandle;
+        //connHandle.bdHandle=hand;
         
         // error code debugging
         //cy_en_ble_gatt_err_code_t e=Cy_BLE_GATTS_WriteAttributeValueLocal(&serviceHandle);
@@ -101,7 +108,9 @@ int main(void)
 //            printf("error2 \r\n");   
 //        }
         
-        cy_en_ble_api_result_t e = Cy_BLE_GATTS_SendNotification(&connHandle, &serviceData);
+        //printf("Connhandle %x \r\n", connHandle);
+        
+        cy_en_ble_api_result_t e = Cy_BLE_GATTS_SendNotification(&cy_ble_connHandle[0], &serviceHandle);
         if (e == CY_BLE_SUCCESS) {
             printf("Good transmission\r\n");
         } else if (e == CY_BLE_ERROR_NO_DEVICE_ENTITY) {
@@ -115,7 +124,7 @@ int main(void)
         }
     
    
-
+        CyDelay(10);
         //CyDelay(1000);
         
     }
