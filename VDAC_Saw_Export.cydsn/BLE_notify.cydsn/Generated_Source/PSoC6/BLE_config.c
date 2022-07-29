@@ -227,7 +227,7 @@ static const cy_stc_ble_gaps_t cy_ble_gaps =
     0x0007u,    /* Handle of the Central Address Resolution characteristic */
     0x000Bu,    /* Handle of the Resolvable Private Address Only characteristic */
 };
-static uint8_t cy_ble_attValues[0x1Fu] = {
+static uint8_t cy_ble_attValues[0x1Bu] = {
     /* Device Name */
     (uint8_t)'J', (uint8_t)'C', (uint8_t)'_', (uint8_t)'P', (uint8_t)'S', (uint8_t)'O', (uint8_t)'C', 
 
@@ -247,7 +247,7 @@ static uint8_t cy_ble_attValues[0x1Fu] = {
     0x00u, 0x00u, 0x00u, 0x00u, 
 
     /* Data */
-    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 
+    0x00u, 0x00u, 0x00u, 0x00u, 
 
 };
 #if(CY_BLE_GATT_DB_CCCD_COUNT != 0u)
@@ -271,7 +271,7 @@ static cy_stc_ble_gatts_att_gen_val_len_t cy_ble_attValuesLen[0x0Bu] = {
     { 0x0002u, (void *)&cy_ble_attValuesCCCD[0] }, /* Client Characteristic Configuration */
     { 0x0010u, (void *)&cy_ble_attUuid128[0] }, /* Data Service UUID */
     { 0x0010u, (void *)&cy_ble_attUuid128[1] }, /* Data UUID */
-    { 0x0008u, (void *)&cy_ble_attValues[23] }, /* Data */
+    { 0x0004u, (void *)&cy_ble_attValues[23] }, /* Data */
     { 0x0002u, (void *)&cy_ble_attValuesCCCD[2] }, /* DataCCCD */
 };
 
@@ -293,7 +293,7 @@ static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x13u] = {
     { 0x000Fu, 0x2902u /* Client Characteristic Configuration */, 0x030A0101u /* rd,wr  */, 0x000Fu, {{0x0002u, (void *)&cy_ble_attValuesLen[6]}} },
     { 0x0010u, 0x2800u /* Primary service                     */, 0x08000001u /*        */, 0x0013u, {{0x0010u, (void *)&cy_ble_attValuesLen[7]}} },
     { 0x0011u, 0x2803u /* Characteristic                      */, 0x00120001u /* rd,ntf */, 0x0013u, {{0x0010u, (void *)&cy_ble_attValuesLen[8]}} },
-    { 0x0012u, 0x723Du /* Data                                */, 0x09120001u /* rd,ntf */, 0x0013u, {{0x0008u, (void *)&cy_ble_attValuesLen[9]}} },
+    { 0x0012u, 0x723Du /* Data                                */, 0x09120001u /* rd,ntf */, 0x0013u, {{0x0004u, (void *)&cy_ble_attValuesLen[9]}} },
     { 0x0013u, 0x2902u /* DataCCCD                            */, 0x030A0101u /* rd,wr  */, 0x0013u, {{0x0002u, (void *)&cy_ble_attValuesLen[10]}} },
 };
 

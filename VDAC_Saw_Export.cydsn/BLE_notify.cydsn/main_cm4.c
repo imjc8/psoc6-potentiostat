@@ -12,15 +12,15 @@
 #include "project.h"
 #include "stdio.h"
 
-int dataNotify = 0;
+float64 dataNotify = 0.0;
 int bleConnected = 0;
 uint8_t hand;
 int flagNotify = 0;
 
 struct data 
 {
-    float DAC_volt;
-    float ADC_volt;
+    uint16 DAC_volt;
+    uint16 ADC_volt;
 };
 
 
@@ -72,28 +72,47 @@ int main(void)
         Cy_BLE_ProcessEvents();
     }
     Cy_BLE_RegisterAppHostCallback(bleInterruptNotify);
+    
+    struct data d1;
 
     /* Place your initialization/startup code here (e.g. MyInst_Start()) */
 
+    float dac_volt;
+    float adc_volt;
+    
+    // declare a string
+    char* dataString;
+    
+    float counter = 0;
+    
     for(;;)
     {
-        if (dataNotify < 100){
-            dataNotify++;
-        }
-        else{
-            dataNotify = 0;
-        }
+//        if (counter < 100.0){
+//            counter++;
+//            d1.DAC_volt = counter;
+//            d1.ADC_volt = counter;
+////            dataNotify<<8.0;
+////            dataNotify|adc_volt;
+//        }
+//        else{
+//            counter = 0;
+//        }
+        
+        d1.DAC_volt = 100;
+        d1.ADC_volt = 100;
        
         
         /* Place your application code here. */
         cy_stc_ble_gatt_handle_value_pair_t serviceHandle;
         cy_stc_ble_gatt_value_t serviceData;
         
-        serviceData.val = (uint8*) &dataNotify;
-        serviceData.len = 2;
+        serviceData.val = (uint8*) &d1;
+        serviceData.len = 4;
         
         serviceHandle.attrHandle = CY_BLE_DATA_SERVICE_DATA_CHAR_HANDLE;
+        
         serviceHandle.value = serviceData;
+        
         
         //cy_stc_ble_conn_handle_t connHandle;
         //connHandle.bdHandle=hand;
@@ -112,7 +131,7 @@ int main(void)
         
         cy_en_ble_api_result_t e = Cy_BLE_GATTS_SendNotification(&cy_ble_connHandle[0], &serviceHandle);
         if (e == CY_BLE_SUCCESS) {
-            printf("Good transmission\r\n");
+            printf("DAC val: %d \t ADC val:%d \r\n", d1.DAC_volt, d1.ADC_volt);
         } else if (e == CY_BLE_ERROR_NO_DEVICE_ENTITY) {
             printf("Error 1\r\n");
         } else if (e == CY_BLE_ERROR_INVALID_PARAMETER) {
