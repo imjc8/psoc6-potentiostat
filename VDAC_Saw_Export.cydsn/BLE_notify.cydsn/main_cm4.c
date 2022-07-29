@@ -110,7 +110,7 @@ int main(void)
         cy_stc_ble_gatt_value_t serviceData;
         
         serviceData.val = (uint8*) &d1;
-        serviceData.len = 4;
+        serviceData.len = 8;
         
         serviceHandle.attrHandle = CY_BLE_DATA_SERVICE_DATA_CHAR_HANDLE;
         
