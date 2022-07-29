@@ -87,19 +87,19 @@ int main(void)
     
     for(;;)
     {
-//        if (counter < 100.0){
-//            counter++;
-//            d1.DAC_volt = counter;
-//            d1.ADC_volt = counter;
-////            dataNotify<<8.0;
-////            dataNotify|adc_volt;
-//        }
-//        else{
-//            counter = 0;
-//        }
+        if (counter < 4095){
+            counter++;
+            d1.DAC_volt = counter;
+            d1.ADC_volt = counter;
+//            dataNotify<<8.0;
+//            dataNotify|adc_volt;
+        }
+        else{
+            counter = 0;
+        }
         
-        d1.DAC_volt = 100;
-        d1.ADC_volt = 100;
+//        d1.DAC_volt = 4000;
+//        d1.ADC_volt = 100;
        
         
         /* Place your application code here. */
