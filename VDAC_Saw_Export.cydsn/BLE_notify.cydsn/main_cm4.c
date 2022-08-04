@@ -16,6 +16,7 @@ float64 dataNotify = 0.0;
 int bleConnected = 0;
 uint8_t hand;
 int flagNotify = 0;
+int sendFlag = false;
 
 struct data 
 {
@@ -131,20 +132,25 @@ int main(void)
 //        }
         
         //printf("Connhandle %x \r\n", connHandle);
-        
+        if(sendFlag == true) {
         cy_en_ble_api_result_t e = Cy_BLE_GATTS_SendNotification(&cy_ble_connHandle[0], &serviceHandle);
-        if (e == CY_BLE_SUCCESS) {
-            printf("DAC val: %f \t ADC val:%f \r\n", d1.DAC_volt, d1.ADC_volt);
-        } else if (e == CY_BLE_ERROR_NO_DEVICE_ENTITY) {
-            printf("Error 1\r\n");
-        } else if (e == CY_BLE_ERROR_INVALID_PARAMETER) {
-            printf("Error 2\r\n");
-        } else if (e == CY_BLE_ERROR_INVALID_OPERATION) {
-            printf("Error 3\r\n");
-        } else if (e == CY_BLE_ERROR_NTF_DISABLED) {
-            printf("Error 4\r\n");
+            if (e == CY_BLE_SUCCESS) {
+                printf("DAC val: %f \t ADC val:%f \r\n", d1.DAC_volt, d1.ADC_volt);
+            } else if (e == CY_BLE_ERROR_NO_DEVICE_ENTITY) {
+                printf("Error 1\r\n");
+            } else if (e == CY_BLE_ERROR_INVALID_PARAMETER) {
+                printf("Error 2\r\n");
+            } else if (e == CY_BLE_ERROR_INVALID_OPERATION) {
+                printf("Error 3\r\n");
+            } else if (e == CY_BLE_ERROR_NTF_DISABLED) {
+                printf("Error 4\r\n");
+            }
         }
-    
+        else {
+            cy_stc_ble_gattc_read_req_t readParams;
+            readParams.attrHandle = 
+            Cy_BLE_GATTC_ReadCharacteristicValue(&cy_ble_connHandle[0], &serviceHandle)   
+        }
    
         CyDelay(10);
         //CyDelay(1000);

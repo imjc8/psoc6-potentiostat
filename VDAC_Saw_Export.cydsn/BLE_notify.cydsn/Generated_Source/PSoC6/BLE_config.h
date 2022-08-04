@@ -275,8 +275,8 @@ extern "C" {
 #define CY_BLE_CONFIG_GATT_MTU                      (0x0017u)
 
 /** The GATT Maximum attribute length. */
-#define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0008u)
-#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0013u)
+#define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x000Eu)
+#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0016u)
 
 /** The number of characteristics supporting the Reliable Write property. */
 #define CY_BLE_CONFIG_GATT_RELIABLE_CHAR_COUNT      (0x0000u)
@@ -307,7 +307,7 @@ extern "C" {
     #define CY_BLE_CONFIG_L2CAP_PSM_COUNT               (1u)
 #endif  /* CY_BLE_L2CAP_ENABLE != 0u */
 
-#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x0Bu)
+#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x0Eu)
 
 /** Max Tx payload size. */
 #define CY_BLE_CONFIG_LL_MAX_TX_PAYLOAD_SIZE        (0x1Bu)
@@ -363,7 +363,7 @@ extern "C" {
 
 /* CUSTOM */
 /** The maximum supported count of Custom services for the GATT Server role. */
-#define CY_BLE_CONFIG_CUSTOMS_SERVICE_COUNT         (0x01u)
+#define CY_BLE_CONFIG_CUSTOMS_SERVICE_COUNT         (0x02u)
 
 /** The maximum supported count of Custom services for the GATT Client role. */
 #define CY_BLE_CONFIG_CUSTOMC_SERVICE_COUNT         (0x00u)
@@ -382,11 +382,18 @@ extern "C" {
 #define CY_BLE_DATA_SERVICE_DATA_CHAR_INDEX   (0x00u) /* Index of Data characteristic */
 #define CY_BLE_DATA_SERVICE_DATA_DATACCCD_DESC_INDEX   (0x00u) /* Index of DataCCCD descriptor */
 
+#define CY_BLE_TEST_CONFIG_SERVICE_INDEX   (0x01u) /* Index of Test Config service in the cy_ble_customs array */
+#define CY_BLE_TEST_CONFIG_CUSTOM_CHARACTERISTIC_CHAR_INDEX   (0x00u) /* Index of Custom Characteristic characteristic */
+
 
 #define CY_BLE_DATA_SERVICE_SERVICE_HANDLE   (0x0010u) /* Handle of Data Service service */
 #define CY_BLE_DATA_SERVICE_DATA_DECL_HANDLE   (0x0011u) /* Handle of Data characteristic declaration */
 #define CY_BLE_DATA_SERVICE_DATA_CHAR_HANDLE   (0x0012u) /* Handle of Data characteristic */
 #define CY_BLE_DATA_SERVICE_DATA_DATACCCD_DESC_HANDLE   (0x0013u) /* Handle of DataCCCD descriptor */
+
+#define CY_BLE_TEST_CONFIG_SERVICE_HANDLE   (0x0014u) /* Handle of Test Config service */
+#define CY_BLE_TEST_CONFIG_CUSTOM_CHARACTERISTIC_DECL_HANDLE   (0x0015u) /* Handle of Custom Characteristic characteristic declaration */
+#define CY_BLE_TEST_CONFIG_CUSTOM_CHARACTERISTIC_CHAR_HANDLE   (0x0016u) /* Handle of Custom Characteristic characteristic */
 
 
 
