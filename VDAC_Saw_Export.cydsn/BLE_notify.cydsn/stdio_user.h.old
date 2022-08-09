@@ -13,7 +13,7 @@
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
 *******************************************************************************/
-
+#include "project.h"
 #ifndef STDIO_USER_H
 #define STDIO_USER_H
 /**
@@ -159,7 +159,6 @@
 * \}
 */
 #include "cy_device_headers.h"
-#include "project.h"
 
 /* Must remain uncommented to use this utility */
 #define IO_STDOUT_ENABLE

@@ -18,6 +18,9 @@ uint8_t hand;
 int flagNotify = 0;
 int sendFlag = false;
 
+uint recv_val = 0;
+bool recv_flag = false;
+
 struct data 
 {
     float32 DAC_volt;
@@ -50,6 +53,14 @@ void genericEventHandler(uint32_t event, void *eventParameter)
         case CY_BLE_EVT_GATTS_WRITE_REQ:
         {
             cy_stc_ble_gatts_write_cmd_req_param_t *writeReqParameter = (cy_stc_ble_gatts_write_cmd_req_param_t *) eventParameter;
+            
+            // if write parameter is this
+            if(CY_BLE_DATA_SERVICE_INBOUND_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle){
+                uint recv_val = writeReqParameter->handleValPair.value.val[0];
+                recv_flag = true;
+            }
+            
+            Cy_BLE_GATTS_WriteRsp(writeReqParameter->connHandle);
             
             break;
         }
@@ -146,10 +157,14 @@ int main(void)
                 printf("Error 4\r\n");
             }
         }
+        else if (recv_flag == true) {
+            printf("value received is: %d\r\n", recv_val);
+            recv_flag = false;
+            // readParams.attrHandle = Cy_BLE_GATTC_ReadCharacteristicValue(&cy_ble_connHandle[0], &serviceHandle)   
+        }
+        
         else {
-            cy_stc_ble_gattc_read_req_t readParams;
-            readParams.attrHandle = 
-            Cy_BLE_GATTC_ReadCharacteristicValue(&cy_ble_connHandle[0], &serviceHandle)   
+            printf("nothing\r\n");
         }
    
         CyDelay(10);

@@ -23,7 +23,7 @@
 */
 /* This array contains attribute handles for the defined Custom Services and their characteristics and descriptors.
    The array index definitions are located in the BLE_custom.h file. */
-static const cy_stc_ble_customs_t cy_ble_customs[0x02u] = {
+static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
 
     /* Data Service service */
     {
@@ -39,21 +39,14 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x02u] = {
                     0x0013u, /* Handle of the DataCCCD descriptor */ 
                 }, 
             },
-        }, 
-    },
 
-    /* Test Config service */
-    {
-        0x0014u, /* Handle of the Test Config service */ 
-        {
-
-            /* Custom Characteristic characteristic */
+            /* Inbound characteristic */
             {
-                0x0016u, /* Handle of the Custom Characteristic characteristic */ 
+                0x0015u, /* Handle of the Inbound characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                    0x0016u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
         }, 

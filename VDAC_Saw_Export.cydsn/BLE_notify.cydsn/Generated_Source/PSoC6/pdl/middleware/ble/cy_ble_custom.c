@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_custom.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the source code for the Custom Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -103,16 +103,16 @@ cy_en_ble_api_result_t Cy_BLE_CUSTOM_Init(cy_stc_ble_custom_config_t *config)
                             cy_ble_serverInfo[discIdx][CY_BLE_SRVI_CUSTOMS + locServIdx].uuid = 0x0000u;
                         }
                     }
-                    
+
                     /* Initialize uuid  */
                     if(cy_ble_customConfigPtr->customc[locServIdx].uuidFormat == 1u)
                     {
-                        cy_ble_serverInfo[discIdx][CY_BLE_SRVI_CUSTOMS + locServIdx].uuid =  
+                        cy_ble_serverInfo[discIdx][CY_BLE_SRVI_CUSTOMS + locServIdx].uuid =
                         * (uint16 *)cy_ble_customConfigPtr->customc[locServIdx].uuid;
                     }
                     else
                     {
-                        cy_ble_serverInfo[discIdx][CY_BLE_SRVI_CUSTOMS + locServIdx].uuid = 0x0000u;    
+                        cy_ble_serverInfo[discIdx][CY_BLE_SRVI_CUSTOMS + locServIdx].uuid = 0x0000u;
                     }
                 }
             }

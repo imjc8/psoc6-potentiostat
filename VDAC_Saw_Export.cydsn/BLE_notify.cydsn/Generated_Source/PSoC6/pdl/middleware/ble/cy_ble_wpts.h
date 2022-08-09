@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file cy_ble_wpts.h
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the function prototypes and constants for Wireless Power Transfer
@@ -8,7 +8,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation. All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation. All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -187,7 +187,7 @@ cy_en_ble_api_result_t Cy_BLE_WPTSS_SendIndication(cy_stc_ble_conn_handle_t conn
  * @{
  */
 
-cy_en_ble_api_result_t Cy_BLE_WPTSC_Discovery(cy_ble_gatt_db_attr_handle_t servHandle, 
+cy_en_ble_api_result_t Cy_BLE_WPTSC_Discovery(cy_ble_gatt_db_attr_handle_t servHandle,
                                               cy_stc_ble_conn_handle_t connHandle);
 
 cy_en_ble_api_result_t Cy_BLE_WPTSC_SetCharacteristicValue(cy_stc_ble_conn_handle_t connHandle,

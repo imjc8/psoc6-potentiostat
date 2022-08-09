@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_cps.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the source code for Cycling Power Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -47,7 +47,7 @@ static uint8_t cy_ble_cpscObserverFlag;
 
 #if CY_BLE_GAP_ROLE_BROADCASTER
 cy_stc_ble_gapp_disc_param_t cy_ble_cpssBroadcastParam;
-cy_stc_ble_gapp_disc_data_t cy_ble_cpssBroadcastData =    
+cy_stc_ble_gapp_disc_data_t cy_ble_cpssBroadcastData =
 {
     {   /* Length, FLAGS, BR/EDR NOT Supported */
         CY_BLE_GAP_ADV_FLAGS_PACKET_LENGTH, (uint8_t)CY_BLE_GAP_ADV_FLAGS, CY_BLE_GAP_ADV_FLAG_BR_EDR_NOT_SUPPORTED,
@@ -207,13 +207,13 @@ cy_en_ble_api_result_t Cy_BLE_CPS_Init(cy_stc_ble_cps_config_t *config)
 * Function Name: Cy_BLE_CPS_RegisterAttrCallback
 ***************************************************************************//**
 *
-*  Registers a callback function for Cycling Power Service service specific 
+*  Registers a callback function for Cycling Power Service service specific
 *  attribute operations.
 *  Service specific write requests from peer device will not be handled with
 *  unregistered callback function.
 *
 *  \param callbackFunc:  An application layer event callback function to receive
-*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t 
+*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t
 *    for Cycling Power Service is:<br>
 *    typedef void (* cy_ble_callback_t) (uint32_t eventCode, void *eventParam),
 *    where:
@@ -238,7 +238,7 @@ cy_en_ble_api_result_t Cy_BLE_CPS_Init(cy_stc_ble_cps_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_CPS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_CPS_ApplCallback = callbackFunc;
     if(cy_ble_cpsConfigPtr != NULL)
     {
@@ -248,7 +248,7 @@ cy_en_ble_api_result_t Cy_BLE_CPS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -268,7 +268,7 @@ cy_en_ble_api_result_t Cy_BLE_CPS_RegisterAttrCallback(cy_ble_callback_t callbac
 *                       * \ref CY_BLE_CPS_POWER_FEATURE
 *                       * \ref CY_BLE_CPS_SENSOR_LOCATION
 *                       * \ref CY_BLE_CPS_POWER_VECTOR
-*                       * \ref CY_BLE_CPS_POWER_CP 
+*                       * \ref CY_BLE_CPS_POWER_CP
 *  \param attrSize:  The size of the characteristic value attribute.
 *  \param attrValue: The pointer to the characteristic value data that should be
 *                    stored to the GATT database.
@@ -328,7 +328,7 @@ cy_en_ble_api_result_t Cy_BLE_CPSS_SetCharacteristicValue(cy_en_ble_cps_char_ind
 *                       * \ref CY_BLE_CPS_POWER_FEATURE
 *                       * \ref CY_BLE_CPS_SENSOR_LOCATION
 *                       * \ref CY_BLE_CPS_POWER_VECTOR
-*                       * \ref CY_BLE_CPS_POWER_CP 
+*                       * \ref CY_BLE_CPS_POWER_CP
 *  \param attrSize:  The size of the characteristic value attribute.
 *  \param attrValue: The pointer to the location where characteristic value data
 *                    should be stored.
@@ -377,7 +377,7 @@ cy_en_ble_api_result_t Cy_BLE_CPSS_GetCharacteristicValue(cy_en_ble_cps_char_ind
 * Function Name: Cy_BLE_CPSS_SetCharacteristicDescriptor
 ***************************************************************************//**
 *
-*  Sets a characteristic descriptor of the specified characteristic of Cycling 
+*  Sets a characteristic descriptor of the specified characteristic of Cycling
 *  Power Service.
 *
 *  \param connHandle: The connection handle.
@@ -387,11 +387,11 @@ cy_en_ble_api_result_t Cy_BLE_CPSS_GetCharacteristicValue(cy_en_ble_cps_char_ind
 *                        * \ref CY_BLE_CPS_POWER_FEATURE
 *                        * \ref CY_BLE_CPS_SENSOR_LOCATION
 *                        * \ref CY_BLE_CPS_POWER_VECTOR
-*                        * \ref CY_BLE_CPS_POWER_CP 
+*                        * \ref CY_BLE_CPS_POWER_CP
 *  \param descrIndex: The index of the service characteristic descriptor of type
 *                     \ref cy_en_ble_cps_descr_index_t. The valid values are,
 *                        * \ref CY_BLE_CPS_CCCD
-*                        * \ref CY_BLE_CPS_SCCD 
+*                        * \ref CY_BLE_CPS_SCCD
 *  \param attrSize:   The size of the characteristic descriptor attribute.
 *  \param attrValue:  The pointer to the descriptor value data that should
 *                     be stored to the GATT database.
@@ -443,7 +443,7 @@ cy_en_ble_api_result_t Cy_BLE_CPSS_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 * Function Name: Cy_BLE_CPSS_GetCharacteristicDescriptor
 ***************************************************************************//**
 *
-*  Gets a characteristic descriptor of the specified characteristic of Cycling 
+*  Gets a characteristic descriptor of the specified characteristic of Cycling
 *  Power Service.
 *
 *  \param connHandle: The connection handle.
@@ -453,11 +453,11 @@ cy_en_ble_api_result_t Cy_BLE_CPSS_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *                        * \ref CY_BLE_CPS_POWER_FEATURE
 *                        * \ref CY_BLE_CPS_SENSOR_LOCATION
 *                        * \ref CY_BLE_CPS_POWER_VECTOR
-*                        * \ref CY_BLE_CPS_POWER_CP 
+*                        * \ref CY_BLE_CPS_POWER_CP
 *  \param descrIndex: The index of the service characteristic descriptor of type
 *                     \ref cy_en_ble_cps_descr_index_t. The valid values are,
 *                        * \ref CY_BLE_CPS_CCCD
-*                        * \ref CY_BLE_CPS_SCCD 
+*                        * \ref CY_BLE_CPS_SCCD
 *  \param attrSize:   The size of the characteristic descriptor attribute.
 *  \param attrValue:  The pointer to the location where characteristic descriptor
 *                     value data should be stored.
@@ -723,7 +723,7 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_CPSS_WriteEventHandler(cy_stc_ble_gatts_
 *                        * \ref CY_BLE_CPS_POWER_FEATURE
 *                        * \ref CY_BLE_CPS_SENSOR_LOCATION
 *                        * \ref CY_BLE_CPS_POWER_VECTOR
-*                        * \ref CY_BLE_CPS_POWER_CP 
+*                        * \ref CY_BLE_CPS_POWER_CP
 *  \param attrSize:   The size of the characteristic value attribute.
 *  \param attrValue:  The pointer to the characteristic value data that should be
 *                     sent to the Client device.
@@ -803,7 +803,7 @@ cy_en_ble_api_result_t Cy_BLE_CPSS_SendNotification(cy_stc_ble_conn_handle_t con
 *                        * \ref CY_BLE_CPS_POWER_FEATURE
 *                        * \ref CY_BLE_CPS_SENSOR_LOCATION
 *                        * \ref CY_BLE_CPS_POWER_VECTOR
-*                        * \ref CY_BLE_CPS_POWER_CP 
+*                        * \ref CY_BLE_CPS_POWER_CP
 *  \param attrSize:   The size of the characteristic value attribute.
 *  \param attrValue:  The pointer to the characteristic value data that should be
 *                     sent to the Client device.
@@ -1024,12 +1024,12 @@ static void Cy_BLE_CPSS_ConnUpdateCompleteEventHandler(const cy_stc_ble_gap_conn
 *                      to \ref CY_BLE_GAP_ADV_ADVERT_INTERVAL_MAX. This parameter
 *                      is ignored when when broadcasting is already started.
 *  \param attrSize:    The size of the characteristic value attribute.
-*                      This size is limited by maximum advertising packet length 
+*                      This size is limited by maximum advertising packet length
 *                      and advertising header size.
 *  \param attrValue:   The pointer to the Cycling Power Measurement characteristic
-*                      that include the mandatory fields (e.g. the Flags field and 
-*                      the Instantaneous Power field and depending on the Flags 
-*                      field, some optional fields in a non connectable undirected 
+*                      that include the mandatory fields (e.g. the Flags field and
+*                      the Instantaneous Power field and depending on the Flags
+*                      field, some optional fields in a non connectable undirected
 *                      advertising event.
 *
 *  \return
@@ -1344,14 +1344,14 @@ static void Cy_BLE_CPSC_GetCharRange(cy_stc_ble_disc_range_info_t *charRangeInfo
 *                        * \ref CY_BLE_CPS_POWER_FEATURE
 *                        * \ref CY_BLE_CPS_SENSOR_LOCATION
 *                        * \ref CY_BLE_CPS_POWER_VECTOR
-*                        * \ref CY_BLE_CPS_POWER_CP 
+*                        * \ref CY_BLE_CPS_POWER_CP
 *  \param attrSize:   The size of the characteristic value attribute.
 *  \param attrValue:  Pointer to the characteristic value data that
 *                     should be send to the server device.
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1367,7 +1367,7 @@ static void Cy_BLE_CPSC_GetCharRange(cy_stc_ble_disc_range_info_t *charRangeInfo
 *   If the CPS service-specific callback is registered
 *   with Cy_BLE_CPS_RegisterAttrCallback():
 *   * \ref CY_BLE_EVT_CPSC_WRITE_CHAR_RESPONSE - In case if the requested attribute is
-*     successfully written on the peer device, the details 
+*     successfully written on the peer device, the details
 *     (char index, etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_cps_char_value_t.
 *   .
@@ -1453,10 +1453,10 @@ cy_en_ble_api_result_t Cy_BLE_CPSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 *                        * \ref CY_BLE_CPS_POWER_FEATURE
 *                        * \ref CY_BLE_CPS_SENSOR_LOCATION
 *                        * \ref CY_BLE_CPS_POWER_VECTOR
-*                        * \ref CY_BLE_CPS_POWER_CP 
+*                        * \ref CY_BLE_CPS_POWER_CP
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1472,18 +1472,18 @@ cy_en_ble_api_result_t Cy_BLE_CPSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 *   If the CPS service-specific callback is registered
 *      with Cy_BLE_CPS_RegisterAttrCallback():
 *   * \ref CY_BLE_EVT_CPSC_READ_CHAR_RESPONSE - In case if the requested attribute is
-*     successfully read on the peer device, the details 
+*     successfully read on the peer device, the details
 *     (char index , value, etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_gatt_err_param_t.
 *   .
 *   Otherwise (if an CPS service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure 
+*     provided with an event parameter structure
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with 
+*     requested attribute on the peer device, the details are provided with
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1550,11 +1550,11 @@ cy_en_ble_api_result_t Cy_BLE_CPSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *                        * \ref CY_BLE_CPS_POWER_FEATURE
 *                        * \ref CY_BLE_CPS_SENSOR_LOCATION
 *                        * \ref CY_BLE_CPS_POWER_VECTOR
-*                        * \ref CY_BLE_CPS_POWER_CP 
+*                        * \ref CY_BLE_CPS_POWER_CP
 *  \param descrIndex: The index of the service characteristic descriptor of type
 *                     \ref cy_en_ble_cps_descr_index_t. The valid values are,
 *                        * \ref CY_BLE_CPS_CCCD
-*                        * \ref CY_BLE_CPS_SCCD 
+*                        * \ref CY_BLE_CPS_SCCD
 *  \param attrSize:   The size of the characteristic value attribute.
 *  \param attrValue:  The pointer to the characteristic descriptor value data that
 *                     should be sent to the server device.
@@ -1576,7 +1576,7 @@ cy_en_ble_api_result_t Cy_BLE_CPSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *   If the CPS service-specific callback is registered
 *   with Cy_BLE_CPS_RegisterAttrCallback():
 *   * \ref CY_BLE_EVT_CPSC_WRITE_DESCR_RESPONSE - In case if the requested attribute is
-*     successfully written on the peer device, the details 
+*     successfully written on the peer device, the details
 *     (char index, descr index etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_cps_descr_value_t.
 *   .
@@ -1585,7 +1585,7 @@ cy_en_ble_api_result_t Cy_BLE_CPSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *     successfully written on the peer device.
 *
 *   * \ref CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with 
+*     requested attribute on the peer device, the details are provided with
 *     an event parameter structure ( \ref cy_stc_ble_gatt_err_param_t).
 *
 ******************************************************************************/
@@ -1646,7 +1646,7 @@ cy_en_ble_api_result_t Cy_BLE_CPSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *                        * \ref CY_BLE_CPS_POWER_FEATURE
 *                        * \ref CY_BLE_CPS_SENSOR_LOCATION
 *                        * \ref CY_BLE_CPS_POWER_VECTOR
-*                        * \ref CY_BLE_CPS_POWER_CP 
+*                        * \ref CY_BLE_CPS_POWER_CP
 *  \param descrIndex: The index of the service characteristic descriptor of type
 *                     \ref cy_en_ble_cps_descr_index_t. The valid values are,
 *                        * \ref CY_BLE_CPS_CCCD
@@ -1676,11 +1676,11 @@ cy_en_ble_api_result_t Cy_BLE_CPSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *   Otherwise (if an CPS service-specific callback is not registered):
 *   * \ref CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure 
+*     provided with an event parameter structure
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * \ref CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with 
+*     requested attribute on the peer device, the details are provided with
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/

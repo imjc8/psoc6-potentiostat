@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_bls.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  This file contains the source code for the Blood Pressure Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -129,13 +129,13 @@ cy_en_ble_api_result_t Cy_BLE_BLS_Init(cy_stc_ble_bls_config_t *config)
 * Function Name: Cy_BLE_BLS_RegisterAttrCallback
 ***************************************************************************//**
 *
-*  Registers a callback function for Blood Pressure Service specific attribute 
+*  Registers a callback function for Blood Pressure Service specific attribute
 *  operations.
 *  Service specific write requests from the peer device will not be handled with
 *  an unregistered callback function.
 *
 *  \param callbackFunc: An application layer event callback function to receive
-*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t 
+*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t
 *    for Blood Pressure Service is:\n
 *    typedef void (* cy_ble_callback_t) (uint32_t eventCode, void *eventParam),
 *    where:
@@ -160,7 +160,7 @@ cy_en_ble_api_result_t Cy_BLE_BLS_Init(cy_stc_ble_bls_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_BLS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_BLS_ApplCallback = callbackFunc;
     if(cy_ble_blsConfigPtr != NULL)
     {
@@ -170,7 +170,7 @@ cy_en_ble_api_result_t Cy_BLE_BLS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -195,7 +195,7 @@ cy_en_ble_api_result_t Cy_BLE_BLS_RegisterAttrCallback(cy_ble_callback_t callbac
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                             | Description
 *   ------------                            | -----------
 *   CY_BLE_SUCCESS                          | The request was handled successfully.
@@ -373,7 +373,7 @@ cy_en_ble_api_result_t Cy_BLE_BLSS_GetCharacteristicDescriptor(cy_stc_ble_conn_h
 * Function Name: Cy_BLE_BLSS_SendNotification
 ***************************************************************************//**
 *
-*  Sends a notification with the characteristic value, as specified by its 
+*  Sends a notification with the characteristic value, as specified by its
 *  charIndex, to the Client device.
 *  On enabling notification successfully for a service characteristic it sends out a
 *  'Handle Value Notification' which results in \ref CY_BLE_EVT_BLSC_NOTIFICATION event
@@ -452,8 +452,8 @@ cy_en_ble_api_result_t Cy_BLE_BLSS_SendNotification(cy_stc_ble_conn_handle_t con
 *  Sends an indication of the specified characteristic to the Client device.
 *
 *  On enabling indication successfully it sends out a Handle Value Indication which
-*  results in a \ref CY_BLE_EVT_BLSC_INDICATION or \ref CY_BLE_EVT_GATTC_HANDLE_VALUE_IND 
-*  (if the service-specific callback function is not registered) event at the 
+*  results in a \ref CY_BLE_EVT_BLSC_INDICATION or \ref CY_BLE_EVT_GATTC_HANDLE_VALUE_IND
+*  (if the service-specific callback function is not registered) event at the
 *  GATT Client's end.
 *
 *  \param connHandle: The connection handle.
@@ -679,17 +679,17 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_BLSS_WriteEventHandler(const cy_stc_ble_
 *  If a BLS service specific callback is registered
 *  (with Cy_BLE_BLS_RegisterAttrCallback):
 *  * \ref CY_BLE_EVT_BLSC_READ_CHAR_RESPONSE - if the requested attribute is
-*    successfully read on the peer device, the details (char index , 
+*    successfully read on the peer device, the details (char index ,
 *    value, etc.) are provided with an event parameter structure
 *    of type \ref cy_stc_ble_bls_char_value_t.
 *  .
 *  Otherwise (if a BLS service-specific callback is not registered):
 *  * \ref CY_BLE_EVT_GATTC_READ_RSP - if the requested attribute is
-*    successfully read on the peer device, the details (handle, 
+*    successfully read on the peer device, the details (handle,
 *    value, etc.) are provided with the event parameters
 *    structure \ref cy_stc_ble_gattc_read_rsp_param_t.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*    requested attribute on the peer device, the details are provided 
+*    requested attribute on the peer device, the details are provided
 *    with the event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -779,7 +779,7 @@ cy_en_ble_api_result_t Cy_BLE_BLSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *  If a BLS service-specific callback is registered
 *  with Cy_BLE_BLS_RegisterAttrCallback():
 *  * \ref CY_BLE_EVT_BLSC_WRITE_DESCR_RESPONSE - if the requested attribute is
-*    successfully written on the peer device, the details (char index, 
+*    successfully written on the peer device, the details (char index,
 *    descr index etc.) are provided with an event parameter structure
 *    of type \ref cy_stc_ble_bls_descr_value_t.
 *  .
@@ -787,7 +787,7 @@ cy_en_ble_api_result_t Cy_BLE_BLSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *  * \ref CY_BLE_EVT_GATTC_WRITE_RSP - if the requested attribute is
 *    successfully written on the peer device.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*    requested attribute on the peer device, the details are provided 
+*    requested attribute on the peer device, the details are provided
 *    with the event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -875,17 +875,17 @@ cy_en_ble_api_result_t Cy_BLE_BLSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  If a BLS service-specific callback is registered
 *  with Cy_BLE_BLS_RegisterAttrCallback():
 *  * \ref CY_BLE_EVT_BLSC_READ_DESCR_RESPONSE - if the requested attribute is
-*    successfully read on the peer device, the details (char index, descr index, 
+*    successfully read on the peer device, the details (char index, descr index,
 *    value, etc.) are provided with an event parameter structure
 *    of type \ref cy_stc_ble_bls_descr_value_t.
 *  .
 *  Otherwise (if a BLS service-specific callback is not registered):
 *  * \ref CY_BLE_EVT_GATTC_READ_RSP - if the requested attribute is
-*    successfully read on the peer device, the details (handle, 
+*    successfully read on the peer device, the details (handle,
 *    value, etc.) are provided with the event parameters
 *    structure \ref cy_stc_ble_gattc_read_rsp_param_t.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*    requested attribute on the peer device, the details are provided 
+*    requested attribute on the peer device, the details are provided
 *    with the event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -900,7 +900,7 @@ cy_en_ble_api_result_t Cy_BLE_BLSC_GetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_BLS_CHAR_COUNT) || (descrIndex >= CY_BLE_BLS_DESCR_COUNT) || 
+    else if((charIndex >= CY_BLE_BLS_CHAR_COUNT) || (descrIndex >= CY_BLE_BLS_DESCR_COUNT) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

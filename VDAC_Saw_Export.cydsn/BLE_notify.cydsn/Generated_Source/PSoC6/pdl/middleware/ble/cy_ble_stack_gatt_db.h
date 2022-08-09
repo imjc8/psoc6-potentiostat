@@ -1,17 +1,17 @@
 /***************************************************************************//**
 * \file cy_ble_stack_gatt_db.h
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  This file contains declarations of public BLE APIs of Generic Attribute Profile - GATT DB Access layer.
 *  Also specifies the defines, constants, and data structures required for the APIs.
-* 
+*
 * Related Document:
 *  BLE Standard Spec - CoreV4.2, CSS, CSAs, ESR05, ESR06
-* 
+*
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation. All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation. All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -71,7 +71,7 @@ extern "C" {
 #define CY_BLE_GATT_DB_ATTR_PROP_RD_SECURITY_BIT_SHIFT  (0x1u)        /**< Attribute Read prop security bit shift */
 
 /** Attribute Write Permissions B1: Bluetooth Spec Defined */
-/**\note: It is mandatory to set 'CY_BLE_GATT_DB_ATTR_PROP_WR_SEC_ENCRYPT' bit if either 
+/**\note: It is mandatory to set 'CY_BLE_GATT_DB_ATTR_PROP_WR_SEC_ENCRYPT' bit if either
           'CY_BLE_GATT_DB_ATTR_PROP_WR_SEC_AUTHENTICATE' or 'CY_BLE_GATT_DB_ATTR_PROP_WR_SEC_SC_AUTHENTICATE'
           bits are set. Otherwise these bits will be ignored. */
 #define CY_BLE_GATT_DB_ATTR_PROP_WRITE                  (0x00000100u) /**< Attribute Write permission */
@@ -101,11 +101,11 @@ extern "C" {
 /** Extended properties values.*/
 /**\note: These properties are not
    part of the permission field. The peer GATT layer or local GATT
-   layer must read "Characteristic Extended Properties 
+   layer must read "Characteristic Extended Properties
    Descriptor" value. */
 #define CY_BLE_GATT_DB_CH_PROP_EXT_PROP_RELIABLE_WRITE   (0x0001u) /**< extended property of reliable write */
 #define CY_BLE_GATT_DB_CH_PROP_EXT_PROP_WRITABLE_AUX     (0x0002u) /**< extended property of writable aux */
-    
+
 /** Implementation permissions B3: Implementation specific
    defines to access runtime characteristics. */
 
@@ -238,7 +238,7 @@ typedef struct
 
 /** Attribute value type used in GATT database */
 typedef union
-{    
+{
    /** Buffer containing 32-bit or 128-bit UUID values for Service and
        Characteristic declaration.
        Attribute format structure: if entry is for characteristic value format,
@@ -255,44 +255,44 @@ typedef struct
 {
     /** Index for querying BLE GATT database */
     uint16_t                 attHandle;
-    
+
     /** UUID: 16-bit UUID type for an attribute entry. For 32-bit and
        128-bit UUIDs, the last 16 bits should be stored in this entry.
        The GATT DB access layer shall retrieve complete 128-bit UUID from the
        cy_ble_gatts_att_generic_val_t structure. */
     uint16_t                 attType;
-    
-    /** The permission bits are stored in a 32-bit field. These 
+
+    /** The permission bits are stored in a 32-bit field. These
         32-bits can be grouped in four bytes. The least significant byte
-        is byte 0 (B0) and the most significant byte is byte 3 (B3). The 
+        is byte 0 (B0) and the most significant byte is byte 3 (B3). The
         bytes where the permissions have been grouped is as given below.
          * Attribute permissions for read (B0)
          * Attribute permissions for write (B1)
          * Characteristic properties (B2)
          * Implementation specific permission (B3)
-         If permission is set to CY_BLE_GATT_DB_ATTR_CHAR_VAL_RD_EVENT, all GATT 
+         If permission is set to CY_BLE_GATT_DB_ATTR_CHAR_VAL_RD_EVENT, all GATT
          characteristic read requests will be indicated to the application using
          the CY_BLE_EVT_GATTS_READ_CHAR_VAL_ACCESS_REQ event.
      */
     uint32_t                 permission;
-    
+
     /** Attribute end handle, indicating logical boundary of given attribute. */
     uint16_t                 attEndHandle;
-    
+
     /** Attribute value format, it can be one of following:
         * uint16_t 16bit - UUID for 16-bit service and characteristic declaration
         * cy_ble_gatts_att_generic_val_t attFormatValue - Buffer containing 32-bit
             or 128-bit UUID values for service & characteristic declaration
-        * cy_ble_gatts_att_generic_val_t attFormatValue - Buffer containing generic 
+        * cy_ble_gatts_att_generic_val_t attFormatValue - Buffer containing generic
             characteristic definition value or generic descriptor values
      */
     cy_stc_ble_gatts_att_value_t     attValue;
-    
- } cy_stc_ble_gatts_db_t; 
+
+ } cy_stc_ble_gatts_db_t;
 
 /** GATT database information parameters*/
 typedef struct
-{   
+{
     /** Pointer to GATT DB */
     const cy_stc_ble_gatts_db_t    * gattDbPtr;
 
@@ -306,11 +306,11 @@ typedef struct
 
 /** GATT database attribute value parameters*/
 typedef struct
-{   
+{
     /** handle value pair of type cy_stc_ble_gatt_handle_value_pair_t.
              'handleValuePair.attrHandle' is an input for which a value must be read/written.
              'handleValuePair.value.len' is an input parameter for the length to be read/written.
-             'handleValuePair.value.val' is an input parameter for the data buffer when writing and 
+             'handleValuePair.value.val' is an input parameter for the data buffer when writing and
               an output parameter for the data buffer when reading.
              'handleValuePair.actualLen' must be ignored as it is unused */
     cy_stc_ble_gatt_handle_value_pair_t  handleValuePair;
@@ -330,7 +330,7 @@ typedef struct
 
 /** GATT database attribute enable parameters*/
 typedef struct
-{   
+{
     /** Attribute handle */
     cy_ble_gatt_db_attr_handle_t    attrHandle;
 
@@ -341,10 +341,10 @@ typedef cy_stc_ble_gatts_db_attr_enable_info_t      cy_stc_ble_gatts_db_attr_dis
 
 /** GATT database authorize parameters*/
 typedef struct
-{   
-    /** Setting to '0' turns off authorization on the entire GATT database and all attributes marked 
-            as authorize will return an authorization error. 
-         Setting this to any non-zero value will authorize the entire GATT database and all attributes 
+{
+    /** Setting to '0' turns off authorization on the entire GATT database and all attributes marked
+            as authorize will return an authorization error.
+         Setting this to any non-zero value will authorize the entire GATT database and all attributes
          marked as authorize can be read / written based on other allowed permissions. */
     uint8_t    authorize;
 
@@ -390,21 +390,21 @@ typedef cy_stc_ble_gatts_att_value_t      cy_stc_ble_char_aggregate_fmt_t;
 /******************************************************************************
 * Function Name: Cy_BLE_GATTS_DbRegister
 ***************************************************************************//**
-* 
-*  This function is used by GATT Server application to register the GATT database. The GATT 
+*
+*  This function is used by GATT Server application to register the GATT database. The GATT
 *  database stores all the attributes used by the GATT server, along with their
 *  permissions. This is a blocking function. No event is generated on calling
 *  this function.
-*  
-*  By default, all the attributes are enabled (Discoverable during Discovery procedures)  
-*  in the GATT database. User can disable the attribute using 
+*
+*  By default, all the attributes are enabled (Discoverable during Discovery procedures)
+*  in the GATT database. User can disable the attribute using
 *  Cy_BLE_GATTS_DisableAttribute function and can enable the attribute using
 *  Cy_BLE_GATTS_EnableAttribute function.
 *  By default, authorization permission for GATT database is not set. User can set or clear
 *  authorization permission using Cy_BLE_GATTS_DbAuthorize function.
-* 
+*
 *  \param param: Parameter is of type 'cy_stc_ble_gatts_db_info_t'.
-* 
+*
 * \return
 *  cy_en_ble_api_result_t: Return value indicates whether the function succeeded or
 *  failed. Following are the possible error codes.
@@ -413,7 +413,7 @@ typedef cy_stc_ble_gatts_att_value_t      cy_stc_ble_char_aggregate_fmt_t;
 *  ------------                      | -----------
 *   CY_BLE_SUCCESS                   | On successful operation.
 *   CY_BLE_ERROR_INVALID_PARAMETER   | If the Database has zero entries or is a NULL pointer.
-* 
+*
 ******************************************************************************/
 cy_en_ble_api_result_t Cy_BLE_GATTS_DbRegister
 (
@@ -423,21 +423,21 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_DbRegister
 /******************************************************************************
 * Function Name: Cy_BLE_GATTS_WriteAttributeValue
 ***************************************************************************//**
-* 
-*  This function is used by GATT Server application to write to the value field 
-*  of the specified attribute in the GATT database. 
-*  This is a blocking function. No event is generated on calling this function.
-* 
-*  If the write is due to peer GATT Client initiated write operation, 
-*  the function internally check for the write permissions of the specified attribute. 
-*  Write occurs only if the check passes. If the permission check fails, this function 
-*  returns with an Error code. 
 *
-*  If the write is initiated by the application, this function does not check for the 
+*  This function is used by GATT Server application to write to the value field
+*  of the specified attribute in the GATT database.
+*  This is a blocking function. No event is generated on calling this function.
+*
+*  If the write is due to peer GATT Client initiated write operation,
+*  the function internally check for the write permissions of the specified attribute.
+*  Write occurs only if the check passes. If the permission check fails, this function
+*  returns with an Error code.
+*
+*  If the write is initiated by the application, this function does not check for the
 *  write permissions of the specified attribute.
-* 
+*
 *  \param param: Parameter is of type 'cy_stc_ble_gatts_db_attr_val_info_t'.
-* 
+*
 * \return
 *  cy_en_ble_gatt_err_code_t : Return value indicates whether the function succeeded or
 *  failed. Following are the possible error codes.
@@ -454,7 +454,7 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_DbRegister
 *  CY_BLE_GATT_ERR_INSUFFICIENT_AUTHORIZATION  | Peer client is not authorized (Peer Initiated).
 *  CY_BLE_GATT_ERR_INVALID_OFFSET              | param->offset is invalid.
 *  CY_BLE_GATT_ERR_INVALID_ATTRIBUTE_LEN       | handleValuePair.value.len is invalid.
-* 
+*
 ******************************************************************************/
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValue
 (
@@ -464,15 +464,15 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValue
 /******************************************************************************
 * Function Name: Cy_BLE_GATTS_ReadAttributeValue
 ***************************************************************************//**
-* 
-*  GATT Server application uses this function to read the value field of the specified 
+*
+*  GATT Server application uses this function to read the value field of the specified
 *  attribute from the GATT database. This is a blocking function. No event is
 *  generated on calling this function.
-* 
-*     
+*
+*
 *  \param param: Parameter is of type 'cy_stc_ble_gatts_db_attr_val_info_t'.
 *  param-> offset: not used, to be ignored
-* 
+*
 * \return
 *  cy_en_ble_gatt_err_code_t : Return value indicates whether the function succeeded or
 *  failed. Following are the possible error codes.
@@ -487,7 +487,7 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValue
 *  CY_BLE_GATT_ERR_INSUFFICIENT_ENC_KEY_SIZE   | Link is encrypted with insufficient key size (Peer Initiated).
 *  CY_BLE_GATT_ERR_INSUFFICIENT_AUTHENTICATION | Link is unauthenticated (Peer Initiated).
 *  CY_BLE_GATT_ERR_INSUFFICIENT_AUTHORIZATION  | Peer client is not authorized (Peer Initiated).
-* 
+*
 ******************************************************************************/
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValue
 (
@@ -498,18 +498,18 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValue
 /******************************************************************************
 * Function Name: Cy_BLE_GATTS_EnableAttribute
 ***************************************************************************//**
-* 
-*  This function is used by GATT Server application to enable the attribute entry for 
-*  a service or characteristic logical group in the GATT database registered in the 
+*
+*  This function is used by GATT Server application to enable the attribute entry for
+*  a service or characteristic logical group in the GATT database registered in the
 *  BLE Stack. This is a blocking function. No event is generated on calling this function.
-* 
-*  This function returns an error if the attribute does not belong to any 
+*
+*  This function returns an error if the attribute does not belong to any
 *  service or characteristic logical group. If the attribute entry is already
 *  enabled, then this function returns status CY_BLE_GATT_ERR_NONE.
-* 
+*
 *  \param param: Parameter is of type 'cy_stc_ble_gatts_db_attr_enable_info_t'.
 *                param->attrHandle: Handle of the attribute to enable(type cy_ble_gatt_db_attr_handle_t) in GATT database.
-* 
+*
 * \return
 *  cy_en_ble_gatt_err_code_t : Return value indicates whether the function succeeded or
 *  failed. Following are the possible error codes.
@@ -519,7 +519,7 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValue
 *   CY_BLE_GATT_ERR_NONE              | On successful operation.
 *   CY_BLE_GATT_ERR_INVALID_HANDLE    | 'attrHandle' is not valid.
 *   CY_BLE_GATT_ERR_UNLIKELY_ERROR    | NULL pointer as input parameter.
-* 
+*
 ******************************************************************************/
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_EnableAttribute
 (
@@ -529,20 +529,20 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_EnableAttribute
 /******************************************************************************
 * Function Name: Cy_BLE_GATTS_DisableAttribute
 ***************************************************************************//**
-* 
-*  This function is used by GATT Server application to disable the attribute entry for 
-*  service or characteristic logical group in the GATT database registered in the 
+*
+*  This function is used by GATT Server application to disable the attribute entry for
+*  service or characteristic logical group in the GATT database registered in the
 *  BLE Stack. This is a blocking function. No event is generated on calling this function.
-* 
+*
 *  This function returns an error if the attribute does not belong to a service or
 *  a characteristic logical group. If attribute entry is already disabled then
 *  it returns CY_BLE_GATT_ERR_NONE as the status. All the attribute entries are
 *  enabled in the GATT database during GATT database registration.
-* 
+*
 *  \param param: Parameter is of type 'cy_stc_ble_gatts_db_attr_disable_info_t'.
 *              param->attrHandle: Attribute handle of the registered GATT Database to disable
 *               particular attribute entry, of type 'cy_ble_gatt_db_attr_handle_t'
-* 
+*
 * \return
 *  cy_en_ble_gatt_err_code_t : Return value indicates whether the function succeeded or
 *  failed. Following are the possible error codes.
@@ -552,7 +552,7 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_EnableAttribute
 *   CY_BLE_GATT_ERR_NONE              | On successful operation.
 *   CY_BLE_GATT_ERR_INVALID_HANDLE    | 'attrHandle' is not valid.
 *   CY_BLE_GATT_ERR_UNLIKELY_ERROR    | NULL pointer as input parameter.
-* 
+*
 ******************************************************************************/
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_DisableAttribute
 (
@@ -562,12 +562,12 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_DisableAttribute
 /******************************************************************************
 * Function Name: Cy_BLE_GATTS_DbAuthorize
 ***************************************************************************//**
-* 
+*
 *  This function sets or clears authorization permission for the GATT database.
 *  This is a blocking function. No event is generated on calling this function.
-* 
+*
 *  \param param: Parameter is of type 'cy_stc_ble_gatts_db_authorize_info_t'.
-* 
+*
 * \return
 *  cy_en_ble_gatt_err_code_t : Return value indicates whether the function succeeded or
 *  failed. Following are the possible error codes.
@@ -576,7 +576,7 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_DisableAttribute
 *  ------------                       | -----------
 *  CY_BLE_GATT_ERR_NONE               | On successful operation.
 *  CY_BLE_GATT_ERR_UNLIKELY_ERROR     | If 'param' is NULL.
-* 
+*
 ******************************************************************************/
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_DbAuthorize
 (
@@ -590,18 +590,18 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_DbAuthorize
 /******************************************************************************
 * Function Name: Cy_BLE_GATT_DbCheckPermission
 ***************************************************************************//**
-* 
+*
 *  This function validates the security permission for the given attribute handle
-* 
+*
 *  \param attrhandle: Attribute handle of type 'cy_ble_gatt_db_attr_handle_t'
 *  \param connHandle: Connection handle of type 'cy_stc_ble_conn_handle_t'
-*  \param flags: Flag indicating whether request is peer initiated (CY_BLE_GATT_DB_PEER_INITIATED) 
+*  \param flags: Flag indicating whether request is peer initiated (CY_BLE_GATT_DB_PEER_INITIATED)
 *                       or local initiated (CY_BLE_GATT_DB_LOCALLY_INITIATED).
-* 
+*
 * \return
 *  cy_en_ble_gatt_err_code_t : Return value indicates whether the function succeeded or
-*  failed with GATT error codes. For details, refer to Bluetooth 5.0 spec, vol3, part F, Table 3.3 
-* 
+*  failed with GATT error codes. For details, refer to Bluetooth 5.0 spec, vol3, part F, Table 3.3
+*
 ******************************************************************************/
 cy_en_ble_gatt_err_code_t Cy_BLE_GATT_DbCheckPermission
 (

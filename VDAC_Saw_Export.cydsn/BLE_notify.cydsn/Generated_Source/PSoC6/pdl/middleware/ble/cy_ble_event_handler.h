@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file cy_ble_event_handler.h
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the prototypes and constants used in the Event Handler State Machine
@@ -8,7 +8,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -202,7 +202,7 @@ typedef enum
     /** GATT Server - This event indicates that the CCCD data CRC is wrong.
      *  If this event occurs, removing the bonding information of all devices
      *  by using the Cy_BLE_GAP_RemoveBondedDevice() API is recommended.
-     *  The CCCD buffer in the RAM for the current connection is cleaned (set to zero) 
+     *  The CCCD buffer in the RAM for the current connection is cleaned (set to zero)
      *  The event parameter is NULL.
      */
     CY_BLE_EVT_GATTS_EVT_CCCD_CORRUPT,
@@ -293,13 +293,13 @@ typedef enum
      *  The parameter of this event is a structure of the cy_stc_ble_conn_handle_t type.
      */
     CY_BLE_EVT_GATTC_CHAR_DISCOVERY_COMPLETE,
-    
+
     /** GATT Client - The service (not defined in the GATT database) was found during
     *  the server device discovery. The discovery procedure skips this service.
     *  This event parameter is a structure of the cy_stc_ble_disc_srv_info_t type.
     */
     CY_BLE_EVT_GATTC_DISC_SKIPPED_SERVICE,
-                    
+
     /** GATT Client - The discovery of a remote device completed successfully.
      *  The parameter of this event is a structure of the cy_stc_ble_conn_handle_t type.
      */
@@ -1041,7 +1041,7 @@ typedef enum
     /** ESS Server - Write Request for Environmental Sensing Service
      *  Characteristic Descriptor was received. The parameter of this event is a structure of
      *  the cy_stc_ble_ess_descr_value_t type. This event is generated only when write for
-     *  #CY_BLE_ESS_ES_TRIGGER_SETTINGS_DESCR1, #CY_BLE_ESS_ES_TRIGGER_SETTINGS_DESCR2, 
+     *  #CY_BLE_ESS_ES_TRIGGER_SETTINGS_DESCR1, #CY_BLE_ESS_ES_TRIGGER_SETTINGS_DESCR2,
      *  #CY_BLE_ESS_ES_TRIGGER_SETTINGS_DESCR3 or CY_BLE_ESS_ES_CONFIG_DESCR occurs.
      */
     CY_BLE_EVT_ESSS_DESCR_WRITE,
