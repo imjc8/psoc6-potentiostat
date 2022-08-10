@@ -56,8 +56,9 @@ void genericEventHandler(uint32_t event, void *eventParameter)
             
             // if write parameter is this
             if(CY_BLE_DATA_SERVICE_INBOUND_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle){
-                uint recv_val = writeReqParameter->handleValPair.value.val[0];
-                recv_flag = true;
+                uint8 recv_val = writeReqParameter->handleValPair.value.val[0];
+                printf("recv val is %d\r\n", recv_val);
+                //recv_flag = true;
             }
             
             Cy_BLE_GATTS_WriteRsp(writeReqParameter->connHandle);
@@ -158,13 +159,13 @@ int main(void)
             }
         }
         else if (recv_flag == true) {
-            printf("value received is: %d\r\n", recv_val);
-            recv_flag = false;
+            //printf("value received is: %d\r\n", recv_val);
+            //recv_flag = false;
             // readParams.attrHandle = Cy_BLE_GATTC_ReadCharacteristicValue(&cy_ble_connHandle[0], &serviceHandle)   
         }
         
         else {
-            printf("nothing\r\n");
+            // printf("nothing\r\n");
         }
    
         CyDelay(10);
