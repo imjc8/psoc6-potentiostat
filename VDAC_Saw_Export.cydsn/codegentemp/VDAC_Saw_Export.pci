@@ -1,5 +1,5 @@
 # VDAC_Saw_Export
-# 2022-07-25 08:38:19Z
+# 2022-08-11 01:39:03Z
 
 dont_use_location SMIF -1 -1 0
 # IO_2@[IOP=(9)][IoId=(2)] is reserved: AnalogTrackJump
@@ -17,6 +17,9 @@ set_io "VDAC_Out(0)" iocell 9 3
 set_io "\UART_1:tx(0)\" iocell 5 1
 set_io "\UART_1:rx(0)\" iocell 5 0
 set_io "ADC_IN(0)" iocell 10 2
+set_io "LED_1(0)" iocell 10 1
+set_io "LED_2(0)" iocell 10 0
+set_io "LED_3(0)" iocell 9 4
 set_location "\VDAC_1:CTDAC\" CTDAC -1 -1 0
 set_location "\VDAC_1:VOUTBUF\" OA -1 -1 0
 set_location "\VDAC_1:SAMPLEHOLD\" SAMPLEHOLD -1 -1 0

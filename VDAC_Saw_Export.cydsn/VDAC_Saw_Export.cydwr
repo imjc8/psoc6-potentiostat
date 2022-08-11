@@ -16,10 +16,13 @@
       <Data key="818dab76-364e-4157-b9b0-82180f3dccb3" value="SysInt_1" />
     </Group>
     <Group key="Pin">
+      <Data key="8e0dbd15-59b9-4008-ba10-961a118d6113" value="LED_2" />
       <Data key="52b39e98-8c09-4d72-bee9-530c70baa6ff" value="ADC_IN" />
       <Data key="649fb4b2-67bf-4dda-96bc-c48644b00b55/65f3af6c-759b-4ccb-8c66-5c95ba1f5f4f" value="UART_1_tx" />
       <Data key="649fb4b2-67bf-4dda-96bc-c48644b00b55/b7e8018e-1ef7-49c0-b5a5-61641a03e31c" value="UART_1_rx" />
       <Data key="0113321b-4a37-46f6-8407-2f8646c68756" value="VDAC_Out" />
+      <Data key="a61270bc-07ec-447d-ac9e-34cfe85c30e9" value="LED_1" />
+      <Data key="e4245cc5-765a-4ec9-aa78-a3c7f9db6a87" value="LED_3" />
     </Group>
   </Group>
   <Group key="Interrupt">
@@ -692,6 +695,11 @@
     </Group>
   </Group>
   <Group key="Pin2">
+    <Group key="8e0dbd15-59b9-4008-ba10-961a118d6113">
+      <Group key="0">
+        <Data key="Port Format" value="10,0" />
+      </Group>
+    </Group>
     <Group key="52b39e98-8c09-4d72-bee9-530c70baa6ff">
       <Group key="0">
         <Data key="Port Format" value="10,2" />
@@ -710,6 +718,16 @@
     <Group key="0113321b-4a37-46f6-8407-2f8646c68756">
       <Group key="0">
         <Data key="Port Format" value="9,3" />
+      </Group>
+    </Group>
+    <Group key="a61270bc-07ec-447d-ac9e-34cfe85c30e9">
+      <Group key="0">
+        <Data key="Port Format" value="10,1" />
+      </Group>
+    </Group>
+    <Group key="e4245cc5-765a-4ec9-aa78-a3c7f9db6a87">
+      <Group key="0">
+        <Data key="Port Format" value="9,4" />
       </Group>
     </Group>
     <Group key="UnAssigned Pins" />

@@ -1,6 +1,6 @@
 (DELAYFILE
  (SDFVERSION "IEEE 1497 4.0")
- (DATE "2022-07-25T08:38:28Z")
+ (DATE "2022-08-11T01:39:13Z")
  (DESIGN "VDAC_Saw_Export")
  (VENDOR "Cypress Semiconductor")
  (PROGRAM "PSoC Creator")
@@ -31,6 +31,9 @@
     (INTERCONNECT \\UART_1\:tx\(0\)\\.pad_out \\UART_1\:tx\(0\)_PAD\\ (0.000:0.000:0.000))
     (INTERCONNECT \\UART_1\:tx\(0\)_PAD\\ \\UART_1\:tx\(0\)\\.pad_in (0.000:0.000:0.000))
     (INTERCONNECT \\UART_1\:rx\(0\)_PAD\\ \\UART_1\:rx\(0\)\\.pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LED_1\(0\)_PAD LED_1\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LED_2\(0\)_PAD LED_2\(0\).pad_in (0.000:0.000:0.000))
+    (INTERCONNECT LED_3\(0\)_PAD LED_3\(0\).pad_in (0.000:0.000:0.000))
    )
   )
  )

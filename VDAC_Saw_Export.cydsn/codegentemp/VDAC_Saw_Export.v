@@ -1,6 +1,6 @@
 // ======================================================================
 // VDAC_Saw_Export.v generated from TopDesign.cysch
-// 07/25/2022 at 18:38
+// 08/11/2022 at 11:38
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -2072,6 +2072,114 @@ module top ;
         .lna_rx_en(Net_129),
         .pa_lna_en(Net_130),
         .pa_tx_en(Net_128));
+
+	wire [0:0] tmpFB_0__LED_1_net;
+	wire [0:0] tmpIO_0__LED_1_net;
+	electrical [0:0] tmpSIOVREF__LED_1_net;
+
+	cy_mxs40_gpio_v1_0
+		#(.id("a61270bc-07ec-447d-ac9e-34cfe85c30e9"),
+		  .width(1),
+		  .sio_grp_cnt(0),
+		  .drive_mode("6"),
+		  .ibuf_enabled("0"),
+		  .init_dr_st("0"),
+		  .input_sync("0"),
+		  .intr_mode("0"),
+		  .io_voltage(""),
+		  .output_conn("0"),
+		  .oe_conn("0"),
+		  .output_sync("0"),
+		  .oe_sync("0"),
+		  .drive_strength("0"),
+		  .max_frequency("100"),
+		  .i2c_mode("0"),
+		  .output_current_cap("8"),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .slew_rate("0"),
+		  .vtrip("0"),
+		  .use_annotation("0"),
+		  .hotswap_needed("0"))
+		LED_1
+		 (.oe({1'b1}),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__LED_1_net[0:0]}),
+		  .io({tmpIO_0__LED_1_net[0:0]}),
+		  .siovref(tmpSIOVREF__LED_1_net));
+
+
+	wire [0:0] tmpFB_0__LED_2_net;
+	wire [0:0] tmpIO_0__LED_2_net;
+	electrical [0:0] tmpSIOVREF__LED_2_net;
+
+	cy_mxs40_gpio_v1_0
+		#(.id("8e0dbd15-59b9-4008-ba10-961a118d6113"),
+		  .width(1),
+		  .sio_grp_cnt(0),
+		  .drive_mode("6"),
+		  .ibuf_enabled("0"),
+		  .init_dr_st("0"),
+		  .input_sync("0"),
+		  .intr_mode("0"),
+		  .io_voltage(""),
+		  .output_conn("0"),
+		  .oe_conn("0"),
+		  .output_sync("0"),
+		  .oe_sync("0"),
+		  .drive_strength("0"),
+		  .max_frequency("100"),
+		  .i2c_mode("0"),
+		  .output_current_cap("8"),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .slew_rate("0"),
+		  .vtrip("0"),
+		  .use_annotation("0"),
+		  .hotswap_needed("0"))
+		LED_2
+		 (.oe({1'b1}),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__LED_2_net[0:0]}),
+		  .io({tmpIO_0__LED_2_net[0:0]}),
+		  .siovref(tmpSIOVREF__LED_2_net));
+
+
+	wire [0:0] tmpFB_0__LED_3_net;
+	wire [0:0] tmpIO_0__LED_3_net;
+	electrical [0:0] tmpSIOVREF__LED_3_net;
+
+	cy_mxs40_gpio_v1_0
+		#(.id("e4245cc5-765a-4ec9-aa78-a3c7f9db6a87"),
+		  .width(1),
+		  .sio_grp_cnt(0),
+		  .drive_mode("6"),
+		  .ibuf_enabled("0"),
+		  .init_dr_st("0"),
+		  .input_sync("0"),
+		  .intr_mode("0"),
+		  .io_voltage(""),
+		  .output_conn("0"),
+		  .oe_conn("0"),
+		  .output_sync("0"),
+		  .oe_sync("0"),
+		  .drive_strength("0"),
+		  .max_frequency("100"),
+		  .i2c_mode("0"),
+		  .output_current_cap("8"),
+		  .pin_aliases(""),
+		  .pin_mode("O"),
+		  .slew_rate("0"),
+		  .vtrip("0"),
+		  .use_annotation("0"),
+		  .hotswap_needed("0"))
+		LED_3
+		 (.oe({1'b1}),
+		  .y({1'b0}),
+		  .fb({tmpFB_0__LED_3_net[0:0]}),
+		  .io({tmpIO_0__LED_3_net[0:0]}),
+		  .siovref(tmpSIOVREF__LED_3_net));
+
 
 
 

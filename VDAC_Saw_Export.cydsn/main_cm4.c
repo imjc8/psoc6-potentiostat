@@ -75,9 +75,6 @@ bool flag_print = false;
 // timing_counter
 int counter = 0;
 
-// array
-int data[40960];
-
 void userIsr(void);
 
 
