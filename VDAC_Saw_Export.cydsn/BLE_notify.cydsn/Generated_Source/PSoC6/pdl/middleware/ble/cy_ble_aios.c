@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_aios.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  Contains the source code for Automation Input Output Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -152,7 +152,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOS_Init(cy_stc_ble_aios_config_t *config)
 *  unregistered callback function.
 *
 *  \param callbackFunc: An application layer event callback function to receive
-*  events from the BLE Middleware. The definition of \ref cy_ble_callback_t
+*  events from the BLE Middleware. The definition of \ref cy_ble_callback_t 
 *  for AIOS Service is:\n
 *    typedef void (* cy_ble_callback_t) (uint32_t eventCode, void *eventParam)
 *       * eventCode:  Indicates the event that triggered this callback
@@ -175,7 +175,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOS_Init(cy_stc_ble_aios_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_AIOS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_AIOS_ApplCallback = callbackFunc;
     if(cy_ble_aiosConfigPtr != NULL)
     {
@@ -185,7 +185,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOS_RegisterAttrCallback(cy_ble_callback_t callba
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 
@@ -588,7 +588,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOSS_GetCharacteristicValue(cy_en_ble_aios_char_i
 *                       "charIndex".
 *  \param descrIndex:   The index of the characteristic descriptor.
 *  \param attrSize:     The size of the characteristic descriptor attribute.
-*  \param attrValue:    The pointer to the location where characteristic
+*  \param attrValue:    The pointer to the location where characteristic 
 *                       descriptor value data should be stored.
 *
 * \return
@@ -664,7 +664,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOSS_GetCharacteristicDescriptor(cy_stc_ble_conn_
 * Function Name: Cy_BLE_AIOSS_SetCharacteristicDescriptor
 ***************************************************************************//**
 *
-*  Set a characteristic descriptor of a specified characteristic of the
+*  Set a characteristic descriptor of a specified characteristic of the 
 *  Automation Input Output Service from the local GATT database.
 *
 *  \param connHandle:   The connection handle.
@@ -831,7 +831,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOSS_SendNotification(cy_stc_ble_conn_handle_t co
 *  Service, which is a value specified by charIndex, to the client's device.
 *
 *  On enabling indication successfully it sends out a 'Handle Value Indication' which
-*  results in #CY_BLE_EVT_AIOSC_INDICATION or #CY_BLE_EVT_GATTC_HANDLE_VALUE_IND
+*  results in #CY_BLE_EVT_AIOSC_INDICATION or #CY_BLE_EVT_GATTC_HANDLE_VALUE_IND 
 *  (if service specific callback function is not registered) event
 *  at the GATT Client's end.
 *
@@ -1731,7 +1731,7 @@ static void Cy_BLE_AIOSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_par
 *
 * \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1751,10 +1751,10 @@ static void Cy_BLE_AIOSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_par
 *     provided with event parameter structure of type \ref cy_stc_ble_aios_char_value_t.
 *   .
 *   Otherwise (if an AIOS service-specific callback is not registered):
-*   * #CY_BLE_EVT_GATTC_WRITE_RSP - If the requested attribute is successfully
+*   * #CY_BLE_EVT_GATTC_WRITE_RSP - If the requested attribute is successfully 
 *     written on the peer device.
 *
-*   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the requested
+*   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the requested 
 *     attribute on the peer device, the details are provided with an event
 *     parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
@@ -1821,7 +1821,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOSC_SetCharacteristicValue(cy_stc_ble_conn_handl
 *                       "charIndex".
 * \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1844,11 +1844,11 @@ cy_en_ble_api_result_t Cy_BLE_AIOSC_SetCharacteristicValue(cy_stc_ble_conn_handl
 *   Otherwise (if an AIOS service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure
+*     provided with an event parameter structure 
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with
+*     requested attribute on the peer device, the details are provided with 
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 *
@@ -1929,7 +1929,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOSC_GetCharacteristicValue(cy_stc_ble_conn_handl
 *
 * \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1954,7 +1954,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOSC_GetCharacteristicValue(cy_stc_ble_conn_handl
 *   * #CY_BLE_EVT_GATTC_WRITE_RSP - If the requested attribute is
 *     successfully written on the peer device.
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with
+*     requested attribute on the peer device, the details are provided with 
 *     an event parameter structure ( \ref cy_stc_ble_gatt_err_param_t).
 *
 ******************************************************************************/
@@ -2012,8 +2012,8 @@ cy_en_ble_api_result_t Cy_BLE_AIOSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
             cy_ble_aioscReqHandle[discIdx] = writeReqParam.handleValPair.attrHandle;
         }
     }
-
-
+    
+  
     return(apiResult);
 }
 
@@ -2032,7 +2032,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
 *
 * \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -2055,11 +2055,11 @@ cy_en_ble_api_result_t Cy_BLE_AIOSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
 *   Otherwise (if an AIOS service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure
+*     provided with an event parameter structure 
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with
+*     requested attribute on the peer device, the details are provided with 
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -2128,7 +2128,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOSC_GetCharacteristicDescriptor(cy_stc_ble_conn_
 *
 * \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -2197,7 +2197,7 @@ cy_en_ble_api_result_t Cy_BLE_AIOSC_SetCharacteristicValueWithoutResponse(cy_stc
         }
     }
 
-
+    
     return(apiResult);
 }
 
@@ -2262,7 +2262,7 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_AIOS_EventHandler(uint32_t eventCode,
             case CY_BLE_EVT_GATTS_WRITE_CMD_REQ:
                 (void)Cy_BLE_AIOSS_WriteEventHandler((cy_stc_ble_gatts_write_cmd_req_param_t*)eventParam);
                 break;
-
+                
             case CY_BLE_EVT_GATTS_HANDLE_VALUE_CNF:
                 Cy_BLE_AIOSS_ConfirmationEventHandler((cy_stc_ble_conn_handle_t*)eventParam);
                 break;
@@ -2305,7 +2305,7 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_AIOS_EventHandler(uint32_t eventCode,
         }
     }
 
-
+    
     return(gattErr);
 }
 

@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_tps.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  This file contains the source code for the Tx Power Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -153,7 +153,7 @@ cy_en_ble_api_result_t Cy_BLE_TPS_Init(cy_stc_ble_tps_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_TPS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_TPS_ApplCallback = callbackFunc;
     if(cy_ble_tpsConfigPtr != NULL)
     {
@@ -163,7 +163,7 @@ cy_en_ble_api_result_t Cy_BLE_TPS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 
@@ -284,7 +284,7 @@ cy_en_ble_api_result_t Cy_BLE_TPSS_SetCharacteristicValue(cy_en_ble_tps_char_ind
             /* Indicate success */
             apiResult = CY_BLE_SUCCESS;
         }
-
+        
     }
 
     /* Return status */
@@ -872,7 +872,7 @@ cy_en_ble_api_result_t Cy_BLE_TPSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) &&
+    if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) && 
        (charIndex == CY_BLE_TPS_TX_POWER_LEVEL) && (descrIndex == CY_BLE_TPS_CCCD) &&
        (attrSize == CY_BLE_CCCD_LEN))
     {
@@ -962,7 +962,7 @@ cy_en_ble_api_result_t Cy_BLE_TPSC_GetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((discIdx < CY_BLE_GATTC_COUNT) && (charIndex == CY_BLE_TPS_TX_POWER_LEVEL) &&
+    else if((discIdx < CY_BLE_GATTC_COUNT) && (charIndex == CY_BLE_TPS_TX_POWER_LEVEL) && 
             (descrIndex == CY_BLE_TPS_CCCD))
     {
         cy_stc_ble_gattc_read_req_t readReqParam =

@@ -276,7 +276,7 @@ extern "C" {
 
 /** The GATT Maximum attribute length. */
 #define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0010u)
-#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0016u)
+#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0018u)
 
 /** The number of characteristics supporting the Reliable Write property. */
 #define CY_BLE_CONFIG_GATT_RELIABLE_CHAR_COUNT      (0x0000u)
@@ -307,7 +307,7 @@ extern "C" {
     #define CY_BLE_CONFIG_L2CAP_PSM_COUNT               (1u)
 #endif  /* CY_BLE_L2CAP_ENABLE != 0u */
 
-#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x0Eu)
+#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x10u)
 
 /** Max Tx payload size. */
 #define CY_BLE_CONFIG_LL_MAX_TX_PAYLOAD_SIZE        (0x1Bu)
@@ -369,7 +369,7 @@ extern "C" {
 #define CY_BLE_CONFIG_CUSTOMC_SERVICE_COUNT         (0x00u)
 
 /** The maximum supported count of the Custom Service characteristics. */
-#define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_COUNT     (0x02u)
+#define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_COUNT     (0x03u)
 
 /** The maximum supported count of the Custom Service descriptors in one characteristic. */
 #define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x01u)
@@ -383,6 +383,7 @@ extern "C" {
 #define CY_BLE_DATA_SERVICE_DATA_DATACCCD_DESC_INDEX   (0x00u) /* Index of DataCCCD descriptor */
 #define CY_BLE_DATA_SERVICE_INBOUND_CHAR_INDEX   (0x01u) /* Index of Inbound characteristic */
 #define CY_BLE_DATA_SERVICE_INBOUND_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
+#define CY_BLE_DATA_SERVICE_INBOUND_FLOAT_CHAR_INDEX   (0x02u) /* Index of Inbound float characteristic */
 
 
 #define CY_BLE_DATA_SERVICE_SERVICE_HANDLE   (0x0010u) /* Handle of Data Service service */
@@ -392,6 +393,8 @@ extern "C" {
 #define CY_BLE_DATA_SERVICE_INBOUND_DECL_HANDLE   (0x0014u) /* Handle of Inbound characteristic declaration */
 #define CY_BLE_DATA_SERVICE_INBOUND_CHAR_HANDLE   (0x0015u) /* Handle of Inbound characteristic */
 #define CY_BLE_DATA_SERVICE_INBOUND_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0016u) /* Handle of Characteristic User Description descriptor */
+#define CY_BLE_DATA_SERVICE_INBOUND_FLOAT_DECL_HANDLE   (0x0017u) /* Handle of Inbound float characteristic declaration */
+#define CY_BLE_DATA_SERVICE_INBOUND_FLOAT_CHAR_HANDLE   (0x0018u) /* Handle of Inbound float characteristic */
 
 
 

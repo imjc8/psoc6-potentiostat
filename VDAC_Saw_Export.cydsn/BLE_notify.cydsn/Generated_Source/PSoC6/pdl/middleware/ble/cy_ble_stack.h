@@ -1,13 +1,13 @@
 /*******************************************************************************
 * \file cy_ble_stack.h
-* \version 2.70
+* \version 2.60
 *
 * \brief
 * This file contains the BLE Stack, which will be updated on the Jenkins
 * build and the common structures, APIs.
 *
 *******************************************************************************
-* Copyright 2017-2021, Cypress Semiconductor Corporation. All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation. All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -43,10 +43,10 @@ extern "C" {
 #define CY_BLE_STACK_MINOR                                               (0u)
 
 /** Patch version number for device firmware. */
-#define CY_BLE_STACK_PATCH                                               (10u)
+#define CY_BLE_STACK_PATCH                                               (9u)
 
 /** Firmware build number. */
-#define CY_BLE_STACK_BUILD                                               (365u)
+#define CY_BLE_STACK_BUILD                                               (234u)
 
 /** BT Address Size */
 #define CY_BLE_BD_ADDR_SIZE                                              (0x06u)
@@ -92,19 +92,19 @@ extern "C" {
 /** Default Bonded Devices List entry size */
 #define CY_BLE_DEFAULT_BONDED_DEVICE_LIST_SZ                             (0x10u)
 
-/** Resolving List memory computation
- * CY_BLE_MAX_RESOLVABLE_DEVICES:
+/** Resolving List memory computation 
+ * CY_BLE_MAX_RESOLVABLE_DEVICES: 
  *      It is user configured value for size of Resolving List using BLE PDL.
  *             Range: 1 to 16, 0 if Privacy 1.2 feature is not used.
  * Memory required =
  * (((CY_BLE_LL_PRIVACY_HEAP_REQ * CY_BLE_MAX_RESOLVABLE_DEVICES) +
                                             CY_BLE_LL_PRIVACY_RETENTION_HEAP_REQ)
  * Note:
- * This configurable memory should be added to
- * CY_BLE_CONTROLLER_DEVICE_SPECIFIC_HEAP_REQ
- * static macro value passed to BLE Stack.
+ * This configurable memory should be added to 
+ * CY_BLE_CONTROLLER_DEVICE_SPECIFIC_HEAP_REQ 
+ * static macro value passed to BLE Stack. 
  */
-
+ 
 /** Internal RAM required for Resolving List retention data
  * structure
  */
@@ -114,19 +114,19 @@ extern "C" {
  */
 #define CY_BLE_LL_PRIVACY_HEAP_REQ                                       (0x44u)
 
-/** White List list memory computation
- * CY_BLE_MAX_WHITELIST_LIST_SZ:
+/** White List list memory computation 
+ * CY_BLE_MAX_WHITELIST_LIST_SZ: 
  *        It is a user-configured value for the size of the White List using the BLE PDL.
  *             Range: 1 to 16.
  * Memory required =
  * (((CY_BLE_LL_ONE_WHITELIST_HEAP_REQ * CY_BLE_MAX_WHITELIST_LIST_SZ) +
                                             CY_BLE_LL_WHITELIST_RETENTION_HEAP_REQ)
  * Note:
- * This configurable memory should be added to
- * the CY_BLE_CONTROLLER_DEVICE_SPECIFIC_HEAP_REQ
- * static macro value passed to the BLE Stack.
+ * This configurable memory should be added to 
+ * the CY_BLE_CONTROLLER_DEVICE_SPECIFIC_HEAP_REQ 
+ * static macro value passed to the BLE Stack. 
  */
-
+ 
 /** Max WhiteList size that is supported by BLE Stack */
 #define CY_BLE_MAX_WHITELIST_LIST_SZ                                     (0x10u)
 
@@ -201,7 +201,7 @@ extern "C" {
 #define CY_BLE_BT_FW_HEAP_RESERVE_REQ                                    (0x80u)
 
 /** Device Specific Pool Memory for BLESS RX FIFO, HCI Command and
- * HCI Events memory
+ * HCI Events memory 
  */
 #define CY_BLE_BT_FW_DEV_SPECIFIC_POOL_REQ        (CY_BLE_BT_FW_RX_ACL_MEM_POOL_REQ + \
                                                   CY_BLE_BT_FW_CMD_MEM_POOL_REQ + \
@@ -268,7 +268,7 @@ extern "C" {
 #define CY_BLE_LL_ACL_DATA_PACKET_OVERHEAD_SZ                            (0x08u)
 
 /** Number of Rx ACL Packet buffers, this shall not change
- * as this should not be user configurable parameter
+ * as this should not be user configurable parameter 
  */
 #define CY_BLE_LL_DEFAULT_NUM_ACL_RX_PACKETS                             (0x04u)
 
@@ -288,7 +288,7 @@ extern "C" {
 #define CY_BLE_MAX_DEFAULT_RX_CAPABILITY                                 (0xFBu)
 
 /** Internal heap required for LE Data Length Extension Feature Per
- * Connection
+ * Connection 
  */
 #define CY_BLE_LL_DLE_HEAP_REQ                                           (0x40u)
 
@@ -310,7 +310,7 @@ extern "C" {
 
 /** Mask to Enable advertisement packet sent events */
 #define CY_BLE_ADV_TX_EVENT_MASK                                         (0x02u)
-
+    
 /** Length of mask byte array */
 #define CY_BLE_EVENT_MASK_LENGTH                                         (1u)
 
@@ -339,7 +339,7 @@ extern "C" {
 typedef enum
 {
     /** This event is triggered by the BLE stack when the BLE Stack is in a bad state. Restarting the BLE Stack is the
-     *   only way to get out of this state
+     *   only way to get out of this state 
      */
     CY_BLE_EVT_INVALID = 0x0000u,
 
@@ -369,16 +369,16 @@ typedef enum
      *                     However, the application shall respond to peer initiated transactions to prevent BLE protocol timeouts.
      *                     Application initiated data transactions can be resumed after the CY_BLE_EVT_STACK_BUSY_STATUS event with
      *                     parameter 'CY_BLE_STACK_STATE_FREE' is received.
-     *
+     *  
      *   CY_BLE_STACK_STATE_FREE (0x00) = CY_BLE_STACK_STATE_FREE indicates to the application that pending transactions are completed
      *                     and sufficient buffers are available to process application-initiated transactions.
      *                     The 'CY_BLE_EVT_STACK_BUSY_STATUS' event with 'CY_BLE_STACK_STATE_FREE' indicates to the
      *                     application whether the BLE Stack's internal buffer state has transitioned from 'CY_BLE_STACK_STATE_BUSY'
      *                     to 'CY_BLE_STACK_STATE_FREE'.
-     *
+     *  
      *  Bd handle indicates connection.
      *  To increase the BLE Stack's default queue depth(CY_BLE_L2CAP_STACK_Q_DEPTH_PER_CONN) and achieve better throughput for the attribute MTU greater than 32,
-     *  use the AddQdepthPerConn parameter in the 'Expression View' of the Advanced tab in the BLE component GUI. To Access the 'Expression View', right click on
+     *  use the AddQdepthPerConn parameter in the 'Expression View' of the Advanced tab in the BLE component GUI. To Access the 'Expression View', right click on 
      *  the 'Advanced' tab in th BLE Component GUI and select the 'Show Expression View' option.
      */
     CY_BLE_EVT_STACK_BUSY_STATUS, /* 0x1002u */
@@ -400,13 +400,13 @@ typedef enum
     CY_BLE_EVT_PENDING_FLASH_WRITE, /* 0x1004u */
 
     /** This event is used to inform the application that persistent data stored in Flash memory is corrupted */
-    CY_BLE_EVT_FLASH_CORRUPT,  /* 0x1005u */
+    CY_BLE_EVT_FLASH_CORRUPT,  /* 0x1005u */ 
 
     /* Range for HCI events - 0x2000 to 0x2FFF */
 
     /** This event indicates that some internal hardware error has occurred.
-     *  Reset of the hardware may be required.
-     *  Event parameter returned with this event is of (uint8 *) type. The possible error codes for this event are defined
+     *  Reset of the hardware may be required. 
+     *  Event parameter returned with this event is of (uint8 *) type. The possible error codes for this event are defined 
      *  in cy_ble_stack_host_error.h file.
      */
     CY_BLE_EVT_HARDWARE_ERROR = 0x2000,
@@ -425,7 +425,7 @@ typedef enum
      *  Refer to Bluetooth 4.1 core specification, Volume 6, Part B, section 4.6.5 for LE Ping operation.
      *  Event parameter returned with this event is of (cy_stc_ble_events_param_generic_t*) type.
      *  There are two members of the structure pointed to by the event parameter: status (uint8_t) and eventParams (void *).
-     *  eventParams must be cast to (cy_stc_ble_auth_payload_info_t*) to access the authentication payload information.
+     *  eventParams must be cast to (cy_stc_ble_auth_payload_info_t*) to access the authentication payload information.     
      *  eventParams is valid only if status is success (0x00)
      */
     CY_BLE_EVT_READ_AUTH_PAYLOAD_TO_COMPLETE, /* 0x2002u */
@@ -446,7 +446,7 @@ typedef enum
     CY_BLE_EVT_LE_SET_EVENT_MASK_COMPLETE, /* 0x2004u */
 
     /** This event indicates that the peer device has not responded
-     *  with the valid MIC packet within the application configured ping authentication time.
+     *  with the valid MIC packet within the application configured ping authentication time. 
      */
     CY_BLE_EVT_LE_PING_AUTH_TIMEOUT, /* 0x2005u */
 
@@ -468,7 +468,7 @@ typedef enum
     /** This event indicates completion of Cy_BLE_GetDataLength() function.
      *  Event parameter returned with this event is of (cy_stc_ble_events_param_generic_t*) type.
      *  There are two members of the structure pointed to by the event parameter: status (uint8_t) and eventParams (void *).
-     *  eventParams must be cast to (cy_stc_ble_data_length_param_t*) to access the locally
+     *  eventParams must be cast to (cy_stc_ble_data_length_param_t*) to access the locally 
      *  suggested tx/rx octets and tx/rx time and the maximum supported tx/rx octets and tx/rx time.
      *  eventParams is valid only if status is success (0x00)
      */
@@ -573,7 +573,7 @@ typedef enum
      *  Event parameter returned with this event is of (cy_stc_ble_events_param_generic_t*) type.
      *  There are two members of the structure pointed to by the event parameter: status (uint8_t) and eventParams (void *).
      *  eventParams must be cast to (cy_stc_ble_phy_param_t*) type to access the TX and RX PHY Mask as well as the
-     *  bdHandle corresponding to the connection for which this information is being returned.
+     *  bdHandle corresponding to the connection for which this information is being returned. 
      *  eventParams is valid only if status is success(0x00)
      */
     CY_BLE_EVT_PHY_UPDATE_COMPLETE,  /* 0x2016u */
@@ -585,14 +585,14 @@ typedef enum
      */
     CY_BLE_EVT_SET_PRIVACY_MODE_COMPLETE,  /* 0x2017u */
 
-    /* Range for vendor events - 0x3000 to 0x3FFF */
+    /* Range for vendor events - 0x3000 to 0x5FFF */
 
     /** This event indicates completion of the Cy_BLE_IsLlControlProcPending() function.
      *  Event parameter returned with this event is of (cy_stc_ble_events_param_generic_t*) type.
      *  There are two members of the structure pointed to by the event parameter: status (uint8_t) and eventParams (void *).
-     *  eventParams must be cast to (cy_stc_ble_ll_cntrl_proc_param_t*) type to access the status of the
-     *  control procedure (cntrlProcStatus) as well as the bdHandle corresponding to the connection
-     *  for which this information is being returned.
+     *  eventParams must be cast to (cy_stc_ble_ll_cntrl_proc_param_t*) type to access the status of the 
+     *  control procedure (cntrlProcStatus) as well as the bdHandle corresponding to the connection 
+     *  for which this information is being returned.  
      *  eventParams is valid only if status is success(0x00)
      */
     CY_BLE_EVT_LL_CNTRL_PROC_PENDING_COMPLETE = 0x3000u,
@@ -612,7 +612,7 @@ typedef enum
     /** This event indicates that the get device address command has completed.
      *  Event parameter returned with this event is of (cy_stc_ble_events_param_generic_t*) type.
      *  There are two members of the structure pointed to by the event parameter: status (uint8_t) and eventParams (void *).
-     *  eventParams must be cast to (cy_stc_ble_bd_addrs_t*) type to access the public and private
+     *  eventParams must be cast to (cy_stc_ble_bd_addrs_t*) type to access the public and private 
      *  Bluetooth Device Addresses.
      *  eventParams is valid only if status is success(0x00)
      */
@@ -647,7 +647,7 @@ typedef enum
     /** This event indicates that the get clock config command has completed.
      *  Event parameter returned with this event is of (cy_stc_ble_events_param_generic_t*) type.
      *  There are two members of the structure pointed to by the event parameter: status (uint8_t) and eventParams (void *).
-     *  eventParams must be cast to (cy_stc_ble_bless_clk_cfg_params_t*) type to access the BLE clock
+     *  eventParams must be cast to (cy_stc_ble_bless_clk_cfg_params_t*) type to access the BLE clock 
      *  configuration parameters.
      *  eventParams is valid only if status is success(0x00)
      */
@@ -661,7 +661,7 @@ typedef enum
     CY_BLE_EVT_SET_CLK_CONFIG_COMPLETE, /* 0x3008u */
 
     /** This event indicates that the random number generation command has completed successfully.
-     *  The event parameter is Pointer to a buffer of size 8 bytes
+     *  The event parameter is Pointer to a buffer of size 8 bytes 
      */
     CY_BLE_EVT_RANDOM_NUM_GEN_COMPLETE, /* 0x3009u */
 
@@ -758,7 +758,7 @@ typedef enum
     CY_BLE_EVT_SET_CONN_PRIORITY_COMPLETE, /* 0x3018u */
 
     /** This event is used to inform application that an HCI event (or ACL packet) has been received
-     *  from controller. Event parameter returned with this event is pointer to a parameter of
+     *  from controller. Event parameter returned with this event is pointer to a parameter of 
      *  type 'cy_stc_ble_hci_tx_packet_info_t'. This event will only be triggered when the application
      *  enables software transport mode for HCI by calling the Cy_BLE_SoftHciTransportEnable() API.
      */
@@ -771,26 +771,26 @@ typedef enum
      */
     CY_BLE_EVT_GAPC_SCAN_PROGRESS_RESULT = 0x4000u,
 
-    /** This event can be received by a device in Peripheral or Central role. When it is received by a device in a
-     *  Peripheral role, it must Call Cy_BLE_GAPP_AuthReqReply() to reply to the authentication request
+    /** This event can be received by a device in Peripheral or Central role. When it is received by a device in a 
+     *  Peripheral role, it must Call Cy_BLE_GAPP_AuthReqReply() to reply to the authentication request 
      *  from Central. When this event is received by a device in a Central role, it means that the Peripheral
-     *     has requested Central to initiate authentication procedure. The device must call Cy_BLE_GAP_AuthReq()
+     *     has requested Central to initiate authentication procedure. The device must call Cy_BLE_GAP_AuthReq() 
      *  to initiate the authentication procedure.
-     *  A pointer to structure of type cy_stc_ble_gap_auth_info_t is returned as the event parameter.
+     *  A pointer to structure of type cy_stc_ble_gap_auth_info_t is returned as the event parameter. 
      */
     CY_BLE_EVT_GAP_AUTH_REQ, /* 0x4001u */
 
     /** This event indicates that the device must send a passkey to be used during the pairing procedure.
      *  Cy_BLE_GAP_AuthPassKeyReply() is required to be called with valid parameters on receiving this event.
      *  cy_stc_ble_gap_auth_pk_info_t is returned as the event parameter. bdHandle is the only relevant parameter.
-     *  Other parameters should be ignored.
+     *  Other parameters should be ignored. 
      */
     CY_BLE_EVT_GAP_PASSKEY_ENTRY_REQUEST, /* 0x4002u */
 
     /** This event indicates that the device needs to display a passkey during the pairing procedure.
      *  cy_stc_ble_gap_auth_pk_info_t is returned as the event parameter. bdHandle and passkey are relevant parameters.
      *  Other parameter(s) should be ignored.
-     *  The passkey can be any 6-decimal-digit value.
+     *  The passkey can be any 6-decimal-digit value. 
      */
     CY_BLE_EVT_GAP_PASSKEY_DISPLAY_REQUEST, /* 0x4003u */
 
@@ -803,35 +803,35 @@ typedef enum
      *  During encryption/re-encryption, the Encryption Information exchanged during the pairing process
      *  is used to encrypt/re-encrypt the link. As this does not modify any of the authentication
      *  parameters with which the devices were paired, this event is generated with NULL event data
-     *  and the result of the encryption operation.
+     *  and the result of the encryption operation. 
      */
     CY_BLE_EVT_GAP_AUTH_COMPLETE, /* 0x4004u */
 
     /** This event indicates that the authentication process between two devices has failed .
      *  cy_stc_ble_gap_auth_info_t is returned as the event parameter. bdHandle provides a handle for the failing device and
      *  authErr provides cy_en_ble_gap_auth_failed_reason_t indicates the reason for failure.
-     *  Other parameters should be ignored.
+     *  Other parameters should be ignored. 
      */
     CY_BLE_EVT_GAP_AUTH_FAILED, /* 0x4005u */
 
     /** This event indicates that the GAP Peripheral device has started/stopped advertising.
      *  The event parameter contains the HCI Status error code, which is of type 'uint8_t'.
-     *  If the data is '0x00', it indicates 'success'; anything else indicates 'failure'.
+     *  If the data is '0x00', it indicates 'success'; anything else indicates 'failure'. 
      */
     CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP, /* 0x4006u */
 
     /** This event is generated at the GAP Peripheral end after the connection is completed with a peer Central device.
      *  For a GAP Central device, this event is generated as an acknowledgment of receiving connection request by calling 'Cy_BLE_GAPC_InitConnection()' successfully
      *  by the BLE Stack. After the connection is completed, no other event is generated but if connection establishment fails,
-     *  'CY_BLE_EVT_GAP_DEVICE_DISCONNECTED' is generated to the application.
+     *  'CY_BLE_EVT_GAP_DEVICE_DISCONNECTED' is generated to the application. 
      *  This event is generated only if Link Layer Privacy is not enabled in the BLE Component customizer.
-     *  The event parameter is a pointer to a structure of type cy_stc_ble_gap_connected_param_t.
-     *  The members of the event parameter's structure are valid only if eventParams->status is success (0x00).
+     *  The event parameter is a pointer to a structure of type cy_stc_ble_gap_connected_param_t. 
+     *  The members of the event parameter's structure are valid only if eventParams->status is success (0x00). 
      */
     CY_BLE_EVT_GAP_DEVICE_CONNECTED, /* 0x4007u */
 
     /** This event indicates that the device has disconnected from remote device or failed to establish connection.
-     *  Parameter is of type 'cy_stc_ble_gap_disconnect_param_t'
+     *  Parameter is of type 'cy_stc_ble_gap_disconnect_param_t' 
      */
     CY_BLE_EVT_GAP_DEVICE_DISCONNECTED, /* 0x4008u */
 
@@ -841,14 +841,14 @@ typedef enum
      *  eventParams must be cast to (cy_stc_ble_gap_encrypt_change_param_t*) type to access the encryption state (ON/OFF)
      *  as well as the bdHandle corresponding to this event.
      *  eventParams->encryption is valid only if status is success(0x00)
-     *  This is an informative event for the application when there is a change in encryption.
-     *  The application may choose to ignore it.
+     *  This is an informative event for the application when there is a change in encryption. 
+     *  The application may choose to ignore it. 
      */
     CY_BLE_EVT_GAP_ENCRYPT_CHANGE, /* 0x4009u */
 
     /** This event is generated at the GAP Central and the Peripheral end after a connection parameter update
      *  is requested from the host to the controller.
-     *  The event parameter is a pointer to a structure of type cy_stc_ble_gap_conn_param_updated_in_controller_t.
+     *  The event parameter is a pointer to a structure of type cy_stc_ble_gap_conn_param_updated_in_controller_t. 
      */
     CY_BLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE, /* 0x400Au */
 
@@ -856,14 +856,14 @@ typedef enum
      *  This event is generated after making a call to the Cy_BLE_GAPC_StartDiscovery() and
      *  Cy_BLE_GAPC_StopDiscovery() functions. The event parameter contains the HCI Status error code,
      *  which is of type 'uint8_t'.
-     *  If the data is '0x00', it indicates 'success'; anything else indicates 'failure'.
+     *  If the data is '0x00', it indicates 'success'; anything else indicates 'failure'. 
      */
     CY_BLE_EVT_GAPC_SCAN_START_STOP, /* 0x400Bu */
 
     /** This event indicates that the SMP keys exchange with a peer device is complete. The event handler
      *  is expected to store the peer device keys, especially IRK, which is used to resolve the
      *  peer device after the connection establishment.
-     *  The event parameter returns data of type cy_stc_ble_gap_sec_key_param_t containing the peer device keys.
+     *  The event parameter returns data of type cy_stc_ble_gap_sec_key_param_t containing the peer device keys. 
      */
     CY_BLE_EVT_GAP_KEYINFO_EXCHNGE_CMPLT, /* 0x400Cu */
 
@@ -874,18 +874,18 @@ typedef enum
      *  parameter passkey for the function Cy_BLE_GAP_AuthPassKeyReply() will be
      *  ignored.
      *  cy_stc_ble_gap_auth_pk_info_t is returned as the event parameter. bdHandle and passkey are relevant parameters.
-     *  Other parameter(s) should be ignored. 'passkey' can be any 6-decimal-digit value.
+     *  Other parameter(s) should be ignored. 'passkey' can be any 6-decimal-digit value. 
      */
     CY_BLE_EVT_GAP_NUMERIC_COMPARISON_REQUEST, /* 0x400Du */
 
     /** This event is generated when keypress (Secure connections) is received
      *  from peer device.
-     *  cy_stc_ble_gap_sc_kp_notif_info_t is returned as event parameter.
+     *  cy_stc_ble_gap_sc_kp_notif_info_t is returned as event parameter. 
      */
     CY_BLE_EVT_GAP_KEYPRESS_NOTIFICATION, /* 0x400Eu */
 
     /** This event is generated when OOB generation for Secure connections is complete.
-     *  The event parameter is of type 'cy_stc_ble_gap_oob_data_param_t'
+     *  The event parameter is of type 'cy_stc_ble_gap_oob_data_param_t' 
      */
     CY_BLE_EVT_GAP_OOB_GENERATED_NOTIFICATION, /* 0x400Fu */
 
@@ -895,13 +895,13 @@ typedef enum
      *  'CY_BLE_EVT_GAP_DEVICE_DISCONNECTED' event is generated to the application.
      *  This event is generated only if Link Layer Privacy is enabled in the BLE Component customizer.
      *  The event parameter is a pointer to a structure of type cy_stc_ble_gap_enhance_conn_complete_param_t.
-     *  The members of the event parameter's structure are valid only if eventParams->status is success (0x00).
+     *  The members of the event parameter's structure are valid only if eventParams->status is success (0x00). 
      */
     CY_BLE_EVT_GAP_ENHANCE_CONN_COMPLETE, /* 0x4010u */
 
     /** This event indicates that directed advertisements have been received where
      *  the advertiser is using a resolvable private address for the InitA field in the ADV_DIRECT_IND PDU and the
-     *  Scanning_Filter_Policy is equal to 0x02 or 0x03. The event parameter is of type 'cy_stc_ble_gapc_direct_adv_report_param_t'
+     *  Scanning_Filter_Policy is equal to 0x02 or 0x03. The event parameter is of type 'cy_stc_ble_gapc_direct_adv_report_param_t' 
      */
     CY_BLE_EVT_GAPC_DIRECT_ADV_REPORT, /* 0x4011u */
 
@@ -912,7 +912,7 @@ typedef enum
     CY_BLE_EVT_GAP_SMP_NEGOTIATED_AUTH_INFO, /* 0x4012u */
 
     /** This event indicates a new Bluetooth device address generated successfully as per an application requirement.
-     *  The event parameter is cy_stc_ble_bd_addr_t
+     *  The event parameter is cy_stc_ble_bd_addr_t 
      */
     CY_BLE_EVT_GAP_DEVICE_ADDR_GEN_COMPLETE, /* 0x4013u */
 
@@ -947,22 +947,22 @@ typedef enum
     /** This event indicates that the GAP Peripheral device has started/stopped advertising.
      *  This event is generated after making a call to the Cy_BLE_GAP_UpdateAdvScanData function.
      *  The event parameter contains the HCI Status error code, which is of type 'uint8_t'.
-     *  If the data is '0x00', it indicates 'success'; anything else indicates 'failure'.
+     *  If the data is '0x00', it indicates 'success'; anything else indicates 'failure'. 
      */
     CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE, /* 0x4019u */
-
+ 
     /** This event is triggered when an advertisement packet is sent over the air. This event will
      *  only be triggered if the CY_BLE_ADV_TX_EVENT_MASK event mask is set using the
-     *  Cy_BLE_SetCustomEventMask API. The event parameter returned with this event must be
+     *  Cy_BLE_SetCustomEventMask API. The event parameter returned with this event must be 
      *  ignored.
      */
     CY_BLE_EVT_GAP_ADV_TX, /* 0x401Au */
-
+ 
     /* Range for GATT events - 0x5000 to 0x5FFF */
 
     /** This event is received by the GATT Client when the GATT Server cannot perform the requested
      *  operation and sends out an error response. The event parameter is a pointer to a structure
-     *  of type cy_stc_ble_gatt_err_param_t.
+     *  of type cy_stc_ble_gatt_err_param_t. 
      */
     CY_BLE_EVT_GATTC_ERROR_RSP = 0x5000u,
 
@@ -970,12 +970,12 @@ typedef enum
      *  For a GAP Central device, this event is generated as in acknowledgment of receiving this event successfully
      *  by the BLE Stack. After connection is complete, no other event is required but if connection establishment fails,
      *  'CY_BLE_EVT_GATT_DISCONNECT_IND' event is passed to the application.
-     *  The event parameter is a pointer to a structure of type cy_stc_ble_conn_handle_t.
+     *  The event parameter is a pointer to a structure of type cy_stc_ble_conn_handle_t. 
      */
     CY_BLE_EVT_GATT_CONNECT_IND, /* 0x5001u */
 
     /** This event indicates that the GATT is disconnected.
-     *  The event parameter is a pointer to a structure of type cy_stc_ble_conn_handle_t.
+     *  The event parameter is a pointer to a structure of type cy_stc_ble_conn_handle_t. 
      */
     CY_BLE_EVT_GATT_DISCONNECT_IND, /* 0x5002u */
 
@@ -984,38 +984,38 @@ typedef enum
      */
     CY_BLE_EVT_GATTS_XCNHG_MTU_REQ, /* 0x5003u */
 
-    /** This event indicates that the 'GATT MTU Exchange Response' is received from GATT Server device. The event parameter
-     *  is a pointer to a structure of type cy_stc_ble_gatt_xchg_mtu_param_t and contains the Server RX MTU size.
+    /** This event indicates that the 'GATT MTU Exchange Response' is received from GATT Server device. The event parameter 
+     *  is a pointer to a structure of type cy_stc_ble_gatt_xchg_mtu_param_t and contains the Server RX MTU size. 
      */
     CY_BLE_EVT_GATTC_XCHNG_MTU_RSP, /* 0x5004u */
 
     /** This event indicates that the 'Read by Group Type Response' is received from GATT Server device. The event parameter
-     *  is a pointer to a structure of type cy_stc_ble_gattc_read_by_grp_rsp_param_t.
+     *  is a pointer to a structure of type cy_stc_ble_gattc_read_by_grp_rsp_param_t. 
      */
     CY_BLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP, /* 0x5005u */
 
     /** This event indicates that the 'Read by Type Response' is received from GATT Server device. The event parameter is a
-     *  pointer to a structure of type cy_stc_ble_gattc_read_by_type_rsp_param_t.
+     *  pointer to a structure of type cy_stc_ble_gattc_read_by_type_rsp_param_t. 
      */
     CY_BLE_EVT_GATTC_READ_BY_TYPE_RSP, /* 0x5006u */
 
     /** This event indicates that the 'Find Information Response' is received from GATT Server device. The event parameter is
-     *  a pointer to a structure of type 'cy_stc_ble_gattc_find_info_rsp_param_t.
+     *  a pointer to a structure of type 'cy_stc_ble_gattc_find_info_rsp_param_t. 
      */
     CY_BLE_EVT_GATTC_FIND_INFO_RSP, /* 0x5007u */
 
     /** This event indicates that the 'Find by Type Value Response' is received from GATT Server device. The event parameter is
-     *  a pointer to a structure of type cy_stc_ble_gattc_find_by_type_rsp_param_t.
+     *  a pointer to a structure of type cy_stc_ble_gattc_find_by_type_rsp_param_t. 
      */
     CY_BLE_EVT_GATTC_FIND_BY_TYPE_VALUE_RSP, /* 0x5008u */
 
     /** This event indicates that the 'Read Response' is received from GATT Server device. The event parameter is a pointer to a
-     *  structure of type cy_stc_ble_gattc_read_rsp_param_t.
+     *  structure of type cy_stc_ble_gattc_read_rsp_param_t. 
      */
     CY_BLE_EVT_GATTC_READ_RSP, /* 0x5009u */
 
     /** This event indicates that the'Read Blob Response' from GATT Server. The event parameter is a pointer to a
-     *  structure of type cy_stc_ble_gattc_read_rsp_param_t.
+     *  structure of type cy_stc_ble_gattc_read_rsp_param_t. 
      */
     CY_BLE_EVT_GATTC_READ_BLOB_RSP, /* 0x500Au */
 
@@ -1026,22 +1026,22 @@ typedef enum
     CY_BLE_EVT_GATTC_READ_MULTI_RSP, /* 0x500Bu */
 
     /** This event indicates that the 'Write Request' is received from GATT Client device. The event parameter is a pointer to
-     *  a structure of type cy_stc_ble_gatt_write_param_t.
+     *  a structure of type cy_stc_ble_gatt_write_param_t. 
      */
     CY_BLE_EVT_GATTS_WRITE_REQ, /* 0x500Cu */
 
     /** This event indicates that the 'Write Response' is received from GATT Server device. The event parameter is a pointer
-     *  to a structure of type cy_stc_ble_conn_handle_t.
+     *  to a structure of type cy_stc_ble_conn_handle_t. 
      */
     CY_BLE_EVT_GATTC_WRITE_RSP, /* 0x500Du */
 
     /** This event indicates that the 'Write Command' is received from GATT Client device. The event parameter is a
-     *  pointer to a structure of type cy_stc_ble_gatts_write_cmd_req_param_t.
+     *  pointer to a structure of type cy_stc_ble_gatts_write_cmd_req_param_t. 
      */
     CY_BLE_EVT_GATTS_WRITE_CMD_REQ, /* 0x500Eu */
 
     /** This event indicates that the 'Prepare Write' Request is received from GATT Client device. The event parameter is a
-     *  pointer to a structure of type cy_stc_ble_gatts_prep_write_req_param_t.
+     *  pointer to a structure of type cy_stc_ble_gatts_prep_write_req_param_t. 
      */
     CY_BLE_EVT_GATTS_PREP_WRITE_REQ, /* 0x500Fu */
 
@@ -1059,7 +1059,7 @@ typedef enum
     CY_BLE_EVT_GATTS_EXEC_WRITE_REQ, /* 0x5010u */
 
     /** This event indicates that the 'Execute Write' response is received from GATT Server device. The event parameter is a
-     *  pointer to a structure of type cy_stc_ble_gattc_exec_write_rsp_param_t.
+     *  pointer to a structure of type cy_stc_ble_gattc_exec_write_rsp_param_t. 
      */
     CY_BLE_EVT_GATTC_EXEC_WRITE_RSP, /* 0x5011u */
 
@@ -1069,7 +1069,7 @@ typedef enum
     CY_BLE_EVT_GATTC_HANDLE_VALUE_NTF, /* 0x5012u */
 
     /** This event indicates that Indication data is received from GATT Server device. The event parameter is
-     *  a pointer to a structure of type cy_stc_ble_gattc_handle_value_ind_param_t.
+     *  a pointer to a structure of type cy_stc_ble_gattc_handle_value_ind_param_t. 
      */
     CY_BLE_EVT_GATTC_HANDLE_VALUE_IND, /* 0x5013u */
 
@@ -1080,18 +1080,18 @@ typedef enum
 
     /** This event indicates that a 'GATT Signed Write' command is received from GATT Client. The event
      *  parameter is a pointer to a structure of type cy_stc_ble_gatts_signed_write_cmd_req_param_t.
-     *  If value.val parameter is set to Zero, then the signature is not matched and is ignored by the BLE Stack
+     *  If value.val parameter is set to Zero, then the signature is not matched and is ignored by the BLE Stack 
      */
     CY_BLE_EVT_GATTS_DATA_SIGNED_CMD_REQ, /* 0x5015u */
 
     /** This event indicates that a GATT group procedure has stopped or completed. This event occurs
      *  only if the application has called the Cy_BLE_GATTC_StopCmd() function.
-     *  The parameter is a pointer to a structure of type cy_stc_ble_conn_handle_t.
+     *  The parameter is a pointer to a structure of type cy_stc_ble_conn_handle_t. 
      */
     CY_BLE_EVT_GATTC_STOP_CMD_COMPLETE, /* 0x5016u */
 
-   /** This event is triggered on the GATT Server side when the GATT Client sends a read request and
-    *  when characteristic has the CY_BLE_GATT_DB_ATTR_CHAR_VAL_RD_EVENT property set. The event
+   /** This event is triggered on the GATT Server side when the GATT Client sends a read request and 
+    *  when characteristic has the CY_BLE_GATT_DB_ATTR_CHAR_VAL_RD_EVENT property set. The event 
     *  parameter is of 'cy_stc_ble_gatts_char_val_read_req_t' type. This event could be ignored by the
     *  application unless it needs to respond by an error response, which must be set in the gattErrorCode
     *  field of the event parameter.
@@ -1125,13 +1125,13 @@ typedef enum
      *  Cy_BLE_L2CAP_LeConnectionParamUpdateResponse() function to respond to the remote
      *  device, whether parameters are accepted or rejected.
      *
-     *  The event parameter pointer points to data of type 'cy_stc_ble_gap_conn_update_param_info_t'
+     *  The event parameter pointer points to data of type 'cy_stc_ble_gap_conn_update_param_info_t' 
      */
     CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_REQ = 0x6000u,
 
     /** This event indicates the connection parameter update response is received
      *  from the master. The event parameter is a pointer to a structure of type
-     *  cy_stc_ble_l2cap_conn_update_rsp_param_t.
+     *  cy_stc_ble_l2cap_conn_update_rsp_param_t. 
      */
     CY_BLE_EVT_L2CAP_CONN_PARAM_UPDATE_RSP, /* 0x6001u */
 
@@ -1143,25 +1143,25 @@ typedef enum
 
     /** This event is used to inform the application of the incoming L2CAP CBFC
      *  Connection Request. The event parameter is a pointer to a structure of type
-     *  cy_stc_ble_l2cap_cbfc_conn_ind_param_t.
+     *  cy_stc_ble_l2cap_cbfc_conn_ind_param_t. 
      */
     CY_BLE_EVT_L2CAP_CBFC_CONN_IND, /* 0x6003u */
 
     /** This event is used to inform application of the L2CAP CBFC Connection
      *  Response/Confirmation. The event parameter is a pointer to a structure of
-     *  type cy_stc_ble_l2cap_cbfc_conn_cnf_param_t.
+     *  type cy_stc_ble_l2cap_cbfc_conn_cnf_param_t. 
      */
     CY_BLE_EVT_L2CAP_CBFC_CONN_CNF, /* 0x6004u */
 
     /** This event is used to inform the application of the L2CAP CBFC Disconnection
      *  Request received from the Peer device. The event parameter is a pointer to
-     *  a Local CID of type uint16.
+     *  a Local CID of type uint16. 
      */
     CY_BLE_EVT_L2CAP_CBFC_DISCONN_IND, /* 0x6005u */
 
     /** This event is used to inform the application of the L2CAP CBFC Disconnection
      *  confirmation/response received from the peer device. The event parameter is a
-     *  pointer to a structure of type cy_stc_ble_l2cap_cbfc_disconn_cnf_param_t.
+     *  pointer to a structure of type cy_stc_ble_l2cap_cbfc_disconn_cnf_param_t. 
      */
     CY_BLE_EVT_L2CAP_CBFC_DISCONN_CNF, /* 0x6006u */
 
@@ -1171,15 +1171,15 @@ typedef enum
      */
     CY_BLE_EVT_L2CAP_CBFC_DATA_READ, /* 0x6007u */
 
-    /** This event is generated when the Receive Credits have reached the
+    /** This event is generated when the Receive Credits have reached the 
      *  low water mark for a CBFC channel. After receiving L2CAP data/payload from a peer device for a
-     *  CBFC channel, the available credits are calculated. If the credit count goes
+     *  CBFC channel, the available credits are calculated. If the credit count goes 
      *  below the low water mark, this event is generated to inform
      *  the application of the condition. Now, if the application wants, it can
      *  send more credits to the peer device.
      *
      *  The event parameter is a pointer to a structure of type
-     *  cy_stc_ble_l2cap_cbfc_low_rx_credit_param_t.
+     *  cy_stc_ble_l2cap_cbfc_low_rx_credit_param_t. 
      */
     CY_BLE_EVT_L2CAP_CBFC_RX_CREDIT_IND, /* 0x6008u */
 
@@ -1196,7 +1196,7 @@ typedef enum
      *
      *  If there is an error, the peer device receiving this event should initiate
      *  disconnection of the L2CAP channel by invoking the Cy_BLE_L2CAP_DisconnectReq()
-     *  function.
+     *  function. 
      */
     CY_BLE_EVT_L2CAP_CBFC_TX_CREDIT_IND, /* 0x6009u */
 
@@ -1204,8 +1204,8 @@ typedef enum
      *  for transmission in the BLE Stack. The application can send the next data.
      *  The event parameter is of type 'cy_stc_ble_l2cap_cbfc_rx_data_param_t'.
      *  The L2CAP CBFC application must wait for this event before transmitting the next CBFC L2CAP data.
-     *  The application can send the next data only when the CY_BLE_EVT_L2CAP_CBFC_DATA_WRITE_IND event is received for
-     *  previously sent data and CY_BLE_EVT_STACK_BUSY_STATUS is received with status CY_BLE_STACK_STATE_FREE.
+     *  The application can send the next data only when the CY_BLE_EVT_L2CAP_CBFC_DATA_WRITE_IND event is received for 
+     *  previously sent data and CY_BLE_EVT_STACK_BUSY_STATUS is received with status CY_BLE_STACK_STATE_FREE. 
      */
     CY_BLE_EVT_L2CAP_CBFC_DATA_WRITE_IND,  /* 0x600Au */
 
@@ -1213,17 +1213,17 @@ typedef enum
 
 #ifdef CY_BLE_HOST_QUALIFICATION
     /** Tester to manipulate pairing request or response PDU. The event parameter is a pointer to 1 byte data.
-     *  The tester can manipulate the bits of the byte.
+     *  The tester can manipulate the bits of the byte. 
      */
     CY_BLE_EVT_QUAL_SMP_PAIRING_REQ_RSP = 0x7000u,
 
     /** Tester to manipulate local Public Key. The event parameter is a pointer to local public key of size 64 Bytes.
-     *  The tester can manipulate the bits/bytes.
+     *  The tester can manipulate the bits/bytes. 
      */
     CY_BLE_EVT_QUAL_SMP_LOCAL_PUBLIC_KEY, /* 0x7001u */
 
     /** Tester to assign pairing failed error code. The event parameter is a pointer to 16 bits value.
-     *   The tester should assign an error code to the lower bits.
+     *   The tester should assign an error code to the lower bits. 
      */
     CY_BLE_EVT_QUAL_SMP_PAIRING_FAILED_CMD, /* 0x7002u */
 
@@ -1316,7 +1316,7 @@ typedef enum
     /** Hardware Failure */
     /** Possible reason - BLE ECO failed to start due to one of the below:
      *   - LFCLK (WCO, PILO, ILO) not present
-     *   - Radio bus failure
+     *   - Radio bus failure 
      */
     CY_BLE_ERROR_HARDWARE_FAILURE,
 
@@ -1385,7 +1385,7 @@ typedef struct
 } cy_stc_ble_bd_addr_t;
 
 
-/** Configuration structure for Tx and Rx ACL Data Buffers required by the
+/** Configuration structure for Tx and Rx ACL Data Buffers required by the 
  *  BLE Stack. All the configurations specified are valid per
  *  connection and all the supported LL connections will have same capability.
  */
@@ -1468,7 +1468,7 @@ typedef struct
      *  |   LOBUFF_n6dBm   |     3        |
      *  |------------------|--------------|
      *
-     *  Note: Non-zero entries to the below table will over-ride
+     *  Note: Non-zero entries to the below table will over-ride 
      *  the Cypress recommended radio PA settings.
      */
     uint16_t lobuffTable[CY_BLE_MXD_PA_NUM_LOBUFF_VALS];
@@ -1486,21 +1486,21 @@ typedef struct
      *  |   TARGET_n20dBm  |     6        |
      *  |------------------|--------------|
      *
-     *  Note: Non-zero entries to the below table will over-ride
+     *  Note: Non-zero entries to the below table will over-ride 
      *  the Cypress recommended radio PA settings.
      */
 
     uint16_t targetTable[CY_BLE_MXD_PA_NUM_TARGET_VALS];
 
     /** Limit beyond which gain begins to rail.
-     *  Note: Non-zero entries to the below element will over-ride
+     *  Note: Non-zero entries to the below element will over-ride 
      *  the Cypress recommended radio PA settings.
      */
     uint8_t lobuffLimit;
 
     /** Calibration Ceiling.
-     *  Note: Non-zero entries to the below element will over-ride
-     *  the Cypress recommended radio PA settings.
+     *  Note: Non-zero entries to the below element will over-ride 
+     *  the Cypress recommended radio PA settings.    
      */
     uint16_t calValLimit;
 
@@ -1514,7 +1514,7 @@ typedef struct
      *  |   PA LDO 4dBm   |     3        |
      *  |-----------------|--------------|
      *
-     *  Note: Non-zero entries to the below table will over-ride
+     *  Note: Non-zero entries to the below table will over-ride 
      *  the Cypress recommended radio PA settings.
      */
     uint16_t ldoVoltageTable[CY_BLE_MXD_PA_NUM_LDO_SETTINGS];
@@ -1590,10 +1590,10 @@ typedef struct
 {
     /** bd handle of the device */
     uint8_t bdHandle;
-
+    
     /** Link layer access address */
     uint32_t accessAddr;
-
+    
 } cy_stc_ble_conn_estb_param_t;
 
 /** BLE Stack Manager configuration structure for allocating memory pools
@@ -1638,7 +1638,7 @@ typedef struct
 } cy_stc_ble_stack_init_info_t;
 
 /**
- * Structure containing the parameters required for AES CMAC Generation
+ * Structure containing the parameters required for AES CMAC Generation 
  */
 typedef struct
 {
@@ -1662,7 +1662,7 @@ typedef enum
 
     /** ABS PWR = -16 dBm */
     CY_BLE_LL_PWR_LVL_NEG_16_DBM = -16,
-
+    
     /** ABS PWR = -12 dBm */
     CY_BLE_LL_PWR_LVL_NEG_12_DBM = -12,
 
@@ -1756,7 +1756,7 @@ typedef struct
 /** Standard HCI command/data packet */
 typedef struct
 {
-    /** Buffer to hold the HCI packet
+    /** Buffer to hold the HCI packet 
     *  HCI Command Packet guide:
     *
     *  0     4     8    12    16    20    24    28    32
@@ -1814,15 +1814,15 @@ typedef struct
     *  |           ****|N-2 |N-1 |PDU  Octet N (upto 247)|
     *  +-----------------------+-------------------------+
     *
-    * The ACL Packet HCI Header contains the following
+    * The ACL Packet HCI Header contains the following 
     * information:
     * +___________________________________________________+
     * |--Conn Handle (12 bits)--|--Pkt Boundary (2 bits)--|
     * |-------------------------|-------------------------+
     * |--HCI_LLID(2 bits)------ |--Length(16 bits)--      |
     * +-------------------------|-------------------------+
-    *
-    * Note:
+    * 
+    * Note: 
     * 1. Packet Boundary data indicates the following:
     * +-------------+------------------+------------------+
     * |             |   Application to |    Controller to |
@@ -1833,7 +1833,7 @@ typedef struct
     * |     0x2u    | RESERVED         | Start of PDU     |
     * |     0x3u    | RESERVED         | Continuation PDU |
     * +-------------+------------------+------------------+
-    *
+    * 
     * 2. HCI_LLID data indicates the following:
     * +-------------+------------------|
     * |     0x0u    | Start of PDU     |
@@ -1842,14 +1842,14 @@ typedef struct
     * |     0x3u    | RESERVED         |
     * ---------------------------------|
     *
-    * 3. The value in the Length field does NOT include
+    * 3. The value in the Length field does NOT include 
     *    L2CAP header length (4 bytes).
-    *
+    * 
     */
     uint8_t       * data;
 
-    /** Length of the parameters in HCI packet buffer
-     *  in bytes.
+    /** Length of the parameters in HCI packet buffer 
+     *  in bytes. 
      */
     uint16_t      dataLength;
 
@@ -1862,7 +1862,7 @@ typedef struct
      *  |  HCI Synchronous packet type  |     0x3   |
      *  |  HCI Event packet type        |     0x4   |
      *  +-------------------------------|-----------+
-     *
+     * 
      *  Note: HCI Synchronous packet type (0x3) HCI packets
      *        are not supported by PSoC 6 BLE
      */
@@ -1994,10 +1994,10 @@ cy_en_ble_api_result_t Cy_BLE_GetStackLibraryVersion
 *                given below for non-HCI mode build of the BLE Stack.
 *
 *                (CY_BLE_DEFAULT_HOST_RAM_SIZE
-*                + Accumulative memory for all dataBuff units
+*                + Accumulative memory for all dataBuff units 
 *                + L2CAP heap requirement
 *                + CY_BLE_RAM_SECURE_CONNECTIONS_SIZE (Only if Secure Connections feature is enabled)
-*                + (CY_BLE_STACK_ONE_BONDED_DEVICE_SIZE + CY_BLE_STACK_ONE_DEVICE_Q_ENTITY_SIZE)
+*                + (CY_BLE_STACK_ONE_BONDED_DEVICE_SIZE + CY_BLE_STACK_ONE_DEVICE_Q_ENTITY_SIZE) 
 *                                        * (CY_BLE_MAX_CONNECTION_INSTANCES + param->bondListConfig.bondListSize)
 *                + (CY_BLE_STACK_BUFFER_MGR_UTIL_RAM_SZ * totalDataBufferPools))
 *
@@ -2012,7 +2012,7 @@ cy_en_ble_api_result_t Cy_BLE_GetStackLibraryVersion
 *                 (CY_BLE_L2CAP_QUEUE_ELEMENT_SIZE * BLE Stack queue depth per connection *
 *                  maxBleConnections ).
 *                  - CY_BLE_L2CAP_QUEUE_ELEMENT_SIZE is a define available in the BLE stack.
-*                  - BLE Stack queue depth per connection should be equal to or higher than
+*                  - BLE Stack queue depth per connection should be equal to or higher than 
 *                    CY_BLE_L2CAP_STACK_Q_DEPTH_PER_CONN.
 *                  - maxBleConnections specifies number of connections supported.
 *
@@ -2043,15 +2043,15 @@ cy_en_ble_api_result_t Cy_BLE_GetStackLibraryVersion
 *                 (
 *                  (CY_BLE_STACK_ONE_BONDED_DEVICE_SIZE * User configured Bonded Devices List size)
 *                    + (CY_BLE_STACK_ONE_DEVICE_Q_ENTITY_SIZE * (CY_BLE_MAX_CONNECTION_INSTANCES + User configured bondlist size))
-*                    + ((CY_BLE_LL_ONE_WHITELIST_HEAP_REQ * User Configured White List size) +
+*                    + ((CY_BLE_LL_ONE_WHITELIST_HEAP_REQ * User Configured White List size) + 
 *                                 CY_BLE_LL_WHITELIST_RETENTION_HEAP_REQ)
 *                    + ((CY_BLE_LL_PRIVACY_HEAP_REQ * User Configured Resolving List size) +
 *                                 CY_BLE_LL_PRIVACY_RETENTION_HEAP_REQ)Deterministic Random number generator
 *                 )
 *
-*      param->memParam.bleStackFlashSize: Size of the total Flash memory pointed by 'bleStackFlashPointer'.
+*      param->memParam.bleStackFlashSize: Size of the total Flash memory pointed by 'bleStackFlashPointer'. 
 *                                     Ignored in case of HCI mode.
-*
+*   
 *      param->stackConfig: BLE Stack configuration parameters such as featuremask, Bonded Devices List, White List & Resolving List size
 *              configuration, max number of connections, L2CAP configuration.
 *
@@ -2136,7 +2136,7 @@ cy_en_ble_api_result_t Cy_BLE_StackInit
 *       param->memParam.bleStackFlashPointer: Ignored for this API. This is used in Profile mode of the BLE Component.
 *
 *      param->memParam.bleStackFlashSize: Ignored for this API. This is used in Profile mode of the BLE Component.
-*
+*   
 *      param->stackConfig: BLE Stack configuration parameters such as featuremask, Bonded Devices List, White List & Resolving List size
 *              configuration, max number of connections, etc.
 *
@@ -2172,7 +2172,7 @@ cy_en_ble_api_result_t Cy_BLE_ControllerStackInit
 *  For UART HCI mode:
 *  This is a blocking function and no event is generated.
 *  Only CY_BLE_SUCCESS will be returned and other error codes are not applicable.
-*  The UART interface will be stopped and UART data will not be processed by the BLE Stack
+*  The UART interface will be stopped and UART data will not be processed by the BLE Stack 
 *  until Cy_BLE_StackInit() function is invoked.
 *
 * \return
@@ -2242,7 +2242,7 @@ cy_en_ble_api_result_t Cy_BLE_StackSoftReset
 *
 *  Calling this function can wake BLESS from deep sleep mode (DSM). In the process
 *  of waking from BLESS DSM, the BLE Stack puts the CPU into sleep mode to
-*  save power while polling for a wakeup indication from BLESS. BLESS Wakeup from DSM
+*  save power while polling for a wakeup indication from BLESS. BLESS Wakeup from DSM 
 *  can occur if the stack has pending data or control transactions to be performed.
 *
 * \return
@@ -2285,7 +2285,7 @@ void Cy_BLE_ProcessEvents
 *  ------------                     | -----------
 *  CY_BLE_SUCCESS                   | On successful operation.
 *  CY_BLE_ERROR_INVALID_PARAMETER   | Invalid configuration parameters passed or invalid combination of configParam and featureMask.
-*  CY_BLE_ERROR_INVALID_OPERATION   | Invoked after BLE Stack initialization.
+*  CY_BLE_ERROR_INVALID_OPERATION   | Invoked after BLE Stack initialization. 
 *
 ******************************************************************************/
 cy_en_ble_api_result_t Cy_BLE_StackSetFeatureConfig
@@ -2322,7 +2322,7 @@ cy_en_ble_api_result_t Cy_BLE_StackSetFeatureConfig
 *  ------------                     | -----------
 *  CY_BLE_SUCCESS                   | On successful operation.
 *  CY_BLE_ERROR_INVALID_PARAMETER   | Invalid configuration parameters passed or invalid combination of configParam and featureMask.
-*  CY_BLE_ERROR_INVALID_OPERATION   | Invoked after BLE Stack initialization.
+*  CY_BLE_ERROR_INVALID_OPERATION   | Invoked after BLE Stack initialization. 
 *
 ******************************************************************************/
 cy_en_ble_api_result_t Cy_BLE_ControllerStackSetFeatureConfig
@@ -2364,9 +2364,9 @@ cy_en_ble_api_result_t Cy_BLE_StackGetFeatureConfig
 /******************************************************************************
 * Function Name: Cy_BLE_SetCustomEventMask
 ***************************************************************************//**
-* This function is used to set the mask that will enable/disable any custom/customer
+* This function is used to set the mask that will enable/disable any custom/customer 
 * specific events that are exposed by the Stack.
-*
+* 
 * This is a Non Blocking function and success is informed through the
 * 'CY_BLE_EVT_SET_EVENT_MASK_COMPLETE' event.
 *
@@ -2374,7 +2374,7 @@ cy_en_ble_api_result_t Cy_BLE_StackGetFeatureConfig
 *               Following are the supported Mask values
 *               CY_BLE_DISABLE_ALL_EVENTS_MASK -  Disables all custom events
 *               CY_BLE_CONN_ESTB_EVENT_MASK - For connection establishment
-*                 events
+*                 events 
 *               CY_BLE_ADV_TX_EVENT_MASK - For advertisement packet sent
 *                 events
 * \return
@@ -2401,26 +2401,26 @@ cy_en_ble_api_result_t Cy_BLE_SetCustomEventMask
 * Function Name: Cy_BLE_StackEnterLPM
 ***************************************************************************//**
 *
-* This function is used by BLE Component to request the BLE Sub-System (BLESS) to enter deep sleep mode. This function should not be
+* This function is used by BLE Component to request the BLE Sub-System (BLESS) to enter deep sleep mode. This function should not be 
 * called by the application directly, instead application should use Cy_SysPm_DeepSleep function (which internally calls this function).
-* Based on the current state of the radio and the link layer timing, BLESS may fail to enter deep sleep mode.
-* The return value of this function should be used to check if the deep sleep entry request was successful or not.
-* Based on the return value, the CPU or the entire device can enter their respective low power modes.
+* Based on the current state of the radio and the link layer timing, BLESS may fail to enter deep sleep mode. 
+* The return value of this function should be used to check if the deep sleep entry request was successful or not. 
+* Based on the return value, the CPU or the entire device can enter their respective low power modes. 
 *
 * BLESS has following power modes:
 *  1. Active - BLESS, which includes the radio and the link layer, is active and CPU has access to all the BLESS registers in this mode
-*  2. Deep sleep (low power Mode) - All the high-frequency blocks in BLESS and the BLE ECO are shutdown and the BLE link layer timing is
-*     maintained using low frequency clocks (WCO or ILO). CPU will not be able to access the BLESS registers in this mode.
-*
+*  2. Deep sleep (low power Mode) - All the high-frequency blocks in BLESS and the BLE ECO are shutdown and the BLE link layer timing is 
+*     maintained using low frequency clocks (WCO or ILO). CPU will not be able to access the BLESS registers in this mode.   
+*  
 * If the application is using the BLE ECO as source of HFCLK for higher clock accuracy, it must switch the HFCLK to non BLE ECO clock
 * before calling this (or Cy_SysPm_DeepSleep)  function.
-*
+* 
 * The following table indicates the allowed power modes for the complete system
 * (BLE Sub-system and the micro-controller). Modes marked In 'X' are the allowed
 * combinations. The application layer should make sure that the invalid modes
 * are never entered into.
 *
-* \code
+* \code  
 *    |-------------------------------------------------------------------------------|
 *    |                 |                           MCU                               |
 *    |     BLESS       |--------------|-------------|----------------|---------------|
@@ -2428,11 +2428,11 @@ cy_en_ble_api_result_t Cy_BLE_SetCustomEventMask
 *    |-----------------|--------------|-------------|----------------|---------------|
 *    |    Active       |      X       |      X      |                |               |
 *    |  Deep sleep     |      X       |      X      |        X       |               |
-*    |-------------------------------------------------------------------------------|
+*    |-------------------------------------------------------------------------------| 
 * \endcode
 *
 *
-* This is a blocking function. In the process of entering into BLESS deep sleep mode,
+* This is a blocking function. In the process of entering into BLESS deep sleep mode, 
 * the BLE Stack puts the CPU into sleep mode to save power while polling
 * for an entry indication to BLESS deep sleep mode. No event is generated on calling this function.
 *
@@ -2491,10 +2491,10 @@ cy_en_ble_lp_mode_t Cy_BLE_ControllerEnterLPM(cy_en_ble_lp_mode_t pwrMode);
 /******************************************************************************
 * Function Name: Cy_BLE_StackGetBleSsState
 ***************************************************************************//**
-*
-*  This function returns the BLE Subsystem's current operational mode. This state
+* 
+*  This function returns the BLE Subsystem's current operational mode. This state 
 *  can be used to manage system level power modes.
-*
+* 
 * \return:
 * cy_en_ble_bless_state_t : BLESS's operating mode has one of the following values
 *
@@ -2504,7 +2504,7 @@ cy_en_ble_lp_mode_t Cy_BLE_ControllerEnterLPM(cy_en_ble_lp_mode_t pwrMode);
 *  CY_BLE_BLESS_STATE_EVENT_CLOSE| BLE Sub System radio and Link Layer hardware finished Tx/Rx. In this state, the application can try configuring the BLE stack to deep sleep mode.
 *  CY_BLE_BLESS_STATE_ECO_STABLE | BLE Sub System is in the process of waking up from deep sleep mode and the BLE ECO is stable. The CPU can be configured in sleep mode.
 *  CY_BLE_BLESS_STATE_DEEPSLEEP  | BLE Sub System is in deep sleep mode. CPU can be configured in deep sleep mode.
-*
+* 
 ******************************************************************************/
 cy_en_ble_bless_state_t Cy_BLE_StackGetBleSsState(void);
 
@@ -2513,12 +2513,12 @@ cy_en_ble_bless_state_t Cy_BLE_StackGetBleSsState(void);
 /******************************************************************************
 * Function Name: Cy_BLE_IsControllerActive
 ***************************************************************************//**
-*
+* 
 *  This function checks whether any of the protocol engines of the BLE controller are
 *  active. If either of ADV/SCAN/INIT/CONN engine is active, it returns CY_BLE_SUCCESS.
-*
+* 
 * \param checkForMode: Sleep mode which the Controller core is trying to enter
-*               CY_BLE_CONTROLLER_SLEEP_MODE_SLEEP -  Check whether controller core can enter sleep mode
+*               CY_BLE_CONTROLLER_SLEEP_MODE_SLEEP -  Check whether controller core can enter sleep mode 
 *               CY_BLE_CONTROLLER_SLEEP_MODE_DEEPSLEEP -  Check whether controller core can enter deep sleep mode
 *
 * \return
@@ -2547,7 +2547,7 @@ cy_en_ble_api_result_t Cy_BLE_IsControllerActive(cy_en_ble_controller_sleep_mode
 * This function enables Link Layer (LL) Privacy feature in the
 * BLE Stack. LL privacy feature is disabled and memory space for the feature is not used by default.
 * This function is called by the BLE Component during BLE initialization if the
-* CY_BLE_CONFIG_ENABLE_LL_PRIVACY macro is set by the user.
+* CY_BLE_CONFIG_ENABLE_LL_PRIVACY macro is set by the user. 
 *
 * \return
 *    None.
@@ -2570,7 +2570,7 @@ void Cy_BLE_EnablePrivacyFeature
 ***************************************************************************//**
 *
 * This function Enables Privacy features in
-* controller. When this function is not called in the application,
+* controller. When this function is not called in the application, 
 * Privacy features gets disabled and memory space used in the controller
 * is relenquished.
 *
@@ -2597,9 +2597,9 @@ void Cy_BLE_ControllerEnablePrivacyFeature
 *
 * This function Enables Data Length Extension (DLE) feature in the
 * BLE Stack. DLE features are disabled and memory space for the feature is not used by default. This
-* function is called by the BLE Component during BLE initialization if either of
+* function is called by the BLE Component during BLE initialization if either of  
 * CY_BLE_CONFIG_LL_MAX_TX_PAYLOAD_SIZE or CY_BLE_CONFIG_LL_MAX_RX_PAYLOAD_SIZE macro
-* is configured by the user to a value greater than 27 octets.
+* is configured by the user to a value greater than 27 octets.  
 *
 * \return
 *    None.
@@ -2625,7 +2625,7 @@ void Cy_BLE_EnableDleFeature
 ***************************************************************************//**
 *
 * This function Enables Data Length Extension features in
-* controller. When this function is not called in the application,
+* controller. When this function is not called in the application, 
 * DLE features gets disabled and memory space used in the controller
 * is relenquished.
 *
@@ -2652,7 +2652,7 @@ void Cy_BLE_ControllerEnableDleFeature
 ***************************************************************************//**
 *
 * This function Enables PHY Update (for 2 Mbps bitrate) feature in the
-* BLE Stack. The PHY Update feature is disabled and memory space for the feature is not used by default.
+* BLE Stack. The PHY Update feature is disabled and memory space for the feature is not used by default. 
 * This function is called by the BLE Component during BLE initialization if the
 * CY_BLE_CONFIG_ENABLE_PHY_UPDATE macro.
 *
@@ -2679,7 +2679,7 @@ void Cy_BLE_EnablePhyUpdateFeature
 ***************************************************************************//**
 *
 * This function Enables PHY Update (2Mbps bitrate) feature in
-* controller. When this function is not called in the application,
+* controller. When this function is not called in the application, 
 * PHY Update feature gets disabled and memory space used in the controller
 * is relenquished. This function is called by the BLE Component during BLE initialization if the
 * CY_BLE_CONFIG_ENABLE_PHY_UPDATE macro.
@@ -2705,13 +2705,13 @@ void Cy_BLE_ControllerEnablePhyUpdateFeature
 ***************************************************************************//**
 *
 * This function sends a HCI packet to the BLE Stack's Controller when the Soft Transport feature is
-* enabled using the Cy_BLE_SoftHciTransportEnable() API. Application should allocate memory
-* for the buffer to hold the HCI packet passed as an input parameter. This API copies the
-* HCI packet into the controller's HCI buffer. Hence, the Application may deallocate the
+* enabled using the Cy_BLE_SoftHciTransportEnable() API. Application should allocate memory 
+* for the buffer to hold the HCI packet passed as an input parameter. This API copies the 
+* HCI packet into the controller's HCI buffer. Hence, the Application may deallocate the 
 * memory buffer created to hold the HCI packet, once the API returns.
-*
+*  
 * \param HciPktParams: HCI packet which the application wants to push to the BLE Stack's Controller.
-*
+* 
 *
 * \return
 *  cy_en_ble_api_result_t : Returns whether the controller is active or not.

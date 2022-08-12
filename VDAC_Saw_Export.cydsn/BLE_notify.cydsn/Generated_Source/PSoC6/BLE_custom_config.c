@@ -49,6 +49,16 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
                     0x0016u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
+
+            /* Inbound float characteristic */
+            {
+                0x0018u, /* Handle of the Inbound float characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
+                }, 
+            },
         }, 
     },
 };

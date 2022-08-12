@@ -21,11 +21,19 @@ int sendFlag = false;
 uint8 recv_val = 0;
 bool recv_flag = false;
 
+// to send
 struct data 
 {
     float32 DAC_volt;
     float32 ADC_volt;
 };
+
+union {
+  float f;
+  unsigned char b[4];
+} u;
+
+
 
 
 void genericEventHandler(uint32_t event, void *eventParameter)
@@ -60,6 +68,15 @@ void genericEventHandler(uint32_t event, void *eventParameter)
                 //printf("recv val is %d\r\n", recv_val);
                 recv_flag = true;
             }
+            else if(CY_BLE_DATA_SERVICE_INBOUND_FLOAT_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle) {
+                u.b[3] = writeReqParameter->handleValPair.value.val[3];
+                u.b[2] = writeReqParameter->handleValPair.value.val[2];
+                u.b[1] = writeReqParameter->handleValPair.value.val[1];
+                u.b[0] = writeReqParameter->handleValPair.value.val[0];
+                printf("inbound float is %f\r\n", u.f);
+            }
+
+            
             
             Cy_BLE_GATTS_WriteRsp(writeReqParameter->connHandle);
             
@@ -101,7 +118,7 @@ int main(void)
     
     for(;;)
     {
-        //printf("working\r\n");
+//        printf("working\r\n");
         if (counter < 4095){
             counter++;
             ex_val++;

@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_ans.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  Contains the source code for the Alert Notification Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -128,7 +128,7 @@ cy_en_ble_api_result_t Cy_BLE_ANS_Init(cy_stc_ble_ans_config_t *config)
 *  unregistered callback function.
 *
 *  \param callbackFunc:  An application layer event callback function to receive
-*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t
+*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t 
 *    for Alert Notification Service is:<br>
 *    typedef void (* cy_ble_callback_t) (uint32_t eventCode, void *eventParam),
 *    where:
@@ -153,7 +153,7 @@ cy_en_ble_api_result_t Cy_BLE_ANS_Init(cy_stc_ble_ans_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_ANS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_ANS_ApplCallback = callbackFunc;
     if(cy_ble_ansConfigPtr != NULL)
     {
@@ -163,7 +163,7 @@ cy_en_ble_api_result_t Cy_BLE_ANS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 
@@ -228,7 +228,7 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_ANSS_WriteEventHandler(cy_stc_ble_gatts_
 
             /* Value is NULL for descriptors */
             wrReqParam.value = NULL;
-
+   
         }
         else
         {
@@ -355,7 +355,7 @@ cy_en_ble_api_result_t Cy_BLE_ANSS_SetCharacteristicValue(cy_en_ble_ans_char_ind
 *  Gets a characteristic value of Alert Notification Service. The value is
 *  identified by charIndex.
 *
-*  \param charIndex: The index of the service characteristic of
+*  \param charIndex: The index of the service characteristic of 
 *                    type \ref  cy_en_ble_ans_char_index_t. The valid values are,
 *                       * #CY_BLE_ANS_NEW_ALERT
 *                       * #CY_BLE_ANS_UNREAD_ALERT_STATUS
@@ -407,7 +407,7 @@ cy_en_ble_api_result_t Cy_BLE_ANSS_GetCharacteristicValue(cy_en_ble_ans_char_ind
 *  Notification Service.
 *
 *  \param connHandle: The connection handle
-*  \param charIndex:  The index of the service characteristic of type
+*  \param charIndex:  The index of the service characteristic of type 
 *                     \ref cy_en_ble_ans_char_index_t. The valid values are,
 *                       * #CY_BLE_ANS_NEW_ALERT
 *                       * #CY_BLE_ANS_UNREAD_ALERT_STATUS
@@ -415,7 +415,7 @@ cy_en_ble_api_result_t Cy_BLE_ANSS_GetCharacteristicValue(cy_en_ble_ans_char_ind
 *                     \ref cy_en_ble_ans_descr_index_t. The valid value is,
 *                       * #CY_BLE_ANS_CCCD
 *  \param attrSize:   The size of the characteristic descriptor attribute.
-*  \param attrValue:  The pointer to the location where characteristic
+*  \param attrValue:  The pointer to the location where characteristic 
 *                     descriptor value data should be stored.
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
@@ -464,19 +464,19 @@ cy_en_ble_api_result_t Cy_BLE_ANSS_GetCharacteristicDescriptor(cy_stc_ble_conn_h
 * Function Name: Cy_BLE_ANSS_SendNotification
 ***************************************************************************//**
 *
-*  Sends a notification with the characteristic value, as specified by its
+*  Sends a notification with the characteristic value, as specified by its 
 *  charIndex, to the Client device.
 *  On enabling notification successfully for a service characteristic it sends out a
 *  'Handle Value Notification' which results in #CY_BLE_EVT_ANSC_NOTIFICATION event
 *  at the GATT Client's end.
 *
 *  \param connHandle: The connection handle.
-*  \param charIndex:  The index of the service characteristic of
+*  \param charIndex:  The index of the service characteristic of 
 *                     type \ref cy_en_ble_ans_char_index_t. The valid values are,
 *                       * #CY_BLE_ANS_UNREAD_ALERT_STATUS
 *                       * #CY_BLE_ANS_NEW_ALERT
 *  \param attrSize:   The size of the characteristic value attribute.
-*  \param attrValue:  The pointer to the characteristic value data that
+*  \param attrValue:  The pointer to the characteristic value data that 
 *                     should be sent to the Client device.
 *
 *  \return
@@ -945,7 +945,7 @@ static void Cy_BLE_ANSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_para
 *  sent to the Client.
 *
 *  \param connHandle: The connection handle.
-*  \param charIndex:  The index of the service characteristic of
+*  \param charIndex:  The index of the service characteristic of 
 *                     type \ref cy_en_ble_ans_char_index_t. The valid values are,
 *                       * #CY_BLE_ANS_UNREAD_ALERT_STATUS
 *                       * #CY_BLE_ANS_NEW_ALERT
@@ -954,7 +954,7 @@ static void Cy_BLE_ANSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_para
 *                     sent to the server device.
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -970,7 +970,7 @@ static void Cy_BLE_ANSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_para
 *   If the ANS service-specific callback is registered
 *   with Cy_BLE_ANS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_ANSC_WRITE_CHAR_RESPONSE - In case if the requested attribute is
-*     successfully written on the peer device, the details
+*     successfully written on the peer device, the details 
 *     (char index, etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_ans_char_value_t.
 *   .
@@ -1036,14 +1036,14 @@ cy_en_ble_api_result_t Cy_BLE_ANSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 *  identified by its charIndex.
 *
 *  \param connHandle: The connection handle.
-*  \param charIndex:  The index of the service characteristic of
+*  \param charIndex:  The index of the service characteristic of 
                       type \ref cy_en_ble_ans_char_index_t. The valid values are,
 *                       * #CY_BLE_ANS_UNREAD_ALERT_STATUS
 *                       * #CY_BLE_ANS_NEW_ALERT
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1058,18 +1058,18 @@ cy_en_ble_api_result_t Cy_BLE_ANSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 *   If the ANS service-specific callback is registered
 *      with Cy_BLE_ANS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_ANSC_READ_CHAR_RESPONSE - In case if the requested attribute is
-*     successfully read on the peer device, the details
+*     successfully read on the peer device, the details 
 *     (char index , value, etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_ans_char_value_t.
 *   .
 *   Otherwise (if an ANS service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure
+*     provided with an event parameter structure 
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with
+*     requested attribute on the peer device, the details are provided with 
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1165,7 +1165,7 @@ cy_en_ble_api_result_t Cy_BLE_ANSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *   If the ANS service-specific callback is registered
 *   with Cy_BLE_ANS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_ANSC_WRITE_DESCR_RESPONSE - In case if the requested attribute is
-*     successfully written on the peer device, the details
+*     successfully written on the peer device, the details 
 *     (char index, descr index etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_ans_descr_value_t.
 *   .
@@ -1174,7 +1174,7 @@ cy_en_ble_api_result_t Cy_BLE_ANSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *     successfully written on the peer device.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with
+*     requested attribute on the peer device, the details are provided with 
 *     an event parameter structure ( \ref cy_stc_ble_gatt_err_param_t).
 *
 ******************************************************************************/
@@ -1191,7 +1191,7 @@ cy_en_ble_api_result_t Cy_BLE_ANSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) &&
+    else if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) && 
             (descrIndex == CY_BLE_ANS_CCCD) && (attrSize == CY_BLE_CCCD_LEN))
     {
         if((charIndex == CY_BLE_ANS_NEW_ALERT) || (charIndex == CY_BLE_ANS_UNREAD_ALERT_STATUS))
@@ -1266,11 +1266,11 @@ cy_en_ble_api_result_t Cy_BLE_ANSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *   Otherwise (if an ANS service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure
+*     provided with an event parameter structure 
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with
+*     requested attribute on the peer device, the details are provided with 
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
