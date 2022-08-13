@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_hids.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the source code for the HID service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -144,7 +144,7 @@ cy_en_ble_api_result_t Cy_BLE_HIDS_Init(cy_stc_ble_hids_config_t *config)
 *  unregistered callback function.
 *
 *  \param callbackFunc:  An application layer event callback function to receive
-*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t 
+*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t
 *    for HID Service is:<br>
 *    typedef void (* cy_ble_callback_t) (uint32_t eventCode, void *eventParam),
 *    where:
@@ -169,7 +169,7 @@ cy_en_ble_api_result_t Cy_BLE_HIDS_Init(cy_stc_ble_hids_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_HIDS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_HIDS_ApplCallback = callbackFunc;
     if(cy_ble_hidsConfigPtr != NULL)
     {
@@ -179,7 +179,7 @@ cy_en_ble_api_result_t Cy_BLE_HIDS_RegisterAttrCallback(cy_ble_callback_t callba
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -582,7 +582,7 @@ static uint32_t Cy_BLE_HIDSS_CccdWriteEventHandler(const cy_stc_ble_gatts_write_
         eventCode = (uint32_t)CY_BLE_EVT_HIDSS_NOTIFICATION_DISABLED;
     }
     cy_ble_eventHandlerFlag &= (uint8_t) ~CY_BLE_CALLBACK;
-    
+
     return(eventCode);
 }
 
@@ -1233,15 +1233,15 @@ static void Cy_BLE_HIDSC_GetCharRange(cy_stc_ble_disc_range_info_t *charRangeInf
 *                       are supported in your design, then first service will be
 *                       identified by serviceIndex of 0 and the second by
 *                       serviceIndex of 1.
-*  \param charIndex:    The index of the service characteristic of 
-*                       type \ref cy_en_ble_hids_char_index_t. 
+*  \param charIndex:    The index of the service characteristic of
+*                       type \ref cy_en_ble_hids_char_index_t.
 *  \param attrSize:     The size of the characteristic value attribute.
 *  \param attrValue:    The pointer to the characteristic value data that should be
 *                       sent to the server device.
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1263,7 +1263,7 @@ static void Cy_BLE_HIDSC_GetCharRange(cy_stc_ble_disc_range_info_t *charRangeInf
 *  * \ref CY_BLE_EVT_GATTC_WRITE_RSP - In case if the requested attribute is
 *    successfully written on the peer device.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - In case if an error occurred with the
-*    requested attribute on the peer device, the details are provided with 
+*    requested attribute on the peer device, the details are provided with
 *    event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1277,8 +1277,8 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_SetCharacteristicValue(cy_stc_ble_conn_handl
     cy_en_ble_api_result_t apiResult;
     cy_ble_gatt_db_attr_handle_t charValueHandle;
     uint32_t discIdx = Cy_BLE_GetDiscoveryIdx(connHandle);
-    
-    if((serviceIndex >= CY_BLE_HIDSC_SERVICE_COUNT) || (charIndex >= CY_BLE_HIDS_CHAR_COUNT) || 
+
+    if((serviceIndex >= CY_BLE_HIDSC_SERVICE_COUNT) || (charIndex >= CY_BLE_HIDS_CHAR_COUNT) ||
        (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -1345,12 +1345,12 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_SetCharacteristicValue(cy_stc_ble_conn_handl
 *                       are supported in your design, then first service will be
 *                       identified by serviceIndex of 0 and the second by
 *                       serviceIndex of 1.
-*  \param charIndex:    The index of the service characteristic of 
-*                       type \ref cy_en_ble_hids_char_index_t. 
+*  \param charIndex:    The index of the service characteristic of
+*                       type \ref cy_en_ble_hids_char_index_t.
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1366,20 +1366,20 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_SetCharacteristicValue(cy_stc_ble_conn_handl
 *   If the HID service specific callback is registered
 *      with Cy_BLE_HIDS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_HIDSC_READ_CHAR_RESPONSE - In case if the requested attribute is
-*     successfully read on the peer device, the details 
+*     successfully read on the peer device, the details
 *     (char index , value, etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_hids_char_value_t.
 *   .
 *   Otherwise (if an HID service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure 
+*     provided with an event parameter structure
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *   * #CY_BLE_EVT_GATTC_READ_BLOB_RSP - In case if the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
 *     provided with event parameters structure \ref cy_stc_ble_gattc_read_rsp_param_t.
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with 
+*     requested attribute on the peer device, the details are provided with
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1396,7 +1396,7 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_GetCharacteristicValue(cy_stc_ble_conn_handl
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((serviceIndex >= CY_BLE_HIDSC_SERVICE_COUNT) || (charIndex >= CY_BLE_HIDS_CHAR_COUNT) || 
+    else if((serviceIndex >= CY_BLE_HIDSC_SERVICE_COUNT) || (charIndex >= CY_BLE_HIDS_CHAR_COUNT) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -1464,7 +1464,7 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_GetCharacteristicValue(cy_stc_ble_conn_handl
 *                       identified by serviceIndex of 0 and the second by
 *                       serviceIndex of 1.
 *  \param charIndex:    The index of the service characteristic of type
-*                       \ref cy_en_ble_hids_char_index_t. 
+*                       \ref cy_en_ble_hids_char_index_t.
 *  \param descrIndex:   The index of the service characteristic descriptor of type
 *                       \ref cy_en_ble_hids_descr_t.
 *  \param attrSize:     The size of the characteristic value attribute.
@@ -1489,7 +1489,7 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_GetCharacteristicValue(cy_stc_ble_conn_handl
 *   If the HIDS service-specific callback is registered
 *   with Cy_BLE_HIDS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_HIDSC_WRITE_DESCR_RESPONSE - In case if the requested attribute is
-*     successfully written on the peer device, the details 
+*     successfully written on the peer device, the details
 *     (char index, descr index etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_hids_descr_value_t.
 *   .
@@ -1497,7 +1497,7 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_GetCharacteristicValue(cy_stc_ble_conn_handl
 *   * #CY_BLE_EVT_GATTC_WRITE_RSP - If the requested attribute is
 *     successfully written on the peer device.
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with 
+*     requested attribute on the peer device, the details are provided with
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1511,13 +1511,13 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
     cy_en_ble_api_result_t apiResult;
     cy_ble_gatt_db_attr_handle_t locDescrHandle;
     uint32_t discIdx = Cy_BLE_GetDiscoveryIdx(connHandle);
-    
+
     if(Cy_BLE_GetConnectionState(connHandle) != CY_BLE_CONN_STATE_CLIENT_DISCOVERED)
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
     else if((serviceIndex >= CY_BLE_HIDSC_SERVICE_COUNT) || (charIndex >= CY_BLE_HIDS_CHAR_COUNT) ||
-            (descrIndex >= CY_BLE_HIDS_DESCR_COUNT) || (charIndex < CY_BLE_HIDS_REPORT_MAP) || 
+            (descrIndex >= CY_BLE_HIDS_DESCR_COUNT) || (charIndex < CY_BLE_HIDS_REPORT_MAP) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -1572,7 +1572,7 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
 *                       identified by serviceIndex of 0 and the second by
 *                       serviceIndex of 1.
 *  \param charIndex:    The index of the service characteristic of type
-*                       \ref cy_en_ble_hids_char_index_t. 
+*                       \ref cy_en_ble_hids_char_index_t.
 *  \param descrIndex:   The index of the service characteristic descriptor of type
 *                       \ref cy_en_ble_hids_descr_t.
 *
@@ -1601,10 +1601,10 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
 *   Otherwise (if an HID service specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure 
+*     provided with an event parameter structure
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with 
+*     requested attribute on the peer device, the details are provided with
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1618,7 +1618,7 @@ cy_en_ble_api_result_t Cy_BLE_HIDSC_GetCharacteristicDescriptor(cy_stc_ble_conn_
     uint32_t discIdx = Cy_BLE_GetDiscoveryIdx(connHandle);
 
     if((serviceIndex >= CY_BLE_HIDSC_SERVICE_COUNT) || (charIndex >= CY_BLE_HIDS_CHAR_COUNT) ||
-       (descrIndex >= CY_BLE_HIDS_DESCR_COUNT) || (charIndex < CY_BLE_HIDS_REPORT_MAP) || 
+       (descrIndex >= CY_BLE_HIDS_DESCR_COUNT) || (charIndex < CY_BLE_HIDS_REPORT_MAP) ||
        (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

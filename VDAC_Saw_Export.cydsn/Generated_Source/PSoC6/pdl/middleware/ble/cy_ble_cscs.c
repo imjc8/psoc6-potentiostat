@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_cscs.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the source code for the Cycling Speed and Cadence Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -147,7 +147,7 @@ cy_en_ble_api_result_t Cy_BLE_CSCS_Init(cy_stc_ble_cscs_config_t *config)
 *  unregistered callback function.
 *
 *  \param callbackFunc:  An application layer event callback function to receive
-*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t 
+*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t
 *    for Cycling Speed and Cadence Service is:<br>
 *    typedef void (* cy_ble_callback_t) (uint32_t eventCode, void *eventParam),
 *    where:
@@ -172,7 +172,7 @@ cy_en_ble_api_result_t Cy_BLE_CSCS_Init(cy_stc_ble_cscs_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_CSCS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_CSCS_ApplCallback = callbackFunc;
     if(cy_ble_cscsConfigPtr != NULL)
     {
@@ -182,7 +182,7 @@ cy_en_ble_api_result_t Cy_BLE_CSCS_RegisterAttrCallback(cy_ble_callback_t callba
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -1176,7 +1176,7 @@ static void Cy_BLE_CSCSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_par
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1199,7 +1199,7 @@ static void Cy_BLE_CSCSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_par
 *  * \ref CY_BLE_EVT_GATTC_WRITE_RSP - In case if the requested attribute is
 *    successfully written on the peer device.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - In case if an error occurred with the
-*    requested attribute on the peer device, the details are provided with 
+*    requested attribute on the peer device, the details are provided with
 *    event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 *******************************************************************************/
@@ -1215,7 +1215,7 @@ cy_en_ble_api_result_t Cy_BLE_CSCSC_SetCharacteristicValue(cy_stc_ble_conn_handl
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) && 
+    else if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) &&
             (charIndex == CY_BLE_CSCS_SC_CONTROL_POINT))
     {
         if(CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE !=
@@ -1264,7 +1264,7 @@ cy_en_ble_api_result_t Cy_BLE_CSCSC_SetCharacteristicValue(cy_stc_ble_conn_handl
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1288,7 +1288,7 @@ cy_en_ble_api_result_t Cy_BLE_CSCSC_SetCharacteristicValue(cy_stc_ble_conn_handl
 *    successfully read on the peer device, the details (handle, value, etc.) are
 *    provided with event parameters structure \ref cy_stc_ble_gattc_read_rsp_param_t.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - In case if an error occurred with the
-*    requested attribute on the peer device, the details are provided 
+*    requested attribute on the peer device, the details are provided
 *    with event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 *******************************************************************************/
@@ -1372,7 +1372,7 @@ cy_en_ble_api_result_t Cy_BLE_CSCSC_GetCharacteristicValue(cy_stc_ble_conn_handl
 *  \param charIndex:  The index of a CSCS characteristic.
 *  \param descrIndex: The index of a CSCS characteristic descriptor.
 *  \param attrSize:   The size of the characteristic descriptor attribute.
-*  \param attrValue:  The pointer to the characteristic descriptor value data that 
+*  \param attrValue:  The pointer to the characteristic descriptor value data that
 *                      should be sent to the server device.
 *
 *  \return
@@ -1417,7 +1417,7 @@ cy_en_ble_api_result_t Cy_BLE_CSCSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) && 
+    else if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) &&
             (descrIndex == CY_BLE_CSCS_CCCD) && (attrSize == CY_BLE_CCCD_LEN))
     {
         if((charIndex == CY_BLE_CSCS_CSC_MEASUREMENT) || (charIndex == CY_BLE_CSCS_SC_CONTROL_POINT))
@@ -1504,7 +1504,7 @@ cy_en_ble_api_result_t Cy_BLE_CSCSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
 *    successfully read on the peer device, the details (handle, value, etc.) are
 *    provided with event parameters structure (cy_stc_ble_gattc_read_rsp_param_t).
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - In case if an error occurred with the
-*    requested attribute on the peer device, the details are provided with 
+*    requested attribute on the peer device, the details are provided with
 *    event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 *******************************************************************************/

@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_ias.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  This file contains the source code for the Immediate Alert Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -26,7 +26,7 @@ extern "C" {
 #ifdef CY_BLE_IAS_SERVER
 static cy_ble_callback_t Cy_BLE_IAS_ApplCallback = NULL;
 #endif /* (CY_BLE_IAS_SERVER) */
-    
+
 #ifdef CY_BLE_IAS_CLIENT
 /* IAS Center Service characteristics GATT DB handles structure */
 cy_stc_ble_iasc_t cy_ble_iasc[CY_BLE_GATTC_COUNT];
@@ -84,7 +84,7 @@ cy_en_ble_api_result_t Cy_BLE_IAS_Init(cy_stc_ble_ias_config_t *config)
 
         /* Registers Event Handler for the IAS Service */
         apiResult = Cy_BLE_RegisterServiceEventHandler(&Cy_BLE_IAS_EventHandler);
-        
+
     #ifdef CY_BLE_IAS_SERVER
         /* Registers a callback function via config structure */
         if(cy_ble_iasConfigPtr->callbackFunc != NULL)
@@ -92,7 +92,7 @@ cy_en_ble_api_result_t Cy_BLE_IAS_Init(cy_stc_ble_ias_config_t *config)
             Cy_BLE_IAS_ApplCallback = cy_ble_iasConfigPtr->callbackFunc;
         }
     #endif /* CY_BLE_IAS_SERVER */
-    
+
     #ifdef CY_BLE_IAS_CLIENT
         {
             uint32_t idx;
@@ -157,7 +157,7 @@ cy_en_ble_api_result_t Cy_BLE_IAS_Init(cy_stc_ble_ias_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_IAS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_IAS_ApplCallback = callbackFunc;
     if(cy_ble_iasConfigPtr != NULL)
     {
@@ -167,7 +167,7 @@ cy_en_ble_api_result_t Cy_BLE_IAS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -392,7 +392,7 @@ cy_en_ble_api_result_t Cy_BLE_IASC_SetCharacteristicValue(cy_stc_ble_conn_handle
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) && 
+    else if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) &&
             (charIndex == CY_BLE_IAS_ALERT_LEVEL) && (attrSize == CY_BLE_IAS_ALERT_LEVEL_SIZE) &&
             (*attrValue <= CY_BLE_HIGH_ALERT) &&
             (cy_ble_iasc[discIdx].alertLevelChar.valueHandle != CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE))

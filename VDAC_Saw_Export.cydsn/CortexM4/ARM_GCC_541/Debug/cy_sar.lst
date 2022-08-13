@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
   28:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *   - a sequence controller (\ref group_sar_sarmux "SARSEQ") that enables multi-channel acquisition
   29:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *       in a round robin fashion, without CPU intervention, to maximize scan rates.
   30:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 2
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 2
 
 
   31:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \image html sar_block_diagram.png
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
   85:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
   86:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \subsection group_sar_init_struct_sampleCtrl uint32_t sampleCtrl
   87:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 3
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 3
 
 
   88:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * This field configures sampling details that apply to all channels.
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  142:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * the range interrupt. Select a value from the \ref cy_en_sar_range_detect_condition_t enum.
  143:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
  144:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \subsection group_sar_init_struct_chanEn uint32_t chanEn
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 4
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 4
 
 
  145:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  199:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * The sample value is tested right after conversion, that is, before averaging. This means that it
  200:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * can happen that the interrupt is set while the averaged result in the data register is not
  201:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * equal to the minimum or maximum.
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 5
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 5
 
 
  202:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  256:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *     <td>Continuous</td>
  257:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *     <td>After completing a scan, the
  258:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *     SARSEQ will immediately start the next scan. That is, the SARSEQ will always be BUSY.
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 6
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 6
 
 
  259:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *     As a result all other triggers, firmware or hardware, are essentially ignored.
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  313:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Implement an interrupt routine and assign it to the SAR interrupt.
  314:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Use the pre-defined enum, pass_interrupt_sar_IRQn, as the interrupt source for the SAR.
  315:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 7
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 7
 
 
  316:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * The following code snippet demonstrates how to implement a routine to handle the interrupt.
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  370:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \image html sar_channel_sample_time_eqn.png
  371:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
  372:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * The SAR ADC is a 12-bit converter so Resolution = 12.
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 8
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 8
 
 
  373:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  427:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *     <td>\ref CY_SAR_POS_PORT_ADDR_SARMUX_VIRT</td>
  428:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *     <td>\ref CY_SAR_CHAN_POS_PIN_ADDR_0</td>
  429:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *   </tr>
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 9
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 9
 
 
  430:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *   <tr>
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  484:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
  485:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * The following figure and code snippet show how two GPIOs on any port through the AMUXBUSA and AMU
  486:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * are connected to the SARADC as separate single-ended channels and as a differential-pair channel.
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 10
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 10
 
 
  487:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Note that separate function calls are needed to route the device pins to the SARMUX. The AMUXBUSe
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  541:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *     <td>Driver library directory-structure simplification.</td>
  542:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *   </tr>
  543:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *   <tr>
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 11
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 11
 
 
  544:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *     <td>Added register access layer. Use register access macros instead
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  598:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** #define CY_SAR_H
  599:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** 
  600:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** #include <stdint.h>
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 12
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 12
 
 
  601:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** #include <stdbool.h>
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  655:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****                                         | SAR_CTRL_COMP_PWR_Msk \
  656:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****                                         | SAR_CTRL_DEEPSLEEP_ON_Msk \
  657:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****                                         | SAR_CTRL_DSI_SYNC_CONFIG_Msk \
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 13
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 13
 
 
  658:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****                                         | SAR_CTRL_DSI_MODE_Msk \
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  712:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** #define CY_SAR_SWITCHSTATE(state)       (((state) == CY_SAR_SWITCH_OPEN) || ((state) == CY_SAR_SWIT
  713:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** #define CY_SAR_SQMASK(mask)             (((mask) & (~CY_SAR_DEINIT_SQ_CTRL)) == 0uL)
  714:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** #define CY_SAR_SQCTRL(ctrl)             (((ctrl) == CY_SAR_SWITCH_SEQ_CTRL_ENABLE) || ((ctrl) == CY
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 14
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 14
 
 
  715:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** 
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  769:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_TIMEOUT    = CY_SAR_ID | CY_PDL_STATUS_ERROR | 0x02uL,    /**< A timeout occurred */
  770:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_CONVERSION_NOT_COMPLETE = CY_SAR_ID | CY_PDL_STATUS_ERROR | 0x03uL,    /**< SAR conversi
  771:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** }cy_en_sar_status_t;
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 15
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 15
 
 
  772:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  826:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** {
  827:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_VREF_SEL_BGR         = 4uL << SAR_CTRL_VREF_SEL_Pos,     /**< System wide bandgap from \
  828:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_VREF_SEL_EXT         = 5uL << SAR_CTRL_VREF_SEL_Pos,     /**< External Vref direct from 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 16
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 16
 
 
  829:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_VREF_SEL_VDDA_DIV_2  = 6uL << SAR_CTRL_VREF_SEL_Pos,     /**< Vdda/2 (Vref buffer on) */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  883:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** {
  884:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_COMP_PWR_100     = 0uL << SAR_CTRL_COMP_PWR_Pos,      /**< 100% power, use this for > 2 
  885:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_COMP_PWR_80      = 1uL << SAR_CTRL_COMP_PWR_Pos,      /**< 80% power, use this for 1.5 -
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 17
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 17
 
 
  886:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_COMP_PWR_60      = 2uL << SAR_CTRL_COMP_PWR_Pos,      /**< 60% power, use this for 1.0 -
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  940:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_DIFFERENTIAL_UNSIGNED  = 0uL << SAR_SAMPLE_CTRL_DIFFERENTIAL_SIGNED_Pos,    /**< Result 
  941:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_DIFFERENTIAL_SIGNED    = 1uL << SAR_SAMPLE_CTRL_DIFFERENTIAL_SIGNED_Pos     /**< Result 
  942:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** }cy_en_sar_sample_ctrl_differential_format_t;
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 18
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 18
 
 
  943:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  997:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_TRIGGER_MODE_FW_ONLY        = 0uL,                                /**< Firmware trigger 
  998:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_TRIGGER_MODE_FW_AND_HWEDGE  = SAR_SAMPLE_CTRL_DSI_TRIGGER_EN_Msk, /**< Enable edge sensi
  999:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_TRIGGER_MODE_FW_AND_HWLEVEL = SAR_SAMPLE_CTRL_DSI_TRIGGER_EN_Msk | SAR_SAMPLE_CTRL_DSI_T
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 19
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 19
 
 
 1000:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** }cy_en_sar_sample_ctrl_trigger_mode_t;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1054:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** */
 1055:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** /** Configure the input mode of the channel
 1056:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 20
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 20
 
 
 1057:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * - Single ended channel: the \ref cy_en_sar_ctrl_neg_sel_t selection in the \ref group_sar_init_st
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1111:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** {
 1112:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_CHAN_AVG_DISABLE      = 0uL,                                 /**< Disable averaging for 
 1113:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_CHAN_AVG_ENABLE       = 1uL << SAR_CHAN_CONFIG_AVG_EN_Pos    /**< Enable averaging for t
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 21
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 21
 
 
 1114:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** }cy_en_sar_chan_config_avg_en_t;
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1168:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
 1169:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Enable all, one, or none of the interrupt events.
 1170:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** */
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 22
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 22
 
 
 1171:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** typedef enum
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1225:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_MUX_FW_SARBUS0_VPLUS    = SAR_MUX_SWITCH0_MUX_FW_SARBUS0_VPLUS_Msk,      /**< Switch bet
 1226:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_MUX_FW_SARBUS1_VPLUS    = SAR_MUX_SWITCH0_MUX_FW_SARBUS1_VPLUS_Msk,      /**< Switch bet
 1227:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_MUX_FW_SARBUS0_VMINUS   = SAR_MUX_SWITCH0_MUX_FW_SARBUS0_VMINUS_Msk,     /**< Switch bet
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 23
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 23
 
 
 1228:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_SAR_MUX_FW_SARBUS1_VMINUS   = SAR_MUX_SWITCH0_MUX_FW_SARBUS1_VMINUS_Msk,     /**< Switch bet
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1282:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** typedef struct
 1283:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** {
 1284:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     uint32_t ctrl;                                      /**< Control register settings (applies to 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 24
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 24
 
 
 1285:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     uint32_t sampleCtrl;                                /**< Sample control register settings (appl
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1339:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** /** \addtogroup group_sar_functions_power
 1340:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * This set of functions is for Deep Sleep entry and exit
 1341:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \{
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 25
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 25
 
 
 1342:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1396:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** __STATIC_INLINE void Cy_SAR_SetRangeInterrupt(SAR_Type *base, uint32_t chanMask);
 1397:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** __STATIC_INLINE void Cy_SAR_SetRangeInterruptMask(SAR_Type *base, uint32_t chanMask);
 1398:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** __STATIC_INLINE uint32_t Cy_SAR_GetRangeInterruptMask(const SAR_Type *base);
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 26
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 26
 
 
 1399:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** __STATIC_INLINE uint32_t Cy_SAR_GetRangeInterruptStatusMasked(const SAR_Type *base);
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1453:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * is not yet reached for Interleaved averaging.
 1454:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
 1455:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \param base
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 27
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 27
 
 
 1456:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Pointer to structure describing registers
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1510:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
 1511:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Set the condition in which range detection interrupts are triggered.
 1512:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 28
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 28
 
 
 1513:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \param base
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1567:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * to the interrupt controller, if enabled.
 1568:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
 1569:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \param base
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 29
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 29
 
 
 1570:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Pointer to structure describing registers
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1624:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
 1625:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Enable which interrupts can trigger the CPU interrupt controller.
 1626:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 30
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 30
 
 
 1627:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \param base
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1681:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Return the bitwise AND between the interrupt request and mask registers.
 1682:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * See \ref Cy_SAR_GetInterruptStatus and \ref Cy_SAR_GetInterruptMask.
 1683:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 31
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 31
 
 
 1684:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \param base
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1738:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Typically, this is the value returned from \ref Cy_SAR_GetRangeInterruptStatus.
 1739:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
 1740:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \return None
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 32
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 32
 
 
 1741:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1795:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *******************************************************************************/
 1796:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** __STATIC_INLINE void Cy_SAR_SetRangeInterruptMask(SAR_Type *base, uint32_t chanMask)
 1797:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** {
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 33
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 33
 
 
 1798:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     CY_ASSERT_L2(CY_SAR_CHANMASK(chanMask));
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1852:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * triggered for the channel.
 1853:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
 1854:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \param base
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 34
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 34
 
 
 1855:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Pointer to structure describing registers
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1909:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
 1910:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * \param chanMask
 1911:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * The channel mask. Bit 0 is for channel 0, etc.
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 35
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 35
 
 
 1912:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** *
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1966:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** {
 1967:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h ****     return SAR_SATURATE_INTR_MASK(base);
 1968:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** }
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 36
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 36
 
 
 1969:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 2023:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** 
 2024:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** 
 2025:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** /*******************************************************************************
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 37
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 37
 
 
 2026:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.h **** * Function Name: Cy_SAR_IsChannelDifferential
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
   59              		.cfi_def_cfa_offset 8
   60 002e BD46     		mov	sp, r7
   61              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 38
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 38
 
 
   62              		@ sp needed
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
   22:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** static cy_stc_sar_state_backup_t enabledBeforeSleep =
   23:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** {
   24:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     0uL,
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 39
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 39
 
 
   25:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     0uL
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  107 0012 6A48     		ldr	r0, .L29
  108 0014 FFF7FEFF 		bl	Cy_SysLib_AssertFailed
  109              	.L4:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 40
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 40
 
 
   59:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     CY_ASSERT_L1(NULL != config);
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  147 004e 5A68     		ldr	r2, [r3, #4]
  148 0050 5D4B     		ldr	r3, .L29+12
  149 0052 1340     		ands	r3, r3, r2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 41
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 41
 
 
  150 0054 002B     		cmp	r3, #0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  199              		.loc 2 80 0 is_stmt 1
  200 00aa 3B68     		ldr	r3, [r7]
  201 00ac DB6D     		ldr	r3, [r3, #92]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 42
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 42
 
 
  202 00ae 072B     		cmp	r3, #7
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  248 00fe 7B68     		ldr	r3, [r7, #4]
  249 0100 9A61     		str	r2, [r3, #24]
   89:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****         SAR_RANGE_COND(base) = (uint32_t)config->rangeCond << SAR_RANGE_COND_RANGE_COND_Pos;
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 43
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 43
 
 
  250              		.loc 2 89 0
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  294 0152 03D0     		beq	.L19
  295              		.loc 2 99 0 is_stmt 0 discriminator 1
  296 0154 6321     		movs	r1, #99
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 44
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 44
 
 
  297 0156 1948     		ldr	r0, .L29
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  340 01a4 FA7C     		ldrb	r2, [r7, #19]	@ zero_extendqisi2
  341 01a6 FB68     		ldr	r3, [r7, #12]
  342 01a8 D90F     		lsrs	r1, r3, #31
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 45
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 45
 
 
  343 01aa 0B44     		add	r3, r3, r1
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  387              		.loc 2 97 0 is_stmt 0 discriminator 1
  388 020a FB7C     		ldrb	r3, [r7, #19]	@ zero_extendqisi2
  389 020c 0F2B     		cmp	r3, #15
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 46
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 46
 
 
  390 020e 97D9     		bls	.L22
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  432 0260 8221     		movs	r1, #130
  433 0262 1E48     		ldr	r0, .L31+8
  434 0264 FFF7FEFF 		bl	Cy_SysLib_AssertFailed
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 47
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 47
 
 
  435              	.L24:
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  476 02b4 0B22     		movs	r2, #11
  477 02b6 C3F8002F 		str	r2, [r3, #3840]
  478              	.L27:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 48
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 48
 
 
  144:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****         }
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  161:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * The \ref Cy_SAR_offset and \ref Cy_SAR_countsPer10Volt arrays are NOT reset.
  162:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *
  163:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * \param base
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 49
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 49
 
 
  164:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * Pointer to structure describing registers
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  545 0020 264B     		ldr	r3, .L41+4
  546 0022 FB60     		str	r3, [r7, #12]
  547 0024 43E0     		b	.L36
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 50
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 50
 
 
  548              	.L35:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  588              		.loc 2 199 0 discriminator 3
  589 0066 FB7A     		ldrb	r3, [r7, #11]	@ zero_extendqisi2
  590 0068 0133     		adds	r3, r3, #1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 51
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 51
 
 
  591 006a FB72     		strb	r3, [r7, #11]
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  630              		.loc 2 215 0
  631 00ae FB68     		ldr	r3, [r7, #12]
  216:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** }
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 52
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 52
 
 
  632              		.loc 2 216 0
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  234:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     if (0uL == (SAR_CTRL(base) & SAR_CTRL_ENABLED_Msk))
  669              		.loc 2 234 0
  670 0008 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 53
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 53
 
 
  671 000a 1B68     		ldr	r3, [r3]
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  249:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** /*******************************************************************************
  250:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * Function Name: Cy_SAR_DeepSleep
  251:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** ****************************************************************************//**
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 54
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 54
 
 
  252:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  280:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     if (SAR_CTRL_ENABLED_Msk == enabledBeforeSleep.hwEnabled)
  737              		.loc 2 280 0
  738 0020 124B     		ldr	r3, .L50
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 55
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 55
 
 
  739 0022 1B68     		ldr	r3, [r3]
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  772 005e 7B68     		ldr	r3, [r7, #4]
  773 0060 FA68     		ldr	r2, [r7, #12]
  774 0062 1A60     		str	r2, [r3]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 56
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 56
 
 
  302:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** }
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  800              		@ args = 0, pretend = 0, frame = 8
  801              		@ frame_needed = 1, uses_anonymous_args = 0
  802 0000 80B5     		push	{r7, lr}
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 57
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 57
 
 
  803              		.cfi_def_cfa_offset 8
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  844 003e 00BF     		.align	2
  845              	.L55:
  846 0040 00000000 		.word	enabledBeforeSleep
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 58
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 58
 
 
  847              		.cfi_endproc
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  875 000e 002B     		cmp	r3, #0
  876 0010 07D0     		beq	.L58
  877              		.loc 2 369 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 59
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 59
 
 
  878 0012 FB78     		ldrb	r3, [r7, #3]	@ zero_extendqisi2
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  920              		.size	Cy_SAR_StartConvert, .-Cy_SAR_StartConvert
  921              		.section	.text.Cy_SAR_StopConvert,"ax",%progbits
  922              		.align	2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 60
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 60
 
 
  923              		.global	Cy_SAR_StopConvert
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  951 0018 23F48032 		bic	r2, r3, #65536
  952 001c 7B68     		ldr	r3, [r7, #4]
  953 001e 5A60     		str	r2, [r3, #4]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 61
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 61
 
 
  954              	.L67:
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  439:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** void Cy_SAR_SetConvertMode(SAR_Type *base, cy_en_sar_sample_ctrl_trigger_mode_t mode)
  440:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** {
  977              		.loc 2 440 0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 62
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 62
 
 
  978              		.cfi_startproc
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1025              		@ sp needed
  1026 0044 80BD     		pop	{r7, pc}
  1027              	.L71:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 63
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 63
 
 
  1028 0046 00BF     		.align	2
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1050 0002 86B0     		sub	sp, sp, #24
  1051              		.cfi_def_cfa_offset 32
  1052 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 64
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 64
 
 
  1053              		.cfi_def_cfa_register 7
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1087 003c D3F81032 		ldr	r3, [r3, #528]
  1088 0040 03F00103 		and	r3, r3, #1
  1089 0044 3B61     		str	r3, [r7, #16]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 65
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 65
 
 
  493:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****         }
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1127              		.loc 2 511 0
  1128 007a 074B     		ldr	r3, .L85+8
  1129 007c 7B61     		str	r3, [r7, #20]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 66
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 66
 
 
  1130 007e 01E0     		b	.L81
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  532:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *
  533:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * \param chan
  534:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * The channel to check, between 0 and \ref CY_SAR_MAX_NUM_CHANNELS - 1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 67
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 67
 
 
  535:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1198 002c 0346     		mov	r3, r0
  1199 002e 002B     		cmp	r3, #0
  1200 0030 08D0     		beq	.L90
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 68
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 68
 
 
  555:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****         { /* Differential channel */
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1238              		.size	Cy_SAR_IsChannelSigned, .-Cy_SAR_IsChannelSigned
  1239              		.section	.text.Cy_SAR_IsChannelSingleEnded,"ax",%progbits
  1240              		.align	2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 69
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 69
 
 
  1241              		.global	Cy_SAR_IsChannelSingleEnded
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  597:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** 
  598:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     bool isSingleEnded = false;
  1270              		.loc 2 598 0 is_stmt 1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 70
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 70
 
 
  1271 001a 0023     		movs	r3, #0
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  610:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** 
  611:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** /*******************************************************************************
  612:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * Function Name: Cy_SAR_GetResult16
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 71
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 71
 
 
  613:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** ****************************************************************************//**
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1341 001e 3B68     		ldr	r3, [r7]
  1342 0020 0F2B     		cmp	r3, #15
  1343 0022 06D8     		bhi	.L103
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 72
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 72
 
 
  640:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     {
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  660:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *
  661:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * \return
  662:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * Data is returned as a signed 32-bit integer.
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 73
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 73
 
 
  663:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * If channel number is invalid, 0 is returned.
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1414 0030 7B61     		str	r3, [r7, #20]
  1415              	.L109:
  681:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     }
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 74
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 74
 
 
  682:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** 
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1457              		.type	Cy_SAR_SetLowLimit, %function
  1458              	Cy_SAR_SetLowLimit:
  1459              	.LFB205:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 75
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 75
 
 
  695:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** 
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  726:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     rangeThresReg = SAR_RANGE_THRES(base) & ~SAR_RANGE_THRES_RANGE_LOW_Msk;
  1483              		.loc 2 726 0 is_stmt 1
  1484 001c 7B68     		ldr	r3, [r7, #4]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 76
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 76
 
 
  1485 001e 9B69     		ldr	r3, [r3, #24]
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  744:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * \param highLimit
  745:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * The high threshold for range detection
  746:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 77
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 77
 
 
  747:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * \return None
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  763:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** }
  1560              		.loc 2 763 0
  1561 0034 00BF     		nop
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 78
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 78
 
 
  1562 0036 1037     		adds	r7, r7, #16
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1586              		@ frame_needed = 1, uses_anonymous_args = 0
  1587 0000 80B5     		push	{r7, lr}
  1588              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 79
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 79
 
 
  1589              		.cfi_offset 7, -8
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1631              		@ sp needed
  1632 003c 80BD     		pop	{r7, pc}
  1633              	.L128:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 80
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 80
 
 
  1634 003e 00BF     		.align	2
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1658 0002 84B0     		sub	sp, sp, #16
  1659              		.cfi_def_cfa_offset 24
  1660 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 81
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 81
 
 
  1661              		.cfi_def_cfa_register 7
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1703 0040 01000600 		.word	393217
  1704 0044 00000000 		.word	Cy_SAR_countsPer10Volt
  1705              		.cfi_endproc
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 82
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 82
 
 
  1706              	.LFE208:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1717              		.cfi_startproc
  1718              		@ args = 0, pretend = 0, frame = 24
  1719              		@ frame_needed = 1, uses_anonymous_args = 0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 83
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 83
 
 
  1720 0000 80B5     		push	{r7, lr}
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  906:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****                 /* Divide by 2^(AVG_CNT + 1) */
  907:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****                 averageAdcSamplesDiv = (SAR_SAMPLE_CTRL(base) & SAR_SAMPLE_CTRL_AVG_CNT_Msk) >> SAR
  1759              		.loc 2 907 0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 84
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 84
 
 
  1760 0042 FB68     		ldr	r3, [r7, #12]
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1798 008a B2FBF3F3 		udiv	r3, r2, r3
  1799 008e 3B61     		str	r3, [r7, #16]
  924:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****                     adcCounts = (int16_t) temp;
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 85
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 85
 
 
  1800              		.loc 2 924 0
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1840              		.size	Cy_SAR_RawCounts2Counts, .-Cy_SAR_RawCounts2Counts
  1841              		.section	.text.Cy_SAR_CountsTo_Volts,"ax",%progbits
  1842              		.align	2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 86
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 86
 
 
  1843              		.global	Cy_SAR_CountsTo_Volts
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  987:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** {
  1849              		.loc 2 987 0
  1850              		.cfi_startproc
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 87
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 87
 
 
  1851              		@ args = 0, pretend = 0, frame = 24
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  998:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****             result_Volts = (float32_t)adcCounts * CY_SAR_10V_COUNTS;
  1895              		.loc 2 998 0
  1896 0048 B7F90630 		ldrsh	r3, [r7, #6]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 88
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 88
 
 
  1897 004c 07EE903A 		vmov	s15, r3	@ int
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1012:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * measured 0.534 volts, the return value would be 534.
 1013:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * The calculation of voltage depends on the contents of \ref Cy_SAR_offset,
 1014:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * \ref Cy_SAR_countsPer10Volt, and other parameters.
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 89
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 89
 
 
 1015:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * The equation used is:
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1952 000a 1346     		mov	r3, r2
  1953 000c FB80     		strh	r3, [r7, #6]	@ movhi
 1055:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     CY_ASSERT_L2(CY_SAR_CHANNUM(chan));
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 90
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 90
 
 
  1954              		.loc 2 1055 0
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  1995 005e BB68     		ldr	r3, [r7, #8]
  1996 0060 52F82330 		ldr	r3, [r2, r3, lsl #2]
  1997 0064 DA0F     		lsrs	r2, r3, #31
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 91
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 91
 
 
  1998 0066 1344     		add	r3, r3, r2
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2041 00ac 00000000 		.word	Cy_SAR_countsPer10Volt
  2042              		.cfi_endproc
  2043              	.LFE211:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 92
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 92
 
 
  2044              		.size	Cy_SAR_CountsTo_mVolts, .-Cy_SAR_CountsTo_mVolts
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1124:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *
 1125:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * \snippet sar_sut_01.cydsn/main_cm0p.c SNIPPET_SAR_COUNTSTO_UVOLTS
 1126:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 93
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 93
 
 
 1127:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *******************************************************************************/
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2096 0040 1A46     		mov	r2, r3
  2097 0042 B968     		ldr	r1, [r7, #8]
  2098 0044 F868     		ldr	r0, [r7, #12]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 94
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 94
 
 
  2099 0046 FFF7FEFF 		bl	Cy_SAR_RawCounts2Counts
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2146              	.LFE212:
  2147              		.size	Cy_SAR_CountsTo_uVolts, .-Cy_SAR_CountsTo_uVolts
  2148              		.section	.text.Cy_SAR_SetAnalogSwitch,"ax",%progbits
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 95
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 95
 
 
  2149              		.align	2
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2167              		.cfi_def_cfa_register 7
  2168 0006 F860     		str	r0, [r7, #12]
  2169 0008 7A60     		str	r2, [r7, #4]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 96
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 96
 
 
  2170 000a 1A46     		mov	r2, r3
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1192:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     switch(state)
  2214              		.loc 2 1192 0
  2215 005c BB7A     		ldrb	r3, [r7, #10]	@ zero_extendqisi2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 97
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 97
 
 
  2216 005e 012B     		cmp	r3, #1
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1205:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** 
 1206:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** 
 1207:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** /*******************************************************************************
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 98
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 98
 
 
 1208:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * Function Name: Cy_SAR_GetAnalogSwitch
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2288              		.cfi_def_cfa_offset 8
  2289 0026 BD46     		mov	sp, r7
  2290              		.cfi_def_cfa_register 13
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 99
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 99
 
 
  2291              		@ sp needed
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2316 0002 84B0     		sub	sp, sp, #16
  2317              		.cfi_def_cfa_offset 24
  2318 0004 00AF     		add	r7, sp, #0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 100
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 100
 
 
  2319              		.cfi_def_cfa_register 7
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2362              		.loc 2 1271 0
  2363 0054 FB68     		ldr	r3, [r7, #12]
  2364 0056 D3F84423 		ldr	r2, [r3, #836]
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 101
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 101
 
 
  2365 005a BB68     		ldr	r3, [r7, #8]
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1295:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** * \snippet sar_sut_01.cydsn/main_cm0p.c SNIPPET_SAR_DEEPSLEEP_CALLBACK
 1296:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *
 1297:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** *******************************************************************************/
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 102
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 102
 
 
 1298:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** cy_en_syspm_status_t Cy_SAR_DeepSleepCallback(cy_stc_syspm_callback_params_t *callbackParams, cy_en
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
 1313:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c **** 
 1314:Generated_Source\PSoC6\pdl\drivers\peripheral\sar/cy_sar.c ****     return returnValue;
  2435              		.loc 2 1314 0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 103
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 103
 
 
  2436 0032 FB68     		ldr	r3, [r7, #12]
@@ -6151,26 +6151,26 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2462 0006 00000000 		.4byte	.Ldebug_abbrev0
  2463 000a 04       		.byte	0x4
  2464 000b 01       		.uleb128 0x1
- 2465 000c 9D120000 		.4byte	.LASF309
+ 2465 000c B0120000 		.4byte	.LASF309
  2466 0010 0C       		.byte	0xc
- 2467 0011 420E0000 		.4byte	.LASF310
- 2468 0015 FD0A0000 		.4byte	.LASF311
+ 2467 0011 550E0000 		.4byte	.LASF310
+ 2468 0015 220E0000 		.4byte	.LASF311
  2469 0019 00000000 		.4byte	.Ldebug_ranges0+0
  2470 001d 00000000 		.4byte	0
  2471 0021 00000000 		.4byte	.Ldebug_line0
  2472 0025 02       		.uleb128 0x2
  2473 0026 01       		.byte	0x1
  2474 0027 06       		.byte	0x6
- 2475 0028 54110000 		.4byte	.LASF0
+ 2475 0028 67110000 		.4byte	.LASF0
  2476 002c 03       		.uleb128 0x3
- 2477 002d 380E0000 		.4byte	.LASF2
+ 2477 002d 180E0000 		.4byte	.LASF2
  2478 0031 03       		.byte	0x3
  2479 0032 1D       		.byte	0x1d
  2480 0033 37000000 		.4byte	0x37
  2481 0037 02       		.uleb128 0x2
  2482 0038 01       		.byte	0x1
  2483 0039 08       		.byte	0x8
- 2484 003a C20B0000 		.4byte	.LASF1
+ 2484 003a A20B0000 		.4byte	.LASF1
  2485 003e 03       		.uleb128 0x3
  2486 003f BB090000 		.4byte	.LASF3
  2487 0043 03       		.byte	0x3
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2489 0045 49000000 		.4byte	0x49
  2490 0049 02       		.uleb128 0x2
  2491 004a 02       		.byte	0x2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 104
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 104
 
 
  2492 004b 05       		.byte	0x5
@@ -6191,7 +6191,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2499 005b 02       		.uleb128 0x2
  2500 005c 02       		.byte	0x2
  2501 005d 07       		.byte	0x7
- 2502 005e 460B0000 		.4byte	.LASF6
+ 2502 005e 260B0000 		.4byte	.LASF6
  2503 0062 03       		.uleb128 0x3
  2504 0063 9D010000 		.4byte	.LASF7
  2505 0067 03       		.byte	0x3
@@ -6200,18 +6200,18 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2508 006d 02       		.uleb128 0x2
  2509 006e 04       		.byte	0x4
  2510 006f 05       		.byte	0x5
- 2511 0070 E40C0000 		.4byte	.LASF8
+ 2511 0070 C40C0000 		.4byte	.LASF8
  2512 0074 03       		.uleb128 0x3
- 2513 0075 E70F0000 		.4byte	.LASF9
+ 2513 0075 FA0F0000 		.4byte	.LASF9
  2514 0079 03       		.byte	0x3
  2515 007a 41       		.byte	0x41
  2516 007b 7F000000 		.4byte	0x7f
  2517 007f 02       		.uleb128 0x2
  2518 0080 04       		.byte	0x4
  2519 0081 07       		.byte	0x7
- 2520 0082 020F0000 		.4byte	.LASF10
+ 2520 0082 150F0000 		.4byte	.LASF10
  2521 0086 03       		.uleb128 0x3
- 2522 0087 320B0000 		.4byte	.LASF11
+ 2522 0087 120B0000 		.4byte	.LASF11
  2523 008b 03       		.byte	0x3
  2524 008c 59       		.byte	0x59
  2525 008d 91000000 		.4byte	0x91
@@ -6238,19 +6238,19 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2546 00b4 2C000000 		.4byte	0x2c
  2547 00b8 03       		.uleb128 0x3
  2548 00b9 53040000 		.4byte	.LASF16
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 105
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 105
 
 
  2549 00bd 04       		.byte	0x4
  2550 00be 20       		.byte	0x20
  2551 00bf 3E000000 		.4byte	0x3e
  2552 00c3 03       		.uleb128 0x3
- 2553 00c4 650B0000 		.4byte	.LASF17
+ 2553 00c4 450B0000 		.4byte	.LASF17
  2554 00c8 04       		.byte	0x4
  2555 00c9 24       		.byte	0x24
  2556 00ca 50000000 		.4byte	0x50
  2557 00ce 03       		.uleb128 0x3
- 2558 00cf 330F0000 		.4byte	.LASF18
+ 2558 00cf 460F0000 		.4byte	.LASF18
  2559 00d3 04       		.byte	0x4
  2560 00d4 2C       		.byte	0x2c
  2561 00d5 62000000 		.4byte	0x62
@@ -6267,11 +6267,11 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2572 00ef 02       		.uleb128 0x2
  2573 00f0 08       		.byte	0x8
  2574 00f1 04       		.byte	0x4
- 2575 00f2 590B0000 		.4byte	.LASF21
+ 2575 00f2 390B0000 		.4byte	.LASF21
  2576 00f6 02       		.uleb128 0x2
  2577 00f7 04       		.byte	0x4
  2578 00f8 07       		.byte	0x7
- 2579 00f9 120C0000 		.4byte	.LASF22
+ 2579 00f9 F20B0000 		.4byte	.LASF22
  2580 00fd 05       		.uleb128 0x5
  2581 00fe D9000000 		.4byte	0xd9
  2582 0102 06       		.uleb128 0x6
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2603 0135 0F       		.byte	0xf
  2604 0136 00       		.byte	0
  2605 0137 07       		.uleb128 0x7
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 106
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 106
 
 
  2606 0138 02010000 		.4byte	0x102
@@ -6320,7 +6320,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2622 015b 21       		.byte	0x21
  2623 015c DF030000 		.4byte	0x3df
  2624 0160 0A       		.uleb128 0xa
- 2625 0161 D1130000 		.4byte	.LASF23
+ 2625 0161 E4130000 		.4byte	.LASF23
  2626 0165 05       		.byte	0x5
  2627 0166 22       		.byte	0x22
  2628 0167 FD000000 		.4byte	0xfd
@@ -6350,7 +6350,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2652 0197 FD000000 		.4byte	0xfd
  2653 019b 14       		.byte	0x14
  2654 019c 0A       		.uleb128 0xa
- 2655 019d 7F0D0000 		.4byte	.LASF28
+ 2655 019d 5F0D0000 		.4byte	.LASF28
  2656 01a1 05       		.byte	0x5
  2657 01a2 27       		.byte	0x27
  2658 01a3 FD000000 		.4byte	0xfd
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2660 01a8 0A       		.uleb128 0xa
  2661 01a9 0B060000 		.4byte	.LASF29
  2662 01ad 05       		.byte	0x5
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 107
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 107
 
 
  2663 01ae 28       		.byte	0x28
@@ -6377,31 +6377,31 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2676 01c7 FD000000 		.4byte	0xfd
  2677 01cb 24       		.byte	0x24
  2678 01cc 0A       		.uleb128 0xa
- 2679 01cd 13120000 		.4byte	.LASF32
+ 2679 01cd 26120000 		.4byte	.LASF32
  2680 01d1 05       		.byte	0x5
  2681 01d2 2B       		.byte	0x2b
  2682 01d3 FE030000 		.4byte	0x3fe
  2683 01d7 28       		.byte	0x28
  2684 01d8 0A       		.uleb128 0xa
- 2685 01d9 980F0000 		.4byte	.LASF33
+ 2685 01d9 AB0F0000 		.4byte	.LASF33
  2686 01dd 05       		.byte	0x5
  2687 01de 2C       		.byte	0x2c
  2688 01df 03040000 		.4byte	0x403
  2689 01e3 80       		.byte	0x80
  2690 01e4 0A       		.uleb128 0xa
- 2691 01e5 650C0000 		.4byte	.LASF34
+ 2691 01e5 450C0000 		.4byte	.LASF34
  2692 01e9 05       		.byte	0x5
  2693 01ea 2D       		.byte	0x2d
  2694 01eb 0D040000 		.4byte	0x40d
  2695 01ef C0       		.byte	0xc0
  2696 01f0 0B       		.uleb128 0xb
- 2697 01f1 CE0D0000 		.4byte	.LASF35
+ 2697 01f1 AE0D0000 		.4byte	.LASF35
  2698 01f5 05       		.byte	0x5
  2699 01f6 2E       		.byte	0x2e
  2700 01f7 17040000 		.4byte	0x417
  2701 01fb 0001     		.2byte	0x100
  2702 01fd 0B       		.uleb128 0xb
- 2703 01fe 6F0C0000 		.4byte	.LASF36
+ 2703 01fe 4F0C0000 		.4byte	.LASF36
  2704 0202 05       		.byte	0x5
  2705 0203 2F       		.byte	0x2f
  2706 0204 21040000 		.4byte	0x421
@@ -6413,12 +6413,12 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2712 0211 2B040000 		.4byte	0x42b
  2713 0215 8001     		.2byte	0x180
  2714 0217 0B       		.uleb128 0xb
- 2715 0218 790C0000 		.4byte	.LASF38
+ 2715 0218 590C0000 		.4byte	.LASF38
  2716 021c 05       		.byte	0x5
  2717 021d 31       		.byte	0x31
  2718 021e 35040000 		.4byte	0x435
  2719 0222 C001     		.2byte	0x1c0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 108
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 108
 
 
  2720 0224 0B       		.uleb128 0xb
@@ -6428,7 +6428,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2724 022b 02010000 		.4byte	0x102
  2725 022f 0002     		.2byte	0x200
  2726 0231 0B       		.uleb128 0xb
- 2727 0232 470F0000 		.4byte	.LASF40
+ 2727 0232 5A0F0000 		.4byte	.LASF40
  2728 0236 05       		.byte	0x5
  2729 0237 33       		.byte	0x33
  2730 0238 02010000 		.4byte	0x102
@@ -6464,7 +6464,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2760 0279 FD000000 		.4byte	0xfd
  2761 027d 1802     		.2byte	0x218
  2762 027f 0B       		.uleb128 0xb
- 2763 0280 B80E0000 		.4byte	.LASF46
+ 2763 0280 CB0E0000 		.4byte	.LASF46
  2764 0284 05       		.byte	0x5
  2765 0285 39       		.byte	0x39
  2766 0286 02010000 		.4byte	0x102
@@ -6478,14 +6478,14 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2774 0299 0B       		.uleb128 0xb
  2775 029a 41070000 		.4byte	.LASF48
  2776 029e 05       		.byte	0x5
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 109
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 109
 
 
  2777 029f 3B       		.byte	0x3b
  2778 02a0 FD000000 		.4byte	0xfd
  2779 02a4 2402     		.2byte	0x224
  2780 02a6 0B       		.uleb128 0xb
- 2781 02a7 44100000 		.4byte	.LASF49
+ 2781 02a7 57100000 		.4byte	.LASF49
  2782 02ab 05       		.byte	0x5
  2783 02ac 3C       		.byte	0x3c
  2784 02ad FD000000 		.4byte	0xfd
@@ -6527,7 +6527,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2820 02fb 02010000 		.4byte	0x102
  2821 02ff 4002     		.2byte	0x240
  2822 0301 0B       		.uleb128 0xb
- 2823 0302 830C0000 		.4byte	.LASF56
+ 2823 0302 630C0000 		.4byte	.LASF56
  2824 0306 05       		.byte	0x5
  2825 0307 43       		.byte	0x43
  2826 0308 3F040000 		.4byte	0x43f
@@ -6538,11 +6538,11 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2831 0314 44       		.byte	0x44
  2832 0315 FD000000 		.4byte	0xfd
  2833 0319 8002     		.2byte	0x280
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 110
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 110
 
 
  2834 031b 0B       		.uleb128 0xb
- 2835 031c 8D0C0000 		.4byte	.LASF58
+ 2835 031c 6D0C0000 		.4byte	.LASF58
  2836 0320 05       		.byte	0x5
  2837 0321 45       		.byte	0x45
  2838 0322 49040000 		.4byte	0x449
@@ -6554,13 +6554,13 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2844 032f 02010000 		.4byte	0x102
  2845 0333 9002     		.2byte	0x290
  2846 0335 0B       		.uleb128 0xb
- 2847 0336 970C0000 		.4byte	.LASF60
+ 2847 0336 770C0000 		.4byte	.LASF60
  2848 033a 05       		.byte	0x5
  2849 033b 47       		.byte	0x47
  2850 033c 53040000 		.4byte	0x453
  2851 0340 9402     		.2byte	0x294
  2852 0342 0B       		.uleb128 0xb
- 2853 0343 2C120000 		.4byte	.LASF61
+ 2853 0343 3F120000 		.4byte	.LASF61
  2854 0347 05       		.byte	0x5
  2855 0348 48       		.byte	0x48
  2856 0349 02010000 		.4byte	0x102
@@ -6572,13 +6572,13 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2862 0356 02010000 		.4byte	0x102
  2863 035a A402     		.2byte	0x2a4
  2864 035c 0B       		.uleb128 0xb
- 2865 035d A10C0000 		.4byte	.LASF63
+ 2865 035d 810C0000 		.4byte	.LASF63
  2866 0361 05       		.byte	0x5
  2867 0362 4A       		.byte	0x4a
  2868 0363 5D040000 		.4byte	0x45d
  2869 0367 A802     		.2byte	0x2a8
  2870 0369 0B       		.uleb128 0xb
- 2871 036a 3B0F0000 		.4byte	.LASF64
+ 2871 036a 4E0F0000 		.4byte	.LASF64
  2872 036e 05       		.byte	0x5
  2873 036f 4B       		.byte	0x4b
  2874 0370 FD000000 		.4byte	0xfd
@@ -6590,7 +6590,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2880 037d FD000000 		.4byte	0xfd
  2881 0381 0403     		.2byte	0x304
  2882 0383 0B       		.uleb128 0xb
- 2883 0384 AB0C0000 		.4byte	.LASF66
+ 2883 0384 8B0C0000 		.4byte	.LASF66
  2884 0388 05       		.byte	0x5
  2885 0389 4D       		.byte	0x4d
  2886 038a 77040000 		.4byte	0x477
@@ -6598,38 +6598,38 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2888 0390 0B       		.uleb128 0xb
  2889 0391 2A060000 		.4byte	.LASF67
  2890 0395 05       		.byte	0x5
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 111
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 111
 
 
  2891 0396 4E       		.byte	0x4e
  2892 0397 FD000000 		.4byte	0xfd
  2893 039b 4003     		.2byte	0x340
  2894 039d 0B       		.uleb128 0xb
- 2895 039e D10C0000 		.4byte	.LASF68
+ 2895 039e B10C0000 		.4byte	.LASF68
  2896 03a2 05       		.byte	0x5
  2897 03a3 4F       		.byte	0x4f
  2898 03a4 FD000000 		.4byte	0xfd
  2899 03a8 4403     		.2byte	0x344
  2900 03aa 0B       		.uleb128 0xb
- 2901 03ab C2110000 		.4byte	.LASF69
+ 2901 03ab D5110000 		.4byte	.LASF69
  2902 03af 05       		.byte	0x5
  2903 03b0 50       		.byte	0x50
  2904 03b1 02010000 		.4byte	0x102
  2905 03b5 4803     		.2byte	0x348
  2906 03b7 0B       		.uleb128 0xb
- 2907 03b8 5F100000 		.4byte	.LASF70
+ 2907 03b8 72100000 		.4byte	.LASF70
  2908 03bc 05       		.byte	0x5
  2909 03bd 51       		.byte	0x51
  2910 03be 92040000 		.4byte	0x492
  2911 03c2 4C03     		.2byte	0x34c
  2912 03c4 0B       		.uleb128 0xb
- 2913 03c5 D30F0000 		.4byte	.LASF71
+ 2913 03c5 E60F0000 		.4byte	.LASF71
  2914 03c9 05       		.byte	0x5
  2915 03ca 52       		.byte	0x52
  2916 03cb FD000000 		.4byte	0xfd
  2917 03cf 000F     		.2byte	0xf00
  2918 03d1 0B       		.uleb128 0xb
- 2919 03d2 DD0F0000 		.4byte	.LASF72
+ 2919 03d2 F00F0000 		.4byte	.LASF72
  2920 03d6 05       		.byte	0x5
  2921 03d7 53       		.byte	0x53
  2922 03d8 FD000000 		.4byte	0xfd
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  2945 040e 08040000 		.4byte	0x408
  2946 0412 05       		.uleb128 0x5
  2947 0413 27010000 		.4byte	0x127
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 112
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 112
 
 
  2948 0417 06       		.uleb128 0x6
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3002 049c 05       		.byte	0x5
  3003 049d 54       		.byte	0x54
  3004 049e 57010000 		.4byte	0x157
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 113
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 113
 
 
  3005 04a2 0D       		.uleb128 0xd
@@ -6756,7 +6756,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3037 04e1 D9000000 		.4byte	0xd9
  3038 04e5 0C       		.byte	0xc
  3039 04e6 0A       		.uleb128 0xa
- 3040 04e7 6E0B0000 		.4byte	.LASF79
+ 3040 04e7 4E0B0000 		.4byte	.LASF79
  3041 04eb 07       		.byte	0x7
  3042 04ec 3B       		.byte	0x3b
  3043 04ed D9000000 		.4byte	0xd9
@@ -6774,11 +6774,11 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3055 0505 D9000000 		.4byte	0xd9
  3056 0509 18       		.byte	0x18
  3057 050a 0A       		.uleb128 0xa
- 3058 050b 0A120000 		.4byte	.LASF82
+ 3058 050b 1D120000 		.4byte	.LASF82
  3059 050f 07       		.byte	0x7
  3060 0510 3E       		.byte	0x3e
  3061 0511 D9000000 		.4byte	0xd9
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 114
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 114
 
 
  3062 0515 1C       		.byte	0x1c
@@ -6795,7 +6795,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3073 0529 D9000000 		.4byte	0xd9
  3074 052d 24       		.byte	0x24
  3075 052e 0A       		.uleb128 0xa
- 3076 052f 070D0000 		.4byte	.LASF85
+ 3076 052f E70C0000 		.4byte	.LASF85
  3077 0533 07       		.byte	0x7
  3078 0534 43       		.byte	0x43
  3079 0535 AD000000 		.4byte	0xad
@@ -6807,38 +6807,38 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3085 0541 AD000000 		.4byte	0xad
  3086 0545 29       		.byte	0x29
  3087 0546 0A       		.uleb128 0xa
- 3088 0547 A40B0000 		.4byte	.LASF87
+ 3088 0547 840B0000 		.4byte	.LASF87
  3089 054b 07       		.byte	0x7
  3090 054c 45       		.byte	0x45
  3091 054d AD000000 		.4byte	0xad
  3092 0551 2A       		.byte	0x2a
  3093 0552 0A       		.uleb128 0xa
- 3094 0553 350D0000 		.4byte	.LASF88
+ 3094 0553 150D0000 		.4byte	.LASF88
  3095 0557 07       		.byte	0x7
  3096 0558 46       		.byte	0x46
  3097 0559 AD000000 		.4byte	0xad
  3098 055d 2B       		.byte	0x2b
  3099 055e 0A       		.uleb128 0xa
- 3100 055f 290D0000 		.4byte	.LASF89
+ 3100 055f 090D0000 		.4byte	.LASF89
  3101 0563 07       		.byte	0x7
  3102 0564 47       		.byte	0x47
  3103 0565 AD000000 		.4byte	0xad
  3104 0569 2C       		.byte	0x2c
  3105 056a 0A       		.uleb128 0xa
- 3106 056b F50E0000 		.4byte	.LASF90
+ 3106 056b 080F0000 		.4byte	.LASF90
  3107 056f 07       		.byte	0x7
  3108 0570 48       		.byte	0x48
  3109 0571 AD000000 		.4byte	0xad
  3110 0575 2D       		.byte	0x2d
  3111 0576 0A       		.uleb128 0xa
- 3112 0577 96130000 		.4byte	.LASF91
+ 3112 0577 A9130000 		.4byte	.LASF91
  3113 057b 07       		.byte	0x7
  3114 057c 49       		.byte	0x49
  3115 057d AD000000 		.4byte	0xad
  3116 0581 2E       		.byte	0x2e
  3117 0582 0A       		.uleb128 0xa
- 3118 0583 D4110000 		.4byte	.LASF92
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 115
+ 3118 0583 E7110000 		.4byte	.LASF92
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 115
 
 
  3119 0587 07       		.byte	0x7
@@ -6858,7 +6858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3133 05a1 AD000000 		.4byte	0xad
  3134 05a5 31       		.byte	0x31
  3135 05a6 0A       		.uleb128 0xa
- 3136 05a7 6B110000 		.4byte	.LASF95
+ 3136 05a7 7E110000 		.4byte	.LASF95
  3137 05ab 07       		.byte	0x7
  3138 05ac 4F       		.byte	0x4f
  3139 05ad AD000000 		.4byte	0xad
@@ -6876,7 +6876,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3151 05c5 AD000000 		.4byte	0xad
  3152 05c9 34       		.byte	0x34
  3153 05ca 0A       		.uleb128 0xa
- 3154 05cb 47110000 		.4byte	.LASF98
+ 3154 05cb 5A110000 		.4byte	.LASF98
  3155 05cf 07       		.byte	0x7
  3156 05d0 52       		.byte	0x52
  3157 05d1 B8000000 		.4byte	0xb8
@@ -6894,11 +6894,11 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3169 05e9 B8000000 		.4byte	0xb8
  3170 05ed 3A       		.byte	0x3a
  3171 05ee 0A       		.uleb128 0xa
- 3172 05ef 1D120000 		.4byte	.LASF101
+ 3172 05ef 30120000 		.4byte	.LASF101
  3173 05f3 07       		.byte	0x7
  3174 05f4 55       		.byte	0x55
  3175 05f5 AD000000 		.4byte	0xad
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 116
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 116
 
 
  3176 05f9 3C       		.byte	0x3c
@@ -6909,7 +6909,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3181 0601 AD000000 		.4byte	0xad
  3182 0605 3D       		.byte	0x3d
  3183 0606 0A       		.uleb128 0xa
- 3184 0607 960B0000 		.4byte	.LASF103
+ 3184 0607 760B0000 		.4byte	.LASF103
  3185 060b 07       		.byte	0x7
  3186 060c 57       		.byte	0x57
  3187 060d AD000000 		.4byte	0xad
@@ -6933,7 +6933,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3205 0631 AD000000 		.4byte	0xad
  3206 0635 41       		.byte	0x41
  3207 0636 0A       		.uleb128 0xa
- 3208 0637 19110000 		.4byte	.LASF107
+ 3208 0637 2C110000 		.4byte	.LASF107
  3209 063b 07       		.byte	0x7
  3210 063c 5B       		.byte	0x5b
  3211 063d AD000000 		.4byte	0xad
@@ -6951,14 +6951,14 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3223 0655 AD000000 		.4byte	0xad
  3224 0659 44       		.byte	0x44
  3225 065a 0A       		.uleb128 0xa
- 3226 065b 430D0000 		.4byte	.LASF110
+ 3226 065b 230D0000 		.4byte	.LASF110
  3227 065f 07       		.byte	0x7
  3228 0660 5E       		.byte	0x5e
  3229 0661 D9000000 		.4byte	0xd9
  3230 0665 48       		.byte	0x48
  3231 0666 0A       		.uleb128 0xa
  3232 0667 AF020000 		.4byte	.LASF111
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 117
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 117
 
 
  3233 066b 07       		.byte	0x7
@@ -6966,7 +6966,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3235 066d D9000000 		.4byte	0xd9
  3236 0671 4C       		.byte	0x4c
  3237 0672 0A       		.uleb128 0xa
- 3238 0673 F7100000 		.4byte	.LASF112
+ 3238 0673 0A110000 		.4byte	.LASF112
  3239 0677 07       		.byte	0x7
  3240 0678 60       		.byte	0x60
  3241 0679 AD000000 		.4byte	0xad
@@ -6990,7 +6990,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3259 069d AD000000 		.4byte	0xad
  3260 06a1 53       		.byte	0x53
  3261 06a2 0A       		.uleb128 0xa
- 3262 06a3 78100000 		.4byte	.LASF116
+ 3262 06a3 8B100000 		.4byte	.LASF116
  3263 06a7 07       		.byte	0x7
  3264 06a8 64       		.byte	0x64
  3265 06a9 AD000000 		.4byte	0xad
@@ -7008,7 +7008,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3277 06c1 AD000000 		.4byte	0xad
  3278 06c5 56       		.byte	0x56
  3279 06c6 0A       		.uleb128 0xa
- 3280 06c7 AE0B0000 		.4byte	.LASF119
+ 3280 06c7 8E0B0000 		.4byte	.LASF119
  3281 06cb 07       		.byte	0x7
  3282 06cc 67       		.byte	0x67
  3283 06cd AD000000 		.4byte	0xad
@@ -7018,18 +7018,18 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3287 06d7 07       		.byte	0x7
  3288 06d8 68       		.byte	0x68
  3289 06d9 AD000000 		.4byte	0xad
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 118
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 118
 
 
  3290 06dd 58       		.byte	0x58
  3291 06de 0A       		.uleb128 0xa
- 3292 06df 44120000 		.4byte	.LASF121
+ 3292 06df 57120000 		.4byte	.LASF121
  3293 06e3 07       		.byte	0x7
  3294 06e4 69       		.byte	0x69
  3295 06e5 AD000000 		.4byte	0xad
  3296 06e9 59       		.byte	0x59
  3297 06ea 0A       		.uleb128 0xa
- 3298 06eb 60110000 		.4byte	.LASF122
+ 3298 06eb 73110000 		.4byte	.LASF122
  3299 06ef 07       		.byte	0x7
  3300 06f0 6E       		.byte	0x6e
  3301 06f1 C3000000 		.4byte	0xc3
@@ -7047,7 +7047,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3313 0709 AD000000 		.4byte	0xad
  3314 070d 5E       		.byte	0x5e
  3315 070e 0A       		.uleb128 0xa
- 3316 070f 79110000 		.4byte	.LASF125
+ 3316 070f 8C110000 		.4byte	.LASF125
  3317 0713 07       		.byte	0x7
  3318 0714 71       		.byte	0x71
  3319 0715 AD000000 		.4byte	0xad
@@ -7065,20 +7065,20 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3331 072d D9000000 		.4byte	0xd9
  3332 0731 64       		.byte	0x64
  3333 0732 0A       		.uleb128 0xa
- 3334 0733 AA130000 		.4byte	.LASF128
+ 3334 0733 BD130000 		.4byte	.LASF128
  3335 0737 07       		.byte	0x7
  3336 0738 76       		.byte	0x76
  3337 0739 C3000000 		.4byte	0xc3
  3338 073d 68       		.byte	0x68
  3339 073e 0A       		.uleb128 0xa
- 3340 073f 770B0000 		.4byte	.LASF129
+ 3340 073f 570B0000 		.4byte	.LASF129
  3341 0743 07       		.byte	0x7
  3342 0744 77       		.byte	0x77
  3343 0745 C3000000 		.4byte	0xc3
  3344 0749 6A       		.byte	0x6a
  3345 074a 0A       		.uleb128 0xa
  3346 074b FD090000 		.4byte	.LASF130
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 119
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 119
 
 
  3347 074f 07       		.byte	0x7
@@ -7116,7 +7116,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3379 078d AD000000 		.4byte	0xad
  3380 0791 73       		.byte	0x73
  3381 0792 0A       		.uleb128 0xa
- 3382 0793 530C0000 		.4byte	.LASF136
+ 3382 0793 330C0000 		.4byte	.LASF136
  3383 0797 07       		.byte	0x7
  3384 0798 80       		.byte	0x80
  3385 0799 C3000000 		.4byte	0xc3
@@ -7138,18 +7138,18 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3401 07bb 07       		.byte	0x7
  3402 07bc 83       		.byte	0x83
  3403 07bd C3000000 		.4byte	0xc3
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 120
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 120
 
 
  3404 07c1 7A       		.byte	0x7a
  3405 07c2 0A       		.uleb128 0xa
- 3406 07c3 8C0E0000 		.4byte	.LASF140
+ 3406 07c3 9F0E0000 		.4byte	.LASF140
  3407 07c7 07       		.byte	0x7
  3408 07c8 86       		.byte	0x86
  3409 07c9 AD000000 		.4byte	0xad
  3410 07cd 7C       		.byte	0x7c
  3411 07ce 0A       		.uleb128 0xa
- 3412 07cf 08110000 		.4byte	.LASF141
+ 3412 07cf 1B110000 		.4byte	.LASF141
  3413 07d3 07       		.byte	0x7
  3414 07d4 87       		.byte	0x87
  3415 07d5 AD000000 		.4byte	0xad
@@ -7173,32 +7173,32 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3433 07f9 AD000000 		.4byte	0xad
  3434 07fd 80       		.byte	0x80
  3435 07fe 0A       		.uleb128 0xa
- 3436 07ff D4100000 		.4byte	.LASF145
+ 3436 07ff E7100000 		.4byte	.LASF145
  3437 0803 07       		.byte	0x7
  3438 0804 8D       		.byte	0x8d
  3439 0805 D9000000 		.4byte	0xd9
  3440 0809 84       		.byte	0x84
  3441 080a 0A       		.uleb128 0xa
- 3442 080b A10E0000 		.4byte	.LASF146
+ 3442 080b B40E0000 		.4byte	.LASF146
  3443 080f 07       		.byte	0x7
  3444 0810 8E       		.byte	0x8e
  3445 0811 D9000000 		.4byte	0xd9
  3446 0815 88       		.byte	0x88
  3447 0816 0A       		.uleb128 0xa
- 3448 0817 A2110000 		.4byte	.LASF147
+ 3448 0817 B5110000 		.4byte	.LASF147
  3449 081b 07       		.byte	0x7
  3450 081c 8F       		.byte	0x8f
  3451 081d D9000000 		.4byte	0xd9
  3452 0821 8C       		.byte	0x8c
  3453 0822 0A       		.uleb128 0xa
- 3454 0823 3E0C0000 		.4byte	.LASF148
+ 3454 0823 1E0C0000 		.4byte	.LASF148
  3455 0827 07       		.byte	0x7
  3456 0828 90       		.byte	0x90
  3457 0829 D9000000 		.4byte	0xd9
  3458 082d 90       		.byte	0x90
  3459 082e 0A       		.uleb128 0xa
- 3460 082f 230E0000 		.4byte	.LASF149
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 121
+ 3460 082f 030E0000 		.4byte	.LASF149
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 121
 
 
  3461 0833 07       		.byte	0x7
@@ -7212,7 +7212,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3469 0841 D9000000 		.4byte	0xd9
  3470 0845 98       		.byte	0x98
  3471 0846 0A       		.uleb128 0xa
- 3472 0847 C40E0000 		.4byte	.LASF151
+ 3472 0847 D70E0000 		.4byte	.LASF151
  3473 084b 07       		.byte	0x7
  3474 084c 93       		.byte	0x93
  3475 084d D9000000 		.4byte	0xd9
@@ -7230,13 +7230,13 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3487 0865 C3000000 		.4byte	0xc3
  3488 0869 A4       		.byte	0xa4
  3489 086a 0A       		.uleb128 0xa
- 3490 086b 2F100000 		.4byte	.LASF154
+ 3490 086b 42100000 		.4byte	.LASF154
  3491 086f 07       		.byte	0x7
  3492 0870 96       		.byte	0x96
  3493 0871 C3000000 		.4byte	0xc3
  3494 0875 A6       		.byte	0xa6
  3495 0876 0A       		.uleb128 0xa
- 3496 0877 140F0000 		.4byte	.LASF155
+ 3496 0877 270F0000 		.4byte	.LASF155
  3497 087b 07       		.byte	0x7
  3498 087c 97       		.byte	0x97
  3499 087d C3000000 		.4byte	0xc3
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3515 089f 07       		.byte	0x7
  3516 08a0 9A       		.byte	0x9a
  3517 08a1 C3000000 		.4byte	0xc3
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 122
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 122
 
 
  3518 08a5 AE       		.byte	0xae
@@ -7269,7 +7269,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3523 08ad C3000000 		.4byte	0xc3
  3524 08b1 B0       		.byte	0xb0
  3525 08b2 0A       		.uleb128 0xa
- 3526 08b3 08100000 		.4byte	.LASF160
+ 3526 08b3 1B100000 		.4byte	.LASF160
  3527 08b7 07       		.byte	0x7
  3528 08b8 9E       		.byte	0x9e
  3529 08b9 D9000000 		.4byte	0xd9
@@ -7281,7 +7281,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3535 08c5 9F       		.byte	0x9f
  3536 08c6 AE040000 		.4byte	0x4ae
  3537 08ca 0D       		.uleb128 0xd
- 3538 08cb 960D0000 		.4byte	.LASF162
+ 3538 08cb 760D0000 		.4byte	.LASF162
  3539 08cf 08       		.byte	0x8
  3540 08d0 F601     		.2byte	0x1f6
  3541 08d2 D6080000 		.4byte	0x8d6
@@ -7317,8 +7317,8 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3571 0911 76050000 		.4byte	.LASF168
  3572 0915 00       		.byte	0
  3573 0916 11       		.uleb128 0x11
- 3574 0917 25110000 		.4byte	.LASF169
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 123
+ 3574 0917 38110000 		.4byte	.LASF169
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 123
 
 
  3575 091b 01004200 		.4byte	0x420001
@@ -7332,7 +7332,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3583 0932 2F070000 		.4byte	.LASF172
  3584 0936 04004200 		.4byte	0x420004
  3585 093a 11       		.uleb128 0x11
- 3586 093b 6A100000 		.4byte	.LASF173
+ 3586 093b 7D100000 		.4byte	.LASF173
  3587 093f FF004200 		.4byte	0x4200ff
  3588 0943 00       		.byte	0
  3589 0944 0D       		.uleb128 0xd
@@ -7347,20 +7347,20 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3598 0957 BC05     		.2byte	0x5bc
  3599 0959 76090000 		.4byte	0x976
  3600 095d 10       		.uleb128 0x10
- 3601 095e 0B140000 		.4byte	.LASF175
+ 3601 095e 1E140000 		.4byte	.LASF175
  3602 0962 01       		.byte	0x1
  3603 0963 10       		.uleb128 0x10
  3604 0964 D7030000 		.4byte	.LASF176
  3605 0968 02       		.byte	0x2
  3606 0969 10       		.uleb128 0x10
- 3607 096a D6130000 		.4byte	.LASF177
+ 3607 096a E9130000 		.4byte	.LASF177
  3608 096e 04       		.byte	0x4
  3609 096f 10       		.uleb128 0x10
- 3610 0970 F1130000 		.4byte	.LASF178
+ 3610 0970 04140000 		.4byte	.LASF178
  3611 0974 08       		.byte	0x8
  3612 0975 00       		.byte	0
  3613 0976 0D       		.uleb128 0xd
- 3614 0977 B50C0000 		.4byte	.LASF179
+ 3614 0977 950C0000 		.4byte	.LASF179
  3615 097b 09       		.byte	0x9
  3616 097c CB05     		.2byte	0x5cb
  3617 097e 50090000 		.4byte	0x950
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3629 0998 13       		.uleb128 0x13
  3630 0999 B3090000 		.4byte	.LASF181
  3631 099d 09       		.byte	0x9
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 124
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 124
 
 
  3632 099e EC05     		.2byte	0x5ec
@@ -7429,7 +7429,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3677 0a03 9C0A0000 		.4byte	.LASF188
  3678 0a07 00       		.byte	0
  3679 0a08 10       		.uleb128 0x10
- 3680 0a09 63130000 		.4byte	.LASF189
+ 3680 0a09 76130000 		.4byte	.LASF189
  3681 0a0d 01       		.byte	0x1
  3682 0a0e 00       		.byte	0
  3683 0a0f 0D       		.uleb128 0xd
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3686 0a15 0A03     		.2byte	0x30a
  3687 0a17 F5090000 		.4byte	0x9f5
  3688 0a1b 0F       		.uleb128 0xf
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 125
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 125
 
 
  3689 0a1c 01       		.byte	0x1
@@ -7447,14 +7447,14 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3692 0a22 0E03     		.2byte	0x30e
  3693 0a24 350A0000 		.4byte	0xa35
  3694 0a28 10       		.uleb128 0x10
- 3695 0a29 1B0C0000 		.4byte	.LASF191
+ 3695 0a29 FB0B0000 		.4byte	.LASF191
  3696 0a2d 00       		.byte	0
  3697 0a2e 10       		.uleb128 0x10
  3698 0a2f 5F020000 		.4byte	.LASF192
  3699 0a33 01       		.byte	0x1
  3700 0a34 00       		.byte	0
  3701 0a35 0D       		.uleb128 0xd
- 3702 0a36 5B0F0000 		.4byte	.LASF193
+ 3702 0a36 6E0F0000 		.4byte	.LASF193
  3703 0a3a 01       		.byte	0x1
  3704 0a3b 1103     		.2byte	0x311
  3705 0a3d 1B0A0000 		.4byte	0xa1b
@@ -7465,10 +7465,10 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3710 0a48 1503     		.2byte	0x315
  3711 0a4a 5B0A0000 		.4byte	0xa5b
  3712 0a4e 10       		.uleb128 0x10
- 3713 0a4f 1C100000 		.4byte	.LASF194
+ 3713 0a4f 2F100000 		.4byte	.LASF194
  3714 0a53 00       		.byte	0
  3715 0a54 10       		.uleb128 0x10
- 3716 0a55 66120000 		.4byte	.LASF195
+ 3716 0a55 79120000 		.4byte	.LASF195
  3717 0a59 01       		.byte	0x1
  3718 0a5a 00       		.byte	0
  3719 0a5b 0D       		.uleb128 0xd
@@ -7483,10 +7483,10 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3728 0a6e 1C03     		.2byte	0x31c
  3729 0a70 810A0000 		.4byte	0xa81
  3730 0a74 10       		.uleb128 0x10
- 3731 0a75 B5100000 		.4byte	.LASF197
+ 3731 0a75 C8100000 		.4byte	.LASF197
  3732 0a79 00       		.byte	0
  3733 0a7a 10       		.uleb128 0x10
- 3734 0a7b F40B0000 		.4byte	.LASF198
+ 3734 0a7b D40B0000 		.4byte	.LASF198
  3735 0a7f 01       		.byte	0x1
  3736 0a80 00       		.byte	0
  3737 0a81 0D       		.uleb128 0xd
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3743 0a8e 01       		.byte	0x1
  3744 0a8f 37000000 		.4byte	0x37
  3745 0a93 01       		.byte	0x1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 126
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 126
 
 
  3746 0a94 2303     		.2byte	0x323
@@ -7508,7 +7508,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3750 0a9f 00       		.byte	0
  3751 0aa0 00       		.byte	0
  3752 0aa1 0D       		.uleb128 0xd
- 3753 0aa2 D80D0000 		.4byte	.LASF201
+ 3753 0aa2 B80D0000 		.4byte	.LASF201
  3754 0aa6 01       		.byte	0x1
  3755 0aa7 2503     		.2byte	0x325
  3756 0aa9 8D0A0000 		.4byte	0xa8d
@@ -7519,7 +7519,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3761 0ab4 5703     		.2byte	0x357
  3762 0ab6 EB0A0000 		.4byte	0xaeb
  3763 0aba 10       		.uleb128 0x10
- 3764 0abb 7D0F0000 		.4byte	.LASF202
+ 3764 0abb 900F0000 		.4byte	.LASF202
  3765 0abf 00       		.byte	0
  3766 0ac0 16       		.uleb128 0x16
  3767 0ac1 BA010000 		.4byte	.LASF203
@@ -7534,7 +7534,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3776 0ad6 E8010000 		.4byte	.LASF206
  3777 0ada 000A     		.2byte	0xa00
  3778 0adc 16       		.uleb128 0x16
- 3779 0add 1D0B0000 		.4byte	.LASF207
+ 3779 0add FD0A0000 		.4byte	.LASF207
  3780 0ae1 000C     		.2byte	0xc00
  3781 0ae3 16       		.uleb128 0x16
  3782 0ae4 92000000 		.4byte	.LASF208
@@ -7547,7 +7547,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3789 0af2 E403     		.2byte	0x3e4
  3790 0af4 110B0000 		.4byte	0xb11
  3791 0af8 10       		.uleb128 0x10
- 3792 0af9 B20D0000 		.4byte	.LASF209
+ 3792 0af9 920D0000 		.4byte	.LASF209
  3793 0afd 00       		.byte	0
  3794 0afe 11       		.uleb128 0x11
  3795 0aff 91090000 		.4byte	.LASF210
@@ -7557,8 +7557,8 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3799 0b0c 00000600 		.4byte	0x60000
  3800 0b10 00       		.byte	0
  3801 0b11 0D       		.uleb128 0xd
- 3802 0b12 550D0000 		.4byte	.LASF212
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 127
+ 3802 0b12 350D0000 		.4byte	.LASF212
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 127
 
 
  3803 0b16 01       		.byte	0x1
@@ -7584,7 +7584,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3823 0b41 03       		.byte	0x3
  3824 0b42 00       		.byte	0
  3825 0b43 0D       		.uleb128 0xd
- 3826 0b44 7A120000 		.4byte	.LASF217
+ 3826 0b44 8D120000 		.4byte	.LASF217
  3827 0b48 01       		.byte	0x1
  3828 0b49 1804     		.2byte	0x418
  3829 0b4b 1D0B0000 		.4byte	0xb1d
@@ -7595,7 +7595,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3834 0b56 9404     		.2byte	0x494
  3835 0b58 750B0000 		.4byte	0xb75
  3836 0b5c 10       		.uleb128 0x10
- 3837 0b5d BD0F0000 		.4byte	.LASF218
+ 3837 0b5d D00F0000 		.4byte	.LASF218
  3838 0b61 00       		.byte	0
  3839 0b62 10       		.uleb128 0x10
  3840 0b63 3D060000 		.4byte	.LASF219
@@ -7618,23 +7618,23 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3857 0b84 0405     		.2byte	0x504
  3858 0b86 D9000000 		.4byte	0xd9
  3859 0b8a 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 128
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 128
 
 
  3860 0b8b 13       		.uleb128 0x13
- 3861 0b8c A40F0000 		.4byte	.LASF223
+ 3861 0b8c B70F0000 		.4byte	.LASF223
  3862 0b90 01       		.byte	0x1
  3863 0b91 0505     		.2byte	0x505
  3864 0b93 D9000000 		.4byte	0xd9
  3865 0b97 04       		.byte	0x4
  3866 0b98 13       		.uleb128 0x13
- 3867 0b99 890B0000 		.4byte	.LASF224
+ 3867 0b99 690B0000 		.4byte	.LASF224
  3868 0b9d 01       		.byte	0x1
  3869 0b9e 0605     		.2byte	0x506
  3870 0ba0 D9000000 		.4byte	0xd9
  3871 0ba4 08       		.byte	0x8
  3872 0ba5 13       		.uleb128 0x13
- 3873 0ba6 DA0E0000 		.4byte	.LASF225
+ 3873 0ba6 ED0E0000 		.4byte	.LASF225
  3874 0baa 01       		.byte	0x1
  3875 0bab 0705     		.2byte	0x507
  3876 0bad D9000000 		.4byte	0xd9
@@ -7658,13 +7658,13 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3894 0bd4 D9000000 		.4byte	0xd9
  3895 0bd8 18       		.byte	0x18
  3896 0bd9 13       		.uleb128 0x13
- 3897 0bda B7110000 		.4byte	.LASF229
+ 3897 0bda CA110000 		.4byte	.LASF229
  3898 0bde 01       		.byte	0x1
  3899 0bdf 0B05     		.2byte	0x50b
  3900 0be1 420C0000 		.4byte	0xc42
  3901 0be5 1C       		.byte	0x1c
  3902 0be6 13       		.uleb128 0x13
- 3903 0be7 A1130000 		.4byte	.LASF230
+ 3903 0be7 B4130000 		.4byte	.LASF230
  3904 0beb 01       		.byte	0x1
  3905 0bec 0C05     		.2byte	0x50c
  3906 0bee D9000000 		.4byte	0xd9
@@ -7676,16 +7676,16 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3912 0bfb D9000000 		.4byte	0xd9
  3913 0bff 60       		.byte	0x60
  3914 0c00 13       		.uleb128 0x13
- 3915 0c01 58120000 		.4byte	.LASF232
+ 3915 0c01 6B120000 		.4byte	.LASF232
  3916 0c05 01       		.byte	0x1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 129
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 129
 
 
  3917 0c06 0E05     		.2byte	0x50e
  3918 0c08 D9000000 		.4byte	0xd9
  3919 0c0c 64       		.byte	0x64
  3920 0c0d 13       		.uleb128 0x13
- 3921 0c0e 3C0B0000 		.4byte	.LASF233
+ 3921 0c0e 1C0B0000 		.4byte	.LASF233
  3922 0c12 01       		.byte	0x1
  3923 0c13 0F05     		.2byte	0x50f
  3924 0c15 D9000000 		.4byte	0xd9
@@ -7697,7 +7697,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3930 0c22 D9000000 		.4byte	0xd9
  3931 0c26 6C       		.byte	0x6c
  3932 0c27 13       		.uleb128 0x13
- 3933 0c28 FC110000 		.4byte	.LASF235
+ 3933 0c28 0F120000 		.4byte	.LASF235
  3934 0c2c 01       		.byte	0x1
  3935 0c2d 1105     		.2byte	0x511
  3936 0c2f 520C0000 		.4byte	0xc52
@@ -7737,8 +7737,8 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3970 0c76 D9000000 		.4byte	0xd9
  3971 0c7a 00       		.byte	0
  3972 0c7b 13       		.uleb128 0x13
- 3973 0c7c 180E0000 		.4byte	.LASF240
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 130
+ 3973 0c7c F80D0000 		.4byte	.LASF240
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 130
 
 
  3974 0c80 01       		.byte	0x1
@@ -7747,12 +7747,12 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  3977 0c87 04       		.byte	0x4
  3978 0c88 00       		.byte	0
  3979 0c89 0D       		.uleb128 0xd
- 3980 0c8a ED0C0000 		.4byte	.LASF241
+ 3980 0c8a CD0C0000 		.4byte	.LASF241
  3981 0c8e 01       		.byte	0x1
  3982 0c8f 1B05     		.2byte	0x51b
  3983 0c91 650C0000 		.4byte	0xc65
  3984 0c95 17       		.uleb128 0x17
- 3985 0c96 D70B0000 		.4byte	.LASF312
+ 3985 0c96 B70B0000 		.4byte	.LASF312
  3986 0c9a 01       		.byte	0x1
  3987 0c9b FD07     		.2byte	0x7fd
  3988 0c9d 520C0000 		.4byte	0xc52
@@ -7784,7 +7784,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4014 0cd4 06       		.uleb128 0x6
  4015 0cd5 A2040000 		.4byte	0x4a2
  4016 0cd9 19       		.uleb128 0x19
- 4017 0cda EB100000 		.4byte	.LASF249
+ 4017 0cda FE100000 		.4byte	.LASF249
  4018 0cde 02       		.byte	0x2
  4019 0cdf 38       		.byte	0x38
  4020 0ce0 E9090000 		.4byte	0x9e9
@@ -7798,14 +7798,14 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4028 0cf7 02       		.byte	0x2
  4029 0cf8 38       		.byte	0x38
  4030 0cf9 630D0000 		.4byte	0xd63
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 131
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 131
 
 
  4031 0cfd 02       		.uleb128 0x2
  4032 0cfe 91       		.byte	0x91
  4033 0cff 64       		.sleb128 -28
  4034 0d00 1A       		.uleb128 0x1a
- 4035 0d01 D00B0000 		.4byte	.LASF243
+ 4035 0d01 B00B0000 		.4byte	.LASF243
  4036 0d05 02       		.byte	0x2
  4037 0d06 38       		.byte	0x38
  4038 0d07 690D0000 		.4byte	0xd69
@@ -7837,7 +7837,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4064 0d36 91       		.byte	0x91
  4065 0d37 6C       		.sleb128 -20
  4066 0d38 1B       		.uleb128 0x1b
- 4067 0d39 AF0F0000 		.4byte	.LASF246
+ 4067 0d39 C20F0000 		.4byte	.LASF246
  4068 0d3d 02       		.byte	0x2
  4069 0d3e 40       		.byte	0x40
  4070 0d3f 520C0000 		.4byte	0xc52
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4085 0d5a 42       		.byte	0x42
  4086 0d5b 520C0000 		.4byte	0xc52
  4087 0d5f 02       		.uleb128 0x2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 132
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 132
 
 
  4088 0d60 91       		.byte	0x91
@@ -7891,7 +7891,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4115 0d99 91       		.byte	0x91
  4116 0d9a 6C       		.sleb128 -20
  4117 0d9b 1A       		.uleb128 0x1a
- 4118 0d9c EE110000 		.4byte	.LASF251
+ 4118 0d9c 01120000 		.4byte	.LASF251
  4119 0da0 02       		.byte	0x2
  4120 0da1 B3       		.byte	0xb3
  4121 0da2 520C0000 		.4byte	0xc52
@@ -7916,9 +7916,9 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4140 0dc4 73       		.sleb128 -13
  4141 0dc5 00       		.byte	0
  4142 0dc6 1C       		.uleb128 0x1c
- 4143 0dc7 E70E0000 		.4byte	.LASF252
+ 4143 0dc7 FA0E0000 		.4byte	.LASF252
  4144 0dcb 02       		.byte	0x2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 133
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 133
 
 
  4145 0dcc E8       		.byte	0xe8
@@ -7937,7 +7937,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4158 0de8 74       		.sleb128 -12
  4159 0de9 00       		.byte	0
  4160 0dea 1D       		.uleb128 0x1d
- 4161 0deb FD0D0000 		.4byte	.LASF253
+ 4161 0deb DD0D0000 		.4byte	.LASF253
  4162 0def 02       		.byte	0x2
  4163 0df0 0F01     		.2byte	0x10f
  4164 0df2 00000000 		.4byte	.LFB195
@@ -7954,7 +7954,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4175 0e0d 91       		.byte	0x91
  4176 0e0e 6C       		.sleb128 -20
  4177 0e0f 1E       		.uleb128 0x1e
- 4178 0e10 210D0000 		.4byte	.LASF254
+ 4178 0e10 010D0000 		.4byte	.LASF254
  4179 0e14 02       		.byte	0x2
  4180 0e15 1101     		.2byte	0x111
  4181 0e17 D9000000 		.4byte	0xd9
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4199 0e3d 630D0000 		.4byte	0xd63
  4200 0e41 02       		.uleb128 0x2
  4201 0e42 91       		.byte	0x91
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 134
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 134
 
 
  4202 0e43 74       		.sleb128 -12
@@ -8010,7 +8010,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4228 0e78 73       		.sleb128 -13
  4229 0e79 00       		.byte	0
  4230 0e7a 1F       		.uleb128 0x1f
- 4231 0e7b 50130000 		.4byte	.LASF258
+ 4231 0e7b 63130000 		.4byte	.LASF258
  4232 0e7f 02       		.byte	0x2
  4233 0e80 9301     		.2byte	0x193
  4234 0e82 00000000 		.4byte	.LFB198
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4256 0eb2 E40E0000 		.4byte	0xee4
  4257 0eb6 18       		.uleb128 0x18
  4258 0eb7 43040000 		.4byte	.LASF180
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 135
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 135
 
 
  4259 0ebb 02       		.byte	0x2
@@ -8048,7 +8048,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4263 0ec3 91       		.byte	0x91
  4264 0ec4 6C       		.sleb128 -20
  4265 0ec5 18       		.uleb128 0x18
- 4266 0ec6 F80D0000 		.4byte	.LASF260
+ 4266 0ec6 D80D0000 		.4byte	.LASF260
  4267 0eca 02       		.byte	0x2
  4268 0ecb B701     		.2byte	0x1b7
  4269 0ecd 110B0000 		.4byte	0xb11
@@ -8056,7 +8056,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4271 0ed2 91       		.byte	0x91
  4272 0ed3 68       		.sleb128 -24
  4273 0ed4 1E       		.uleb128 0x1e
- 4274 0ed5 E0110000 		.4byte	.LASF261
+ 4274 0ed5 F3110000 		.4byte	.LASF261
  4275 0ed9 02       		.byte	0x2
  4276 0eda BC01     		.2byte	0x1bc
  4277 0edc D9000000 		.4byte	0xd9
@@ -8065,7 +8065,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4280 0ee2 74       		.sleb128 -12
  4281 0ee3 00       		.byte	0
  4282 0ee4 20       		.uleb128 0x20
- 4283 0ee5 BA130000 		.4byte	.LASF262
+ 4283 0ee5 CD130000 		.4byte	.LASF262
  4284 0ee9 02       		.byte	0x2
  4285 0eea DE01     		.2byte	0x1de
  4286 0eec E9090000 		.4byte	0x9e9
@@ -8083,7 +8083,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4298 0f0b 91       		.byte	0x91
  4299 0f0c 64       		.sleb128 -28
  4300 0f0d 18       		.uleb128 0x18
- 4301 0f0e 57100000 		.4byte	.LASF263
+ 4301 0f0e 6A100000 		.4byte	.LASF263
  4302 0f12 02       		.byte	0x2
  4303 0f13 DE01     		.2byte	0x1de
  4304 0f15 350A0000 		.4byte	0xa35
@@ -8098,11 +8098,11 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4313 0f28 02       		.uleb128 0x2
  4314 0f29 91       		.byte	0x91
  4315 0f2a 74       		.sleb128 -12
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 136
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 136
 
 
  4316 0f2b 1E       		.uleb128 0x1e
- 4317 0f2c A5100000 		.4byte	.LASF264
+ 4317 0f2c B8100000 		.4byte	.LASF264
  4318 0f30 02       		.byte	0x2
  4319 0f31 E401     		.2byte	0x1e4
  4320 0f33 D9000000 		.4byte	0xd9
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4370 0f97 02       		.byte	0x2
  4371 0f98 5202     		.2byte	0x252
  4372 0f9a 520C0000 		.4byte	0xc52
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 137
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 137
 
 
  4373 0f9e 00000000 		.4byte	.LFB202
@@ -8192,7 +8192,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4401 0fd8 77       		.sleb128 -9
  4402 0fd9 00       		.byte	0
  4403 0fda 20       		.uleb128 0x20
- 4404 0fdb 200F0000 		.4byte	.LASF269
+ 4404 0fdb 330F0000 		.4byte	.LASF269
  4405 0fdf 02       		.byte	0x2
  4406 0fe0 7902     		.2byte	0x279
  4407 0fe2 B8000000 		.4byte	0xb8
@@ -8218,10 +8218,10 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4427 1010 91       		.byte	0x91
  4428 1011 68       		.sleb128 -24
  4429 1012 1E       		.uleb128 0x1e
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 138
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 138
 
 
- 4430 1013 730F0000 		.4byte	.LASF270
+ 4430 1013 860F0000 		.4byte	.LASF270
  4431 1017 02       		.byte	0x2
  4432 1018 7D02     		.2byte	0x27d
  4433 101a D9000000 		.4byte	0xd9
@@ -8230,7 +8230,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4436 1020 74       		.sleb128 -12
  4437 1021 00       		.byte	0
  4438 1022 20       		.uleb128 0x20
- 4439 1023 8F110000 		.4byte	.LASF271
+ 4439 1023 A2110000 		.4byte	.LASF271
  4440 1027 02       		.byte	0x2
  4441 1028 9E02     		.2byte	0x29e
  4442 102a CE000000 		.4byte	0xce
@@ -8256,7 +8256,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4462 1058 91       		.byte	0x91
  4463 1059 60       		.sleb128 -32
  4464 105a 1E       		.uleb128 0x1e
- 4465 105b 730F0000 		.4byte	.LASF270
+ 4465 105b 860F0000 		.4byte	.LASF270
  4466 105f 02       		.byte	0x2
  4467 1060 A202     		.2byte	0x2a2
  4468 1062 D9000000 		.4byte	0xd9
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4484 1080 CE000000 		.4byte	0xce
  4485 1084 02       		.uleb128 0x2
  4486 1085 91       		.byte	0x91
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 139
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 139
 
 
  4487 1086 70       		.sleb128 -16
@@ -8335,10 +8335,10 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4538 10ef 91       		.byte	0x91
  4539 10f0 6C       		.sleb128 -20
  4540 10f1 18       		.uleb128 0x18
- 4541 10f2 0E0E0000 		.4byte	.LASF278
+ 4541 10f2 EE0D0000 		.4byte	.LASF278
  4542 10f6 02       		.byte	0x2
  4543 10f7 F202     		.2byte	0x2f2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 140
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 140
 
 
  4544 10f9 D9000000 		.4byte	0xd9
@@ -8355,7 +8355,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4555 110e 74       		.sleb128 -12
  4556 110f 00       		.byte	0
  4557 1110 20       		.uleb128 0x20
- 4558 1111 33120000 		.4byte	.LASF279
+ 4558 1111 46120000 		.4byte	.LASF279
  4559 1115 02       		.byte	0x2
  4560 1116 1803     		.2byte	0x318
  4561 1118 E9090000 		.4byte	0x9e9
@@ -8390,7 +8390,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4590 1156 74       		.sleb128 -12
  4591 1157 00       		.byte	0
  4592 1158 20       		.uleb128 0x20
- 4593 1159 7D0E0000 		.4byte	.LASF281
+ 4593 1159 900E0000 		.4byte	.LASF281
  4594 115d 02       		.byte	0x2
  4595 115e 4203     		.2byte	0x342
  4596 1160 E9090000 		.4byte	0x9e9
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4598 1168 48000000 		.4byte	.LFE208-.LFB208
  4599 116c 01       		.uleb128 0x1
  4600 116d 9C       		.byte	0x9c
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 141
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 141
 
 
  4601 116e A0110000 		.4byte	0x11a0
@@ -8458,14 +8458,14 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4655 11dd 02       		.byte	0x2
  4656 11de 7903     		.2byte	0x379
  4657 11e0 B8000000 		.4byte	0xb8
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 142
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 142
 
 
  4658 11e4 02       		.uleb128 0x2
  4659 11e5 91       		.byte	0x91
  4660 11e6 66       		.sleb128 -26
  4661 11e7 1E       		.uleb128 0x1e
- 4662 11e8 7A0D0000 		.4byte	.LASF285
+ 4662 11e8 5A0D0000 		.4byte	.LASF285
  4663 11ec 02       		.byte	0x2
  4664 11ed 7D03     		.2byte	0x37d
  4665 11ef D9000000 		.4byte	0xd9
@@ -8473,7 +8473,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4667 11f4 91       		.byte	0x91
  4668 11f5 70       		.sleb128 -16
  4669 11f6 1E       		.uleb128 0x1e
- 4670 11f7 9D0D0000 		.4byte	.LASF286
+ 4670 11f7 7D0D0000 		.4byte	.LASF286
  4671 11fb 02       		.byte	0x2
  4672 11fc 7E03     		.2byte	0x37e
  4673 11fe D9000000 		.4byte	0xd9
@@ -8482,7 +8482,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4676 1204 74       		.sleb128 -12
  4677 1205 00       		.byte	0
  4678 1206 20       		.uleb128 0x20
- 4679 1207 F20F0000 		.4byte	.LASF287
+ 4679 1207 05100000 		.4byte	.LASF287
  4680 120b 02       		.byte	0x2
  4681 120c DA03     		.2byte	0x3da
  4682 120e DD080000 		.4byte	0x8dd
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4712 124d 1E       		.uleb128 0x1e
  4713 124e F8050000 		.4byte	.LASF288
  4714 1252 02       		.byte	0x2
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 143
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 143
 
 
  4715 1253 DE03     		.2byte	0x3de
@@ -8562,7 +8562,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4753 12a2 91       		.byte	0x91
  4754 12a3 66       		.sleb128 -26
  4755 12a4 1E       		.uleb128 0x1e
- 4756 12a5 300C0000 		.4byte	.LASF290
+ 4756 12a5 100C0000 		.4byte	.LASF290
  4757 12a9 02       		.byte	0x2
  4758 12aa 2104     		.2byte	0x421
  4759 12ac CE000000 		.4byte	0xce
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4769 12c0 00000000 		.4byte	.LFB212
  4770 12c4 AC000000 		.4byte	.LFE212-.LFB212
  4771 12c8 01       		.uleb128 0x1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 144
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 144
 
 
  4772 12c9 9C       		.byte	0x9c
@@ -8617,7 +8617,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4805 1309 68       		.sleb128 -24
  4806 130a 00       		.byte	0
  4807 130b 1D       		.uleb128 0x1d
- 4808 130c 88100000 		.4byte	.LASF293
+ 4808 130c 9B100000 		.4byte	.LASF293
  4809 1310 02       		.byte	0x2
  4810 1311 9C04     		.2byte	0x49c
  4811 1313 00000000 		.4byte	.LFB213
@@ -8638,14 +8638,14 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4826 1335 02       		.byte	0x2
  4827 1336 9C04     		.2byte	0x49c
  4828 1338 A10A0000 		.4byte	0xaa1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 145
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 145
 
 
  4829 133c 02       		.uleb128 0x2
  4830 133d 91       		.byte	0x91
  4831 133e 6B       		.sleb128 -21
  4832 133f 18       		.uleb128 0x18
- 4833 1340 8B0D0000 		.4byte	.LASF295
+ 4833 1340 6B0D0000 		.4byte	.LASF295
  4834 1344 02       		.byte	0x2
  4835 1345 9C04     		.2byte	0x49c
  4836 1347 D9000000 		.4byte	0xd9
@@ -8653,7 +8653,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4838 134c 91       		.byte	0x91
  4839 134d 64       		.sleb128 -28
  4840 134e 18       		.uleb128 0x18
- 4841 134f 9F100000 		.4byte	.LASF296
+ 4841 134f B2100000 		.4byte	.LASF296
  4842 1353 02       		.byte	0x2
  4843 1354 9C04     		.2byte	0x49c
  4844 1356 5B0A0000 		.4byte	0xa5b
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4883 13a8 02       		.uleb128 0x2
  4884 13a9 91       		.byte	0x91
  4885 13aa 74       		.sleb128 -12
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 146
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 146
 
 
  4886 13ab 18       		.uleb128 0x18
@@ -8728,7 +8728,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4910 13de 91       		.byte	0x91
  4911 13df 74       		.sleb128 -12
  4912 13e0 18       		.uleb128 0x18
- 4913 13e1 8B0D0000 		.4byte	.LASF295
+ 4913 13e1 6B0D0000 		.4byte	.LASF295
  4914 13e5 02       		.byte	0x2
  4915 13e6 EB04     		.2byte	0x4eb
  4916 13e8 D9000000 		.4byte	0xd9
@@ -8755,10 +8755,10 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4937 1414 9C       		.byte	0x9c
  4938 1415 47140000 		.4byte	0x1447
  4939 1419 18       		.uleb128 0x18
- 4940 141a 38110000 		.4byte	.LASF302
+ 4940 141a 4B110000 		.4byte	.LASF302
  4941 141e 02       		.byte	0x2
  4942 141f 1205     		.2byte	0x512
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 147
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 147
 
 
  4943 1421 B4090000 		.4byte	0x9b4
@@ -8766,7 +8766,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4945 1426 91       		.byte	0x91
  4946 1427 6C       		.sleb128 -20
  4947 1428 18       		.uleb128 0x18
- 4948 1429 F80D0000 		.4byte	.LASF260
+ 4948 1429 D80D0000 		.4byte	.LASF260
  4949 142d 02       		.byte	0x2
  4950 142e 1205     		.2byte	0x512
  4951 1430 76090000 		.4byte	0x976
@@ -8783,7 +8783,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4962 1445 74       		.sleb128 -12
  4963 1446 00       		.byte	0
  4964 1447 1B       		.uleb128 0x1b
- 4965 1448 83130000 		.4byte	.LASF304
+ 4965 1448 96130000 		.4byte	.LASF304
  4966 144c 02       		.byte	0x2
  4967 144d 16       		.byte	0x16
  4968 144e 890C0000 		.4byte	0xc89
@@ -8791,7 +8791,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4970 1453 03       		.byte	0x3
  4971 1454 00000000 		.4byte	enabledBeforeSleep
  4972 1458 22       		.uleb128 0x22
- 4973 1459 140D0000 		.4byte	.LASF305
+ 4973 1459 F40C0000 		.4byte	.LASF305
  4974 145d 0A       		.byte	0xa
  4975 145e F907     		.2byte	0x7f9
  4976 1460 64140000 		.4byte	0x1464
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  4997 1490 B8000000 		.4byte	0xb8
  4998 1494 24       		.uleb128 0x24
  4999 1495 40090000 		.4byte	.LASF307
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 148
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 148
 
 
  5000 1499 02       		.byte	0x2
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5054 001a 03       		.uleb128 0x3
  5055 001b 0E       		.uleb128 0xe
  5056 001c 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 149
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 149
 
 
  5057 001d 00       		.byte	0
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5111 0053 0B       		.uleb128 0xb
  5112 0054 00       		.byte	0
  5113 0055 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 150
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 150
 
 
  5114 0056 09       		.uleb128 0x9
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5168 008c 00       		.byte	0
  5169 008d 03       		.uleb128 0x3
  5170 008e 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 151
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 151
 
 
  5171 008f 3A       		.uleb128 0x3a
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5225 00c5 12       		.uleb128 0x12
  5226 00c6 13       		.uleb128 0x13
  5227 00c7 01       		.byte	0x1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 152
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 152
 
 
  5228 00c8 0B       		.uleb128 0xb
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5282 00fe 0E       		.uleb128 0xe
  5283 00ff 3A       		.uleb128 0x3a
  5284 0100 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 153
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 153
 
 
  5285 0101 3B       		.uleb128 0x3b
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5339 0138 9642     		.uleb128 0x2116
  5340 013a 19       		.uleb128 0x19
  5341 013b 01       		.uleb128 0x1
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 154
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 154
 
 
  5342 013c 13       		.uleb128 0x13
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5396 0173 01       		.uleb128 0x1
  5397 0174 13       		.uleb128 0x13
  5398 0175 00       		.byte	0
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 155
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 155
 
 
  5399 0176 00       		.byte	0
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5453 01ad 11       		.uleb128 0x11
  5454 01ae 01       		.uleb128 0x1
  5455 01af 12       		.uleb128 0x12
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 156
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 156
 
 
  5456 01b0 06       		.uleb128 0x6
@@ -9358,7 +9358,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5510 01e8 03       		.uleb128 0x3
  5511 01e9 0E       		.uleb128 0xe
  5512 01ea 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 157
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 157
 
 
  5513 01eb 0B       		.uleb128 0xb
@@ -9418,7 +9418,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5567 0010 00000000 		.4byte	.LFB189
  5568 0014 32000000 		.4byte	.LFE189-.LFB189
  5569 0018 00000000 		.4byte	.LFB192
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 158
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 158
 
 
  5570 001c E0020000 		.4byte	.LFE192-.LFB192
@@ -9478,7 +9478,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5624 0004 32000000 		.4byte	.LFE189
  5625 0008 00000000 		.4byte	.LFB192
  5626 000c E0020000 		.4byte	.LFE192
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 159
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 159
 
 
  5627 0010 00000000 		.4byte	.LFB193
@@ -9538,7 +9538,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5679      00000201 
  5679      FB0E0D00 
  5679      01010101 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 160
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 160
 
 
  5680              	.LASF118:
@@ -9598,7 +9598,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5702              	.LASF104:
  5703 00a6 70657269 		.ascii	"periClockNr\000"
  5703      436C6F63 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 161
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 161
 
 
  5703      6B4E7200 
@@ -9658,7 +9658,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5728              	.LASF105:
  5729 0144 736D6966 		.ascii	"smifDeviceNr\000"
  5729      44657669 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 162
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 162
 
 
  5729      63654E72 
@@ -9718,7 +9718,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5749      3700
  5750              	.LASF99:
  5751 01fa 63707573 		.ascii	"cpussFmIrq\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 163
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 163
 
 
  5751      73466D49 
@@ -9778,7 +9778,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5773 02af 63727970 		.ascii	"cryptoMemSize\000"
  5773      746F4D65 
  5773      6D53697A 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 164
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 164
 
 
  5773      6500
@@ -9838,7 +9838,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5796              	.LASF267:
  5797 0365 43795F53 		.ascii	"Cy_SAR_IsChannelSingleEnded\000"
  5797      41525F49 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 165
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 165
 
 
  5797      73436861 
@@ -9898,7 +9898,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5818              	.LASF86:
  5819 0423 63727970 		.ascii	"cryptoVersion\000"
  5819      746F5665 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 166
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 166
 
 
  5819      7273696F 
@@ -9958,7 +9958,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5843 04ce 43795F53 		.ascii	"Cy_SAR_CountsTo_uVolts\000"
  5843      41525F43 
  5843      6F756E74 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 167
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 167
 
 
  5843      73546F5F 
@@ -10018,7 +10018,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5865      00
  5866              	.LASF120:
  5867 0587 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 168
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 168
 
 
  5867      6843746C 
@@ -10078,7 +10078,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5890              	.LASF67:
  5891 062a 4D55585F 		.ascii	"MUX_SWITCH_DS_CTRL\000"
  5891      53574954 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 169
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 169
 
 
  5891      43485F44 
@@ -10138,7 +10138,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5911      79706500 
  5912              	.LASF170:
  5913 06e6 43595F53 		.ascii	"CY_SYSPM_TIMEOUT\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 170
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 170
 
 
  5913      5953504D 
@@ -10198,7 +10198,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5933 07a6 70657269 		.ascii	"periDiv16_5CtlOffset\000"
  5933      44697631 
  5933      365F3543 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 171
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 171
 
 
  5933      746C4F66 
@@ -10258,7 +10258,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5953      5F7400
  5954              	.LASF259:
  5955 086e 43795F53 		.ascii	"Cy_SAR_SetConvertMode\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 172
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 172
 
 
  5955      41525F53 
@@ -10318,7 +10318,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5977 091b 63727970 		.ascii	"cryptoBase\000"
  5977      746F4261 
  5977      736500
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 173
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 173
 
 
  5978              	.LASF220:
@@ -10378,7 +10378,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  5999      554C5400 
  6000              	.LASF157:
  6001 09ef 63707573 		.ascii	"cpussRam1Ctl0\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 174
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 174
 
 
  6001      7352616D 
@@ -10438,7 +10438,7 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  6025      6F756E74 
  6025      73506572 
  6025      3130566F 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 175
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 175
 
 
  6026              	.LASF188:
@@ -10469,723 +10469,725 @@ ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 1
  6037      3643746C 
  6037      4F666673 
  6037      657400
- 6038              	.LASF311:
- 6039 0afd 443A5C74 		.ascii	"D:\\thesis\\VDAC_Saw_Export.cydsn\000"
- 6039      68657369 
- 6039      735C5644 
- 6039      41435F53 
- 6039      61775F45 
- 6040              	.LASF207:
- 6041 0b1d 43595F53 		.ascii	"CY_SAR_NEG_SEL_ACORE\000"
- 6041      41525F4E 
- 6041      45475F53 
- 6041      454C5F41 
- 6041      434F5245 
- 6042              	.LASF11:
- 6043 0b32 5F5F696E 		.ascii	"__int64_t\000"
- 6043      7436345F 
- 6043      7400
- 6044              	.LASF233:
- 6045 0b3c 6D757853 		.ascii	"muxSwitch\000"
- 6045      77697463 
- 6045      6800
- 6046              	.LASF6:
- 6047 0b46 73686F72 		.ascii	"short unsigned int\000"
- 6047      7420756E 
- 6047      7369676E 
- 6047      65642069 
- 6047      6E7400
- 6048              	.LASF21:
- 6049 0b59 6C6F6E67 		.ascii	"long double\000"
- 6049      20646F75 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 176
+ 6038              	.LASF207:
+ 6039 0afd 43595F53 		.ascii	"CY_SAR_NEG_SEL_ACORE\000"
+ 6039      41525F4E 
+ 6039      45475F53 
+ 6039      454C5F41 
+ 6039      434F5245 
+ 6040              	.LASF11:
+ 6041 0b12 5F5F696E 		.ascii	"__int64_t\000"
+ 6041      7436345F 
+ 6041      7400
+ 6042              	.LASF233:
+ 6043 0b1c 6D757853 		.ascii	"muxSwitch\000"
+ 6043      77697463 
+ 6043      6800
+ 6044              	.LASF6:
+ 6045 0b26 73686F72 		.ascii	"short unsigned int\000"
+ 6045      7420756E 
+ 6045      7369676E 
+ 6045      65642069 
+ 6045      6E7400
+ 6046              	.LASF21:
+ 6047 0b39 6C6F6E67 		.ascii	"long double\000"
+ 6047      20646F75 
+ 6047      626C6500 
+ 6048              	.LASF17:
+ 6049 0b45 75696E74 		.ascii	"uint16_t\000"
+ 6049      31365F74 
+ 6049      00
+ 6050              	.LASF79:
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 176
 
 
- 6049      626C6500 
- 6050              	.LASF17:
- 6051 0b65 75696E74 		.ascii	"uint16_t\000"
- 6051      31365F74 
+ 6051 0b4e 70726F74 		.ascii	"protBase\000"
+ 6051      42617365 
  6051      00
- 6052              	.LASF79:
- 6053 0b6e 70726F74 		.ascii	"protBase\000"
- 6053      42617365 
- 6053      00
- 6054              	.LASF129:
- 6055 0b77 70657269 		.ascii	"periTrCmdGrSelMsk\000"
- 6055      5472436D 
- 6055      64477253 
- 6055      656C4D73 
- 6055      6B00
- 6056              	.LASF224:
- 6057 0b89 73616D70 		.ascii	"sampleTime01\000"
- 6057      6C655469 
- 6057      6D653031 
- 6057      00
- 6058              	.LASF103:
- 6059 0b96 73727373 		.ascii	"srssNumHfroot\000"
- 6059      4E756D48 
- 6059      66726F6F 
- 6059      7400
- 6060              	.LASF87:
- 6061 0ba4 64775665 		.ascii	"dwVersion\000"
- 6061      7273696F 
- 6061      6E00
- 6062              	.LASF119:
- 6063 0bae 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
- 6063      6843746C 
- 6063      4D61696E 
- 6063      57733246 
- 6063      72657100 
- 6064              	.LASF1:
- 6065 0bc2 756E7369 		.ascii	"unsigned char\000"
- 6065      676E6564 
- 6065      20636861 
- 6065      7200
- 6066              	.LASF243:
- 6067 0bd0 636F6E66 		.ascii	"config\000"
- 6067      696700
- 6068              	.LASF312:
- 6069 0bd7 43795F53 		.ascii	"Cy_SAR_IsChannelDifferential\000"
- 6069      41525F49 
- 6069      73436861 
- 6069      6E6E656C 
- 6069      44696666 
- 6070              	.LASF198:
- 6071 0bf4 43595F53 		.ascii	"CY_SAR_SWITCH_SEQ_CTRL_ENABLE\000"
- 6071      41525F53 
- 6071      57495443 
- 6071      485F5345 
- 6071      515F4354 
- 6072              	.LASF22:
- 6073 0c12 73697A65 		.ascii	"sizetype\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 177
+ 6052              	.LASF129:
+ 6053 0b57 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 6053      5472436D 
+ 6053      64477253 
+ 6053      656C4D73 
+ 6053      6B00
+ 6054              	.LASF224:
+ 6055 0b69 73616D70 		.ascii	"sampleTime01\000"
+ 6055      6C655469 
+ 6055      6D653031 
+ 6055      00
+ 6056              	.LASF103:
+ 6057 0b76 73727373 		.ascii	"srssNumHfroot\000"
+ 6057      4E756D48 
+ 6057      66726F6F 
+ 6057      7400
+ 6058              	.LASF87:
+ 6059 0b84 64775665 		.ascii	"dwVersion\000"
+ 6059      7273696F 
+ 6059      6E00
+ 6060              	.LASF119:
+ 6061 0b8e 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 6061      6843746C 
+ 6061      4D61696E 
+ 6061      57733246 
+ 6061      72657100 
+ 6062              	.LASF1:
+ 6063 0ba2 756E7369 		.ascii	"unsigned char\000"
+ 6063      676E6564 
+ 6063      20636861 
+ 6063      7200
+ 6064              	.LASF243:
+ 6065 0bb0 636F6E66 		.ascii	"config\000"
+ 6065      696700
+ 6066              	.LASF312:
+ 6067 0bb7 43795F53 		.ascii	"Cy_SAR_IsChannelDifferential\000"
+ 6067      41525F49 
+ 6067      73436861 
+ 6067      6E6E656C 
+ 6067      44696666 
+ 6068              	.LASF198:
+ 6069 0bd4 43595F53 		.ascii	"CY_SAR_SWITCH_SEQ_CTRL_ENABLE\000"
+ 6069      41525F53 
+ 6069      57495443 
+ 6069      485F5345 
+ 6069      515F4354 
+ 6070              	.LASF22:
+ 6071 0bf2 73697A65 		.ascii	"sizetype\000"
+ 6071      74797065 
+ 6071      00
+ 6072              	.LASF191:
+ 6073 0bfb 43595F53 		.ascii	"CY_SAR_RETURN_STATUS\000"
+ 6073      41525F52 
+ 6073      45545552 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 177
 
 
- 6073      74797065 
- 6073      00
- 6074              	.LASF191:
- 6075 0c1b 43595F53 		.ascii	"CY_SAR_RETURN_STATUS\000"
- 6075      41525F52 
- 6075      45545552 
- 6075      4E5F5354 
- 6075      41545553 
- 6076              	.LASF290:
- 6077 0c30 72657375 		.ascii	"result_mVolts\000"
- 6077      6C745F6D 
- 6077      566F6C74 
- 6077      7300
- 6078              	.LASF148:
- 6079 0c3e 63707573 		.ascii	"cpussCm0StatusOffset\000"
- 6079      73436D30 
- 6079      53746174 
- 6079      75734F66 
- 6079      66736574 
- 6080              	.LASF136:
- 6081 0c53 70657269 		.ascii	"periDiv8CtlOffset\000"
- 6081      44697638 
- 6081      43746C4F 
- 6081      66667365 
- 6081      7400
- 6082              	.LASF34:
- 6083 0c65 52455345 		.ascii	"RESERVED2\000"
+ 6073      4E5F5354 
+ 6073      41545553 
+ 6074              	.LASF290:
+ 6075 0c10 72657375 		.ascii	"result_mVolts\000"
+ 6075      6C745F6D 
+ 6075      566F6C74 
+ 6075      7300
+ 6076              	.LASF148:
+ 6077 0c1e 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 6077      73436D30 
+ 6077      53746174 
+ 6077      75734F66 
+ 6077      66736574 
+ 6078              	.LASF136:
+ 6079 0c33 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 6079      44697638 
+ 6079      43746C4F 
+ 6079      66667365 
+ 6079      7400
+ 6080              	.LASF34:
+ 6081 0c45 52455345 		.ascii	"RESERVED2\000"
+ 6081      52564544 
+ 6081      3200
+ 6082              	.LASF36:
+ 6083 0c4f 52455345 		.ascii	"RESERVED3\000"
  6083      52564544 
- 6083      3200
- 6084              	.LASF36:
- 6085 0c6f 52455345 		.ascii	"RESERVED3\000"
+ 6083      3300
+ 6084              	.LASF38:
+ 6085 0c59 52455345 		.ascii	"RESERVED4\000"
  6085      52564544 
- 6085      3300
- 6086              	.LASF38:
- 6087 0c79 52455345 		.ascii	"RESERVED4\000"
+ 6085      3400
+ 6086              	.LASF56:
+ 6087 0c63 52455345 		.ascii	"RESERVED5\000"
  6087      52564544 
- 6087      3400
- 6088              	.LASF56:
- 6089 0c83 52455345 		.ascii	"RESERVED5\000"
+ 6087      3500
+ 6088              	.LASF58:
+ 6089 0c6d 52455345 		.ascii	"RESERVED6\000"
  6089      52564544 
- 6089      3500
- 6090              	.LASF58:
- 6091 0c8d 52455345 		.ascii	"RESERVED6\000"
+ 6089      3600
+ 6090              	.LASF60:
+ 6091 0c77 52455345 		.ascii	"RESERVED7\000"
  6091      52564544 
- 6091      3600
- 6092              	.LASF60:
- 6093 0c97 52455345 		.ascii	"RESERVED7\000"
+ 6091      3700
+ 6092              	.LASF63:
+ 6093 0c81 52455345 		.ascii	"RESERVED8\000"
  6093      52564544 
- 6093      3700
- 6094              	.LASF63:
- 6095 0ca1 52455345 		.ascii	"RESERVED8\000"
+ 6093      3800
+ 6094              	.LASF66:
+ 6095 0c8b 52455345 		.ascii	"RESERVED9\000"
  6095      52564544 
- 6095      3800
- 6096              	.LASF66:
- 6097 0cab 52455345 		.ascii	"RESERVED9\000"
- 6097      52564544 
- 6097      3900
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 178
+ 6095      3900
+ 6096              	.LASF179:
+ 6097 0c95 63795F65 		.ascii	"cy_en_syspm_callback_mode_t\000"
+ 6097      6E5F7379 
+ 6097      73706D5F 
+ 6097      63616C6C 
+ 6097      6261636B 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 178
 
 
- 6098              	.LASF179:
- 6099 0cb5 63795F65 		.ascii	"cy_en_syspm_callback_mode_t\000"
- 6099      6E5F7379 
- 6099      73706D5F 
- 6099      63616C6C 
- 6099      6261636B 
- 6100              	.LASF68:
- 6101 0cd1 4D55585F 		.ascii	"MUX_SWITCH_SQ_CTRL\000"
- 6101      53574954 
- 6101      43485F53 
- 6101      515F4354 
- 6101      524C00
- 6102              	.LASF8:
- 6103 0ce4 6C6F6E67 		.ascii	"long int\000"
- 6103      20696E74 
- 6103      00
- 6104              	.LASF241:
- 6105 0ced 63795F73 		.ascii	"cy_stc_sar_state_backup_t\000"
- 6105      74635F73 
- 6105      61725F73 
- 6105      74617465 
- 6105      5F626163 
- 6106              	.LASF85:
- 6107 0d07 63707573 		.ascii	"cpussVersion\000"
- 6107      73566572 
- 6107      73696F6E 
+ 6098              	.LASF68:
+ 6099 0cb1 4D55585F 		.ascii	"MUX_SWITCH_SQ_CTRL\000"
+ 6099      53574954 
+ 6099      43485F53 
+ 6099      515F4354 
+ 6099      524C00
+ 6100              	.LASF8:
+ 6101 0cc4 6C6F6E67 		.ascii	"long int\000"
+ 6101      20696E74 
+ 6101      00
+ 6102              	.LASF241:
+ 6103 0ccd 63795F73 		.ascii	"cy_stc_sar_state_backup_t\000"
+ 6103      74635F73 
+ 6103      61725F73 
+ 6103      74617465 
+ 6103      5F626163 
+ 6104              	.LASF85:
+ 6105 0ce7 63707573 		.ascii	"cpussVersion\000"
+ 6105      73566572 
+ 6105      73696F6E 
+ 6105      00
+ 6106              	.LASF305:
+ 6107 0cf4 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 6107      52784275 
+ 6107      66666572 
  6107      00
- 6108              	.LASF305:
- 6109 0d14 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 6109      52784275 
- 6109      66666572 
- 6109      00
- 6110              	.LASF254:
- 6111 0d21 6374726C 		.ascii	"ctrlReg\000"
- 6111      52656700 
- 6112              	.LASF89:
- 6113 0d29 6770696F 		.ascii	"gpioVersion\000"
- 6113      56657273 
- 6113      696F6E00 
- 6114              	.LASF88:
- 6115 0d35 666C6173 		.ascii	"flashcVersion\000"
- 6115      68635665 
- 6115      7273696F 
- 6115      6E00
- 6116              	.LASF110:
- 6117 0d43 70726F74 		.ascii	"protBusMasterMask\000"
- 6117      4275734D 
- 6117      61737465 
- 6117      724D6173 
- 6117      6B00
- 6118              	.LASF212:
- 6119 0d55 63795F65 		.ascii	"cy_en_sar_sample_ctrl_trigger_mode_t\000"
- 6119      6E5F7361 
- 6119      725F7361 
- 6119      6D706C65 
- 6119      5F637472 
- 6120              	.LASF285:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 179
+ 6108              	.LASF254:
+ 6109 0d01 6374726C 		.ascii	"ctrlReg\000"
+ 6109      52656700 
+ 6110              	.LASF89:
+ 6111 0d09 6770696F 		.ascii	"gpioVersion\000"
+ 6111      56657273 
+ 6111      696F6E00 
+ 6112              	.LASF88:
+ 6113 0d15 666C6173 		.ascii	"flashcVersion\000"
+ 6113      68635665 
+ 6113      7273696F 
+ 6113      6E00
+ 6114              	.LASF110:
+ 6115 0d23 70726F74 		.ascii	"protBusMasterMask\000"
+ 6115      4275734D 
+ 6115      61737465 
+ 6115      724D6173 
+ 6115      6B00
+ 6116              	.LASF212:
+ 6117 0d35 63795F65 		.ascii	"cy_en_sar_sample_ctrl_trigger_mode_t\000"
+ 6117      6E5F7361 
+ 6117      725F7361 
+ 6117      6D706C65 
+ 6117      5F637472 
+ 6118              	.LASF285:
+ 6119 0d5a 74656D70 		.ascii	"temp\000"
+ 6119      00
+ 6120              	.LASF28:
+ 6121 0d5f 52414E47 		.ascii	"RANGE_THRES\000"
+ 6121      455F5448 
+ 6121      52455300 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 179
 
 
- 6121 0d7a 74656D70 		.ascii	"temp\000"
- 6121      00
- 6122              	.LASF28:
- 6123 0d7f 52414E47 		.ascii	"RANGE_THRES\000"
- 6123      455F5448 
- 6123      52455300 
- 6124              	.LASF295:
- 6125 0d8b 73776974 		.ascii	"switchMask\000"
- 6125      63684D61 
- 6125      736B00
- 6126              	.LASF162:
- 6127 0d96 63686172 		.ascii	"char_t\000"
- 6127      5F7400
- 6128              	.LASF286:
- 6129 0d9d 61766572 		.ascii	"averageAdcSamplesDiv\000"
- 6129      61676541 
- 6129      64635361 
- 6129      6D706C65 
- 6129      73446976 
- 6130              	.LASF209:
- 6131 0db2 43595F53 		.ascii	"CY_SAR_TRIGGER_MODE_FW_ONLY\000"
- 6131      41525F54 
- 6131      52494747 
- 6131      45525F4D 
- 6131      4F44455F 
- 6132              	.LASF35:
- 6133 0dce 4348414E 		.ascii	"CHAN_WORK\000"
- 6133      5F574F52 
- 6133      4B00
- 6134              	.LASF201:
- 6135 0dd8 63795F65 		.ascii	"cy_en_sar_switch_register_sel_t\000"
- 6135      6E5F7361 
- 6135      725F7377 
- 6135      69746368 
- 6135      5F726567 
- 6136              	.LASF260:
- 6137 0df8 6D6F6465 		.ascii	"mode\000"
+ 6122              	.LASF295:
+ 6123 0d6b 73776974 		.ascii	"switchMask\000"
+ 6123      63684D61 
+ 6123      736B00
+ 6124              	.LASF162:
+ 6125 0d76 63686172 		.ascii	"char_t\000"
+ 6125      5F7400
+ 6126              	.LASF286:
+ 6127 0d7d 61766572 		.ascii	"averageAdcSamplesDiv\000"
+ 6127      61676541 
+ 6127      64635361 
+ 6127      6D706C65 
+ 6127      73446976 
+ 6128              	.LASF209:
+ 6129 0d92 43595F53 		.ascii	"CY_SAR_TRIGGER_MODE_FW_ONLY\000"
+ 6129      41525F54 
+ 6129      52494747 
+ 6129      45525F4D 
+ 6129      4F44455F 
+ 6130              	.LASF35:
+ 6131 0dae 4348414E 		.ascii	"CHAN_WORK\000"
+ 6131      5F574F52 
+ 6131      4B00
+ 6132              	.LASF201:
+ 6133 0db8 63795F65 		.ascii	"cy_en_sar_switch_register_sel_t\000"
+ 6133      6E5F7361 
+ 6133      725F7377 
+ 6133      69746368 
+ 6133      5F726567 
+ 6134              	.LASF260:
+ 6135 0dd8 6D6F6465 		.ascii	"mode\000"
+ 6135      00
+ 6136              	.LASF253:
+ 6137 0ddd 43795F53 		.ascii	"Cy_SAR_DeepSleep\000"
+ 6137      41525F44 
+ 6137      65657053 
+ 6137      6C656570 
  6137      00
- 6138              	.LASF253:
- 6139 0dfd 43795F53 		.ascii	"Cy_SAR_DeepSleep\000"
- 6139      41525F44 
- 6139      65657053 
- 6139      6C656570 
- 6139      00
- 6140              	.LASF278:
- 6141 0e0e 68696768 		.ascii	"highLimit\000"
- 6141      4C696D69 
- 6141      7400
- 6142              	.LASF240:
- 6143 0e18 636F6E74 		.ascii	"continuous\000"
- 6143      696E756F 
- 6143      757300
- 6144              	.LASF149:
- 6145 0e23 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
- 6145      73436D34 
- 6145      50777243 
- 6145      746C4F66 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 180
+ 6138              	.LASF278:
+ 6139 0dee 68696768 		.ascii	"highLimit\000"
+ 6139      4C696D69 
+ 6139      7400
+ 6140              	.LASF240:
+ 6141 0df8 636F6E74 		.ascii	"continuous\000"
+ 6141      696E756F 
+ 6141      757300
+ 6142              	.LASF149:
+ 6143 0e03 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 6143      73436D34 
+ 6143      50777243 
+ 6143      746C4F66 
+ 6143      66736574 
+ 6144              	.LASF2:
+ 6145 0e18 5F5F7569 		.ascii	"__uint8_t\000"
+ 6145      6E74385F 
+ 6145      7400
+ 6146              	.LASF311:
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 180
 
 
- 6145      66736574 
- 6146              	.LASF2:
- 6147 0e38 5F5F7569 		.ascii	"__uint8_t\000"
- 6147      6E74385F 
- 6147      7400
- 6148              	.LASF310:
- 6149 0e42 47656E65 		.ascii	"Generated_Source\\PSoC6\\pdl\\drivers\\peripheral\\"
- 6149      72617465 
- 6149      645F536F 
- 6149      75726365 
- 6149      5C50536F 
- 6150 0e70 7361725C 		.ascii	"sar\\cy_sar.c\000"
- 6150      63795F73 
- 6150      61722E63 
- 6150      00
- 6151              	.LASF281:
- 6152 0e7d 43795F53 		.ascii	"Cy_SAR_SetGain\000"
- 6152      41525F53 
- 6152      65744761 
- 6152      696E00
- 6153              	.LASF140:
- 6154 0e8c 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
- 6154      50727449 
- 6154      6E747243 
- 6154      66674F66 
- 6154      66736574 
- 6155              	.LASF146:
- 6156 0ea1 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
- 6156      73436D34 
- 6156      436C6F63 
- 6156      6B43746C 
- 6156      4F666673 
- 6157              	.LASF46:
- 6158 0eb8 494E5452 		.ascii	"INTR_MASKED\000"
- 6158      5F4D4153 
- 6158      4B454400 
- 6159              	.LASF151:
- 6160 0ec4 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
- 6160      73547269 
- 6160      6D526F6D 
- 6160      43746C4F 
- 6160      66667365 
- 6161              	.LASF225:
- 6162 0eda 73616D70 		.ascii	"sampleTime23\000"
- 6162      6C655469 
- 6162      6D653233 
- 6162      00
- 6163              	.LASF252:
- 6164 0ee7 43795F53 		.ascii	"Cy_SAR_Enable\000"
- 6164      41525F45 
- 6164      6E61626C 
- 6164      6500
- 6165              	.LASF90:
- 6166 0ef5 6873696F 		.ascii	"hsiomVersion\000"
- 6166      6D566572 
- 6166      73696F6E 
- 6166      00
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 181
+ 6147 0e22 433A5C55 		.ascii	"C:\\Users\\JC\\Documents\\thesis\\VDAC_Saw_Export.c"
+ 6147      73657273 
+ 6147      5C4A435C 
+ 6147      446F6375 
+ 6147      6D656E74 
+ 6148 0e50 7964736E 		.ascii	"ydsn\000"
+ 6148      00
+ 6149              	.LASF310:
+ 6150 0e55 47656E65 		.ascii	"Generated_Source\\PSoC6\\pdl\\drivers\\peripheral\\"
+ 6150      72617465 
+ 6150      645F536F 
+ 6150      75726365 
+ 6150      5C50536F 
+ 6151 0e83 7361725C 		.ascii	"sar\\cy_sar.c\000"
+ 6151      63795F73 
+ 6151      61722E63 
+ 6151      00
+ 6152              	.LASF281:
+ 6153 0e90 43795F53 		.ascii	"Cy_SAR_SetGain\000"
+ 6153      41525F53 
+ 6153      65744761 
+ 6153      696E00
+ 6154              	.LASF140:
+ 6155 0e9f 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 6155      50727449 
+ 6155      6E747243 
+ 6155      66674F66 
+ 6155      66736574 
+ 6156              	.LASF146:
+ 6157 0eb4 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
+ 6157      73436D34 
+ 6157      436C6F63 
+ 6157      6B43746C 
+ 6157      4F666673 
+ 6158              	.LASF46:
+ 6159 0ecb 494E5452 		.ascii	"INTR_MASKED\000"
+ 6159      5F4D4153 
+ 6159      4B454400 
+ 6160              	.LASF151:
+ 6161 0ed7 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ 6161      73547269 
+ 6161      6D526F6D 
+ 6161      43746C4F 
+ 6161      66667365 
+ 6162              	.LASF225:
+ 6163 0eed 73616D70 		.ascii	"sampleTime23\000"
+ 6163      6C655469 
+ 6163      6D653233 
+ 6163      00
+ 6164              	.LASF252:
+ 6165 0efa 43795F53 		.ascii	"Cy_SAR_Enable\000"
+ 6165      41525F45 
+ 6165      6E61626C 
+ 6165      6500
+ 6166              	.LASF90:
+ 6167 0f08 6873696F 		.ascii	"hsiomVersion\000"
+ 6167      6D566572 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 181
 
 
- 6167              	.LASF10:
- 6168 0f02 6C6F6E67 		.ascii	"long unsigned int\000"
- 6168      20756E73 
- 6168      69676E65 
- 6168      6420696E 
- 6168      7400
- 6169              	.LASF155:
- 6170 0f14 63707573 		.ascii	"cpussRomCtl\000"
- 6170      73526F6D 
- 6170      43746C00 
- 6171              	.LASF269:
- 6172 0f20 43795F53 		.ascii	"Cy_SAR_GetResult16\000"
- 6172      41525F47 
- 6172      65745265 
- 6172      73756C74 
- 6172      313600
- 6173              	.LASF18:
- 6174 0f33 696E7433 		.ascii	"int32_t\000"
- 6174      325F7400 
- 6175              	.LASF64:
- 6176 0f3b 4D55585F 		.ascii	"MUX_SWITCH0\000"
- 6176      53574954 
- 6176      43483000 
- 6177              	.LASF40:
- 6178 0f47 4348414E 		.ascii	"CHAN_RESULT_UPDATED\000"
- 6178      5F524553 
- 6178      554C545F 
- 6178      55504441 
- 6178      54454400 
- 6179              	.LASF193:
- 6180 0f5b 63795F65 		.ascii	"cy_en_sar_return_mode_t\000"
- 6180      6E5F7361 
- 6180      725F7265 
- 6180      7475726E 
- 6180      5F6D6F64 
- 6181              	.LASF270:
- 6182 0f73 61646352 		.ascii	"adcResult\000"
- 6182      6573756C 
- 6182      7400
- 6183              	.LASF202:
- 6184 0f7d 43595F53 		.ascii	"CY_SAR_NEG_SEL_VSSA_KELVIN\000"
- 6184      41525F4E 
- 6184      45475F53 
- 6184      454C5F56 
- 6184      5353415F 
- 6185              	.LASF33:
- 6186 0f98 4348414E 		.ascii	"CHAN_CONFIG\000"
- 6186      5F434F4E 
- 6186      46494700 
- 6187              	.LASF223:
- 6188 0fa4 73616D70 		.ascii	"sampleCtrl\000"
- 6188      6C654374 
- 6188      726C00
- 6189              	.LASF246:
- 6190 0faf 76726566 		.ascii	"vrefNegSelect\000"
- 6190      4E656753 
- 6190      656C6563 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 182
+ 6167      73696F6E 
+ 6167      00
+ 6168              	.LASF10:
+ 6169 0f15 6C6F6E67 		.ascii	"long unsigned int\000"
+ 6169      20756E73 
+ 6169      69676E65 
+ 6169      6420696E 
+ 6169      7400
+ 6170              	.LASF155:
+ 6171 0f27 63707573 		.ascii	"cpussRomCtl\000"
+ 6171      73526F6D 
+ 6171      43746C00 
+ 6172              	.LASF269:
+ 6173 0f33 43795F53 		.ascii	"Cy_SAR_GetResult16\000"
+ 6173      41525F47 
+ 6173      65745265 
+ 6173      73756C74 
+ 6173      313600
+ 6174              	.LASF18:
+ 6175 0f46 696E7433 		.ascii	"int32_t\000"
+ 6175      325F7400 
+ 6176              	.LASF64:
+ 6177 0f4e 4D55585F 		.ascii	"MUX_SWITCH0\000"
+ 6177      53574954 
+ 6177      43483000 
+ 6178              	.LASF40:
+ 6179 0f5a 4348414E 		.ascii	"CHAN_RESULT_UPDATED\000"
+ 6179      5F524553 
+ 6179      554C545F 
+ 6179      55504441 
+ 6179      54454400 
+ 6180              	.LASF193:
+ 6181 0f6e 63795F65 		.ascii	"cy_en_sar_return_mode_t\000"
+ 6181      6E5F7361 
+ 6181      725F7265 
+ 6181      7475726E 
+ 6181      5F6D6F64 
+ 6182              	.LASF270:
+ 6183 0f86 61646352 		.ascii	"adcResult\000"
+ 6183      6573756C 
+ 6183      7400
+ 6184              	.LASF202:
+ 6185 0f90 43595F53 		.ascii	"CY_SAR_NEG_SEL_VSSA_KELVIN\000"
+ 6185      41525F4E 
+ 6185      45475F53 
+ 6185      454C5F56 
+ 6185      5353415F 
+ 6186              	.LASF33:
+ 6187 0fab 4348414E 		.ascii	"CHAN_CONFIG\000"
+ 6187      5F434F4E 
+ 6187      46494700 
+ 6188              	.LASF223:
+ 6189 0fb7 73616D70 		.ascii	"sampleCtrl\000"
+ 6189      6C654374 
+ 6189      726C00
+ 6190              	.LASF246:
+ 6191 0fc2 76726566 		.ascii	"vrefNegSelect\000"
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 182
 
 
- 6190      7400
- 6191              	.LASF218:
- 6192 0fbd 43595F53 		.ascii	"CY_SAR_INTR_MASK_NONE\000"
- 6192      41525F49 
- 6192      4E54525F 
- 6192      4D41534B 
- 6192      5F4E4F4E 
- 6193              	.LASF71:
- 6194 0fd3 414E415F 		.ascii	"ANA_TRIM0\000"
- 6194      5452494D 
- 6194      3000
- 6195              	.LASF72:
- 6196 0fdd 414E415F 		.ascii	"ANA_TRIM1\000"
- 6196      5452494D 
- 6196      3100
- 6197              	.LASF9:
- 6198 0fe7 5F5F7569 		.ascii	"__uint32_t\000"
- 6198      6E743332 
- 6198      5F7400
- 6199              	.LASF287:
- 6200 0ff2 43795F53 		.ascii	"Cy_SAR_CountsTo_Volts\000"
- 6200      41525F43 
- 6200      6F756E74 
- 6200      73546F5F 
- 6200      566F6C74 
- 6201              	.LASF160:
- 6202 1008 6970634C 		.ascii	"ipcLockStatusOffset\000"
- 6202      6F636B53 
- 6202      74617475 
- 6202      734F6666 
- 6202      73657400 
- 6203              	.LASF194:
- 6204 101c 43595F53 		.ascii	"CY_SAR_SWITCH_OPEN\000"
- 6204      41525F53 
- 6204      57495443 
- 6204      485F4F50 
- 6204      454E00
- 6205              	.LASF154:
- 6206 102f 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
- 6206      73436D34 
- 6206      4E6D6943 
- 6206      746C4F66 
- 6206      66736574 
- 6207              	.LASF49:
- 6208 1044 53415455 		.ascii	"SATURATE_INTR_MASK\000"
- 6208      52415445 
- 6208      5F494E54 
- 6208      525F4D41 
- 6208      534B00
- 6209              	.LASF263:
- 6210 1057 7265744D 		.ascii	"retMode\000"
- 6210      6F646500 
- 6211              	.LASF70:
- 6212 105f 52455345 		.ascii	"RESERVED10\000"
- 6212      52564544 
- 6212      313000
- 6213              	.LASF173:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 183
+ 6191      4E656753 
+ 6191      656C6563 
+ 6191      7400
+ 6192              	.LASF218:
+ 6193 0fd0 43595F53 		.ascii	"CY_SAR_INTR_MASK_NONE\000"
+ 6193      41525F49 
+ 6193      4E54525F 
+ 6193      4D41534B 
+ 6193      5F4E4F4E 
+ 6194              	.LASF71:
+ 6195 0fe6 414E415F 		.ascii	"ANA_TRIM0\000"
+ 6195      5452494D 
+ 6195      3000
+ 6196              	.LASF72:
+ 6197 0ff0 414E415F 		.ascii	"ANA_TRIM1\000"
+ 6197      5452494D 
+ 6197      3100
+ 6198              	.LASF9:
+ 6199 0ffa 5F5F7569 		.ascii	"__uint32_t\000"
+ 6199      6E743332 
+ 6199      5F7400
+ 6200              	.LASF287:
+ 6201 1005 43795F53 		.ascii	"Cy_SAR_CountsTo_Volts\000"
+ 6201      41525F43 
+ 6201      6F756E74 
+ 6201      73546F5F 
+ 6201      566F6C74 
+ 6202              	.LASF160:
+ 6203 101b 6970634C 		.ascii	"ipcLockStatusOffset\000"
+ 6203      6F636B53 
+ 6203      74617475 
+ 6203      734F6666 
+ 6203      73657400 
+ 6204              	.LASF194:
+ 6205 102f 43595F53 		.ascii	"CY_SAR_SWITCH_OPEN\000"
+ 6205      41525F53 
+ 6205      57495443 
+ 6205      485F4F50 
+ 6205      454E00
+ 6206              	.LASF154:
+ 6207 1042 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ 6207      73436D34 
+ 6207      4E6D6943 
+ 6207      746C4F66 
+ 6207      66736574 
+ 6208              	.LASF49:
+ 6209 1057 53415455 		.ascii	"SATURATE_INTR_MASK\000"
+ 6209      52415445 
+ 6209      5F494E54 
+ 6209      525F4D41 
+ 6209      534B00
+ 6210              	.LASF263:
+ 6211 106a 7265744D 		.ascii	"retMode\000"
+ 6211      6F646500 
+ 6212              	.LASF70:
+ 6213 1072 52455345 		.ascii	"RESERVED10\000"
+ 6213      52564544 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 183
 
 
- 6214 106a 43595F53 		.ascii	"CY_SYSPM_FAIL\000"
- 6214      5953504D 
- 6214      5F464149 
- 6214      4C00
- 6215              	.LASF116:
- 6216 1078 666C6173 		.ascii	"flashEraseDelay\000"
- 6216      68457261 
- 6216      73654465 
- 6216      6C617900 
- 6217              	.LASF293:
- 6218 1088 43795F53 		.ascii	"Cy_SAR_SetAnalogSwitch\000"
- 6218      41525F53 
- 6218      6574416E 
- 6218      616C6F67 
- 6218      53776974 
- 6219              	.LASF296:
- 6220 109f 73746174 		.ascii	"state\000"
- 6220      6500
- 6221              	.LASF264:
- 6222 10a5 656E644F 		.ascii	"endOfConversion\000"
- 6222      66436F6E 
- 6222      76657273 
- 6222      696F6E00 
- 6223              	.LASF197:
- 6224 10b5 43595F53 		.ascii	"CY_SAR_SWITCH_SEQ_CTRL_DISABLE\000"
- 6224      41525F53 
- 6224      57495443 
- 6224      485F5345 
- 6224      515F4354 
- 6225              	.LASF145:
- 6226 10d4 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
- 6226      73436D30 
- 6226      436C6F63 
- 6226      6B43746C 
- 6226      4F666673 
- 6227              	.LASF249:
- 6228 10eb 43795F53 		.ascii	"Cy_SAR_Init\000"
- 6228      41525F49 
- 6228      6E697400 
- 6229              	.LASF112:
- 6230 10f7 666C6173 		.ascii	"flashRwwRequired\000"
- 6230      68527777 
- 6230      52657175 
- 6230      69726564 
- 6230      00
- 6231              	.LASF141:
- 6232 1108 6770696F 		.ascii	"gpioPrtCfgOffset\000"
- 6232      50727443 
- 6232      66674F66 
- 6232      66736574 
- 6232      00
- 6233              	.LASF107:
- 6234 1119 65704D6F 		.ascii	"epMonitorNr\000"
- 6234      6E69746F 
- 6234      724E7200 
- 6235              	.LASF169:
- 6236 1125 43595F53 		.ascii	"CY_SYSPM_BAD_PARAM\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 184
+ 6213      313000
+ 6214              	.LASF173:
+ 6215 107d 43595F53 		.ascii	"CY_SYSPM_FAIL\000"
+ 6215      5953504D 
+ 6215      5F464149 
+ 6215      4C00
+ 6216              	.LASF116:
+ 6217 108b 666C6173 		.ascii	"flashEraseDelay\000"
+ 6217      68457261 
+ 6217      73654465 
+ 6217      6C617900 
+ 6218              	.LASF293:
+ 6219 109b 43795F53 		.ascii	"Cy_SAR_SetAnalogSwitch\000"
+ 6219      41525F53 
+ 6219      6574416E 
+ 6219      616C6F67 
+ 6219      53776974 
+ 6220              	.LASF296:
+ 6221 10b2 73746174 		.ascii	"state\000"
+ 6221      6500
+ 6222              	.LASF264:
+ 6223 10b8 656E644F 		.ascii	"endOfConversion\000"
+ 6223      66436F6E 
+ 6223      76657273 
+ 6223      696F6E00 
+ 6224              	.LASF197:
+ 6225 10c8 43595F53 		.ascii	"CY_SAR_SWITCH_SEQ_CTRL_DISABLE\000"
+ 6225      41525F53 
+ 6225      57495443 
+ 6225      485F5345 
+ 6225      515F4354 
+ 6226              	.LASF145:
+ 6227 10e7 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 6227      73436D30 
+ 6227      436C6F63 
+ 6227      6B43746C 
+ 6227      4F666673 
+ 6228              	.LASF249:
+ 6229 10fe 43795F53 		.ascii	"Cy_SAR_Init\000"
+ 6229      41525F49 
+ 6229      6E697400 
+ 6230              	.LASF112:
+ 6231 110a 666C6173 		.ascii	"flashRwwRequired\000"
+ 6231      68527777 
+ 6231      52657175 
+ 6231      69726564 
+ 6231      00
+ 6232              	.LASF141:
+ 6233 111b 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 6233      50727443 
+ 6233      66674F66 
+ 6233      66736574 
+ 6233      00
+ 6234              	.LASF107:
+ 6235 112c 65704D6F 		.ascii	"epMonitorNr\000"
+ 6235      6E69746F 
+ 6235      724E7200 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 184
 
 
- 6236      5953504D 
- 6236      5F424144 
- 6236      5F504152 
- 6236      414D00
- 6237              	.LASF302:
- 6238 1138 63616C6C 		.ascii	"callbackParams\000"
- 6238      6261636B 
- 6238      50617261 
- 6238      6D7300
- 6239              	.LASF98:
- 6240 1147 63707573 		.ascii	"cpussIpc0Irq\000"
- 6240      73497063 
- 6240      30497271 
- 6240      00
- 6241              	.LASF0:
- 6242 1154 7369676E 		.ascii	"signed char\000"
- 6242      65642063 
- 6242      68617200 
- 6243              	.LASF122:
- 6244 1160 64774368 		.ascii	"dwChOffset\000"
- 6244      4F666673 
- 6244      657400
- 6245              	.LASF95:
- 6246 116b 63707573 		.ascii	"cpussIpcIrqNr\000"
- 6246      73497063 
- 6246      4972714E 
- 6246      7200
- 6247              	.LASF125:
- 6248 1179 64774368 		.ascii	"dwChCtlPreemptablePos\000"
- 6248      43746C50 
- 6248      7265656D 
- 6248      70746162 
- 6248      6C65506F 
- 6249              	.LASF271:
- 6250 118f 43795F53 		.ascii	"Cy_SAR_GetResult32\000"
- 6250      41525F47 
- 6250      65745265 
- 6250      73756C74 
- 6250      333200
- 6251              	.LASF147:
- 6252 11a2 63707573 		.ascii	"cpussCm4StatusOffset\000"
- 6252      73436D34 
- 6252      53746174 
- 6252      75734F66 
- 6252      66736574 
- 6253              	.LASF229:
- 6254 11b7 6368616E 		.ascii	"chanConfig\000"
- 6254      436F6E66 
- 6254      696700
- 6255              	.LASF69:
- 6256 11c2 4D55585F 		.ascii	"MUX_SWITCH_STATUS\000"
- 6256      53574954 
- 6256      43485F53 
- 6256      54415455 
- 6256      5300
- 6257              	.LASF92:
- 6258 11d4 70657269 		.ascii	"periVersion\000"
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 185
+ 6236              	.LASF169:
+ 6237 1138 43595F53 		.ascii	"CY_SYSPM_BAD_PARAM\000"
+ 6237      5953504D 
+ 6237      5F424144 
+ 6237      5F504152 
+ 6237      414D00
+ 6238              	.LASF302:
+ 6239 114b 63616C6C 		.ascii	"callbackParams\000"
+ 6239      6261636B 
+ 6239      50617261 
+ 6239      6D7300
+ 6240              	.LASF98:
+ 6241 115a 63707573 		.ascii	"cpussIpc0Irq\000"
+ 6241      73497063 
+ 6241      30497271 
+ 6241      00
+ 6242              	.LASF0:
+ 6243 1167 7369676E 		.ascii	"signed char\000"
+ 6243      65642063 
+ 6243      68617200 
+ 6244              	.LASF122:
+ 6245 1173 64774368 		.ascii	"dwChOffset\000"
+ 6245      4F666673 
+ 6245      657400
+ 6246              	.LASF95:
+ 6247 117e 63707573 		.ascii	"cpussIpcIrqNr\000"
+ 6247      73497063 
+ 6247      4972714E 
+ 6247      7200
+ 6248              	.LASF125:
+ 6249 118c 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 6249      43746C50 
+ 6249      7265656D 
+ 6249      70746162 
+ 6249      6C65506F 
+ 6250              	.LASF271:
+ 6251 11a2 43795F53 		.ascii	"Cy_SAR_GetResult32\000"
+ 6251      41525F47 
+ 6251      65745265 
+ 6251      73756C74 
+ 6251      333200
+ 6252              	.LASF147:
+ 6253 11b5 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 6253      73436D34 
+ 6253      53746174 
+ 6253      75734F66 
+ 6253      66736574 
+ 6254              	.LASF229:
+ 6255 11ca 6368616E 		.ascii	"chanConfig\000"
+ 6255      436F6E66 
+ 6255      696700
+ 6256              	.LASF69:
+ 6257 11d5 4D55585F 		.ascii	"MUX_SWITCH_STATUS\000"
+ 6257      53574954 
+ 6257      43485F53 
+ 6257      54415455 
+ 6257      5300
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 185
 
 
- 6258      56657273 
- 6258      696F6E00 
- 6259              	.LASF261:
- 6260 11e0 73616D70 		.ascii	"sampleCtrlReg\000"
- 6260      6C654374 
- 6260      726C5265 
- 6260      6700
- 6261              	.LASF251:
- 6262 11ee 6465496E 		.ascii	"deInitRouting\000"
- 6262      6974526F 
- 6262      7574696E 
- 6262      6700
- 6263              	.LASF235:
- 6264 11fc 636F6E66 		.ascii	"configRouting\000"
- 6264      6967526F 
- 6264      7574696E 
- 6264      6700
- 6265              	.LASF82:
- 6266 120a 70617373 		.ascii	"passBase\000"
- 6266      42617365 
- 6266      00
- 6267              	.LASF32:
- 6268 1213 52455345 		.ascii	"RESERVED1\000"
- 6268      52564544 
- 6268      3100
- 6269              	.LASF101:
- 6270 121d 73727373 		.ascii	"srssNumClkpath\000"
- 6270      4E756D43 
- 6270      6C6B7061 
- 6270      746800
- 6271              	.LASF61:
- 6272 122c 53544154 		.ascii	"STATUS\000"
- 6272      555300
- 6273              	.LASF279:
- 6274 1233 43795F53 		.ascii	"Cy_SAR_SetOffset\000"
- 6274      41525F53 
- 6274      65744F66 
- 6274      66736574 
- 6274      00
- 6275              	.LASF121:
- 6276 1244 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
- 6276      6843746C 
- 6276      4D61696E 
- 6276      57733446 
- 6276      72657100 
- 6277              	.LASF232:
- 6278 1258 72616E67 		.ascii	"rangeIntrMask\000"
- 6278      65496E74 
- 6278      724D6173 
- 6278      6B00
- 6279              	.LASF195:
- 6280 1266 43595F53 		.ascii	"CY_SAR_SWITCH_CLOSE\000"
- 6280      41525F53 
- 6280      57495443 
- 6280      485F434C 
- 6280      4F534500 
- 6281              	.LASF217:
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 186
+ 6258              	.LASF92:
+ 6259 11e7 70657269 		.ascii	"periVersion\000"
+ 6259      56657273 
+ 6259      696F6E00 
+ 6260              	.LASF261:
+ 6261 11f3 73616D70 		.ascii	"sampleCtrlReg\000"
+ 6261      6C654374 
+ 6261      726C5265 
+ 6261      6700
+ 6262              	.LASF251:
+ 6263 1201 6465496E 		.ascii	"deInitRouting\000"
+ 6263      6974526F 
+ 6263      7574696E 
+ 6263      6700
+ 6264              	.LASF235:
+ 6265 120f 636F6E66 		.ascii	"configRouting\000"
+ 6265      6967526F 
+ 6265      7574696E 
+ 6265      6700
+ 6266              	.LASF82:
+ 6267 121d 70617373 		.ascii	"passBase\000"
+ 6267      42617365 
+ 6267      00
+ 6268              	.LASF32:
+ 6269 1226 52455345 		.ascii	"RESERVED1\000"
+ 6269      52564544 
+ 6269      3100
+ 6270              	.LASF101:
+ 6271 1230 73727373 		.ascii	"srssNumClkpath\000"
+ 6271      4E756D43 
+ 6271      6C6B7061 
+ 6271      746800
+ 6272              	.LASF61:
+ 6273 123f 53544154 		.ascii	"STATUS\000"
+ 6273      555300
+ 6274              	.LASF279:
+ 6275 1246 43795F53 		.ascii	"Cy_SAR_SetOffset\000"
+ 6275      41525F53 
+ 6275      65744F66 
+ 6275      66736574 
+ 6275      00
+ 6276              	.LASF121:
+ 6277 1257 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 6277      6843746C 
+ 6277      4D61696E 
+ 6277      57733446 
+ 6277      72657100 
+ 6278              	.LASF232:
+ 6279 126b 72616E67 		.ascii	"rangeIntrMask\000"
+ 6279      65496E74 
+ 6279      724D6173 
+ 6279      6B00
+ 6280              	.LASF195:
+ 6281 1279 43595F53 		.ascii	"CY_SAR_SWITCH_CLOSE\000"
+ 6281      41525F53 
+ 6281      57495443 
+ 6281      485F434C 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 186
 
 
- 6282 127a 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
- 6282      6E5F7361 
- 6282      725F7261 
- 6282      6E67655F 
- 6282      64657465 
- 6283              	.LASF309:
- 6284 129d 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 6284      43313120 
- 6284      352E342E 
- 6284      31203230 
- 6284      31363036 
- 6285 12d0 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
- 6285      20726576 
- 6285      6973696F 
- 6285      6E203233 
- 6285      37373135 
- 6286 1303 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -O0 -ffunction-s"
- 6286      70202D6D 
- 6286      6670753D 
- 6286      66707634 
- 6286      2D73702D 
- 6287 1336 65637469 		.ascii	"ections -ffat-lto-objects\000"
- 6287      6F6E7320 
- 6287      2D666661 
- 6287      742D6C74 
- 6287      6F2D6F62 
- 6288              	.LASF258:
- 6289 1350 43795F53 		.ascii	"Cy_SAR_StopConvert\000"
- 6289      41525F53 
- 6289      746F7043 
- 6289      6F6E7665 
- 6289      727400
- 6290              	.LASF189:
- 6291 1363 43595F53 		.ascii	"CY_SAR_START_CONVERT_CONTINUOUS\000"
- 6291      41525F53 
- 6291      54415254 
- 6291      5F434F4E 
- 6291      56455254 
- 6292              	.LASF304:
- 6293 1383 656E6162 		.ascii	"enabledBeforeSleep\000"
- 6293      6C656442 
- 6293      65666F72 
- 6293      65536C65 
- 6293      657000
- 6294              	.LASF91:
- 6295 1396 69706356 		.ascii	"ipcVersion\000"
- 6295      65727369 
- 6295      6F6E00
- 6296              	.LASF230:
- 6297 13a1 696E7472 		.ascii	"intrMask\000"
- 6297      4D61736B 
- 6297      00
- 6298              	.LASF128:
- 6299 13aa 70657269 		.ascii	"periTrCmdOffset\000"
- 6299      5472436D 
- 6299      644F6666 
- 6299      73657400 
-ARM GAS  C:\Users\JC\AppData\Local\Temp\cc8m5Tcg.s 			page 187
+ 6281      4F534500 
+ 6282              	.LASF217:
+ 6283 128d 63795F65 		.ascii	"cy_en_sar_range_detect_condition_t\000"
+ 6283      6E5F7361 
+ 6283      725F7261 
+ 6283      6E67655F 
+ 6283      64657465 
+ 6284              	.LASF309:
+ 6285 12b0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 6285      43313120 
+ 6285      352E342E 
+ 6285      31203230 
+ 6285      31363036 
+ 6286 12e3 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
+ 6286      20726576 
+ 6286      6973696F 
+ 6286      6E203233 
+ 6286      37373135 
+ 6287 1316 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -O0 -ffunction-s"
+ 6287      70202D6D 
+ 6287      6670753D 
+ 6287      66707634 
+ 6287      2D73702D 
+ 6288 1349 65637469 		.ascii	"ections -ffat-lto-objects\000"
+ 6288      6F6E7320 
+ 6288      2D666661 
+ 6288      742D6C74 
+ 6288      6F2D6F62 
+ 6289              	.LASF258:
+ 6290 1363 43795F53 		.ascii	"Cy_SAR_StopConvert\000"
+ 6290      41525F53 
+ 6290      746F7043 
+ 6290      6F6E7665 
+ 6290      727400
+ 6291              	.LASF189:
+ 6292 1376 43595F53 		.ascii	"CY_SAR_START_CONVERT_CONTINUOUS\000"
+ 6292      41525F53 
+ 6292      54415254 
+ 6292      5F434F4E 
+ 6292      56455254 
+ 6293              	.LASF304:
+ 6294 1396 656E6162 		.ascii	"enabledBeforeSleep\000"
+ 6294      6C656442 
+ 6294      65666F72 
+ 6294      65536C65 
+ 6294      657000
+ 6295              	.LASF91:
+ 6296 13a9 69706356 		.ascii	"ipcVersion\000"
+ 6296      65727369 
+ 6296      6F6E00
+ 6297              	.LASF230:
+ 6298 13b4 696E7472 		.ascii	"intrMask\000"
+ 6298      4D61736B 
+ 6298      00
+ 6299              	.LASF128:
+ 6300 13bd 70657269 		.ascii	"periTrCmdOffset\000"
+ 6300      5472436D 
+ARM GAS  C:\Users\JC\AppData\Local\Temp\ccBQu2XP.s 			page 187
 
 
- 6300              	.LASF262:
- 6301 13ba 43795F53 		.ascii	"Cy_SAR_IsEndConversion\000"
- 6301      41525F49 
- 6301      73456E64 
- 6301      436F6E76 
- 6301      65727369 
- 6302              	.LASF23:
- 6303 13d1 4354524C 		.ascii	"CTRL\000"
- 6303      00
- 6304              	.LASF177:
- 6305 13d6 43595F53 		.ascii	"CY_SYSPM_BEFORE_TRANSITION\000"
- 6305      5953504D 
- 6305      5F424546 
- 6305      4F52455F 
- 6305      5452414E 
- 6306              	.LASF178:
- 6307 13f1 43595F53 		.ascii	"CY_SYSPM_AFTER_TRANSITION\000"
- 6307      5953504D 
- 6307      5F414654 
- 6307      45525F54 
- 6307      52414E53 
- 6308              	.LASF175:
- 6309 140b 43595F53 		.ascii	"CY_SYSPM_CHECK_READY\000"
- 6309      5953504D 
- 6309      5F434845 
- 6309      434B5F52 
- 6309      45414459 
- 6310              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 6300      644F6666 
+ 6300      73657400 
+ 6301              	.LASF262:
+ 6302 13cd 43795F53 		.ascii	"Cy_SAR_IsEndConversion\000"
+ 6302      41525F49 
+ 6302      73456E64 
+ 6302      436F6E76 
+ 6302      65727369 
+ 6303              	.LASF23:
+ 6304 13e4 4354524C 		.ascii	"CTRL\000"
+ 6304      00
+ 6305              	.LASF177:
+ 6306 13e9 43595F53 		.ascii	"CY_SYSPM_BEFORE_TRANSITION\000"
+ 6306      5953504D 
+ 6306      5F424546 
+ 6306      4F52455F 
+ 6306      5452414E 
+ 6307              	.LASF178:
+ 6308 1404 43595F53 		.ascii	"CY_SYSPM_AFTER_TRANSITION\000"
+ 6308      5953504D 
+ 6308      5F414654 
+ 6308      45525F54 
+ 6308      52414E53 
+ 6309              	.LASF175:
+ 6310 141e 43595F53 		.ascii	"CY_SYSPM_CHECK_READY\000"
+ 6310      5953504D 
+ 6310      5F434845 
+ 6310      434B5F52 
+ 6310      45414459 
+ 6311              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

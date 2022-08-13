@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file cy_ble_lns.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  This file contains the source code for
@@ -8,7 +8,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -169,7 +169,7 @@ cy_en_ble_api_result_t Cy_BLE_LNS_Init(cy_stc_ble_lns_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_LNS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_LNS_ApplCallback = callbackFunc;
     if(cy_ble_lnsConfigPtr != NULL)
     {
@@ -179,7 +179,7 @@ cy_en_ble_api_result_t Cy_BLE_LNS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -632,7 +632,7 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_LNSS_WriteEventHandler(cy_stc_ble_gatts_
             for(locCharValue.charIndex = CY_BLE_LNS_LS; locCharValue.charIndex < CY_BLE_LNS_CHAR_COUNT;
                 locCharValue.charIndex++)
             {
-                if( (locCharValue.charIndex != CY_BLE_LNS_PQ) && 
+                if( (locCharValue.charIndex != CY_BLE_LNS_PQ) &&
                     (eventParam->handleValPair.attrHandle == cy_ble_lnsConfigPtr->lnss->charInfo[locCharValue.charIndex].
                     descrHandle[CY_BLE_LNS_CCCD]) )
                 {
@@ -674,7 +674,7 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_LNSS_WriteEventHandler(cy_stc_ble_gatts_
 
                         Cy_BLE_LNS_ApplCallback(eventCode, &locCharValue);
                     }
-                    
+
                     cy_ble_eventHandlerFlag &= (uint8_t) ~CY_BLE_CALLBACK;
                     break;
                 }
@@ -1034,7 +1034,7 @@ cy_en_ble_api_result_t Cy_BLE_LNSC_GetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_LNS_CHAR_COUNT) || (descrIndex >= CY_BLE_LNS_DESCR_COUNT) || 
+    else if((charIndex >= CY_BLE_LNS_CHAR_COUNT) || (descrIndex >= CY_BLE_LNS_DESCR_COUNT) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

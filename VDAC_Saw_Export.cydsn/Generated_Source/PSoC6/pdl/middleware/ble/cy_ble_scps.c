@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_scps.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the source code for the Scan Parameter service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -150,7 +150,7 @@ cy_en_ble_api_result_t Cy_BLE_SCPS_Init(cy_stc_ble_scps_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_SCPS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_SCPS_ApplCallback = callbackFunc;
     if(cy_ble_scpsConfigPtr != NULL)
     {
@@ -160,7 +160,7 @@ cy_en_ble_api_result_t Cy_BLE_SCPS_RegisterAttrCallback(cy_ble_callback_t callba
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -802,7 +802,7 @@ cy_en_ble_api_result_t Cy_BLE_SCPSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex != CY_BLE_SCPS_SCAN_REFRESH) || (descrIndex >= CY_BLE_SCPS_DESCR_COUNT) || 
+    else if((charIndex != CY_BLE_SCPS_SCAN_REFRESH) || (descrIndex >= CY_BLE_SCPS_DESCR_COUNT) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -899,7 +899,7 @@ cy_en_ble_api_result_t Cy_BLE_SCPSC_GetCharacteristicDescriptor(cy_stc_ble_conn_
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex != CY_BLE_SCPS_SCAN_REFRESH) || (descrIndex >= CY_BLE_SCPS_DESCR_COUNT) || 
+    else if((charIndex != CY_BLE_SCPS_SCAN_REFRESH) || (descrIndex >= CY_BLE_SCPS_DESCR_COUNT) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
