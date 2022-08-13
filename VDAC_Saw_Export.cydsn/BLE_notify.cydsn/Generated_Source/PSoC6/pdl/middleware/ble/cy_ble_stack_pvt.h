@@ -1,6 +1,6 @@
 /**************************************************************************//**
 * \file cy_ble_stack_pvt.h
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the function prototypes and constants for the HAL section.
@@ -9,7 +9,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -33,9 +33,9 @@ extern "C" {
 * Data Types
 ***************************************/
 /**
- * Structure containing the parameters required for IPC message from controller to host 
+ * Structure containing the parameters required for IPC message from controller to host
  */
-typedef struct 
+typedef struct
 {
     /** ID of the message client*/
     uint8_t     clientID;
@@ -58,12 +58,12 @@ typedef struct
 /* Mapping functions for stack size optimization */
 #if(CY_BLE_MODE_PROFILE)
 #if(CY_BLE_SECURE_CONN_FEATURE_ENABLED)
-    void Cy_BLE_HAL_EccHeapInit(uint8_t *heapMem, uint8_t numOfConn); 
+    void Cy_BLE_HAL_EccHeapInit(uint8_t *heapMem, uint8_t numOfConn);
     void Cy_BLE_HAL_EccHeapDeInit(void);
     uint16_t Cy_BLE_HAL_EccGetFeatureHeapReq(uint8_t numOfConn);
-    cy_en_ble_api_result_t Cy_BLE_HAL_EccGenerateSecurityKeypair(uint8_t p_publicKey[], uint8_t p_privateKey[], 
+    cy_en_ble_api_result_t Cy_BLE_HAL_EccGenerateSecurityKeypair(uint8_t p_publicKey[], uint8_t p_privateKey[],
                                                                  uint8_t randomData[]);
-    cy_en_ble_api_result_t Cy_BLE_HAL_EccGenerateDHKey(const uint8_t p_publicKey[], const uint8_t p_privateKey[], 
+    cy_en_ble_api_result_t Cy_BLE_HAL_EccGenerateDHKey(const uint8_t p_publicKey[], const uint8_t p_privateKey[],
                                                        uint8_t p_secret[], uint8_t ci);
     cy_en_ble_api_result_t Cy_BLE_HAL_EccValidPublicKey(const uint8_t p_publicKey[]);
     cy_en_ble_api_result_t Cy_BLE_HAL_PairingLocalPublicKeyHandler(void *param);
@@ -83,15 +83,15 @@ typedef struct
     void Cy_BLE_HAL_SmpScCmacComplete(uint8_t param);
     void Cy_BLE_HAL_EccPointMult(uint8_t param);
 #else
-    void Cy_BLE_HAL_EccHeapInit(uint8_t * heapMem CY_UNUSED, 
-                                uint8_t numOfConn CY_UNUSED); 
+    void Cy_BLE_HAL_EccHeapInit(uint8_t * heapMem CY_UNUSED,
+                                uint8_t numOfConn CY_UNUSED);
     void Cy_BLE_HAL_EccHeapDeInit(void);
     uint16_t Cy_BLE_HAL_EccGetFeatureHeapReq(uint8_t numOfConn CY_UNUSED);
-    cy_en_ble_api_result_t Cy_BLE_HAL_EccGenerateSecurityKeypair(uint8_t p_publicKey[] CY_UNUSED, 
-                                                                 uint8_t p_privateKey[] CY_UNUSED, 
+    cy_en_ble_api_result_t Cy_BLE_HAL_EccGenerateSecurityKeypair(uint8_t p_publicKey[] CY_UNUSED,
+                                                                 uint8_t p_privateKey[] CY_UNUSED,
                                                                  uint8_t randomData[] CY_UNUSED);
-    cy_en_ble_api_result_t Cy_BLE_HAL_EccGenerateDHKey(const uint8_t p_publicKey[] CY_UNUSED, 
-                                                       const uint8_t p_privateKey[] CY_UNUSED, 
+    cy_en_ble_api_result_t Cy_BLE_HAL_EccGenerateDHKey(const uint8_t p_publicKey[] CY_UNUSED,
+                                                       const uint8_t p_privateKey[] CY_UNUSED,
                                                        uint8_t p_secret[] CY_UNUSED, uint8_t ci CY_UNUSED);
     cy_en_ble_api_result_t Cy_BLE_HAL_EccValidPublicKey(const uint8_t p_publicKey[] CY_UNUSED);
     cy_en_ble_api_result_t Cy_BLE_HAL_PairingLocalPublicKeyHandler(void *param CY_UNUSED);
@@ -126,7 +126,7 @@ typedef struct
     cy_en_ble_api_result_t Cy_BLE_ControllerIpcHalSendEnqueue(cy_stc_ble_ipc_ctrl_msg* msg);
     void Cy_BLE_LlIsrExitLowPowerMode(void);
 
-    
+
 /***************************************
 *     Stack manager prototypes
 ***************************************/

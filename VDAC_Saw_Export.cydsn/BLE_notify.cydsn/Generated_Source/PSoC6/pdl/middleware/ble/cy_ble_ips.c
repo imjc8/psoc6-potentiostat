@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file CY_BLE_ips.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the source code for Indoor Positioning Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -166,7 +166,7 @@ cy_en_ble_api_result_t Cy_BLE_IPS_Init(cy_stc_ble_ips_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_IPS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_IPS_ApplCallback = callbackFunc;
     if(cy_ble_ipsConfigPtr != NULL)
     {
@@ -176,7 +176,7 @@ cy_en_ble_api_result_t Cy_BLE_IPS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -196,8 +196,8 @@ cy_en_ble_api_result_t Cy_BLE_IPS_RegisterAttrCallback(cy_ble_callback_t callbac
 *  (CY_BLE_GATT_ERR_NONE) or failed with error codes:
 *   * CY_BLE_GATTS_ERR_PROCEDURE_ALREADY_IN_PROGRESS
 *   * CY_BLE_GATTS_ERR_CCCD_IMPROPERLY_CONFIGURED
-* 
-*  NOTE: when advertisement is active this API uses Cy_BLE_GAPP_UpdateAdvScanData() to 
+*
+*  NOTE: when advertisement is active this API uses Cy_BLE_GAPP_UpdateAdvScanData() to
 *        update the advertisement packet. In the case of successful execution (return value = CY_BLE_SUCCESS)
 *        the event CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE appears.
 ******************************************************************************/
@@ -290,7 +290,7 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_IPSS_WriteEventHandler(cy_stc_ble_gatts_
 *
 *  \param eventParam:  The pointer to the data structure specified by the event.
 *
-*  NOTE: when advertisement is active this API uses Cy_BLE_GAPP_UpdateAdvScanData() to 
+*  NOTE: when advertisement is active this API uses Cy_BLE_GAPP_UpdateAdvScanData() to
 *        update the advertisement packet. In the case of successful execution (return value = CY_BLE_SUCCESS)
 *        the event CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE appears.
 *
@@ -446,10 +446,10 @@ static void Cy_BLE_IPSS_ExecuteWriteRequestEventHandler(cy_stc_ble_gatts_exec_wr
 *  A return value of type cy_en_ble_api_result_t.
 *  * CY_BLE_SUCCESS - The request was handled successfully.
 *  * CY_BLE_ERROR_INVALID_PARAMETER - Validation of the input parameter failed.
-*  * CY_BLE_ERROR_GATT_DB_INVALID_ATTR_HANDLE - An optional characteristic is 
+*  * CY_BLE_ERROR_GATT_DB_INVALID_ATTR_HANDLE - An optional characteristic is
 *                                               absent.
 *
-*  NOTE: when advertisement is active this API uses Cy_BLE_GAPP_UpdateAdvScanData() to 
+*  NOTE: when advertisement is active this API uses Cy_BLE_GAPP_UpdateAdvScanData() to
 *        update the advertisement packet. In the case of successful execution (return value = CY_BLE_SUCCESS)
 *        the event CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE appears.
 *
@@ -1548,7 +1548,7 @@ cy_en_ble_api_result_t Cy_BLE_IPSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_IPS_CHAR_COUNT) || (descrIndex >= CY_BLE_IPS_DESCR_COUNT) || 
+    else if((charIndex >= CY_BLE_IPS_CHAR_COUNT) || (descrIndex >= CY_BLE_IPS_DESCR_COUNT) ||
             (attrSize != CY_BLE_CCCD_LEN) || (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

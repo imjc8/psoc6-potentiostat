@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_hps.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the source code for HTTP Proxy Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -168,7 +168,7 @@ cy_en_ble_api_result_t Cy_BLE_HPS_Init(cy_stc_ble_hps_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_HPS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_HPS_ApplCallback = callbackFunc;
     if(cy_ble_hpsConfigPtr != NULL)
     {
@@ -178,7 +178,7 @@ cy_en_ble_api_result_t Cy_BLE_HPS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -1254,7 +1254,7 @@ static void Cy_BLE_HPSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_para
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1270,7 +1270,7 @@ static void Cy_BLE_HPSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_para
 *   If the HPS service specific callback is registered
 *   with Cy_BLE_HPS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_HPSC_WRITE_CHAR_RESPONSE - In case if the requested attribute is
-*     successfully written on the peer device, the details 
+*     successfully written on the peer device, the details
 *     (char index, etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_hps_char_value_t.
 *   .
@@ -1338,7 +1338,7 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1354,18 +1354,18 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 *   If the HPS service-specific callback is registered
 *      with Cy_BLE_HPS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_HPSC_READ_CHAR_RESPONSE - In case if the requested attribute is
-*     successfully read on the peer device, the details 
+*     successfully read on the peer device, the details
 *     (char index , value, etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_hps_char_value_t.
 *   .
 *   Otherwise (if an HPS service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure 
+*     provided with an event parameter structure
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with 
+*     requested attribute on the peer device, the details are provided with
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1424,7 +1424,7 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1440,7 +1440,7 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *   If the HPS service specific callback is registered
 *   with Cy_BLE_HPS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_HPSC_WRITE_CHAR_RESPONSE - In case if the requested attribute is
-*     successfully written on the peer device, the details 
+*     successfully written on the peer device, the details
 *     (char index, etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_hps_char_value_t.
 *   .
@@ -1514,7 +1514,7 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_SetLongCharacteristicValue(cy_stc_ble_conn_ha
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -1530,18 +1530,18 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_SetLongCharacteristicValue(cy_stc_ble_conn_ha
 *   If the HPS service-specific callback is registered
 *      with Cy_BLE_HPS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_HPSC_READ_CHAR_RESPONSE - In case if the requested attribute is
-*     successfully read on the peer device, the details 
+*     successfully read on the peer device, the details
 *     (char index , value, etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_hps_char_value_t.
 *   .
 *   Otherwise (if an HPS service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure 
+*     provided with an event parameter structure
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with 
+*     requested attribute on the peer device, the details are provided with
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1622,7 +1622,7 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_GetLongCharacteristicValue(cy_stc_ble_conn_ha
 *   If the HPS service-specific callback is registered
 *   with Cy_BLE_HPS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_HPSC_WRITE_DESCR_RESPONSE - In case if the requested attribute is
-*     successfully written on the peer device, the details 
+*     successfully written on the peer device, the details
 *     (char index, descr index etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_hps_char_value_t.
 *   .
@@ -1631,7 +1631,7 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_GetLongCharacteristicValue(cy_stc_ble_conn_ha
 *     successfully written on the peer device.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with 
+*     requested attribute on the peer device, the details are provided with
 *     an event parameter structure ( \ref cy_stc_ble_gatt_err_param_t).
 *
 ******************************************************************************/
@@ -1648,7 +1648,7 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_HPS_CHAR_COUNT) || (descrIndex >= CY_BLE_HPS_DESCR_COUNT) || 
+    else if((charIndex >= CY_BLE_HPS_CHAR_COUNT) || (descrIndex >= CY_BLE_HPS_DESCR_COUNT) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -1718,11 +1718,11 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *   Otherwise (if an HPS service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure 
+*     provided with an event parameter structure
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with 
+*     requested attribute on the peer device, the details are provided with
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1737,7 +1737,7 @@ cy_en_ble_api_result_t Cy_BLE_HPSC_GetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_HPS_CHAR_COUNT) || (descrIndex >= CY_BLE_HPS_DESCR_COUNT) || 
+    else if((charIndex >= CY_BLE_HPS_CHAR_COUNT) || (descrIndex >= CY_BLE_HPS_DESCR_COUNT) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

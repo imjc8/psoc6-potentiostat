@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file cy_ble_rtus.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the source code for Reference Time Update Service.
@@ -8,7 +8,7 @@
 ********************************************************************************
 *
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -145,7 +145,7 @@ cy_en_ble_api_result_t Cy_BLE_RTUS_Init(cy_stc_ble_rtus_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_RTUS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_RTUS_ApplCallback = callbackFunc;
     if(cy_ble_rtusConfigPtr != NULL)
     {
@@ -155,7 +155,7 @@ cy_en_ble_api_result_t Cy_BLE_RTUS_RegisterAttrCallback(cy_ble_callback_t callba
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -494,7 +494,7 @@ cy_en_ble_api_result_t Cy_BLE_RTUSC_SetCharacteristicValue(cy_stc_ble_conn_handl
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) && 
+    else if((discIdx < CY_BLE_GATTC_COUNT) && (attrValue != NULL) &&
             (charIndex == CY_BLE_RTUS_TIME_UPDATE_CONTROL_POINT) &&
             (cy_ble_rtusc[discIdx].charInfo[CY_BLE_RTUS_TIME_UPDATE_CONTROL_POINT].valueHandle !=
              CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE))

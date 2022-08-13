@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_bts.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the source code for the Bootloader service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -91,7 +91,7 @@ cy_en_ble_api_result_t Cy_BLE_BTS_Init(cy_stc_ble_bts_config_t *config)
 *  unregistered callback function.
 *
 *  \param callbackFunc:  An application layer event callback function to receive
-*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t 
+*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t
 *    for Bootloader Service is:<br>
 *    typedef void (* cy_ble_callback_t) (uint32_t eventCode, void *eventParam),
 *    where:
@@ -116,7 +116,7 @@ cy_en_ble_api_result_t Cy_BLE_BTS_Init(cy_stc_ble_bts_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_BTS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_BTS_ApplCallback = callbackFunc;
     if(cy_ble_btsConfigPtr != NULL)
     {
@@ -126,7 +126,7 @@ cy_en_ble_api_result_t Cy_BLE_BTS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -373,12 +373,12 @@ static void Cy_BLE_BTSS_ExecuteWriteRequestEventHandler(cy_stc_ble_gatts_exec_wr
 * Function Name: Cy_BLE_BTSS_SendNotification
 ***************************************************************************//**
 *
-*  Sends a notification with the characteristic value, as specified by its 
+*  Sends a notification with the characteristic value, as specified by its
 *  charIndex, to the Client device.
 *
 *  \param connHandle: The BLE peer device connection handle
 *
-*  \param charIndex:  The index of the service characteristic of 
+*  \param charIndex:  The index of the service characteristic of
 *                     type \ref cy_en_ble_bts_char_index_t. The valid value is
 *                     * \ref  CY_BLE_BTS_BT_SERVICE
 *  \param attrSize:   The size of the characteristic value attribute.

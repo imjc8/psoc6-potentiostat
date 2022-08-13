@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_hal_pvt.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  This file contains the source code for the HAL section of the BLE Middleware.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -29,11 +29,11 @@ cy_ble_intr_callback_t Cy_BLE_InterruptCallback = NULL;
 #endif /* (CY_BLE_HOST_CORE) */
 
 #if (CY_BLE_HOST_CONTR_CORE)
-/* Nominal trim step size */    
+/* Nominal trim step size */
 static uint32 piloTrimStepSize = CY_BLE_PILO_TRIM_STEP;
-    
+
 #if (CY_BLE_STACK_MODE_HOST_UART)
-    
+
 /*******************************************************************************
 * Function Name: Cy_BLE_HAL_HOST_UART_Start
 ****************************************************************************//**
@@ -358,8 +358,8 @@ cy_en_ble_api_result_t Cy_BLE_HAL_RadioCalibrationWrite(const void *data, uint32
 cy_en_ble_api_result_t Cy_BLE_HAL_RadioCalibrationRead(void *data, uint32_t length)
 {
     cy_en_ble_api_result_t rc = CY_BLE_SUCCESS;
-    
-    if((data != NULL) && 
+
+    if((data != NULL) &&
        (length <= (CY_FLASH_SIZEOF_ROW - sizeof(cy_stc_ble_gap_bd_addr_t))))
     {
         (void) memcpy(data, (void *)CY_BLE_SFLASH_BLE_RADIO_CALL_ADDRESS, length);
@@ -387,10 +387,10 @@ cy_en_ble_api_result_t Cy_BLE_HAL_RadioCalibrationRead(void *data, uint32_t leng
 * \param buffer:   Pointer to the buffer containing the data to be stored.
 * \param varFlash: Pointer to the array or variable in the flash.
 * \param length:   The length of the data in bytes.
-* \param mode:     Flash operation mode: 
+* \param mode:     Flash operation mode:
 *                     CY_BLE_FLASH_NON_BLOCKING_MODE - operate with non
 *                     blocking flash API
-*                     CY_BLE_FLASH_BLOCKING_MODE - operate with blocking 
+*                     CY_BLE_FLASH_BLOCKING_MODE - operate with blocking
 *                     flash API
 *
 * \return
@@ -398,18 +398,18 @@ cy_en_ble_api_result_t Cy_BLE_HAL_RadioCalibrationRead(void *data, uint32_t leng
 *  CY_BLE_ERROR_INVALID_PARAMETER         | At least one of the input parameters is invalid
 *  CY_BLE_ERROR_FLASH_WRITE               | Error in flash Write
 *  CY_BLE_ERROR_FLASH_WRITE_NOT_PERMITED  | Flash operation is not permitted (see Note)
-* 
+*
 * \note: Flash operation is not permitted with protection context (PC)
 *        value > 0 and core voltage 0.9V, because of a preproduction
 *        hardware limitation.
-*    
+*
 *******************************************************************************/
 cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[],
                                              const uint8_t varFlash[],
                                              uint32_t length,
                                              uint32_t mode)
 {
-    
+
     cy_en_ble_api_result_t bleReturn;
     cy_en_flashdrv_status_t flashReturn = CY_FLASH_DRV_SUCCESS;
     cy_en_syspm_status_t syspmReturn =  CY_SYSPM_SUCCESS;
@@ -420,7 +420,7 @@ cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[],
     uint32_t eeOffset;
     uint32_t byteOffset;
     bool rowsNotEqual;
-    uint8_t *writeBufferPointer;  
+    uint8_t *writeBufferPointer;
 
     eeOffset = (uint32_t)varFlash;
     writeBufferPointer = (uint8_t*)writeBuffer;
@@ -436,7 +436,7 @@ cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[],
         cy_en_syspm_simo_buck_voltage1_t simoVoltage = CY_SYSPM_SIMO_BUCK_OUT1_VOLTAGE_1_1V;
         cy_en_syspm_ldo_voltage_t ldoVoltage = CY_SYSPM_LDO_VOLTAGE_1_1V;
         bool writeFlag = false;
-        
+
         /* Increase core voltage for write to flash operation */
         if(Cy_SysPm_SimoBuckIsEnabled())
         {
@@ -460,11 +460,11 @@ cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[],
                 } while(syspmReturn == CY_SYSPM_CANCELED);
             }
         }
-        
+
         /*
          * Increase core voltage to 1.1V for Flash operation is not permitted
-         * with protection context (PC) value > 0, because of a preproduction 
-         * hardware limitation. 
+         * with protection context (PC) value > 0, because of a preproduction
+         * hardware limitation.
          */
         CY_ASSERT(syspmReturn != CY_SYSPM_INVALID_STATE);
 
@@ -477,7 +477,7 @@ cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[],
         {
             /* Polls whether sema is not set */
         }
-        
+
         while((syspmReturn == CY_SYSPM_SUCCESS) &&
               (flashReturn == CY_FLASH_DRV_SUCCESS) && (srcIndex < length))
         {
@@ -510,16 +510,16 @@ cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[],
             #ifdef CY_BLE_FLASH_OPR_START_WRITE
                     /* Perform Program flash row operation */
                     oprTimeout = CY_BLE_FLASH_OPR_TIMEOUT; /* us */
-                    do 
-                    {      
-                        flashReturn = Cy_Flash_StartWrite((rowId * CY_FLASH_SIZEOF_ROW) + CY_FLASH_BASE); 
-                        
+                    do
+                    {
+                        flashReturn = Cy_Flash_StartWrite((rowId * CY_FLASH_SIZEOF_ROW) + CY_FLASH_BASE);
+
                         /* Timeout if flash operation return error */
                         oprTimeout--;
                         Cy_SysLib_DelayUs(1u);
-                        
+
                     }while(((flashReturn & CY_FLASH_ID_ERROR) == CY_FLASH_ID_ERROR) && (oprTimeout != 0u));
-                    
+
                     if(flashReturn == CY_FLASH_DRV_OPERATION_STARTED)
                     {
                         /* Polls whether the Flash operation is performed */
@@ -529,19 +529,19 @@ cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[],
                         }
                         while (flashReturn == CY_FLASH_DRV_OPCODE_BUSY);
                     }
-            #else        
+            #else
                     /* Perform Erase flash row operation */
                     oprTimeout = CY_BLE_FLASH_OPR_TIMEOUT; /* us */
-                    do 
-                    {      
-                        flashReturn = Cy_Flash_StartErase((rowId * CY_FLASH_SIZEOF_ROW) + CY_FLASH_BASE); 
-                        
+                    do
+                    {
+                        flashReturn = Cy_Flash_StartErase((rowId * CY_FLASH_SIZEOF_ROW) + CY_FLASH_BASE);
+
                         /* Timeout if flash operation return error */
                         oprTimeout--;
                         Cy_SysLib_DelayUs(1u);
-                        
+
                     }while(((flashReturn & CY_FLASH_ID_ERROR) == CY_FLASH_ID_ERROR) && (oprTimeout != 0u));
-                    
+
                     /* Waiting completion of the Erase flash row operation */
                     if(flashReturn == CY_FLASH_DRV_OPERATION_STARTED)
                     {
@@ -552,25 +552,25 @@ cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[],
                         }
                         while (flashReturn == CY_FLASH_DRV_OPCODE_BUSY);
                     }
-                    
+
                     /* Perform Program flash row operation */
                     if(flashReturn == CY_FLASH_DRV_SUCCESS)
                     {
                         oprTimeout = CY_BLE_FLASH_OPR_TIMEOUT; /* us */
-                        
+
                         /* Program flash row */
                         do
                         {
-                            flashReturn = Cy_Flash_StartProgram((rowId * CY_FLASH_SIZEOF_ROW) + CY_FLASH_BASE, 
-                                                                 writeBuffer); 
-                            
+                            flashReturn = Cy_Flash_StartProgram((rowId * CY_FLASH_SIZEOF_ROW) + CY_FLASH_BASE,
+                                                                 writeBuffer);
+
                             /* Timeout if flash operation return error */
                             oprTimeout--;
                             Cy_SysLib_DelayUs(1u);
-                            
+
                         }while(((flashReturn & CY_FLASH_ID_ERROR) == CY_FLASH_ID_ERROR) && (oprTimeout != 0u));
-                    }   
-                    
+                    }
+
                     /* Waiting completion of the Program flash row operation */
                     if(flashReturn == CY_FLASH_DRV_OPERATION_STARTED)
                     {
@@ -586,7 +586,7 @@ cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[],
                 else /* BLOCKING FLASH OPERATION */
                 {
                     /* Perform Write flash row operation (in bloking mode) */
-                    flashReturn = Cy_Flash_WriteRow((rowId * CY_FLASH_SIZEOF_ROW) + CY_FLASH_BASE, 
+                    flashReturn = Cy_Flash_WriteRow((rowId * CY_FLASH_SIZEOF_ROW) + CY_FLASH_BASE,
                                                      writeBuffer);
                 }
                 writeFlag = true;
@@ -595,38 +595,38 @@ cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[],
             /* Go to the next row */
             rowId++;
         }
-        
+
         /* Clear Flash Cache and Buffer after write operation */
         if(writeFlag == true)
         {
             Cy_SysLib_ClearFlashCacheAndBuffer();
         }
-        
+
         /* Inform BLE syspm callback about complete of write operation */
         while (CY_IPC_SEMA_SUCCESS != Cy_IPC_Sema_Clear(CY_BLE_SEMA, false))
         {
             /* Polls whether sema is not clear */
-        } 
-          
+        }
+
         /* Return core voltage */
         if(syspmReturn == CY_SYSPM_SUCCESS)
         {
             /* Return core voltage (SIMO) */
             if((Cy_SysPm_SimoBuckIsEnabled()) && (simoVoltage == CY_SYSPM_SIMO_BUCK_OUT1_VOLTAGE_0_9V))
-            {   
+            {
                 do /* Polls whether syspm is not busy */
                 {
                     syspmReturn = Cy_SysPm_BuckSetVoltage1(CY_SYSPM_SIMO_BUCK_OUT1_VOLTAGE_0_9V);
                 } while(syspmReturn == CY_SYSPM_CANCELED);
             }
-            
+
             /* Return core voltage (LDO) */
             if((Cy_SysPm_LdoIsEnabled()) && (ldoVoltage == CY_SYSPM_LDO_VOLTAGE_0_9V))
-            {                   
+            {
                 do /* Polls whether syspm is not busy */
                 {
                     syspmReturn = Cy_SysPm_LdoSetVoltage(CY_SYSPM_LDO_VOLTAGE_0_9V);
-                } while(syspmReturn == CY_SYSPM_CANCELED); 
+                } while(syspmReturn == CY_SYSPM_CANCELED);
             }
         }
     }
@@ -704,14 +704,14 @@ bool Cy_BLE_HAL_NvramWriteIsBusy(void)
 {
     uint32_t ipcChanNum;
     bool retVal = true;
-    
+
     /* Select CY_IPC_CHAN_SYSCAL regarding to host core */
     #if (CY_BLE_HOST_CORE == CY_CPU_CORTEX_M4)
         ipcChanNum = CY_IPC_CHAN_SYSCALL_CM4;
     #else
         ipcChanNum = CY_IPC_CHAN_SYSCALL_CM0;
     #endif  /* (CY_CPU_CORTEX_M0P) */
-    
+
     /* Checks if the IPC structure is not locked */
     if (Cy_IPC_Drv_IsLockAcquired((IPC_STRUCT_Type*) &IPC->STRUCT[ipcChanNum]) == false)
     {
@@ -835,8 +835,8 @@ uint32_t Cy_BLE_HAL_GetIcPackageType(void)
     const uint8_t PACKAGE_124_PINS = 124u;
 
     uint8_t pType = (uint8_t) CY_GPIO_PACKAGE_TYPE;
-    
-    #if defined(CY_GPIO_PIN_COUNT) 
+
+    #if defined(CY_GPIO_PIN_COUNT)
     uint8_t pinCount = (uint8_t) CY_GPIO_PIN_COUNT;
     #else
     uint8_t pinCount = 0u;
@@ -852,7 +852,7 @@ uint32_t Cy_BLE_HAL_GetIcPackageType(void)
     else if( ((pType == (uint8_t) CY_GPIO_PACKAGE_CSP) && (pinCount == 0u)) ||
              ((pType == (uint8_t) CY_GPIO_PACKAGE_CSP) && (pinCount == PACKAGE_104_PINS)) )
     {
-  
+
         ret = CY_BLE_IC_PACKAGE_TYPE_CSP_104;
     }
     else if((pType == (uint8_t) CY_GPIO_PACKAGE_BGA) && (pinCount == PACKAGE_124_PINS))
@@ -880,11 +880,11 @@ uint32_t Cy_BLE_HAL_GetIcPackageType(void)
 *
 * input param: raw - pointer to the 16 bit result from MXD registers,
 * output param: vbat - pointer to the calculated voltage value in mV.
-* 
+*
 *******************************************************************************/
 void Cy_BLE_HAL_RadioGetAbsVbat(const uint16_t *raw, uint16_t *vbat)
 {
-     *vbat = ((CY_BLE_RADIO_VOLTAGE_MONITOR_SLOPE * (*raw)) - CY_BLE_RADIO_VOLTAGE_MONITOR_OFFSET) / 
+     *vbat = ((CY_BLE_RADIO_VOLTAGE_MONITOR_SLOPE * (*raw)) - CY_BLE_RADIO_VOLTAGE_MONITOR_OFFSET) /
                CY_BLE_RADIO_VOLTAGE_MONITOR_SLOPE_MULTIPLIER;
 }
 
@@ -897,11 +897,11 @@ void Cy_BLE_HAL_RadioGetAbsVbat(const uint16_t *raw, uint16_t *vbat)
 *
 * input param: raw - pointer to the the 16 bit result from MXD registers,
 * output param: temp - pointer to the int16_t calculated temperature value in C.
-* 
+*
 *******************************************************************************/
 void Cy_BLE_HAL_RadioGetAbsTemp(const uint16_t *raw, int16_t *temp)
 {
-    *temp = CY_BLE_RADIO_TEMP_MONITOR_OFFSET - 
+    *temp = CY_BLE_RADIO_TEMP_MONITOR_OFFSET -
             ((CY_BLE_RADIO_TEMP_MONITOR_SLOPE * (int16_t)(*raw)) / CY_BLE_RADIO_TEMP_MONITOR_SLOPE_MULTIPLIER);
 }
 
@@ -991,7 +991,7 @@ cy_en_ble_api_result_t Cy_BLE_HAL_SoftHciHostWritePkt(cy_stc_ble_hci_tx_packet_i
         return(Cy_BLE_HAL_SoftHciControllerReceiveHostPkt(hciPktParams));
     #else
         (void) hciPktParams;
-        return(CY_BLE_SUCCESS);    
+        return(CY_BLE_SUCCESS);
     #endif /* (CY_BLE_MODE_PROFILE) && (!CY_BLE_STACK_MODE_IPC) */
 }
 
@@ -1113,7 +1113,7 @@ uint32_t Cy_BLE_HAL_StartClkMeasurementCounters(cy_en_meas_clks_t clock1,
 * Function Name: Cy_BLE_HAL_SetPiloTrimStep
 ****************************************************************************//**
 *
-* Set PILO trim step which will be used within BLE stack during periodical PILO 
+* Set PILO trim step which will be used within BLE stack during periodical PILO
 * calibration.
 *
 * \param stepSize: nominal trim step size.
@@ -1121,7 +1121,7 @@ uint32_t Cy_BLE_HAL_StartClkMeasurementCounters(cy_en_meas_clks_t clock1,
 *******************************************************************************/
 void Cy_BLE_HAL_SetPiloTrimStep(uint32_t stepSize)
 {
-    piloTrimStepSize = stepSize;       
+    piloTrimStepSize = stepSize;
 }
 
 
@@ -1132,11 +1132,11 @@ void Cy_BLE_HAL_SetPiloTrimStep(uint32_t stepSize)
 * Trims the PILO to be as close to 32,768 Hz as possible.
 *
 * \param piloFreq: current PILO frequency. Call \ref Cy_SysClk_StartClkMeasurementCounters
-*                  and other measurement functions to obtain the current frequency of 
+*                  and other measurement functions to obtain the current frequency of
 *                  the PILO.
 * \param piloFreq: target frequency.
 * \param stepSize: nominal trim step size.
-* 
+*
 * \return Change in trim value; 0 if done, that is, no change in trim value.
 *
 *******************************************************************************/
@@ -1291,7 +1291,7 @@ void Cy_BLE_HAL_SimoBuckSetVoltage2(cy_en_syspm_simo_buck_voltage2_t voltage)
  */
 
 /*******************************************************************************
-* Function Name: Cy_BLE_HAL_EnableControllerIpcPipeInterrupt 
+* Function Name: Cy_BLE_HAL_EnableControllerIpcPipeInterrupt
 ****************************************************************************//**
 *
 *   Enables the IPC pipe interrupt on controller side.
@@ -1304,7 +1304,7 @@ void Cy_BLE_HAL_EnableControllerIpcPipeInterrupt(void)
 
 
 /*******************************************************************************
-* Function Name: Cy_BLE_HAL_DisableControllerIpcPipeInterrupt 
+* Function Name: Cy_BLE_HAL_DisableControllerIpcPipeInterrupt
 ****************************************************************************//**
 *
 *   Disable the IPC pipe interrupt on controller side.
@@ -1316,7 +1316,7 @@ void Cy_BLE_HAL_DisableControllerIpcPipeInterrupt(void)
 }
 
 /*******************************************************************************
-* Function Name: Cy_BLE_HAL_EnableHostIpcPipeInterrupt 
+* Function Name: Cy_BLE_HAL_EnableHostIpcPipeInterrupt
 ****************************************************************************//**
 *
 *   Enables the IPC pipe interrupt on host side.
@@ -1328,7 +1328,7 @@ void Cy_BLE_HAL_EnableHostIpcPipeInterrupt(void)
 }
 
 /*******************************************************************************
-* Function Name: Cy_BLE_HAL_DisableHostIpcPipeInterrupt 
+* Function Name: Cy_BLE_HAL_DisableHostIpcPipeInterrupt
 ****************************************************************************//**
 *
 *   Disable the IPC pipe interrupt on host side.

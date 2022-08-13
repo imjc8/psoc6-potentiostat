@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_ess.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the source code for the Environmental Sensing Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -159,7 +159,7 @@ cy_en_ble_api_result_t Cy_BLE_ESS_Init(cy_stc_ble_ess_config_t *config)
 * Function Name: Cy_BLE_ESS_RegisterAttrCallback
 ***************************************************************************//**
 *
-*  Registers a callback function for Environmental Sensing Service specific 
+*  Registers a callback function for Environmental Sensing Service specific
 *  attribute operations.
 *  Service specific write requests from peer device will not be handled with
 *  unregistered callback function.
@@ -190,7 +190,7 @@ cy_en_ble_api_result_t Cy_BLE_ESS_Init(cy_stc_ble_ess_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_ESS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_ESS_ApplCallback = callbackFunc;
     if(cy_ble_essConfigPtr != NULL)
     {
@@ -200,7 +200,7 @@ cy_en_ble_api_result_t Cy_BLE_ESS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -989,7 +989,7 @@ static void Cy_BLE_ESSS_ConfirmationEventHandler(const cy_stc_ble_conn_handle_t 
 *
 *  Performs write operation of two-byte pseudo-random change index to the
 *  advertisement packet. The "Service Data" field should be selected in the
-*  BLE Component customizer GUI and contain a two-byte initial change index 
+*  BLE Component customizer GUI and contain a two-byte initial change index
 *  value and in opposite case the function will always return
 *  \ref CY_BLE_ERROR_INVALID_OPERATION.
 *
@@ -1174,7 +1174,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSS_SetCharacteristicValue(cy_en_ble_ess_char_ind
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
 *  \param attrSize:     The size of the characteristic value attribute.
-*  \param attrValue:    The pointer to the location where characteristic value 
+*  \param attrValue:    The pointer to the location where characteristic value
 *                       data should be stored.
 *
 *  \return
@@ -1240,7 +1240,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSS_GetCharacteristicValue(cy_en_ble_ess_char_ind
 *  Sets the characteristic descriptor of the specified characteristic.
 *
 *  \param connHandle:   The connection handle.
-*  \param charIndex:    The index of the service characteristic of type 
+*  \param charIndex:    The index of the service characteristic of type
 *                       \ref cy_en_ble_ess_char_index_t.
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
@@ -1320,7 +1320,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSS_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  Gets the characteristic descriptor of the specified characteristic.
 *
 *  \param connHandle:   The connection handle
-*  \param charIndex:    The index of the service characteristic of type 
+*  \param charIndex:    The index of the service characteristic of type
 *                       \ref cy_en_ble_ess_char_index_t.
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
@@ -1400,7 +1400,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSS_GetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  at the GATT Client's end.
 *
 *  \param connHandle:   The connection handle.
-*  \param charIndex:    The index of the service characteristic of type 
+*  \param charIndex:    The index of the service characteristic of type
 *                       \ref cy_en_ble_ess_char_index_t.
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
@@ -1484,12 +1484,12 @@ cy_en_ble_api_result_t Cy_BLE_ESSS_SendNotification(cy_stc_ble_conn_handle_t con
 *  service-specific callback function is not registered) event at the GATT Client's end.
 *
 *  \param connHandle:   The connection handle.
-*  \param charIndex:    The index of the service characteristic of type 
+*  \param charIndex:    The index of the service characteristic of type
 *                       \ref cy_en_ble_ess_char_index_t.
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
 *  \param attrSize:     The size of the characteristic value attribute.
-*  \param attrValue:    The pointer to the characteristic value data that 
+*  \param attrValue:    The pointer to the characteristic value data that
 *                       should be sent to the client's device.
 *
 *  \return
@@ -2285,18 +2285,18 @@ static void Cy_BLE_ESSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_para
 *  sent to the Client.
 *
 *  \param connHandle:   The connection handle.
-*  \param charIndex:    The index of the service characteristic of type 
+*  \param charIndex:    The index of the service characteristic of type
 *                       \ref cy_en_ble_ess_char_index_t.
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
 *  \param attrSize:     The size of the characteristic value attribute.
-*  \param attrValue:    The pointer to the characteristic value data that 
+*  \param attrValue:    The pointer to the characteristic value data that
 *                       should be sent to the server device.
 *
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -2320,7 +2320,7 @@ static void Cy_BLE_ESSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_para
 *  * \ref CY_BLE_EVT_GATTC_WRITE_RSP - In case if the requested attribute is
 *    successfully written on the peer device.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - In case if an error occurred with the
-*    requested attribute on the peer device, the details are provided with 
+*    requested attribute on the peer device, the details are provided with
 *    event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -2380,14 +2380,14 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 *  identified by charIndex, from the server.
 *
 *  \param connHandle:   The connection handle.
-*  \param charIndex:    The index of the service characteristic of type 
+*  \param charIndex:    The index of the service characteristic of type
 *                       \ref cy_en_ble_ess_char_index_t.
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*    
+*
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -2411,7 +2411,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 *    successfully read on the peer device, the details (handle, value, etc.) are
 *    provided with event parameters structure \ref cy_stc_ble_gattc_read_rsp_param_t.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - In case if an error occurred with the
-*    requested attribute on the peer device, the details are provided with 
+*    requested attribute on the peer device, the details are provided with
 *    event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -2480,7 +2480,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *  * \ref CY_BLE_EVT_ESSS_INDICATION_DISABLED
 *
 *  \param connHandle:   The connection handle.
-*  \param charIndex:    The index of the service characteristic of type 
+*  \param charIndex:    The index of the service characteristic of type
 *                       \ref cy_en_ble_ess_char_index_t.
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
@@ -2507,7 +2507,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *  If the ESS service-specific callback is registered
 *  with Cy_BLE_ESS_RegisterAttrCallback():
 *  * \ref CY_BLE_EVT_ESSC_WRITE_DESCR_RESPONSE - In case if the requested attribute is
-*    successfully written on the peer device, the details (char index, descr 
+*    successfully written on the peer device, the details (char index, descr
 *    index etc.) are provided with event parameter structure
 *    of type \ref cy_stc_ble_ess_descr_value_t.
 *  .
@@ -2515,7 +2515,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *  * \ref CY_BLE_EVT_GATTC_WRITE_RSP - In case if the requested attribute is
 *    successfully written on the peer device.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - In case if an error occurred with the
-*    requested attribute on the peer device, the details are provided with 
+*    requested attribute on the peer device, the details are provided with
 *    event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -2534,7 +2534,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
     else if((charIndex >= CY_BLE_ESS_CHAR_COUNT) || (descrIndex >= CY_BLE_ESS_DESCR_COUNT) ||
-            (charInstance >= cy_ble_essConfigPtr->esscCharInstances[charIndex]) || 
+            (charInstance >= cy_ble_essConfigPtr->esscCharInstances[charIndex]) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -2581,7 +2581,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  characteristic of the service.
 *
 *  \param connHandle:   The connection handle.
-*  \param charIndex:    The index of the service characteristic of type 
+*  \param charIndex:    The index of the service characteristic of type
 *                       \ref cy_en_ble_ess_char_index_t.
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
@@ -2606,7 +2606,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  If the ESS service-specific callback is registered
 *  with Cy_BLE_ESS_RegisterAttrCallback():
 *  * \ref CY_BLE_EVT_ESSC_READ_DESCR_RESPONSE - In case if the requested attribute is
-*    successfully read on the peer device, the details (char index, descr index, 
+*    successfully read on the peer device, the details (char index, descr index,
 *    value, etc.) are provided with event parameter structure
 *    of type \ref cy_stc_ble_ess_descr_value_t.
 *  .
@@ -2632,7 +2632,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_GetCharacteristicDescriptor(cy_stc_ble_conn_h
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
     else if((charIndex >= CY_BLE_ESS_CHAR_COUNT) || (descrIndex >= CY_BLE_ESS_DESCR_COUNT) ||
-            (charInstance >= cy_ble_essConfigPtr->esscCharInstances[charIndex]) || 
+            (charInstance >= cy_ble_essConfigPtr->esscCharInstances[charIndex]) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -2672,7 +2672,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_GetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  which is identified by charIndex and descrIndex.
 *
 *  \param connHandle:   The connection handle.
-*  \param charIndex:    The index of the service characteristic of type 
+*  \param charIndex:    The index of the service characteristic of type
 *                       \ref cy_en_ble_ess_char_index_t.
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
@@ -2700,7 +2700,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_GetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  If the ESS service-specific callback is registered
 *  with Cy_BLE_ESS_RegisterAttrCallback():
 *  * \ref CY_BLE_EVT_ESSC_WRITE_DESCR_RESPONSE - In case if the requested attribute is
-*    successfully written on the peer device, the details (char index, 
+*    successfully written on the peer device, the details (char index,
 *    descr index etc.) are provided with event parameter structure
 *    of type \ref cy_stc_ble_ess_descr_value_t.
 *  .
@@ -2708,7 +2708,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_GetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  * \ref CY_BLE_EVT_GATTC_WRITE_RSP - In case if the requested attribute is
 *    successfully written on the peer device.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - In case if an error occurred with the
-*    requested attribute on the peer device, the details are provided with 
+*    requested attribute on the peer device, the details are provided with
 *    event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -2726,7 +2726,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_SetLongCharacteristicDescriptor(cy_stc_ble_co
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_ESS_CHAR_COUNT) || (descrIndex >= CY_BLE_ESS_DESCR_COUNT) || 
+    else if((charIndex >= CY_BLE_ESS_CHAR_COUNT) || (descrIndex >= CY_BLE_ESS_DESCR_COUNT) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -2774,7 +2774,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_SetLongCharacteristicDescriptor(cy_stc_ble_co
 *  characteristic of the service.
 *
 *  \param connHandle:   The connection handle.
-*  \param charIndex:    The index of the service characteristic of type 
+*  \param charIndex:    The index of the service characteristic of type
 *                       \ref cy_en_ble_ess_char_index_t.
 *  \param charInstance: The instance number of the characteristic specified by
 *                       "charIndex".
@@ -2802,7 +2802,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_SetLongCharacteristicDescriptor(cy_stc_ble_co
 *  If the ESS service-specific callback is registered
 *  with Cy_BLE_ESS_RegisterAttrCallback():
 *  * \ref CY_BLE_EVT_ESSC_READ_DESCR_RESPONSE - In case if the requested attribute is
-*    successfully read on the peer device, the details (char index, descr index, 
+*    successfully read on the peer device, the details (char index, descr index,
 *    value, etc.) are provided with event parameter structure
 *    of type cy_stc_ble_ess_descr_value_t.
 *  .
@@ -2811,7 +2811,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_SetLongCharacteristicDescriptor(cy_stc_ble_co
 *    successfully read on the peer device, the details (handle, value, etc.) are
 *    provided with event parameters structure (cy_stc_ble_gattc_read_rsp_param_t).
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - In case if an error occurred with the
-*    requested attribute on the peer device, the details are provided with 
+*    requested attribute on the peer device, the details are provided with
 *    event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -2829,7 +2829,7 @@ cy_en_ble_api_result_t Cy_BLE_ESSC_GetLongCharacteristicDescriptor(cy_stc_ble_co
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_ESS_CHAR_COUNT) || (descrIndex >= CY_BLE_ESS_DESCR_COUNT) || 
+    else if((charIndex >= CY_BLE_ESS_CHAR_COUNT) || (descrIndex >= CY_BLE_ESS_DESCR_COUNT) ||
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

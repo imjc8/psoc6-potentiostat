@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_gatt.h
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the prototypes and constants used in the BLE GATT profile.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -43,7 +43,7 @@ extern "C" {
 
 /* The number of BLE connections (client) */
 #define CY_BLE_GATTC_COUNT                     (CY_BLE_CONFIG_GATTC_COUNT)
-    
+
 /* The number of CCCD in database */
 #define CY_BLE_GATT_DB_CCCD_COUNT              (CY_BLE_CONFIG_GATT_DB_CCCD_COUNT)
 
@@ -51,7 +51,7 @@ extern "C" {
 #define CY_BLE_GATT_ROLE_SERVER    (0u != (CY_BLE_GATT_ROLE & CY_BLE_GATT_SERVER))
 #define CY_BLE_GATT_ROLE_CLIENT    (0u != (CY_BLE_GATT_ROLE & CY_BLE_GATT_CLIENT))
 
-#define CY_BLE_CCCD_CRC_BYTE                   (0x1u)        /**< CCCD CRC byte */  
+#define CY_BLE_CCCD_CRC_BYTE                   (0x1u)        /**< CCCD CRC byte */
 
 #if (CY_BLE_GATT_DB_CCCD_COUNT == 0u)
     #define CY_BLE_GATT_DB_FLASH_CCCD_COUNT    (1u)
@@ -202,10 +202,10 @@ cy_en_ble_api_result_t Cy_BLE_GATTC_SendConfirmation(cy_stc_ble_conn_handle_t *c
  * \addtogroup group_ble_common_api_gatt_server_functions
  * @{
  */
-/** \cond IGNORE */    
+/** \cond IGNORE */
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValueCCCD(cy_stc_ble_gatts_db_attr_val_info_t *param);
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValueCCCD(cy_stc_ble_gatts_db_attr_val_info_t *param);
-cy_en_ble_api_result_t Cy_BLE_GATTS_ReadCccd(cy_stc_ble_conn_handle_t *connHandle, cy_ble_gatt_db_attr_handle_t attrHandle, 
+cy_en_ble_api_result_t Cy_BLE_GATTS_ReadCccd(cy_stc_ble_conn_handle_t *connHandle, cy_ble_gatt_db_attr_handle_t attrHandle,
                                              uint16_t *value);
 /** \endcond */
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValuePeer(cy_stc_ble_conn_handle_t *connHandle,
@@ -222,7 +222,7 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendIndication(cy_stc_ble_conn_handle_t *con
                                                    cy_stc_ble_gatt_handle_value_pair_t *handleValuePair);
 bool Cy_BLE_GATTS_IsNotificationEnabled(cy_stc_ble_conn_handle_t *connHandle, cy_ble_gatt_db_attr_handle_t attrHandle);
 bool Cy_BLE_GATTS_IsIndicationEnabled(cy_stc_ble_conn_handle_t *connHandle, cy_ble_gatt_db_attr_handle_t attrHandle);
-cy_en_ble_api_result_t Cy_BLE_GATTS_SendErrorRsp(cy_stc_ble_conn_handle_t *connHandle, 
+cy_en_ble_api_result_t Cy_BLE_GATTS_SendErrorRsp(cy_stc_ble_conn_handle_t *connHandle,
                                                  const cy_stc_ble_gatt_err_info_t *errRspParam);
 
 /** @} group_ble_common_api_gatt_server_functions */
@@ -276,7 +276,7 @@ extern uint8_t cy_ble_attValuesCccdMultiple[CY_BLE_CONN_COUNT][CY_BLE_GATT_DB_CC
  * \addtogroup group_ble_common_api_macros_gatt_uuid_services
  * @{
  */
- 
+
 /***************************************
 * Universal Unique Identifier (UUID): BLE Services
 ***************************************/
@@ -331,7 +331,7 @@ extern uint8_t cy_ble_attValuesCccdMultiple[CY_BLE_CONN_COUNT][CY_BLE_GATT_DB_CC
  * \addtogroup group_ble_common_api_macros_gatt_uuid_char_gatt_type
  * @{
  */
- 
+
 /** Primary Service Declaration */
 #define CY_BLE_UUID_PRIMARY_SERVICE      (0x2800u)
 /** Secondary Service Declaration */
@@ -351,7 +351,7 @@ extern uint8_t cy_ble_attValuesCccdMultiple[CY_BLE_CONN_COUNT][CY_BLE_GATT_DB_CC
  * \addtogroup group_ble_common_api_macros_gatt_uuid_char_desc
  * @{
  */
- 
+
 /** Characteristic Extended Properties */
 #define CY_BLE_UUID_CHAR_EXTENDED_PROPERTIES      (0x2900u)
 /** Characteristic User Description Descriptor */
@@ -392,7 +392,7 @@ extern uint8_t cy_ble_attValuesCccdMultiple[CY_BLE_CONN_COUNT][CY_BLE_GATT_DB_CC
  * \addtogroup group_ble_common_api_macros_gatt_uuid_char_type
  * @{
  */
- 
+
 /** Device Name Characteristic */
 #define CY_BLE_UUID_CHAR_DEVICE_NAME                     (0x2A00u)
 /** Appearance Characteristic */
@@ -596,7 +596,7 @@ extern uint8_t cy_ble_attValuesCccdMultiple[CY_BLE_CONN_COUNT][CY_BLE_GATT_DB_CC
  * \addtogroup group_ble_common_api_macros
  * @{
  */
- 
+
 /* GATT Characteristic Properties bit field */
 #define CY_BLE_CHAR_PROP_BROADCAST                       (0x01u)   /**< Broadcast */
 #define CY_BLE_CHAR_PROP_READ                            (0x02u)   /**< Read */
@@ -607,7 +607,7 @@ extern uint8_t cy_ble_attValuesCccdMultiple[CY_BLE_CONN_COUNT][CY_BLE_GATT_DB_CC
 #define CY_BLE_CHAR_PROP_SIGNED_WRITE                    (0x40u)   /**< Authenticated Signed Writes */
 #define CY_BLE_CHAR_PROP_EXTENDED_PROPERTIES             (0x80u)   /**< Extended properties */
 
- 
+
 /* Client Characteristic Configuration Descriptor values */
 #define CY_BLE_CCCD_DEFAULT                              (0x0000u) /**< Notifications and Indications disabled */
 #define CY_BLE_CCCD_NOTIFICATION                         (0x0001u) /**< Notifications enabled */
@@ -684,7 +684,7 @@ extern uint8_t cy_ble_attValuesCccdMultiple[CY_BLE_CONN_COUNT][CY_BLE_GATT_DB_CC
  * \addtogroup group_ble_common_api_macros_appearance_values
  * @{
  */
- 
+
 #define CY_BLE_APPEARANCE_UNKNOWN                              (0u)    /**< Unknown */
 #define CY_BLE_APPEARANCE_GENERIC_PHONE                        (64u)   /**< Generic Phone */
 #define CY_BLE_APPEARANCE_GENERIC_COMPUTER                     (128u)  /**< Generic Computer */
@@ -732,7 +732,7 @@ extern uint8_t cy_ble_attValuesCccdMultiple[CY_BLE_CONN_COUNT][CY_BLE_GATT_DB_CC
  * \addtogroup group_ble_common_api_macros
  * @{
  */
- 
+
 /***************************************
 * SMP Key size constants
 ***************************************/
@@ -765,7 +765,7 @@ extern uint8_t cy_ble_attValuesCccdMultiple[CY_BLE_CONN_COUNT][CY_BLE_GATT_DB_CC
  * \addtogroup group_ble_common_api_macros_gatt_db
  * @{
  */
- 
+
 /** Get permission field of attribute handle */
 #define CY_BLE_GATT_DB_GET_ATTR_PERMISSION(handle) \
     (uint32_t)(cy_ble_configPtr->gattDB[(handle) - 1u].permission)

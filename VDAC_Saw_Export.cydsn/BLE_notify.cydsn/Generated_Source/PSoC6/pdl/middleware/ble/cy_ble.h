@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble.h
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the prototypes and constants used in the BLE Middleware.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -20,11 +20,11 @@
 #include "syslib/cy_syslib.h"
 #include "sysint/cy_sysint.h"
 #include "syspm/cy_syspm.h"
-    
+
 #include "cy_ble_config.h"
 #include "cy_ble_gatt.h"
 #include "cy_ble_gap.h"
-    
+
 #if ((CY_BLE_CONFIG_STACK_MODE_HOST_UART) || (CY_BLE_CONFIG_STACK_MODE_CONTR_UART))
     #include "scb/cy_scb_uart.h"
 #endif /* (CY_BLE_CONFIG_STACK_MODE_HOST_UART) || (CY_BLE_CONFIG_STACK_MODE_CONTR_UART) */
@@ -73,14 +73,14 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
 #define CY_BLE_MIDDLEWARE_VERSION_MAJOR      (2)
 
 /** Middleware minor version */
-#define CY_BLE_MIDDLEWARE_VERSION_MINOR      (50)
+#define CY_BLE_MIDDLEWARE_VERSION_MINOR      (70)
 
 /** Middleware patch version */
 #define CY_BLE_MIDDLEWARE_VERSION_PATCH      (0u)
 
 /* Obsolete Definition for CY_BLE_STACK_MODE options. */
 #define CY_BLE_STACK_HOST_ONLY               (1u)
-#define CY_BLE_STACK_DEBUG                   (2u)  /* please use CY_BLE_STACK_MODE_DUAL_IPC */ 
+#define CY_BLE_STACK_DEBUG                   (2u)  /* please use CY_BLE_STACK_MODE_DUAL_IPC */
 #define CY_BLE_STACK_RELEASE                 (3u)  /* please use CY_BLE_STACK_MODE_SINGLE_SOC */
 #define CY_BLE_STACK_HOST_CONTR_UART         (4u)
 #define CY_BLE_STACK_HOST_IPC                (5u)
@@ -108,7 +108,7 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
                                              ((CY_BLE_STACK_MODE == CY_BLE_STACK_MODE_DUAL_IPC) &&  \
                                                CY_BLE_HOST_CORE))
 
-#define CY_BLE_STACK_MODE_CONTR_UART        (CY_BLE_MODE_HCI) 
+#define CY_BLE_STACK_MODE_CONTR_UART        (CY_BLE_MODE_HCI)
 
 #define CY_BLE_STACK_MODE_HOST_UART         ((CY_BLE_MODE_PROFILE) &&                                 \
                                              (((CY_BLE_STACK_MODE == CY_BLE_STACK_HOST_ONLY) ||       \
@@ -120,52 +120,52 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
 *******************************************************************************/
 /** Indicates whether deep sleep mode is used */
 #define CY_BLE_USE_DEEP_SLEEP                       (CY_BLE_CONFIG_USE_DEEP_SLEEP)
-    
+
 /** Sharing mode */
 #define CY_BLE_SHARING_MODE                         (CY_BLE_CONFIG_SHARING_MODE)
-    
+
 /* Sharing mode defines */
 #define CY_BLE_SHARING_MODE_EXPORT                  (CY_BLE_SHARING_MODE == CY_BLE_SHARING_EXPORT)
 #define CY_BLE_SHARING_MODE_IMPORT                  (CY_BLE_SHARING_MODE == CY_BLE_SHARING_IMPORT)
-    
+
 /* Align the buffer size value to 4 */
 #define CY_BLE_ALIGN_TO_4(x)                        ((((x) & 3u) == 0u) ? (x) : (((x) - ((x) & 3u)) + 4u))
 
 #if (CY_BLE_MODE == CY_BLE_PROFILE)
-    /** The maximum number of bonded devices to be supported by this device.  */    
+    /** The maximum number of bonded devices to be supported by this device.  */
     #if (CY_BLE_BONDING_REQUIREMENT == CY_BLE_BONDING_YES)
         #define CY_BLE_MAX_BONDED_DEVICES           (CY_BLE_CONFIG_MAX_BONDED_DEVICES)
     #else
         #define CY_BLE_MAX_BONDED_DEVICES           (0u)
     #endif  /* (CY_BLE_BONDING_REQUIREMENT == CY_BLE_BONDING_YES) */
-    
+
     /** LL Privacy 1.2 feature */
     #define CY_BLE_ENABLE_LL_PRIVACY                (CY_BLE_CONFIG_ENABLE_LL_PRIVACY)
-    
+
     /** The maximum number of peer devices whose addresses should be resolved by this device. */
-    #if (CY_BLE_ENABLE_LL_PRIVACY != 0u)    
+    #if (CY_BLE_ENABLE_LL_PRIVACY != 0u)
         #define CY_BLE_MAX_RESOLVABLE_DEVICES       (CY_BLE_CONFIG_MAX_RESOLVABLE_DEVICES)
-    #else  
+    #else
         #define CY_BLE_MAX_RESOLVABLE_DEVICES       (0u)
     #endif  /* (CY_BLE_ENABLE_LL_PRIVACY == 0u) */
-    
+
     /* The maximum number of devices that can be added to the whitelist. */
     #define CY_BLE_MAX_WHITE_LIST_SIZE              (CY_BLE_CONFIG_MAX_WHITE_LIST_SIZE)
-    
+
     /* The GAP security level */
     #define CY_BLE_GAP_SECURITY_LEVEL               (CY_BLE_CONFIG_GAP_SECURITY_LEVEL)
-    
+
     /* Additional queue depth provided from the customizer  */
     #define CY_BLE_ADD_Q_DEPTH_PER_CONN             (CY_BLE_CONFIG_ADD_Q_DEPTH_PER_CONN)
-    
+
     /**
      * Minimum stack queue depth requirement per connection
-     * The application can choose to give higher queue depth for better throughput. 
+     * The application can choose to give higher queue depth for better throughput.
      */
     #define CY_BLE_L2CAP_Q_DEPTH_PER_CONN           (CY_BLE_L2CAP_STACK_Q_DEPTH_PER_CONN + CY_BLE_ADD_Q_DEPTH_PER_CONN)
     #define CY_BLE_L2CAP_Q_HEAP                     (CY_BLE_ALIGN_TO_4(CY_BLE_L2CAP_Q_DEPTH_PER_CONN * \
                                                                       CY_BLE_L2CAP_QUEUE_ELEMENT_SIZE * CY_BLE_CONN_COUNT))
-     
+
     #define CY_BLE_MTU_MIN_VALUE                    (23u)
     #define CY_BLE_MTU_MIN_BUFF_NUM                 (3u)
 
@@ -176,7 +176,7 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
     /**
      * GATT MTU Size
      * Maximum Transmission Unit size (bytes) of an attribute to be used in the design.
-     * Valid range is from 23 to 512 bytes. 
+     * Valid range is from 23 to 512 bytes.
      * This value is used to respond to an Exchange MTU request from the GATT Client.
      */
     #define CY_BLE_GATT_MTU                         (CY_BLE_CONFIG_GATT_MTU)
@@ -187,29 +187,29 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
     #define CY_BLE_GATT_DB_MAX_VALUE_LEN            (CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN)
     #define CY_BLE_GATT_MAX_ATTR_LEN                ((CY_BLE_GATT_DB_MAX_VALUE_LEN == 0u) ? (1u) : \
                                                      (CY_BLE_GATT_DB_MAX_VALUE_LEN))
-    
+
     #define CY_BLE_GATT_MAX_ATTR_LEN_PLUS_L2CAP_MEM_EXT                                                               \
                                                     (CY_BLE_ALIGN_TO_4(CY_BLE_GATT_MAX_ATTR_LEN + CY_BLE_MEM_EXT_SZ + \
                                                                        CY_BLE_L2CAP_HDR_SZ))
 
     /* The header length for Prepare Write request */
     #define CY_BLE_GATT_PREPARE_WRITE_HEADER_LEN    (5u)
-    
+
     /* The header length for Write request */
     #define CY_BLE_GATT_WRITE_HEADER_LEN            (3u)
 
     /* The number of characteristics supporting a Reliable Write property */
     #define CY_BLE_GATT_RELIABLE_CHAR_COUNT         (CY_BLE_CONFIG_GATT_RELIABLE_CHAR_COUNT)
 
-    
+
     /* The total length of characteristics with a Reliable Write property */
     #define CY_BLE_GATT_RELIABLE_CHAR_LENGTH        (CY_BLE_CONFIG_GATT_RELIABLE_CHAR_LENGTH)
-    
-    
+
+
     #define CY_BLE_GATT_PREPARE_LENGTH              ((CY_BLE_GATT_RELIABLE_CHAR_LENGTH > CY_BLE_GATT_MAX_ATTR_LEN) ? \
                                                       CY_BLE_GATT_RELIABLE_CHAR_LENGTH : CY_BLE_GATT_MAX_ATTR_LEN)
 
-    
+
     /* The number of buffers required for Prepare Write request based on assumption that the negotiated MTU
      *  size is equal to the CY_BLE_GATT_DEFAULT_MTU and all the characteristics supporting a Reliable Write
      *  property must be written, in order, in a single operation.
@@ -228,36 +228,36 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
     /* The parameter to enable the application to provide a dynamically allocated buffer for Prepare Write request */
     #define CY_BLE_GATT_ENABLE_EXTERNAL_PREP_WRITE_BUFF    \
                                                     (CY_BLE_CONFIG_GATT_ENABLE_EXTERNAL_PREP_WRITE_BUFF)
-      
+
     /* Buffer length for the data received during Prepare Write requests
      * For dynamic memory allocation by the application level, set the EnableExternalPrepWriteBuff parameter
      * in the Expression view of the Advanced tab to true.
      */
-    
+
     #define CY_BLE_GATT_PREPARE_WRITE_BUFF_LEN      ((CY_BLE_GATT_ENABLE_EXTERNAL_PREP_WRITE_BUFF != 0u) ? 0u :  \
                                                      (CY_BLE_GATT_PREPARE_LENGTH_ALIGN +                         \
                                                      (CY_BLE_GATT_MAX_PREPARE_BUFF_COUNT *                       \
                                                       sizeof(cy_stc_ble_gatt_handle_value_offset_param_t))))
-    
-    /** 
+
+    /**
      * The parameter to enable configuration of the L2CAP logical channels
      */
     #define CY_BLE_L2CAP_ENABLE                     (CY_BLE_CONFIG_L2CAP_ENABLE)
-    
+
     #if(CY_BLE_L2CAP_ENABLE != 0u)
          /* L2CAP MTU Size */
         #define CY_BLE_L2CAP_MTU                    (CY_BLE_CONFIG_L2CAP_MTU)
-        
+
         /* L2CAP PMS Size */
         #define CY_BLE_L2CAP_MPS                    (CY_BLE_CONFIG_L2CAP_MPS)
         #define CY_BLE_L2CAP_MTU_MPS                (CY_BLE_L2CAP_MTU / CY_BLE_L2CAP_MPS)
-        
+
         /* Number of L2CAP Logical channels */
         #define CY_BLE_L2CAP_LOGICAL_CHANNEL_COUNT  (CY_BLE_CONFIG_L2CAP_LOGICAL_CHANNEL_COUNT)
-        
+
         /* Number of L2CAP PSMs */
         #define CY_BLE_L2CAP_PSM_COUNT              (CY_BLE_CONFIG_L2CAP_PSM_COUNT)
-        
+
     #else
         #define CY_BLE_L2CAP_MTU                    (0u)
         #define CY_BLE_L2CAP_MPS                    (0u)
@@ -324,7 +324,7 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
     #define CY_BLE_STORE_RESOLVING_LIST_FEATURE     (0u)
     #define CY_BLE_STACK_RESOLVING_LIST_SIZE        (0u)
 #endif /* CY_BLE_MAX_RESOLVABLE_DEVICES != 0u */
- 
+
 #if (CY_BLE_GAP_SECURITY_LEVEL == 0x03)
     #define CY_BLE_SECURE_CONN_FEATURE              (CY_BLE_SECURE_CONN_FEATURE_MASK)
     #define CY_BLE_RAM_SECURE_CONNECTIONS_SIZE      (CY_BLE_RAM_SIZE_SECURE_CONNECTIONS)
@@ -346,12 +346,12 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
 /* Bonded device list flash memory computation */
 #if ((CY_BLE_MODE_PROFILE) && (CY_BLE_BONDING_REQUIREMENT == CY_BLE_BONDING_YES))
     #define CY_BLE_STORE_BONDLIST_FEATURE           (CY_BLE_PERSISTENT_STORE_BONDLIST)
-    
+
     /* Bonded device list flash memory computation. Cypress ID #309591 */
     #define CY_BLE_STACK_BOND_FLASH_SIZE            ((CY_BLE_STACK_ONE_BONDED_DEVICE_SIZE * CY_BLE_MAX_BONDED_DEVICES) + \
                                                      (CY_BLE_STACK_ONE_DEVICE_Q_ENTITY_SIZE *                            \
                                                       (CY_BLE_MAX_CONNECTION_INSTANCES + CY_BLE_MAX_BONDED_DEVICES)))
-    
+
     /* Bonded device list RAM memory computation */
     #define CY_BLE_STACK_BOND_RAM_SIZE              ((CY_BLE_STACK_ONE_BONDED_DEVICE_SIZE +    \
                                                       CY_BLE_STACK_ONE_DEVICE_Q_ENTITY_SIZE) * \
@@ -374,7 +374,7 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
 #if (CY_BLE_TX_POWER_CALIBRATION_ENABLE != 0u)
     #define CY_BLE_TX_POWER_CALIBRATION_FEATURE     (CY_BLE_PERSISTENT_RADIO_CALIBRATION_MASK)
 #else
-    #define CY_BLE_TX_POWER_CALIBRATION_FEATURE     (0u)           
+    #define CY_BLE_TX_POWER_CALIBRATION_FEATURE     (0u)
 #endif  /* CY_BLE_TX_POWER_CALIBRATION_ENABLE CALIBRATION != 0u */
 
 /* BLE Interrupt Notification feature */
@@ -423,7 +423,7 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
  */
     /** The size of GATT DB Attribute states buffer */
     #define CY_BLE_GATT_DB_ATTR_BUFF_SIZE  (CY_BLE_ALIGN_TO_4( (CY_BLE_GATT_DB_INDEX_COUNT / 8u) + CY_BLE_MEM_EXT_SZ + \
-                                                               ((CY_BLE_GATT_DB_INDEX_COUNT % 8u) ? 1u : 0u) ))           
+                                                               ((CY_BLE_GATT_DB_INDEX_COUNT % 8u) ? 1u : 0u) ))
     /** The size of RAM memory required for the Stack */
     #define CY_BLE_STACK_RAM_SIZE    (CY_BLE_ALIGN_TO_4(CY_BLE_DEFAULT_HOST_RAM_SIZE + CY_BLE_LL_CONTROLLER_HEAP_REQ +      \
                                                         CY_BLE_RAM_SECURE_CONNECTIONS_SIZE + CY_BLE_L2CAP_Q_HEAP +          \
@@ -458,18 +458,18 @@ typedef void (* cy_ble_intr_callback_t) (uint32_t interruptType);
 ***************************************/
 /** \cond IGNORE */
 /* Interrupt notification feature structure */
-typedef struct 
+typedef struct
 {
     uint8_t  clientID;
     uint8_t  pktType;
     uint16_t intrRelMask;
-    
-    bool     configFlag;        /* Flag indicates that Controler revice 
+
+    bool     configFlag;        /* Flag indicates that Controler revice
                                  * address of structure */
-                                
+
     uint32_t mask;              /* Mask of interrupts   */
     uint32_t data;              /* Detected interrupt type */
-    
+
 } cy_stc_ble_intr_notify_t;
 /** \endcond */
 
@@ -560,7 +560,7 @@ typedef struct
 
     /** BLESS interrupt configuration */
     const cy_stc_sysint_t *blessIsrConfig;
-    
+
     /**  Configuration parameter for Radio PA calibration */
     cy_stc_ble_mxd_pa_cal_param_t    *paCalConfig;
 
@@ -611,7 +611,7 @@ void Cy_BLE_UnregisterHostPMCallbacks(void);
 
 #if (CY_BLE_MODE_PROFILE)
 /* BLE application IPC notification handler */
-extern cy_ble_app_notify_callback_t Cy_BLE_HostRegisteredCallback;     
+extern cy_ble_app_notify_callback_t Cy_BLE_HostRegisteredCallback;
 #endif /* (CY_BLE_MODE_PROFILE) */
 
 /***************************************
@@ -661,13 +661,13 @@ extern cy_stc_ble_config_t *cy_ble_configPtr;
 * Set default param
 ***************************************/
 /* BLE Interrupt Notification feature in dual stack mode */
-#if ((CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_STACK_MODE_IPC) )       
+#if ((CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_STACK_MODE_IPC) )
     #if !defined (CY_BLE_INTR_NOTIFY_IPC_CHAN)
         #define CY_BLE_INTR_NOTIFY_IPC_CHAN         (15u)
         #define CY_BLE_INTR_NOTIFY_IPC_CHAN_WARNING
     #endif /* !defined (CY_BLE_INTR_NOTIFY_IPC_CHAN) */
 
-    #if !defined (CY_BLE_INTR_NOTIFY_IPC_INTR)                 
+    #if !defined (CY_BLE_INTR_NOTIFY_IPC_INTR)
         #define CY_BLE_INTR_NOTIFY_IPC_INTR         (15u)
         #define CY_BLE_INTR_NOTIFY_IPC_INTR_WARNING
     #endif /* !defined (CY_BLE_INTR_NOTIFY_IPC_INTR) */

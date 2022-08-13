@@ -18,8 +18,7 @@ uint8_t hand;
 int flagNotify = 0;
 int sendFlag = false;
 
-uint8 recv_val = 0;
-bool recv_flag = false;
+
 
 // to send
 struct data 
@@ -28,11 +27,28 @@ struct data
     float32 ADC_volt;
 };
 
+// for the receiving floats
 union {
   float f;
   unsigned char b[4];
-} u;
+} minVolt;
 
+union {
+  float f;
+  unsigned char c[4];
+} maxVolt;
+
+union {
+  float f;
+  unsigned char d[4];
+} startVolt;
+
+// recv cycles
+uint8 numCycles = 0;
+bool recv_flag = false;
+
+// recv dir
+bool dir;
 
 
 
@@ -64,16 +80,37 @@ void genericEventHandler(uint32_t event, void *eventParameter)
             
             // if write parameter is this
             if(CY_BLE_DATA_SERVICE_INBOUND_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle){
-                recv_val = writeReqParameter->handleValPair.value.val[0];
+                // recv_val = writeReqParameter->handleValPair.value.val[0];
                 //printf("recv val is %d\r\n", recv_val);
                 recv_flag = true;
             }
             else if(CY_BLE_DATA_SERVICE_INBOUND_FLOAT_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle) {
-                u.b[3] = writeReqParameter->handleValPair.value.val[3];
-                u.b[2] = writeReqParameter->handleValPair.value.val[2];
-                u.b[1] = writeReqParameter->handleValPair.value.val[1];
-                u.b[0] = writeReqParameter->handleValPair.value.val[0];
-                printf("inbound float is %f\r\n", u.f);
+                // min voltage
+                minVolt.b[3] = writeReqParameter->handleValPair.value.val[3];
+                minVolt.b[2] = writeReqParameter->handleValPair.value.val[2];
+                minVolt.b[1] = writeReqParameter->handleValPair.value.val[1];
+                minVolt.b[0] = writeReqParameter->handleValPair.value.val[0];
+                
+                // max voltage
+                maxVolt.c[3] = writeReqParameter->handleValPair.value.val[7];
+                maxVolt.c[2] = writeReqParameter->handleValPair.value.val[6];
+                maxVolt.c[1] = writeReqParameter->handleValPair.value.val[5];
+                maxVolt.c[0] = writeReqParameter->handleValPair.value.val[4];
+                
+                // start
+                startVolt.d[3] = writeReqParameter->handleValPair.value.val[11];
+                startVolt.d[2] = writeReqParameter->handleValPair.value.val[10];
+                startVolt.d[1] = writeReqParameter->handleValPair.value.val[9];
+                startVolt.d[0] = writeReqParameter->handleValPair.value.val[8];
+                
+                // direction
+                dir = writeReqParameter->handleValPair.value.val[12];
+                
+                // number of cycles
+                numCycles = writeReqParameter->handleValPair.value.val[13];
+                
+                
+                printf("min Volt: %f \t max Volt: %f \t start volt: %f \t dir: %d \t numCycle: %d \r\n", minVolt.f, maxVolt.f, startVolt.f, dir, numCycles);
             }
 
             
@@ -177,7 +214,7 @@ int main(void)
             }
         }
         else if (recv_flag == true) {
-            printf("value received is: %d\r\n", recv_val);
+            //printf("value received is: %d\r\n", recv_val);
             recv_flag = false;
         }
         

@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_uds.c
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  This file contains the source code for the User Data Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -177,7 +177,7 @@ cy_en_ble_api_result_t Cy_BLE_UDS_Init(cy_stc_ble_uds_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_UDS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-    
+
     Cy_BLE_UDS_ApplCallback = callbackFunc;
     if(cy_ble_udsConfigPtr != NULL)
     {
@@ -187,7 +187,7 @@ cy_en_ble_api_result_t Cy_BLE_UDS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-    
+
     return(apiResult);
 }
 
@@ -602,7 +602,7 @@ static void Cy_BLE_UDSS_ReadRequestEventHandler(cy_stc_ble_gatts_char_val_read_r
             locCharValue.charIndex++)
         {
             /* Omit UCP characteristic */
-            if( (locCharValue.charIndex != CY_BLE_UDS_UCP) && 
+            if( (locCharValue.charIndex != CY_BLE_UDS_UCP) &&
                 (eventParam->attrHandle == cy_ble_udsConfigPtr->udss->charInfo[locCharValue.charIndex].charHandle))
             {
                 Cy_BLE_UDS_ApplCallback((uint32_t)CY_BLE_EVT_UDSS_READ_CHAR, &locCharValue);
@@ -785,7 +785,7 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_UDSS_WriteEventHandler(cy_stc_ble_gatts_
 }
 
 /******************************************************************************
-* Function Name: Cy_BLE_UDSS_PrepareWriteRequestEventHandler 
+* Function Name: Cy_BLE_UDSS_PrepareWriteRequestEventHandler
 ***************************************************************************//**
 *
 *  Handles the Prepare Write Request Event.
@@ -1178,7 +1178,7 @@ cy_en_ble_api_result_t Cy_BLE_UDSC_GetLongCharacteristicValue(cy_stc_ble_conn_ha
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if(((charIndex > CY_BLE_UDS_EML) && (charIndex != CY_BLE_UDS_LNG)) || (attrSize == 0u) || 
+    else if(((charIndex > CY_BLE_UDS_EML) && (charIndex != CY_BLE_UDS_LNG)) || (attrSize == 0u) ||
             (attrValue == NULL) || (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -1739,8 +1739,8 @@ static void Cy_BLE_UDSC_ReadLongRespEventHandler(const cy_stc_ble_gattc_read_rsp
         for(locCharValue.charIndex = CY_BLE_UDS_FNM; locCharValue.charIndex < CY_BLE_UDS_CHAR_COUNT;
             locCharValue.charIndex++)
         {
-            bool isLongChar = ( (locCharValue.charIndex < CY_BLE_UDS_AGE) || 
-                                (locCharValue.charIndex == CY_BLE_UDS_LNG) ) ? true : false; 
+            bool isLongChar = ( (locCharValue.charIndex < CY_BLE_UDS_AGE) ||
+                                (locCharValue.charIndex == CY_BLE_UDS_LNG) ) ? true : false;
 
             if( (cy_ble_udsc[discIdx].charInfo[locCharValue.charIndex].valueHandle == cy_ble_udscReqHandle[discIdx]) &&
                 (isLongChar == true) )

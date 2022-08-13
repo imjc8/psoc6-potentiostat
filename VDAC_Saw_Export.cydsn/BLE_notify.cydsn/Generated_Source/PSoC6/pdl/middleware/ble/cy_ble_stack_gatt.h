@@ -1,17 +1,17 @@
 /*******************************************************************************
 * \file cy_ble_stack_gatt.h
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  This file contains declarations of generic public BLE APIs of Generic Attribute Profile.
 *  Also specifies the defines, constants, and data structures required for the APIs.
-* 
+*
 * Related Document:
 *  BLE Standard Spec - CoreV4.2, CSS, CSAs, ESR05, ESR06
-* 
+*
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation. All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation. All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -159,7 +159,7 @@ typedef enum
 
     /**Signed Write Command PDU */
     CY_BLE_GATT_SIGNED_WRITE_CMD = 0xD2u,
-    
+
     /** Unknown or Unhandled PDU */
     CY_BLE_GATT_UNKNOWN_PDU_IND = 0xFFu
 
@@ -175,11 +175,11 @@ typedef enum
        ATT request PDU is invalid. */
     CY_BLE_GATT_ERR_INVALID_HANDLE = 0x0001u,
 
-    /** Read Not Permitted error code is used when reading the value of an 
+    /** Read Not Permitted error code is used when reading the value of an
        ATT handle is not permitted on the ATT server. */
     CY_BLE_GATT_ERR_READ_NOT_PERMITTED,
 
-    /** Write Not Permitted error code is used when writing the value of an 
+    /** Write Not Permitted error code is used when writing the value of an
        ATT handle is not permitted on the ATT Server. */
     CY_BLE_GATT_ERR_WRITE_NOT_PERMITTED,
 
@@ -254,27 +254,27 @@ typedef enum
     /** Insufficient Resources error code is used when the ATT server does not have
       enough resources such as memory, etc., to process the request from the client. */
     CY_BLE_GATT_ERR_INSUFFICIENT_RESOURCE = 0x11u,
-    
+
     /** Other ATT Error Codes -
      * Reserved: 0x12 to 0x7F are reserved for future use.
      * Application Specific Error Code Range: 0x80 to 0x9F
-     * Reserved: 0xA0 to 0xDF 
-     * Common Profile & Service Error Code : 0xE0 to 0xFF 
+     * Reserved: 0xA0 to 0xDF
+     * Common Profile & Service Error Code : 0xE0 to 0xFF
      */
 
     /** Heart Rate Control Point Not Supported error code is used when a unsupported
        code is written into Heart Rate service Control Point characteristic. */
     CY_BLE_GATT_ERR_HEART_RATE_CONTROL_POINT_NOT_SUPPORTED = 0x80u,
-    
+
     /** The user data access is not permitted (i.e., the user has not given
        consent to access the data). */
     CY_BLE_GATT_ERR_USER_DATA_ACCESS_NOT_PERMITTED = 0x80u,
-    
-    /** The notifications of the Cycling Power Vector characteristic cannot be sent 
+
+    /** The notifications of the Cycling Power Vector characteristic cannot be sent
        due to inappropriate connection parameters. */
     CY_BLE_GATT_ERR_CPS_INAPPROPRIATE_CONNECTION_PARAMETERS = 0x80u,
 
-    /** The value is considered invalid and outside of the range allowed by 
+    /** The value is considered invalid and outside of the range allowed by
        the characteristic. */
     CY_BLE_GATT_ERR_HTS_OUT_OF_RANGE = 0x80u,
 
@@ -282,57 +282,57 @@ typedef enum
        request cannot be serviced because an operation that has been previously
        triggered is still in progress. */
     CY_BLE_GATTS_ERR_PROCEDURE_ALREADY_IN_PROGRESS = 0x80u,
-    
+
     /** The Op Code Not Supported error code is used when an unsupported
        Op Code is written into the Control Point characteristic. */
     CY_BLE_GATT_ERR_OP_CODE_NOT_SUPPORTED = 0x80u,
-    
-    /** The Missing CRC error code is used when the CRC is missing in the 
+
+    /** The Missing CRC error code is used when the CRC is missing in the
        incoming characteristic value. */
     CY_BLE_GATT_ERR_MISSING_CRC = 0x80u,
-    
+
     /** Client Characteristic Configuration Descriptor Improperly Configured error
        code is used when a Client Characteristic Configuration descriptor is not
        configured according to the requirements of the profile or service. */
     CY_BLE_GATTS_ERR_CCCD_IMPROPERLY_CONFIGURED = 0x81u,
-    
-    /** The Operation Failed error code is used when the device is unable to 
+
+    /** The Operation Failed error code is used when the device is unable to
        complete a procedure for any reason. */
     CY_BLE_GATTS_ERR_OPERATION_FAILED = 0x81u,
-    
-    /** The Invalid CRC error code is used when the CRC is invalid in the 
+
+    /** The Invalid CRC error code is used when the CRC is invalid in the
        incoming characteristic value. */
     CY_BLE_GATT_ERR_INVALID_CRC = 0x81u,
-    
+
     /** An HTTP Control Point request cannot be serviced because content of the URI,
         the HTTP Headers, or the HTTP Entity Body characteristics are not set
         correctly. */
     CY_BLE_GATTS_ERR_HPS_INVALID_REQUEST = 0x81u,
-    
+
     /** Network connection not available. */
     CY_BLE_GATTS_ERR_NETWORK_NOT_AVAILABLE = 0x82u,
-    
+
     /** Command Not Supported is returned by the Alert Notification Server when the Client
        sends an incorrect value of the Command ID or Category ID of to the Alert
        Notification Control Point Characteristic. */
     CY_BLE_GATT_ERR_ANS_COMMAND_NOT_SUPPORTED = 0xA0u,
-    
+
     /** Unknown command error code is returned by the Apple Notification Center Server when the Client
-       sends unknown command value of the Apple Notification Center Service Control Point 
+       sends unknown command value of the Apple Notification Center Service Control Point
        Characteristic. */
     CY_BLE_GATT_ERR_ANCS_UNKNOWN_COMMAND = 0xA0u,
-    
+
     /** Invalid command error code is returned by the Apple Notification Center Server when the Client
-       sends an invalid command value of the Apple Notification Center Service Control Point 
+       sends an invalid command value of the Apple Notification Center Service Control Point
        Characteristic. */
     CY_BLE_GATT_ERR_ANCS_INVALID_COMMAND = 0xA1u,
-    
+
     /** Invalid parameter error code is returned by the Apple Notification Center Server when the Client
-       sends an invalid parameter value of the Apple Notification Center Service Control Point 
+       sends an invalid parameter value of the Apple Notification Center Service Control Point
        Characteristic. */
     CY_BLE_GATT_ERR_ANCS_INVALID_PARAMETER = 0xA2u,
-    
-    /** Action failed error code is returned by the Apple Notification Center Server when some 
+
+    /** Action failed error code is returned by the Apple Notification Center Server when some
        Apple Notification Center Service Control Point Characteristic command processing goes wrong. */
     CY_BLE_GATT_ERR_ANCS_ACTION_FAILED = 0xA3u,
 
@@ -345,7 +345,7 @@ typedef enum
        request cannot be serviced because an operation that has been previously
        triggered is still in progress. */
     CY_BLE_GATT_ERR_PROCEDURE_ALREADY_IN_PROGRESS = 0xFEu,
-    
+
     /** Out of Range error code is used when an attribute value is out of range as
        defined by a profile or service specification. */
     CY_BLE_GATT_ERR_OUT_OF_RANGE = 0xFFu
@@ -386,19 +386,19 @@ typedef uint16_t        cy_ble_gatt_db_attr_handle_t;
 
     Apart from data and length, actual length is needed so that the GATT can
     indicate to the application the actual length of data processed for a PDU.
-  
+
     This is used in multiple commands - see CY_BLE_GATT_READ_RSP,
     CY_BLE_GATT_FIND_BY_TYPE_VALUE_REQ, CY_BLE_GATT_READ_BLOB_RSP, etc.
-  
+
     In GATT Read Response for example, if the attribute length is 30 octets
     and the GATT MTU is 23 octets, then only first 22 octets can be sent by the GATT.
     Therefore the actual length will be 22 (GATT MTU-1).
     However, if the GATT MTU is configured to be 54 for example, all 30 octets
     can be transmitted and the actual length will be 30.
-    
+
     Actual length should be derived as :
     actualLen = minimum(length, (GATT MTU-1))
-  
+
     In case multiple values are being packed, the actual length processed will
     depend on the available GATT MTU. */
 typedef struct
@@ -411,8 +411,8 @@ typedef struct
 
     /** Output parameter indicating actual length packed and sent over the air. Actual length
        can be less than or equal to the 'len' parameter values.
-       Each GATT procedure defines different lengths of data that can be transmitted 
-       over the air. If the application sends more than that, not all of the data will 
+       Each GATT procedure defines different lengths of data that can be transmitted
+       over the air. If the application sends more than that, not all of the data will
        be transmitted. */
     uint16_t   actualLen;
 
@@ -445,7 +445,7 @@ typedef struct
 {
     /** Connection handle */
     cy_stc_ble_conn_handle_t     connHandle;
-    
+
     /** Client/Server Rx/Tx GATT MTU Size */
     uint16_t                    mtu;
 
@@ -470,7 +470,7 @@ typedef struct
 
     /** Connection handle */
     cy_stc_ble_conn_handle_t                    connHandle;
-    
+
 }cy_stc_ble_gatt_write_param_t;
 
 /** Error information */
@@ -484,29 +484,29 @@ typedef struct
 
     /** Error Code describing cause of error */
     cy_en_ble_gatt_err_code_t           errorCode;
-    
+
 }cy_stc_ble_gatt_err_info_t;
 
 /** Error parameter*/
 typedef struct
 {
-    /** Connection handle */ 
+    /** Connection handle */
     cy_stc_ble_conn_handle_t             connHandle;
 
     /** Error information */
     cy_stc_ble_gatt_err_info_t           errInfo;
-    
+
 }cy_stc_ble_gatt_err_param_t;
 
 /** Prepare Write parameter */
 typedef struct
 {
     /** handle value offset pair */
-    cy_stc_ble_gatt_handle_value_offset_param_t  handleValOffsetPair; 
+    cy_stc_ble_gatt_handle_value_offset_param_t  handleValOffsetPair;
 
     /** Connection handle */
     cy_stc_ble_conn_handle_t                     connHandle;
-    
+
 }cy_stc_ble_gatt_prep_write_param_t;
 
 /* --------------------------Structure corresponding to events-------------------- */
@@ -520,19 +520,19 @@ typedef struct
     uint8_t                 * queueBuffer;
 
     /** length of attribute value in bytes. This value can be the maximum attribute value length
-        or sum of value lengths that support a long write. The value should be 
+        or sum of value lengths that support a long write. The value should be
         multiple of a 32-bit unsigned integer. */
     uint16_t                    totalAttrValueLength;
 
     /** Size of queueBuffer buffer. The application may decide the size based on
         (totalAttrValueLength) /(negotiated or default MTU size - 5).
-        In case of a reliable write, queue depth should at least be equal to number of handles that have 
+        In case of a reliable write, queue depth should at least be equal to number of handles that have
         reliable write support. */
     uint16_t                     prepareWriteQueueSize;
 
     /** Connection Handle */
     cy_stc_ble_conn_handle_t     connHandle;
-    
+
 } cy_stc_ble_prepare_write_request_memory_t;
 
 /** @} */
@@ -548,18 +548,18 @@ typedef struct
 /******************************************************************************
 * Function Name: Cy_BLE_GATT_GetMtuSize
 ***************************************************************************//**
-* 
+*
 *  This function provides the GATT MTU size used by BLE Stack. If this function
-*  is called after the GATT MTU Exchange procedure, it will provide the 
-*  negotiated MTU size (Minimum(Server Rx MTU, Client Rx MTU)), or else 
-*  it will provide the default MTU size (23 bytes). 
+*  is called after the GATT MTU Exchange procedure, it will provide the
+*  negotiated MTU size (Minimum(Server Rx MTU, Client Rx MTU)), or else
+*  it will provide the default MTU size (23 bytes).
 *  This is a blocking function. No event is generated on calling this function.
-*     
+*
 *
 *  \param param: A pointer of type 'cy_stc_ble_gatt_xchg_mtu_param_t'.
 *             param->connHandle: input parameter <br>
 *             param->mtu: output parameter
-* 
+*
 * \return
 *  cy_en_ble_api_result_t : Return value indicates whether the function succeeded or
 *  failed. Following are the possible error codes.
@@ -568,7 +568,7 @@ typedef struct
 *   ------------                     | -----------
 *   CY_BLE_SUCCESS                   | On successful operation
 *   CY_BLE_ERROR_INVALID_PARAMETER   | If a NULL or an invalid connection handle was passed
-* 
+*
 ******************************************************************************/
 cy_en_ble_api_result_t Cy_BLE_GATT_GetMtuSize
 (

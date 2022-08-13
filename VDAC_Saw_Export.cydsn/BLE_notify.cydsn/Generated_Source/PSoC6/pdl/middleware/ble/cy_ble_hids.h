@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_hids.h
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  Contains the function prototypes and constants for HID service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -85,8 +85,8 @@ typedef enum
     CY_BLE_HIDS_REPORT             = 7u,                   /**< Report Characteristic index */
     CY_BLE_HIDS_REPORT_END =                               /**< Index of last Report Char */
              CY_BLE_HIDS_REPORT + CY_BLE_HIDS_REPORT_COUNT - 1u,
-     CY_BLE_HIDS_CHAR_COUNT = CY_BLE_HIDS_REPORT_END + 1u   /**< Total count of characteristics */        
-                                
+     CY_BLE_HIDS_CHAR_COUNT = CY_BLE_HIDS_REPORT_END + 1u   /**< Total count of characteristics */
+
 }cy_en_ble_hids_char_index_t;
 
 /** HID Service Characteristic Descriptors indexes */

@@ -1,16 +1,16 @@
 /*******************************************************************************
 * \file cy_ble_stack_host_error.h
-* \version 2.60
+* \version 2.70
 *
 * \brief
 *  This file contains all the spec defined error code in Core Spec 5.0, Vol2, Part D
-* 
+*
 * Related Document:
 *  BLE Standard Spec - CoreV5.0
-* 
+*
 ********************************************************************************
 * \copyright
-* Copyright 2017-2020, Cypress Semiconductor Corporation. All rights reserved.
+* Copyright 2017-2021, Cypress Semiconductor Corporation. All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
