@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_lls.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  This file contains the source code for the Link Loss Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -153,7 +153,7 @@ cy_en_ble_api_result_t Cy_BLE_LLS_Init(cy_stc_ble_lls_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_LLS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_LLS_ApplCallback = callbackFunc;
     if(cy_ble_llsConfigPtr != NULL)
     {
@@ -163,7 +163,7 @@ cy_en_ble_api_result_t Cy_BLE_LLS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 

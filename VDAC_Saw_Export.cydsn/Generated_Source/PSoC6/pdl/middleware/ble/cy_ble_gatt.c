@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_gatt.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  This file contains the source code for the GATT API of the BLE Middleware.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -125,11 +125,11 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteEventHandler(cy_stc_ble_gatts_write_
 * Function Name: Cy_BLE_GATTS_WriteAttributeValueCCCD
 ***************************************************************************//**
 *
-*  This function extends Cy_BLE_GATTS_WriteAttributeValue() API to support
+*  This function extends Cy_BLE_GATTS_WriteAttributeValue() API to support 
 *  storing of separate CCCD values for each (separate) connections.
 *
 *  This function is used to write to the value field of the specified attribute
-*  in the GATT database of a GATT Server. If attribute is CCCD, the value is
+*  in the GATT database of a GATT Server. If attribute is CCCD, the value is 
 *  stored in specific CCCD storages.
 *  This is a blocking function. No event is generated on calling this function.
 *
@@ -172,7 +172,7 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValueCCCD(cy_stc_ble_gatts_
         (void)memcpy((void*)&cy_ble_attValuesCccdMultiple[param->connHandle.attId]
                      [CY_BLE_GATT_DB_ATTR_GET_CCCD_IDX(param->handleValuePair.attrHandle)],
                      (void*)param->handleValuePair.value.val, (uint32_t)param->handleValuePair.value.len);
-
+        
     #if ((CY_BLE_GAP_ROLE_PERIPHERAL || CY_BLE_GAP_ROLE_CENTRAL) && (CY_BLE_BONDING_REQUIREMENT == CY_BLE_BONDING_YES))
         /* Set flag to store bonding data to flash */
         if(cy_ble_peerBonding[param->connHandle.attId] == CY_BLE_GAP_BONDING)
@@ -191,11 +191,11 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValueCCCD(cy_stc_ble_gatts_
 * Function Name: Cy_BLE_GATTS_ReadAttributeValueCCCD
 ***************************************************************************//**
 *
-*  This function extends Cy_BLE_GATTS_ReadAttributeValue() API to support
+*  This function extends Cy_BLE_GATTS_ReadAttributeValue() API to support 
 *  re-storing of separate CCCD values for each(separate) connections.
 *
 *  This function is used to read the value field of the specified attribute from
-*  the GATT database in a GATT Server. If attribute is CCCD, the value is
+*  the GATT database in a GATT Server. If attribute is CCCD, the value is 
 *  restored from specific CCCD storages.
 *  This is a blocking function. No event is generated on calling this function.
 *
@@ -297,16 +297,16 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValueCCCDReqHandler(const cy
 * Function Name: Cy_BLE_GATTS_WriteAttributeValueLocal
 ***************************************************************************//**
 *
-*  Wrapper API for Cy_BLE_GATTS_WriteAttributeValue to trigger a locally
+*  Wrapper API for Cy_BLE_GATTS_WriteAttributeValue to trigger a locally 
 *  initiated attribute value write operation to GATT database
-*
+*    
 *  This function is used to write to the value field of the specified attribute
-*  in the GATT database of a GATT Server.
+*  in the GATT database of a GATT Server. 
 *
 *  Note: this function doesn't write CCCD attribute value.
 *
 *  This is a blocking function. No event is generated on calling this function.
-*
+*   
 *  \param handleValuePair: The pointer to the cy_stc_ble_gatt_handle_value_pair_t
 *                          structure.
 *
@@ -320,31 +320,31 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValueCCCDReqHandler(const cy
 *  CY_BLE_GATT_ERR_INVALID_HANDLE              | handleValuePair.attrHandle is not valid.
 *  CY_BLE_GATT_ERR_UNLIKELY_ERROR              | Invalid arguments passed.
 *  CY_BLE_GATT_ERR_INVALID_ATTRIBUTE_LEN       | handleValuePair.value.len is invalid.
-*
+*    
 ******************************************************************************/
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValueLocal(const cy_stc_ble_gatt_handle_value_pair_t *handleValuePair)
 {
     cy_en_ble_gatt_err_code_t ret;
-
+        
     if(handleValuePair == NULL)
     {
         ret = CY_BLE_GATT_ERR_UNLIKELY_ERROR;
     }
     else if(CY_BLE_GATT_DB_ATTR_CHECK_PRPTY(handleValuePair->attrHandle, CY_BLE_GATT_DB_CCCD_ATTR))
     {
-        ret = CY_BLE_GATT_ERR_INVALID_HANDLE;
+        ret = CY_BLE_GATT_ERR_INVALID_HANDLE;            
     }
     else
     {
-        cy_stc_ble_gatts_db_attr_val_info_t  param =
+        cy_stc_ble_gatts_db_attr_val_info_t  param = 
         {
             .handleValuePair = *handleValuePair,
             .flags           = CY_BLE_GATT_DB_LOCALLY_INITIATED
         };
         ret = Cy_BLE_GATTS_WriteAttributeValueCCCD(&param);
     }
-
-    return (ret);
+    
+    return (ret);    
 }
 
 
@@ -352,14 +352,14 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValueLocal(const cy_stc_ble
 * Function Name: Cy_BLE_GATTS_WriteAttributeValuePeer
 ***************************************************************************//**
 *
-*  Wrapper API for Cy_BLE_GATTS_WriteAttributeValue() to trigger a peer initiated
+*  Wrapper API for Cy_BLE_GATTS_WriteAttributeValue() to trigger a peer initiated 
 *  attribute value write operation to GATT database
 *
 *  This function is used to write to the value field of the specified attribute
-*  in the GATT database of a GATT Server by a peer device.
+*  in the GATT database of a GATT Server by a peer device. 
 *  If the attribute is CCCD, the value is stored in specific CCCD storages. Writing
 *  a CCCD value must be executed in the connected state.
-*  This is a blocking function. No event is generated on calling this function.
+*  This is a blocking function. No event is generated on calling this function.  
 *
 *  If a peer device connected to the GATT Server initiates a Write operation,
 *  this function is executed on the GATT Server. During such a call, the function
@@ -385,21 +385,21 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValueLocal(const cy_stc_ble
 *  CY_BLE_GATT_ERR_INSUFFICIENT_AUTHENTICATION | The link is un-authenticated (Peer Initiated).
 *  CY_BLE_GATT_ERR_INSUFFICIENT_AUTHORIZATION  | The peer client is not authorized (Peer Initiated).
 *  CY_BLE_GATT_ERR_INVALID_ATTRIBUTE_LEN       | handleValuePair.value.len is invalid.
-*
+*    
 ******************************************************************************/
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValuePeer(cy_stc_ble_conn_handle_t *connHandle,
                                                                const cy_stc_ble_gatt_handle_value_pair_t *handleValuePair)
 {
     cy_en_ble_gatt_err_code_t ret;
-
-
+   
+    
     if((handleValuePair == NULL) || (connHandle == NULL))
     {
         ret = CY_BLE_GATT_ERR_UNLIKELY_ERROR;
     }
     else
     {
-        cy_stc_ble_gatts_db_attr_val_info_t  param =
+        cy_stc_ble_gatts_db_attr_val_info_t  param = 
         {
             .connHandle      = *connHandle,
             .handleValuePair = *handleValuePair,
@@ -407,8 +407,8 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValuePeer(cy_stc_ble_conn_h
         };
         ret = Cy_BLE_GATTS_WriteAttributeValueCCCD(&param);
     }
-
-    return (ret);
+    
+    return (ret);    
 }
 
 
@@ -420,13 +420,13 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_WriteAttributeValuePeer(cy_stc_ble_conn_h
 *  attribute value read operation to GATT database
 *
 *  This function is used to read the value field of the specified attribute from
-*  the GATT database in a GATT Server. If the attribute is CCCD, the value is
-*  restored from specific CCCD storages. Reading a CCCD value must be executed
+*  the GATT database in a GATT Server. If the attribute is CCCD, the value is 
+*  restored from specific CCCD storages. Reading a CCCD value must be executed 
 *  in the connected state.
 *  This is a blocking function. No event is generated on calling this function.
 *
 *  \param connHandle: The pointer to the connection handle. This parameter
-*                     is required only for the Read CCCD attribute.
+*                     is required only for the Read CCCD attribute. 
 *                     If you read a non-CCCD attribute, the connection handle
 *                     can be NULL.
 *
@@ -449,12 +449,12 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValueLocal(cy_stc_ble_conn_h
 {
     cy_en_ble_gatt_err_code_t ret;
     cy_stc_ble_gatts_db_attr_val_info_t  param = {.flags = CY_BLE_GATT_DB_LOCALLY_INITIATED };
-
+    
     if((handleValuePair == NULL) ||
        (CY_BLE_GATT_DB_ATTR_CHECK_PRPTY(handleValuePair->attrHandle, CY_BLE_GATT_DB_CCCD_ATTR) &&
        (connHandle == NULL)))
     {
-        ret = CY_BLE_GATT_ERR_UNLIKELY_ERROR;
+        ret = CY_BLE_GATT_ERR_UNLIKELY_ERROR;  
     }
     else
     {
@@ -462,12 +462,12 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValueLocal(cy_stc_ble_conn_h
         {
             param.connHandle  = *connHandle;
         }
-
+               
         param.handleValuePair = *handleValuePair;
         ret = Cy_BLE_GATTS_ReadAttributeValueCCCD(&param);
     }
-
-    return (ret);
+    
+    return (ret);    
 }
 
 
@@ -475,11 +475,11 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValueLocal(cy_stc_ble_conn_h
 * Function Name: Cy_BLE_GATTS_ReadAttributeValuePeer
 ***************************************************************************//**
 *
-*  Wrapper API for Cy_BLE_GATTS_ReadAttributeValue() to trigger a peer initiated
+*  Wrapper API for Cy_BLE_GATTS_ReadAttributeValue() to trigger a peer initiated 
 *  attribute value read operation to GATT database.
 *
 *  This function is used to read the value field of the specified attribute from
-*  the GATT database in a GATT Server by a peer device.
+*  the GATT database in a GATT Server by a peer device. 
 *  If the attribute is CCCD, the value is restored from specific CCCD storages.
 *  Reading a CCCD value must be executed in the connected state.
 *  This is a blocking function. No event is generated on calling this function.
@@ -505,20 +505,20 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValueLocal(cy_stc_ble_conn_h
 *  CY_BLE_GATT_ERR_INSUFFICIENT_ENC_KEY_SIZE   | The link is encrypted with an insufficient key size (Peer Initiated).
 *  CY_BLE_GATT_ERR_INSUFFICIENT_AUTHENTICATION | The link is un-authenticated (Peer Initiated).
 *  CY_BLE_GATT_ERR_INSUFFICIENT_AUTHORIZATION  | The peer client is not authorized (Peer Initiated).
-*
+* 
 ******************************************************************************/
 cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValuePeer(cy_stc_ble_conn_handle_t *connHandle,
                                                               const  cy_stc_ble_gatt_handle_value_pair_t *handleValuePair)
 {
     cy_en_ble_gatt_err_code_t ret;
-
+       
     if((handleValuePair == NULL) || (connHandle == NULL))
     {
         ret = CY_BLE_GATT_ERR_UNLIKELY_ERROR;
     }
     else
     {
-        cy_stc_ble_gatts_db_attr_val_info_t  param =
+        cy_stc_ble_gatts_db_attr_val_info_t  param = 
         {
             .connHandle      = *connHandle,
             .handleValuePair = *handleValuePair,
@@ -526,43 +526,43 @@ cy_en_ble_gatt_err_code_t Cy_BLE_GATTS_ReadAttributeValuePeer(cy_stc_ble_conn_ha
         };
         ret = Cy_BLE_GATTS_ReadAttributeValueCCCD(&param);
     }
-
-    return (ret);
+    
+    return (ret);    
 }
 /** \cond IGNORE */
 /******************************************************************************
 * Function Name: Cy_BLE_GATTS_ReadCccd
 ***************************************************************************//**
 *
-*  This function is used to read CCCD value. If the attrHandle is
-*  the characteristic type, the function loops through all descriptors and try
-*  to find CCCD.
+*  This function is used to read CCCD value. If the attrHandle is 
+*  the characteristic type, the function loops through all descriptors and try 
+*  to find CCCD. 
 *
 *  \param connHandle: The pointer to the connection handle.
 *  \param attrHandle: The attribute handle of the CCCD descriptor or
 *                     the characteristic which includes the CCCD descriptor.
 *  \param *value:     The pointer to the location where the CCCD descriptor
 *                     value data should be stored.
-*
+* 
 *  \return
-*  \ref cy_en_ble_api_result_t : The return value indicates if the function
+*  \ref cy_en_ble_api_result_t : The return value indicates if the function 
 *   succeeded or failed. The following are possible error codes.
 *
 *  Errors codes                   | Description
 *  ------------                   | -----------
 *  CY_BLE_SUCCESS                 | The request was handled successfully.
-*  CY_BLE_ERROR_NO_DEVICE_ENTITY  | If there is no connection for
+*  CY_BLE_ERROR_NO_DEVICE_ENTITY  | If there is no connection for 
 *                                 | corresponding bdHandle.
 *  CY_BLE_ERROR_INVALID_PARAMETER | Validation of the input parameter failed.
-*
+* 
 ******************************************************************************/
 cy_en_ble_api_result_t Cy_BLE_GATTS_ReadCccd(cy_stc_ble_conn_handle_t *connHandle,
-                                             cy_ble_gatt_db_attr_handle_t attrHandle,
+                                             cy_ble_gatt_db_attr_handle_t attrHandle, 
                                              uint16_t *value)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
     bool isCccd = false;
-
+    
     if(connHandle == NULL)
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -573,23 +573,23 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_ReadCccd(cy_stc_ble_conn_handle_t *connHandl
     }
     else if((attrHandle <= CY_BLE_GATT_DB_INDEX_COUNT) && (connHandle->attId < CY_BLE_CONN_COUNT))
     {
-        uint32_t i;
+        uint32_t i;     
         for( i = 0u; (i <= ((uint32_t)CY_BLE_GATT_DB_GET_END_HANDLE(attrHandle) - attrHandle)) && (isCccd == false) ; i++)
         {
-            if((CY_BLE_GATT_DB_ATTR_CHECK_PRPTY(attrHandle + i, CY_BLE_GATT_DB_CCCD_ATTR)) &&
+            if((CY_BLE_GATT_DB_ATTR_CHECK_PRPTY(attrHandle + i, CY_BLE_GATT_DB_CCCD_ATTR)) && 
                (CY_BLE_GATT_DB_ATTR_GET_CCCD_ATTR_GEN_PTR(connHandle->attId, attrHandle + i) != NULL))
             {
                 /* Read the CCCD value */
                 *value = *CY_BLE_GATT_DB_ATTR_GET_CCCD_ATTR_GEN_PTR(connHandle->attId, attrHandle + i);
-                isCccd = true;
+                isCccd = true;  
             }
-        }
-    }
+        } 
+    }   
     else
     {
-        /* Do nothing. */
+        /* Do nothing. */       
     }
-
+    
     return((isCccd == true) ? CY_BLE_SUCCESS : apiResult);
 }
 /** \endcond */
@@ -598,10 +598,10 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_ReadCccd(cy_stc_ble_conn_handle_t *connHandl
 * Function Name: Cy_BLE_GATTS_IsNotificationEnabled
 ***************************************************************************//**
 *
-*  Wrapper API to read CCCD attribute value from the local GATT database and
+*  Wrapper API to read CCCD attribute value from the local GATT database and 
 *  check if the notification is enabled by the peer device.
 *
-*  This function is used to be aware of the notification status (enabled/disabled)
+*  This function is used to be aware of the notification status (enabled/disabled) 
 *
 *  \param connHandle: The pointer to the connection handle.
 *  \param attrHandle: The attribute handle of the CCCD descriptor or
@@ -610,7 +610,7 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_ReadCccd(cy_stc_ble_conn_handle_t *connHandl
 *  \return
 *   * true  - Notification is enabled.
 *   * false - Notification is disabled or if reading CCCD returned an error.
-*
+* 
 ******************************************************************************/
 bool Cy_BLE_GATTS_IsNotificationEnabled(cy_stc_ble_conn_handle_t *connHandle,
                                         cy_ble_gatt_db_attr_handle_t attrHandle)
@@ -620,11 +620,11 @@ bool Cy_BLE_GATTS_IsNotificationEnabled(cy_stc_ble_conn_handle_t *connHandle,
 
     /* Read CCCD and check the notification bit */
     if(Cy_BLE_GATTS_ReadCccd(connHandle, attrHandle, &cccdValue) == CY_BLE_SUCCESS)
-    {
-        ret = ((cccdValue & CY_BLE_CCCD_NOTIFICATION )!= 0u) ? true : false;
+    {     
+        ret = ((cccdValue & CY_BLE_CCCD_NOTIFICATION )!= 0u) ? true : false;      
     }
-
-    return (ret);
+    
+    return (ret); 
 }
 
 
@@ -635,7 +635,7 @@ bool Cy_BLE_GATTS_IsNotificationEnabled(cy_stc_ble_conn_handle_t *connHandle,
 *  Wrapper API to read CCCD attribute value from the local GATT database and
 *  check if the indication is enabled by the peer device.
 *
-*  This function is used to be aware of the indication status (enabled/disabled)
+*  This function is used to be aware of the indication status (enabled/disabled) 
 *
 *  \param connHandle: The pointer to the connection handle.
 *  \param attrHandle: The attribute handle of the CCCD descriptor or
@@ -644,28 +644,28 @@ bool Cy_BLE_GATTS_IsNotificationEnabled(cy_stc_ble_conn_handle_t *connHandle,
 *  \return
 *  * true  - Indication is enabled.
 *  * false - Indication is disabled or reading CCCD returned an error.
-*
+* 
 ******************************************************************************/
 bool Cy_BLE_GATTS_IsIndicationEnabled(cy_stc_ble_conn_handle_t *connHandle,
                                       cy_ble_gatt_db_attr_handle_t attrHandle)
 {
     bool ret = false;
     uint16_t cccdValue;
-
+    
     /* Read CCCD and check the indication bit */
     if(Cy_BLE_GATTS_ReadCccd(connHandle, attrHandle, &cccdValue) == CY_BLE_SUCCESS)
-    {
-        ret = ((cccdValue & CY_BLE_CCCD_INDICATION) != 0u) ? true : false;
+    {     
+        ret = ((cccdValue & CY_BLE_CCCD_INDICATION) != 0u) ? true : false;      
     }
-
-    return (ret);
+    
+    return (ret); 
 }
 
 /******************************************************************************
 * Function Name: Cy_BLE_GATTS_SendNotification
 ***************************************************************************//**
 *
-*  Wrapper API to write the attribute value to local GATT database and send
+*  Wrapper API to write the attribute value to local GATT database and send 
 *  the updated value to the peer device using notification procedure.
 *  This API will internally use Cy_BLE_GATTS_WriteAttributeValueLocal() and
 *  Cy_BLE_GATTS_Notification() APIs
@@ -708,10 +708,10 @@ bool Cy_BLE_GATTS_IsIndicationEnabled(cy_stc_ble_conn_handle_t *connHandle,
 *
 *  \note
 *  This operation is not permitted when the BLE Stack is busy processing
-*  previous requests. The #CY_BLE_ERROR_INVALID_OPERATION error code will
-*  be returned if the stack queue is full or for other reasons, the stack
-*  cannot process the operation. If the BLE Stack busy event
-*  #CY_BLE_EVT_STACK_BUSY_STATUS is triggered with the status busy, calling
+*  previous requests. The #CY_BLE_ERROR_INVALID_OPERATION error code will 
+*  be returned if the stack queue is full or for other reasons, the stack 
+*  cannot process the operation. If the BLE Stack busy event 
+*  #CY_BLE_EVT_STACK_BUSY_STATUS is triggered with the status busy, calling 
 *  this API will trigger this error code. For details, refer to
 *  the #CY_BLE_EVT_STACK_BUSY_STATUS event.
 *
@@ -720,7 +720,7 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendNotification(cy_stc_ble_conn_handle_t *c
                                                      cy_stc_ble_gatt_handle_value_pair_t *handleValuePair)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     if((connHandle == NULL) || (handleValuePair == NULL))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -735,7 +735,7 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendNotification(cy_stc_ble_conn_handle_t *c
     }
     else if(Cy_BLE_GATTS_IsNotificationEnabled(connHandle, handleValuePair->attrHandle) == false)
     {
-        apiResult = CY_BLE_ERROR_NTF_DISABLED;
+        apiResult = CY_BLE_ERROR_NTF_DISABLED;   
     }
     else
     {
@@ -750,8 +750,8 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendNotification(cy_stc_ble_conn_handle_t *c
         /* Send notification to the Client using a previously filled structure */
         apiResult = Cy_BLE_GATTS_Notification(&param);
     }
-
-    return (apiResult);
+    
+    return (apiResult); 
 }
 
 
@@ -761,7 +761,7 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendNotification(cy_stc_ble_conn_handle_t *c
 *
 *  Wrapper API to write the attribute value to local GATT database and send the
 *  updated value to the peer device using indication procedure. This API will
-*  internally use Cy_BLE_GATTS_WriteAttributeValueLocal() and
+*  internally use Cy_BLE_GATTS_WriteAttributeValueLocal() and 
 *  Cy_BLE_GATTS_Indication() APIs
 *
 *  \param connHandle: The pointer to the connection handle.
@@ -803,10 +803,10 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendNotification(cy_stc_ble_conn_handle_t *c
 *
 *  \note
 *  This operation is not permitted when the BLE Stack is busy processing
-*  previous requests. The #CY_BLE_ERROR_INVALID_OPERATION error code will
-*  be returned if the BLE Stack queue is full or for other reasons, the stack
-*  cannot process the operation. If the BLE Stack busy event
-*  #CY_BLE_EVT_STACK_BUSY_STATUS is triggered with the status busy, calling
+*  previous requests. The #CY_BLE_ERROR_INVALID_OPERATION error code will 
+*  be returned if the BLE Stack queue is full or for other reasons, the stack 
+*  cannot process the operation. If the BLE Stack busy event 
+*  #CY_BLE_EVT_STACK_BUSY_STATUS is triggered with the status busy, calling 
 *  this API will trigger this error code. For details, refer to
 *  the #CY_BLE_EVT_STACK_BUSY_STATUS event.
 *
@@ -815,7 +815,7 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendIndication(cy_stc_ble_conn_handle_t *con
                                                    cy_stc_ble_gatt_handle_value_pair_t *handleValuePair)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     if((connHandle == NULL) || (handleValuePair == NULL))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -830,7 +830,7 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendIndication(cy_stc_ble_conn_handle_t *con
     }
     else if(Cy_BLE_GATTS_IsIndicationEnabled(connHandle, handleValuePair->attrHandle) == false)
     {
-        apiResult = CY_BLE_ERROR_IND_DISABLED;
+        apiResult = CY_BLE_ERROR_IND_DISABLED;   
     }
     else
     {
@@ -845,38 +845,38 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendIndication(cy_stc_ble_conn_handle_t *con
         /* Send indication to the Client using a previously filled structure */
         apiResult = Cy_BLE_GATTS_Indication(&param);
     }
-
-    return (apiResult);
+    
+    return (apiResult); 
 }
 
 
 /******************************************************************************
 * Function Name: Cy_BLE_GATTS_SendErrorRsp
 ***************************************************************************//**
-*
-*  Replacement for Cy_BLE_GATTS_ErrorRsp() API.
+* 
+*  Replacement for Cy_BLE_GATTS_ErrorRsp() API. 
 *
 *  This function sends an error response to the peer device. The Error Response
 *  is used to state that a given request cannot be performed, and to provide the
-*  reason as defined in \ref cy_en_ble_gatt_err_code_t. This is a non-blocking
+*  reason as defined in \ref cy_en_ble_gatt_err_code_t. This is a non-blocking 
 *  function.
 *
 *  Deprecate the Cy_BLE_GATTS_ErrorRsp() API in BLE_PDL v2_0
 *
 *  This function sends an error response to the peer device. The Error Response
 *  is used to state that a given request cannot be performed, and to provide the
-*  reason as defined in \ref cy_en_ble_gatt_err_code_t. This is a non-blocking
+*  reason as defined in \ref cy_en_ble_gatt_err_code_t. This is a non-blocking 
 *  function.
-*
+*   
 *  \param connHandle: The pointer to the connection handle.
 *  \param errRspParam: The pointer to the cy_stc_ble_gatt_err_info_t structure
 *                      where, the following to be set:
 *                         errRspParam->opCode
 *                         errRspParam->attrHandle
-*                         errRspParam->errorCode
-*
+*                         errRspParam->errorCode  
+* 
 *  \return
-*  \ref cy_en_ble_api_result_t : the return value indicates whether the function
+*  \ref cy_en_ble_api_result_t : the return value indicates whether the function 
 *   succeeded or failed. Following are the possible error codes.
 *
 *  Error codes                            | Description
@@ -885,16 +885,16 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendIndication(cy_stc_ble_conn_handle_t *con
 *   CY_BLE_ERROR_INVALID_PARAMETER        | If param is NULL or connHandle is invalid.
 *   CY_BLE_ERROR_INVALID_OPERATION        | This operation is not permitted.
 *   CY_BLE_ERROR_MEMORY_ALLOCATION_FAILED | Memory allocation failed.
-*
+* 
 ******************************************************************************/
-cy_en_ble_api_result_t Cy_BLE_GATTS_SendErrorRsp(cy_stc_ble_conn_handle_t *connHandle,
+cy_en_ble_api_result_t Cy_BLE_GATTS_SendErrorRsp(cy_stc_ble_conn_handle_t *connHandle, 
                                                  const cy_stc_ble_gatt_err_info_t *errRspParam)
 {
     cy_en_ble_api_result_t apiResult;
-
+    
     if((connHandle == NULL) || (errRspParam == NULL))
     {
-        apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
+        apiResult = CY_BLE_ERROR_INVALID_PARAMETER;       
     }
     else
     {
@@ -905,7 +905,7 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendErrorRsp(cy_stc_ble_conn_handle_t *connH
         };
         apiResult = Cy_BLE_GATTS_ErrorRsp(&param);
     }
-
+     
     return(apiResult);
 }
 
@@ -918,51 +918,51 @@ cy_en_ble_api_result_t Cy_BLE_GATTS_SendErrorRsp(cy_stc_ble_conn_handle_t *connH
 * Function Name: Cy_BLE_GATTC_StartDiscovery
 ***************************************************************************//**
 *
-*  Starts the automatic server discovery process.
-*
-*   Discovery procedure is based on the user configuration. It discovers only
-*    services, characteristics, descriptors which were declared in the
+*  Starts the automatic server discovery process. 
+*   
+*   Discovery procedure is based on the user configuration. It discovers only 
+*    services, characteristics, descriptors which were declared in the 
 *    GATT database. Discovery procedure has the following flow:
-*   - discovering primary services by
+*   - discovering primary services by 
 *        BLE Stack function Cy_BLE_GATTC_DiscoverPrimaryServices();
-*   - discovering included services by
+*   - discovering included services by 
 *        BLE Stack function Cy_BLE_GATTC_FindIncludedServices();
-*   - discovering characteristics for available services by
+*   - discovering characteristics for available services by 
 *        BLE Stack function Cy_BLE_GATTC_DiscoverCharacteristicDescriptors();
-*   - discovering characteristic descriptors by
+*   - discovering characteristic descriptors by 
 *        BLE Stack function Cy_BLE_GATTC_DiscoverCharacteristicDescriptors();
 *
-*   During the discovery procedure the discovery-specific BLE Stack events are
+*   During the discovery procedure the discovery-specific BLE Stack events are 
 *   handled by the BLE Middleware and thus aren't passed to the application callback:
 *   #CY_BLE_EVT_GATTC_READ_BY_GROUP_TYPE_RSP, #CY_BLE_EVT_GATTC_READ_BY_TYPE_RSP,
-*   #CY_BLE_EVT_GATTC_FIND_INFO_RSP, #CY_BLE_EVT_GATTC_ERROR_RSP.
-*
-*   After discovering procedure all information about available services is
-*   stored in #cy_stc_ble_disc_srvc_info_t structures, and discovered
-*   attributes handles are stored in service-specific client structures,
+*   #CY_BLE_EVT_GATTC_FIND_INFO_RSP, #CY_BLE_EVT_GATTC_ERROR_RSP.              
+*   
+*   After discovering procedure all information about available services is 
+*   stored in #cy_stc_ble_disc_srvc_info_t structures, and discovered 
+*   attributes handles are stored in service-specific client structures, 
 *   such as #cy_stc_ble_basc_t for Battery Service or cy_stc_ble_hrsc_t for
 *   Heart Rate Service.
-*
+*                
 *   The following events may be generated after calling this function:
-*   * #CY_BLE_EVT_GATTC_DISCOVERY_COMPLETE - event is generated when the remote
-*                                           device was successfully discovered.
+*   * #CY_BLE_EVT_GATTC_DISCOVERY_COMPLETE - event is generated when the remote 
+*                                           device was successfully discovered. 
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP          - is generated if the device discovery
 *                                           has failed.
-*   * #CY_BLE_EVT_GATTC_SRVC_DUPLICATION   - is generated if duplicate service
-*                                           record was found during the server
+*   * #CY_BLE_EVT_GATTC_SRVC_DUPLICATION   - is generated if duplicate service 
+*                                           record was found during the server 
 *                                           device discovery.
-*   * #CY_BLE_EVT_GATTC_CHAR_DUPLICATION   - is generated if duplicate service's
+*   * #CY_BLE_EVT_GATTC_CHAR_DUPLICATION   - is generated if duplicate service's 
 *                                           characteristic descriptor record was
-*                                           found during the server device
+*                                           found during the server device 
 *                                           discovery.
-*   * #CY_BLE_EVT_GATTC_DESCR_DUPLICATION  - is generated if duplicate service's
+*   * #CY_BLE_EVT_GATTC_DESCR_DUPLICATION  - is generated if duplicate service's 
 *                                           characteristic descriptor record was
-*                                           found during the server device
-*                                           discovery.
+*                                           found during the server device 
+*                                           discovery. 
 *
 * \return
 * \ref cy_en_ble_api_result_t : Return value indicates if the function
-*                               succeeded or failed.
+*                               succeeded or failed. 
 *                               The following are possible error codes:
 *
 *   <table>
@@ -1048,24 +1048,24 @@ cy_en_ble_api_result_t Cy_BLE_GATTC_StartDiscovery(cy_stc_ble_conn_handle_t conn
 *  Starts the automatic server discovery process as per the range provided
 *  on a GATT Server to which it is connected. This function could be used for
 *  partial server discovery after indication received to the Service Changed
-*  Characteristic Value.
+*  Characteristic Value. 
 *
 *   The following events may be generated after calling this function:
-*   * #CY_BLE_EVT_GATTC_DISCOVERY_COMPLETE - event is generated when the remote
-*                                           device was successfully discovered.
+*   * #CY_BLE_EVT_GATTC_DISCOVERY_COMPLETE - event is generated when the remote 
+*                                           device was successfully discovered. 
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP          - is generated if the device discovery
 *                                           has failed.
-*   * #CY_BLE_EVT_GATTC_SRVC_DUPLICATION   - is generated if duplicate service
-*                                           record was found during the server
+*   * #CY_BLE_EVT_GATTC_SRVC_DUPLICATION   - is generated if duplicate service 
+*                                           record was found during the server 
 *                                           device discovery.
-*   * #CY_BLE_EVT_GATTC_CHAR_DUPLICATION   - is generated if duplicate service's
+*   * #CY_BLE_EVT_GATTC_CHAR_DUPLICATION   - is generated if duplicate service's 
 *                                           characteristic descriptor record was
-*                                           found during the server device
+*                                           found during the server device 
 *                                           discovery.
-*   * #CY_BLE_EVT_GATTC_DESCR_DUPLICATION  - is generated if duplicate service's
+*   * #CY_BLE_EVT_GATTC_DESCR_DUPLICATION  - is generated if duplicate service's 
 *                                           characteristic descriptor record was
-*                                           found during the server device
-*                                           discovery.
+*                                           found during the server device 
+*                                           discovery. 
 *
 *  \param connHandle: The handle which consists of the device ID and ATT connection ID.
 *  \param startHandle: Start of affected attribute handle range.
@@ -1243,10 +1243,10 @@ void Cy_BLE_GATTC_GetCharRange(cy_stc_ble_disc_range_info_t *charRangeInfo)
 
         if(cy_ble_discovery[discIdx].charCount == 0u)
         {
-            charRangeInfo->range.startHandle =
+            charRangeInfo->range.startHandle = 
                 cy_ble_discovery[discIdx].gattc.serviceChanged.valueHandle + 1u;
-
-            charRangeInfo->range.endHandle =
+                
+            charRangeInfo->range.endHandle = 
                 cy_ble_serverInfo[discIdx][cy_ble_discovery[discIdx].servCount].range.endHandle;
         }
 
@@ -1292,7 +1292,7 @@ void Cy_BLE_GATTC_IndicationEventHandler(cy_stc_ble_gattc_handle_value_ind_param
 * \return
 *  A return value of type \ref cy_en_ble_api_result_t.
 *   * CY_BLE_SUCCESS - The request was handled successfully
-*   * CY_BLE_ERROR_MEMORY_ALLOCATION_FAILED - All client instances are used.
+*   * CY_BLE_ERROR_MEMORY_ALLOCATION_FAILED - All client instances are used. 
 *
 ******************************************************************************/
 cy_en_ble_api_result_t Cy_BLE_GATTC_AddConnHandle(cy_stc_ble_conn_handle_t connHandle)
@@ -1445,14 +1445,14 @@ uint32_t Cy_BLE_GetDiscoveryIdx(cy_stc_ble_conn_handle_t connHandle)
 *  This function sends confirmation to the GATT Server on receiving a Handle Value
 *  The indication event #CY_BLE_EVT_GATTC_HANDLE_VALUE_IND occurs at the GATT Client's end.
 *  This is a non-blocking function.
-*
+* 
 *  This function call triggers a #CY_BLE_EVT_GATTS_HANDLE_VALUE_CNF event at the
 *  GATT Server's end.
 *
-*  Deprecate the Cy_BLE_GATTC_Confirmation() API in BLE_PDL v2_0
-*
+*  Deprecate the Cy_BLE_GATTC_Confirmation() API in BLE_PDL v2_0 
+* 
 *  \param connHandle: The pointer to the connection handle.
-*
+* 
 *  \return
 *  \ref cy_en_ble_api_result_t : The return value indicates whether the function succeeded or
 *  failed. Following are the possible error codes.
@@ -1463,12 +1463,12 @@ uint32_t Cy_BLE_GetDiscoveryIdx(cy_stc_ble_conn_handle_t connHandle)
 *  CY_BLE_ERROR_INVALID_PARAMETER       | If param is NULL or connHandle is invalid.
 *  CY_BLE_ERROR_INVALID_OPERATION       | This operation is not permitted.
 *  CY_BLE_ERROR_MEMORY_ALLOCATION_FAILED| Memory allocation failed.
-*
+* 
 ******************************************************************************/
 cy_en_ble_api_result_t Cy_BLE_GATTC_SendConfirmation(cy_stc_ble_conn_handle_t *connHandle)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+  
     if(connHandle == NULL)
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

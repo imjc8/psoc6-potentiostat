@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_wpts.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  Contains the source code for Wireless Power Transfer Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -176,7 +176,7 @@ cy_en_ble_api_result_t Cy_BLE_WPTS_Init(cy_stc_ble_wpts_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_WPTS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_WPTS_ApplCallback = callbackFunc;
     if(cy_ble_wptsConfigPtr != NULL)
     {
@@ -186,7 +186,7 @@ cy_en_ble_api_result_t Cy_BLE_WPTS_RegisterAttrCallback(cy_ble_callback_t callba
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 
@@ -719,17 +719,17 @@ static void Cy_BLE_WPTSS_ConfirmationEventHandler(const cy_stc_ble_conn_handle_t
 * \return
 *  A return value of type cy_en_ble_api_result_t.
 *   * CY_BLE_SUCCESS - The request was handled successfully
-*   * CY_BLE_ERROR_MEMORY_ALLOCATION_FAILED - All client instances are used.
-*
+*   * CY_BLE_ERROR_MEMORY_ALLOCATION_FAILED - All client instances are used. 
+*    
 ******************************************************************************/
 cy_en_ble_api_result_t Cy_BLE_WPTSC_Discovery(cy_ble_gatt_db_attr_handle_t servHandle,
                                               cy_stc_ble_conn_handle_t connHandle)
 {
     uint32_t discIdx;
     cy_en_ble_api_result_t apiResult;
-
+    
     apiResult = Cy_BLE_GATTC_AddConnHandle(connHandle);
-
+    
     if(apiResult == CY_BLE_SUCCESS)
     {
         discIdx = Cy_BLE_GetDiscoveryIdx(connHandle);
@@ -1370,7 +1370,7 @@ cy_en_ble_api_result_t Cy_BLE_WPTSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_WPTS_CHAR_COUNT) || (descrIndex >= CY_BLE_WPTS_DESCR_COUNT) ||
+    else if((charIndex >= CY_BLE_WPTS_CHAR_COUNT) || (descrIndex >= CY_BLE_WPTS_DESCR_COUNT) || 
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -1454,7 +1454,7 @@ cy_en_ble_api_result_t Cy_BLE_WPTSC_GetCharacteristicDescriptor(cy_stc_ble_conn_
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_WPTS_CHAR_COUNT) || (descrIndex >= CY_BLE_WPTS_DESCR_COUNT) ||
+    else if((charIndex >= CY_BLE_WPTS_CHAR_COUNT) || (descrIndex >= CY_BLE_WPTS_DESCR_COUNT) || 
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

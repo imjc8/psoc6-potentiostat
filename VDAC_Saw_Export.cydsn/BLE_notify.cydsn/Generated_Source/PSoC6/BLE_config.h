@@ -379,22 +379,22 @@ extern "C" {
  * their characteristics.
  */
 #define CY_BLE_DATA_SERVICE_SERVICE_INDEX   (0x00u) /* Index of Data Service service in the cy_ble_customs array */
-#define CY_BLE_DATA_SERVICE_DATA_CHAR_INDEX   (0x00u) /* Index of Data characteristic */
-#define CY_BLE_DATA_SERVICE_DATA_DATACCCD_DESC_INDEX   (0x00u) /* Index of DataCCCD descriptor */
-#define CY_BLE_DATA_SERVICE_INBOUND_CHAR_INDEX   (0x01u) /* Index of Inbound characteristic */
-#define CY_BLE_DATA_SERVICE_INBOUND_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
-#define CY_BLE_DATA_SERVICE_INBOUND_FLOAT_CHAR_INDEX   (0x02u) /* Index of Inbound float characteristic */
+#define CY_BLE_DATA_SERVICE_DATA_OUT_CHAR_INDEX   (0x00u) /* Index of Data_Out characteristic */
+#define CY_BLE_DATA_SERVICE_DATA_OUT_DATACCCD_DESC_INDEX   (0x00u) /* Index of DataCCCD descriptor */
+#define CY_BLE_DATA_SERVICE_START_CHAR_INDEX   (0x01u) /* Index of Start characteristic */
+#define CY_BLE_DATA_SERVICE_START_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
+#define CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_CHAR_INDEX   (0x02u) /* Index of Inbound_test_config characteristic */
 
 
 #define CY_BLE_DATA_SERVICE_SERVICE_HANDLE   (0x0010u) /* Handle of Data Service service */
-#define CY_BLE_DATA_SERVICE_DATA_DECL_HANDLE   (0x0011u) /* Handle of Data characteristic declaration */
-#define CY_BLE_DATA_SERVICE_DATA_CHAR_HANDLE   (0x0012u) /* Handle of Data characteristic */
-#define CY_BLE_DATA_SERVICE_DATA_DATACCCD_DESC_HANDLE   (0x0013u) /* Handle of DataCCCD descriptor */
-#define CY_BLE_DATA_SERVICE_INBOUND_DECL_HANDLE   (0x0014u) /* Handle of Inbound characteristic declaration */
-#define CY_BLE_DATA_SERVICE_INBOUND_CHAR_HANDLE   (0x0015u) /* Handle of Inbound characteristic */
-#define CY_BLE_DATA_SERVICE_INBOUND_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0016u) /* Handle of Characteristic User Description descriptor */
-#define CY_BLE_DATA_SERVICE_INBOUND_FLOAT_DECL_HANDLE   (0x0017u) /* Handle of Inbound float characteristic declaration */
-#define CY_BLE_DATA_SERVICE_INBOUND_FLOAT_CHAR_HANDLE   (0x0018u) /* Handle of Inbound float characteristic */
+#define CY_BLE_DATA_SERVICE_DATA_OUT_DECL_HANDLE   (0x0011u) /* Handle of Data_Out characteristic declaration */
+#define CY_BLE_DATA_SERVICE_DATA_OUT_CHAR_HANDLE   (0x0012u) /* Handle of Data_Out characteristic */
+#define CY_BLE_DATA_SERVICE_DATA_OUT_DATACCCD_DESC_HANDLE   (0x0013u) /* Handle of DataCCCD descriptor */
+#define CY_BLE_DATA_SERVICE_START_DECL_HANDLE   (0x0014u) /* Handle of Start characteristic declaration */
+#define CY_BLE_DATA_SERVICE_START_CHAR_HANDLE   (0x0015u) /* Handle of Start characteristic */
+#define CY_BLE_DATA_SERVICE_START_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0016u) /* Handle of Characteristic User Description descriptor */
+#define CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_DECL_HANDLE   (0x0017u) /* Handle of Inbound_test_config characteristic declaration */
+#define CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_CHAR_HANDLE   (0x0018u) /* Handle of Inbound_test_config characteristic */
 
 
 

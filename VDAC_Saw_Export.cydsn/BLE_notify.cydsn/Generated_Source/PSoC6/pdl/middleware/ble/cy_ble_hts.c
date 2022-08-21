@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_hts.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  Contains the source code for Health Thermometer Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -162,7 +162,7 @@ cy_en_ble_api_result_t Cy_BLE_HTS_Init(cy_stc_ble_hts_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_HTS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_HTS_ApplCallback = callbackFunc;
     if(cy_ble_htsConfigPtr != NULL)
     {
@@ -172,7 +172,7 @@ cy_en_ble_api_result_t Cy_BLE_HTS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 
@@ -1101,7 +1101,7 @@ cy_en_ble_api_result_t Cy_BLE_HTSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_HTS_CHAR_COUNT) || (descrIndex >= CY_BLE_HTS_DESCR_COUNT) ||
+    else if((charIndex >= CY_BLE_HTS_CHAR_COUNT) || (descrIndex >= CY_BLE_HTS_DESCR_COUNT) || 
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

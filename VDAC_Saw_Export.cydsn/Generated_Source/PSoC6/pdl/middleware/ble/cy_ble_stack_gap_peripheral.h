@@ -1,6 +1,6 @@
 /*******************************************************************************
 * \file cy_ble_stack_gap_peripheral.h
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  This file contains declarations of public BLE APIs of Generic Access Profile.
@@ -12,7 +12,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation. All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation. All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -223,7 +223,7 @@ typedef struct
 * Function Name: Cy_BLE_GAPP_EnterDiscoveryMode
 ***************************************************************************//**
 *
-*  This function is used by the GAP Peripheral application to configure the device into one of the GAP Discoverable modes
+*  This function is used by the GAP Peripheral application to configure the device into one of the GAP Discoverable modes 
 *  and start the advertisement procedure. This is a non-blocking function.
 *
 *  CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP event is received when advertisement is successfully started.
@@ -234,13 +234,13 @@ typedef struct
 *
 *  CY_BLE_EVT_GAP_ENHANCE_CONN_COMPLETE - If this device connects to a peer device and Link Layer Privacy is enabled in local device.
 *
-*  CY_BLE_EVT_TIMEOUT - If device is not connected to any peer device within the specified timeout limit(param->advTo).
+*  CY_BLE_EVT_TIMEOUT - If device is not connected to any peer device within the specified timeout limit(param->advTo). 
 *
 *  If the param->discMode is CY_BLE_GAPP_GEN_DISC_MODE, then param->advTo is ignored
 *  by BLE Stack. Advertisement continues until the application stops it using Cy_BLE_GAPP_ExitDiscoveryMode().
 *
 * \note
-*  CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP event is generated after calling
+*  CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP event is generated after calling 
 *  Cy_BLE_GAPP_EnterDiscoveryMode and Cy_BLE_GAPP_ExitDiscoveryMode APIs.
 *  Application should keep track of which function call resulted in this event.
 *
@@ -273,11 +273,11 @@ cy_en_ble_api_result_t Cy_BLE_GAPP_EnterDiscoveryMode
 *  This is a non-blocking function.
 *
 *  On stopping the advertisement, GAP Peripheral application receives
-*  CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP event.
+*  CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP event. 
 *
 * \note
-*  CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP event is generated for calling Cy_BLE_GAPP_EnterDiscoveryMode and
-*  Cy_BLE_GAPP_ExitDiscoveryMode APIs. Application should keep track of which function
+*  CY_BLE_EVT_GAPP_ADVERTISEMENT_START_STOP event is generated for calling Cy_BLE_GAPP_EnterDiscoveryMode and 
+*  Cy_BLE_GAPP_ExitDiscoveryMode APIs. Application should keep track of which function 
 *  resulted in this event.
 *
 * \return
@@ -302,16 +302,16 @@ cy_en_ble_api_result_t Cy_BLE_GAPP_ExitDiscoveryMode
 * Function Name: Cy_BLE_GAPP_UpdateAdvScanData
 ***************************************************************************//**
 *
-*  This function is used by the GAP Peripheral application to set Advertisement and/or
+*  This function is used by the GAP Peripheral application to set Advertisement and/or 
 *  Scan Response data. This function can be used during active advertisement as well.
 *  Application should ensure the validity of the data content.
-*  This is a non-blocking function.
+*  This is a non-blocking function. 
 *
 *  On completion of this operation, GAP Peripheral application receives
 *  CY_BLE_EVT_GAPP_UPDATE_ADV_SCAN_DATA_COMPLETE event.
 *
 *  \param param: Structure of type cy_stc_ble_gapp_disc_mode_info_t,
-        Only cy_stc_ble_gapp_disc_mode_info_t.advData and
+        Only cy_stc_ble_gapp_disc_mode_info_t.advData and 
         cy_stc_ble_gapp_disc_mode_info_t.scanRspData fields are used.
         Other fields in the structure are ignored.
 *
@@ -337,8 +337,8 @@ cy_en_ble_api_result_t Cy_BLE_GAPP_UpdateAdvScanData
 * Function Name: Cy_BLE_GAPP_AuthReqReply
 ***************************************************************************//**
 *
-*  This function is used by the GAP Peripheral application to send Pairing Response in
-*  authentication/pairing procedure. This function should be called after receiving
+*  This function is used by the GAP Peripheral application to send Pairing Response in  
+*  authentication/pairing procedure. This function should be called after receiving 
 *  CY_BLE_EVT_GAP_AUTH_REQ event.
 *
 *  If function call resulted in CY_BLE_SUCCESS, following events are expected to inform the application about the progress of the authentication procedure.
@@ -368,11 +368,11 @@ cy_en_ble_api_result_t Cy_BLE_GAPP_UpdateAdvScanData
 *   CY_BLE_EVT_GAP_AUTH_FAILED   | Received by both GAP Central and Peripheral devices (peers) on authentication failure. Data is of type 'cy_en_ble_gap_auth_failed_reason_t'.
 *
 *
-*  \param param: Pointer to a variable of type cy_stc_ble_gap_auth_info_t.
+*  \param param: Pointer to a variable of type cy_stc_ble_gap_auth_info_t. 
 *                Param->security can take the value from enum cy_en_ble_gap_sec_level_t.
 *
 *  NOTE: If the param->bonding is set to CY_BLE_GAP_BONDING_NONE then, during authentication
-*        procedure, SMP keys will not be distributed even if the application has generated
+*        procedure, SMP keys will not be distributed even if the application has generated 
 *        and set the keys explicitly.
 *
 * \return

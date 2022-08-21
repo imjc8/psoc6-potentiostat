@@ -227,7 +227,7 @@ static const cy_stc_ble_gaps_t cy_ble_gaps =
     0x0007u,    /* Handle of the Central Address Resolution characteristic */
     0x000Bu,    /* Handle of the Resolvable Private Address Only characteristic */
 };
-static uint8_t cy_ble_attValues[0x34u] = {
+static uint8_t cy_ble_attValues[0x3Eu] = {
     /* Device Name */
     (uint8_t)'J', (uint8_t)'C', (uint8_t)'_', (uint8_t)'P', (uint8_t)'S', (uint8_t)'O', (uint8_t)'C', 
 
@@ -246,18 +246,18 @@ static uint8_t cy_ble_attValues[0x34u] = {
     /* Service Changed */
     0x00u, 0x00u, 0x00u, 0x00u, 
 
-    /* Data */
+    /* Data_Out */
     0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 
 
-    /* Inbound */
+    /* Start */
     0x00u, 
 
     /* Characteristic User Description */
     (uint8_t)'T', (uint8_t)'e', (uint8_t)'s', (uint8_t)'t', (uint8_t)' ', (uint8_t)'C', (uint8_t)'o', (uint8_t)'n',
 (uint8_t)'f', (uint8_t)'i', (uint8_t)'g', (uint8_t)' ', (uint8_t)'D', (uint8_t)'a', (uint8_t)'t', (uint8_t)'a', 
 
-    /* Inbound float */
-    0x00u, 0x00u, 0x00u, 0x00u, 
+    /* Inbound_test_config */
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 
 
 };
 #if(CY_BLE_GATT_DB_CCCD_COUNT != 0u)
@@ -267,11 +267,11 @@ static uint8_t cy_ble_attValuesCCCD[CY_BLE_GATT_DB_CCCD_COUNT];
 static const uint8_t cy_ble_attUuid128[][16u] = {
     /* Data Service */
     { 0xA9u, 0x3Bu, 0x44u, 0x3Bu, 0xEEu, 0xB0u, 0x7Fu, 0xB0u, 0x37u, 0x41u, 0x6Fu, 0x4Au, 0xB5u, 0x8Bu, 0x00u, 0x63u },
-    /* Data */
+    /* Data_Out */
     { 0x30u, 0x4Cu, 0x4Eu, 0xADu, 0x4Du, 0x28u, 0xC4u, 0xADu, 0x32u, 0x4Cu, 0x9Eu, 0x4Eu, 0x3Du, 0x72u, 0x52u, 0x08u },
-    /* Inbound */
+    /* Start */
     { 0xE5u, 0x4Au, 0x92u, 0xE8u, 0x65u, 0xA5u, 0xE5u, 0xA3u, 0xF8u, 0x48u, 0x66u, 0x0Bu, 0x61u, 0x6Fu, 0xE2u, 0xACu },
-    /* Inbound float */
+    /* Inbound_test_config */
     { 0xAAu, 0xB7u, 0xFCu, 0x94u, 0x9Bu, 0x2Eu, 0xF2u, 0x88u, 0x29u, 0x44u, 0x0Du, 0x74u, 0x51u, 0x52u, 0x7Bu, 0x3Bu },
 };
 
@@ -284,14 +284,14 @@ static cy_stc_ble_gatts_att_gen_val_len_t cy_ble_attValuesLen[0x10u] = {
     { 0x0004u, (void *)&cy_ble_attValues[19] }, /* Service Changed */
     { 0x0002u, (void *)&cy_ble_attValuesCCCD[0] }, /* Client Characteristic Configuration */
     { 0x0010u, (void *)&cy_ble_attUuid128[0] }, /* Data Service UUID */
-    { 0x0010u, (void *)&cy_ble_attUuid128[1] }, /* Data UUID */
-    { 0x0008u, (void *)&cy_ble_attValues[23] }, /* Data */
+    { 0x0010u, (void *)&cy_ble_attUuid128[1] }, /* Data_Out UUID */
+    { 0x0008u, (void *)&cy_ble_attValues[23] }, /* Data_Out */
     { 0x0002u, (void *)&cy_ble_attValuesCCCD[2] }, /* DataCCCD */
-    { 0x0010u, (void *)&cy_ble_attUuid128[2] }, /* Inbound UUID */
-    { 0x0001u, (void *)&cy_ble_attValues[31] }, /* Inbound */
+    { 0x0010u, (void *)&cy_ble_attUuid128[2] }, /* Start UUID */
+    { 0x0001u, (void *)&cy_ble_attValues[31] }, /* Start */
     { 0x0010u, (void *)&cy_ble_attValues[32] }, /* Characteristic User Description */
-    { 0x0010u, (void *)&cy_ble_attUuid128[3] }, /* Inbound float UUID */
-    { 0x0004u, (void *)&cy_ble_attValues[48] }, /* Inbound float */
+    { 0x0010u, (void *)&cy_ble_attUuid128[3] }, /* Inbound_test_config UUID */
+    { 0x000Eu, (void *)&cy_ble_attValues[48] }, /* Inbound_test_config */
 };
 
 static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x18u] = {
@@ -312,13 +312,13 @@ static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x18u] = {
     { 0x000Fu, 0x2902u /* Client Characteristic Configuration */, 0x030A0101u /* rd,wr  */, 0x000Fu, {{0x0002u, (void *)&cy_ble_attValuesLen[6]}} },
     { 0x0010u, 0x2800u /* Primary service                     */, 0x08000001u /*        */, 0x0018u, {{0x0010u, (void *)&cy_ble_attValuesLen[7]}} },
     { 0x0011u, 0x2803u /* Characteristic                      */, 0x00120001u /* rd,ntf */, 0x0013u, {{0x0010u, (void *)&cy_ble_attValuesLen[8]}} },
-    { 0x0012u, 0x723Du /* Data                                */, 0x09120001u /* rd,ntf */, 0x0013u, {{0x0008u, (void *)&cy_ble_attValuesLen[9]}} },
+    { 0x0012u, 0x723Du /* Data_Out                            */, 0x09120001u /* rd,ntf */, 0x0013u, {{0x0008u, (void *)&cy_ble_attValuesLen[9]}} },
     { 0x0013u, 0x2902u /* DataCCCD                            */, 0x030A0101u /* rd,wr  */, 0x0013u, {{0x0002u, (void *)&cy_ble_attValuesLen[10]}} },
     { 0x0014u, 0x2803u /* Characteristic                      */, 0x000A0001u /* rd,wr  */, 0x0016u, {{0x0010u, (void *)&cy_ble_attValuesLen[11]}} },
-    { 0x0015u, 0x6F61u /* Inbound                             */, 0x090A0101u /* rd,wr  */, 0x0016u, {{0x0001u, (void *)&cy_ble_attValuesLen[12]}} },
+    { 0x0015u, 0x6F61u /* Start                               */, 0x090A0101u /* rd,wr  */, 0x0016u, {{0x0001u, (void *)&cy_ble_attValuesLen[12]}} },
     { 0x0016u, 0x2901u /* Characteristic User Description     */, 0x01020001u /* rd     */, 0x0016u, {{0x0010u, (void *)&cy_ble_attValuesLen[13]}} },
     { 0x0017u, 0x2803u /* Characteristic                      */, 0x00080001u /* wr     */, 0x0018u, {{0x0010u, (void *)&cy_ble_attValuesLen[14]}} },
-    { 0x0018u, 0x5251u /* Inbound float                       */, 0x09080100u /* wr     */, 0x0018u, {{0x0004u, (void *)&cy_ble_attValuesLen[15]}} },
+    { 0x0018u, 0x5251u /* Inbound_test_config                 */, 0x09080100u /* wr     */, 0x0018u, {{0x000Eu, (void *)&cy_ble_attValuesLen[15]}} },
 };
 
 #endif /* (CY_BLE_GATT_ROLE_SERVER) */

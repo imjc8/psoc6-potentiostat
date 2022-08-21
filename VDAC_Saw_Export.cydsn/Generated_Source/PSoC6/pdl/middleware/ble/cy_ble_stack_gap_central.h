@@ -1,6 +1,6 @@
 /*******************************************************************************
 * \file cy_ble_stack_gap_central.h
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  This file contains declarations of public BLE APIs of Generic Access Profile - Central Role.
@@ -12,7 +12,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation. All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation. All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -193,7 +193,7 @@ typedef struct
      */
     uint8_t       initiatorFilterPolicy;
 
-    /** Peer's BD address with which connection is to be established.
+    /** Peer's BD address with which connection is to be established. 
         BD address should be in Little Endian format.*/
     uint8_t       peerBdAddr[CY_BLE_GAP_BD_ADDR_SIZE];
 
@@ -360,25 +360,25 @@ typedef struct
 *  This is a non-blocking function.
 *
 *  When the discovery procedure is started, the Stack generates
-*  CY_BLE_EVT_GAPC_SCAN_START_STOP event.
-*
+*  CY_BLE_EVT_GAPC_SCAN_START_STOP event. 
+*  
 *  During the discovery procedure, CY_BLE_EVT_GAPC_SCAN_PROGRESS_RESULT event is generated
 *  for every received Advertisement packet or Scan Response packet.
-*
-*  If param->scanTo is a non-zero value, CY_BLE_EVT_TIMEOUT event is generated after
+*   
+*  If param->scanTo is a non-zero value, CY_BLE_EVT_TIMEOUT event is generated after 
 *  the specified time out limit and the discovery procedure is stopped.
-*  If 'param->scanTo' is zero, the discovery
+*  If 'param->scanTo' is zero, the discovery 
 *  operation is performed until the Cy_BLE_GAPC_StopDiscovery() function is called.
-*
+*  
 *  If 'param->scanFilterPolicy' is set to CY_BLE_GAPC_ADV_ACCEPT_DIRECTED_RPA_PKT or CY_BLE_GAPC_ADV_ACCEPT_WHITELIST_DIRECTED_RPA_PKT,
-*  CY_BLE_EVT_GAPC_DIRECT_ADV_REPORT event is generated to indicate that directed advertisements have been received from
+*  CY_BLE_EVT_GAPC_DIRECT_ADV_REPORT event is generated to indicate that directed advertisements have been received from 
 *  the advertiser that is using a resolvable private address (RPA).
 *
 *  There are three discovery procedures that can be specified as a parameter to
 *  this function.
 *  1. Observation procedure
 *     A device in the observer role receives only advertisement data from
-*     advertising devices irrespective of their discoverable mode settings.
+*     advertising devices irrespective of their discoverable mode settings. 
 *    'param->scanType' can be set as CY_BLE_GAPC_ACTIVE_SCANNING or CY_BLE_GAPC_PASSIVE_SCANNING.
 *
 *  2. Limited Discovery procedure
@@ -389,11 +389,11 @@ typedef struct
 *  3. General Discovery procedure
 *     A device performing the general discovery procedure receives the advertisement
 *     data and scan response data from devices in both limited discoverable mode and
-*     general discoverable mode.
+*     general discoverable mode. 
 *     'param->scanType' should be set as active scanning (0x01).
 *
-*  \note
-*  CY_BLE_EVT_GAPC_SCAN_START_STOP event is generated after calling
+*  \note 
+*  CY_BLE_EVT_GAPC_SCAN_START_STOP event is generated after calling 
 *  Cy_BLE_GAPC_StartDiscovery and Cy_BLE_GAPC_StopDiscovery APIs.
 *  Application should keep track of which function call resulted in this event.
 *
@@ -421,14 +421,14 @@ cy_en_ble_api_result_t Cy_BLE_GAPC_StartDiscovery
 * Function Name: Cy_BLE_GAPC_StopDiscovery
 ***************************************************************************//**
 *
-*  This function is used by GAP Central application to stop the discovery procedure.
+*  This function is used by GAP Central application to stop the discovery procedure. 
 *  This is a non-blocking function.
 *
 *  On stopping the scan, GAP central application receives
-*  CY_BLE_EVT_GAPC_SCAN_START_STOP event.
+*  CY_BLE_EVT_GAPC_SCAN_START_STOP event. 
 *
-*  \note
-*  CY_BLE_EVT_GAPC_SCAN_START_STOP event is generated after calling
+*  \note 
+*  CY_BLE_EVT_GAPC_SCAN_START_STOP event is generated after calling 
 *  Cy_BLE_GAPC_StartDiscovery and Cy_BLE_GAPC_StopDiscovery APIs.
 *  Application should keep track of which function call resulted into this event.
 *
@@ -448,7 +448,7 @@ cy_en_ble_api_result_t Cy_BLE_GAPC_StopDiscovery
 /******************************************************************************
 * Function Name: Cy_BLE_GAPC_InitConnection
 ***************************************************************************//**
-*  This function is used by GAP Central application to initiate a LE connection with
+*  This function is used by GAP Central application to initiate a LE connection with 
 *  a peer Bluetooth device with specified connection parameters.
 *  This is a non-blocking function.
 *
@@ -459,21 +459,21 @@ cy_en_ble_api_result_t Cy_BLE_GAPC_StopDiscovery
 *  CY_BLE_EVT_GATT_CONNECT_IND event is also generated along with either of the above events.
 *  CY_BLE_EVT_GATT_CONNECT_IND event is generated first then CY_BLE_EVT_GAP_ENHANCE_CONN_COMPLETE or CY_BLE_EVT_GAP_DEVICE_CONNECTED.
 *
-*  If the application has set the CY_BLE_CONN_ESTB_EVENT_MASK event mask using
+*  If the application has set the CY_BLE_CONN_ESTB_EVENT_MASK event mask using 
 *  Cy_BLE_SetCustomEventMask() function, CY_BLE_EVT_GAP_CONN_ESTB event will be generated
 *  when connection is established.
 *
 *  If BLE Stack fails to establish connection then 'CY_BLE_EVT_GAP_DEVICE_DISCONNECTED' is generated to the application when connection is established.
 *
-*  This function should not be called
+*  This function should not be called  
 *  1. until the previous call to this function has not yet resulted in the event CY_BLE_EVT_GAP_DEVICE_CONNECTED or
-*     CY_BLE_EVT_GAP_ENHANCE_CONN_COMPLETE
-*  2. until the previous call to Cy_BLE_GAPC_CancelConnection function is not completed. Completion of the function is informed through
+*     CY_BLE_EVT_GAP_ENHANCE_CONN_COMPLETE 
+*  2. until the previous call to Cy_BLE_GAPC_CancelConnection function is not completed. Completion of the function is informed through 
 *     'CY_BLE_EVT_GAP_CREATE_CONN_CANCEL_COMPLETE' event
 *  3. if discovery procedure is ongoing. Application should first stop discovery using
 *     Cy_BLE_GAPC_StopDiscovery function.
 *
-*  If the peer GATT Peripheral is a PSoC 6 device, this function results in the CY_BLE_EVT_GATT_CONNECT_IND
+*  If the peer GATT Peripheral is a PSoC 6 device, this function results in the CY_BLE_EVT_GATT_CONNECT_IND 
 *  event and CY_BLE_EVT_GAP_DEVICE_CONNECTED or CY_BLE_EVT_GAP_ENHANCE_CONN_COMPLETE at Peripheral side after connection is established.
 *
 *  \param param: Structure of type 'cy_stc_ble_gapc_conn_info_t' that contains the
@@ -499,7 +499,7 @@ cy_en_ble_api_result_t Cy_BLE_GAPC_StopDiscovery
 *        greater than N * Max Time taken by individual connections to complete a BLE Connection Event (CE).
 *        Min_CI = N * Average Time Per CE.
 *        Average time for each CE is the amount of time taken to complete one BLE Tx and Rx transaction. This
-*        time varies depending on Link Layer Data Length Extension (DLE) and BLE data rate (1 Mbps or 2 Mbps)
+*        time varies depending on Link Layer Data Length Extension (DLE) and BLE data rate (1 Mbps or 2 Mbps) 
 *        configuration. The application can use the below timing lookup table for CE value:
 *            1. If DLE is enabled and data rate is 1 Mbps, Average time = 6 ms
 *            2. If DLE is enabled and data rate is 2 Mbps, Average time = 3.5 ms
@@ -523,13 +523,13 @@ cy_en_ble_api_result_t Cy_BLE_GAPC_InitConnection
 ***************************************************************************//**
 *
 * Description:
-*  This function is used by GAP Central application to cancel a previously initiated
+*  This function is used by GAP Central application to cancel a previously initiated 
 *  connection procedure with a peer device. This is a non-blocking function.
 *
-*  CY_BLE_EVT_GAP_CREATE_CONN_CANCEL_COMPLETE event is generated to inform about completion
+*  CY_BLE_EVT_GAP_CREATE_CONN_CANCEL_COMPLETE event is generated to inform about completion 
 *  of this procedure.
 *
-*  This function should not be used if the devices are already connected. To disconnect
+*  This function should not be used if the devices are already connected. To disconnect 
 *  an existing connection, use the function Cy_BLE_GAP_Disconnect().
 *
 * \return
@@ -554,8 +554,8 @@ cy_en_ble_api_result_t Cy_BLE_GAPC_CancelConnection
 * Function Name: Cy_BLE_GAPC_ResolveDevice
 ***************************************************************************//**
 *
-*  This function enables the GAP Central application to start a address resolution procedure
-*  for a peer device that is connected using a resolvable private address.
+*  This function enables the GAP Central application to start a address resolution procedure 
+*  for a peer device that is connected using a resolvable private address. 
 *  This is a non-blocking function.
 *
 *  Refer to Bluetooth 5.0 Core specification, Volume 3, Part C, section 10.8.2.3
@@ -598,16 +598,16 @@ cy_en_ble_api_result_t Cy_BLE_GAPC_ResolveDevice
 * Function Name: Cy_BLE_GAPC_SetRemoteAddr
 ***************************************************************************//**
 *
-*  This function is used by GAP Central application to set the new address of peer device
+*  This function is used by GAP Central application to set the new address of peer device 
 *  identified by bdHandle. No event is generated on calling this function. This is a
 *  blocking function.
 *
 *  This function should be used when:
 *  1. A peer device bonded previously with a public address and changes its BD address
-*     to a resolvable private address. The application should first resolve the device address
-*     by calling the 'Cy_BLE_GAPC_ResolveDevice()' function. If address resolution is successful then
+*     to a resolvable private address. The application should first resolve the device address 
+*     by calling the 'Cy_BLE_GAPC_ResolveDevice()' function. If address resolution is successful then 
 *     set the new address using this function.
-*  2. A peer device is previously bonded with a random address, then application should call
+*  2. A peer device is previously bonded with a random address, then application should call 
 *     this function to set the new address(public/random).
 *
 *  \param param: Parameter of type 'cy_stc_ble_gapc_peer_bd_addr_info_t'
@@ -632,13 +632,13 @@ cy_en_ble_api_result_t Cy_BLE_GAPC_SetRemoteAddr
 * Function Name: Cy_BLE_GAPC_ConnectionParamUpdateRequest
 ***************************************************************************//**
 *
-*  This function is used by GAP Central application to initiate the Connection Parameter
+*  This function is used by GAP Central application to initiate the Connection Parameter 
 *  Update Procedure. This function updates parameters to local BLE Controller. Local BLE Controller
 *  follows the connection update procedure as defined in Bluetooth Core Specification 4.0.
-*  This function does not perform parameter negotiation with peer device through LL topology as defined in
+*  This function does not perform parameter negotiation with peer device through LL topology as defined in 
 *  Bluetooth Core Specification 4.1.
 *
-*  CY_BLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE event is generated to inform about
+*  CY_BLE_EVT_GAP_CONNECTION_UPDATE_COMPLETE event is generated to inform about 
 *  completion of Connection Parameter Update procedure.
 *
 *  \param param: Parameter is of type 'cy_stc_ble_gap_conn_update_param_info_t'

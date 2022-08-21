@@ -30,9 +30,9 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
         0x0010u, /* Handle of the Data Service service */ 
         {
 
-            /* Data characteristic */
+            /* Data_Out characteristic */
             {
-                0x0012u, /* Handle of the Data characteristic */ 
+                0x0012u, /* Handle of the Data_Out characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
@@ -40,9 +40,9 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
                 }, 
             },
 
-            /* Inbound characteristic */
+            /* Start characteristic */
             {
-                0x0015u, /* Handle of the Inbound characteristic */ 
+                0x0015u, /* Handle of the Start characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
@@ -50,9 +50,9 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
                 }, 
             },
 
-            /* Inbound float characteristic */
+            /* Inbound_test_config characteristic */
             {
-                0x0018u, /* Handle of the Inbound float characteristic */ 
+                0x0018u, /* Handle of the Inbound_test_config characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {

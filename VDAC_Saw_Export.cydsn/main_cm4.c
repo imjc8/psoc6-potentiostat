@@ -44,8 +44,10 @@
 #include <math.h>
 #include "stdio.h"
 
+// dac vaol
 uint32_t dac_val = 0u;
 
+// conversion between float to uint for dac
 uint32_t maxVoltConverted = 0;
 uint32_t minVoltConverted = 0;
 uint32_t initVoltConverted = 0;
@@ -65,7 +67,7 @@ int dac_direction = 0;
 int16_t adc_count;
 float32_t adc_volt;
 
-// voltge for adc
+// voltage for adc
 float v1;
 float voltCount;
 

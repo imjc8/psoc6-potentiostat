@@ -275,8 +275,8 @@ extern "C" {
 #define CY_BLE_CONFIG_GATT_MTU                      (0x0017u)
 
 /** The GATT Maximum attribute length. */
-#define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0008u)
-#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0016u)
+#define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x000Eu)
+#define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0019u)
 
 /** The number of characteristics supporting the Reliable Write property. */
 #define CY_BLE_CONFIG_GATT_RELIABLE_CHAR_COUNT      (0x0000u)
@@ -307,7 +307,7 @@ extern "C" {
     #define CY_BLE_CONFIG_L2CAP_PSM_COUNT               (1u)
 #endif  /* CY_BLE_L2CAP_ENABLE != 0u */
 
-#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x0Eu)
+#define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x11u)
 
 /** Max Tx payload size. */
 #define CY_BLE_CONFIG_LL_MAX_TX_PAYLOAD_SIZE        (0x1Bu)
@@ -369,7 +369,7 @@ extern "C" {
 #define CY_BLE_CONFIG_CUSTOMC_SERVICE_COUNT         (0x00u)
 
 /** The maximum supported count of the Custom Service characteristics. */
-#define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_COUNT     (0x02u)
+#define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_COUNT     (0x03u)
 
 /** The maximum supported count of the Custom Service descriptors in one characteristic. */
 #define CY_BLE_CONFIG_CUSTOM_SERVICE_CHAR_DESCRIPTORS_COUNT  (0x01u)
@@ -379,19 +379,24 @@ extern "C" {
  * their characteristics.
  */
 #define CY_BLE_DEVICE_INTERFACE_SERVICE_INDEX   (0x00u) /* Index of Device Interface service in the cy_ble_customs array */
-#define CY_BLE_DEVICE_INTERFACE_DEVICE_INBOUND_CHAR_INDEX   (0x00u) /* Index of Device Inbound characteristic */
-#define CY_BLE_DEVICE_INTERFACE_DEVICE_INBOUND_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
-#define CY_BLE_DEVICE_INTERFACE_DEVICE_OUTBOUND_CHAR_INDEX   (0x01u) /* Index of Device Outbound characteristic */
-#define CY_BLE_DEVICE_INTERFACE_DEVICE_OUTBOUND_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
+#define CY_BLE_DEVICE_INTERFACE_DATA_OUT_CHAR_INDEX   (0x00u) /* Index of Data Out characteristic */
+#define CY_BLE_DEVICE_INTERFACE_DATA_OUT_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
+#define CY_BLE_DEVICE_INTERFACE_START_CHAR_INDEX   (0x01u) /* Index of Start characteristic */
+#define CY_BLE_DEVICE_INTERFACE_START_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
+#define CY_BLE_DEVICE_INTERFACE_INBOUND_TEST_CONFIG_CHAR_INDEX   (0x02u) /* Index of Inbound Test Config characteristic */
+#define CY_BLE_DEVICE_INTERFACE_INBOUND_TEST_CONFIG_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
 
 
 #define CY_BLE_DEVICE_INTERFACE_SERVICE_HANDLE   (0x0010u) /* Handle of Device Interface service */
-#define CY_BLE_DEVICE_INTERFACE_DEVICE_INBOUND_DECL_HANDLE   (0x0011u) /* Handle of Device Inbound characteristic declaration */
-#define CY_BLE_DEVICE_INTERFACE_DEVICE_INBOUND_CHAR_HANDLE   (0x0012u) /* Handle of Device Inbound characteristic */
-#define CY_BLE_DEVICE_INTERFACE_DEVICE_INBOUND_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0013u) /* Handle of Custom Descriptor descriptor */
-#define CY_BLE_DEVICE_INTERFACE_DEVICE_OUTBOUND_DECL_HANDLE   (0x0014u) /* Handle of Device Outbound characteristic declaration */
-#define CY_BLE_DEVICE_INTERFACE_DEVICE_OUTBOUND_CHAR_HANDLE   (0x0015u) /* Handle of Device Outbound characteristic */
-#define CY_BLE_DEVICE_INTERFACE_DEVICE_OUTBOUND_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0016u) /* Handle of Custom Descriptor descriptor */
+#define CY_BLE_DEVICE_INTERFACE_DATA_OUT_DECL_HANDLE   (0x0011u) /* Handle of Data Out characteristic declaration */
+#define CY_BLE_DEVICE_INTERFACE_DATA_OUT_CHAR_HANDLE   (0x0012u) /* Handle of Data Out characteristic */
+#define CY_BLE_DEVICE_INTERFACE_DATA_OUT_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0013u) /* Handle of Custom Descriptor descriptor */
+#define CY_BLE_DEVICE_INTERFACE_START_DECL_HANDLE   (0x0014u) /* Handle of Start characteristic declaration */
+#define CY_BLE_DEVICE_INTERFACE_START_CHAR_HANDLE   (0x0015u) /* Handle of Start characteristic */
+#define CY_BLE_DEVICE_INTERFACE_START_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0016u) /* Handle of Custom Descriptor descriptor */
+#define CY_BLE_DEVICE_INTERFACE_INBOUND_TEST_CONFIG_DECL_HANDLE   (0x0017u) /* Handle of Inbound Test Config characteristic declaration */
+#define CY_BLE_DEVICE_INTERFACE_INBOUND_TEST_CONFIG_CHAR_HANDLE   (0x0018u) /* Handle of Inbound Test Config characteristic */
+#define CY_BLE_DEVICE_INTERFACE_INBOUND_TEST_CONFIG_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0019u) /* Handle of Custom Descriptor descriptor */
 
 
 

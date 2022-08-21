@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  This file contains the source code for the API of the BLE Middleware.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -39,11 +39,11 @@ CY_ALIGN(sizeof(uint32_t)) CY_NOINIT uint8_t cy_ble_stackMemoryRam[CY_BLE_STACK_
 #endif  /* CY_BLE_SHARING_MODE_EXPORT */
 
 #if (CY_BLE_MODE_PROFILE)
-/** An application layer event callback function to receive service events from the BLE Middleware. */
+/** An application layer event callback function to receive service events from the BLE Middleware. */    
 cy_ble_callback_t Cy_BLE_ApplCallback = NULL;
-
+    
 /* BLE application IPC notification handler */
-cy_ble_app_notify_callback_t Cy_BLE_HostRegisteredCallback = NULL;
+cy_ble_app_notify_callback_t Cy_BLE_HostRegisteredCallback = NULL;     
 #endif  /* (CY_BLE_MODE_PROFILE) */
 
 #if(CY_BLE_SHARING_MODE != CY_BLE_SHARING_IMPORT)
@@ -77,7 +77,7 @@ cy_stc_ble_config_t *cy_ble_configPtr = NULL;
 
 #if (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_MODE_PROFILE)
 /** BLE interrupt notification structure */
-cy_stc_ble_intr_notify_t intrNotify =
+cy_stc_ble_intr_notify_t intrNotify = 
 {
     .clientID = CY_BLE_CYPIPE_MSG_INTR_NOTIFY_ID,
     .pktType  = 0xFFu
@@ -97,7 +97,7 @@ void Cy_BLE_UnregisterHostPMCallbacks(void)
     #if (CY_BLE_USE_DEEP_SLEEP != 0u)
         /* Unregister BLE callback for Deepsleep support */
         (void)Cy_SysPm_UnregisterCallback(&bleDeepSleepCallback);
-
+        
         /* Unregister sleep mode callback only in dual core mode for the host core */
         #if(CY_BLE_STACK_MODE_HOST_IPC)
             /* Unregister BLE callback for Sleep support */
@@ -116,7 +116,7 @@ void Cy_BLE_UnregisterHostPMCallbacks(void)
 ***************************************************************************//**
 *
 *  Initializes the BLE Middleware.
-*
+*  
 *
 *  \param config: The configuration structure for the BLE Middleware.
 *
@@ -153,7 +153,7 @@ cy_en_ble_api_result_t Cy_BLE_Init(cy_stc_ble_config_t *config)
         (void)memset((uint8_t*)&cy_ble_busyStatus, 0, sizeof(cy_ble_busyStatus));
 
         cy_ble_cmdStatus = 0u;
-
+        
         #if (CY_BLE_GATT_ROLE_CLIENT)
         {
             uint32_t idx;
@@ -185,7 +185,7 @@ cy_en_ble_api_result_t Cy_BLE_Init(cy_stc_ble_config_t *config)
         #endif /* (CY_BLE_BONDING_REQUIREMENT == CY_BLE_BONDING_YES) */
     #endif     /* (CY_BLE_MODE_PROFILE) */
     }
-
+            
     return(apiResult);
 }
 /** @} */
@@ -208,25 +208,25 @@ cy_en_ble_api_result_t Cy_BLE_Init(cy_stc_ble_config_t *config)
 *     Startup time         | CY_BLE_DEFAULT_OSC_STARTUP_DELAY_LF
 *     Load cap             | CY_BLE_DEFAULT_CAP_TRIM_VALUE
 *
-*  If there is a need to start the BLE with non-default ECO parameters,
-*  call the Cy_BLE_EcoStart() function with the custom configuration each
+*  If there is a need to start the BLE with non-default ECO parameters, 
+*  call the Cy_BLE_EcoStart() function with the custom configuration each 
 *  time before calling the Cy_BLE_Enable() function.
 *
-*  This function initializes the BLE Stack which consists of the BLE Stack
+*  This function initializes the BLE Stack which consists of the BLE Stack 
 *  Manager, BLE Controller, and BLE Host modules. It takes care of initializing
 *  the Profile layer, schedulers, Timer and other platform-related resources
 *  required for the BLE Middleware. It also registers the callback function for
 *  BLE events that will be registered in the BLE stack.
 *
 *  Note that this function does not reset the BLE Stack.
-*
-*  For the HCI-Mode of operation, this function will not initialize the BLE Host
+* 
+*  For the HCI-Mode of operation, this function will not initialize the BLE Host 
 *  module.
 *
 *  Calling this function results in generation of a #CY_BLE_EVT_STACK_ON event
 *  on successful initialization of the BLE Stack.
 *
-*  In the Dual Core mode, this function should be called on both cores in the
+*  In the Dual Core mode, this function should be called on both cores in the 
 *  following sequence:
 *   - call this function on CM0+ core to initialize the Controller.
 *   - start CM4 core by calling Cy_SysEnableCM4() function.
@@ -234,7 +234,7 @@ cy_en_ble_api_result_t Cy_BLE_Init(cy_stc_ble_config_t *config)
 *
 *   BLE requires a call to Cy_IPC_SystemSemaInit() and Cy_IPC_SystemPipeInit() functions
 *    before use.
-*
+*   
 *    This function is called in the SystemInit() function, for proper flash write
 *    and erase operations. If the default startup file is not used, or the function
 *    SystemInit() is not called in your project, call the following functions:
@@ -256,7 +256,7 @@ cy_en_ble_api_result_t Cy_BLE_Init(cy_stc_ble_config_t *config)
 *    </tr>
 *    <tr>
 *      <td>CY_BLE_ERROR_REPEATED_ATTEMPTS</td>
-*      <td>On invoking this function more than once without calling
+*      <td>On invoking this function more than once without calling 
 *          Cy_BLE_Disable() function between calls to this function.</td>
 *    </tr>
 *    <tr>
@@ -271,7 +271,7 @@ cy_en_ble_api_result_t Cy_BLE_Enable(void)
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
 
 #if (CY_BLE_MODE_PROFILE)
-
+         
     cy_stc_ble_stk_app_data_buff_t cy_ble_stackDataBuff[CY_BLE_STACK_APP_MIN_POOL] =
     {
         { CY_BLE_GATT_MTU_PLUS_L2CAP_MEM_EXT,   CY_BLE_GATT_MTU_BUFF_COUNT              },
@@ -281,7 +281,7 @@ cy_en_ble_api_result_t Cy_BLE_Enable(void)
         { CY_BLE_GATT_DB_ATTR_BUFF_SIZE ,  1u }
     };
 #endif  /* (CY_BLE_MODE_PROFILE) */
-
+    
     cy_stc_ble_stack_init_info_t stackInitParam =
     {
     #if (CY_BLE_MODE_PROFILE)
@@ -324,7 +324,7 @@ cy_en_ble_api_result_t Cy_BLE_Enable(void)
             /* Configure white list */
             .whiteListConfig.whiteListSize   = CY_BLE_MAX_WHITE_LIST_SIZE,
 
-            .featureMask                     = (CY_BLE_DLE_FEATURE | CY_BLE_LL_PRIVACY_FEATURE |
+            .featureMask                     = (CY_BLE_DLE_FEATURE | CY_BLE_LL_PRIVACY_FEATURE | 
                                                 CY_BLE_SECURE_CONN_FEATURE | CY_BLE_PHY_UPDATE_FEATURE |
                                                 CY_BLE_STORE_BONDLIST_FEATURE | CY_BLE_STORE_RESOLVING_LIST_FEATURE |
                                                 CY_BLE_STORE_WHITELIST_FEATURE | CY_BLE_TX_POWER_CALIBRATION_FEATURE),
@@ -335,7 +335,7 @@ cy_en_ble_api_result_t Cy_BLE_Enable(void)
 #if (CY_BLE_USE_DEEP_SLEEP != 0u)
     /* Register BLE callback for Deepsleep support */
     (void)Cy_SysPm_RegisterCallback(&bleDeepSleepCallback);
-
+    
     /* Register Sleep mode callback only in dual core mode for the host core */
     #if(CY_BLE_STACK_MODE_HOST_IPC)
     {
@@ -344,7 +344,7 @@ cy_en_ble_api_result_t Cy_BLE_Enable(void)
     }
     #endif /* (CY_BLE_STACK_MODE_HOST_IPC) */
 #endif  /* (CY_BLE_USE_DEEP_SLEEP != 0u) */
-
+    
 #if(CY_BLE_SHARING_MODE_EXPORT)
     if(cy_ble_stackMemoryRam == NULL)
     {
@@ -355,7 +355,7 @@ cy_en_ble_api_result_t Cy_BLE_Enable(void)
         }
     }
 #endif /* CY_BLE_SHARING_MODE_EXPORT */
-
+    
     if(apiResult == CY_BLE_SUCCESS)
     {
     #if (CY_BLE_DLE_FEATURE_ENABLED)
@@ -372,7 +372,7 @@ cy_en_ble_api_result_t Cy_BLE_Enable(void)
 
         apiResult = Cy_BLE_StackSetFeatureConfig(&stackInitParam.stackConfig);
     }
-
+    
     if(apiResult == CY_BLE_SUCCESS)
     {
         stackInitParam.memParam.memoryHeapPtr = cy_ble_stackMemoryRam;
@@ -382,7 +382,7 @@ cy_en_ble_api_result_t Cy_BLE_Enable(void)
         {
             stackInitParam.stackConfig.paCalConfig = *cy_ble_configPtr->paCalConfig;
         }
-
+        
         /* Initialize the BLE Stack */
         apiResult = Cy_BLE_StackInit(&stackInitParam);
 
@@ -431,7 +431,7 @@ cy_en_ble_api_result_t Cy_BLE_Enable(void)
 *  This function stops any ongoing operation in the BLE Stack and forces the
 *  BLE Stack to shut down.
 *
-*  Calling this function results in generation of a
+*  Calling this function results in generation of a 
 *  #CY_BLE_EVT_STACK_SHUTDOWN_COMPLETE event on a successful stack shutdown.
 *
 *  For HCI mode:
@@ -455,7 +455,7 @@ cy_en_ble_api_result_t Cy_BLE_Enable(void)
 *    </tr>
 *    <tr>
 *      <td>CY_BLE_ERROR_INVALID_OPERATION</td>
-*      <td>On calling Cy_BLE_Disable before calling Cy_BLE_Enable()
+*      <td>On calling Cy_BLE_Disable before calling Cy_BLE_Enable() 
 *          or on Controller core.</td>
 *    </tr>
 *  </table>
@@ -467,11 +467,11 @@ cy_en_ble_api_result_t Cy_BLE_Disable(void)
 
 #if (CY_BLE_STACK_IPC_CONTR_CORE)
     /* To stop Controller call Cy_BLE_Disable() function on Host core */
-    apiResult = CY_BLE_SUCCESS;
+    apiResult = CY_BLE_SUCCESS;             
 #else
     /* Stops all ongoing activities */
     apiResult = Cy_BLE_StackShutdown();
-
+    
     #if (CY_BLE_SHARING_MODE_EXPORT)
     if(cy_ble_stackMemoryRam != NULL)
     {
@@ -496,7 +496,7 @@ cy_en_ble_api_result_t Cy_BLE_Disable(void)
 *
 *   - BLE_BLESS_EXT_PA_LNA_CTRL_ENABLE_EXT_PA_LNA_Msk - When set to 1, enables
 *       the external PA & LNA and BLESS power profile for energy profiler
-*   - BLE_BLESS_EXT_PA_LNA_CTRL_CHIP_EN_POL_Msk - Controls the polarity of the
+*   - BLE_BLESS_EXT_PA_LNA_CTRL_CHIP_EN_POL_Msk - Controls the polarity of the 
 *       chip-enable control signal:
 *       * 0 - High enable, Low disable
 *       * 1 - Low enable, High disable, Incorrect power profile
@@ -527,39 +527,39 @@ void Cy_BLE_ConfigureExtPA(uint32_t controlValue)
 * Function Name: Cy_BLE_RegisterInterruptCallback
 ****************************************************************************//**
 *
-*  This function registers a callback to expose BLE interrupt notifications to an
+*  This function registers a callback to expose BLE interrupt notifications to an 
 *  application that indicates a different link layer and radio state transition
-*  to the user from the BLESS interrupt context. This callback is triggered at
-*  the beginning of a received BLESS interrupt (based on the registered
+*  to the user from the BLESS interrupt context. This callback is triggered at 
+*  the beginning of a received BLESS interrupt (based on the registered 
 *  interrupt mask).
 *
-*  An application can use an interrupt callback to know when:
-*  * the RF activity is about to begin/end;
-*  * the BLE device changes its state from advertising to connected;
+*  An application can use an interrupt callback to know when: 
+*  * the RF activity is about to begin/end; 
+*  * the BLE device changes its state from advertising to connected; 
 *  * BLESS transits between active and low-power modes.
-*
+*    
 *  These BLESS real-time states can be used to synchronize
-*  an application with the BLESS or prevent radio interference with other
+*  an application with the BLESS or prevent radio interference with other 
 *  peripherals, etc.
-*
+*    
 *  BLE interrupt notifications feature enables via define in cy_ble_config.h:
-*  \code
+*  \code   
 *  #define CY_BLE_INTR_NOTIFY_FEATURE_ENABLE       (1u)
-*  \endcode
+*  \endcode    
 *
-*  BLE Dual mode requires an additional define IPC channel and IPC Interrupt
-*  structure to send notifications from the controller core to host core.
+*  BLE Dual mode requires an additional define IPC channel and IPC Interrupt 
+*  structure to send notifications from the controller core to host core. 
 *  Use the following defines:
-*  \code
+*  \code    
 *  #define CY_BLE_INTR_NOTIFY_IPC_CHAN             (9..15)
 *  #define CY_BLE_INTR_NOTIFY_IPC_INTR             (9..15)
-*  #define CY_BLE_INTR_NOTIFY_IPC_INTR_PRIOR       (0..7)
+*  #define CY_BLE_INTR_NOTIFY_IPC_INTR_PRIOR       (0..7)  
 *  \endcode
-*
+*    
 *  \param intrMask
 *  All interrupts masks are specified in the #cy_en_ble_interrupt_callback_feature_t
 *  enumeration.
-*
+*    
 *  \param CallBack
 *  The pointer to an application notify callback.
 *
@@ -573,20 +573,20 @@ void Cy_BLE_ConfigureExtPA(uint32_t controlValue)
 *    CY_BLE_ERROR_INVALID_PARAMETER | Validation of the input parameters failed.
 *    CY_BLE_ERROR_INVALID_OPERATION | The IPC channel is busy (Dual core mode only).
 *
-*******************************************************************************/
+*******************************************************************************/   
 cy_en_ble_api_result_t Cy_BLE_RegisterInterruptCallback(uint32_t intrMask, cy_ble_intr_callback_t CallBack)
-{
+{ 
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     if(CallBack != NULL)
     {
         /* Store the application callback and interrupt mask */
         Cy_BLE_InterruptCallback = CallBack;
         intrNotify.mask = intrMask;
-
+        
         /* Set up the IPC for Dual Stack mode */
         #if(CY_BLE_STACK_MODE_HOST_IPC)
-        {
+        {  
             if(!intrNotify.configFlag)
             {
                 uint32_t rTimeout = 2000u; /* us */
@@ -596,18 +596,18 @@ cy_en_ble_api_result_t Cy_BLE_RegisterInterruptCallback(uint32_t intrMask, cy_bl
                     .intrPriority = (uint32_t)CY_BLE_INTR_NOTIFY_IPC_INTR_PRIOR,
                     .intrSrc      = (IRQn_Type)CY_IPC_INTR_NUM_TO_VECT((int32_t)CY_BLE_INTR_NOTIFY_IPC_INTR)
                 };
-
+            
                 /* Initialize the interrupt controller for CM4 and IPC Interrupt */
                 (void)Cy_SysInt_Init(&intrConfig, &Cy_BLE_HAL_IntrNotifyIpcHandler);
                 NVIC_EnableIRQ(intrConfig.intrSrc);
-
+        
                 /* Do not bring up an IPC release interrupt here, only set up a notify interrupt */
                 Cy_IPC_Drv_SetInterruptMask(Cy_IPC_Drv_GetIntrBaseAddr(CY_BLE_INTR_NOTIFY_IPC_INTR),
                                             CY_IPC_NO_NOTIFICATION, (1uL << CY_BLE_INTR_NOTIFY_IPC_CHAN));
-
-                /*
+                
+                /* 
                  * Send the address of the intrNotify structure to the controller core via CyPipe
-                 * The IPC Pipe can be busy, then try sending a message during 2 ms.
+                 * The IPC Pipe can be busy, then try sending a message during 2 ms. 
                  */
                 do
                 {
@@ -616,23 +616,23 @@ cy_en_ble_api_result_t Cy_BLE_RegisterInterruptCallback(uint32_t intrMask, cy_bl
                     Cy_SysLib_DelayUs(1u);
                     rTimeout--;
                 }while((ipcStatus != CY_IPC_PIPE_SUCCESS) && (rTimeout != 0u));
-
+              
                 if(ipcStatus != CY_IPC_PIPE_SUCCESS)
                 {
                     apiResult = CY_BLE_ERROR_INVALID_OPERATION;
                 }
             }
         }
-        #else
-            intrNotifyPtr = &intrNotify;
+        #else 
+            intrNotifyPtr = &intrNotify; 
         #endif /* CY_BLE_STACK_MODE_HOST_IPC */
-
+       
     }
     else
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
     }
-    return apiResult;
+    return apiResult; 
 }
 
 
@@ -640,13 +640,13 @@ cy_en_ble_api_result_t Cy_BLE_RegisterInterruptCallback(uint32_t intrMask, cy_bl
 * Function Name: Cy_BLE_UnRegisterInterruptCallback
 ****************************************************************************//**
 *
-*  This function un-registers callback which exposed BLE interrupt
-*  notifications to the application.
+*  This function un-registers callback which exposed BLE interrupt 
+*  notifications to the application. 
 *
 * \return
 * \ref cy_en_ble_api_result_t : Return value indicates if the function succeeded or
 *  failed. The following are possible error codes.
-*
+*    
 *    Errors codes                   | Description
 *    ------------                   | -----------
 *    CY_BLE_SUCCESS                 | The callback is registered successfully.
@@ -659,7 +659,7 @@ cy_en_ble_api_result_t Cy_BLE_UnRegisterInterruptCallback(void)
     if(Cy_BLE_InterruptCallback != NULL)
     {
         /* Clean interrupt mask */
-        apiResult = Cy_BLE_RegisterInterruptCallback((uint32_t)CY_BLE_INTR_CALLBACK_NONE,
+        apiResult = Cy_BLE_RegisterInterruptCallback((uint32_t)CY_BLE_INTR_CALLBACK_NONE, 
                                                      Cy_BLE_InterruptCallback);
         if(apiResult == CY_BLE_SUCCESS)
         {
@@ -667,7 +667,7 @@ cy_en_ble_api_result_t Cy_BLE_UnRegisterInterruptCallback(void)
             Cy_BLE_InterruptCallback = NULL;
         }
     }
-    return(apiResult);
+    return(apiResult);    
 }
 
 #endif /* (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_HOST_CORE) */
@@ -679,25 +679,25 @@ cy_en_ble_api_result_t Cy_BLE_UnRegisterInterruptCallback(void)
 * Function Name: Cy_BLE_RegisterAppHostCallback
 ****************************************************************************//**
 *
-* This function registers an application Host callback (BLE RTOS hook).
+* This function registers an application Host callback (BLE RTOS hook). 
 * The user can trigger an RTOS BLE task if the application Host callback was
 * called.
-*
+* 
 * Theory of operation:
 * The BLE Middleware triggers this callback when the BLE Stack controller needs
 * to process pending Stack events (by calling Cy_BLE_ProcessEvents()). This
-* callback executes from within an ISR and must be very short.
-*
+* callback executes from within an ISR and must be very short.  
+*    
 * \note The application Host callback is called from the context of a high-
 * priority ISR. Some RTOS (e.g. FreeRTOS) have restrictions on calling the RTOS
 * functions from a high-priority ISR. The user application is responsible for
-* integration of the BLE RTOS hook and RTOS functions and must insure that RTOS
-* allows to call RTOS API from BLE interrupt context.
-* If direct call is forbidden one of the possible solutions is to trig a
+* integration of the BLE RTOS hook and RTOS functions and must insure that RTOS 
+* allows to call RTOS API from BLE interrupt context.  
+* If direct call is forbidden one of the possible solutions is to trig a 
 * low-priority interrupt from the application Host callback and then call the
 * RTOS functions from a low-priority interrupt. For details refer to specific
 * RTOS documentation.
-*
+*   
 * \param CallBack
 * The pointer to the application Host callback.
 *
@@ -711,7 +711,7 @@ cy_en_ble_api_result_t Cy_BLE_UnRegisterInterruptCallback(void)
 cy_en_ble_api_result_t Cy_BLE_RegisterAppHostCallback(cy_ble_app_notify_callback_t CallBack)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     if(CallBack != NULL)
     {
         Cy_BLE_HostRegisteredCallback = CallBack;
@@ -719,7 +719,7 @@ cy_en_ble_api_result_t Cy_BLE_RegisterAppHostCallback(cy_ble_app_notify_callback
     else
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
-    }
+    }   
     return apiResult;
 }
 
@@ -727,7 +727,7 @@ cy_en_ble_api_result_t Cy_BLE_RegisterAppHostCallback(cy_ble_app_notify_callback
 * Function Name: Cy_BLE_UnRegisterAppHostCallback
 ****************************************************************************//**
 *
-* This function un-registers an application Host callback (BLE RTOS hook).
+* This function un-registers an application Host callback (BLE RTOS hook). 
 *
 *******************************************************************************/
 void Cy_BLE_UnRegisterAppHostCallback(void)
@@ -763,7 +763,7 @@ void Cy_BLE_UnRegisterAppHostCallback(void)
 *
 * \param
 * callbackParams  pointer to the structure with the syspm callback parameters
-*                 callbackParams->mode - the callback mode, see description
+*                 callbackParams->mode - the callback mode, see description 
 *                 of the cy_en_syspm_callback_mode_t type.
 *
 * \return
@@ -782,7 +782,7 @@ cy_en_syspm_status_t Cy_BLE_DeepSleepCallback(cy_stc_syspm_callback_params_t *ca
     cy_en_syspm_status_t retVal;
     static uint32_t interruptState = 0u;
     cy_en_ble_bless_state_t blessState;
-
+    
     /* Local variable to store the status of BLESS Hardware block */
     cy_en_ble_lp_mode_t sleepMode;
 
@@ -800,7 +800,7 @@ cy_en_syspm_status_t Cy_BLE_DeepSleepCallback(cy_stc_syspm_callback_params_t *ca
             }
             else
         #endif  /*(CY_BLE_MODE_PROFILE) */
-
+            
             if(Cy_IPC_Sema_Status(CY_BLE_SEMA) == CY_IPC_SEMA_STATUS_LOCKED)
             {
                 /* System do not enter deepsleep if BLE Host start write operation */
@@ -808,24 +808,24 @@ cy_en_syspm_status_t Cy_BLE_DeepSleepCallback(cy_stc_syspm_callback_params_t *ca
             }
             else
 
-        #if(CY_BLE_STACK_CONTR_CORE)
+        #if(CY_BLE_STACK_CONTR_CORE)       
             if (Cy_BLE_HAL_IsEcoCpuClockSrc() == 1u)
-            {
+            {            
                 /* System never enters deepsleep if BLE ECO is CPU source */
                 retVal = CY_SYSPM_FAIL;
             }
             else
         #endif /* (CY_BLE_STACK_CONTR_CORE) */
-            {
+            {        
         #if(!CY_BLE_STACK_MODE_HOST_IPC)
                 cy_en_ble_api_result_t retIsControllerActive;
-        #endif /* !CY_BLE_STACK_MODE_HOST_IPC */
-
+        #endif /* !CY_BLE_STACK_MODE_HOST_IPC */   
+        
         #if(CY_BLE_STACK_MODE_HOST_IPC)
                 /* Disable global interrupt to prevent changes from any other interrupt ISR */
                 interruptState = Cy_SysLib_EnterCriticalSection();
         #endif /* CY_BLE_STACK_MODE_HOST_IPC */
-
+               
                 /* Put BLESS into Deep Sleep and check the return status */
                 sleepMode = Cy_BLE_StackEnterLPM(CY_BLE_BLESS_DEEPSLEEP);
 
@@ -854,7 +854,7 @@ cy_en_syspm_status_t Cy_BLE_DeepSleepCallback(cy_stc_syspm_callback_params_t *ca
                     if(((blessState == CY_BLE_BLESS_STATE_ECO_ON) || (blessState == CY_BLE_BLESS_STATE_DEEPSLEEP))
                     #if(!CY_BLE_STACK_MODE_HOST_IPC)
                         && (retIsControllerActive == CY_BLE_SUCCESS)
-                    #endif /* !CY_BLE_STACK_MODE_HOST_IPC */
+                    #endif /* !CY_BLE_STACK_MODE_HOST_IPC */                    
                         )
                     {
                         /* Enter device deep sleep */
@@ -871,7 +871,7 @@ cy_en_syspm_status_t Cy_BLE_DeepSleepCallback(cy_stc_syspm_callback_params_t *ca
                 #if(!CY_BLE_STACK_MODE_HOST_IPC)
                     retIsControllerActive = Cy_BLE_IsControllerActive(CY_BLE_CONTROLLER_SLEEP_MODE_SLEEP);
 
-                    if((blessState != CY_BLE_BLESS_STATE_EVENT_CLOSE) &&
+                    if((blessState != CY_BLE_BLESS_STATE_EVENT_CLOSE) && 
                        (retIsControllerActive == CY_BLE_SUCCESS))
                     {
                         /* If the BLESS hardware block cannot go to Deep Sleep and BLE Event has not
@@ -920,7 +920,7 @@ cy_en_syspm_status_t Cy_BLE_DeepSleepCallback(cy_stc_syspm_callback_params_t *ca
 *
 * \param
 * callbackParams  pointer to the structure with the syspm callback parameters
-*                 callbackParams->mode - the callback mode, see description
+*                 callbackParams->mode - the callback mode, see description 
 *                 of the cy_en_syspm_callback_mode_t type.
 *
 * \return
@@ -941,7 +941,7 @@ cy_en_syspm_status_t Cy_BLE_SleepCallback(cy_stc_syspm_callback_params_t *callba
     /* Local variable to store the status of BLESS Hardware block */
     cy_en_ble_lp_mode_t sleepMode;
 
-#if (CY_SYSPM_DRV_VERSION_MAJOR < 4)
+#if (CY_SYSPM_DRV_VERSION_MAJOR < 4)    
     switch(callbackParams->mode)
 #else
     switch(mode)
@@ -956,12 +956,12 @@ cy_en_syspm_status_t Cy_BLE_SleepCallback(cy_stc_syspm_callback_params_t *callba
             {
                 /* Disable global interrupt to prevent changes from any other interrupt ISR */
                 interruptState = Cy_SysLib_EnterCriticalSection();
-
+                
                 /* Put BLESS into Deep Sleep and check the return status */
                 sleepMode = Cy_BLE_StackEnterLPM(CY_BLE_BLESS_DEEPSLEEP);
-
+                
                 /* Check if host is ready for sleep mode */
-                if(sleepMode != CY_BLE_BLESS_DEEPSLEEP)
+                if(sleepMode != CY_BLE_BLESS_DEEPSLEEP) 
                 {
                     retVal = CY_SYSPM_FAIL;
                     /* Enable interrupts after failing check */
@@ -984,7 +984,7 @@ cy_en_syspm_status_t Cy_BLE_SleepCallback(cy_stc_syspm_callback_params_t *callba
             Cy_SysLib_ExitCriticalSection(interruptState);
             retVal = CY_SYSPM_FAIL;
             break;
-
+            
         default:
             retVal = CY_SYSPM_FAIL;
             break;
@@ -1014,20 +1014,20 @@ cy_en_syspm_status_t Cy_BLE_SleepCallback(cy_stc_syspm_callback_params_t *callba
                  CY_BLE_INTR_NOTIFY_IPC_CHAN, CY_BLE_INTR_NOTIFY_IPC_INTR,              \
                  CY_BLE_INTR_NOTIFY_IPC_INTR_PRIOR
     #endif /* defined (CY_BLE_INTR_NOTIFY_*****_WARNING)*/
-
+ 
     #if defined (CY_BLE_INTR_NOTIFY_IPC_CHAN_WARNING)
         #warning CY_BLE_INTR_NOTIFY_IPC_CHAN not defined in in cy_ble_config.h file \
-                 Using default value 15!
+                 Using default value 15!                   
     #endif /* !defined (CY_BLE_INTR_NOTIFY_IPC_CHAN_WARNING) */
 
     #if defined (CY_BLE_INTR_NOTIFY_IPC_INTR_WARNING)
         #warning CY_BLE_INTR_NOTIFY_IPC_INTR not defined in in cy_ble_config.h file \
-                 Using default value 15!
+                 Using default value 15!                   
     #endif /* !defined (CY_BLE_INTR_NOTIFY_IPC_INTR_WARNING) */
 
     #if defined (CY_BLE_INTR_NOTIFY_IPC_INTR_PRIOR_WARNING)
         #warning CY_BLE_INTR_NOTIFY_IPC_INTR_PRIOR not defined in in cy_ble_config.h file \
-                 Using default value 1!
+                 Using default value 1! 
     #endif /* !defined (CY_BLE_INTR_NOTIFY_IPC_INTR_PRIOR_WARNING) */
 #endif /*(CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_HOST_CORE) && (CY_BLE_STACK_MODE_IPC */
 #ifdef __cplusplus

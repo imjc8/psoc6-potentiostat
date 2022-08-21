@@ -79,12 +79,12 @@ void genericEventHandler(uint32_t event, void *eventParameter)
             cy_stc_ble_gatts_write_cmd_req_param_t *writeReqParameter = (cy_stc_ble_gatts_write_cmd_req_param_t *) eventParameter;
             
             // if write parameter is this
-            if(CY_BLE_DATA_SERVICE_INBOUND_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle){
+            if(CY_BLE_DATA_SERVICE_START_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle){
                 // recv_val = writeReqParameter->handleValPair.value.val[0];
                 //printf("recv val is %d\r\n", recv_val);
                 recv_flag = true;
             }
-            else if(CY_BLE_DATA_SERVICE_INBOUND_FLOAT_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle) {
+            else if(CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle) {
                 // min voltage
                 minVolt.b[3] = writeReqParameter->handleValPair.value.val[3];
                 minVolt.b[2] = writeReqParameter->handleValPair.value.val[2];
@@ -112,8 +112,6 @@ void genericEventHandler(uint32_t event, void *eventParameter)
                 
                 printf("min Volt: %f \t max Volt: %f \t start volt: %f \t dir: %d \t numCycle: %d \r\n", minVolt.f, maxVolt.f, startVolt.f, dir, numCycles);
             }
-
-            
             
             Cy_BLE_GATTS_WriteRsp(writeReqParameter->connHandle);
             
@@ -180,7 +178,7 @@ int main(void)
         serviceData.val = (uint8*) &d1;
         serviceData.len = 8;
         
-        serviceHandle.attrHandle = CY_BLE_DATA_SERVICE_DATA_CHAR_HANDLE;
+        serviceHandle.attrHandle = CY_BLE_DATA_SERVICE_DATA_OUT_CHAR_HANDLE;
         
         serviceHandle.value = serviceData;
         

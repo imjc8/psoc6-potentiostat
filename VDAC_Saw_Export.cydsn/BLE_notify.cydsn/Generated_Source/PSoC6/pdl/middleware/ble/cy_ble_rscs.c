@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_rscs.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  Contains the source code for Running Speed and Cadence Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -161,7 +161,7 @@ cy_en_ble_api_result_t Cy_BLE_RSCS_Init(cy_stc_ble_rscs_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_RSCS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_RSCS_ApplCallback = callbackFunc;
     if(cy_ble_rscsConfigPtr != NULL)
     {
@@ -171,7 +171,7 @@ cy_en_ble_api_result_t Cy_BLE_RSCS_RegisterAttrCallback(cy_ble_callback_t callba
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 
@@ -1505,7 +1505,7 @@ cy_en_ble_api_result_t Cy_BLE_RSCSC_GetCharacteristicDescriptor(cy_stc_ble_conn_
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((discIdx < CY_BLE_GATTC_COUNT) &&
+    else if((discIdx < CY_BLE_GATTC_COUNT) && 
             ((charIndex == CY_BLE_RSCS_RSC_MEASUREMENT) || (charIndex == CY_BLE_RSCS_SC_CONTROL_POINT)) &&
             (descrIndex == (uint8_t)CY_BLE_RSCS_CCCD))
     {

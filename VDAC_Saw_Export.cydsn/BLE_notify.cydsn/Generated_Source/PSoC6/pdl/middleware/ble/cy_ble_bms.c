@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_bms.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  This file contains the source code for the Bond Management Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -124,13 +124,13 @@ cy_en_ble_api_result_t Cy_BLE_BMS_Init(cy_stc_ble_bms_config_t *config)
 * Function Name: Cy_BLE_BMS_RegisterAttrCallback
 ***************************************************************************//**
 *
-*  Registers a callback function for Bond Management Service specific attribute
+*  Registers a callback function for Bond Management Service specific attribute 
 *  operations.
 *  Service specific write requests from the peer device will not be handled with
 *  an unregistered callback function.
 *
 *  \param callbackFunc:  An application layer event callback function to receive
-*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t for
+*    events from the BLE Middleware. The definition of \ref cy_ble_callback_t for 
 *    BM Service is:<BR>
 *    typedef void (* cy_ble_callback_t) (uint32_t eventCode, void *eventParam),
 *    where:
@@ -155,7 +155,7 @@ cy_en_ble_api_result_t Cy_BLE_BMS_Init(cy_stc_ble_bms_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_BMS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_BMS_ApplCallback = callbackFunc;
     if(cy_ble_bmsConfigPtr != NULL)
     {
@@ -165,7 +165,7 @@ cy_en_ble_api_result_t Cy_BLE_BMS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 
@@ -189,7 +189,7 @@ cy_en_ble_api_result_t Cy_BLE_BMS_RegisterAttrCallback(cy_ble_callback_t callbac
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                             | Description
 *   ------------                            | -----------
 *   CY_BLE_SUCCESS                          | The request was handled successfully.
@@ -244,7 +244,7 @@ cy_en_ble_api_result_t Cy_BLE_BMSS_SetCharacteristicValue(cy_en_ble_bms_char_ind
 *  Gets a characteristic value of Bond Management Service. The value is
 *  identified by charIndex.
 *
-*  \param charIndex: The index of the service characteristic of
+*  \param charIndex: The index of the service characteristic of 
 *                    \ref cy_en_ble_bms_char_index_t. The valid values are,
 *                       * \ref CY_BLE_BMS_BMCP
 *                       * \ref CY_BLE_BMS_BMFT
@@ -310,7 +310,7 @@ cy_en_ble_api_result_t Cy_BLE_BMSS_GetCharacteristicValue(cy_en_ble_bms_char_ind
 *  Bond Management Service.
 *
 *  \param connHandle: The connection handle.
-*  \param charIndex:  The index of the service characteristic of
+*  \param charIndex:  The index of the service characteristic of 
 *                     \ref cy_en_ble_bms_char_index_t. The valid values are,
 *                        * \ref CY_BLE_BMS_BMCP
 *                        * \ref CY_BLE_BMS_BMFT
@@ -371,7 +371,7 @@ cy_en_ble_api_result_t Cy_BLE_BMSS_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  Bond Management Service.
 *
 *  \param connHandle: The connection handle.
-*  \param charIndex:  The index of the service characteristic of
+*  \param charIndex:  The index of the service characteristic of 
 *                     \ref cy_en_ble_bms_char_index_t. The valid values are,
 *                        * \ref CY_BLE_BMS_BMCP
 *                        * \ref CY_BLE_BMS_BMFT
@@ -610,14 +610,14 @@ static void Cy_BLE_BMSS_ExecuteWriteRequestEventHandler(cy_stc_ble_gatts_exec_wr
 *  identified by its charIndex.
 *
 *  \param connHandle: The connection handle.
-*  \param charIndex:  The index of the service characteristic of
+*  \param charIndex:  The index of the service characteristic of 
 *                     \ref cy_en_ble_bms_char_index_t. The valid values are,
 *                        * \ref CY_BLE_BMS_BMCP
 *                        * \ref CY_BLE_BMS_BMFT
 *
 * \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -633,17 +633,17 @@ static void Cy_BLE_BMSS_ExecuteWriteRequestEventHandler(cy_stc_ble_gatts_exec_wr
 *  If a BMS service-specific callback is registered
 *  with Cy_BLE_BMS_RegisterAttrCallback():
 *  * \ref CY_BLE_EVT_BMSC_READ_CHAR_RESPONSE - if the requested attribute is
-*    successfully read on the peer device, the details (char index ,
+*    successfully read on the peer device, the details (char index , 
 *    value, etc.) are provided with an event parameter structure
 *    of type \ref cy_stc_ble_bms_char_value_t.
 *  .
 *  Otherwise (if a BMS service-specific callback is not registered):
 *  * \ref CY_BLE_EVT_GATTC_READ_RSP - if the requested attribute is
-*    successfully read on the peer device, the details (handle,
-*    value, etc.) are provided with the event parameters structure
+*    successfully read on the peer device, the details (handle, 
+*    value, etc.) are provided with the event parameters structure 
 *    \ref cy_stc_ble_gattc_read_rsp_param_t.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*    requested attribute on the peer device, the details are provided
+*    requested attribute on the peer device, the details are provided 
 *    with the event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -704,7 +704,7 @@ cy_en_ble_api_result_t Cy_BLE_BMSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *  sent to the Client.
 *
 *  \param connHandle: The connection handle.
-*  \param charIndex:  The index of the service characteristic of
+*  \param charIndex:  The index of the service characteristic of 
 *                     \ref cy_en_ble_bms_char_index_t. The valid values are,
 *                        * \ref CY_BLE_BMS_BMCP
 *                        * \ref CY_BLE_BMS_BMFT
@@ -714,7 +714,7 @@ cy_en_ble_api_result_t Cy_BLE_BMSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -723,15 +723,15 @@ cy_en_ble_api_result_t Cy_BLE_BMSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *   CY_BLE_ERROR_GATT_DB_INVALID_ATTR_HANDLE | The peer device doesn't have the particular characteristic.
 *   CY_BLE_ERROR_INVALID_STATE               | Connection with the Server is not established.
 *   CY_BLE_ERROR_MEMORY_ALLOCATION_FAILED    | Memory allocation failed.
-*
+*  
 *  \events
 *    If execution is successful(return value = \ref CY_BLE_SUCCESS),
 *    these events can appear: \n
 *    If a BMS service-specific callback is registered
 *    with Cy_BLE_BMS_RegisterAttrCallback():
 *    * \ref CY_BLE_EVT_BMSC_WRITE_CHAR_RESPONSE - if the requested attribute is
-*      successfully written on the peer device, the details (char index, etc.)
-*      are provided with an event parameter structure of type
+*      successfully written on the peer device, the details (char index, etc.) 
+*      are provided with an event parameter structure of type 
 *      \ref cy_stc_ble_bms_char_value_t.
 *    .
 *    Otherwise (if a BMS service-specific callback is not registered):
@@ -811,13 +811,13 @@ cy_en_ble_api_result_t Cy_BLE_BMSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 * Function Name: Cy_BLE_BMSC_ReliableWriteCharacteristicValue
 ***************************************************************************//**
 *
-*  Performs a Reliable Write command for the Bond Management Control Point
+*  Performs a Reliable Write command for the Bond Management Control Point 
 *  characteristic (identified by charIndex) value attribute to the Server.
 *
 *  The Write response only confirms the operation success.
 *
 *  \param connHandle: The connection handle.
-*  \param charIndex:  The index of the service characteristic of
+*  \param charIndex:  The index of the service characteristic of 
 *                     \ref cy_en_ble_bms_char_index_t. The valid values are,
 *                        * \ref CY_BLE_BMS_BMCP
 *  \param charIndex:  The index of a service characteristic.
@@ -827,7 +827,7 @@ cy_en_ble_api_result_t Cy_BLE_BMSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 *
 *  \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -836,15 +836,15 @@ cy_en_ble_api_result_t Cy_BLE_BMSC_SetCharacteristicValue(cy_stc_ble_conn_handle
 *   CY_BLE_ERROR_GATT_DB_INVALID_ATTR_HANDLE | The peer device doesn't have the particular characteristic.
 *   CY_BLE_ERROR_INVALID_STATE               | Connection with the Server is not established.
 *   CY_BLE_ERROR_MEMORY_ALLOCATION_FAILED    | Memory allocation failed.
-*
+*  
 *  \events
 *    If execution is successful(return value = \ref CY_BLE_SUCCESS),
 *    these events can appear: \n
 *    If a BMS service-specific callback is registered
 *    with Cy_BLE_BMS_RegisterAttrCallback():
 *    * \ref CY_BLE_EVT_BMSC_WRITE_CHAR_RESPONSE - if the requested attribute is
-*      successfully written on the peer device, the details (char index, etc.)
-*      are provided with an event parameter structure of type
+*      successfully written on the peer device, the details (char index, etc.) 
+*      are provided with an event parameter structure of type 
 *      \ref cy_stc_ble_bms_char_value_t.
 *    .
 *    Otherwise (if a BMS service-specific callback is not registered):
@@ -913,7 +913,7 @@ cy_en_ble_api_result_t Cy_BLE_BMSC_ReliableWriteCharacteristicValue(cy_stc_ble_c
 *  specified characteristic of Bond Management Service.
 *
 *  \param connHandle: The connection handle.
-*  \param charIndex:  The index of the service characteristic of
+*  \param charIndex:  The index of the service characteristic of 
 *                     \ref cy_en_ble_bms_char_index_t. The valid values are,
 *                        * \ref CY_BLE_BMS_BMCP
 *                        * \ref CY_BLE_BMS_BMFT
@@ -946,11 +946,11 @@ cy_en_ble_api_result_t Cy_BLE_BMSC_ReliableWriteCharacteristicValue(cy_stc_ble_c
 *   Otherwise (if an BMS service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure
+*     provided with an event parameter structure 
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with
+*     requested attribute on the peer device, the details are provided with 
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -966,7 +966,7 @@ cy_en_ble_api_result_t Cy_BLE_BMSC_GetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_BMS_CHAR_COUNT) || (descrIndex >= CY_BLE_BMS_DESCR_COUNT) ||
+    else if((charIndex >= CY_BLE_BMS_CHAR_COUNT) || (descrIndex >= CY_BLE_BMS_DESCR_COUNT) || 
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
