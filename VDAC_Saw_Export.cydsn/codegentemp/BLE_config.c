@@ -253,7 +253,7 @@ static uint8_t cy_ble_attValuesCCCD[CY_BLE_GATT_DB_CCCD_COUNT];
 #endif /* CY_BLE_GATT_DB_CCCD_COUNT != 0u */
 
 static const uint8_t cy_ble_attUuid128[][16u] = {
-    /* Device Interface */
+    /* Data Service */
     { 0xDDu, 0x24u, 0x71u, 0x78u, 0x67u, 0x3Du, 0x86u, 0x82u, 0x38u, 0x4Eu, 0x4Bu, 0x03u, 0x05u, 0x87u, 0x72u, 0x62u },
     /* Data Out */
     { 0x30u, 0x4Cu, 0x4Eu, 0xADu, 0x4Du, 0x28u, 0xC4u, 0xADu, 0x32u, 0x4Cu, 0x9Eu, 0x4Eu, 0x3Du, 0x72u, 0x52u, 0x08u },
@@ -271,7 +271,7 @@ static cy_stc_ble_gatts_att_gen_val_len_t cy_ble_attValuesLen[0x11u] = {
     { 0x0001u, (void *)&cy_ble_attValues[19] }, /* Resolvable Private Address Only */
     { 0x0004u, (void *)&cy_ble_attValues[20] }, /* Service Changed */
     { 0x0002u, (void *)&cy_ble_attValuesCCCD[0] }, /* Client Characteristic Configuration */
-    { 0x0010u, (void *)&cy_ble_attUuid128[0] }, /* Device Interface UUID */
+    { 0x0010u, (void *)&cy_ble_attUuid128[0] }, /* Data Service UUID */
     { 0x0010u, (void *)&cy_ble_attUuid128[1] }, /* Data Out UUID */
     { 0x0008u, (void *)&cy_ble_attValues[24] }, /* Data Out */
     { 0x0001u, (void *)&cy_ble_attValues[32] }, /* Custom Descriptor */

@@ -25,9 +25,9 @@
    The array index definitions are located in the BLE_custom.h file. */
 static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
 
-    /* Device Interface service */
+    /* Data Service service */
     {
-        0x0010u, /* Handle of the Device Interface service */ 
+        0x0010u, /* Handle of the Data Service service */ 
         {
 
             /* Data Out characteristic */

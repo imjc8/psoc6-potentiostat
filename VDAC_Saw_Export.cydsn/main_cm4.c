@@ -44,8 +44,10 @@
 #include <math.h>
 #include "stdio.h"
 
-// dac vaol
+// dac val
 uint32_t dac_val = 0u;
+
+
 
 // conversion between float to uint for dac
 uint32_t maxVoltConverted = 0;
@@ -77,7 +79,118 @@ bool flag_print = false;
 // timing_counter
 int counter = 0;
 
+// device status
+int devState = 0;
+
+// to send
+struct data 
+{
+    float32 DAC_volt;
+    float32 ADC_volt;
+};
+
+// for the receiving floats
+union {
+  float f;
+  unsigned char b[4];
+} minVolt;
+
+union {
+  float f;
+  unsigned char c[4];
+} maxVolt;
+
+union {
+  float f;
+  unsigned char d[4];
+} startVolt;
+
+// recv cycles
+uint8 numCycles = 0;
+bool recv_flag = false;
+
+// recv dir
+bool dir;
+
+// unsure if need
+uint8_t hand;
+
 void userIsr(void);
+
+void genericEventHandler(uint32_t event, void *eventParameter)
+{
+    switch(event)
+    {
+        case CY_BLE_EVT_STACK_ON:
+        case CY_BLE_EVT_GAP_DEVICE_DISCONNECTED:
+        {
+            Cy_BLE_GAPP_StartAdvertisement(CY_BLE_ADVERTISING_FAST, CY_BLE_PERIPHERAL_CONFIGURATION_0_INDEX);
+            devState = 0;
+            break;
+        }
+        
+        case CY_BLE_EVT_GATT_CONNECT_IND:
+        {
+            devState = 1;
+            cy_stc_ble_gap_bd_addr_info_t param;
+//            param.bdAddr=param.addrType=CY_BLE_GAP_RANDOM_PRIV_RESOLVABLE_ADDR;
+//            bdHand=Cy_BLE_GAP_GetPeerBdAddr(&param);
+            printf("CY_BLE_EVT_GATT_CONNECT_IND bdHandle=%x\r\n",((cy_stc_ble_conn_handle_t *)eventParameter)->bdHandle);
+            hand=((cy_stc_ble_conn_handle_t *)eventParameter)->bdHandle;
+            break;
+        }
+        case CY_BLE_EVT_GATTS_WRITE_REQ:
+        {
+            cy_stc_ble_gatts_write_cmd_req_param_t *writeReqParameter = (cy_stc_ble_gatts_write_cmd_req_param_t *) eventParameter;
+            
+            // if write parameter is this
+            if(CY_BLE_DATA_SERVICE_START_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle){
+                // recv_val = writeReqParameter->handleValPair.value.val[0];
+                //printf("recv val is %d\r\n", recv_val);
+                recv_flag = true;
+                devState = 4;
+            }
+            else if(CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle) {
+                // min voltage
+                minVolt.b[3] = writeReqParameter->handleValPair.value.val[3];
+                minVolt.b[2] = writeReqParameter->handleValPair.value.val[2];
+                minVolt.b[1] = writeReqParameter->handleValPair.value.val[1];
+                minVolt.b[0] = writeReqParameter->handleValPair.value.val[0];
+                
+                // max voltage
+                maxVolt.c[3] = writeReqParameter->handleValPair.value.val[7];
+                maxVolt.c[2] = writeReqParameter->handleValPair.value.val[6];
+                maxVolt.c[1] = writeReqParameter->handleValPair.value.val[5];
+                maxVolt.c[0] = writeReqParameter->handleValPair.value.val[4];
+                
+                // start
+                startVolt.d[3] = writeReqParameter->handleValPair.value.val[11];
+                startVolt.d[2] = writeReqParameter->handleValPair.value.val[10];
+                startVolt.d[1] = writeReqParameter->handleValPair.value.val[9];
+                startVolt.d[0] = writeReqParameter->handleValPair.value.val[8];
+                
+                // direction
+                dir = writeReqParameter->handleValPair.value.val[12];
+                
+                // number of cycles
+                numCycles = writeReqParameter->handleValPair.value.val[13];
+                
+                
+                printf("min Volt: %f \t max Volt: %f \t start volt: %f \t dir: %d \t numCycle: %d \r\n", minVolt.f, maxVolt.f, startVolt.f, dir, numCycles);
+            }
+            
+            Cy_BLE_GATTS_WriteRsp(writeReqParameter->connHandle);
+            devState = 3;
+            
+            break;
+        }
+    }
+}
+
+void bleInterruptNotify()
+{
+    Cy_BLE_ProcessEvents();
+}
 
 
 /*******************************************************************************

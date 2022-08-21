@@ -259,7 +259,7 @@ extern "C" {
 
 #define CY_BLE_ADV_PKT_0_INDEX_FLAGS   (0x00u)
 #define CY_BLE_ADV_PKT_0_INDEX_LOCAL_NAME   (0x03u)
-#define CY_BLE_ADV_PKT_0_INDEX_SERVICE_DATA_DEVICE_INTERFACE   (0x0Du)
+#define CY_BLE_ADV_PKT_0_INDEX_SERVICE_DATA_DATA_SERVICE   (0x0Du)
 #define CY_BLE_PERIPHERAL_CONFIGURATION_0_INDEX   (0x00u)
 
 
@@ -378,25 +378,25 @@ extern "C" {
  * Below are the indexes and handles of the defined Custom Services and 
  * their characteristics.
  */
-#define CY_BLE_DEVICE_INTERFACE_SERVICE_INDEX   (0x00u) /* Index of Device Interface service in the cy_ble_customs array */
-#define CY_BLE_DEVICE_INTERFACE_DATA_OUT_CHAR_INDEX   (0x00u) /* Index of Data Out characteristic */
-#define CY_BLE_DEVICE_INTERFACE_DATA_OUT_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
-#define CY_BLE_DEVICE_INTERFACE_START_CHAR_INDEX   (0x01u) /* Index of Start characteristic */
-#define CY_BLE_DEVICE_INTERFACE_START_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
-#define CY_BLE_DEVICE_INTERFACE_INBOUND_TEST_CONFIG_CHAR_INDEX   (0x02u) /* Index of Inbound Test Config characteristic */
-#define CY_BLE_DEVICE_INTERFACE_INBOUND_TEST_CONFIG_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
+#define CY_BLE_DATA_SERVICE_SERVICE_INDEX   (0x00u) /* Index of Data Service service in the cy_ble_customs array */
+#define CY_BLE_DATA_SERVICE_DATA_OUT_CHAR_INDEX   (0x00u) /* Index of Data Out characteristic */
+#define CY_BLE_DATA_SERVICE_DATA_OUT_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
+#define CY_BLE_DATA_SERVICE_START_CHAR_INDEX   (0x01u) /* Index of Start characteristic */
+#define CY_BLE_DATA_SERVICE_START_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
+#define CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_CHAR_INDEX   (0x02u) /* Index of Inbound Test Config characteristic */
+#define CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_CUSTOM_DESCRIPTOR_DESC_INDEX   (0x00u) /* Index of Custom Descriptor descriptor */
 
 
-#define CY_BLE_DEVICE_INTERFACE_SERVICE_HANDLE   (0x0010u) /* Handle of Device Interface service */
-#define CY_BLE_DEVICE_INTERFACE_DATA_OUT_DECL_HANDLE   (0x0011u) /* Handle of Data Out characteristic declaration */
-#define CY_BLE_DEVICE_INTERFACE_DATA_OUT_CHAR_HANDLE   (0x0012u) /* Handle of Data Out characteristic */
-#define CY_BLE_DEVICE_INTERFACE_DATA_OUT_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0013u) /* Handle of Custom Descriptor descriptor */
-#define CY_BLE_DEVICE_INTERFACE_START_DECL_HANDLE   (0x0014u) /* Handle of Start characteristic declaration */
-#define CY_BLE_DEVICE_INTERFACE_START_CHAR_HANDLE   (0x0015u) /* Handle of Start characteristic */
-#define CY_BLE_DEVICE_INTERFACE_START_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0016u) /* Handle of Custom Descriptor descriptor */
-#define CY_BLE_DEVICE_INTERFACE_INBOUND_TEST_CONFIG_DECL_HANDLE   (0x0017u) /* Handle of Inbound Test Config characteristic declaration */
-#define CY_BLE_DEVICE_INTERFACE_INBOUND_TEST_CONFIG_CHAR_HANDLE   (0x0018u) /* Handle of Inbound Test Config characteristic */
-#define CY_BLE_DEVICE_INTERFACE_INBOUND_TEST_CONFIG_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0019u) /* Handle of Custom Descriptor descriptor */
+#define CY_BLE_DATA_SERVICE_SERVICE_HANDLE   (0x0010u) /* Handle of Data Service service */
+#define CY_BLE_DATA_SERVICE_DATA_OUT_DECL_HANDLE   (0x0011u) /* Handle of Data Out characteristic declaration */
+#define CY_BLE_DATA_SERVICE_DATA_OUT_CHAR_HANDLE   (0x0012u) /* Handle of Data Out characteristic */
+#define CY_BLE_DATA_SERVICE_DATA_OUT_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0013u) /* Handle of Custom Descriptor descriptor */
+#define CY_BLE_DATA_SERVICE_START_DECL_HANDLE   (0x0014u) /* Handle of Start characteristic declaration */
+#define CY_BLE_DATA_SERVICE_START_CHAR_HANDLE   (0x0015u) /* Handle of Start characteristic */
+#define CY_BLE_DATA_SERVICE_START_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0016u) /* Handle of Custom Descriptor descriptor */
+#define CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_DECL_HANDLE   (0x0017u) /* Handle of Inbound Test Config characteristic declaration */
+#define CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_CHAR_HANDLE   (0x0018u) /* Handle of Inbound Test Config characteristic */
+#define CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_CUSTOM_DESCRIPTOR_DESC_HANDLE   (0x0019u) /* Handle of Custom Descriptor descriptor */
 
 
 
