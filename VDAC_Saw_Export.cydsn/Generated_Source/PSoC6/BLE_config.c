@@ -210,7 +210,7 @@ static const cy_stc_ble_gaps_t cy_ble_gaps =
     0x0009u,    /* Handle of the Central Address Resolution characteristic */
     0x000Bu,    /* Handle of the Resolvable Private Address Only characteristic */
 };
-static uint8_t cy_ble_attValues[0x62u] = {
+static uint8_t cy_ble_attValues[0x66u] = {
     /* Device Name */
     (uint8_t)'J', (uint8_t)'C', (uint8_t)'_', (uint8_t)'P', (uint8_t)'S', (uint8_t)'T', (uint8_t)'A', (uint8_t)'T', 
 
@@ -242,7 +242,8 @@ static uint8_t cy_ble_attValues[0x62u] = {
     0x00u, 0x2Eu, 0x8Au, 0x93u, 0xE6u, 0x84u, 0x3Fu, 0xA8u, 0xA5u, 0x2Du, 0x46u, 0x11u, 0x7Fu, 0x9Au, 0xCBu, 0x35u, 0x33u, 
 
     /* Inbound Test Config */
-    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 
+    0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u, 0x00u,
+0x00u, 
 
     /* Custom Descriptor */
     0x00u, 0x87u, 0x28u, 0x19u, 0xAAu, 0xF3u, 0xCEu, 0x26u, 0xA8u, 0x1Du, 0x48u, 0xD0u, 0xD5u, 0x1Cu, 0xFCu, 0x20u, 0xC8u, 
@@ -279,8 +280,8 @@ static cy_stc_ble_gatts_att_gen_val_len_t cy_ble_attValuesLen[0x11u] = {
     { 0x0001u, (void *)&cy_ble_attValues[49] }, /* Start */
     { 0x0001u, (void *)&cy_ble_attValues[50] }, /* Custom Descriptor */
     { 0x0010u, (void *)&cy_ble_attUuid128[3] }, /* Inbound Test Config UUID */
-    { 0x000Eu, (void *)&cy_ble_attValues[67] }, /* Inbound Test Config */
-    { 0x0001u, (void *)&cy_ble_attValues[81] }, /* Custom Descriptor */
+    { 0x0012u, (void *)&cy_ble_attValues[67] }, /* Inbound Test Config */
+    { 0x0001u, (void *)&cy_ble_attValues[85] }, /* Custom Descriptor */
 };
 
 static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x19u] = {
@@ -307,7 +308,7 @@ static const cy_stc_ble_gatts_db_t cy_ble_gattDB[0x19u] = {
     { 0x0015u, 0x6F61u /* Start                               */, 0x09000000u /*       */, 0x0016u, {{0x0001u, (void *)&cy_ble_attValuesLen[12]}} },
     { 0x0016u, 0xCB9Au /* Custom Descriptor                   */, 0x09000001u /*       */, 0x0016u, {{0x0001u, (void *)&cy_ble_attValuesLen[13]}} },
     { 0x0017u, 0x2803u /* Characteristic                      */, 0x00000001u /*       */, 0x0019u, {{0x0010u, (void *)&cy_ble_attValuesLen[14]}} },
-    { 0x0018u, 0x5251u /* Inbound Test Config                 */, 0x09000000u /*       */, 0x0019u, {{0x000Eu, (void *)&cy_ble_attValuesLen[15]}} },
+    { 0x0018u, 0x5251u /* Inbound Test Config                 */, 0x09000000u /*       */, 0x0019u, {{0x0012u, (void *)&cy_ble_attValuesLen[15]}} },
     { 0x0019u, 0xFC1Cu /* Custom Descriptor                   */, 0x09000001u /*       */, 0x0019u, {{0x0001u, (void *)&cy_ble_attValuesLen[16]}} },
 };
 

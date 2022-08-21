@@ -43,6 +43,11 @@ union {
   unsigned char d[4];
 } startVolt;
 
+union {
+  float g;
+  unsigned char e[4];
+} scanRate;
+
 // recv cycles
 uint8 numCycles = 0;
 bool recv_flag = false;
@@ -97,17 +102,24 @@ void genericEventHandler(uint32_t event, void *eventParameter)
                 maxVolt.c[1] = writeReqParameter->handleValPair.value.val[5];
                 maxVolt.c[0] = writeReqParameter->handleValPair.value.val[4];
                 
-                // start
+                // start voltage
                 startVolt.d[3] = writeReqParameter->handleValPair.value.val[11];
                 startVolt.d[2] = writeReqParameter->handleValPair.value.val[10];
                 startVolt.d[1] = writeReqParameter->handleValPair.value.val[9];
                 startVolt.d[0] = writeReqParameter->handleValPair.value.val[8];
                 
+                                
+                // Scan rate
+                scanRate.e[3] = writeReqParameter->handleValPair.value.val[15];
+                scanRate.e[2] = writeReqParameter->handleValPair.value.val[14];
+                scanRate.e[1] = writeReqParameter->handleValPair.value.val[13];
+                scanRate.e[0] = writeReqParameter->handleValPair.value.val[12];
+                
                 // direction
-                dir = writeReqParameter->handleValPair.value.val[12];
+                dir = writeReqParameter->handleValPair.value.val[16];
                 
                 // number of cycles
-                numCycles = writeReqParameter->handleValPair.value.val[13];
+                numCycles = writeReqParameter->handleValPair.value.val[17];
                 
                 
                 printf("min Volt: %f \t max Volt: %f \t start volt: %f \t dir: %d \t numCycle: %d \r\n", minVolt.f, maxVolt.f, startVolt.f, dir, numCycles);

@@ -275,7 +275,7 @@ extern "C" {
 #define CY_BLE_CONFIG_GATT_MTU                      (0x0017u)
 
 /** The GATT Maximum attribute length. */
-#define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x000Eu)
+#define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0012u)
 #define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0019u)
 
 /** The number of characteristics supporting the Reliable Write property. */

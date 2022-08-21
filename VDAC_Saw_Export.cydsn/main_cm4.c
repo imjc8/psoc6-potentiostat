@@ -53,6 +53,9 @@ uint32_t dac_val = 0u;
 uint32_t maxVoltConverted = 0;
 uint32_t minVoltConverted = 0;
 uint32_t initVoltConverted = 0;
+// direction
+bool direction;
+
 
 // scan rate calcs
 int div = 0;
@@ -105,12 +108,20 @@ union {
   unsigned char d[4];
 } startVolt;
 
+union {
+  float f;
+  unsigned char e[4];
+} scanRate;
+
 // recv cycles
 uint8 numCycles = 0;
 bool recv_flag = false;
 
 // recv dir
 bool dir;
+
+// test config
+bool recvConfig = false;
 
 // unsure if need
 uint8_t hand;
@@ -163,19 +174,36 @@ void genericEventHandler(uint32_t event, void *eventParameter)
                 maxVolt.c[1] = writeReqParameter->handleValPair.value.val[5];
                 maxVolt.c[0] = writeReqParameter->handleValPair.value.val[4];
                 
-                // start
+                // start voltage
                 startVolt.d[3] = writeReqParameter->handleValPair.value.val[11];
                 startVolt.d[2] = writeReqParameter->handleValPair.value.val[10];
                 startVolt.d[1] = writeReqParameter->handleValPair.value.val[9];
                 startVolt.d[0] = writeReqParameter->handleValPair.value.val[8];
                 
+                                
+                // Scan rate
+                scanRate.e[3] = writeReqParameter->handleValPair.value.val[15];
+                scanRate.e[2] = writeReqParameter->handleValPair.value.val[14];
+                scanRate.e[1] = writeReqParameter->handleValPair.value.val[13];
+                scanRate.e[0] = writeReqParameter->handleValPair.value.val[12];
+                
                 // direction
-                dir = writeReqParameter->handleValPair.value.val[12];
+                dir = writeReqParameter->handleValPair.value.val[16];
                 
                 // number of cycles
-                numCycles = writeReqParameter->handleValPair.value.val[13];
+                numCycles = writeReqParameter->handleValPair.value.val[17];
                 
+                minVoltConverted = round((minVolt.f/3.3)*4095);
+                maxVoltConverted = round((maxVolt.f/3.3)*4095);
+                initVoltConverted = round((startVolt.f/3.3)*4095);
                 
+                float volt_diff = maxVolt.f - minVolt.f;
+    
+                 // DAC clock frequency is 10KHz
+                div_duration = (int)((float)(10000.0 * volt_diff/((maxVoltConverted - minVoltConverted) * scanRate.f)))-1;
+                
+                cycle_count = numCycles;
+                dac_val = initVoltConverted;  
                 printf("min Volt: %f \t max Volt: %f \t start volt: %f \t dir: %d \t numCycle: %d \r\n", minVolt.f, maxVolt.f, startVolt.f, dir, numCycles);
             }
             
@@ -221,6 +249,14 @@ int main(void)
     /* Enable the interrupt. */
     NVIC_EnableIRQ(SysInt_1_cfg.intrSrc);
     
+    while(Cy_BLE_GetState() != CY_BLE_STATE_ON)
+    {
+        Cy_BLE_ProcessEvents();
+    }
+    Cy_BLE_RegisterAppHostCallback(bleInterruptNotify);
+    
+    struct data d1;
+    
     // waveform parameters
     // voltage
     float min_volt = 0.0;
@@ -232,71 +268,23 @@ int main(void)
     // number of cycles
     cycle_count = 5;
     
-    //float min_volt = 1
-    //float max_volt = 2.3
-    
-
-    
-    minVoltConverted = round((min_volt/3.3)*4095);
-    maxVoltConverted = round((max_volt/3.3)*4095);
-    initVoltConverted = round((init_volt/3.3)*4095);
-
-    //dac_val = initVoltConverted;   
-    
-    // direction  1 -> go up 0 -> down
-    // set initial dac direction
-    bool direction;
-    if(init_volt==min_volt){
-        direction = 1;
-    }else if(init_volt==max_volt){
-        direction = 0;
-    } else{
-        direction = 1;   
-    }
-    dac_direction = (direction == 1) ? 1 : 0;
-    
-    /*
-    if (direction == 1)
-    {
-        dac_direction = 1;
-    }
-    else
-    {
-        dac_direction = 0;
-    }
-    */
-    float volt_diff = max_volt - min_volt;
-    
-    // DAC clock frequency is 50KHz
-    div_duration = (int)((float)(10000.0 * volt_diff/((maxVoltConverted - minVoltConverted) * scan_rate)))-1;
-    
     /* Start the component. */
     VDAC_1_Start();
     UART_1_Start();
     setvbuf(stdin, NULL, _IONBF, 0);
-    ADC_1_Start();
+
     //Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
     
-    dac_val = initVoltConverted;   
-    printf("hello world\r\n");
+     
     
     int i = 0;
     for(;;)
     {   
-//        adc_count = Cy_SAR_GetResult16(SAR, 0);
-//        adc_volt = Cy_SAR_CountsTo_Volts(SAR, 0, adc_count);
-//        printf("Dac: %d ADC: %f ADC count: %d \r\n", dac_val, adc_volt, adc_count);
-//        for (i = 0; i< 10; i++){
-//            printf("counter is %d \r\n", i);
-//        }
-        
-        if (flag_print){
-            //printf("DAC OUTPUT: %d ADC is: %f \r\n", dac_val, v1);
-            flag_print = false;
-            //CyDelay(100);
+        if(devState == 4)
+        {
+            ADC_1_Start();
+            VDAC_1_Start();
         }
-
-       
     }
 }
 
@@ -390,6 +378,7 @@ void userIsr(void)
             ADC_1_Stop();
             //dac_val = 0.0;
             printf("counter: %d \r\n", counter);
+            devState = 0;
         }
         
 
