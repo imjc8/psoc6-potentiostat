@@ -1,13 +1,13 @@
 /***************************************************************************//**
 * \file cy_ble_bcs.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  Contains the source code for the Body Composition Service.
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -162,7 +162,7 @@ cy_en_ble_api_result_t Cy_BLE_BCS_Init(cy_stc_ble_bcs_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_BCS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_BCS_ApplCallback = callbackFunc;
     if(cy_ble_bcsConfigPtr != NULL)
     {
@@ -172,7 +172,7 @@ cy_en_ble_api_result_t Cy_BLE_BCS_RegisterAttrCallback(cy_ble_callback_t callbac
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 
@@ -285,7 +285,7 @@ static void Cy_BLE_BCSS_ConfirmationEventHandler(const cy_stc_ble_conn_handle_t 
 *
 *  \param charIndex: The index of a Body Composition Service characteristic of type
 *                    \ref cy_en_ble_bcs_char_index_t. The valid values are,
-*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE
+*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE  
 *                       * \ref CY_BLE_BCS_BODY_COMPOSITION_MEASUREMENT
 *  \param attrSize:  The size of the characteristic value attribute.
 *  \param attrValue: The pointer to the characteristic value data that should be
@@ -345,9 +345,9 @@ cy_en_ble_api_result_t Cy_BLE_BCSS_SetCharacteristicValue(cy_en_ble_bcs_char_ind
 *
 *  \param charIndex: The index of a Body Composition Service characteristic of type
 *                    \ref cy_en_ble_bcs_char_index_t. The valid values are,
-*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE
+*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE  
 *                       * \ref CY_BLE_BCS_BODY_COMPOSITION_MEASUREMENT
-*  \param attrSize:  The size of the Body Composition Service characteristic
+*  \param attrSize:  The size of the Body Composition Service characteristic 
 *                    value attribute.
 *  \param attrValue: The pointer to the location where characteristic value data
 *                    should be stored.
@@ -409,13 +409,13 @@ cy_en_ble_api_result_t Cy_BLE_BCSS_GetCharacteristicValue(cy_en_ble_bcs_char_ind
 *  \param connHandle: The connection handle.
 *  \param charIndex:  The index of a Body Composition Service characteristic of type
 *                     \ref cy_en_ble_bcs_char_index_t. The valid values are,
-*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE
+*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE  
 *                       * \ref CY_BLE_BCS_BODY_COMPOSITION_MEASUREMENT
 *  \param descrIndex: The index of the service characteristic descriptor of type
 *                     \ref cy_en_ble_bcs_descr_index_t. The valid value is,
 *                       * #CY_BLE_BCS_CCCD
 *  \param attrSize:   The size of the characteristic descriptor attribute.
-*  \param attrValue:  The pointer to the descriptor value data to be stored in
+*  \param attrValue:  The pointer to the descriptor value data to be stored in 
 *                     the GATT database.
 *
 *  \return
@@ -468,7 +468,7 @@ cy_en_ble_api_result_t Cy_BLE_BCSS_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  \param connHandle: The connection handle.
 *  \param charIndex:  The index of a Body Composition Service characteristic of type
 *                     \ref cy_en_ble_bcs_char_index_t. The valid values are,
-*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE
+*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE  
 *                       * \ref CY_BLE_BCS_BODY_COMPOSITION_MEASUREMENT
 *  \param descrIndex: The index of the service characteristic descriptor of type
 *                     \ref cy_en_ble_bcs_descr_index_t. The valid value is,
@@ -547,7 +547,7 @@ cy_en_ble_api_result_t Cy_BLE_BCSS_GetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  \param connHandle: The connection handle.
 *  \param charIndex:  The index of a Body Composition Service characteristic of type
 *                     \ref cy_en_ble_bcs_char_index_t. The valid values are,
-*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE
+*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE  
 *                       * \ref CY_BLE_BCS_BODY_COMPOSITION_MEASUREMENT
 *  \param attrSize:   The size of the characteristic descriptor attribute.
 *  \param attrValue:  The pointer to the characteristic value data that should be
@@ -925,7 +925,7 @@ static void Cy_BLE_BCSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_para
 *  \param connHandle: The connection handle.
 *  \param charIndex:  The index of a Body Composition Service characteristic of type
 *                     \ref cy_en_ble_bcs_char_index_t. The valid values are,
-*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE
+*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE  
 *                       * \ref CY_BLE_BCS_BODY_COMPOSITION_MEASUREMENT
 *
 *  \return
@@ -946,17 +946,17 @@ static void Cy_BLE_BCSC_ErrorResponseEventHandler(const cy_stc_ble_gatt_err_para
 *  If a BCS service-specific callback is registered
 *  with Cy_BLE_BCS_RegisterAttrCallback():
 *  * \ref CY_BLE_EVT_BCSC_READ_CHAR_RESPONSE - If the requested attribute is
-*    successfully read on the peer device, the details (char index ,
+*    successfully read on the peer device, the details (char index , 
 *    value, etc.) are provided with an event parameter structure
 *    of type \ref cy_stc_ble_bcs_char_value_t.
 *  .
 *  Otherwise (if a BCS service-specific callback is not registered):
 *  * \ref CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
-*    successfully read on the peer device, the details (handle,
+*    successfully read on the peer device, the details (handle, 
 *    value, etc.) are provided with the event parameters
 *    structure (cy_stc_ble_gattc_read_rsp_param_t).
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*    requested attribute on the peer device, the details are provided
+*    requested attribute on the peer device, the details are provided 
 *    with the event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1014,7 +1014,7 @@ cy_en_ble_api_result_t Cy_BLE_BCSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *  \param connHandle: The connection handle.
 *  \param charIndex:  The index of a Body Composition Service characteristic of type
 *                     \ref cy_en_ble_bcs_char_index_t. The valid values are,
-*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE
+*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE  
 *                       * \ref CY_BLE_BCS_BODY_COMPOSITION_MEASUREMENT
 *  \param descrIndex: The index of the service characteristic descriptor of type
 *                     \ref cy_en_ble_bcs_descr_index_t. The valid value is,
@@ -1040,7 +1040,7 @@ cy_en_ble_api_result_t Cy_BLE_BCSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *  If a BCS service-specific callback is registered
 *  (with Cy_BLE_BCS_RegisterAttrCallback):
 *   * \ref CY_BLE_EVT_BCSC_WRITE_DESCR_RESPONSE - In case if the requested attribute is
-*     successfully written on the peer device, the details
+*     successfully written on the peer device, the details 
 *     (char index, descr index etc.) are provided with event parameter structure
 *     of type \ref cy_stc_ble_bcs_descr_value_t.
 *   .
@@ -1049,7 +1049,7 @@ cy_en_ble_api_result_t Cy_BLE_BCSC_GetCharacteristicValue(cy_stc_ble_conn_handle
 *     successfully written on the peer device.
 *
 *   * \ref CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with
+*     requested attribute on the peer device, the details are provided with 
 *     an event parameter structure ( \ref cy_stc_ble_gatt_err_param_t).
 *
 ******************************************************************************/
@@ -1066,7 +1066,7 @@ cy_en_ble_api_result_t Cy_BLE_BCSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_BCS_CHAR_COUNT) || (descrIndex >= CY_BLE_BCS_DESCR_COUNT) ||
+    else if((charIndex >= CY_BLE_BCS_CHAR_COUNT) || (descrIndex >= CY_BLE_BCS_DESCR_COUNT) || 
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;
@@ -1109,7 +1109,7 @@ cy_en_ble_api_result_t Cy_BLE_BCSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  \param connHandle: The connection handle.
 *  \param charIndex:  The index of a Body Composition Service characteristic of type
 *                     \ref cy_en_ble_bcs_char_index_t. The valid values are,
-*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE
+*                       * \ref CY_BLE_BCS_BODY_COMPOSITION_FEATURE  
 *                       * \ref CY_BLE_BCS_BODY_COMPOSITION_MEASUREMENT
 *  \param descrIndex: The index of the service characteristic descriptor of type
 *                     \ref cy_en_ble_bcs_descr_index_t. The valid value is,
@@ -1132,17 +1132,17 @@ cy_en_ble_api_result_t Cy_BLE_BCSC_SetCharacteristicDescriptor(cy_stc_ble_conn_h
 *  If a BCS service-specific callback is registered
 *  (with Cy_BLE_BCS_RegisterAttrCallback):
 *  * \ref CY_BLE_EVT_BCSC_READ_DESCR_RESPONSE - If the requested attribute is
-*    successfully read on the peer device, the details (char index, descr index,
+*    successfully read on the peer device, the details (char index, descr index, 
 *    value, etc.) are provided with an event parameter structure
 *    of type \ref cy_stc_ble_bcs_descr_value_t.
 *  .
 *  Otherwise (if a BCS service-specific callback is not registered):
 *  * \ref CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
-*    successfully read on the peer device, the details (handle,
+*    successfully read on the peer device, the details (handle, 
 *    value, etc.) are provided with the event parameters
 *    structure \ref cy_stc_ble_gattc_read_rsp_param_t.
 *  * \ref CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*    requested attribute on the peer device, the details are provided with
+*    requested attribute on the peer device, the details are provided with 
 *    the event parameters structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -1157,7 +1157,7 @@ cy_en_ble_api_result_t Cy_BLE_BCSC_GetCharacteristicDescriptor(cy_stc_ble_conn_h
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_BCS_CHAR_COUNT) || (descrIndex >= CY_BLE_BCS_DESCR_COUNT) ||
+    else if((charIndex >= CY_BLE_BCS_CHAR_COUNT) || (descrIndex >= CY_BLE_BCS_DESCR_COUNT) || 
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

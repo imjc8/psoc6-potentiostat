@@ -54,7 +54,7 @@ uint32_t maxVoltConverted = 0;
 uint32_t minVoltConverted = 0;
 uint32_t initVoltConverted = 0;
 // direction
-bool direction;
+//bool direction;
 
 
 // scan rate calcs
@@ -65,16 +65,21 @@ int div_duration = 0;
 int cycle_count = 0;
 int cycle_dac = 0;
 
+typedef enum {
+    FALLING,
+    RISING
+} direction;
+
 // initial scan direction
-int dac_direction = 0;
+direction dac_direction = RISING;
 
 // adc
-int16_t adc_count;
+uint16_t adc_count;
 float32_t adc_volt;
 
 // voltage for adc
 float v1;
-float voltCount;
+uint16_t voltCount;
 
 // flags
 bool flag_print = false;
@@ -83,7 +88,19 @@ bool flag_print = false;
 int counter = 0;
 
 // device status
-int devState = 0;
+//int devState = 0;
+
+typedef enum
+{
+    NOT_CONNECTED,
+    BT_CONNECTED,
+    CONFIG_LOADED,
+    RUN_START,
+    RUNNING,
+    FINISHED
+} state;
+
+state devState = NOT_CONNECTED;
 
 // to send
 struct data 
@@ -123,6 +140,38 @@ bool dir;
 // test config
 bool recvConfig = false;
 
+typedef struct {
+    uint16_t dac;
+    uint16_t adc;
+} data;
+
+typedef struct {
+    data buf[16];
+    uint8_t head;
+    uint8_t tail;
+} data_rb_t;
+
+int rb_push(data_rb_t *buf, data dat){
+    uint8_t next;
+    next = (buf->head + 1) % 16;
+    if (next == buf->tail){
+        return -1;
+    }
+    buf->buf[buf->head] = dat;
+    buf->head = next;
+    return 0;
+}
+
+int rb_pop(data_rb_t *buf, data *dat){
+    int next;
+    if (buf->head == buf->tail) return 0;
+    next = (buf->tail + 1) % 16;
+    *dat = buf->buf[buf->tail];
+    buf->tail = next;
+    return 1;
+}
+
+data_rb_t buf;
 // unsure if need
 uint8_t hand;
 
@@ -136,13 +185,13 @@ void genericEventHandler(uint32_t event, void *eventParameter)
         case CY_BLE_EVT_GAP_DEVICE_DISCONNECTED:
         {
             Cy_BLE_GAPP_StartAdvertisement(CY_BLE_ADVERTISING_FAST, CY_BLE_PERIPHERAL_CONFIGURATION_0_INDEX);
-            devState = 0;
+            devState = NOT_CONNECTED;
             break;
         }
         
         case CY_BLE_EVT_GATT_CONNECT_IND:
         {
-            devState = 1;
+            devState = BT_CONNECTED;
             cy_stc_ble_gap_bd_addr_info_t param;
 //            param.bdAddr=param.addrType=CY_BLE_GAP_RANDOM_PRIV_RESOLVABLE_ADDR;
 //            bdHand=Cy_BLE_GAP_GetPeerBdAddr(&param);
@@ -159,9 +208,9 @@ void genericEventHandler(uint32_t event, void *eventParameter)
                 // recv_val = writeReqParameter->handleValPair.value.val[0];
                 //printf("recv val is %d\r\n", recv_val);
                 recv_flag = true;
-                devState = 4;
+                devState = RUN_START;
             }
-            else if(CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle) {
+            else if(CY_BLE_DATA_SERVICE_INBOUND_TEST_CONFIG_CHAR_HANDLE == writeReqParameter->handleValPair.attrHandle && devState != CONFIG_LOADED && devState != RUN_START && devState != RUNNING) {
                 // min voltage
                 minVolt.b[3] = writeReqParameter->handleValPair.value.val[3];
                 minVolt.b[2] = writeReqParameter->handleValPair.value.val[2];
@@ -188,7 +237,12 @@ void genericEventHandler(uint32_t event, void *eventParameter)
                 scanRate.e[0] = writeReqParameter->handleValPair.value.val[12];
                 
                 // direction
-                dir = writeReqParameter->handleValPair.value.val[16];
+                if(writeReqParameter->handleValPair.value.val[16]){
+                    dac_direction = RISING;
+                } else {
+                    dac_direction = FALLING;
+                }
+                //dac_direction = writeReqParameter->handleValPair.value.val[16];
                 
                 // number of cycles
                 numCycles = writeReqParameter->handleValPair.value.val[17];
@@ -203,12 +257,12 @@ void genericEventHandler(uint32_t event, void *eventParameter)
                 div_duration = (int)((float)(10000.0 * volt_diff/((maxVoltConverted - minVoltConverted) * scanRate.f)))-1;
                 
                 cycle_count = numCycles;
-                dac_val = initVoltConverted;  
-                printf("min Volt: %f \t max Volt: %f \t start volt: %f \t dir: %d \t numCycle: %d \r\n", minVolt.f, maxVolt.f, startVolt.f, dir, numCycles);
+                dac_val = initVoltConverted;
+                devState = CONFIG_LOADED;  
             }
             
             Cy_BLE_GATTS_WriteRsp(writeReqParameter->connHandle);
-            devState = 3;
+            
             
             break;
         }
@@ -241,6 +295,7 @@ void bleInterruptNotify()
 int main(void)
 {
     /* Enable global interrupts. */
+    state prev_state = devState;
     __enable_irq();
 
     /* Configure the interrupt and provide the ISR address. */
@@ -248,7 +303,8 @@ int main(void)
 
     /* Enable the interrupt. */
     NVIC_EnableIRQ(SysInt_1_cfg.intrSrc);
-    
+
+    Cy_BLE_Start(genericEventHandler);
     while(Cy_BLE_GetState() != CY_BLE_STATE_ON)
     {
         Cy_BLE_ProcessEvents();
@@ -269,22 +325,49 @@ int main(void)
     cycle_count = 5;
     
     /* Start the component. */
-    VDAC_1_Start();
+    //VDAC_1_Start();
     UART_1_Start();
     setvbuf(stdin, NULL, _IONBF, 0);
 
     //Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
     
+
      
     
     int i = 0;
     for(;;)
     {   
-        if(devState == 4)
+        if(devState == CONFIG_LOADED){
+             printf("min Volt: %f \t max Volt: %f \t start volt: %f \t dir: %d \t numCycle: %d \r\n", minVolt.f, maxVolt.f, startVolt.f, dir, numCycles);
+             devState = RUN_START;
+        }
+        if(devState == RUN_START)
         {
             ADC_1_Start();
             VDAC_1_Start();
+            devState = RUNNING;
+        } else if (devState == FINISHED) {
+            //dac_val = 0.0;
+            //printf("counter: %d \r\n", counter);
         }
+        if (prev_state != devState){
+            printf("cur state %i\r\n",devState);
+            prev_state = devState;
+        }
+        data dat;
+        if (rb_pop(&buf,&dat)){
+            cy_stc_ble_gatt_handle_value_pair_t serviceHandle;
+            cy_stc_ble_gatt_value_t serviceData;
+            
+            serviceData.val = (uint8*) &dat;
+            serviceData.len = 4;
+
+            serviceHandle.attrHandle = CY_BLE_DATA_SERVICE_DATA_OUT_CHAR_HANDLE;
+            serviceHandle.value = serviceData;
+            Cy_BLE_GATTS_SendNotification(&cy_ble_connHandle[0], &serviceHandle);
+            printf("dac %i adc %i\r\n",dat.dac,dat.adc);
+        }
+        Cy_BLE_ProcessEvents();
     }
 }
 
@@ -326,6 +409,8 @@ void userIsr(void)
                 // sample adc
                 Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
                 voltCount = Cy_SAR_GetResult16(SAR, 0);
+                data dat = {.adc = voltCount, .dac = dac_val};
+                rb_push(&buf, dat);
                 v1 = Cy_SAR_CountsTo_Volts(SAR, 0, voltCount);
                 flag_print = true;
                 /* Place your application code here. */
@@ -334,7 +419,7 @@ void userIsr(void)
 
                 // when i want to send to bluetooth and get current
                 // up
-                if (dac_direction == 1){
+                if (dac_direction == RISING){
                     // increment
                     dac_val++;
                     // 1 cycle complete
@@ -343,28 +428,32 @@ void userIsr(void)
                         // check if it hits peak
                         if (dac_val == maxVoltConverted){
                             // switch direction
-                            dac_direction = 0;
+                            dac_direction = FALLING;
                             // increment again since there is one less point
                             cycle_dac++;
                         }
                     }
                     else if (dac_val >= maxVoltConverted)
                     {
-                        dac_direction = 0;
+                        dac_direction = FALLING;
                     }
                 }
-                else if (dac_direction == 0){
+                else if (dac_direction == FALLING){
                     dac_val--;
+                    //handle underflow
+                    if (dac_val >= maxVoltConverted){
+                        dac_val = 0;
+                    }
                     if(dac_val == initVoltConverted){
                         cycle_dac++;
                         if (dac_val == minVoltConverted){
-                            dac_direction = 1;
+                            dac_direction = RISING;
                             cycle_dac++;
                         }
                     }
                     else if (dac_val <= minVoltConverted)
                     {
-                        dac_direction = 1;
+                        dac_direction = RISING;
                     }
                 }
                 div = 0;
@@ -376,9 +465,7 @@ void userIsr(void)
         else {
             VDAC_1_Stop();
             ADC_1_Stop();
-            //dac_val = 0.0;
-            printf("counter: %d \r\n", counter);
-            devState = 0;
+            devState = FINISHED;
         }
         
 

@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file cy_ble_ancs.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  This file contains the source code for
@@ -8,7 +8,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -176,7 +176,7 @@ cy_en_ble_api_result_t Cy_BLE_ANCS_Init(cy_stc_ble_ancs_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_ANCS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_ANCS_ApplCallback = callbackFunc;
     if(cy_ble_ancsConfigPtr != NULL)
     {
@@ -186,7 +186,7 @@ cy_en_ble_api_result_t Cy_BLE_ANCS_RegisterAttrCallback(cy_ble_callback_t callba
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 
@@ -595,7 +595,7 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_ANCSS_WriteEventHandler(cy_stc_ble_gatts
 *
 * \return
 *  A return value of type \ref cy_en_ble_api_result_t.
-*
+*    
 *   Error Codes                              | Description
 *   ------------                             | -----------
 *   CY_BLE_SUCCESS                           | The request was sent successfully.
@@ -608,18 +608,18 @@ static cy_en_ble_gatt_err_code_t Cy_BLE_ANCSS_WriteEventHandler(cy_stc_ble_gatts
 * \events
 *   If execution is successful (return value = #CY_BLE_SUCCESS),
 *   these events can appear: \n
-*   If an ANCS service-specific callback is
+*   If an ANCS service-specific callback is 
 *    registered with Cy_BLE_ANCS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_ANCSC_WRITE_CHAR_RESPONSE - If the requested attribute is
 *     successfully written on the peer device, the details (char index, etc.)
-*     are provided with an event  parameter structure
+*     are provided with an event  parameter structure 
 *     of type \ref cy_stc_ble_ancs_char_value_t.
 *   .
 *   Otherwise (if an ANCS service-specific callback is not registered):
-*   * #CY_BLE_EVT_GATTC_WRITE_RSP - If the requested attribute is successfully
+*   * #CY_BLE_EVT_GATTC_WRITE_RSP - If the requested attribute is successfully 
 *     written on the peer device.
 *
-*   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the requested
+*   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the requested 
 *     attribute on the peer device, the details are provided with an event
 *     parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
@@ -708,7 +708,7 @@ cy_en_ble_api_result_t Cy_BLE_ANCSC_SetCharacteristicValue(cy_stc_ble_conn_handl
 *   If an ANCS service-specific callback is registered
 *   with Cy_BLE_ANCS_RegisterAttrCallback():
 *   * #CY_BLE_EVT_ANCSC_WRITE_DESCR_RESPONSE - If the requested attribute is
-*     successfully written on the peer device, the details (char index,
+*     successfully written on the peer device, the details (char index, 
 *     descr index etc.) are provided with an event parameter structure
 *     of type cy_stc_ble_ancs_descr_value_t.
 *   .
@@ -717,7 +717,7 @@ cy_en_ble_api_result_t Cy_BLE_ANCSC_SetCharacteristicValue(cy_stc_ble_conn_handl
 *     successfully written on the peer device.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with
+*     requested attribute on the peer device, the details are provided with 
 *     an event parameter structure ( \ref cy_stc_ble_gatt_err_param_t).
 *
 ******************************************************************************/
@@ -804,11 +804,11 @@ cy_en_ble_api_result_t Cy_BLE_ANCSC_SetCharacteristicDescriptor(cy_stc_ble_conn_
 *   Otherwise (if an ANCS service-specific callback is not registered):
 *   * #CY_BLE_EVT_GATTC_READ_RSP - If the requested attribute is
 *     successfully read on the peer device, the details (handle, value, etc.) are
-*     provided with an event parameter structure
+*     provided with an event parameter structure 
 *     \ref cy_stc_ble_gattc_read_rsp_param_t.
 *
 *   * #CY_BLE_EVT_GATTC_ERROR_RSP - If an error occurred with the
-*     requested attribute on the peer device, the details are provided with
+*     requested attribute on the peer device, the details are provided with 
 *     an event parameter structure \ref cy_stc_ble_gatt_err_param_t.
 *
 ******************************************************************************/
@@ -824,7 +824,7 @@ cy_en_ble_api_result_t Cy_BLE_ANCSC_GetCharacteristicDescriptor(cy_stc_ble_conn_
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_ANCS_CHAR_COUNT) || (descrIndex >= CY_BLE_ANCS_DESCR_COUNT) ||
+    else if((charIndex >= CY_BLE_ANCS_CHAR_COUNT) || (descrIndex >= CY_BLE_ANCS_DESCR_COUNT) || 
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

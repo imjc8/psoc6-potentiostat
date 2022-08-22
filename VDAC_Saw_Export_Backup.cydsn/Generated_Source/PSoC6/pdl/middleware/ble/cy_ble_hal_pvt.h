@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file cy_ble_hal_pvt.h
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  Contains the function prototypes and constants for the HAL section
@@ -8,7 +8,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -99,12 +99,12 @@ typedef enum
 /** @} group_ble_common_api_definitions */
 
 /** \cond IGNORE */
-typedef struct
+typedef struct 
 {
     uint8_t  clientID;
     uint8_t  pktType;
     uint16_t intrRelMask;
-    uint32_t data;
+    uint32_t data; 
     uint16_t dataLen;
 } cy_stc_ble_ipc_msg_t;
 typedef enum
@@ -132,10 +132,10 @@ typedef enum
 
 #if (CY_BLE_CONFIG_HOST_CORE == CY_BLE_CORE_CORTEX_M4)
     #define CY_BLE_IPC_CONTROLLER_ADDR      (CY_IPC_EP_CYPIPE_CM0_ADDR)
-    #define CY_BLE_IPC_HOST_ADDR            (CY_IPC_EP_CYPIPE_CM4_ADDR)
+    #define CY_BLE_IPC_HOST_ADDR            (CY_IPC_EP_CYPIPE_CM4_ADDR)   
 #else
     #define CY_BLE_IPC_CONTROLLER_ADDR      (CY_IPC_EP_CYPIPE_CM4_ADDR)
-    #define CY_BLE_IPC_HOST_ADDR            (CY_IPC_EP_CYPIPE_CM0_ADDR)
+    #define CY_BLE_IPC_HOST_ADDR            (CY_IPC_EP_CYPIPE_CM0_ADDR)   
 #endif /* (CY_BLE_CONFIG_HOST_CORE == CY_BLE_CORE_CORTEX_M4) */
 
 #define CY_BLE_SFLASH_BLE_RADIO_CALL_ADDRESS   ((uint32_t)SFLASH->BLE_DEVICE_ADDRESS + sizeof(cy_stc_ble_gap_bd_addr_t))
@@ -178,7 +178,7 @@ void Cy_BLE_BlessInterrupt(void);
 #if (CY_BLE_STACK_MODE_HOST_UART)
 void Cy_BLE_HAL_HOST_UART_Interrupt(void);
 #endif /* (CY_BLE_STACK_MODE_HOST_UART) */
-
+    
 #if (CY_BLE_STACK_MODE_CONTR_UART)
 void Cy_BLE_HAL_UART_Interrupt(void);
 #endif /* (CY_BLE_STACK_MODE_CONTR_UART) */
@@ -208,7 +208,7 @@ void Cy_BLE_HAL_SetPiloTrimStep(uint32_t stepSize);
 int32_t Cy_BLE_HAL_TryPiloTrim(uint32_t piloFreq, uint32_t targetFreq, uint32_t stepSize);
 
 /* Stack Interface to flash */
-cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[], const uint8_t varFlash[],
+cy_en_ble_api_result_t Cy_BLE_HAL_NvramWrite(const uint8_t buffer[], const uint8_t varFlash[], 
                                              uint32_t length, uint32_t mode);
 cy_en_ble_api_result_t Cy_BLE_HAL_StackNvramWrite(const uint8_t buffer[], const uint8_t varFlash[], uint32_t length);
 bool Cy_BLE_HAL_NvramWriteIsBusy(void);
@@ -224,25 +224,25 @@ uint8_t Cy_BLE_HAL_BlockCalcCRC8(uint8_t data[], uint32_t length, uint8_t crcSee
 #if(CY_BLE_STACK_CONTR_CORE)
     cy_en_ble_api_result_t Cy_BLE_HAL_RadioCalibrationRead(void *data, uint32_t length);
     cy_en_ble_api_result_t Cy_BLE_HAL_RadioCalibrationWrite(const void *data, uint32_t length);
-
+    
     void Cy_BLE_HAL_DisableBlessInterrupt(void);
     void Cy_BLE_HAL_EnableBlessInterrupt(void);
 #endif /* CY_BLE_STACK_CONTR_CORE */
 
 #if (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_STACK_MODE_IPC) && (CY_BLE_MODE_PROFILE)
     void Cy_BLE_HAL_IntrNotifyIpcHandler(void);
-#endif /* (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_STACK_MODE_IPC) && (CY_BLE_MODE_PROFILE) */
+#endif /* (CY_BLE_INTR_NOTIFY_FEATURE_ENABLED) && (CY_BLE_STACK_MODE_IPC) && (CY_BLE_MODE_PROFILE) */    
 
 #if (CY_BLE_SECURE_CONN_FEATURE_ENABLED)
    #if (CY_BLE_MODE_PROFILE)
-    void Cy_BLE_HAL_MappingEccHeapInit(uint8_t *heapMem, uint8_t numOfConn);
+    void Cy_BLE_HAL_MappingEccHeapInit(uint8_t *heapMem, uint8_t numOfConn); 
     void Cy_BLE_HAL_MappingEccHeapDeInit(void);
     uint16_t Cy_BLE_HAL_MappingEccGetFeatureHeapReq(uint8_t numOfConn);
-    cy_en_ble_api_result_t Cy_BLE_HAL_MappingEccGenerateSecurityKeypair(uint8_t p_publicKey[],
-                                                                        uint8_t p_privateKey[],
+    cy_en_ble_api_result_t Cy_BLE_HAL_MappingEccGenerateSecurityKeypair(uint8_t p_publicKey[], 
+                                                                        uint8_t p_privateKey[], 
                                                                         uint8_t random[]);
-    cy_en_ble_api_result_t Cy_BLE_HAL_MappingEccGenerateDHKey(const uint8_t p_publicKey[],
-                                                              const uint8_t p_privateKey[],
+    cy_en_ble_api_result_t Cy_BLE_HAL_MappingEccGenerateDHKey(const uint8_t p_publicKey[], 
+                                                              const uint8_t p_privateKey[], 
                                                               uint8_t p_secret[], uint8_t ci);
     cy_en_ble_api_result_t Cy_BLE_HAL_MappingEccValidPublicKey(const uint8_t p_publicKey[]);
     cy_en_ble_api_result_t Cy_BLE_HAL_MappingPairingLocalPublicKeyHandler(void *param);
@@ -270,7 +270,7 @@ uint8_t Cy_BLE_HAL_BlockCalcCRC8(uint8_t data[], uint32_t length, uint8_t crcSee
     void Cy_BLE_HAL_HOST_UART_IsrEnable(void);
     void Cy_BLE_HAL_HOST_UART_IsrDisable(void);
 #endif    /* (CY_BLE_STACK_MODE_HOST_UART) */
-
+    
 #if (CY_BLE_STACK_MODE_CONTR_UART)
     void Cy_BLE_HAL_UART_Start(void);
     void Cy_BLE_HAL_UART_Stop(void);
@@ -303,7 +303,7 @@ uint8_t Cy_BLE_HAL_BlockCalcCRC8(uint8_t data[], uint32_t length, uint8_t crcSee
 #endif /* (CY_BLE_STACK_MODE_IPC) */
 
 #if (CY_BLE_HOST_CORE)
-extern cy_ble_intr_callback_t Cy_BLE_InterruptCallback;
+extern cy_ble_intr_callback_t Cy_BLE_InterruptCallback;   
 #endif /* (CY_BLE_HOST_CORE) */
 
 #if CY_BLE_STACK_CONTR_CORE

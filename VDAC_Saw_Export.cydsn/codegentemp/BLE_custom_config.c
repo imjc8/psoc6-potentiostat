@@ -30,13 +30,13 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
         0x0010u, /* Handle of the Data Service service */ 
         {
 
-            /* Data Out characteristic */
+            /* Data_Out characteristic */
             {
-                0x0012u, /* Handle of the Data Out characteristic */ 
+                0x0012u, /* Handle of the Data_Out characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0013u, /* Handle of the Custom Descriptor descriptor */ 
+                    0x0013u, /* Handle of the DataCCCD descriptor */ 
                 }, 
             },
 
@@ -46,17 +46,17 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0016u, /* Handle of the Custom Descriptor descriptor */ 
+                    0x0016u, /* Handle of the Characteristic User Description descriptor */ 
                 }, 
             },
 
-            /* Inbound Test Config characteristic */
+            /* Inbound_test_config characteristic */
             {
-                0x0018u, /* Handle of the Inbound Test Config characteristic */ 
+                0x0018u, /* Handle of the Inbound_test_config characteristic */ 
                 
                 /* Array of Descriptors handles */
                 {
-                    0x0019u, /* Handle of the Custom Descriptor descriptor */ 
+                    CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
         }, 

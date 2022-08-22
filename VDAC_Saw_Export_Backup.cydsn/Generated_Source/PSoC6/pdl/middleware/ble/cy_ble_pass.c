@@ -1,6 +1,6 @@
 /***************************************************************************//**
 * \file cy_ble_pass.c
-* \version 2.70
+* \version 2.60
 *
 * \brief
 *  This file contains the source code for
@@ -8,7 +8,7 @@
 *
 ********************************************************************************
 * \copyright
-* Copyright 2017-2021, Cypress Semiconductor Corporation.  All rights reserved.
+* Copyright 2017-2020, Cypress Semiconductor Corporation.  All rights reserved.
 * You may use this file only in accordance with the license, terms, conditions,
 * disclaimers, and limitations in the end user license agreement accompanying
 * the software package with which this file was provided.
@@ -155,7 +155,7 @@ cy_en_ble_api_result_t Cy_BLE_PASS_Init(cy_stc_ble_pass_config_t *config)
 cy_en_ble_api_result_t Cy_BLE_PASS_RegisterAttrCallback(cy_ble_callback_t callbackFunc)
 {
     cy_en_ble_api_result_t apiResult = CY_BLE_SUCCESS;
-
+    
     Cy_BLE_PASS_ApplCallback = callbackFunc;
     if(cy_ble_passConfigPtr != NULL)
     {
@@ -165,7 +165,7 @@ cy_en_ble_api_result_t Cy_BLE_PASS_RegisterAttrCallback(cy_ble_callback_t callba
     {
         apiResult = CY_BLE_ERROR_INVALID_OPERATION;
     }
-
+    
     return(apiResult);
 }
 
@@ -865,7 +865,7 @@ cy_en_ble_api_result_t Cy_BLE_PASSC_GetCharacteristicDescriptor(cy_stc_ble_conn_
     {
         apiResult = CY_BLE_ERROR_INVALID_STATE;
     }
-    else if((charIndex >= CY_BLE_PASS_CHAR_COUNT) || (descrIndex >= CY_BLE_PASS_DESCR_COUNT) ||
+    else if((charIndex >= CY_BLE_PASS_CHAR_COUNT) || (descrIndex >= CY_BLE_PASS_DESCR_COUNT) || 
             (discIdx >= CY_BLE_GATTC_COUNT))
     {
         apiResult = CY_BLE_ERROR_INVALID_PARAMETER;

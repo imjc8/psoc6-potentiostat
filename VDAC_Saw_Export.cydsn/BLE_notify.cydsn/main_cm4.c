@@ -23,8 +23,8 @@ int sendFlag = false;
 // to send
 struct data 
 {
-    float32 DAC_volt;
-    float32 ADC_volt;
+    uint16_t DAC_volt;
+    uint16_t ADC_volt;
 };
 
 // for the receiving floats
@@ -188,7 +188,7 @@ int main(void)
         cy_stc_ble_gatt_value_t serviceData;
         
         serviceData.val = (uint8*) &d1;
-        serviceData.len = 8;
+        serviceData.len = 4;
         
         serviceHandle.attrHandle = CY_BLE_DATA_SERVICE_DATA_OUT_CHAR_HANDLE;
         
@@ -209,7 +209,7 @@ int main(void)
 //        }
         
         //printf("Connhandle %x \r\n", connHandle);
-        if(sendFlag == true) {
+        if(1) {
         cy_en_ble_api_result_t e = Cy_BLE_GATTS_SendNotification(&cy_ble_connHandle[0], &serviceHandle);
             if (e == CY_BLE_SUCCESS) {
                 printf("DAC val: %f \t ADC val:%f \r\n", d1.DAC_volt, d1.ADC_volt);
