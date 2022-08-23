@@ -140,20 +140,28 @@ bool dir;
 // test config
 bool recvConfig = false;
 
+#define PAYLOAD_SIZE 16
+#define FRAME_SIZE 16
 typedef struct {
     uint16_t dac;
     uint16_t adc;
 } data;
 
+uint8_t adc_payload = 0;
+data dat;
+
+
+#define RB_SIZE 128
+
 typedef struct {
-    data buf[16];
+    data buf[RB_SIZE];
     uint8_t head;
     uint8_t tail;
 } data_rb_t;
 
 int rb_push(data_rb_t *buf, data dat){
     uint8_t next;
-    next = (buf->head + 1) % 16;
+    next = (buf->head + 1) % RB_SIZE;
     if (next == buf->tail){
         return -1;
     }
@@ -165,7 +173,7 @@ int rb_push(data_rb_t *buf, data dat){
 int rb_pop(data_rb_t *buf, data *dat){
     int next;
     if (buf->head == buf->tail) return 0;
-    next = (buf->tail + 1) % 16;
+    next = (buf->tail + 1) % RB_SIZE;
     *dat = buf->buf[buf->tail];
     buf->tail = next;
     return 1;
@@ -330,11 +338,11 @@ int main(void)
     setvbuf(stdin, NULL, _IONBF, 0);
 
     //Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
-    
 
-     
-    
     int i = 0;
+    
+    data tx_frame[FRAME_SIZE];
+    uint8_t frame_ctr = 0;
     for(;;)
     {   
         if(devState == CONFIG_LOADED){
@@ -356,16 +364,20 @@ int main(void)
         }
         data dat;
         if (rb_pop(&buf,&dat)){
+            tx_frame[frame_ctr++] = dat;
+        }
+        if (frame_ctr == FRAME_SIZE){
             cy_stc_ble_gatt_handle_value_pair_t serviceHandle;
             cy_stc_ble_gatt_value_t serviceData;
             
-            serviceData.val = (uint8*) &dat;
-            serviceData.len = 4;
+            serviceData.val = (uint8*) &tx_frame;
+            serviceData.len = sizeof(tx_frame);
 
             serviceHandle.attrHandle = CY_BLE_DATA_SERVICE_DATA_OUT_CHAR_HANDLE;
             serviceHandle.value = serviceData;
             Cy_BLE_GATTS_SendNotification(&cy_ble_connHandle[0], &serviceHandle);
             printf("dac %i adc %i\r\n",dat.dac,dat.adc);
+            frame_ctr = 0;
         }
         Cy_BLE_ProcessEvents();
     }
@@ -411,7 +423,7 @@ void userIsr(void)
                 voltCount = Cy_SAR_GetResult16(SAR, 0);
                 data dat = {.adc = voltCount, .dac = dac_val};
                 rb_push(&buf, dat);
-                v1 = Cy_SAR_CountsTo_Volts(SAR, 0, voltCount);
+                //v1 = Cy_SAR_CountsTo_Volts(SAR, 0, voltCount);
                 flag_print = true;
                 /* Place your application code here. */
                 //printf("DAC OUTPUT: %d ADC is: %f \r\n", dac_val, v1);

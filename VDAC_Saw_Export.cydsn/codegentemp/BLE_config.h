@@ -272,10 +272,10 @@ extern "C" {
  * The valid range is from 23 to 512 bytes. 
  * This value is used to respond to an Exchange MTU request from the GATT Client.
  */
-#define CY_BLE_CONFIG_GATT_MTU                      (0x0017u)
+#define CY_BLE_CONFIG_GATT_MTU                      (0x0200u)
 
 /** The GATT Maximum attribute length. */
-#define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0010u)
+#define CY_BLE_CONFIG_GATT_DB_MAX_VALUE_LEN         (0x0040u)
 #define CY_BLE_GATT_DB_INDEX_COUNT                  (0x0018u)
 
 /** The number of characteristics supporting the Reliable Write property. */
@@ -310,10 +310,10 @@ extern "C" {
 #define CY_BLE_CONFIG_GATT_DB_ATT_VAL_COUNT         (0x10u)
 
 /** Max Tx payload size. */
-#define CY_BLE_CONFIG_LL_MAX_TX_PAYLOAD_SIZE        (0x1Bu)
+#define CY_BLE_CONFIG_LL_MAX_TX_PAYLOAD_SIZE        (0xFBu)
 
 /** Max Rx payload size. */
-#define CY_BLE_CONFIG_LL_MAX_RX_PAYLOAD_SIZE        (0x1Bu)
+#define CY_BLE_CONFIG_LL_MAX_RX_PAYLOAD_SIZE        (0xFBu)
 
 /** GATT Role. */
 #define CY_BLE_CONFIG_GATT_ROLE                     (0x01u)
