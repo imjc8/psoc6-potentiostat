@@ -460,7 +460,7 @@ void userIsr(void)
                 // sample adc
                 Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
                 int16_t voltCount = Cy_SAR_GetResult16(SAR, 0);
-                data dat = {.adc = 123, .dac = dac_config.dac_val};
+                data dat = {.adc = voltCount, .dac = dac_config.dac_val};
                 rb_push(&buf, dat);
                 //v1 = Cy_SAR_CountsTo_Volts(SAR, 0, voltCount);
                 //flag_print = true;
