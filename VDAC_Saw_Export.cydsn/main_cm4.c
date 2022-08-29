@@ -365,8 +365,8 @@ int main(void)
     setvbuf(stdin, NULL, _IONBF, 0);
 
     //Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
-    
-
+    VDAC_1_Start();
+    VDAC_1_SetValueBuffered(2048);
     data tx_frame[FRAME_SIZE];
     uint8_t frame_ctr = 0;
     int i = 0;
@@ -379,9 +379,10 @@ int main(void)
         if(devState == RUN_START)
         {
             ADC_1_Start();
-            VDAC_1_Start();
+            //VDAC_1_Start();
             devState = RUNNING;
         } else if (devState == FINISHED) {
+            VDAC_1_SetValueBuffered(2048);
             //dac_val = 0.0;
             //printf("counter: %d \r\n", counter);
         }
@@ -443,7 +444,8 @@ void userIsr(void)
 
     /* Check that an interrupt occurred in the VDAC component instance. */
     intrStatus = VDAC_1_GetInterruptStatus();
-    if (intrStatus)
+    if(intrStatus)  VDAC_1_ClearInterrupt();
+    if (intrStatus && devState == RUNNING)
     {
         /* Clear the interrupt. */
         VDAC_1_ClearInterrupt();
@@ -514,7 +516,7 @@ void userIsr(void)
             };
         }
         else {
-            VDAC_1_Stop();
+            //VDAC_1_Stop();
             ADC_1_Stop();
             devState = FINISHED;
         }
