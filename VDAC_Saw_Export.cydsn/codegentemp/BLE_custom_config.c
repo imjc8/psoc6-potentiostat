@@ -59,6 +59,16 @@ static const cy_stc_ble_customs_t cy_ble_customs[0x01u] = {
                     CY_BLE_GATT_INVALID_ATTR_HANDLE_VALUE, 
                 }, 
             },
+
+            /* Data_Out_2 characteristic */
+            {
+                0x001Au, /* Handle of the Data_Out_2 characteristic */ 
+                
+                /* Array of Descriptors handles */
+                {
+                    0x001Bu, /* Handle of the DataCCCD descriptor */ 
+                }, 
+            },
         }, 
     },
 };

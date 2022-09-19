@@ -1,5 +1,5 @@
 -- Project:   VDAC_Saw_Export
--- Generated: 08/23/2022 19:00:19
+-- Generated: 08/29/2022 19:41:53
 -- PSoC Creator  4.4
 
 ENTITY VDAC_Saw_Export IS
@@ -116,17 +116,17 @@ ARCHITECTURE __DEFAULT__ OF VDAC_Saw_Export IS
     ATTRIBUTE lib_model OF CY_SRSS_WCO_OUT(0) : LABEL IS "iocell4";
     ATTRIBUTE Location OF CY_SRSS_WCO_OUT(0) : LABEL IS "P0[1]";
     ATTRIBUTE lib_model OF VDAC_Out(0) : LABEL IS "iocell5";
-    ATTRIBUTE Location OF VDAC_Out(0) : LABEL IS "P9[3]";
+    ATTRIBUTE Location OF VDAC_Out(0) : LABEL IS "P10[2]";
     ATTRIBUTE lib_model OF \UART_1:tx(0)\ : LABEL IS "iocell6";
     ATTRIBUTE Location OF \UART_1:tx(0)\ : LABEL IS "P5[1]";
     ATTRIBUTE lib_model OF \UART_1:rx(0)\ : LABEL IS "iocell7";
     ATTRIBUTE Location OF \UART_1:rx(0)\ : LABEL IS "P5[0]";
     ATTRIBUTE lib_model OF ADC_IN(0) : LABEL IS "iocell8";
-    ATTRIBUTE Location OF ADC_IN(0) : LABEL IS "P10[2]";
+    ATTRIBUTE Location OF ADC_IN(0) : LABEL IS "P5[2]";
     ATTRIBUTE lib_model OF LED_1(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF LED_1(0) : LABEL IS "P10[1]";
+    ATTRIBUTE Location OF LED_1(0) : LABEL IS "P7[1]";
     ATTRIBUTE lib_model OF LED_2(0) : LABEL IS "iocell10";
-    ATTRIBUTE Location OF LED_2(0) : LABEL IS "P10[0]";
+    ATTRIBUTE Location OF LED_2(0) : LABEL IS "P6[3]";
     ATTRIBUTE lib_model OF LED_3(0) : LABEL IS "iocell11";
     ATTRIBUTE Location OF LED_3(0) : LABEL IS "P9[4]";
     ATTRIBUTE Location OF SysInt_1 : LABEL IS "[IntrContainer=(0)][IntrId=(146)]";

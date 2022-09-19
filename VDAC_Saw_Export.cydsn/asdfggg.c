@@ -45,27 +45,25 @@
 #include "stdio.h"
 
 // dac val
-//uint32_t dac_val = 0u;
+uint32_t dac_val = 0u;
 
 
 
 // conversion between float to uint for dac
-//uint32_t maxVoltConverted = 0;
-//uint32_t minVoltConverted = 0;
-//uint32_t initVoltConverted = 0;
+uint32_t maxVoltConverted = 0;
+uint32_t minVoltConverted = 0;
+uint32_t initVoltConverted = 0;
 // direction
 //bool direction;
 
 
 // scan rate calcs
-//int div = 0;
-//int div_duration = 0;
-
-
+int div = 0;
+int div_duration = 0;
 
 // cycles 
-//int cycle_count = 0;
-//int cycle_dac = 0;
+int cycle_count = 0;
+int cycle_dac = 0;
 
 typedef enum {
     FALLING,
@@ -73,23 +71,7 @@ typedef enum {
 } direction;
 
 // initial scan direction
-//direction dac_direction = RISING;
-
-typedef struct {
-    int cycle_count;
-    int cycle_dac;
-    direction dac_direction;
-    uint32_t dac_val;
-    int div_duration;
-    int div;
-    uint32_t maxVoltConverted;
-    uint32_t minVoltConverted;
-    uint32_t initVoltConverted;
-    int counter; 
-} dac_config_t;
-
-dac_config_t dac_config;
-
+direction dac_direction = RISING;
 
 // adc
 uint16_t adc_count;
@@ -97,13 +79,13 @@ float32_t adc_volt;
 
 // voltage for adc
 float v1;
-//uint16_t voltCount;
+uint16_t voltCount;
 
 // flags
 bool flag_print = false;
 
 // timing_counter
-//int counter = 0;
+int counter = 0;
 
 // device status
 //int devState = 0;
@@ -149,7 +131,7 @@ union {
 } scanRate;
 
 // recv cycles
-//uint8 numCycles = 0;
+uint8 numCycles = 0;
 bool recv_flag = false;
 
 // recv dir
@@ -158,13 +140,18 @@ bool dir;
 // test config
 bool recvConfig = false;
 
+#define PAYLOAD_SIZE 16
+#define FRAME_SIZE 16
 typedef struct {
     uint16_t dac;
     uint16_t adc;
 } data;
 
-#define RB_SIZE 256
-#define FRAME_SIZE 16
+uint8_t adc_payload = 0;
+data dat;
+
+
+#define RB_SIZE 128
 
 typedef struct {
     data buf[RB_SIZE];
@@ -257,7 +244,6 @@ void genericEventHandler(uint32_t event, void *eventParameter)
                 scanRate.e[1] = writeReqParameter->handleValPair.value.val[13];
                 scanRate.e[0] = writeReqParameter->handleValPair.value.val[12];
                 
-                direction dac_direction;
                 // direction
                 if(writeReqParameter->handleValPair.value.val[16]){
                     dac_direction = RISING;
@@ -267,32 +253,19 @@ void genericEventHandler(uint32_t event, void *eventParameter)
                 //dac_direction = writeReqParameter->handleValPair.value.val[16];
                 
                 // number of cycles
-                int numCycles = writeReqParameter->handleValPair.value.val[17];
+                numCycles = writeReqParameter->handleValPair.value.val[17];
                 
-                uint32_t minVoltConverted = round((minVolt.f/3.3)*4095);
-                uint32_t maxVoltConverted = round((maxVolt.f/3.3)*4095);
-                uint32_t initVoltConverted = round((startVolt.f/3.3)*4095);
+                minVoltConverted = round((minVolt.f/3.3)*4095);
+                maxVoltConverted = round((maxVolt.f/3.3)*4095);
+                initVoltConverted = round((startVolt.f/3.3)*4095);
                 
                 float volt_diff = maxVolt.f - minVolt.f;
     
                  // DAC clock frequency is 10KHz
-                int div_duration = (int)((float)(10000.0 * volt_diff/((maxVoltConverted - minVoltConverted) * scanRate.f)))-1;
+                div_duration = (int)((float)(10000.0 * volt_diff/((maxVoltConverted - minVoltConverted) * scanRate.f)))-1;
                 
-                //cycle_count = numCycles;
-                //dac_val = initVoltConverted;
-                dac_config_t dac_config_new = {
-                    .cycle_count = numCycles,
-                    .dac_direction = dac_direction,
-                    .dac_val = initVoltConverted,
-                    .cycle_dac = 0,
-                    .div_duration = div_duration,
-                    .div = 0,
-                    .maxVoltConverted = maxVoltConverted,
-                    .minVoltConverted = minVoltConverted,
-                    .initVoltConverted = initVoltConverted,
-                    .counter = 0
-                };
-                dac_config = dac_config_new;
+                cycle_count = numCycles;
+                dac_val = initVoltConverted;
                 devState = CONFIG_LOADED;  
             }
             
@@ -346,18 +319,18 @@ int main(void)
     }
     Cy_BLE_RegisterAppHostCallback(bleInterruptNotify);
     
-    //struct data d1;
+    struct data d1;
     
     // waveform parameters
     // voltage
-    //float min_volt = 0.0;
-    //float max_volt = 3.3;
-    //float init_volt = 0.0;
+    float min_volt = 0.0;
+    float max_volt = 3.3;
+    float init_volt = 0.0;
     // scan rate (v/sec)
-    //float scan_rate = 0.5;
+    float scan_rate = 0.5;
     
     // number of cycles
-    //cycle_count = 5;
+    cycle_count = 5;
     
     /* Start the component. */
     //VDAC_1_Start();
@@ -365,47 +338,34 @@ int main(void)
     setvbuf(stdin, NULL, _IONBF, 0);
 
     //Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_CONTINUOUS);
-    VDAC_1_Start();
-    VDAC_1_SetValueBuffered(2048);
+
+    int i = 0;
+    
     data tx_frame[FRAME_SIZE];
     uint8_t frame_ctr = 0;
-    int i = 0;
     for(;;)
     {   
         if(devState == CONFIG_LOADED){
-             printf("min Volt: %f \t max Volt: %f \t start volt: %f \t dir: %d \t numCycle: %d \r\n", minVolt.f, maxVolt.f, startVolt.f, dir, dac_config.cycle_count);
+             printf("min Volt: %f \t max Volt: %f \t start volt: %f \t dir: %d \t numCycle: %d \r\n", minVolt.f, maxVolt.f, startVolt.f, dir, numCycles);
              devState = RUN_START;
         }
         if(devState == RUN_START)
         {
             ADC_1_Start();
-            //VDAC_1_Start();
+            VDAC_1_Start();
             devState = RUNNING;
         } else if (devState == FINISHED) {
-            VDAC_1_SetValueBuffered(2048);
             //dac_val = 0.0;
             //printf("counter: %d \r\n", counter);
         }
         if (prev_state != devState){
             printf("cur state %i\r\n",devState);
-            cy_stc_ble_gatt_handle_value_pair_t serviceHandle;
-            cy_stc_ble_gatt_value_t serviceData;
-            
-            serviceData.val = (uint8*) &devState;
-            serviceData.len = sizeof(devState);
-
-            serviceHandle.attrHandle = CY_BLE_DATA_SERVICE_DATA_OUT_2_CHAR_HANDLE;
-            serviceHandle.value = serviceData;
-            Cy_BLE_GATTS_SendNotification(&cy_ble_connHandle[0], &serviceHandle);
-
             prev_state = devState;
         }
         data dat;
         if (rb_pop(&buf,&dat)){
             tx_frame[frame_ctr++] = dat;
         }
-
-
         if (frame_ctr == FRAME_SIZE){
             cy_stc_ble_gatt_handle_value_pair_t serviceHandle;
             cy_stc_ble_gatt_value_t serviceData;
@@ -416,7 +376,7 @@ int main(void)
             serviceHandle.attrHandle = CY_BLE_DATA_SERVICE_DATA_OUT_CHAR_HANDLE;
             serviceHandle.value = serviceData;
             Cy_BLE_GATTS_SendNotification(&cy_ble_connHandle[0], &serviceHandle);
-            //printf("dac %i adc %i\r\n",dat.dac,dat.adc);
+            printf("dac %i adc %i\r\n",dat.dac,dat.adc);
             frame_ctr = 0;
         }
         Cy_BLE_ProcessEvents();
@@ -444,8 +404,7 @@ void userIsr(void)
 
     /* Check that an interrupt occurred in the VDAC component instance. */
     intrStatus = VDAC_1_GetInterruptStatus();
-    if(intrStatus)  VDAC_1_ClearInterrupt();
-    if (intrStatus && devState == RUNNING)
+    if (intrStatus)
     {
         /* Clear the interrupt. */
         VDAC_1_ClearInterrupt();
@@ -454,72 +413,74 @@ void userIsr(void)
         //VDAC_1_SetValueBuffered(dac_val);
         
         // generate triangle wave
-        if ((dac_config.cycle_dac/2) < (dac_config.cycle_count)){
+        if ((cycle_dac/2) < (cycle_count)){
             // basically skip times which don't line up with scan rate
-            if (dac_config.div == dac_config.div_duration) {
-                dac_config.counter++;
-                VDAC_1_SetValueBuffered(dac_config.dac_val);
+            if (div == div_duration) {
+                counter++;
+                VDAC_1_SetValueBuffered(dac_val);
                 // sample adc
                 Cy_SAR_StartConvert(SAR, CY_SAR_START_CONVERT_SINGLE_SHOT);
-                int16_t voltCount = Cy_SAR_GetResult16(SAR, 0);
-                data dat = {.adc = voltCount, .dac = dac_config.dac_val};
+                voltCount = Cy_SAR_GetResult16(SAR, 0);
+                data dat = {.adc = voltCount, .dac = dac_val};
                 rb_push(&buf, dat);
                 //v1 = Cy_SAR_CountsTo_Volts(SAR, 0, voltCount);
-                //flag_print = true;
+                flag_print = true;
                 /* Place your application code here. */
                 //printf("DAC OUTPUT: %d ADC is: %f \r\n", dac_val, v1);
                 // broadcast bluetooth
 
                 // when i want to send to bluetooth and get current
                 // up
-                if (dac_config.dac_direction == RISING){
+                if (dac_direction == RISING){
                     // increment
-                    dac_config.dac_val++;
+                    dac_val++;
                     // 1 cycle complete
-                    if(dac_config.dac_val == dac_config.initVoltConverted){
-                        dac_config.cycle_dac++;
+                    if(dac_val == initVoltConverted){
+                        cycle_dac++;
                         // check if it hits peak
-                        if (dac_config.dac_val == dac_config.maxVoltConverted){
+                        if (dac_val == maxVoltConverted){
                             // switch direction
-                            dac_config.dac_direction = FALLING;
+                            dac_direction = FALLING;
                             // increment again since there is one less point
-                            dac_config.cycle_dac++;
+                            cycle_dac++;
                         }
                     }
-                    else if (dac_config.dac_val >= dac_config.maxVoltConverted)
+                    else if (dac_val >= maxVoltConverted)
                     {
-                        dac_config.dac_direction = FALLING;
+                        dac_direction = FALLING;
                     }
                 }
-                else if (dac_config.dac_direction == FALLING){
-                    dac_config.dac_val--;
+                else if (dac_direction == FALLING){
+                    dac_val--;
                     //handle underflow
-                    if (dac_config.dac_val >= dac_config.maxVoltConverted){
-                        dac_config.dac_val = 0;
+                    if (dac_val >= maxVoltConverted){
+                        dac_val = 0;
                     }
-                    if(dac_config.dac_val == dac_config.initVoltConverted){
-                        dac_config.cycle_dac++;
-                        if (dac_config.dac_val == dac_config.minVoltConverted){
-                            dac_config.dac_direction = RISING;
-                            dac_config.cycle_dac++;
+                    if(dac_val == initVoltConverted){
+                        cycle_dac++;
+                        if (dac_val == minVoltConverted){
+                            dac_direction = RISING;
+                            cycle_dac++;
                         }
                     }
-                    else if (dac_config.dac_val <= dac_config.minVoltConverted)
+                    else if (dac_val <= minVoltConverted)
                     {
-                        dac_config.dac_direction = RISING;
+                        dac_direction = RISING;
                     }
                 }
-                dac_config.div = 0;
+                div = 0;
             } 
             else {
-                dac_config.div++;
+                div++;
             };
         }
         else {
-            //VDAC_1_Stop();
+            VDAC_1_Stop();
             ADC_1_Stop();
             devState = FINISHED;
         }
+        
+
     }
 }
 
